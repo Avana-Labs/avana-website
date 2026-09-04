@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "کی طرف سے طاقت یافتہ Aave v4",
-      "title": "LP پوزیشنز کے خلاف قرض لیں",
-      "titleLine1": "کے خلاف قرض لینا",
-      "titleLine2": "لیکویڈیٹی کی پوزیشنز",
-      "subtitle": "Uniswap، Curve، اور Balancer پوزیشنز سے لیکویڈیٹی کھولتے ہوئے تجارتی فیسیں کمانا جاری رکھیں۔",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "اپنی لیکویڈیٹی پول کی قیمت کا 80٪ تک رسائی حاصل کریں",
-        "5.5% APR پر، لیکویڈیٹی نکالے بغیر یا",
-        "ٹریڈنگ فیس چھوڑے بغیر۔"
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "اپنی لیکویڈیٹی پول کی قیمت کا 80% تک 5.5% پر حاصل کریں APR",
-        "5.5% APR پر، لیکویڈیٹی نکالے یا ٹریڈنگ فیس چھوڑے بغیر۔"
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "کوشش کریں Sandbox",
       "secondaryCta": "دستاویزات پڑھیں"

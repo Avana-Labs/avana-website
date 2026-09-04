@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "مدعوم بواسطة Aave v4",
-      "title": "اقترض مقابل LP مواضع",
-      "titleLine1": "اقترض مقابل",
-      "titleLine2": "مراكز السيولة",
-      "subtitle": "استمر في كسب رسوم التداول أثناء تحرير السيولة من المواقع Uniswap وCurve وBalancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "الوصول إلى ما يصل إلى 80٪ من قيمة تجمع السيولة الخاص بك",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "الوصول إلى ما يصل إلى 80٪ من قيمة حوض السيولة الخاص بك بنسبة 5.5٪ APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "جرّب Sandbox",
       "secondaryCta": "اقرأ المستندات"

@@ -1,7 +1,7 @@
 "use client"
 
 import { Monitor, Moon, Sun } from "lucide-react"
-import { useTheme } from "@/components/theme-provider"
+import { readResolvedThemeFromDocument, useTheme } from "@/components/theme-provider"
 import { useTranslations } from "next-intl"
 import { useSyncExternalStore } from "react"
 
@@ -47,11 +47,35 @@ function themeLabel(t: ReturnType<typeof useTranslations>, value: ThemePreferenc
   return t("theme.systemMode")
 }
 
+function ThemeToggleIcon({
+  activeTheme,
+  mounted,
+  className = "h-[18px] w-[18px]",
+}: {
+  activeTheme: ThemePreference
+  mounted: boolean
+  className?: string
+}) {
+  const resolvedAppearance = useSyncExternalStore(
+    () => () => {},
+    () => readResolvedThemeFromDocument(),
+    () => "light" as const,
+  )
+
+  const iconTheme: ThemePreference = mounted
+    ? activeTheme === "system"
+      ? resolvedAppearance
+      : activeTheme
+    : resolvedAppearance
+
+  const Icon = THEME_ICONS[iconTheme === "dark" ? "dark" : iconTheme === "light" ? "light" : "system"]
+  return <Icon aria-hidden="true" className={className} strokeWidth={2.1} />
+}
+
 export function HeaderThemeToggle() {
   const t = useTranslations("common")
   const { mounted, activeTheme, cycleTheme } = useThemePreference()
   const label = themeLabel(t, activeTheme)
-  const Icon = THEME_ICONS[activeTheme]
 
   return (
     <button
@@ -61,11 +85,7 @@ export function HeaderThemeToggle() {
       title={label}
       onClick={cycleTheme}
     >
-      {!mounted ? (
-        <Sun aria-hidden="true" className="h-[18px] w-[18px]" strokeWidth={2.1} />
-      ) : (
-        <Icon aria-hidden="true" className="h-[18px] w-[18px]" strokeWidth={2.1} />
-      )}
+      <ThemeToggleIcon activeTheme={activeTheme} mounted={mounted} />
     </button>
   )
 }
@@ -74,7 +94,6 @@ export function HeaderThemeToggleMobileRow() {
   const t = useTranslations("common")
   const { mounted, activeTheme, cycleTheme } = useThemePreference()
   const label = themeLabel(t, activeTheme)
-  const Icon = THEME_ICONS[activeTheme]
 
   return (
     <button
@@ -84,11 +103,9 @@ export function HeaderThemeToggleMobileRow() {
       onClick={cycleTheme}
     >
       <span className="inline-flex items-center gap-3">
-        {!mounted ? (
-          <Sun aria-hidden="true" className="h-5 w-5 shrink-0 text-type-accent" strokeWidth={2.1} />
-        ) : (
-          <Icon aria-hidden="true" className="h-5 w-5 shrink-0 text-type-accent" strokeWidth={2.1} />
-        )}
+        <span className="shrink-0 text-type-accent">
+          <ThemeToggleIcon activeTheme={activeTheme} mounted={mounted} className="h-5 w-5" />
+        </span>
         <span className="text-[1rem] font-medium tracking-[-0.02em] text-foreground">{label}</span>
       </span>
       <span className="text-xs font-medium tracking-[-0.02em] text-type-tertiary">{t("theme.tapToChange")}</span>

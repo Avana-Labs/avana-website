@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "ขับเคลื่อนโดย Aave v4",
-      "title": "ยืมโดยใช้ LP ตำแหน่งเป็นหลักประกัน",
-      "titleLine1": "ยืมโดยใช้เป็นหลักประกัน",
-      "titleLine2": "ตำแหน่งสภาพคล่อง",
-      "subtitle": "ทำรายได้ค่าธรรมเนียมการซื้อขายต่อไปในขณะที่ปลดล็อกสภาพคล่องจากตำแหน่ง Uniswap, Curve, และ Balancer",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "เข้าถึงมูลค่าของสภาพคล่องพูลของคุณได้สูงสุด 80%",
-        "ที่ APR 5.5% โดยไม่ถอนสภาพคล่องหรือ",
-        "สละค่าธรรมเนียมการเทรด"
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "เข้าถึงมูลค่าของสภาพคล่องของคุณได้สูงสุดถึง 80% ในอัตรา 5.5% APR",
-        "ที่ APR 5.5% โดยไม่ถอนสภาพคล่องหรือสละค่าธรรมเนียมการเทรด"
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "ลอง Sandbox",
       "secondaryCta": "อ่านเอกสาร"

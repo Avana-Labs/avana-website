@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
-export default async function PlatformToolsShowcaseSection() {
-  return withMarketingI18n(['platform-tools-showcase-section'], (
+export default async function PlatformToolsShowcaseSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ['platform-tools-showcase-section'], (
     <section
       data-section="platform-tools-showcase"
       data-theme="beige"

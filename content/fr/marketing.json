@@ -285,7 +285,12 @@
       "Encre Avana",
       "Texte principal et couleur de logo sombre. À utiliser quand le contraste et l’autorité comptent.",
       "Cyan Avana",
-      "Accent principal pour états actifs, liens, highlights clés et CTA portés par Avana."
+      "Accent principal pour états actifs, liens, highlights clés et CTA portés par Avana.",
+      "N’étirez pas et ne compressez pas le logo.",
+      "Ne faites pas pivoter ni retourner la marque.",
+      "Ne recolorez pas le logo hors des coloris approuvés.",
+      "Ne recadrez pas la marque et ne la placez pas trop près d’un bord.",
+      "Ne serrez pas la marque avec des logos partenaires ou des libellés d’interface."
     ]
   },
   "hero-section": {

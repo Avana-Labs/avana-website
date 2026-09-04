@@ -4,9 +4,11 @@ import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('liquidation/examples', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'liquidation/examples', {
     title: "Liquidation Examples",
     description: "Illustrative liquidation examples for Avana, showing how fungible LPs, concentrated liquidity, and multi-position accounts are unwound under the same core framework.",
   })
@@ -29,8 +31,9 @@ const edgeCases = [
   "A borrower may have several positions contributing to one spoke-level borrowing capacity, so liquidation sequencing matters.",
 ]
 
-export default async function LiquidationExamplesPage() {
-  return withDocsI18n("liquidation/examples", (
+export default async function LiquidationExamplesPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "liquidation/examples", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

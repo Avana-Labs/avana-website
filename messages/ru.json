@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Работает на Aave v4",
-      "title": "Занять под залог LP позиций",
-      "titleLine1": "Заложить под",
-      "titleLine2": "Ликвидные позиции",
-      "subtitle": "Продолжайте зарабатывать комиссионные за торговлю, одновременно освобождая ликвидность из позиций Uniswap, Curve и Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Получите доступ до 80% стоимости вашего пула ликвидности",
-        "под 5,5% APR без вывода ликвидности и",
-        "без отказа от торговых комиссий."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Получите доступ до 80% стоимости вашего пула ликвидности под 5,5% APR",
-        "под 5,5% APR без вывода ликвидности и без отказа от торговых комиссий."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Попробуй Sandbox",
       "secondaryCta": "Читать документы"

@@ -2,6 +2,7 @@ import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import type React from "react"
 import nextDynamic from "next/dynamic"
 import { DeveloperContentWrapper } from "@/components/developer-content-wrapper"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 export const dynamic = "force-static"
 
@@ -21,8 +22,9 @@ const DeferredDeveloperSidebar = nextDynamic(
  * Developer documentation section metadata
  * Individual pages override with their own specific metadata
  */
-export async function generateMetadata() {
-  return createPageMetadata("developers", "/developers", { ogType: "developers" })
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "developers", "/developers", { ogType: "developers" })
 }
 
 export default function DevelopersLayout({

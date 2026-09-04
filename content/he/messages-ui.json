@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "מופעל על ידי Aave v4",
-      "title": "לוות נגד LP עמדות",
-      "titleLine1": "ללוות כנגד",
-      "titleLine2": "מעמדות נזילות",
-      "subtitle": "המשך להרוויח עמלות מסחר תוך פתיחת נזילות מהעמדות Uniswap, Curve ו-Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "קבל גישה עד ל-80% מערך בריכת הנזילות שלך",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "גש עד ל-80% מערך בריכת הנזילות שלך בריבית של 5.5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "נסה Sandbox",
       "secondaryCta": "קרא מסמכים"

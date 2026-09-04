@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "द्वारा संचालित Aave v4",
-      "title": "LP पदों के खिलाफ उधार लें",
-      "titleLine1": "के खिलाफ उधार लें",
-      "titleLine2": "तरलता स्थिति",
-      "subtitle": "Uniswap, Curve, और Balancer पोज़िशन से लिक्विडिटी अनलॉक करते हुए ट्रेडिंग फीस कमाना जारी रखें।",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "अपने लिक्विडिटी पूल मूल्य का 80% तक एक्सेस पाएँ",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "5.5% APR की दर पर अपनी लिक्विडिटी पूल मूल्य का 80% तक उपयोग करें",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "कोशिश करें Sandbox",
       "secondaryCta": "दस्तावेज़ पढ़ें"

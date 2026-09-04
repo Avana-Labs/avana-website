@@ -3,9 +3,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('safety/insurance', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'safety/insurance', {
     title: "Insurance Funds",
     description: "Planned backstop design for Avana, describing how a future insurance fund could address liquidation shortfalls without changing the core LP-backed lending model.",
   })
@@ -19,8 +21,9 @@ const sections = [
   { id: "coverage-boundary", title: "Coverage Boundary" },
 ]
 
-export default async function InsuranceFundsPage() {
-  return withDocsI18n("safety/insurance", (
+export default async function InsuranceFundsPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "safety/insurance", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

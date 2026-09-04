@@ -3,9 +3,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('architecture/lend-spoke', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'architecture/lend-spoke', {
     title: "Lend Spoke",
     description: "How lenders supply assets through the Lend Spoke to fund LP-collateral borrowing.",
   })
@@ -44,8 +46,9 @@ const dynamicSignals = [
   "Liquidity depth available during stressed unwinds",
 ]
 
-export default async function LendSpokePage() {
-  return withDocsI18n("architecture/lend-spoke", (
+export default async function LendSpokePage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "architecture/lend-spoke", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

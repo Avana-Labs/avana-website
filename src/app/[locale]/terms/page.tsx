@@ -3,6 +3,7 @@ import { LocalizedLegal } from "@/components/localized-legal"
 import { Link } from "@/i18n/navigation"
 import { ScrollSpySidebar } from "@/components/scroll-spy-sidebar"
 import { diatypeItalicFont } from "@/app/site-fonts"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const sections = [
   { id: "eligibility", title: "1. Eligibility" },
@@ -19,13 +20,15 @@ const sections = [
   { id: "general-provisions", title: "12. General Provisions" },
 ]
 
-export async function generateMetadata() {
-  return createPageMetadata("terms", "/terms")
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "terms", "/terms")
 }
 
-export default async function TermsPage() {
+export default async function TermsPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedLegal kind="terms">
+    <LocalizedLegal locale={locale} kind="terms">
     <section className="py-12 md:py-24">
       <article className="site-content-shell">
         {/* Header */}

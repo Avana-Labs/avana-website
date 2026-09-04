@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Didukung oleh Aave v4",
-      "title": "Pinjam dengan jaminan LP posisi",
-      "titleLine1": "Meminjam dengan jaminan",
-      "titleLine2": "Posisi Likuiditas",
-      "subtitle": "Terus dapatkan biaya perdagangan sambil membuka likuiditas dari posisi Uniswap, Curve, dan Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Akses hingga 80% dari nilai Pool Likuiditas Anda",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Akses hingga 80% dari nilai Pool Likuiditas Anda dengan 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Coba Sandbox",
       "secondaryCta": "Baca dokumen"

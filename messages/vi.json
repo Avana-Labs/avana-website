@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Được cung cấp bởi Aave v4",
-      "title": "Vay dựa trên LP vị trí",
-      "titleLine1": "Vay chống lại",
-      "titleLine2": "Vị trí thanh khoản",
-      "subtitle": "Tiếp tục kiếm phí giao dịch trong khi mở khóa thanh khoản từ các vị trí Uniswap, Curve và Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Truy cập lên đến 80% giá trị của Bể Thanh Khoản của bạn",
-        "với APR 5,5% mà không rút thanh khoản hay",
-        "từ bỏ phí giao dịch."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Truy cập tới 80% giá trị của Quỹ Thanh khoản của bạn với lãi suất 5,5% APR",
-        "với APR 5,5% mà không rút thanh khoản hay từ bỏ phí giao dịch."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Thử Sandbox",
       "secondaryCta": "Đọc tài liệu"

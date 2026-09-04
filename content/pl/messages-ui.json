@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Zasilany przez Aave v4",
-      "title": "Pożycz pod zastaw LP pozycji",
-      "titleLine1": "Pożycz pod zastaw",
-      "titleLine2": "Pozycje płynności",
-      "subtitle": "Kontynuuj zarabianie opłat handlowych, jednocześnie uwalniając płynność z pozycji Uniswap, Curve i Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Uzyskaj dostęp do nawet 80% wartości swojego Poolu Płynności",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Uzyskaj dostęp do nawet 80% wartości swojego Puli Płynności przy 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Spróbuj Sandbox",
       "secondaryCta": "Czytaj dokumentację"

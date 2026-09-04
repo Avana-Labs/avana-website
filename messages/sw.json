@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Iliyotiwa nguvu na Aave v4",
-      "title": "Kopa dhidi ya nafasi LP",
-      "titleLine1": "Kopa Dhidi ya",
-      "titleLine2": "Hali za Ukinifu",
-      "subtitle": "Endelea kupata fedha za kibiashara wakati unafungua fedha taslimu kutoka nafasi za Uniswap, Curve, na Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Pata upo hadi 80% ya thamani ya Ziwa lako la Uwezekano",
-        "kwa APR 5.5% bila kutoa ukwasi au",
-        "kuacha ada za biashara."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Pata hadi 80% ya thamani ya Maziwa Yako ya Usalama kwa 5.5% APR",
-        "kwa APR 5.5% bila kutoa ukwasi au kuacha ada za biashara."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Jaribu Sandbox",
       "secondaryCta": "Soma nyaraka"

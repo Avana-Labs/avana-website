@@ -1,12 +1,14 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { ArrowUpRight, BookOpenText, ChevronDown } from "lucide-react"
+import { BookOpenText, ChevronDown } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useEffect, useRef, useState } from "react"
 import { desktopMenuButtons, type DesktopMenuId } from "@/components/header-nav-data"
 import { Link, usePathname } from "@/i18n/navigation"
-import { AAVE_ARFC_LABEL, siteRoutes } from "@/lib/site"
+import { siteRoutes } from "@/lib/site"
+// import { AAVE_ARFC_LABEL, siteRoutes } from "@/lib/site"
+// import { ArrowUpRight } from "lucide-react"
 
 const DeferredHeaderDesktopMenuPanel = dynamic(() => import("@/components/header-desktop-menu-panel"), { ssr: false })
 
@@ -115,6 +117,7 @@ export default function HeaderDesktopNavigation() {
             strokeWidth={2.35}
           />
         </Link>
+        {/* Temporarily hidden — bring back later
         <a
           href="https://governance.aave.com/"
           target="_blank"
@@ -132,6 +135,7 @@ export default function HeaderDesktopNavigation() {
             strokeWidth={2.35}
           />
         </a>
+        */}
       </nav>
 
       {desktopMenuRendered !== null ? (

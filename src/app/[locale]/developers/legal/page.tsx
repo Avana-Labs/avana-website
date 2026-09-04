@@ -4,9 +4,11 @@ import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('legal', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'legal', {
     title: "Legal & Compliance - Security Disclosures",
     description: "Avana legal information - access restrictions, restricted jurisdictions, compliance requirements, and security disclosures.",
   })
@@ -29,8 +31,9 @@ const restrictedJurisdictions = [
   { country: "United States of America", reason: "Pending regulatory clarity" },
 ]
 
-export default async function SecurityDisclosuresPage() {
-  return withDocsI18n("legal", (
+export default async function SecurityDisclosuresPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "legal", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       {/* Main content */}
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">

@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Angetrieben von Aave v4",
-      "title": "Auf LP Positionen leihen",
-      "titleLine1": "Gegen Darlehen aufnehmen",
-      "titleLine2": "Liquiditätspositionen",
-      "subtitle": "Verdienen Sie weiterhin Handelsgebühren, während Sie Liquidität aus den Positionen Uniswap, Curve und Balancer freischalten.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Greifen Sie auf bis zu 80 % des Werts Ihres Liquiditätspools zu",
-        "zu 5,5 % APR, ohne Liquidität abzuziehen oder",
-        "auf Handelsgebühren zu verzichten."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Greifen Sie auf bis zu 80 % Ihres Liquiditätspoolwerts zu 5,5 % APR",
-        "zu 5,5 % APR, ohne Liquidität abzuziehen oder auf Handelsgebühren zu verzichten."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Versuche Sandbox",
       "secondaryCta": "Dokumente lesen"

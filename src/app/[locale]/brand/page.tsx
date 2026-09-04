@@ -1,23 +1,11 @@
 import { LocalizedMarketing } from "@/components/localized-marketing"
-import Image from "next/image"
 import { Download } from "lucide-react"
 import { brandOutfitFont } from "@/app/[locale]/brand/brand-fonts"
-import { BrandColorPalette, BrandLogoShowcase } from "@/app/[locale]/brand/brand-interactions"
+import { BrandColorPalette, BrandGuidelinesGrid, BrandLogoShowcase, BrandTokenPreview } from "@/app/[locale]/brand/brand-interactions"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
 
 const BRAND_KIT_URL = "/avana-brand-kit.zip"
-
-const brandAssetPath = (path: string) => encodeURI(path)
-
-const guidelineAvoidItems = [
-  { text: "Do not stretch or compress the logo.", icon: "stretch" },
-  { text: "Do not rotate or flip the mark.", icon: "rotate" },
-  { text: "Do not recolor the logo outside approved colorways.", icon: "recolor" },
-  { text: "Do not crop the mark or place it too close to an edge.", icon: "crop" },
-  { text: "Do not add shadows, gradients, outlines, or effects.", icon: "effects" },
-  { text: "Do not crowd the mark with partner logos or UI labels.", icon: "spacing" },
-] as const
 
 const brandSections = {
   logo: { eyebrow: "Primary mark", title: "Logo" },
@@ -54,29 +42,12 @@ const faqItems: InlineFaqItem[] = [
   },
 ]
 
-function BrandAssetImage({
-  src,
-  alt,
-  className,
-}: {
-  src: string
-  alt: string
-  className: string
-}) {
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      width={3000}
-      height={1500}
-      className={`h-auto object-contain ${className}`}
-    />
-  )
-}
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export default async function BrandPage() {
+export default async function BrandPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing keys={["brand/page", "brand/brand-interactions"]}>
+    <LocalizedMarketing locale={locale} keys={["brand/page", "brand/brand-interactions"]}>
     <div className="flex min-h-screen flex-col bg-background">
       <section className="bg-background pt-14 pb-0 md:pt-20">
         <div className="site-content-shell">
@@ -175,16 +146,11 @@ export default async function BrandPage() {
                 </p>
               </div>
 
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[20px] border border-border bg-background p-6 dark:bg-white">
-                <Image
-                  src="/images/brand/avana-token-circle.jpg"
-                  alt="Avana circular 3D token icon"
-                  width={900}
-                  height={900}
-                  sizes="(min-width: 768px) 360px, 76vw"
-                  className="h-[72%] w-[72%] object-contain"
-                />
-              </div>
+              <BrandTokenPreview
+                src="/images/brand/avana-token-circle.jpg"
+                alt="Avana circular 3D token icon"
+                imageClassName="h-[72%] w-[72%] object-contain"
+              />
             </div>
 
             <div className="mt-12 grid items-center gap-8 md:grid-cols-2">
@@ -196,16 +162,11 @@ export default async function BrandPage() {
                 </p>
               </div>
 
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-[20px] border border-border bg-background p-6 dark:bg-white">
-                <Image
-                  src="/images/brand/avana-token-square.jpg"
-                  alt="Avana rounded-square 3D token icon"
-                  width={600}
-                  height={900}
-                  sizes="(min-width: 768px) 360px, 76vw"
-                  className="h-[88%] w-[88%] object-contain"
-                />
-              </div>
+              <BrandTokenPreview
+                src="/images/brand/avana-token-square.jpg"
+                alt="Avana rounded-square 3D token icon"
+                imageClassName="h-[88%] w-[88%] object-contain"
+              />
             </div>
           </section>
 
@@ -224,80 +185,7 @@ export default async function BrandPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                {guidelineAvoidItems.map((item, index) => (
-                  <div key={index} className="relative flex flex-col items-center gap-3">
-                    <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[20px] border border-[#2F414B]/10 bg-[#F8FAFB] p-4">
-                      {item.icon === "stretch" ? (
-                        <div className="origin-center scale-x-125 scale-y-75 opacity-45 grayscale">
-                          <BrandAssetImage
-                            src={brandAssetPath("/Avana PNG/Avana Full (Personal) PNG.png")}
-                            alt="Stretched logo example"
-                            className="w-full max-w-[8rem]"
-                          />
-                        </div>
-                      ) : null}
-                      {item.icon === "rotate" ? (
-                        <div className="rotate-45 opacity-45 grayscale">
-                          <BrandAssetImage
-                            src={brandAssetPath("/Avana PNG/Avana Icon (Black) PNG.png")}
-                            alt="Rotated icon example"
-                            className="w-full max-w-[5rem]"
-                          />
-                        </div>
-                      ) : null}
-                      {item.icon === "recolor" ? (
-                        <div className="flex items-center gap-1.5">
-                          <div className="text-[#9E5537] hue-rotate-60 saturate-150">
-                            <BrandAssetImage
-                              src={brandAssetPath("/Avana PNG/Avana Icon (Personal) PNG.png")}
-                              alt="Recolored logo example"
-                              className="w-full max-w-[4rem]"
-                            />
-                          </div>
-                          <div className="text-[#BC846F] hue-rotate-180 saturate-150">
-                            <BrandAssetImage
-                              src={brandAssetPath("/Avana PNG/Avana Icon (Personal) PNG.png")}
-                              alt="Second recolored logo example"
-                              className="w-full max-w-[4rem]"
-                            />
-                          </div>
-                        </div>
-                      ) : null}
-                      {item.icon === "crop" ? (
-                        <div className="-mr-16 overflow-hidden opacity-45 grayscale">
-                          <BrandAssetImage
-                            src={brandAssetPath("/Avana PNG/Avana Icon (Black) PNG.png")}
-                            alt="Cropped logo example"
-                            className="w-full max-w-[6rem]"
-                          />
-                        </div>
-                      ) : null}
-                      {item.icon === "effects" ? (
-                        <div className="blur-[2px] drop-shadow-[0_16px_12px_rgba(1,170,207,0.45)] opacity-45 grayscale">
-                          <BrandAssetImage
-                            src={brandAssetPath("/Avana PNG/Avana Icon (Black) PNG.png")}
-                            alt="Logo with effects example"
-                            className="w-full max-w-[5rem]"
-                          />
-                        </div>
-                      ) : null}
-                      {item.icon === "spacing" ? (
-                        <div className="flex items-center gap-0.5 opacity-45 grayscale">
-                          <BrandAssetImage
-                            src={brandAssetPath("/Avana PNG/Avana Icon (Black) PNG.png")}
-                            alt="Crowded spacing example"
-                            className="w-full max-w-[3rem]"
-                          />
-                          <span className="text-base font-semibold text-[#2F414B]">Partner</span>
-                        </div>
-                      ) : null}
-                      <span className="pointer-events-none absolute inset-x-5 top-1/2 h-1 -translate-y-1/2 rotate-[-48deg] rounded-full bg-[#ff8f6f]" />
-                    </div>
-                    <p className="text-center text-xs leading-tight text-gray-600">{item.text}</p>
-                  </div>
-                ))}
-              </div>
+              <BrandGuidelinesGrid />
             </div>
           </section>
 

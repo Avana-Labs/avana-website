@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Працює на Aave v4",
-      "title": "Залучити кредит під заставу LP позицій",
-      "titleLine1": "Заборгувати під заставу",
-      "titleLine2": "Ліквідні позиції",
-      "subtitle": "Продовжуйте отримувати комісію за торгівлю, одночасно розблоковуючи ліквідність з позицій Uniswap, Curve та Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Отримайте доступ до 80% вартості вашого пулу ліквідності",
-        "під 5,5% APR без виведення ліквідності чи",
-        "відмови від торгових комісій."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Отримайте доступ до 80% вартості вашого Пулу Ліквідності за 5,5% APR",
-        "під 5,5% APR без виведення ліквідності чи відмови від торгових комісій."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Спробуй Sandbox",
       "secondaryCta": "Читати документи"

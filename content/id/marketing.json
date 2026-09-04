@@ -285,7 +285,12 @@
       "Tinta Avana",
       "Teks utama dan warna logo gelap. Gunakan ini ketika kontras dan otoritas penting.",
       "Sian Avana",
-      "Aksen utama untuk status aktif, tautan, sorotan utama, dan ajakan bertindak yang dipimpin Avana."
+      "Aksen utama untuk status aktif, tautan, sorotan utama, dan ajakan bertindak yang dipimpin Avana.",
+      "Jangan meregangkan atau memampatkan logo.",
+      "Jangan memutar atau membalik tanda.",
+      "Jangan mewarnai ulang logo di luar palet yang disetujui.",
+      "Jangan memotong tanda atau menempatkannya terlalu dekat ke tepi.",
+      "Jangan menyesakkan tanda dengan logo mitra atau label UI."
     ]
   },
   "hero-section": {

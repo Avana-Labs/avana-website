@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "قدرت گرفته از Aave v4",
-      "title": "وام گرفتن در مقابل LP موقعیت",
-      "titleLine1": "وام گرفتن در ازای",
-      "titleLine2": "موقعیت‌های نقدینگی",
-      "subtitle": "همچنان با کسب کارمزدهای معامله در حالی که نقدینگی را از موقعیت‌های Uniswap، Curve و Balancer آزاد می‌کنید، دریافت کنید.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "دسترسی به تا ۸۰٪ از ارزش استخر نقدینگی خود",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "دسترسی به حداکثر ۸۰٪ ارزش استخر نقدینگی خود با نرخ ۵.۵٪ ",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "تلاش Sandbox",
       "secondaryCta": "مطالعه مستندات"

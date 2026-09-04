@@ -3,6 +3,7 @@ import dynamic from "next/dynamic"
 import { LocalizedLegal } from "@/components/localized-legal"
 import { Link } from "@/i18n/navigation"
 import { diatypeItalicFont } from "@/app/site-fonts"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const ScrollSpySidebar = dynamic(() => import("@/components/scroll-spy-sidebar").then((mod) => mod.ScrollSpySidebar))
 
@@ -21,13 +22,15 @@ const sections = [
   { id: "contact-us", title: "Contact Us" },
 ]
 
-export async function generateMetadata() {
-  return createPageMetadata("privacy", "/privacy")
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "privacy", "/privacy")
 }
 
-export default async function PrivacyPage() {
+export default async function PrivacyPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedLegal kind="privacy">
+    <LocalizedLegal locale={locale} kind="privacy">
     <section className="py-12 md:py-24">
       <article className="site-content-shell">
         {/* Header */}

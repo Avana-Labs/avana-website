@@ -6,9 +6,11 @@ import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
 import { protocols } from "@/data/protocols"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata("copilot/protocols", {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, "copilot/protocols", {
     title: "Supported Protocols",
     description:
       "Protocols and functions the Avana router supports through standardized ILiquidityAdapter interfaces.",
@@ -31,8 +33,9 @@ const responsibilities: Array<{ icon: typeof Check; title: string; body: string 
   { icon: Bell, title: "Event emission", body: "Notify the frontend about critical stages, providing real-time feedback to users." },
 ]
 
-export default async function CopilotProtocolsPage() {
-  return withDocsI18n("copilot/protocols", (
+export default async function CopilotProtocolsPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "copilot/protocols", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

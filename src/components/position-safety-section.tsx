@@ -1,3 +1,4 @@
+import type { AppLocale } from "@/i18n/locales"
 import ProductFeatureScrollSection from "@/components/product-feature-scroll-section"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
@@ -19,9 +20,10 @@ const safetyFeatures = [
   },
 ] as const
 
-export default async function PositionSafetySection() {
-  return withMarketingI18n(['position-safety-section'], (
+export default async function PositionSafetySection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ['position-safety-section'], (
     <ProductFeatureScrollSection
+      locale={locale}
       eyebrow="Position Safety"
       eyebrowTone="violet"
       title="Every health state, fully explained"

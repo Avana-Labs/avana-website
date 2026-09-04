@@ -1,14 +1,20 @@
 /**
  * Locale-aware English-only notice for content that has not been reviewed yet.
  */
-import { getLocale, getTranslations } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { defaultLocale } from "@/i18n/locales"
 import { isEnglishOnlyLegal, usesEnglishContentFallback } from "@/lib/i18n/content"
 
 type ContentKind = "legal" | "faq" | "docs" | "blog"
 
-export async function EnglishOnlyNotice({ kind }: { kind: ContentKind }) {
-  const locale = await getLocale()
+export async function EnglishOnlyNotice({
+  locale,
+  kind,
+}: {
+  locale: AppLocale
+  kind: ContentKind
+}) {
   if (locale === defaultLocale) return null
 
   if (kind === "legal") {
@@ -18,8 +24,8 @@ export async function EnglishOnlyNotice({ kind }: { kind: ContentKind }) {
   }
 
   const namespace = kind === "legal" ? "legal" : kind
-  const t = await getTranslations(namespace)
-  const badge = await getTranslations("legal")
+  const t = await getTranslations({ locale, namespace })
+  const badge = await getTranslations({ locale, namespace: "legal" })
 
   return (
     <div

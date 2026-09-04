@@ -285,7 +285,12 @@
       "Tinta Avana",
       "Color principal de texto y logo oscuro. Úsalo cuando importan el contraste y la autoridad.",
       "Cian Avana",
-      "Acento primario para estados activos, enlaces, highlights clave y CTAs liderados por Avana."
+      "Acento primario para estados activos, enlaces, highlights clave y CTAs liderados por Avana.",
+      "No estires ni comprimas el logo.",
+      "No gires ni voltees la marca.",
+      "No recolorees el logo fuera de las combinaciones aprobadas.",
+      "No recortes la marca ni la coloques demasiado cerca de un borde.",
+      "No satures la marca con logos de partners ni etiquetas de UI."
     ]
   },
   "hero-section": {

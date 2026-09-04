@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4により提供",
-      "title": "LPのポジションを担保に借りる",
-      "titleLine1": "担保に借りる",
-      "titleLine2": "流動性ポジション",
-      "subtitle": "Uniswap、Curve、Balancerのポジションから流動性を解放しながら、取引手数料の獲得を続けましょう。",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "流動性プールの価値の最大80%にアクセス",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "流動性プールの価値の最大80%に、5.5%でアクセスできます APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Sandboxを試してみてください",
       "secondaryCta": "ドキュメントを読む"

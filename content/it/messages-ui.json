@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Alimentato da Aave v4",
-      "title": "Prendere in prestito contro LP posizioni",
-      "titleLine1": "Prendere in prestito contro",
-      "titleLine2": "Posizioni di liquidità",
-      "subtitle": "Continua a guadagnare commissioni di trading mentre sblocchi liquidità dalle posizioni Uniswap, Curve e Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Accedi fino all'80% del valore del tuo Pool di Liquidità",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Accedi fino all'80% del valore del tuo Pool di Liquidità al 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Prova Sandbox",
       "secondaryCta": "Leggi i documenti"

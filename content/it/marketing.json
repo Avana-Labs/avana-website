@@ -285,7 +285,12 @@
       "Inchiostro Avana",
       "Colore principale di testo e logo scuro. Usalo quando contano contrasto e autorità.",
       "Ciano Avana",
-      "Accento primario per stati attivi, link, highlight chiave e CTA guidate da Avana."
+      "Accento primario per stati attivi, link, highlight chiave e CTA guidate da Avana.",
+      "Non allungare né comprimere il logo.",
+      "Non ruotare né capovolgere il marchio.",
+      "Non ricolorare il logo fuori dalle combinazioni approvate.",
+      "Non ritagliare il marchio né collocarlo troppo vicino a un bordo.",
+      "Non affollare il marchio con loghi partner o etichette di interfaccia."
     ]
   },
   "hero-section": {

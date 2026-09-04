@@ -285,7 +285,12 @@
       "Avana Atrament",
       "Główny tekst i ciemny kolor logo. Używaj go, gdy liczy się kontrast i autorytet.",
       "Avana Cyjan",
-      "Główny akcent dla aktywnych stanów, linków, kluczowych wyróżnień i wezwań do działania prowadzonych przez Avana."
+      "Główny akcent dla aktywnych stanów, linków, kluczowych wyróżnień i wezwań do działania prowadzonych przez Avana.",
+      "Nie rozciągaj ani nie ściskaj logo.",
+      "Nie obracaj ani nie odwracaj znaku.",
+      "Nie zmieniaj kolorów logo poza zatwierdzonymi wariantami.",
+      "Nie przycinaj znaku ani nie umieszczaj go zbyt blisko krawędzi.",
+      "Nie zagęszczaj znaku logotypami partnerów ani etykietami interfejsu."
     ]
   },
   "hero-section": {

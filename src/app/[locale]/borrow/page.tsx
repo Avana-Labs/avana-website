@@ -11,6 +11,7 @@ import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
 import { cn } from "@/lib/utils"
 import { getTokenIconSrc } from "@/lib/token-icons"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
 const PositionSafetyCardsSection = dynamic(() => import("@/components/position-safety-cards-section"))
@@ -225,13 +226,15 @@ function BorrowMarketCard({
   )
 }
 
-export async function generateMetadata() {
-  return createPageMetadata("borrow", "/borrow")
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "borrow", "/borrow")
 }
 
-export default async function BorrowPage() {
+export default async function BorrowPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
     <main className="bg-white">
       <div className="mx-auto flex min-h-screen w-full max-w-[1200px] flex-col px-5 pt-10 sm:px-6 sm:pt-12 md:px-8 md:pt-20 lg:max-w-[64rem] 2xl:max-w-[72rem] lg:min-h-0 lg:px-0">
         <div className="relative z-0">
@@ -468,8 +471,8 @@ export default async function BorrowPage() {
             </div>
 
             <div className="flex flex-col gap-12 md:gap-14">
-              <BorrowPowerSection />
-              <PositionSafetyCardsSection />
+              <BorrowPowerSection locale={locale} />
+              <PositionSafetyCardsSection locale={locale} />
             </div>
 
           </div>
@@ -480,7 +483,7 @@ export default async function BorrowPage() {
         <div className="flex-1 flex flex-col relative z-0">
         {/* Rest of page content */}
         <div className="site-content-width flex flex-col site-section-stack site-section-gap pb-16 md:pb-20 2xl:pb-18">
-          <HomepageNewsroomSection collection="borrow" eyebrowTone="blue" />
+          <HomepageNewsroomSection locale={locale} collection="borrow" eyebrowTone="blue" />
 
           <div className="pb-16 md:pb-24 2xl:pb-22">
             <InlineFaqSection title="Frequently asked questions" items={openSpokeFaqItems} eyebrowTone="blue" withTopBorder={false} />

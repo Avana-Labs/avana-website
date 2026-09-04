@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { FeatureCardTitle, SectionIntro, SectionLead } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 import { siteRoutes } from "@/lib/site"
 
@@ -41,8 +42,8 @@ const productCards = [
 const MEET_PARAGRAPH =
   "In 2021, Aave launched AMM Market and proved LP positions could serve as collateral, but it was built for the simpler DEXs of that era. Avana picks up where that left off, designed for today's DEXs and LP types, treating each position as collateral shaped by dual oracles and stronger risk controls."
 
-export default async function BuildTomorrowSection() {
-  return withMarketingI18n(["BuildTomorrowSection"], (
+export default async function BuildTomorrowSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ["BuildTomorrowSection"], (
     <section
       data-section="ways-to-use-avana"
       className="w-full bg-inherit site-section-gap"

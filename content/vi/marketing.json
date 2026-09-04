@@ -285,7 +285,12 @@
       "Mực Avana",
       "Màu văn bản chính và logo tối. Sử dụng nó khi độ tương phản và uy quyền quan trọng.",
       "Xanh lơ Avana",
-      "Màu nhấn chính cho các trạng thái đang hoạt động, liên kết, điểm nổi bật chính và các hành động kêu gọi do Avana dẫn dắt."
+      "Màu nhấn chính cho các trạng thái đang hoạt động, liên kết, điểm nổi bật chính và các hành động kêu gọi do Avana dẫn dắt.",
+      "Không kéo giãn hoặc nén logo.",
+      "Không xoay hoặc lật dấu hiệu.",
+      "Không đổi màu logo ngoài các phối màu đã duyệt.",
+      "Không cắt dấu hiệu hoặc đặt nó quá sát mép.",
+      "Không chật chội dấu hiệu bằng logo đối tác hoặc nhãn giao diện."
     ]
   },
   "hero-section": {

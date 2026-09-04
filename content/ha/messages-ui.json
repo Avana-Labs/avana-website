@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Ana amfani da Aave v4",
-      "title": "Arziki daidai da LP matsayi",
-      "titleLine1": "Arziki da",
-      "titleLine2": "Matsayin Ruwa",
-      "subtitle": "Ci gaba da samun kudin ciniki yayin bude kudaden shigar daga matsayi Uniswap, Curve, da Balancer.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Samun dama zuwa kashi 80% na ƙimar Tafkin Ruwa naka",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Samu damar amfani da har zuwa kashi 80% na ƙimar Ruwan Kuɗi naka a 5.5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Gwada Sandbox",
       "secondaryCta": "Karanta takardu"

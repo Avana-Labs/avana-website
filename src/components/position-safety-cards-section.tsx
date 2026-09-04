@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation"
 import type { LucideIcon } from "lucide-react"
 import { ShieldCheck, TriangleAlert, Undo2 } from "lucide-react"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 const liquidationProtectionSteps: {
@@ -50,8 +51,8 @@ function LiquidationCard({
   )
 }
 
-export default async function PositionSafetyCardsSection() {
-  return withMarketingI18n(["position-safety-cards-section"], (
+export default async function PositionSafetyCardsSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ["position-safety-cards-section"], (
     <section>
       <div className="space-y-3 text-left">
         <SectionIntro

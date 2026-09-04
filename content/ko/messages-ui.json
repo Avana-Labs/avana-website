@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4로 구동됨",
-      "title": "LP 포지션을 담보로 대출",
-      "titleLine1": "담보로 빌리다",
-      "titleLine2": "유동성 포지션",
-      "subtitle": "Uniswap, Curve, Balancer 포지션에서 유동성을 해제하면서 거래 수수료를 계속 벌어보세요.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "유동성 풀이 값의 최대 80%까지 이용 가능",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "유동성 풀 가치의 최대 80%를 5.5%로 이용하세요 APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Sandbox을 시도해 보세요",
       "secondaryCta": "문서 읽기"

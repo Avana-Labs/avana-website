@@ -4,9 +4,11 @@ import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('liquidation', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'liquidation', {
     title: "Liquidation Framework",
     description: "How Avana handles liquidation for vault-backed LP collateral after Aave triggers the liquidation entry point.",
   })
@@ -23,8 +25,9 @@ const sections = [
   { id: "operator-model", title: "Operator Model" },
 ]
 
-export default async function LiquidationDesignPage() {
-  return withDocsI18n("liquidation", (
+export default async function LiquidationDesignPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "liquidation", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

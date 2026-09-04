@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "চার্জ করা হয়েছে Aave v4 দ্বারা",
-      "title": "LP পজিশনের বিরুদ্ধে ঋণ নিন",
-      "titleLine1": "ঋণ হিসেবে ধার নেওয়া",
-      "titleLine2": "তরলতা অবস্থান",
-      "subtitle": "Uniswap, Curve, এবং Balancer অবস্থান থেকে তরলতা আনলক করার সময় ব্যবসায়িক ফি উপার্জন চালিয়ে যান।",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "আপনার লিকুইডিটি পুলের মানের সর্বোচ্চ ৮০% পর্যন্ত অ্যাক্সেস করুন",
-        "৫.৫% APR-এ, লিকুইডিটি তুলে না নিয়ে বা",
-        "ট্রেডিং ফি ছাড় না দিয়ে।"
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "আপনার লিকুইডিটি পুলের মানের ৮০% পর্যন্ত ৫.৫% হারে অ্যাক্সেস করুন APR",
-        "৫.৫% APR-এ, লিকুইডিটি তুলে না নিয়ে বা ট্রেডিং ফি ছাড় না দিয়ে।"
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "চেষ্টা করুন Sandbox",
       "secondaryCta": "ডকুমেন্ট পড়ুন"

@@ -224,7 +224,7 @@ export function BlogIndex({
                   <div className="relative aspect-[4/5] w-full">
                     <div
                       aria-hidden="true"
-                      className="absolute inset-y-[3%] right-[-3%] w-[8%] rounded-r-sm border-r border-[#d8dee7] bg-[#f6f8fb] shadow-[5px_7px_12px_rgba(15,23,42,0.10)] transition-transform duration-200 group-hover:translate-x-1.5 dark:border-border dark:bg-[#1a232b] dark:shadow-[5px_7px_12px_rgba(0,0,0,0.35)]"
+                      className="absolute inset-y-[3%] right-[-3%] w-[8%] rounded-r-sm border-r border-[#d8dee7] bg-[#f6f8fb] shadow-[5px_7px_12px_rgba(15,23,42,0.10)] transition-transform duration-200 group-hover:translate-x-1.5 dark:border-border dark:bg-[#111111] dark:shadow-[5px_7px_12px_rgba(0,0,0,0.35)]"
                     />
                     <div
                       className={`relative flex h-full flex-col overflow-hidden rounded-[0.2rem] ${theme.cover} px-5 py-6 shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition-[transform,box-shadow] duration-200 ease-out group-hover:-translate-x-1.5 group-hover:-skew-y-[0.6deg] group-hover:shadow-[6px_12px_25px_rgba(15,23,42,0.16)] md:px-6 md:py-7`}

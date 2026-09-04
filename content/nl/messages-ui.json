@@ -216,18 +216,18 @@
   "home": {
     "hero": {
       "eyebrow": "Aangedreven door Aave v4",
-      "title": "Lenen tegen LP posities",
-      "titleLine1": "Lenen tegen",
-      "titleLine2": "Liquiditeitsposities",
-      "subtitle": "Blijf handelskosten verdienen terwijl je liquiditeit vrijmaakt uit Uniswap, Curve en Balancer posities.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Krijg toegang tot maximaal 80% van de waarde van je liquiditeitspool",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Toegang tot maximaal 80% van de waarde van uw liquiditeitspool tegen 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Probeer Sandbox",
       "secondaryCta": "Lees documenten"

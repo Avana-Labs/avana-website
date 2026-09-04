@@ -7,7 +7,6 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { diatypeFont } from "@/app/site-fonts"
 import { ThemeProvider } from "@/components/theme-provider"
-import { ThemeInitScript } from "@/components/theme-init-script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getLocaleDefinition, getLocaleDir } from "@/i18n/locales"
@@ -20,6 +19,7 @@ import {
   SOCIAL_HANDLE,
 } from "@/lib/site"
 import { organizationSchema, serializeJsonLd, websiteSchema } from "@/lib/structured-data"
+import { THEME_INIT_SCRIPT } from "@/lib/theme"
 
 type Props = {
   children: React.ReactNode
@@ -117,7 +117,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#FFFFFF",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#050505" },
+  ],
 }
 
 const shouldRenderVercelInsights = process.env.VERCEL === "1" || Boolean(process.env.VERCEL_ENV)
@@ -131,13 +134,21 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale)
 
-  const messages = await getMessages()
+  const messages = await getMessages({ locale })
   const t = await getTranslations({ locale, namespace: "common" })
   const dir = getLocaleDir(locale)
 
   return (
-    <html lang={locale} dir={dir} className={diatypeFont.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir}
+      suppressHydrationWarning
+      style={{ "--font-diatype": diatypeFont.style.fontFamily } as React.CSSProperties}
+    >
       <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
@@ -147,8 +158,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteSchema) }}
         />
       </head>
-      <body className="overflow-x-clip bg-background font-sans text-foreground">
-        <ThemeInitScript />
+      <body className={`${diatypeFont.variable} overflow-x-clip bg-background font-sans text-foreground`}>
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
           <a

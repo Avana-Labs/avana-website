@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { getLocale, getTranslations } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { languageAlternates } from "@/lib/i18n/path"
 import { buildOgImagePath } from "@/lib/site"
 
@@ -19,6 +20,7 @@ type MetaKey =
  * Locale-aware page metadata from messages.meta.* keys.
  */
 export async function createPageMetadata(
+  locale: AppLocale,
   key: MetaKey,
   path: string,
   options?: {
@@ -27,7 +29,6 @@ export async function createPageMetadata(
     titleTemplate?: string | null
   },
 ): Promise<Metadata> {
-  const locale = await getLocale()
   const t = await getTranslations({ locale, namespace: "meta" })
   const title = t(`${key}.title`)
   const description = t(`${key}.description`)

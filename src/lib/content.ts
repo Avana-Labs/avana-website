@@ -1,5 +1,5 @@
 import { revalidateTag, unstable_cache } from "next/cache"
-import { getLocale } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { loadBlogContent } from "@/lib/content-i18n/load-content"
 import { blogPosts as blogPostDefinitions } from "@/lib/blog-posts"
 
@@ -144,12 +144,10 @@ export function filterBlogPosts(posts: readonly BlogPost[], tag: TagFilter) {
   return posts.filter((post) => post.tag === tag)
 }
 
-export async function getBlogPosts(locale?: string) {
-  const resolved = locale ?? (await getLocale())
-
-  if (resolved !== "en") {
+export async function getBlogPosts(locale: AppLocale) {
+  if (locale !== "en") {
     try {
-      const content = await loadBlogContent(resolved)
+      const content = await loadBlogContent(locale)
       return toBlogPosts(content.posts as typeof blogPostDefinitions)
     } catch {
       // fall through to English catalog
@@ -171,8 +169,8 @@ export async function getBlogPosts(locale?: string) {
   }
 }
 
-export async function getBlogPostsByTag(tag: TagFilter = "All") {
-  const posts = await getBlogPosts()
+export async function getBlogPostsByTag(locale: AppLocale, tag: TagFilter = "All") {
+  const posts = await getBlogPosts(locale)
   return filterBlogPosts(posts, tag)
 }
 
@@ -180,8 +178,7 @@ export async function getBlogPostsByTag(tag: TagFilter = "All") {
  * Newsroom teaser rows for homepage / product pages.
  * Titles and descriptions come from content/{locale}/blog.json for the active locale.
  */
-export async function getNewsroomPosts(collection: NewsroomCollection = "home") {
-  const locale = await getLocale()
+export async function getNewsroomPosts(locale: AppLocale, collection: NewsroomCollection = "home") {
   const posts = await getBlogPosts(locale)
   return buildNewsroomPosts(posts, collection)
 }

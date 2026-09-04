@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4 tarafından desteklenmektedir",
-      "title": "LP pozisyona karşı borç al",
-      "titleLine1": "Teminat Karşılığı Ödünç Al",
-      "titleLine2": "Likidite Pozisyonları",
-      "subtitle": "Uniswap, Curve ve Balancer pozisyonlarından likidite açarken işlem ücretleri kazanmaya devam edin.",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "Likidite Havuzunuzun değerinin %80'ine kadar erişim sağlayın",
-        "%5,5 APR ile likiditeyi çekmeden veya",
-        "işlem ücretlerinden vazgeçmeden."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Likidite Havuzunuzun değerinin %80'ine kadar %5,5 ile erişim sağlayın APR",
-        "%5,5 APR ile likiditeyi çekmeden veya işlem ücretlerinden vazgeçmeden."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "Deneyin Sandbox",
       "secondaryCta": "Belgeleri oku"

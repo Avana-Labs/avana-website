@@ -242,18 +242,18 @@
   "home": {
     "hero": {
       "eyebrow": "由Aave v4提供支持",
-      "title": "以LP個頭寸借款",
-      "titleLine1": "以……作抵押借款",
-      "titleLine2": "流動性頭寸",
-      "subtitle": "在從Uniswap、Curve和Balancer頭寸解鎖流動性的同時繼續賺取交易費用。",
+      "title": "The lending market for AMM liquidity",
+      "titleLine1": "The lending market",
+      "titleLine2": "for AMM liquidity",
+      "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": [
-        "訪問高達您流動性池價值的80%",
-        "年利率 5.5%，無需撤出流動性或",
-        "放棄交易手續費。"
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "以5.5%的利率訪問高達您流動性池價值的80% APR",
-        "年利率 5.5%，無需撤出流動性或放棄交易手續費。"
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
       "primaryCta": "嘗試 Sandbox",
       "secondaryCta": "閱讀文檔"

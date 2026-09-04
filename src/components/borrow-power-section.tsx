@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { SectionIntro } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
-export default async function BorrowPowerSection() {
-  return withMarketingI18n(['borrow-power-section'], (
+export default async function BorrowPowerSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ['borrow-power-section'], (
     <section className="bg-white">
       <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] md:gap-8 lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[minmax(0,30rem)_minmax(0,1fr)]">
         <div className="space-y-4">

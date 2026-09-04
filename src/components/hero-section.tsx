@@ -19,6 +19,7 @@ import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/compon
 import { homepagePools, type HomepagePool } from "@/data/homepage"
 import { PerformanceDiv } from "@/components/ui/performance-section"
 import { TokenLogo } from "@/components/token-logo"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 function repeatItems<T>(items: T[], count: number, offset: number) {
@@ -123,19 +124,20 @@ const lpUseCases: {
 ]
 
 
-export default async function HeroSection() {
+export default async function HeroSection({ locale }: { locale: AppLocale }) {
   return withMarketingI18n(
+    locale,
     [
       "hero-section",
       "homepage/HomepageTestimonialSection",
       "homepage/HomepageFaqSection",
       "homepage/HomepageNewsroomSection",
     ],
-    HeroSectionBody(),
+    HeroSectionBody(locale),
   )
 }
 
-function HeroSectionBody() {
+function HeroSectionBody(locale: AppLocale) {
   return (
     <section className="pb-0">
       <div className="site-content-shell site-section-gap">
@@ -632,7 +634,7 @@ function HeroSectionBody() {
           </div>
 
         <div className="-mt-8 md:-mt-12">
-          <HomepageNewsroomSection eyebrowTone="rose" />
+          <HomepageNewsroomSection locale={locale} eyebrowTone="rose" />
         </div>
 
         <div className="pb-16 md:pb-24 2xl:pb-22">

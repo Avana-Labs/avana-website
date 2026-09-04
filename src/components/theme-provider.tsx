@@ -4,7 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type Dispatch,
@@ -45,9 +45,44 @@ function resolveTheme(theme: ThemePreference): "light" | "dark" {
   return theme === "system" ? getSystemTheme() : theme
 }
 
+let themeTransitionLock: HTMLStyleElement | null = null
+let themeTransitionUnlock: number | null = null
+
+function disableThemeTransitions() {
+  if (typeof document === "undefined") return
+
+  if (!themeTransitionLock) {
+    themeTransitionLock = document.createElement("style")
+    themeTransitionLock.setAttribute("data-avana-theme-lock", "")
+    themeTransitionLock.appendChild(
+      document.createTextNode("*,*::before,*::after{transition:none!important}"),
+    )
+  }
+
+  if (!themeTransitionLock.isConnected) {
+    document.head.appendChild(themeTransitionLock)
+  }
+
+  if (themeTransitionUnlock !== null) {
+    window.cancelAnimationFrame(themeTransitionUnlock)
+  }
+
+  themeTransitionUnlock = window.requestAnimationFrame(() => {
+    themeTransitionUnlock = window.requestAnimationFrame(() => {
+      themeTransitionLock?.remove()
+      themeTransitionUnlock = null
+    })
+  })
+}
+
 function applyResolvedTheme(resolved: "light" | "dark") {
-  document.documentElement.classList.toggle("dark", resolved === "dark")
-  document.documentElement.style.colorScheme = resolved
+  const root = document.documentElement
+  const isDark = resolved === "dark"
+
+  if (root.classList.contains("dark") === isDark) return
+
+  disableThemeTransitions()
+  root.classList.toggle("dark", isDark)
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -58,7 +93,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     typeof window === "undefined" ? "light" : getSystemTheme(),
   )
 
-  useEffect(() => {
+  if (typeof document !== "undefined") {
+    applyResolvedTheme(resolveTheme(theme))
+  }
+
+  useLayoutEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)")
     const onSystemChange = (event: MediaQueryListEvent) => {
       setSystemTheme(event.matches ? "dark" : "light")
@@ -68,8 +107,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return () => media.removeEventListener("change", onSystemChange)
   }, [])
 
-  useEffect(() => {
-    applyResolvedTheme(resolveTheme(theme))
+  useLayoutEffect(() => {
+    const sync = () => applyResolvedTheme(resolveTheme(theme))
+    sync()
+
+    const observer = new MutationObserver(sync)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    })
+
+    return () => observer.disconnect()
   }, [theme, systemTheme])
 
   const setTheme = useCallback<Dispatch<SetStateAction<string>>>((value) => {
@@ -85,6 +133,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         localStorage.setItem(THEME_STORAGE_KEY, normalized)
       } catch {}
 
+      applyResolvedTheme(resolveTheme(normalized))
       return normalized
     })
   }, [])
@@ -106,4 +155,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
 export function useTheme() {
   return useContext(ThemeContext)
+}
+
+export function readResolvedThemeFromDocument(): "light" | "dark" {
+  if (typeof document === "undefined") return "light"
+  return document.documentElement.classList.contains("dark") ? "dark" : "light"
 }

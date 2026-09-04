@@ -285,7 +285,12 @@
       "Avana Ink",
       "Main text and dark logo color. Use it when contrast and authority matter.",
       "Avana Cyan",
-      "Primary accent for active states, links, key highlights, and Avana-led calls to action."
+      "Primary accent for active states, links, key highlights, and Avana-led calls to action.",
+      "Do not stretch or compress the logo.",
+      "Do not rotate or flip the mark.",
+      "Do not recolor the logo outside approved colorways.",
+      "Do not crop the mark or place it too close to an edge.",
+      "Do not crowd the mark with partner logos or UI labels."
     ]
   },
   "hero-section": {

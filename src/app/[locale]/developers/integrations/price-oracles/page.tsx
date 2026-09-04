@@ -3,9 +3,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('integrations/price-oracles', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'integrations/price-oracles', {
     title: "Price Oracles",
     description: "How Avana Oracle prices LP collateral through external feeds, deterministic position reconstruction, and recoverable-value discounts.",
   })
@@ -90,8 +92,9 @@ const dexOracleTable = [
   },
 ]
 
-export default async function PriceOraclesPage() {
-  return withDocsI18n("integrations/price-oracles", (
+export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "integrations/price-oracles", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       {/* Main content */}
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">

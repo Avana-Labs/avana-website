@@ -285,7 +285,12 @@
       "Avana Inkt",
       "Hoofdtekst en donkere logokleur. Gebruik het wanneer contrast en autoriteit belangrijk zijn.",
       "Avana cyaan",
-      "Primaire accent voor actieve toestanden, links, belangrijke hoogtepunten en Avana-geleide oproepen tot actie."
+      "Primaire accent voor actieve toestanden, links, belangrijke hoogtepunten en Avana-geleide oproepen tot actie.",
+      "Rek of comprimeer het logo niet.",
+      "Draai of spiegel het merkteken niet.",
+      "Verkleur het logo niet buiten de goedgekeurde kleuren.",
+      "Snijd het merkteken niet bij en plaats het niet te dicht bij een rand.",
+      "Druk het merkteken niet in met partnerlogo’s of UI-labels."
     ]
   },
   "hero-section": {

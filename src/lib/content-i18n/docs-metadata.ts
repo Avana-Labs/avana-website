@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { getLocale } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { defaultLocale } from "@/i18n/locales"
 import { loadDocsContent } from "@/lib/content-i18n/load-content"
 
@@ -7,10 +7,10 @@ import { loadDocsContent } from "@/lib/content-i18n/load-content"
  * Locale-aware docs <title> / description from content/{locale}/docs.json meta.
  */
 export async function createDocsMetadata(
+  locale: AppLocale,
   pageKey: string,
   fallback: { title: string; description: string },
 ): Promise<Metadata> {
-  const locale = await getLocale()
   if (locale === defaultLocale) {
     return { title: fallback.title, description: fallback.description }
   }

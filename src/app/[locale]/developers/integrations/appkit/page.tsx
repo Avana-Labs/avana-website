@@ -3,9 +3,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('integrations/appkit', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'integrations/appkit', {
     title: "AppKit",
     description: "Developer guide to AppKit placement, partner handoff, and how Avana credit is embedded inside third-party product surfaces without moving risk logic out of Avana.",
   })
@@ -50,8 +52,9 @@ const partnerControls = [
   "Whether the product uses a full embedded handoff or a lighter context-preserving entry point",
 ]
 
-export default async function DeveloperAppKitPage() {
-  return withDocsI18n("integrations/appkit", (
+export default async function DeveloperAppKitPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "integrations/appkit", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

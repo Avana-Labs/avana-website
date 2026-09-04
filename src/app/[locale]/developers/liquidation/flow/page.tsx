@@ -4,9 +4,11 @@ import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('liquidation/flow', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'liquidation/flow', {
     title: "Liquidation Flow",
     description: "Operational liquidation flow for Avana, covering the runtime sequence used when vault-backed LP collateral is seized and unwound.",
   })
@@ -66,8 +68,9 @@ const stateTransitions = [
   },
 ]
 
-export default async function LiquidationFlowPage() {
-  return withDocsI18n("liquidation/flow", (
+export default async function LiquidationFlowPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "liquidation/flow", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
