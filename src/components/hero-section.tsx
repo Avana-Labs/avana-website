@@ -17,6 +17,7 @@ import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSecti
 import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import { AskAiShowcase } from "@/components/ask-ai-showcase"
 import { homepagePools, type HomepagePool } from "@/data/homepage"
 import { PerformanceDiv } from "@/components/ui/performance-section"
 import { TokenLogo } from "@/components/token-logo"
@@ -130,6 +131,7 @@ export default async function HeroSection({ locale }: { locale: AppLocale }) {
     locale,
     [
       "hero-section",
+      "ask-ai-showcase",
       "homepage/HomepageTestimonialSection",
       "homepage/HomepageFaqSection",
       "homepage/HomepageNewsroomSection",
@@ -177,6 +179,8 @@ function HeroSectionBody(locale: AppLocale) {
 
         </PerformanceDiv>
       </div>
+
+      <AskAiShowcase />
 
       <div className="site-content-shell site-section-gap">
         <div className="mx-auto grid w-full max-w-[90rem] items-start gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-18">
