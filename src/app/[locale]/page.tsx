@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 import { ArrowRight } from "lucide-react"
-import BuildTomorrowSection from "@/components/BuildTomorrowSection"
 import HeroSection from "@/components/hero-section"
 import WebappHero from "@/components/webapp-hero"
 import { TrustedBySection } from "@/components/trusted-by-section"
+import { AvanaProductsSection } from "@/components/avana-products-section"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Link } from "@/i18n/navigation"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
@@ -65,7 +65,7 @@ export default async function Home({ params }: LocaleParamsProps) {
   const t = await getTranslations({ locale, namespace: "home" })
 
   return (
-    <LocalizedMarketing locale={locale} keys={["page","BuildTomorrowSection","hero-section","homepage/HomepageTestimonialSection","homepage/HomepageFaqSection","homepage/HomepageNewsroomSection","webapp-hero"]}>
+    <LocalizedMarketing locale={locale} keys={["page","avana-products-section","hero-section","homepage/HomepageTestimonialSection","homepage/HomepageFaqSection","homepage/HomepageNewsroomSection","webapp-hero"]}>
       <section className="bg-background">
         <div className="site-content-shell pt-14 md:pt-24 lg:pt-28">
           <div className="max-w-[40rem]">
@@ -115,7 +115,8 @@ export default async function Home({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <BuildTomorrowSection locale={locale} />
+      <AvanaProductsSection />
+
       <HeroSection locale={locale} />
     </LocalizedMarketing>
   )

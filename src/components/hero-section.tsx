@@ -16,6 +16,7 @@ import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { homepagePools, type HomepagePool } from "@/data/homepage"
 import { PerformanceDiv } from "@/components/ui/performance-section"
 import { TokenLogo } from "@/components/token-logo"
@@ -144,10 +145,9 @@ function HeroSectionBody(locale: AppLocale) {
         <PerformanceDiv className="flex flex-col gap-8 md:gap-12">
             <div className="flex flex-col gap-6">
           <div className="flex max-w-[600px] flex-col gap-2">
-            <SectionIntro
-              eyebrow="Borrow Markets"
-              eyebrowTone="cyan"
-              title="Access loans using hundreds of LP collateral"
+            <MarketingLeadHeader
+              title="Access loans across hundreds of pools"
+              subtitle="Keep earning trading fees while drawing credit against your LP."
             />
           </div>
             </div>

@@ -209,7 +209,7 @@ const marketingFiles = {
   "brand/brand-interactions": "src/app/[locale]/brand/brand-interactions.tsx",
   "hero-section": "src/components/hero-section.tsx",
   "webapp-hero": "src/components/webapp-hero.tsx",
-  BuildTomorrowSection: "src/components/BuildTomorrowSection.tsx",
+  "avana-products-section": "src/components/avana-products-section.tsx",
   "homepage/HomepageTestimonialSection": "src/components/homepage/HomepageTestimonialSection.tsx",
   "homepage/HomepageFaqSection": "src/components/homepage/HomepageFaqSection.tsx",
   "homepage/HomepageNewsroomSection": "src/components/homepage/HomepageNewsroomSection.tsx",
