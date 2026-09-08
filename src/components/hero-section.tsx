@@ -6,9 +6,6 @@ import {
   Building2,
   Globe2,
   Layers,
-  Percent,
-  RotateCcw,
-  Wallet,
   Zap,
 } from "lucide-react"
 import { DeFiTerm } from "@/components/defi-term"
@@ -59,28 +56,6 @@ function PoolCard({ pool }: { pool: HomepagePool }) {
     </div>
   )
 }
-
-const lendingSavingsCards: {
-  title: string
-  description: string
-  icon: LucideIcon
-}[] = [
-  {
-    title: "Supply single assets",
-    description: "Deposit supported assets into markets used by LP-backed borrowers.",
-    icon: Wallet,
-  },
-  {
-    title: "Earn from demand",
-    description: "Supplier yield moves with utilization, liquidity, and borrower demand.",
-    icon: Percent,
-  },
-  {
-    title: "Withdraw when liquid",
-    description: "Redeem supplied assets when there is available liquidity in the market.",
-    icon: RotateCcw,
-  },
-]
 
 const lpUseCases: {
   title: string
@@ -181,43 +156,6 @@ function HeroSectionBody(locale: AppLocale) {
       </div>
 
       <AskAiShowcase />
-
-      <div className="site-content-shell site-section-gap">
-        <div className="mx-auto grid w-full max-w-[90rem] items-start gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-18">
-          <div className="max-w-[33rem]">
-            <SectionIntro
-              eyebrow="Lend Markets"
-              eyebrowTone="emerald"
-              title="Earn interest from LP borrower demand"
-              titleClassName="mt-5 max-w-none"
-            />
-
-            <div className="mt-7 grid max-w-[32rem] gap-5">
-              {lendingSavingsCards.map((card, index) => (
-                <div key={card.title} className="flex gap-3">
-                  <span className="type-meta-label mt-0.5 shrink-0">{index + 1}.</span>
-                  <div>
-                    <FeatureCardTitle as="p">{card.title}</FeatureCardTitle>
-                    <FeatureCardDescription className="mt-1">{card.description}</FeatureCardDescription>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative lg:pt-1">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-transparent md:rounded-[28px] lg:aspect-[1.18/1] lg:rounded-[32px]">
-              <Image
-                src="/images/leverage-hero-placeholder.webp"
-                alt="Person holding a smartphone showing a finance app"
-                fill
-                className="object-cover object-[55%_42%]"
-                sizes="(max-width: 1024px) 100vw, 54vw"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="site-content-shell site-section-gap flex flex-col site-section-stack">
         <PerformanceDiv>
