@@ -10,7 +10,7 @@ import {
 } from "lucide-react"
 import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
-import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle } from "@/components/shared"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { AskAiShowcase } from "@/components/ask-ai-showcase"
 import { homepagePools, type HomepagePool } from "@/data/homepage"
@@ -516,14 +516,10 @@ function HeroSectionBody(locale: AppLocale) {
 
 
       <div>
-        <div className="max-w-[58rem] space-y-3 text-left sm:space-y-4">
-          <SectionIntro
-            eyebrow="Who it's for"
-            eyebrowTone="rose"
-            title="Ways teams put LP credit to work"
-            titleClassName="max-w-[18ch] sm:max-w-[22ch] lg:max-w-none"
-          />
-        </div>
+        <MarketingLeadHeader
+          title="Who it's for"
+          subtitle="Ways teams put LP credit to work"
+        />
 
         <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
           {lpUseCases.map((item) => {
@@ -544,16 +540,9 @@ function HeroSectionBody(locale: AppLocale) {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] md:items-start md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)]">
           <div className="space-y-4 md:self-start">
-            <SectionIntro
-              eyebrow="Position Safety"
-              eyebrowTone="emerald"
-              title={
-                <>
-                  <span className="block">Designed for</span>
-                  <span className="block">safe leverage</span>
-                </>
-              }
-              titleClassName="max-w-[14ch] md:max-w-none"
+            <MarketingLeadHeader
+              title="Position Safety"
+              subtitle="Designed for safe leverage"
             />
             <ol className="mt-7 grid max-w-[32rem] gap-4">
               {positionSafetyItems.map((item, index) => (

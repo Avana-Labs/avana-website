@@ -292,6 +292,55 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </div>
 
+      <section
+        className="items-center not-first:pt-46 not-first:sm:pt-20 mx-auto grid grid-cols-12 gap-6 px-4 sm:px-8 xl:max-w-screen-2xl w-full max-w-[calc(var(--breakpoint-xl)*10/12)] mt-10 sm:mt-20"
+        aria-labelledby="feature-page-hero"
+      >
+        <div className="col-span-12 sm:col-span-6 xl:col-span-5 xl:col-start-2">
+          <h1 id="feature-page-hero" className="text-mkt-h1 text-balance">
+            Borrow against
+            <br />
+            AMM positions
+          </h1>
+          <div className="mt-8 w-[90%] max-w-[460px] text-balance xl:text-pretty">
+            <p>
+              Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool.
+            </p>
+          </div>
+          <div className="flex w-fit flex-wrap gap-2 mt-6">
+            <a
+              className="btn relative group-focus-within/dialog:focus-visible:[outline-width:1.5px] group-focus-within/dialog:focus-visible:[outline-offset:2.5px] group-focus-within/dialog:focus-visible:[outline-style:solid] group-focus-within/dialog:focus-visible:[outline-color:var(--text-primary)] btn-primary btn-large -mkt"
+              href="https://chatgpt.com/deep-research"
+              target="_self"
+            >
+              <div className="flex items-center justify-center">Try now</div>
+            </a>
+          </div>
+        </div>
+        <div className="col-span-12 sm:col-span-6 xl:col-span-5">
+          <div className="h-full w-full overflow-hidden aspect-square">
+            <div className="h-full w-full mx-auto overflow-hidden rounded-2xl aspect-auto md:aspect-auto">
+              <picture>
+                <source
+                  srcSet="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=320&q=80&fm=webp 320w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=480&q=80&fm=webp 480w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=640&q=80&fm=webp 640w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=768&q=80&fm=webp 768w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=960&q=80&fm=webp 960w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1200&q=80&fm=webp 1200w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1600&q=80&fm=webp 1600w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp 1920w"
+                  sizes="100vw"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  alt="Rounded button labeled “Deep research” with a telescope icon on a blue gradient background."
+                  src="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp"
+                  srcSet="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=320&q=80&fm=webp 320w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=480&q=80&fm=webp 480w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=640&q=80&fm=webp 640w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=768&q=80&fm=webp 768w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=960&q=80&fm=webp 960w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1200&q=80&fm=webp 1200w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1600&q=80&fm=webp 1600w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp 1920w"
+                  sizes="100vw"
+                  className="mx-auto"
+                  width={2160}
+                  height={2160}
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-[#01AACF] bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[90rem]">

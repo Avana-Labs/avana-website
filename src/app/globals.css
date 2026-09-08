@@ -61,6 +61,8 @@
 
 :root {
   color-scheme: light;
+  --breakpoint-xl: 80rem;
+  --text-primary: var(--avana-ink);
   --avana-white: #FFFFFF;
   --avana-ink: #0F1518;
   --avana-charcoal: #2F414B;
@@ -143,6 +145,7 @@
 
 .dark {
   color-scheme: dark;
+  --text-primary: #f5f5f5;
   --background: #050505;
   --foreground: #f5f5f5;
   --card: #0c0c0c;
@@ -1053,6 +1056,14 @@
 }
 
 /* OpenAI marketing showcase styles */
+.text-mkt-h1 {
+  font-size: clamp(2.25rem, 3.8vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
 .text-mkt-h2 {
   font-size: clamp(2rem, 3.2vw, 2.75rem);
   line-height: 1.15;
@@ -1087,6 +1098,32 @@
 
 .dark .border-token-border-light {
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+}
+
+.btn-large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .scroll-mt-mkt-header-height {
