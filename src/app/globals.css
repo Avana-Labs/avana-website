@@ -1119,41 +1119,49 @@
   color: var(--sd-text-sec);
 }
 
-/* Avana products section (Cursor exact styling) */
-#avana-products {
+/* Avana products & Multiply markets sections */
+#avana-products,
+#multiply-markets {
   --sd-card-bg: #f2f1ed;
   --sd-card-border: rgba(38, 37, 30, 0.08);
   --sd-text-sec: #73726c;
   --sd-radius: 4px;
 }
 
-.dark #avana-products {
+.dark #avana-products,
+.dark #multiply-markets {
   --sd-card-bg: #1b1913;
   --sd-card-border: rgba(255, 255, 255, 0.08);
   --sd-text-sec: #8c8982;
 }
 
-#avana-products .bg-theme-bg {
+#avana-products .bg-theme-bg,
+#multiply-markets .bg-theme-bg {
   background-color: transparent;
 }
 
-#avana-products .text-theme-text {
+#avana-products .text-theme-text,
+#multiply-markets .text-theme-text {
   color: var(--foreground);
 }
 
-#avana-products .pt-g1\.75 {
+#avana-products .pt-g1\.75,
+#multiply-markets .pt-g1\.75 {
   padding-top: 1.25rem;
 }
 
-#avana-products .px-g1\.75 {
+#avana-products .px-g1\.75,
+#multiply-markets .px-g1\.75 {
   padding-inline: 1.25rem;
 }
 
-#avana-products .py-g1\.75 {
+#avana-products .py-g1\.75,
+#multiply-markets .py-g1\.75 {
   padding-block: 1.25rem;
 }
 
-#avana-products .card {
+#avana-products .card,
+#multiply-markets .card {
   position: relative;
   background-color: var(--sd-card-bg);
   border: 1px solid var(--sd-card-border);
@@ -1162,7 +1170,8 @@
   transition: border-color 0.2s ease;
 }
 
-#avana-products .card h2 {
+#avana-products .card h2,
+#multiply-markets .card h2 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
@@ -1171,32 +1180,38 @@
   margin-bottom: 0.35rem;
 }
 
-#avana-products .card .text-pretty {
+#avana-products .card .text-pretty,
+#multiply-markets .card .text-pretty {
   font-size: 0.875rem;
   line-height: 1.45;
   color: var(--sd-text-sec);
 }
 
-#avana-products .media-border-container {
+#avana-products .media-border-container,
+#multiply-markets .media-border-container {
   position: relative;
   overflow: hidden;
   border-radius: var(--sd-radius);
   border: 1px solid var(--sd-card-border);
 }
 
-#avana-products .media-light {
+#avana-products .media-light,
+#multiply-markets .media-light {
   display: block;
 }
 
-.dark #avana-products .media-light {
+.dark #avana-products .media-light,
+.dark #multiply-markets .media-light {
   display: none;
 }
 
-#avana-products .media-dark {
+#avana-products .media-dark,
+#multiply-markets .media-dark {
   display: none;
 }
 
-.dark #avana-products .media-dark {
+.dark #avana-products .media-dark,
+.dark #multiply-markets .media-dark {
   display: block;
 }
 
