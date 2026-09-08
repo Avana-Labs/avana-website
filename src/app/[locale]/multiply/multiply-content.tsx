@@ -13,6 +13,7 @@ import {
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import LeverageGlanceShowcaseSection from "@/components/leverage-glance-showcase-section"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
 import { siteRoutes } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
@@ -60,25 +61,6 @@ const loopingBenefits: {
     icon: Undo2,
   },
 ]
-
-const leverageFeatureItems = [
-  {
-    title: "Leverage Layer",
-    description: "Draw LP-backed credit and deploy borrowed capital into the market.",
-  },
-  {
-    title: "Unwind Layer",
-    description: "Close, reduce, repay, or liquidate with debt coverage first.",
-  },
-  {
-    title: "Risk Layer",
-    description: "Track collateral, debt, and leverage in real time before risk rises.",
-  },
-  {
-    title: "Monitoring Layer",
-    description: "Watch collateral, debt, leverage, liquidation, and health in one view.",
-  },
-] as const
 
 const leverageWorkflowSteps = [
   {
@@ -152,7 +134,7 @@ export async function generateMetadata({ params }: LocaleParamsProps) {
 export default async function MultiplyPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "position-safety-section", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "position-safety-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
     <main className="bg-white">
       <div className="site-content-shell flex min-h-screen flex-col pt-10 sm:pt-12 md:pt-20 lg:min-h-0">
         <div className="relative z-0">
@@ -275,47 +257,10 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] md:items-start md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)]">
-              <div className="space-y-4 md:self-start">
-                <SectionIntro
-                  eyebrow="Position Safety"
-                  eyebrowTone="emerald"
-                  title={
-                    <>
-                      <span className="block">Designed for</span>
-                      <span className="block">safe leverage</span>
-                    </>
-                  }
-                  titleClassName="max-w-[14ch] md:max-w-none"
-                />
-                <ol className="mt-7 grid max-w-[32rem] gap-4">
-                  {leverageFeatureItems.map((item, index) => (
-                    <li key={item.title} className="flex gap-3">
-                      <span className="type-meta-label mt-0.5 shrink-0">{index + 1}.</span>
-                      <p className="type-body-copy">
-                        <span className="text-foreground">{item.title}.</span> {item.description}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-              <div className="flex items-center justify-center pt-1 md:justify-end">
-                <div className="relative w-full max-w-[17rem] sm:max-w-[22rem] md:max-w-[25rem] lg:max-w-[28rem] xl:max-w-[31rem]">
-                  <Image
-                    src="/images/Avana Coin.webp"
-                    alt="Avana coin illustration"
-                    width={1714}
-                    height={1601}
-                    className="h-auto w-full"
-                    sizes="(min-width: 1280px) 31rem, (min-width: 1024px) 28rem, (min-width: 768px) 25rem, (min-width: 640px) 22rem, 17rem"
-                  />
-                </div>
-              </div>
-            </div>
+            <HomepageTestimonialSection />
           </div>
         </div>
       </section>
-
 
       <div className="site-content-shell flex flex-col">
         <div className="relative z-0 flex flex-1 flex-col">

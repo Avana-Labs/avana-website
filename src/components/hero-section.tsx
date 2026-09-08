@@ -8,10 +8,8 @@ import {
   Layers,
   Zap,
 } from "lucide-react"
-import { DeFiTerm } from "@/components/defi-term"
 import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
-import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { AskAiShowcase } from "@/components/ask-ai-showcase"
@@ -100,6 +98,25 @@ const lpUseCases: {
   },
 ]
 
+const positionSafetyItems = [
+  {
+    title: "Leverage Layer",
+    description: "Draw LP-backed credit and deploy borrowed capital into the market.",
+  },
+  {
+    title: "Unwind Layer",
+    description: "Close, reduce, repay, or liquidate with debt coverage first.",
+  },
+  {
+    title: "Risk Layer",
+    description: "Track collateral, debt, and leverage in real time before risk rises.",
+  },
+  {
+    title: "Monitoring Layer",
+    description: "Watch collateral, debt, leverage, liquidation, and health in one view.",
+  },
+] as const
+
 
 export default async function HeroSection({ locale }: { locale: AppLocale }) {
   return withMarketingI18n(
@@ -107,7 +124,6 @@ export default async function HeroSection({ locale }: { locale: AppLocale }) {
     [
       "hero-section",
       "ask-ai-showcase",
-      "homepage/HomepageTestimonialSection",
       "homepage/HomepageFaqSection",
       "homepage/HomepageNewsroomSection",
     ],
@@ -526,72 +542,43 @@ function HeroSectionBody(locale: AppLocale) {
         </div>
       </div>
 
-        <HomepageTestimonialSection />
-
-        <div className="relative grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12 xl:gap-16">
-            <div className="max-w-[36rem] space-y-6">
-              <div className="space-y-4">
-                <SectionIntro
-                  eyebrow="Engineered for resilience"
-                  eyebrowTone="slate"
-                  title={
-                    <>
-                      <span className="block">
-                        Backed by{" "}
-                        <span className="inline-flex translate-y-[-0.02em] items-center align-middle">
-                          <Image
-                            src="/images/brand/avana-token-circle.jpg"
-                            alt="Avana"
-                            width={56}
-                            height={56}
-                            className="h-[1.2em] w-[1.2em] rounded-full object-cover"
-                          />
-                        </span>
-                        ,
-                      </span>
-                      <span className="block">Powered by Aave v4</span>
-                    </>
-                  }
-                />
-              </div>
-              <div className="text-left text-type-secondary">
-                <p className="type-display-lead max-w-[42rem]">
-                  Aave v4 uses{" "}
-                  <DeFiTerm term="hub" className="text-[0.92em]">
-                    Hub
-                  </DeFiTerm>{" "}
-                  and{" "}
-                  <DeFiTerm term="spoke" className="text-[0.92em]">
-                    Spoke
-                  </DeFiTerm>{" "}
-                  architecture for shared liquidity and flexible risk controls. Avana builds on it for secure{" "}
-                  <DeFiTerm term="lp-position" className="text-[0.92em]">
-                    LP-backed borrowing
-                  </DeFiTerm>
-                  , resilient{" "}
-                  <DeFiTerm term="oracle" className="text-[0.92em]">
-                    oracle
-                  </DeFiTerm>{" "}
-                  checks, and controlled{" "}
-                  <DeFiTerm term="liquidation" className="text-[0.92em]">
-                    liquidation
-                  </DeFiTerm>
-                  .
-                </p>
-              </div>
-            </div>
-
-            <article className="relative h-[240px] w-full overflow-hidden sm:h-[300px] md:h-[360px] lg:h-[420px] xl:h-[460px]">
-              <Image
-                src="/images/avana-token-icons-v1.jpg"
-                alt="Avana token icons"
-                fill
-                className="scale-[1.04] object-contain object-center"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_68%,rgba(255,255,255,0.28)_86%,#fff_100%)]" />
-            </article>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] md:items-start md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)]">
+          <div className="space-y-4 md:self-start">
+            <SectionIntro
+              eyebrow="Position Safety"
+              eyebrowTone="emerald"
+              title={
+                <>
+                  <span className="block">Designed for</span>
+                  <span className="block">safe leverage</span>
+                </>
+              }
+              titleClassName="max-w-[14ch] md:max-w-none"
+            />
+            <ol className="mt-7 grid max-w-[32rem] gap-4">
+              {positionSafetyItems.map((item, index) => (
+                <li key={item.title} className="flex gap-3">
+                  <span className="type-meta-label mt-0.5 shrink-0">{index + 1}.</span>
+                  <p className="type-body-copy">
+                    <span className="text-foreground">{item.title}.</span> {item.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
+          <div className="flex items-center justify-center pt-1 md:justify-end">
+            <div className="relative w-full max-w-[17rem] sm:max-w-[22rem] md:max-w-[25rem] lg:max-w-[28rem] xl:max-w-[31rem]">
+              <Image
+                src="/images/Avana Coin.webp"
+                alt="Avana coin illustration"
+                width={1714}
+                height={1601}
+                className="h-auto w-full"
+                sizes="(min-width: 1280px) 31rem, (min-width: 1024px) 28rem, (min-width: 768px) 25rem, (min-width: 640px) 22rem, 17rem"
+              />
+            </div>
+          </div>
+        </div>
 
         <div className="-mt-8 md:-mt-12">
           <HomepageNewsroomSection locale={locale} eyebrowTone="rose" />

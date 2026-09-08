@@ -65,7 +65,7 @@ export default async function Home({ params }: LocaleParamsProps) {
   const t = await getTranslations({ locale, namespace: "home" })
 
   return (
-    <LocalizedMarketing locale={locale} keys={["page","avana-products-section","hero-section","homepage/HomepageTestimonialSection","homepage/HomepageFaqSection","homepage/HomepageNewsroomSection","webapp-hero"]}>
+    <LocalizedMarketing locale={locale} keys={["page","avana-products-section","hero-section","homepage/HomepageFaqSection","homepage/HomepageNewsroomSection","webapp-hero"]}>
       <section className="bg-background">
         <div className="site-content-shell pt-14 md:pt-24 lg:pt-28">
           <div className="max-w-[40rem]">
