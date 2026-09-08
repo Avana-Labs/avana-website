@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Hoe LP-ondersteunde posities worden gecontroleerd en afgehandeld."
     },
     "footer": {
-      "blurb": "Avana is een LP-collateraalprotocol op Aave v4 dat liquiditeitsverschaffers helpt te lenen tegen actieve posities terwijl ze in het pool blijven.",
+      "blurb": "Avana is een leenprotocol gebouwd op Aave V4 waarmee AMM-liquiditeitspoolposities als onderpand kunnen worden gebruikt. Liquiditeitsverschaffers van Uniswap, Balancer, Curve of Aerodrome kunnen ondersteunde LP-posities storten, deze laten beoordelen binnen marktspecifieke risicokaders en daartegen lenen terwijl de posities actief blijven in de onderliggende pools.",
       "explore": "Verkennen",
       "resources": "Hulpbronnen",
       "docs": "Documenten",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "Het vertrouwen van toonaangevende teams die hoogwaardige Web3-producten bouwen en lanceren"
+    },
+    "cta": {
+      "title": "Probeer Avana nu."
     }
   },
   "product": {

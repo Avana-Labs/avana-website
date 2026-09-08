@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Yadda ake sa ido da warware wuraren da LP ke tallafawa."
     },
     "footer": {
-      "blurb": "Avana shi ne wani tsarin jinginar LP a kan Aave v4 wanda ke taimaka wa masu samar da ruwa su aro daidai da matsayi mai aiki yayin da suke cikin tafkin.",
+      "blurb": "Avana wata ka’idar ba da lamuni ce da aka gina a kan Aave V4 wacce ke ba da damar amfani da matsayin tafkin ruwa na AMM a matsayin jingina. Masu samar da ruwa daga Uniswap, Balancer, Curve, ko Aerodrome za su iya ajiye matsayin LP da ake goyan baya, a kimanta su a cikin tsarin haɗari na kasuwa, kuma su karɓi lamuni a kansu yayin da matsayin ke ci gaba da aiki a cikin ainihin tafkuna.",
       "explore": "Bincika",
       "resources": "Albarkatu",
       "docs": "Takardu",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "Wanda kungiyoyi masu kera tare da kaddamar da ingantattun kayayyakin Web3 suka amince da shi"
+    },
+    "cta": {
+      "title": "Gwada Avana yanzu."
     }
   },
   "product": {

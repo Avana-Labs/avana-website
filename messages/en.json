@@ -278,6 +278,9 @@
     "buildTomorrow": {
       "title": "Meet Avana",
       "body": "Avana turns supported LP positions into usable collateral on Aave v4 so liquidity providers can borrow without leaving the pool."
+    },
+    "cta": {
+      "title": "Try Avana now."
     }
   },
   "product": {

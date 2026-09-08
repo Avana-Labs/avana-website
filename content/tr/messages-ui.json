@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "LP destekli pozisyonlar nasıl izlenir ve sonuçlandırılır."
     },
     "footer": {
-      "blurb": "Avana, likidite sağlayıcılarının aktif pozisyonlarına karşı borç almasına yardımcı olan ve havuzda kalmasını sağlayan Aave v4 üzerinde bir LP teminatlı protokoldür.",
+      "blurb": "Avana, AMM likidite havuzu pozisyonlarının teminat olarak kullanılmasını sağlayan, Aave V4 üzerine inşa edilmiş bir borç verme protokolüdür. Uniswap, Balancer, Curve veya Aerodrome likidite sağlayıcıları, desteklenen LP pozisyonlarını yatırabilir, piyasaya özgü risk çerçevelerinde değerlendirilmesini sağlayabilir ve pozisyonlar temel havuzlarda aktif kalmaya devam ederken bunlara karşı borç alabilirler.",
       "explore": "Keşfet",
       "resources": "Kaynaklar",
       "docs": "Belgeler",
@@ -252,6 +252,9 @@
     },
     "trustedBy": {
       "caption": "Üst düzey Web3 ürünleri geliştiren ve yayınlayan ekiplerin güvenilir tercihi"
+    },
+    "cta": {
+      "title": "Avana’yı şimdi deneyin."
     }
   },
   "product": {

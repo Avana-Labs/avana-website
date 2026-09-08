@@ -5,6 +5,7 @@ import HeroSection from "@/components/hero-section"
 import WebappHero from "@/components/webapp-hero"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { AvanaProductsSection } from "@/components/avana-products-section"
+import { TryAvanaCtaSection } from "@/components/try-avana-cta-section"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Link } from "@/i18n/navigation"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
@@ -118,6 +119,12 @@ export default async function Home({ params }: LocaleParamsProps) {
       <AvanaProductsSection />
 
       <HeroSection locale={locale} />
+
+      <TryAvanaCtaSection
+        title={t.has("cta.title") ? t("cta.title") : "Try Avana now."}
+        primaryCta={t("hero.primaryCta")}
+        secondaryCta={t("hero.secondaryCta")}
+      />
     </LocalizedMarketing>
   )
 }

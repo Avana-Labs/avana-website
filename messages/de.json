@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Wie LP-gestützte Positionen überwacht und abgewickelt werden."
     },
     "footer": {
-      "blurb": "Avana ist ein LP-Besicherungsprotokoll auf Aave v4, das Liquiditätsanbietern hilft, gegen aktive Positionen zu leihen, während sie im Pool bleiben.",
+      "blurb": "Avana ist ein auf Aave V4 aufgebautes Kreditprotokoll, das es ermöglicht, AMM-Liquiditätspool-Positionen als Sicherheiten zu nutzen. Liquiditätsanbieter von Uniswap, Balancer, Curve oder Aerodrome können unterstützte LP-Positionen hinterlegen, diese innerhalb marktspezifischer Risikorahmen bewerten lassen und Kredite dagegen aufnehmen, während die Positionen in den zugrunde liegenden Pools aktiv bleiben.",
       "explore": "Erkunden",
       "resources": "Ressourcen",
       "docs": "Dokumente",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "Das Vertrauen führender Teams, die erstklassige Web3-Produkte entwickeln und launchen"
+    },
+    "cta": {
+      "title": "Jetzt Avana ausprobieren."
     }
   },
   "product": {

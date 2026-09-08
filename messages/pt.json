@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Como as posições apoiadas por LP são monitoradas e liquidadas."
     },
     "footer": {
-      "blurb": "Avana é um protocolo de LP garantias na Aave v4 que ajuda os provedores de liquidez a tomar empréstimos contra posições ativas enquanto permanecem no pool.",
+      "blurb": "Avana é um protocolo de empréstimos desenvolvido sobre a Aave V4 que permite que posições de pools de liquidez AMM sejam usadas como garantia. Provedores de liquidez da Uniswap, Balancer, Curve ou Aerodrome podem depositar posições de LP compatíveis, tê-las avaliadas dentro de estruturas de risco específicas do mercado e tomar empréstimos contra elas enquanto as posições permanecem ativas nos pools subjacentes.",
       "explore": "Explorar",
       "resources": "Recursos",
       "docs": "Documentos",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "A escolha de equipes que desenvolvem e lançam produtos Web3 de ponta"
+    },
+    "cta": {
+      "title": "Experimente a Avana agora."
     }
   },
   "product": {

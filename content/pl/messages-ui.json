@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Jak monitorowane i rozliczane są pozycje wspierane przez LP."
     },
     "footer": {
-      "blurb": "Avana jest protokołem LP zabezpieczonym na Aave v4, który pomaga dostawcom płynności pożyczać w oparciu o aktywne pozycje, pozostając w puli.",
+      "blurb": "Avana to protokół pożyczkowy zbudowany na bazie Aave V4, który umożliwia wykorzystanie pozycji w pulach płynności AMM jako zabezpieczenia. Dostawcy płynności z Uniswap, Balancer, Curve lub Aerodrome mogą deponować obsługiwane pozycje LP, poddawać je ocenie w ramach modeli ryzyka dostosowanych do konkretnych rynków i zaciągać pod nie pożyczki, podczas gdy pozycje te pozostają aktywne w bazowych pulach.",
       "explore": "Eksplorować",
       "resources": "Zasoby",
       "docs": "Dokumenty",
@@ -252,6 +252,9 @@
     },
     "trustedBy": {
       "caption": "Zaufany wybór zespołów tworzących i wdrażających najwyższej klasy produkty Web3"
+    },
+    "cta": {
+      "title": "Wypróbuj Avana teraz."
     }
   },
   "product": {

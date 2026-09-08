@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Cách các vị trí được hỗ trợ bởi LP được giám sát và thanh toán."
     },
     "footer": {
-      "blurb": "Avana là một giao thức thế chấp LP trên Aave v4 giúp các nhà cung cấp thanh khoản vay dựa trên các vị thế đang hoạt động trong khi vẫn giữ trong pool.",
+      "blurb": "Avana là giao thức cho vay được xây dựng trên Aave V4 cho phép sử dụng các vị thế pool thanh khoản AMM làm tài sản thế chấp. Các nhà cung cấp thanh khoản từ Uniswap, Balancer, Curve hoặc Aerodrome có thể gửi các vị thế LP được hỗ trợ, đánh giá rủi ro theo từng thị trường cụ thể và vay thế chấp trong khi các vị thế vẫn hoạt động bình thường trong các pool cơ sở.",
       "explore": "Khám phá",
       "resources": "Tài nguyên",
       "docs": "Tài liệu",
@@ -252,6 +252,9 @@
     },
     "trustedBy": {
       "caption": "Được tin dùng bởi các đội ngũ phát triển và triển khai sản phẩm Web3 hàng đầu"
+    },
+    "cta": {
+      "title": "Trải nghiệm Avana ngay."
     }
   },
   "product": {

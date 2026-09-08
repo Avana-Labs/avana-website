@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Jinsi nafasi zinazotungwa na LP zinavyofuatiliwa na kuliwekwa sawa."
     },
     "footer": {
-      "blurb": "Avana ni itifaki ya dhamana ya LP kwenye Aave v4 inayosaidia watoa kioevu kukopa dhidi ya nafasi zilizo hai huku wakibaki kwenye bwawa.",
+      "blurb": "Avana ni itifaki ya mikopo iliyojengwa kwenye Aave V4 inayowezesha nafasi za bwawa la ukwasi wa AMM kutumika kama dhamana. Watoa ukwasi kutoka Uniswap, Balancer, Curve, au Aerodrome wanaweza kuweka nafasi za LP zinazoungwa mkono, zikatathminiwa ndani ya mifumo ya hatari mahususi ya soko, na kukopa dhidi yake huku nafasi hizo zikisalia kuwa hai katika mabwawa husika.",
       "explore": "Chunguza",
       "resources": "Rasilimali",
       "docs": "Nguvu",
@@ -252,6 +252,9 @@
     },
     "trustedBy": {
       "caption": "Inaaminiwa na timu zinazobuni na kuzindua bidhaa bora za kiwango cha juu za Web3"
+    },
+    "cta": {
+      "title": "Jaribu Avana sasa."
     }
   },
   "product": {

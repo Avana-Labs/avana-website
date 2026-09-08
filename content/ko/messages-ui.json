@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "LP 지원 위치가 모니터링되고 정산되는 방법."
     },
     "footer": {
-      "blurb": "Avana는 Aave v4 위에서 LP-담보 프로토콜로, 유동성 제공자가 풀에 머무르면서 활성 포지션을 담보로 대출할 수 있도록 도와줍니다.",
+      "blurb": "Avana는 Aave V4 기반으로 구축된 대출 프로토콜로, AMM 유동성 풀 포지션을 담보로 활용할 수 있도록 지원합니다. Uniswap, Balancer, Curve 또는 Aerodrome의 유동성 제공자는 지원되는 LP 포지션을 예치하고, 시장별 위험 프레임워크 내에서 평가를 거쳐 포지션이 기본 풀에서 활성 상태를 유지하는 동안 이를 담보로 대출을 받을 수 있습니다.",
       "explore": "탐험하다",
       "resources": "자원",
       "docs": "문서",
@@ -252,6 +252,9 @@
     },
     "trustedBy": {
       "caption": "고품질 Web3 프로덕트를 빌드하고 배포하는 최고의 팀들이 신뢰합니다"
+    },
+    "cta": {
+      "title": "지금 Avana를 경험해 보세요."
     }
   },
   "product": {

@@ -1105,10 +1105,39 @@
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  font-weight: 500;
+  background-color: var(--foreground);
+  border: 1px solid var(--foreground);
+  color: var(--background);
+  padding: 0.78em 1.35em 0.8em;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.btn:active {
+  opacity: 0.95;
+}
+
+.btn-icon {
+  display: inline-flex;
+  padding-inline-start: 0.25em;
+}
+
+.icon-glyph-08 {
+  font-family: inherit;
+  font-feature-settings: "ss08";
 }
 
 .btn-primary {
@@ -1124,6 +1153,56 @@
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* Cursor CTA section (Try Cursor now) */
+.section--headline {
+  padding-block-start: clamp(3.5rem, 6vw, 5.5rem);
+  padding-block-end: clamp(4rem, 7vw, 6.5rem);
+}
+
+.section--headline .container {
+  width: 100%;
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.bg-theme-bg {
+  background-color: transparent;
+}
+
+.text-theme-text {
+  color: var(--foreground);
+}
+
+.max-w-prose-medium-wide {
+  max-width: 80ch;
+}
+
+.mb-v1 {
+  margin-bottom: 1.5rem;
+}
+
+.type-xl {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+  .sm\:type-2xl,
+  .type-2xl {
+    font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+  }
+}
+
+.gap-x-g1 {
+  column-gap: 1rem;
 }
 
 .scroll-mt-mkt-header-height {

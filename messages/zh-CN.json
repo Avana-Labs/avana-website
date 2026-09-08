@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "如何监控和结算LP支持的头寸。"
     },
     "footer": {
-      "blurb": "Avana 是一个在 Aave v4 上的 LP 抵押协议，它帮助流动性提供者在保持在池中的同时，对活跃头寸进行借贷。",
+      "blurb": "Avana 是基于 Aave V4 构建的借贷协议，支持将 AMM 流动性池头寸用作抵押品。来自 Uniswap、Balancer、Curve 或 Aerodrome 的流动性提供者可以存入受支持的 LP 头寸，在特定市场的风险框架内进行评估，并在头寸继续在底层池中保持活跃的同时进行借贷。",
       "explore": "探索",
       "resources": "资源",
       "docs": "文档",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "深受打造与发布高质量 Web3 产品团队的信赖"
+    },
+    "cta": {
+      "title": "立即体验 Avana。"
     }
   },
   "product": {

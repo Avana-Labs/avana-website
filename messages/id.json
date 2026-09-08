@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Bagaimana posisi yang didukung LP dipantau dan diselesaikan."
     },
     "footer": {
-      "blurb": "Avana adalah protokol LP-jaminan di Aave v4 yang membantu penyedia likuiditas meminjam terhadap posisi aktif sambil tetap berada di pool.",
+      "blurb": "Avana adalah protokol peminjaman yang dibangun di atas Aave V4 yang memungkinkan posisi liquidity pool AMM digunakan sebagai jaminan. Penyedia likuiditas dari Uniswap, Balancer, Curve, atau Aerodrome dapat mendepositkan posisi LP yang didukung, dievaluasi dalam kerangka risiko spesifik pasar, dan meminjam dengan jaminan tersebut sementara posisi tetap aktif di underlying pool.",
       "explore": "Jelajahi",
       "resources": "Sumber Daya",
       "docs": "Dokumen",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "Dipercaya oleh tim-tim terdepan yang membangun dan merilis produk Web3 berkualitas tinggi"
+    },
+    "cta": {
+      "title": "Coba Avana sekarang."
     }
   },
   "product": {

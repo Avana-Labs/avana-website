@@ -68,7 +68,7 @@
       "understandLiquidationDesc": "How LP-backed positions are monitored and settled."
     },
     "footer": {
-      "blurb": "Avana is an LP-collateral protocol on Aave v4 that helps liquidity providers borrow against active positions while staying in the pool.",
+      "blurb": "Avana is a lending protocol built on Aave V4 that enables AMM liquidity pool positions to be used as collateral. Liquidity providers from Uniswap, Balancer, Curve, or Aerodrome can deposit supported LP positions, have them evaluated inside market-specific risk frameworks, and borrow against them while the positions stay active in the underlying pools.",
       "explore": "Explore",
       "resources": "Resources",
       "docs": "Docs",
@@ -278,6 +278,9 @@
     "buildTomorrow": {
       "title": "Meet Avana",
       "body": "Avana turns supported LP positions into usable collateral on Aave v4 so liquidity providers can borrow without leaving the pool."
+    },
+    "cta": {
+      "title": "Try Avana now."
     }
   },
   "product": {

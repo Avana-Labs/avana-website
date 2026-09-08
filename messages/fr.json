@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Comment les positions garanties par LP sont surveillées et réglées."
     },
     "footer": {
-      "blurb": "Avana est un protocole à collatéral LP sur Aave v4 qui aide les fournisseurs de liquidité à emprunter contre des positions actives tout en restant dans le pool.",
+      "blurb": "Avana est un protocole de prêt conçu sur Aave V4 permettant d’utiliser les positions de pool de liquidité AMM comme collatéral. Les fournisseurs de liquidité de Uniswap, Balancer, Curve ou Aerodrome peuvent déposer des positions LP prises en charge, les faire évaluer au sein de cadres de risque spécifiques à chaque marché et emprunter contre celles-ci tout en maintenant les positions actives dans les pools sous-jacents.",
       "explore": "Explorer",
       "resources": "Ressources",
       "docs": "Documents",
@@ -278,6 +278,9 @@
     },
     "trustedBy": {
       "caption": "Adopté par les équipes qui conçoivent et déploient des produits Web3 de haute qualité"
+    },
+    "cta": {
+      "title": "Essayez Avana maintenant."
     }
   },
   "product": {

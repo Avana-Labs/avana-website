@@ -573,10 +573,11 @@ function HeroSectionBody(locale: AppLocale) {
           <HomepageNewsroomSection locale={locale} eyebrowTone="rose" />
         </div>
 
-        <div className="pb-16 md:pb-24 2xl:pb-22">
+        <div className="pb-12 md:pb-16 lg:pb-20">
           <HomepageFaqSection />
         </div>
       </div>
+      <div className="h-px w-full bg-border" aria-hidden="true" />
     </section>
   )
 }
