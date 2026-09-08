@@ -3,7 +3,7 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { LocalizedMarketing } from "@/components/localized-marketing"
-import { Activity, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
+import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
@@ -236,64 +236,8 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
   return (
     <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
     <main className="bg-white">
-      <div className="site-content-shell flex min-h-screen flex-col pt-10 sm:pt-12 md:pt-20 lg:min-h-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-              {/* Left Column - Hero Image */}
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                    <Image
-                      src="/images/Hero__4_.webp"
-                      alt="App interface"
-                      width={1200}
-                      height={1200}
-                      quality={58}
-                      priority
-                      className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                      sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                    />
-                </div>
-              </div>
-
-              {/* Right Column - Text Content */}
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[11ch] text-foreground md:mb-5">
-                    <span>Borrow against</span>
-                    <br />
-                    <span>AMM positions</span>
-                  </h1>
-
-                  <p className="mb-5 max-w-[34ch] text-base leading-relaxed text-type-secondary sm:max-w-[38ch] md:mb-6 md:text-lg">
-                    Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Borrowing
-                    </Link>
-                    <Link
-                      href="/developers"
-                      className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-900 transition-colors hover:bg-gray-100"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
       <section
-        className="items-center not-first:pt-46 not-first:sm:pt-20 mx-auto grid grid-cols-12 gap-6 px-4 sm:px-8 xl:max-w-screen-2xl w-full max-w-[calc(var(--breakpoint-xl)*10/12)] mt-10 sm:mt-20"
+        className="items-center mx-auto grid grid-cols-12 gap-6 px-4 sm:px-8 xl:max-w-screen-2xl w-full max-w-[calc(var(--breakpoint-xl)*10/12)] pt-10 sm:pt-14 md:pt-20 pb-4 md:pb-8"
         aria-labelledby="feature-page-hero"
       >
         <div className="col-span-12 sm:col-span-6 xl:col-span-5 xl:col-start-2">
@@ -308,13 +252,15 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
             </p>
           </div>
           <div className="flex w-fit flex-wrap gap-2 mt-6">
-            <a
-              className="btn relative group-focus-within/dialog:focus-visible:[outline-width:1.5px] group-focus-within/dialog:focus-visible:[outline-offset:2.5px] group-focus-within/dialog:focus-visible:[outline-style:solid] group-focus-within/dialog:focus-visible:[outline-color:var(--text-primary)] btn-primary btn-large -mkt"
-              href="https://chatgpt.com/deep-research"
-              target="_self"
+            <Link
+              href="https://app.avana.cc"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1] dark:bg-white/[0.12] dark:hover:bg-white/[0.16]"
             >
-              <div className="flex items-center justify-center">Try now</div>
-            </a>
+              Try Sandbox
+              <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />
+            </Link>
           </div>
         </div>
         <div className="col-span-12 sm:col-span-6 xl:col-span-5">
@@ -341,7 +287,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <section className="border-t border-[#01AACF] bg-white site-section-gap">
+      <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[90rem]">
             <div className="flex flex-col gap-6">
