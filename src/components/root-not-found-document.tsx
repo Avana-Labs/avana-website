@@ -26,6 +26,7 @@ export function RootNotFoundDocument() {
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
+                  prefetch={false}
                   href={siteRoutes.home}
                   className="inline-flex h-11 items-center justify-center rounded-full bg-[#01AACF] px-5 text-sm font-medium text-white transition hover:bg-[#00a0c2]"
                 >
@@ -34,6 +35,7 @@ export function RootNotFoundDocument() {
 
                 <nav aria-label="Helpful links" className="flex flex-wrap justify-center gap-x-5 gap-y-3">
                   <Link
+                    prefetch={false}
                     href={siteRoutes.faq}
                     className="text-sm font-medium text-[#01AACF] underline underline-offset-4 transition hover:text-[#008fb0]"
                   >

@@ -1,5 +1,6 @@
 "use client"
 
+import { useDesktopLayout } from "@/components/ui/use-desktop-layout"
 import { Link } from "@/i18n/navigation"
 import { useLocale, useTranslations } from "next-intl"
 import { useSearchParams } from "next/navigation"
@@ -177,6 +178,7 @@ export function FaqView({
   searchTerm: string
   activeCategory: string
 }) {
+  const isDesktop = useDesktopLayout()
   const t = useTranslations("common.faqUi")
   const locale = useLocale()
   const faqAction = locale === "en" ? "/faq" : `/${locale}/faq`
@@ -288,7 +290,7 @@ export function FaqView({
         )}
       </div>
 
-      {!searchTerm ? (
+      {!searchTerm && isDesktop ? (
         <div className="hidden xl:grid xl:grid-cols-[minmax(0,1fr)_280px] xl:gap-24">
           <div className="max-w-3xl">
             {categories.map((category) => (

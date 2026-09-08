@@ -246,15 +246,15 @@
       "titleLine1": "Avana היא זירת הלוואות מבוזרת,",
       "titleLine2": "שפותחה במיוחד עבור מאגרי נזילות AMM.",
       "subtitle": "לוו קריפטו, סחורות, מט\"ח (FX) ונכסי עולם אמיתי (RWA) ישירות על גבי הבלוקצ'יין, תוך שימוש בפוזיציות נזילות AMM כבטוחה.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "קראו את הצעת ה-ARFC",
       "secondaryCta": "התנסו ב-Sandbox"
     },

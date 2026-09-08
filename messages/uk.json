@@ -246,15 +246,15 @@
       "titleLine1": "Avana — це кредитний ринок,",
       "titleLine2": "створений для пулів ліквідності AMM.",
       "subtitle": "Позичайте криптовалюту, сировинні активи, валюту (FX) та активи реального світу (RWA) ончейн під заставу позицій ліквідності AMM.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Читати ARFC",
       "secondaryCta": "Спробувати Sandbox"
     },

@@ -246,15 +246,15 @@
       "titleLine1": "Avana হলো একটি অন-চেন ঋণ বাজার,",
       "titleLine2": "বিশেষভাবে AMM লিকুইডিটি পুলের জন্য নির্মিত।",
       "subtitle": "আপনার AMM লিকুইডিটি পজিশনকে জামানত হিসেবে ব্যবহার করে অন-চেন ক্রিপ্টো, পণ্য, FX এবং বাস্তব বিশ্বের সম্পদ (RWA) ঋণ নিন।",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC প্রস্তাব পড়ুন",
       "secondaryCta": "Sandbox ব্যবহার করে দেখুন"
     },

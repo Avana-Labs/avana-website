@@ -1,9 +1,10 @@
 /**
  * Footer - The site-wide footer component.
  */
-import Image from "next/image"
-import { getTranslations } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
+import { getImageProps } from "next/image"
+import { getLocale, getTranslations } from "next-intl/server"
+import Link from "next/link"
+import { withLocale } from "@/lib/i18n/path"
 import { HEADER_WORDMARK_PATH, SITE_NAME, siteRoutes } from "@/lib/site"
 
 interface FooterLink {
@@ -62,7 +63,7 @@ const socialIcons = {
 } as const
 
 export default async function Footer(): Promise<React.JSX.Element> {
-  const t = await getTranslations("common")
+  const [t, locale] = await Promise.all([getTranslations("common"), getLocale()])
 
   const socialLinks: readonly SocialLink[] = [
     {
@@ -134,16 +135,23 @@ export default async function Footer(): Promise<React.JSX.Element> {
         <div className="grid gap-x-8 gap-y-12 lg:grid-cols-[minmax(16rem,1.2fr)_minmax(0,1fr)] lg:gap-x-8 xl:gap-x-10">
           <div className="space-y-5 lg:max-w-sm lg:justify-self-start">
             <Link
-              href={siteRoutes.home}
+              prefetch={false}
+              href={withLocale(locale, siteRoutes.home)}
               className="inline-flex w-fit items-start justify-start"
             >
-              <Image
-                src={HEADER_WORDMARK_PATH}
+              {/* Keep this shared image in HTML instead of importing a page client chunk. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                {...getImageProps({
+                  src: HEADER_WORDMARK_PATH,
+                  alt: t("a11y.logo", { site: SITE_NAME }),
+                  width: 480,
+                  height: 240,
+                  quality: 85,
+                  sizes: "121px",
+                  className: "h-[56px] w-auto origin-left scale-[1.08] -translate-x-[10%]",
+                }).props}
                 alt={t("a11y.logo", { site: SITE_NAME })}
-                width={480}
-                height={240}
-                quality={85}
-                className="h-[56px] w-auto origin-left scale-[1.08] -translate-x-[10%]"
               />
             </Link>
             <p className="max-w-sm text-[1.02rem] font-normal leading-7 tracking-[-0.02em] text-type-secondary">
@@ -186,8 +194,9 @@ export default async function Footer(): Promise<React.JSX.Element> {
                       </a>
                     ) : (
                       <Link
+                        prefetch={false}
                         key={`${section.title}-${link.label}-${link.href}`}
-                        href={link.href}
+                        href={withLocale(locale, link.href)}
                         className="transition-colors hover:text-type-accent"
                       >
                         {link.label}

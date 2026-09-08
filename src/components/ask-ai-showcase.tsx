@@ -81,6 +81,7 @@ export function AskAiShowcase() {
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900/60 shadow-lg ring-1 ring-black/10 dark:ring-white/10">
               {accordionItems.map((item, index) => {
                 const isActive = activeIndex === index
+                if (!isActive) return null
                 return (
                   <div
                     key={item.id}
@@ -97,7 +98,6 @@ export function AskAiShowcase() {
                       fill
                       sizes="(max-width: 1024px) 50vw, 650px"
                       className="object-cover object-top"
-                      priority={index === 0}
                     />
 
                     {/* Natural language prompt banner overlay */}

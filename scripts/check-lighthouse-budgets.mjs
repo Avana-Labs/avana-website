@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-const OUTPUT_DIR = path.join(process.cwd(), ".lighthouse");
+const OUTPUT_DIR = path.resolve(process.env.LIGHTHOUSE_OUTPUT_DIR ?? ".lighthouse");
 const BUDGETS = {
   performance: 75,
   fcp: 1_500,

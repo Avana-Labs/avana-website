@@ -246,15 +246,15 @@
       "titleLine1": "Avana هو سوق الإقراض اللامركزي",
       "titleLine2": "المصمم خصيصاً لمجمعات سيولة AMM.",
       "subtitle": "اقترض العملات المشفرة، السلع، العملات الأجنبية (FX)، وأصول العالم الحقيقي (RWA) على السلسلة باستخدام مراكز سيولة AMM كضمان.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "اقرأ مقترح ARFC",
       "secondaryCta": "جرّب Sandbox"
     },

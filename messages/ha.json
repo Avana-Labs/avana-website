@@ -246,15 +246,15 @@
       "titleLine1": "Avana ita ce kasuwar bayar da lamuni ta DeFi",
       "titleLine2": "wadda aka kera ta musamman don matattaran samar da kudaden AMM.",
       "subtitle": "Ranci kudaden crypto, kayayyaki, FX, da kadarorin zahiri na duniya (RWA) a kan sarka ta hanyar amfani da matsayin samar da kudaden AMM dinka a matsayin jinginar lamuni.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Karanta Shawarar ARFC",
       "secondaryCta": "Gwada Sandbox"
     },

@@ -246,15 +246,15 @@
       "titleLine1": "Avana คือตลาดการกู้ยืมแบบ Onchain",
       "titleLine2": "ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
       "subtitle": "กู้ยืมคริปโต, สินค้าโภคภัณฑ์, FX และสินทรัพย์ในโลกจริง (RWA) บนเชน โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "อ่านข้อเสนอ ARFC",
       "secondaryCta": "ทดลองใช้ Sandbox"
     },

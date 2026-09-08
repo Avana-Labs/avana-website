@@ -246,15 +246,15 @@
       "titleLine1": "Avana는 AMM 유동성 풀을 위해 설계된",
       "titleLine2": "온체인 렌딩 마켓입니다.",
       "subtitle": "AMM 유동성 포지션을 담보로 활용하여 온체인에서 암호화폐, 원자재, 외환(FX) 및 실물자산(RWA)을 대출받으세요.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC 제안서 읽기",
       "secondaryCta": "Sandbox 체험하기"
     },

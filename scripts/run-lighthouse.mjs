@@ -8,7 +8,7 @@ import { launch } from "chrome-launcher";
 const PORT = Number(process.env.LIGHTHOUSE_PORT ?? 3001);
 const HOSTNAME = process.env.LIGHTHOUSE_HOSTNAME ?? "127.0.0.1";
 const BASE_URL = process.env.LIGHTHOUSE_BASE_URL ?? `http://${HOSTNAME}:${PORT}`;
-const OUTPUT_DIR = path.join(process.cwd(), ".lighthouse");
+const OUTPUT_DIR = path.resolve(process.env.LIGHTHOUSE_OUTPUT_DIR ?? ".lighthouse");
 const CATEGORIES = ["performance", "accessibility", "best-practices", "seo"];
 const APP_PATH_ROUTES_MANIFEST = path.join(process.cwd(), ".next", "app-path-routes-manifest.json");
 const ROUTES_MANIFEST = path.join(process.cwd(), ".next", "routes-manifest.json");
@@ -175,7 +175,9 @@ async function stopServer(serverProcess) {
 async function main() {
   await rm(OUTPUT_DIR, { recursive: true, force: true });
   await mkdir(OUTPUT_DIR, { recursive: true });
-  await runCommand("npm", ["run", "build"]);
+  if (process.env.LIGHTHOUSE_SKIP_BUILD !== "1") {
+    await runCommand("npm", ["run", "build"]);
+  }
   const discoveredRoutes = await getRoutesToAudit();
   const routes = REQUESTED_ROUTES ?? discoveredRoutes;
 
@@ -185,7 +187,7 @@ async function main() {
     }
   }
 
-  const serverProcess = spawn("npm", ["run", "start", "--", "--port", String(PORT), "--hostname", HOSTNAME], {
+  const serverProcess = spawn(process.execPath, ["node_modules/next/dist/bin/next", "start", "--port", String(PORT), "--hostname", HOSTNAME], {
     cwd: process.cwd(),
     env: process.env,
     stdio: ["ignore", "pipe", "pipe"],

@@ -17,20 +17,3 @@ export const diatypeFont = localFont({
     },
   ],
 })
-
-/**
- * Italic display moments are isolated to a few editorial surfaces, so the
- * dedicated italic face stays opt-in instead of joining the global preload set.
- */
-export const diatypeItalicFont = localFont({
-  display: "swap",
-  preload: false,
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-  src: [
-    {
-      path: "../../public/fonts/diatype/ABCDiatype-RegularItalic-Trial.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-})

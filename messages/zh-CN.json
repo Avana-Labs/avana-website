@@ -246,15 +246,15 @@
       "titleLine1": "Avana 是专为 AMM 流动性池",
       "titleLine2": "打造的链上借贷市场。",
       "subtitle": "以您的 AMM 流动性头寸为抵押品，在链上借入加密资产、大宗商品、外汇及现实世界资产（RWA）。",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "阅读 ARFC 提案",
       "secondaryCta": "体验 Sandbox"
     },

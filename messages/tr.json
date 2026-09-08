@@ -246,15 +246,15 @@
       "titleLine1": "Avana, AMM likidite havuzları için",
       "titleLine2": "geliştirilmiş borç verme ve kredi piyasasıdır.",
       "subtitle": "AMM likidite pozisyonlarınızı teminat göstererek zincir üzerinde kripto, emtia, döviz (FX) ve gerçek dünya varlıkları (RWA) borç alın.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC Önerisini Oku",
       "secondaryCta": "Sandbox'ı Dene"
     },

@@ -246,15 +246,15 @@
       "titleLine1": "Avana là thị trường cho vay DeFi",
       "titleLine2": "được tối ưu hóa cho các pool thanh khoản AMM.",
       "subtitle": "Vay crypto, hàng hóa, ngoại hối (FX) và tài sản thế giới thực (RWA) onchain bằng cách sử dụng vị thế thanh khoản AMM làm tài sản thế chấp.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Đọc đề xuất ARFC",
       "secondaryCta": "Trải nghiệm Sandbox"
     },

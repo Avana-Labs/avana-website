@@ -246,15 +246,15 @@
       "titleLine1": "Avana ist der Lending-Markt,",
       "titleLine2": "speziell entwickelt für AMM-Liquiditätspools.",
       "subtitle": "Leihen Sie Krypto, Rohstoffe, Devisen und Real-World-Assets onchain – mit Ihren AMM-Liquiditätspositionen als Kollateral.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC lesen",
       "secondaryCta": "Sandbox testen"
     },

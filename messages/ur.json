@@ -246,15 +246,15 @@
       "titleLine1": "Avana ایک آن چین لینڈنگ مارکیٹ ہے",
       "titleLine2": "جو خاص طور پر AMM لیکویڈیٹی پولز کے لیے بنائی گئی ہے۔",
       "subtitle": "اپنی AMM لیکویڈیٹی پوزیشنز کو ضمانت (Collateral) بنا کر آن چین کرپٹو، اجناس، فاریکس (FX) اور حقیقی دنیا کے اثاثے (RWA) ادھار لیں۔",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC تجویز پڑھیں",
       "secondaryCta": "Sandbox آزمائیں"
     },

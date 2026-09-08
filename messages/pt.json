@@ -246,15 +246,15 @@
       "titleLine1": "A Avana é o mercado de crédito",
       "titleLine2": "criado para pools de liquidez AMM.",
       "subtitle": "Pegue emprestado cripto, commodities, FX e ativos do mundo real onchain usando suas posições de liquidez AMM como colateral.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Ler o ARFC",
       "secondaryCta": "Testar Sandbox"
     },

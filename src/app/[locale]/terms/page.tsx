@@ -2,7 +2,7 @@ import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import { LocalizedLegal } from "@/components/localized-legal"
 import { Link } from "@/i18n/navigation"
 import { ScrollSpySidebar } from "@/components/scroll-spy-sidebar"
-import { diatypeItalicFont } from "@/app/site-fonts"
+import { diatypeItalicFont } from "@/app/legal-font"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const sections = [

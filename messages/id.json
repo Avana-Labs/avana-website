@@ -246,15 +246,15 @@
       "titleLine1": "Avana adalah pasar pinjaman DeFi",
       "titleLine2": "yang dirancang untuk liquidity pool AMM.",
       "subtitle": "Pinjam kripto, komoditas, valas (FX), dan aset dunia nyata (RWA) onchain menggunakan posisi likuiditas AMM Anda sebagai agunan.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Baca Proposal ARFC",
       "secondaryCta": "Coba Sandbox"
     },

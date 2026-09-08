@@ -246,15 +246,15 @@
       "titleLine1": "Avana एक विकेंद्रीकृत लेंडिंग मार्केट है,",
       "titleLine2": "विशेष रूप से AMM लिक्विडिटी पूल्स के लिए निर्मित।",
       "subtitle": "अपनी AMM लिक्विडिटी पोजीशन को संपार्श्विक (कोलैटरल) के रूप में उपयोग करके ऑन-चेन क्रिप्टो, कमोडिटीज़, FX और रियल वर्ल्ड एसेट्स (RWA) उधार लें।",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC प्रस्ताव पढ़ें",
       "secondaryCta": "Sandbox आज़माएँ"
     },

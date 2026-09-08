@@ -113,7 +113,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
               </div>
 
               <div className="relative flex flex-col gap-5 md:border-b-0">
-                <div className="w-full overflow-hidden leading-none text-foreground">
+                <div className="w-full overflow-hidden leading-none text-foreground [content-visibility:auto] [contain-intrinsic-block-size:120px] md:[contain-intrinsic-block-size:160px]">
                   <div className={`${brandOutfitFont.className} text-[120px] font-semibold italic whitespace-nowrap tracking-[-0.02em] md:text-[160px]`}>
                     AaBbCc
                   </div>

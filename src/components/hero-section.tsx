@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { LazySection } from "@/components/ui/lazy-section"
 import type { LucideIcon } from "lucide-react"
 import {
   ArrowLeftRight,
@@ -145,7 +146,7 @@ function HeroSectionBody(locale: AppLocale) {
           </div>
             </div>
 
-            <div className="w-full space-y-2 overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent_0%,black_11%,black_89%,transparent_100%)]">
+            <LazySection defer minHeight="296px" rootMargin="600px" className="w-full space-y-2 overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent_0%,black_11%,black_89%,transparent_100%)]">
               {[
                 { items: repeatItems(homepagePools, 8, 0), motion: "animate-scroll-left", duration: "62s" },
                 { items: repeatItems(homepagePools, 8, 6), motion: "animate-scroll-right", duration: "70s" },
@@ -166,7 +167,7 @@ function HeroSectionBody(locale: AppLocale) {
                   </div>
                 </div>
               ))}
-            </div>
+            </LazySection>
 
         </PerformanceDiv>
       </div>
