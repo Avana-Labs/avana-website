@@ -67,6 +67,23 @@ function routeSlug(route) {
   return route === "/" ? "home" : route.replace(/^\//, "").replace(/\//g, "--");
 }
 
+function resolveLocaleRoute(route) {
+  if (typeof route !== "string") {
+    return null;
+  }
+
+  if (route === "/[locale]") {
+    return "/";
+  }
+
+  if (route.startsWith("/[locale]/")) {
+    const resolved = route.slice("/[locale]".length);
+    return resolved.includes("[") ? null : resolved;
+  }
+
+  return route.includes("[") ? null : route;
+}
+
 function isAuditableRoute(route, redirectSources) {
   if (typeof route !== "string" || !route.startsWith("/")) {
     return false;
@@ -93,8 +110,8 @@ async function getRoutesToAudit() {
   const routesManifest = JSON.parse(routesManifestRaw);
   const redirectSources = new Set((routesManifest.redirects ?? []).map((redirect) => redirect.source));
 
-  return [...new Set(Object.values(appPathRoutesManifest))]
-    .filter((route) => isAuditableRoute(route, redirectSources))
+  return [...new Set(Object.values(appPathRoutesManifest).map(resolveLocaleRoute))]
+    .filter((route) => route && isAuditableRoute(route, redirectSources))
     .sort((a, b) => a.localeCompare(b));
 }
 

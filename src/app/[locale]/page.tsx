@@ -106,8 +106,8 @@ export default async function Home({ params }: LocaleParamsProps) {
 
       <TrustedBySection caption={t("trustedBy.caption")} />
 
-      <section className="bg-background">
-        <div className="site-content-shell py-16 md:py-20 lg:py-24">
+      <section className="bg-background pb-0">
+        <div className="site-content-shell site-section-gap">
           <p className="max-w-[48rem] text-[1.125rem] leading-[1.55] tracking-[-0.015em] text-type-secondary md:text-[1.25rem] lg:max-w-[60rem] lg:text-[1.625rem] lg:leading-[1.45] lg:tracking-[-0.0125em]">
             {t.rich("intro.text", {
               ink: (chunks) => <span className="text-foreground">{chunks}</span>,
