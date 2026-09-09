@@ -1,0 +1,207 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Avana Public API",
+    "version": "1.0.0",
+    "summary": "Read-only API describing Avana's LP-collateral lending protocol.",
+    "description": "Avana is a DeFi lending protocol that lets users borrow against liquidity provider (LP) positions on Aave v4. This public, read-only API exposes protocol metadata so agents and developers can discover which collateral adapters Avana supports. No authentication is required.",
+    "contact": {
+      "name": "Avana Support",
+      "email": "support@avana.cc",
+      "url": "https://avana.cc/faq"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://avana.cc/terms"
+    }
+  },
+  "servers": [
+    { "url": "https://avana.cc", "description": "Production (canonical apex)" },
+    { "url": "https://www.avana.cc", "description": "Production (www)" }
+  ],
+  "tags": [
+    { "name": "System", "description": "Service status and API discovery." },
+    { "name": "Protocols", "description": "Supported collateral protocol adapters." }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "operationId": "getHealth",
+        "tags": ["System"],
+        "summary": "Service health and API index",
+        "description": "Returns service status, API version, and the list of available endpoints. Use this as the entry point for discovery.",
+        "responses": {
+          "200": {
+            "description": "The API is healthy.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Health" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/protocols": {
+      "get": {
+        "operationId": "listProtocols",
+        "tags": ["Protocols"],
+        "summary": "List supported protocol adapters",
+        "description": "Returns every protocol adapter Avana supports as collateral, including its category, purpose, use cases, and supported features.",
+        "responses": {
+          "200": {
+            "description": "A list of protocol adapters.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ProtocolList" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/protocols/{id}": {
+      "get": {
+        "operationId": "getProtocol",
+        "tags": ["Protocols"],
+        "summary": "Get a protocol adapter by id",
+        "description": "Fetch a single protocol adapter by its URL-safe `id` (for example `uniswap-v3`) or its `shortName` (for example `U3`).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "URL-safe adapter id or shortName.",
+            "schema": { "type": "string", "examples": ["uniswap-v3", "curve", "balancer"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested protocol adapter.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Protocol" }
+              }
+            }
+          },
+          "404": {
+            "description": "No adapter matches the supplied id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Error" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Protocol": {
+        "type": "object",
+        "description": "A protocol adapter Avana supports as collateral.",
+        "required": ["id", "name", "shortName", "category", "purpose", "useCases", "features"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "URL-safe identifier used by /api/protocols/{id}.",
+            "examples": ["uniswap-v3"]
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable adapter name.",
+            "examples": ["Uniswap v3 Adapter"]
+          },
+          "shortName": {
+            "type": "string",
+            "description": "Short ticker-style code.",
+            "examples": ["U3"]
+          },
+          "category": {
+            "type": "string",
+            "description": "Adapter category.",
+            "examples": ["DEX", "Staking", "Lending", "Restaking", "Yield", "Stablecoin", "RWA", "Leverage", "Trading", "Liquidity"]
+          },
+          "purpose": {
+            "type": "string",
+            "description": "What the adapter enables."
+          },
+          "useCases": {
+            "type": "array",
+            "description": "Representative use cases for the adapter.",
+            "items": { "type": "string" }
+          },
+          "features": {
+            "type": "array",
+            "description": "Operations the adapter supports.",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ProtocolList": {
+        "type": "object",
+        "required": ["object", "count", "data"],
+        "properties": {
+          "object": { "type": "string", "const": "list" },
+          "count": { "type": "integer", "description": "Number of adapters returned." },
+          "data": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Protocol" }
+          }
+        }
+      },
+      "Health": {
+        "type": "object",
+        "required": ["status", "name", "version", "documentation", "endpoints"],
+        "properties": {
+          "status": { "type": "string", "const": "ok" },
+          "name": { "type": "string", "examples": ["Avana API"] },
+          "version": { "type": "string", "examples": ["1.0.0"] },
+          "documentation": { "type": "string", "format": "uri" },
+          "endpoints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["method", "path", "description"],
+              "properties": {
+                "method": { "type": "string", "examples": ["GET"] },
+                "path": { "type": "string", "examples": ["/api/protocols"] },
+                "description": { "type": "string" }
+              }
+            }
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "llms": { "type": "string", "format": "uri" },
+              "openapi": { "type": "string", "format": "uri" },
+              "sitemap": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": ["code", "message", "hint", "status", "documentation"],
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "Stable, machine-readable error code.",
+                "examples": ["protocol_not_found", "endpoint_not_found"]
+              },
+              "message": { "type": "string", "description": "Human-readable explanation." },
+              "hint": { "type": "string", "description": "Actionable next step to recover." },
+              "status": { "type": "integer", "description": "HTTP status code.", "examples": [404] },
+              "documentation": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

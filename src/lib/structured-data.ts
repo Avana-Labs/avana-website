@@ -1,4 +1,4 @@
-import { LOGO_PATH, SITE_NAME, SITE_URL, siteRoutes } from "./site"
+import { LOGO_PATH, SITE_NAME, SITE_URL, SUPPORT_EMAIL, siteRoutes } from "./site"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -12,9 +12,14 @@ export const organizationSchema = {
     "https://github.com/aave",
     "https://t.me/dexmini",
   ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "US",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
+    email: SUPPORT_EMAIL,
     url: `${SITE_URL}${siteRoutes.faq}`,
   },
 }

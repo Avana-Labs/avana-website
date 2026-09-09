@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
       languages: languageAlternates(siteRoutes.home),
     },
     openGraph: {
+      type: "website",
       title: `${SITE_NAME} - ${t("home.title")}`,
       description: t("ogDescription"),
       url: SITE_URL,

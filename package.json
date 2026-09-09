@@ -8,6 +8,7 @@
     "start": "next start",
     "lighthouse:audit": "node scripts/run-lighthouse.mjs",
     "lighthouse:check": "node scripts/check-lighthouse-budgets.mjs",
+    "check:agents": "node scripts/check-agent-readiness.mjs",
     "lint": "eslint"
   },
   "dependencies": {

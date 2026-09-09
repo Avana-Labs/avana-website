@@ -22,12 +22,18 @@ export default function robots(): MetadataRoute.Robots {
       {
         // Standard search engine crawlers
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/llms.txt',           // Agent-readable site guide
+          '/openapi.json',       // Public API specification
+          '/api/health',         // Public, read-only API index
+          '/api/protocols',      // Public, read-only protocol catalog
+        ],
         disallow: [
-          '/api/',           // API routes
+          '/api/',           // API routes (except the allowlisted read endpoints above)
           '/_next/',         // Next.js internal routes
           '/private/',       // Private routes (if any)
-          '/*.json$',        // JSON files
+          '/*.json$',        // JSON files (except the allowlisted spec above)
         ],
       },
       {
