@@ -1,7 +1,7 @@
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import dynamic from "next/dynamic"
-import Image from "next/image"
 import { Link } from "@/i18n/navigation"
+import { FeaturePageHero } from "@/components/feature-page-hero"
 import type { LucideIcon } from "lucide-react"
 import { Gauge, Layers, LockKeyhole, MoveRight, TrendingUp, WalletCards } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
@@ -125,59 +125,29 @@ export default async function LendPage({ params }: LocaleParamsProps) {
   return (
     <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
     <main className="bg-white">
-      <div className="site-content-shell flex min-h-screen flex-col pt-10 sm:pt-12 md:pt-20 lg:min-h-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-              {/* Left Column - Hero Image */}
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                  <Image
-                    src="/images/Hero__4_.webp"
-                    alt="App interface"
-                    width={1200}
-                    height={1200}
-                    quality={58}
-                    priority
-                    className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                    sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                  />
-                </div>
-              </div>
-
-              {/* Right Column - Text Content */}
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[18ch] text-foreground md:mb-5 md:max-w-[16ch]">
-                    Earn interest on your assets
-                  </h1>
-
-                  <p className="type-display-lead mb-5 max-w-[34ch] sm:max-w-[38ch] md:mb-6">
-                    Supply single assets and earn yields where LP collateral creates real borrow utilization.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Lending
-                    </Link>
-                    <Link
-                      href="/developers"
-                      className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <FeaturePageHero
+        title="Earn interest on your assets"
+        description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
+        imageSrc="/images/Avana Lend Hero.png"
+        imageAlt="Avana Lend product interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+        >
+          Try Lending
+        </Link>
+        <Link
+          href="/developers"
+          className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
+        >
+          View Docs
+        </Link>
+      </FeaturePageHero>
 
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">

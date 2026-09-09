@@ -1,6 +1,6 @@
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
-import Image from "next/image"
 import { Link } from "@/i18n/navigation"
+import { FeaturePageHero } from "@/components/feature-page-hero"
 import type { LucideIcon } from "lucide-react"
 import {
   Activity,
@@ -136,58 +136,35 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
   return (
     <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "position-safety-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
     <main className="bg-white">
-      <div className="site-content-shell flex min-h-screen flex-col pt-10 sm:pt-12 md:pt-20 lg:min-h-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                    <Image
-                      src="/images/Hero__4_.webp"
-                      alt="Avana leverage market interface"
-                      width={1400}
-                      height={1400}
-                      priority
-                      className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                      sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                    />
-                  </div>
-                </div>
-
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[12ch] text-foreground md:mb-5">
-                    <span>Amplify yield</span>
-                    <br />
-                    <span>under control</span>
-                  </h1>
-
-                  <p className="type-display-lead mb-5 max-w-[38ch] sm:max-w-[42ch] md:mb-6">
-                    Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Looping
-                    </Link>
-                    <Link
-                      href={siteRoutes.developers}
-                      className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <FeaturePageHero
+        title={
+          <>
+            <span>Amplify yield</span>
+            <br />
+            <span>under control</span>
+          </>
+        }
+        description="Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure."
+        imageSrc="/images/Avana Multiply Hero.png"
+        imageAlt="Avana leverage market interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+        >
+          Try Looping
+        </Link>
+        <Link
+          href={siteRoutes.developers}
+          className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
+        >
+          View Docs
+        </Link>
+      </FeaturePageHero>
 
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+import { brandAssetPath } from "@/lib/brand-assets"
 
 export default async function LeverageGlanceShowcaseSection({ locale }: { locale: AppLocale }) {
   return withMarketingI18n(locale, ['leverage-glance-showcase-section'], (
@@ -13,13 +14,20 @@ export default async function LeverageGlanceShowcaseSection({ locale }: { locale
         </SectionTitle>
       </div>
 
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
+      <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
         <Image
-          src="/images/ways-to-use-avana.png"
+          src={brandAssetPath("/images/Avana Multiply Light.png")}
           alt="Core product tools for first-time loopers"
           fill
           sizes="(max-width: 1200px) 100vw, 1120px"
-          className="object-cover object-center"
+          className="object-cover object-center dark:hidden"
+        />
+        <Image
+          src={brandAssetPath("/images/Avana Multiply Dark.png")}
+          alt="Core product tools for first-time loopers"
+          fill
+          sizes="(max-width: 1200px) 100vw, 1120px"
+          className="hidden object-cover object-center dark:block"
         />
       </div>
     </section>

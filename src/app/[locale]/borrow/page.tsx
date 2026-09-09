@@ -10,6 +10,8 @@ import { PerformanceSection } from "@/components/ui/performance-section"
 import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
 import { cn } from "@/lib/utils"
 import { getTokenIconSrc } from "@/lib/token-icons"
+import { brandAssetPath } from "@/lib/brand-assets"
+import { FeaturePageHero } from "@/components/feature-page-hero"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
@@ -236,56 +238,30 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
   return (
     <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
     <main className="bg-white">
-      <section
-        className="items-center mx-auto grid grid-cols-12 gap-6 px-4 sm:px-8 xl:max-w-screen-2xl w-full max-w-[calc(var(--breakpoint-xl)*10/12)] pt-10 sm:pt-14 md:pt-20 pb-4 md:pb-8"
-        aria-labelledby="feature-page-hero"
-      >
-        <div className="col-span-12 sm:col-span-6 xl:col-span-5 xl:col-start-2">
-          <h1 id="feature-page-hero" className="text-mkt-h1 text-balance">
+      <FeaturePageHero
+        title={
+          <>
             Borrow against
             <br />
             AMM positions
-          </h1>
-          <div className="mt-8 w-[90%] max-w-[460px] text-balance xl:text-pretty">
-            <p>
-              Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool.
-            </p>
-          </div>
-          <div className="flex w-fit flex-wrap gap-2 mt-6">
-            <Link
-              href="https://app.avana.cc"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1] dark:bg-white/[0.12] dark:hover:bg-white/[0.16]"
-            >
-              Try Sandbox
-              <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />
-            </Link>
-          </div>
-        </div>
-        <div className="col-span-12 sm:col-span-6 xl:col-span-5">
-          <div className="h-full w-full overflow-hidden aspect-square">
-            <div className="h-full w-full mx-auto overflow-hidden rounded-2xl aspect-auto md:aspect-auto">
-              <picture>
-                <source
-                  srcSet="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=320&q=80&fm=webp 320w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=480&q=80&fm=webp 480w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=640&q=80&fm=webp 640w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=768&q=80&fm=webp 768w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=960&q=80&fm=webp 960w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1200&q=80&fm=webp 1200w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1600&q=80&fm=webp 1600w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp 1920w"
-                  sizes="100vw"
-                  media="(min-width: 768px)"
-                />
-                <img
-                  alt="Rounded button labeled “Deep research” with a telescope icon on a blue gradient background."
-                  src="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp"
-                  srcSet="https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=320&q=80&fm=webp 320w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=480&q=80&fm=webp 480w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=640&q=80&fm=webp 640w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=768&q=80&fm=webp 768w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=960&q=80&fm=webp 960w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1200&q=80&fm=webp 1200w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1600&q=80&fm=webp 1600w, https://images.ctfassets.net/8su2tbn87fck/1EGPX1KmulyQA3fdI8OHyK/a5ae6cebd449b7c82aed9a1917f01fa5/01.png?w=1920&q=80&fm=webp 1920w"
-                  sizes="100vw"
-                  className="mx-auto"
-                  width={2160}
-                  height={2160}
-                />
-              </picture>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        description="Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool."
+        imageSrc="/images/Avana Borrow Hero.png"
+        imageAlt="Avana Borrow product interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1] dark:bg-white/[0.12] dark:hover:bg-white/[0.16]"
+        >
+          Try Sandbox
+          <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />
+        </Link>
+      </FeaturePageHero>
 
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
@@ -454,13 +430,20 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                   Every Pool details, fully explained
                 </SectionTitle>
               </div>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
+              <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
                 <Image
-                  src="/images/borrow-markets-visual.png"
+                  src={brandAssetPath("/images/Avana Borrow Light.png")}
                   alt="Document-style preview of supported borrowing markets"
                   fill
                   sizes="(max-width: 1200px) 100vw, 1120px"
-                  className="object-cover object-center"
+                  className="object-cover object-center dark:hidden"
+                />
+                <Image
+                  src={brandAssetPath("/images/Avana Borrow Dark.png")}
+                  alt="Document-style preview of supported borrowing markets"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1120px"
+                  className="hidden object-cover object-center dark:block"
                 />
               </div>
             </div>
