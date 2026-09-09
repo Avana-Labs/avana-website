@@ -1,5 +1,3 @@
-"use client"
-
 import { cn } from "@/lib/utils"
 import { getTokenIconSrc } from "@/lib/token-icons"
 
@@ -8,6 +6,11 @@ interface TokenLogoProps {
   className?: string
 }
 
+/**
+ * Server component on purpose: the homepage pool marquees render well over a
+ * hundred of these, and a client boundary each is hydration the browser would
+ * do for markup that never changes.
+ */
 export function TokenLogo({ symbol, className }: TokenLogoProps) {
   const src = getTokenIconSrc(symbol)
 
@@ -32,6 +35,8 @@ export function TokenLogo({ symbol, className }: TokenLogoProps) {
       src={src}
       alt=""
       aria-hidden="true"
+      width={28}
+      height={28}
       loading="lazy"
       decoding="async"
       className={cn("h-7 w-7 shrink-0 rounded-full object-contain", className)}
