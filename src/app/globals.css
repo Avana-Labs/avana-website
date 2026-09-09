@@ -1105,7 +1105,7 @@
 
 /* Cursor CTA section (Try Cursor now) */
 .section--headline {
-  padding-block-start: clamp(3.5rem, 6vw, 5.5rem);
+  padding-block-start: clamp(2rem, 3.5vw, 3.25rem);
   padding-block-end: clamp(4rem, 7vw, 6.5rem);
 }
 
