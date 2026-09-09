@@ -1182,7 +1182,8 @@
 /* Avana products & Multiply markets sections */
 #avana-products,
 #multiply-markets {
-  --sd-card-bg: #f2f1ed;
+  /* Outer cards use the canonical "How it works" feature-card surface. */
+  --sd-card-bg: #eef3f5;
   --sd-card-border: rgba(38, 37, 30, 0.08);
   --sd-text-sec: #73726c;
   --sd-radius: 4px;
