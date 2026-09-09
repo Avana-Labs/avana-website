@@ -16,6 +16,16 @@ export function TryAvanaCtaSection({
     <section className="section bg-theme-bg text-theme-text section--headline">
       <div className="container site-content-shell">
         <div className="text-center mx-auto max-w-prose-medium-wide">
+          <video
+            className="mx-auto mb-4"
+            style={{ width: "28rem", maxWidth: "100%", aspectRatio: "16 / 9" }}
+            src="/Avana-Transparent.webm"
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden="true"
+          />
           <h2 className="type-xl sm:type-2xl text-balance mx-auto mb-v1">
             {title}
           </h2>
