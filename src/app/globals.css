@@ -729,7 +729,7 @@
 
 /* Canonical marketing feature-card surface (How it works / product cards) */
 .feature-card {
-  background-color: #eef3f5;
+  background-color: #fafafa;
 }
 
 .feature-card-title {
@@ -1182,8 +1182,8 @@
 /* Avana products & Multiply markets sections */
 #avana-products,
 #multiply-markets {
-  /* Outer cards use the canonical "How it works" feature-card surface. */
-  --sd-card-bg: #eef3f5;
+  /* Neutral light-gray outer card surface. */
+  --sd-card-bg: #fafafa;
   --sd-card-border: rgba(38, 37, 30, 0.08);
   --sd-text-sec: #73726c;
   --sd-radius: 4px;
@@ -1218,16 +1218,14 @@
 #multiply-markets .card {
   position: relative;
   background-color: var(--sd-card-bg);
-  border: 1px solid var(--sd-card-border);
   border-radius: var(--sd-radius);
   padding: 1.25rem;
-  transition: border-color 0.2s ease;
 }
 
 #avana-products .card h2,
 #multiply-markets .card h2 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--foreground);
@@ -1246,7 +1244,6 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--sd-radius);
-  border: 1px solid var(--sd-card-border);
 }
 
 #avana-products .media-light,
@@ -1256,6 +1253,20 @@
 
 #avana-products .bg-theme-card-warm-hex {
   background-color: #f3ede6;
+}
+
+/* Avana Hubs Strategy — match the product cards' text sizing */
+#avana-hubs .feature-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+#avana-hubs .feature-card-description {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #73726c;
 }
 
 /* Developer documentation tables and code */

@@ -292,7 +292,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <section className="bg-white site-section-gap">
+      <section id="avana-hubs" className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[90rem]">
             <div className="flex flex-col gap-6">
@@ -308,14 +308,14 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
               {lpHubMarkets.map((hub) => (
                 <article
                   key={hub.title}
-                  className="flex flex-col feature-card rounded-[4px] border border-border p-5"
+                  className="flex flex-col feature-card rounded-[4px] p-5"
                 >
                   <FeatureCardTitle>{hub.title}</FeatureCardTitle>
-                  <FeatureCardDescription className="mt-3 min-h-[4.5rem] max-w-[22rem]">
+                  <FeatureCardDescription className="mt-1.5 max-w-[22rem]">
                     {hub.description}
                   </FeatureCardDescription>
 
-                  <div className="mt-5 rounded-[4px] border border-border bg-white p-5">
+                  <div className="mt-5 rounded-[4px] bg-white p-5">
                     <HubTokenGroup label="LP pool collateral" tokens={hub.pools} withPoolIcons />
                     <HubTokenGroup label="Borrowable" tokens={hub.borrowable} withTokenIcons />
                   </div>
