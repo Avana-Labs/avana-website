@@ -15,6 +15,20 @@ const ROUTES_MANIFEST = path.join(process.cwd(), ".next", "routes-manifest.json"
 const EXCLUDED_ROUTES = new Set(["/_global-error", "/_not-found", "/favicon.ico", "/robots.txt", "/sitemap.xml", "/og"]);
 const REQUESTED_ROUTES = process.env.LIGHTHOUSE_ROUTES?.split(",").map((route) => route.trim()).filter(Boolean);
 const RUNS = Math.max(1, Number(process.env.LIGHTHOUSE_RUNS ?? 3));
+/**
+ * Measure paints and main-thread blocking, don't model them.
+ *
+ * Lighthouse defaults to "simulate" (Lantern): it traces the page unthrottled
+ * and then estimates what slow-4G would have done. The estimate is stable and
+ * cheap, but it is not an observation -- on this site it reported TBT of
+ * 16-20ms where applied throttling measured 46-331ms on the same build, so the
+ * budgets below were passing on a number nothing had actually timed.
+ *
+ * "devtools" applies real network and CPU throttling and reports observed
+ * values. Runs take longer in wall-clock, which is the cost of measuring.
+ * Set LIGHTHOUSE_THROTTLING=simulate for a fast, comparable-to-CI-history run.
+ */
+const THROTTLING_METHOD = process.env.LIGHTHOUSE_THROTTLING ?? "devtools";
 
 function median(values) {
   const sorted = [...values].sort((a, b) => a - b);
@@ -205,7 +219,7 @@ async function main() {
 
     try {
       const summary = [];
-      console.log(`Auditing ${routes.length} routes with ${RUNS} run${RUNS === 1 ? "" : "s"} each...`);
+      console.log(`Auditing ${routes.length} routes with ${RUNS} run${RUNS === 1 ? "" : "s"} each (${THROTTLING_METHOD} throttling)...`);
 
       for (const [index, route] of routes.entries()) {
         const url = `${BASE_URL}${route}`;
@@ -220,6 +234,7 @@ async function main() {
               output: ["html", "json"],
               onlyCategories: CATEGORIES,
               logLevel: "error",
+              throttlingMethod: THROTTLING_METHOD,
             },
           );
 
@@ -251,7 +266,7 @@ async function main() {
       console.table(summary);
       await writeFile(
         path.join(OUTPUT_DIR, "summary.json"),
-        JSON.stringify({ generatedAt: new Date().toISOString(), runs: RUNS, routes: summary }, null, 2),
+        JSON.stringify({ generatedAt: new Date().toISOString(), runs: RUNS, throttlingMethod: THROTTLING_METHOD, routes: summary }, null, 2),
         "utf8",
       );
       console.log(`Saved Lighthouse reports to ${OUTPUT_DIR}`);
