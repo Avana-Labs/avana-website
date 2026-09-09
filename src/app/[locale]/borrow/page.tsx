@@ -98,7 +98,6 @@ const borrowPartnerFeatures = [
 
 const lpHubMarkets = [
   {
-    category: "Lowest-risk hub",
     title: "Stable LP Hub",
     description:
       "Stablecoin LP markets built for tight pricing, low slippage, and minimal impermanent loss.",
@@ -106,7 +105,6 @@ const lpHubMarkets = [
     borrowable: ["USDC", "USDT", "GHO", "USDe", "DAI"],
   },
   {
-    category: "Global Strategy hub",
     title: "Correlated LP Hub",
     description:
       "LP markets for assets that move together, built for tighter risk bands and cleaner borrowing power.",
@@ -114,11 +112,10 @@ const lpHubMarkets = [
     borrowable: ["ETH", "wstETH", "USDC", "GHO", "USDe"],
   },
   {
-    category: "Higher-range hub",
     title: "Volatile LP Hub",
     description:
       "Major DeFi asset LP markets for wider price ranges and higher risk-reward strategies.",
-    pools: ["ETH / USDC", "WBTC / ETH", "cbBTC / USDC", "AAVE / ETH", "+4 More"],
+    pools: ["ETH / USDC", "WBTC / ETH", "cbBTC / USDC", "AAVE / ETH"],
     borrowable: ["ETH", "wstETH", "WBTC", "cbBTC", "USDT", "USDC", "GHO", "AAVE"],
   },
 ] as const
@@ -307,25 +304,21 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
               </div>
             </div>
 
-            <div className="mt-10 grid gap-5 lg:mt-16 lg:grid-cols-3">
+            <div className="mt-10 grid items-start gap-5 lg:mt-16 lg:grid-cols-3">
               {lpHubMarkets.map((hub) => (
                 <article
                   key={hub.title}
-                  className="flex h-full flex-col feature-card rounded-2xl border border-border p-6 md:p-8"
+                  className="flex flex-col feature-card rounded-[4px] border border-border p-5"
                 >
-                  <p className="text-sm font-semibold tracking-[-0.01em] text-[#01AACF]">
-                    {hub.category}
-                  </p>
-                  <FeatureCardTitle className="mt-4">{hub.title}</FeatureCardTitle>
+                  <FeatureCardTitle>{hub.title}</FeatureCardTitle>
                   <FeatureCardDescription className="mt-3 min-h-[4.5rem] max-w-[22rem]">
                     {hub.description}
                   </FeatureCardDescription>
 
-                  <div className="mt-8 rounded-[4px] border border-border bg-white p-5">
+                  <div className="mt-5 rounded-[4px] border border-border bg-white p-5">
                     <HubTokenGroup label="LP pool collateral" tokens={hub.pools} withPoolIcons />
                     <HubTokenGroup label="Borrowable" tokens={hub.borrowable} withTokenIcons />
                   </div>
-
                 </article>
               ))}
             </div>
