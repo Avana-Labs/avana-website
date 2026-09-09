@@ -9,6 +9,7 @@
     "lighthouse:audit": "node scripts/run-lighthouse.mjs",
     "lighthouse:check": "node scripts/check-lighthouse-budgets.mjs",
     "check:agents": "node scripts/check-agent-readiness.mjs",
+    "check:i18n": "node scripts/check-marketing-i18n.mjs",
     "lint": "eslint"
   },
   "dependencies": {
