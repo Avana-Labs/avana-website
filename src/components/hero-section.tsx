@@ -200,7 +200,7 @@ function HeroSectionBody(locale: AppLocale) {
                       className="media-border-container relative grid grid-cols-1 grid-rows-1"
                       style={
                         {
-                          "--layered-media-bg-light": "#EBE4D8",
+                          "--layered-media-bg-light": "#FFFFFF",
                           "--layered-media-bg-dark": "#383026",
                           height: "320px",
                         } as React.CSSProperties
@@ -208,7 +208,7 @@ function HeroSectionBody(locale: AppLocale) {
                     >
                       <div
                         className="media-light absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(235, 228, 216)" }}
+                        style={{ backgroundColor: "#fff" }}
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-4 sm:p-5">
@@ -244,7 +244,7 @@ function HeroSectionBody(locale: AppLocale) {
                       className="media-border-container relative grid grid-cols-1 grid-rows-1"
                       style={
                         {
-                          "--layered-media-bg-light": "#DCE6E1",
+                          "--layered-media-bg-light": "#FFFFFF",
                           "--layered-media-bg-dark": "#25342D",
                           height: "320px",
                         } as React.CSSProperties
@@ -252,7 +252,7 @@ function HeroSectionBody(locale: AppLocale) {
                     >
                       <div
                         className="media-light absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(220, 230, 225)" }}
+                        style={{ backgroundColor: "#fff" }}
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
@@ -363,7 +363,7 @@ function HeroSectionBody(locale: AppLocale) {
                       className="media-border-container relative grid grid-cols-1 grid-rows-1"
                       style={
                         {
-                          "--layered-media-bg-light": "#DDE3EA",
+                          "--layered-media-bg-light": "#FFFFFF",
                           "--layered-media-bg-dark": "#28303B",
                           height: "320px",
                         } as React.CSSProperties
@@ -371,7 +371,7 @@ function HeroSectionBody(locale: AppLocale) {
                     >
                       <div
                         className="media-light absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(221, 227, 234)" }}
+                        style={{ backgroundColor: "#fff" }}
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
@@ -426,7 +426,7 @@ function HeroSectionBody(locale: AppLocale) {
                       className="media-border-container relative grid grid-cols-1 grid-rows-1"
                       style={
                         {
-                          "--layered-media-bg-light": "#E3DFD8",
+                          "--layered-media-bg-light": "#FFFFFF",
                           "--layered-media-bg-dark": "#34302C",
                           height: "320px",
                         } as React.CSSProperties
@@ -434,7 +434,7 @@ function HeroSectionBody(locale: AppLocale) {
                     >
                       <div
                         className="media-light absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(227, 223, 216)" }}
+                        style={{ backgroundColor: "#fff" }}
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">

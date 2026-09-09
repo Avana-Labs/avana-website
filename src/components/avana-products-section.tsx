@@ -33,7 +33,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                   className="media-border-container relative grid grid-cols-1 grid-rows-1"
                   style={
                     {
-                      "--layered-media-bg-light": "#B6B9BE",
+                      "--layered-media-bg-light": "#FFFFFF",
                       "--layered-media-bg-dark": "#3C3935",
                       height: "380px",
                     } as React.CSSProperties
@@ -41,7 +41,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                 >
                   <div
                     className="media-light absolute inset-0 z-0"
-                    style={{ backgroundColor: "rgb(182, 185, 190)" }}
+                    style={{ backgroundColor: "#fff" }}
                   />
                   <div className="z-20 col-span-full row-span-full h-full min-h-0">
                     <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
@@ -79,7 +79,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                   className="media-border-container relative grid grid-cols-1 grid-rows-1"
                   style={
                     {
-                      "--layered-media-bg-light": "#D9D5CF",
+                      "--layered-media-bg-light": "#FFFFFF",
                       "--layered-media-bg-dark": "#4A443B",
                       height: "380px",
                     } as React.CSSProperties
@@ -87,7 +87,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                 >
                   <div
                     className="media-light absolute inset-0 z-0"
-                    style={{ backgroundColor: "rgb(217, 213, 207)" }}
+                    style={{ backgroundColor: "#fff" }}
                   />
                   <div className="z-20 col-span-full row-span-full h-full min-h-0">
                     <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
@@ -122,8 +122,8 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
               </div>
               <figure className="pt-g1.75">
                 <div
-                  className="media-border-container relative grid grid-cols-1 grid-rows-1 bg-theme-card-warm-hex"
-                  style={{ height: "380px" }}
+                  className="media-border-container relative grid grid-cols-1 grid-rows-1"
+                  style={{ backgroundColor: "#fff", height: "380px" }}
                 >
                   <div className="z-20 col-span-full row-span-full h-full min-h-0">
                     <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
