@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { LendMarketsDeck } from "@/components/lend-markets-deck"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import { MultiplyAssetsLoop } from "@/components/multiply-assets-loop"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
@@ -105,7 +106,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                 <div>
                   <h2>Multiply liquidity yields</h2>
                   <div className="text-pretty">
-                    Use LP-backed credit to create managed leverage without exiting your base liquidity position.
+                    Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit.
                   </div>
                 </div>
               </div>
@@ -114,20 +115,8 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                   className="media-border-container relative grid grid-cols-1 grid-rows-1"
                   style={{ backgroundColor: "#fff", height: "380px" }}
                 >
-                  <div className="z-20 col-span-full row-span-full h-full min-h-0">
-                    <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
-                      <div className="relative w-full max-w-[340px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black/10 xl:max-w-[380px]">
-                        <Image
-                          src="/marketing-static/automate/card-codebase-knowledge.png"
-                          alt="Avana Multiply managed leverage yield"
-                          loading="lazy"
-                          width={954}
-                          height={796}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    </div>
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <MultiplyAssetsLoop />
                   </div>
                 </div>
               </figure>
