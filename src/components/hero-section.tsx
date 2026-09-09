@@ -476,7 +476,7 @@ function HeroSectionBody(locale: AppLocale) {
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
                           <div className="w-full max-w-[240px] sm:max-w-[260px]">
-                            <div className="rounded-[14px] border border-border/80 bg-card p-3.5 shadow-lg">
+                            <div className="px-1">
                               <div className="flex items-center justify-between gap-2">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.1em] text-muted-foreground">Range</span>
                                 <span className="shrink-0 rounded-md border border-border bg-muted/60 px-2 py-0.5 text-[9px] font-semibold text-foreground">
@@ -541,9 +541,8 @@ function HeroSectionBody(locale: AppLocale) {
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
                           <div className="w-full max-w-[240px] sm:max-w-[260px]">
-                            <div className="rounded-[14px] border border-border/80 bg-card p-3.5 shadow-lg">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Console</span>
+                            <div className="px-1">
+                              <div className="flex items-center justify-end">
                                 <div className="flex items-center gap-1.5">
                                   <div className="ce-state h-1.5 w-1.5 rounded-full bg-emerald-500" />
                                   <div className="ce-state h-1.5 w-1.5 rounded-full bg-emerald-500/60" />

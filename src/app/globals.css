@@ -1288,6 +1288,22 @@
   border-radius: var(--sd-radius);
 }
 
+/* Tighten the Multiply Markets card visuals — trim empty top/bottom space. */
+#multiply-markets .media-border-container {
+  height: 250px !important;
+}
+
+/* On mobile the cards are full-width, so scale the visuals up to fill them and
+   give the box more height to fit the enlarged content. */
+@media (max-width: 640px) {
+  #multiply-markets .media-border-container {
+    height: 300px !important;
+  }
+  #multiply-markets .media-border-container .z-20 {
+    transform: scale(1.2);
+  }
+}
+
 #avana-products .media-light,
 #multiply-markets .media-light {
   display: block;
