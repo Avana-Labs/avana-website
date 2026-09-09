@@ -5,6 +5,7 @@ import {
   ArrowLeftRight,
   BriefcaseBusiness,
   Building2,
+  ChevronDown,
   Globe2,
   Layers,
   Zap,
@@ -191,7 +192,7 @@ function HeroSectionBody(locale: AppLocale) {
                     <div>
                       <h2>Loop LP capital</h2>
                       <div className="text-pretty">
-                        Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit.
+                        Use LP-backed credit for managed leverage, keeping your LP position.
                       </div>
                     </div>
                   </div>
@@ -212,14 +213,107 @@ function HeroSectionBody(locale: AppLocale) {
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-4 sm:p-5">
-                          <div className="relative h-[210px] w-full max-w-[240px] overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 sm:max-w-[260px]">
-                            <Image
-                              src="/images/avana-tokens-rewards-v2.jpg"
-                              alt="Avana token rewards"
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                              className="object-cover"
+                          <div className="relative mx-auto w-full max-w-[240px] aspect-[240/200]" aria-hidden="true">
+                            {/* Connector */}
+                            <svg
+                              viewBox="0 0 240 200"
+                              className="pointer-events-none absolute inset-0 h-full w-full"
+                              fill="none"
+                            >
+                              <path
+                                d="M46 82 V147 H67"
+                                stroke="#01AACF"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <circle cx="46" cy="82" r="3.5" fill="#01AACF" />
+                              <circle cx="67" cy="147" r="3.5" fill="#01AACF" />
+                            </svg>
+
+                            {/* Traveling capital dot */}
+                            <div
+                              className="ce-loop-dot absolute h-2.5 w-2.5 rounded-full bg-[#01AACF]"
+                              style={{ left: "19.17%", top: "41%", boxShadow: "0 0 8px 2px rgba(1,170,207,0.55)" }}
                             />
+
+                            {/* Net APY chip (top-right) */}
+                            <div
+                              className="absolute rounded-lg border border-border/70 bg-card/95 px-2 py-1"
+                              style={{ left: "73%", top: "9%", width: "25%" }}
+                            >
+                              <span className="block text-[7px] font-medium uppercase text-muted-foreground">Net APY</span>
+                              <div className="h-3.5 overflow-hidden">
+                                <div className="ce-amt">
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">9.2%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">13.5%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">18.1%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">9.2%</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Leverage chip (bottom-left) */}
+                            <div
+                              className="absolute rounded-lg border border-border/70 bg-card/95 px-2 py-1"
+                              style={{ left: "0%", top: "76%", width: "27%" }}
+                            >
+                              <span className="block text-[7px] font-medium uppercase text-muted-foreground">Leverage</span>
+                              <div className="h-3.5 overflow-hidden">
+                                <div className="ce-amt">
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">1.8×</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">2.4×</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">3.1×</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">1.8×</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Supply card */}
+                            <div
+                              className="absolute rounded-2xl bg-card px-3 py-2.5 ring-1 ring-[#01AACF]/30"
+                              style={{ left: "2%", top: "8%", width: "70%", height: "33%" }}
+                            >
+                              <span className="block text-[10px] font-medium text-muted-foreground">Supply</span>
+                              <div className="mt-1 flex items-center justify-between">
+                                <div className="flex items-center gap-1.5">
+                                  <TokenLogo symbol="wstETH" className="h-5 w-5" />
+                                  <span className="text-[13px] font-semibold text-foreground">wstETH</span>
+                                  <ChevronDown className="h-3 w-3 text-muted-foreground" />
+                                </div>
+                                <div className="h-5 overflow-hidden">
+                                  <div className="ce-amt">
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$8,000</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$10,000</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$12,000</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$8,000</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Borrow card */}
+                            <div
+                              className="absolute rounded-2xl bg-card px-3 py-2.5 ring-1 ring-[#01AACF]/30"
+                              style={{ left: "28%", top: "57%", width: "70%", height: "33%" }}
+                            >
+                              <span className="block text-[10px] font-medium text-muted-foreground">Borrow</span>
+                              <div className="mt-1 flex items-center justify-between">
+                                <div className="flex items-center gap-1.5">
+                                  <TokenLogo symbol="USDC" className="h-5 w-5" />
+                                  <span className="text-[13px] font-semibold text-foreground">USDC</span>
+                                  <ChevronDown className="h-3 w-3 text-muted-foreground" />
+                                </div>
+                                <div className="h-5 overflow-hidden">
+                                  <div className="ce-amt">
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$6,000</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$7,500</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$9,000</span>
+                                    <span className="flex h-5 items-center justify-end text-[14px] font-semibold tabular-nums text-foreground">$6,000</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -255,9 +349,9 @@ function HeroSectionBody(locale: AppLocale) {
                         style={{ backgroundColor: "#fff" }}
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
-                        <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="w-full max-w-[240px] overflow-hidden sm:max-w-[260px]">
-                            <div className="h-[188px] overflow-hidden">
+                        <div className="flex h-full w-full items-center justify-center p-4 sm:p-5">
+                          <div className="w-full max-w-[240px] sm:max-w-[260px]">
+                            <div className="h-[216px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_5%,black_95%,transparent)]">
                               <div className="ce-ticker-risk">
                                 {[
                                   {
@@ -309,29 +403,35 @@ function HeroSectionBody(locale: AppLocale) {
                                     ],
                                   },
                                 ].map((item, i) => (
-                                  <div key={i} className="flex h-[188px] items-center">
-                                    <div className="w-full rounded-[14px] border border-border/80 bg-card p-3 shadow-lg">
-                                      <div className="flex items-center justify-between">
-                                        <span className="text-xs font-semibold text-foreground">{item.pair}</span>
-                                        <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold ${item.badgeBg} ${item.badgeText} ${item.badgeBorder}`}>
+                                  <div key={i} className="flex h-[216px] items-center">
+                                    <div className="w-full">
+                                      <div className="flex items-center justify-between gap-2">
+                                        <div className="flex items-center gap-2">
+                                          <div className="relative flex shrink-0 items-center">
+                                            <TokenLogo symbol={item.pair.split(" / ")[0]} className="h-6 w-6 ring-2 ring-[#fff]" />
+                                            <TokenLogo symbol={item.pair.split(" / ")[1]} className="-ml-2 h-6 w-6 ring-2 ring-[#fff]" />
+                                          </div>
+                                          <span className="text-[15px] font-semibold text-foreground">{item.pair}</span>
+                                        </div>
+                                        <span className={`shrink-0 rounded-full border px-2.5 py-1 text-[11px] font-semibold ${item.badgeBg} ${item.badgeText} ${item.badgeBorder}`}>
                                           {item.badge}
                                         </span>
                                       </div>
-                                      <div className="mt-2.5 space-y-2">
+                                      <div className="mt-4 space-y-2.5">
                                         {item.metrics.map((metric) => (
                                           <div key={metric.label}>
                                             <div className="flex items-center justify-between">
-                                              <span className="text-[9px] font-medium text-muted-foreground">{metric.label}</span>
-                                              <span className="text-[10px] font-semibold text-foreground">{metric.value}</span>
+                                              <span className="text-[12px] font-medium text-muted-foreground">{metric.label}</span>
+                                              <span className="text-[13px] font-semibold text-foreground">{metric.value}</span>
                                             </div>
-                                            <div className="mt-1 h-[4px] w-full overflow-hidden rounded-full bg-muted">
+                                            <div className="mt-1.5 h-[6px] w-full overflow-hidden rounded-full bg-muted">
                                               <div className="h-full rounded-full transition-[width] duration-700" style={{ width: `${metric.level}%`, backgroundColor: metric.color }} />
                                             </div>
                                           </div>
                                         ))}
                                       </div>
-                                      <div className="mt-2.5 flex items-center gap-1.5 text-[9px] font-medium text-emerald-600">
-                                        <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                      <div className="mt-4 flex items-center gap-2 text-[11px] font-medium text-emerald-600">
+                                        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                                         Borrowing enabled
                                       </div>
                                     </div>
@@ -445,15 +545,22 @@ function HeroSectionBody(locale: AppLocale) {
                               <div className="flex items-center justify-between">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Console</span>
                                 <div className="flex items-center gap-1.5">
-                                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/60" />
-                                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/30" />
+                                  <div className="ce-state h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                  <div className="ce-state h-1.5 w-1.5 rounded-full bg-emerald-500/60" />
+                                  <div className="ce-state h-1.5 w-1.5 rounded-full bg-emerald-500/30" />
                                 </div>
                               </div>
                               <div className="mt-3 flex items-end justify-between gap-2">
                                 <div>
                                   <span className="block text-[9px] font-medium uppercase tracking-[0.08em] text-muted-foreground">Health</span>
-                                  <p className="mt-1 text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-foreground">1.82</p>
+                                  <div className="mt-1 h-[2.2rem] overflow-hidden">
+                                    <div className="ce-amt">
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-emerald-500">1.82</p>
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-amber-500">1.34</p>
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-red-500">1.06</p>
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-emerald-500">1.82</p>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div className="flex h-[48px] items-end gap-1.5 rounded-lg border border-border bg-muted/40 px-2.5 py-1.5">
                                   <div className="ce-eq ce-eq-1 h-5 w-1.5 rounded-full bg-emerald-500/40" />
@@ -462,13 +569,24 @@ function HeroSectionBody(locale: AppLocale) {
                                 </div>
                               </div>
                               <div className="mt-3 flex items-center justify-between">
-                                <span className="text-[10px] font-semibold text-foreground">ETH / USDC</span>
-                                <span className="text-[10px] font-medium tabular-nums text-muted-foreground">64%</span>
+                                <div className="flex items-center gap-1.5">
+                                  <div className="relative flex shrink-0 items-center">
+                                    <TokenLogo symbol="ETH" className="h-4 w-4 ring-2 ring-card" />
+                                    <TokenLogo symbol="USDC" className="-ml-1.5 h-4 w-4 ring-2 ring-card" />
+                                  </div>
+                                  <span className="text-[10px] font-semibold text-foreground">ETH / USDC</span>
+                                </div>
+                                <div className="h-3.5 overflow-hidden">
+                                  <div className="ce-amt">
+                                    <span className="flex h-3.5 items-center justify-end text-[10px] font-medium tabular-nums text-muted-foreground">45%</span>
+                                    <span className="flex h-3.5 items-center justify-end text-[10px] font-medium tabular-nums text-muted-foreground">68%</span>
+                                    <span className="flex h-3.5 items-center justify-end text-[10px] font-medium tabular-nums text-muted-foreground">88%</span>
+                                    <span className="flex h-3.5 items-center justify-end text-[10px] font-medium tabular-nums text-muted-foreground">45%</span>
+                                  </div>
+                                </div>
                               </div>
                               <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
-                                <div className="relative h-full w-[64%] overflow-hidden rounded-full bg-emerald-500">
-                                <div className="ce-shimmer absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-                              </div>
+                                <div className="ce-health-bar h-full w-[45%] rounded-full bg-emerald-500" />
                               </div>
                               <div className="mt-2.5 flex items-center justify-between">
                                 <span className="text-[9px] text-muted-foreground">Borrow cap</span>
@@ -503,13 +621,31 @@ function HeroSectionBody(locale: AppLocale) {
               }
               .ce-eq {
                 transform-origin: bottom;
-                animation: ce-eq 1.6s ease-in-out infinite;
+                animation: ce-eq 1.6s ease-in-out infinite, ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
               }
               .ce-eq-2 { animation-delay: 0.2s; }
               .ce-eq-3 { animation-delay: 0.4s; }
               @keyframes ce-eq {
                 0%, 100% { transform: scaleY(0.55); }
                 50% { transform: scaleY(1); }
+              }
+              .ce-state {
+                animation: ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-state {
+                0%, 20% { background-color: #10b981; }
+                25%, 45% { background-color: #f59e0b; }
+                50%, 70% { background-color: #ef4444; }
+                75%, 100% { background-color: #10b981; }
+              }
+              .ce-health-bar {
+                animation: ce-health-bar 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-health-bar {
+                0%, 20% { width: 45%; background-color: #10b981; }
+                25%, 45% { width: 68%; background-color: #f59e0b; }
+                50%, 70% { width: 88%; background-color: #ef4444; }
+                75%, 100% { width: 45%; background-color: #10b981; }
               }
               .ce-shimmer {
                 animation: ce-shimmer 2.4s ease-in-out infinite;
@@ -518,11 +654,36 @@ function HeroSectionBody(locale: AppLocale) {
                 0% { transform: translateX(-120%); }
                 100% { transform: translateX(360%); }
               }
+              .ce-loop-dot {
+                transform: translate(-50%, -50%);
+                animation: ce-loop 2.6s ease-in-out infinite;
+              }
+              @keyframes ce-loop {
+                0% { top: 41%; left: 19.17%; opacity: 0; }
+                12% { opacity: 1; }
+                52% { top: 73.5%; left: 19.17%; opacity: 1; }
+                70% { top: 73.5%; left: 27.9%; opacity: 1; }
+                82% { top: 73.5%; left: 27.9%; opacity: 0; }
+                100% { top: 41%; left: 19.17%; opacity: 0; }
+              }
+              .ce-amt {
+                animation: ce-amt 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-amt {
+                0%, 20% { transform: translateY(0%); }
+                25%, 45% { transform: translateY(-25%); }
+                50%, 70% { transform: translateY(-50%); }
+                75%, 100% { transform: translateY(-75%); }
+              }
               @media (prefers-reduced-motion: reduce) {
                 .ce-ticker-risk,
                 .ce-range-dot,
                 .ce-eq,
-                .ce-shimmer {
+                .ce-shimmer,
+                .ce-loop-dot,
+                .ce-amt,
+                .ce-state,
+                .ce-health-bar {
                   animation: none !important;
                 }
               }
