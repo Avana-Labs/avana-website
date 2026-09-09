@@ -256,7 +256,7 @@ function HeroSectionBody(locale: AppLocale) {
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3 sm:max-w-[260px]">
+                          <div className="w-full max-w-[240px] overflow-hidden sm:max-w-[260px]">
                             <div className="h-[188px] overflow-hidden">
                               <div className="ce-ticker-risk">
                                 {[
@@ -310,7 +310,7 @@ function HeroSectionBody(locale: AppLocale) {
                                   },
                                 ].map((item, i) => (
                                   <div key={i} className="flex h-[188px] items-center">
-                                    <div className="w-full rounded-[14px] border border-border/80 bg-background/90 p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+                                    <div className="w-full rounded-[14px] border border-border/80 bg-card p-3 shadow-lg">
                                       <div className="flex items-center justify-between">
                                         <span className="text-xs font-semibold text-foreground">{item.pair}</span>
                                         <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold ${item.badgeBg} ${item.badgeText} ${item.badgeBorder}`}>
@@ -375,8 +375,8 @@ function HeroSectionBody(locale: AppLocale) {
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3.5 sm:max-w-[260px]">
-                            <div className="overflow-hidden rounded-[14px] border border-border/80 bg-background/90 p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+                          <div className="w-full max-w-[240px] sm:max-w-[260px]">
+                            <div className="rounded-[14px] border border-border/80 bg-card p-3.5 shadow-lg">
                               <div className="flex items-center justify-between gap-2">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.1em] text-muted-foreground">Range</span>
                                 <span className="shrink-0 rounded-md border border-border bg-muted/60 px-2 py-0.5 text-[9px] font-semibold text-foreground">
@@ -389,7 +389,9 @@ function HeroSectionBody(locale: AppLocale) {
                                 <p className="absolute left-2 top-1 text-[8px] font-bold text-rose-500">↑</p>
                                 <p className="absolute bottom-1 left-2 text-[8px] font-bold text-rose-500">↓</p>
                                 <div className="absolute inset-x-8 inset-y-5 z-0 rounded-md border border-border bg-background shadow-xs" />
-                                <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-primary bg-background shadow-xs" />
+                                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                                <div className="ce-range-dot h-4 w-4 rounded-full border-2 border-primary bg-background shadow-xs" />
+                              </div>
                               </div>
                               <div className="mt-3 grid grid-cols-2 gap-2">
                                 <div className="rounded-lg border border-border/80 bg-muted/40 px-2.5 py-1.5 text-center">
@@ -438,8 +440,8 @@ function HeroSectionBody(locale: AppLocale) {
                       />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3.5 sm:max-w-[260px]">
-                            <div className="overflow-hidden rounded-[14px] border border-border/80 bg-background/90 p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+                          <div className="w-full max-w-[240px] sm:max-w-[260px]">
+                            <div className="rounded-[14px] border border-border/80 bg-card p-3.5 shadow-lg">
                               <div className="flex items-center justify-between">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Console</span>
                                 <div className="flex items-center gap-1.5">
@@ -454,9 +456,9 @@ function HeroSectionBody(locale: AppLocale) {
                                   <p className="mt-1 text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-foreground">1.82</p>
                                 </div>
                                 <div className="flex h-[48px] items-end gap-1.5 rounded-lg border border-border bg-muted/40 px-2.5 py-1.5">
-                                  <div className="h-5 w-1.5 rounded-full bg-emerald-500/40" />
-                                  <div className="h-7 w-1.5 rounded-full bg-emerald-500/70" />
-                                  <div className="h-9 w-1.5 rounded-full bg-emerald-500" />
+                                  <div className="ce-eq ce-eq-1 h-5 w-1.5 rounded-full bg-emerald-500/40" />
+                                  <div className="ce-eq ce-eq-2 h-7 w-1.5 rounded-full bg-emerald-500/70" />
+                                  <div className="ce-eq ce-eq-3 h-9 w-1.5 rounded-full bg-emerald-500" />
                                 </div>
                               </div>
                               <div className="mt-3 flex items-center justify-between">
@@ -464,7 +466,9 @@ function HeroSectionBody(locale: AppLocale) {
                                 <span className="text-[10px] font-medium tabular-nums text-muted-foreground">64%</span>
                               </div>
                               <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-muted">
-                                <div className="h-full w-[64%] rounded-full bg-emerald-500" />
+                                <div className="relative h-full w-[64%] overflow-hidden rounded-full bg-emerald-500">
+                                <div className="ce-shimmer absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+                              </div>
                               </div>
                               <div className="mt-2.5 flex items-center justify-between">
                                 <span className="text-[9px] text-muted-foreground">Borrow cap</span>
@@ -490,8 +494,35 @@ function HeroSectionBody(locale: AppLocale) {
                 56%, 78% { transform: translateY(-50%); }
                 84%, 100% { transform: translateY(-75%); }
               }
+              .ce-range-dot {
+                animation: ce-dot 4.5s ease-in-out infinite;
+              }
+              @keyframes ce-dot {
+                0%, 100% { transform: translateY(-13px); }
+                50% { transform: translateY(13px); }
+              }
+              .ce-eq {
+                transform-origin: bottom;
+                animation: ce-eq 1.6s ease-in-out infinite;
+              }
+              .ce-eq-2 { animation-delay: 0.2s; }
+              .ce-eq-3 { animation-delay: 0.4s; }
+              @keyframes ce-eq {
+                0%, 100% { transform: scaleY(0.55); }
+                50% { transform: scaleY(1); }
+              }
+              .ce-shimmer {
+                animation: ce-shimmer 2.4s ease-in-out infinite;
+              }
+              @keyframes ce-shimmer {
+                0% { transform: translateX(-120%); }
+                100% { transform: translateX(360%); }
+              }
               @media (prefers-reduced-motion: reduce) {
-                .ce-ticker-risk {
+                .ce-ticker-risk,
+                .ce-range-dot,
+                .ce-eq,
+                .ce-shimmer {
                   animation: none !important;
                 }
               }
