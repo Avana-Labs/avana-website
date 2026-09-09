@@ -321,7 +321,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                     {hub.description}
                   </FeatureCardDescription>
 
-                  <div className="mt-8 border-t border-border pt-6">
+                  <div className="mt-8 rounded-xl border border-border bg-white p-5">
                     <HubTokenGroup label="LP pool collateral" tokens={hub.pools} withPoolIcons />
                     <HubTokenGroup label="Borrowable" tokens={hub.borrowable} withTokenIcons />
                   </div>
