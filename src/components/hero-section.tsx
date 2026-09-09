@@ -562,7 +562,6 @@ function HeroSectionBody(locale: AppLocale) {
           <HomepageFaqSection />
         </div>
       </div>
-      <div className="h-px w-full bg-border" aria-hidden="true" />
     </section>
   )
 }
