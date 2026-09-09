@@ -164,12 +164,6 @@
       "latestFrom": "Последнее с Avana",
       "readNewsroom": "Читать новостную редакцию"
     },
-    "theme": {
-      "lightMode": "Светлый режим",
-      "darkMode": "Тёмный режим",
-      "systemMode": "Система",
-      "tapToChange": "Нажмите, чтобы изменить"
-    },
     "exportMenu": {
       "copyPage": "Копировать страницу",
       "copied": "Скопировано",

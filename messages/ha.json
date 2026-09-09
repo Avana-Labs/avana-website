@@ -164,12 +164,6 @@
       "latestFrom": "Sabo daga Avana",
       "readNewsroom": "Karanta ɗakin labarai"
     },
-    "theme": {
-      "lightMode": "Yanayin haske",
-      "darkMode": "Yanayin duhu",
-      "systemMode": "Tsarin",
-      "tapToChange": "Matsa don canza"
-    },
     "exportMenu": {
       "copyPage": "Kwafi shafi",
       "copied": "An kwafa",

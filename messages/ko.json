@@ -176,12 +176,6 @@
     "newsroom": {
       "latestFrom": "Avana의 최신 소식",
       "readNewsroom": "뉴스룸을 읽다"
-    },
-    "theme": {
-      "lightMode": "라이트 모드",
-      "darkMode": "다크 모드",
-      "systemMode": "시스템",
-      "tapToChange": "탭하여 변경"
     }
   },
   "meta": {

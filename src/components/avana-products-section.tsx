@@ -41,10 +41,6 @@ export function AvanaProductsSection() {
                     className="media-light absolute inset-0 z-0"
                     style={{ backgroundColor: "rgb(182, 185, 190)" }}
                   />
-                  <div
-                    className="media-dark absolute inset-0 z-0"
-                    style={{ backgroundColor: "rgb(60, 57, 53)" }}
-                  />
                   <div className="z-20 col-span-full row-span-full h-full min-h-0">
                     <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
                       <div className="relative w-full max-w-[340px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black/10 xl:max-w-[380px]">
@@ -90,10 +86,6 @@ export function AvanaProductsSection() {
                   <div
                     className="media-light absolute inset-0 z-0"
                     style={{ backgroundColor: "rgb(217, 213, 207)" }}
-                  />
-                  <div
-                    className="media-dark absolute inset-0 z-0"
-                    style={{ backgroundColor: "rgb(74, 68, 59)" }}
                   />
                   <div className="z-20 col-span-full row-span-full h-full min-h-0">
                     <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">

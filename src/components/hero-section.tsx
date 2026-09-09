@@ -35,7 +35,7 @@ function repeatItems<T>(items: T[], count: number, offset: number) {
  */
 function PoolCard({ pool }: { pool: HomepagePool }) {
   return (
-    <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition duration-150 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)] dark:shadow-[0_3px_8px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_10px_24px_rgba(0,0,0,0.35)]">
+    <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition duration-150 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
       <div className="relative flex items-center shrink-0">
         <TokenLogo symbol={pool.token0.symbol} className="z-10" />
         <TokenLogo symbol={pool.token1.symbol} className="-ml-2" />
@@ -210,13 +210,9 @@ function HeroSectionBody(locale: AppLocale) {
                         className="media-light absolute inset-0 z-0"
                         style={{ backgroundColor: "rgb(235, 228, 216)" }}
                       />
-                      <div
-                        className="media-dark absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(56, 48, 38)" }}
-                      />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-4 sm:p-5">
-                          <div className="relative h-[210px] w-full max-w-[240px] overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 dark:ring-white/10 sm:max-w-[260px]">
+                          <div className="relative h-[210px] w-full max-w-[240px] overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black/10 sm:max-w-[260px]">
                             <Image
                               src="/images/avana-tokens-rewards-v2.jpg"
                               alt="Avana token rewards"
@@ -258,22 +254,18 @@ function HeroSectionBody(locale: AppLocale) {
                         className="media-light absolute inset-0 z-0"
                         style={{ backgroundColor: "rgb(220, 230, 225)" }}
                       />
-                      <div
-                        className="media-dark absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(37, 52, 45)" }}
-                      />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 dark:ring-white/10 p-3 sm:max-w-[260px]">
+                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3 sm:max-w-[260px]">
                             <div className="h-[188px] overflow-hidden">
                               <div className="ce-ticker-risk">
                                 {[
                                   {
                                     pair: "ETH / USDC",
                                     badge: "Low risk",
-                                    badgeBg: "bg-emerald-50 dark:bg-emerald-950/40",
-                                    badgeText: "text-emerald-700 dark:text-emerald-300",
-                                    badgeBorder: "border-emerald-200 dark:border-emerald-800",
+                                    badgeBg: "bg-emerald-50",
+                                    badgeText: "text-emerald-700",
+                                    badgeBorder: "border-emerald-200",
                                     metrics: [
                                       { label: "Pool depth", value: "Deep", level: 90, color: "#10b981" },
                                       { label: "Volatility", value: "Low", level: 25, color: "#6ee7b7" },
@@ -283,9 +275,9 @@ function HeroSectionBody(locale: AppLocale) {
                                   {
                                     pair: "WBTC / ETH",
                                     badge: "Watch",
-                                    badgeBg: "bg-amber-50 dark:bg-amber-950/40",
-                                    badgeText: "text-amber-700 dark:text-amber-300",
-                                    badgeBorder: "border-amber-200 dark:border-amber-800",
+                                    badgeBg: "bg-amber-50",
+                                    badgeText: "text-amber-700",
+                                    badgeBorder: "border-amber-200",
                                     metrics: [
                                       { label: "Pool depth", value: "Medium", level: 60, color: "#f59e0b" },
                                       { label: "Volatility", value: "Med", level: 50, color: "#fb923c" },
@@ -295,9 +287,9 @@ function HeroSectionBody(locale: AppLocale) {
                                   {
                                     pair: "ARB / USDC",
                                     badge: "Elevated",
-                                    badgeBg: "bg-rose-50 dark:bg-rose-950/40",
-                                    badgeText: "text-rose-700 dark:text-rose-300",
-                                    badgeBorder: "border-rose-200 dark:border-rose-800",
+                                    badgeBg: "bg-rose-50",
+                                    badgeText: "text-rose-700",
+                                    badgeBorder: "border-rose-200",
                                     metrics: [
                                       { label: "Pool depth", value: "Shallow", level: 35, color: "#f43f5e" },
                                       { label: "Volatility", value: "High", level: 78, color: "#ef4444" },
@@ -307,9 +299,9 @@ function HeroSectionBody(locale: AppLocale) {
                                   {
                                     pair: "ETH / USDC",
                                     badge: "Low risk",
-                                    badgeBg: "bg-emerald-50 dark:bg-emerald-950/40",
-                                    badgeText: "text-emerald-700 dark:text-emerald-300",
-                                    badgeBorder: "border-emerald-200 dark:border-emerald-800",
+                                    badgeBg: "bg-emerald-50",
+                                    badgeText: "text-emerald-700",
+                                    badgeBorder: "border-emerald-200",
                                     metrics: [
                                       { label: "Pool depth", value: "Deep", level: 90, color: "#10b981" },
                                       { label: "Volatility", value: "Low", level: 25, color: "#6ee7b7" },
@@ -338,7 +330,7 @@ function HeroSectionBody(locale: AppLocale) {
                                           </div>
                                         ))}
                                       </div>
-                                      <div className="mt-2.5 flex items-center gap-1.5 text-[9px] font-medium text-emerald-600 dark:text-emerald-400">
+                                      <div className="mt-2.5 flex items-center gap-1.5 text-[9px] font-medium text-emerald-600">
                                         <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                                         Borrowing enabled
                                       </div>
@@ -381,13 +373,9 @@ function HeroSectionBody(locale: AppLocale) {
                         className="media-light absolute inset-0 z-0"
                         style={{ backgroundColor: "rgb(221, 227, 234)" }}
                       />
-                      <div
-                        className="media-dark absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(40, 48, 59)" }}
-                      />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 dark:ring-white/10 p-3.5 sm:max-w-[260px]">
+                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3.5 sm:max-w-[260px]">
                             <div className="overflow-hidden rounded-[14px] border border-border/80 bg-background/90 p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
                               <div className="flex items-center justify-between gap-2">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.1em] text-muted-foreground">Range</span>
@@ -448,13 +436,9 @@ function HeroSectionBody(locale: AppLocale) {
                         className="media-light absolute inset-0 z-0"
                         style={{ backgroundColor: "rgb(227, 223, 216)" }}
                       />
-                      <div
-                        className="media-dark absolute inset-0 z-0"
-                        style={{ backgroundColor: "rgb(52, 48, 44)" }}
-                      />
                       <div className="z-20 col-span-full row-span-full h-full min-h-0">
                         <div className="flex h-full w-full items-center justify-center p-3 sm:p-4">
-                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 dark:ring-white/10 p-3.5 sm:max-w-[260px]">
+                          <div className="relative w-full max-w-[240px] overflow-hidden rounded-lg bg-card shadow-lg ring-1 ring-black/10 p-3.5 sm:max-w-[260px]">
                             <div className="overflow-hidden rounded-[14px] border border-border/80 bg-background/90 p-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
                               <div className="flex items-center justify-between">
                                 <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Console</span>

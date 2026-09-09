@@ -164,12 +164,6 @@
       "latestFrom": "جدیدترین‌ها از Avana",
       "readNewsroom": "خواندن اتاق خبر"
     },
-    "theme": {
-      "lightMode": "حالت روشن",
-      "darkMode": "حالت تاریک",
-      "systemMode": "سیستم",
-      "tapToChange": "برای تغییر ضربه بزنید"
-    },
     "exportMenu": {
       "copyPage": "کپی صفحه",
       "copied": "کپی شد",

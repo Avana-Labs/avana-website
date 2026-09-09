@@ -1,17 +1,5 @@
-"use client"
-
 import Image from "next/image"
-import { readResolvedThemeFromDocument } from "@/components/theme-provider"
 import type { ThemeBrandAsset } from "@/lib/brand-assets"
-import { useSyncExternalStore } from "react"
-
-function useResolvedThemeAppearance(): "light" | "dark" {
-  return useSyncExternalStore(
-    () => () => {},
-    () => readResolvedThemeFromDocument(),
-    () => "light",
-  )
-}
 
 export function ThemeAwareBrandImage({
   asset,
@@ -24,12 +12,9 @@ export function ThemeAwareBrandImage({
   className: string
   knockOutLightBackground?: boolean
 }) {
-  const appearance = useResolvedThemeAppearance()
-  const src = appearance === "dark" ? asset.dark : asset.light
-
   return (
     <Image
-      src={src}
+      src={asset.light}
       alt={alt}
       width={3000}
       height={1500}

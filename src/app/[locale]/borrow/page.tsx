@@ -256,7 +256,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           href="https://app.avana.cc"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1] dark:bg-white/[0.12] dark:hover:bg-white/[0.16]"
+          className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1]"
         >
           Try Sandbox
           <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />
@@ -436,14 +436,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                   alt="Document-style preview of supported borrowing markets"
                   fill
                   sizes="(max-width: 1200px) 100vw, 1120px"
-                  className="object-cover object-center dark:hidden"
-                />
-                <Image
-                  src={brandAssetPath("/images/Avana Borrow Dark.png")}
-                  alt="Document-style preview of supported borrowing markets"
-                  fill
-                  sizes="(max-width: 1200px) 100vw, 1120px"
-                  className="hidden object-cover object-center dark:block"
+                  className="object-cover object-center"
                 />
               </div>
             </div>

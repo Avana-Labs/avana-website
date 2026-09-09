@@ -146,7 +146,7 @@ export default function HeaderDesktopMenuPanel({
       }`}
       aria-hidden={!isOpen}
     >
-      <div className="border-b border-border bg-background shadow-[0_24px_72px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_72px_rgba(0,0,0,0.35)]">
+      <div className="border-b border-border bg-background shadow-[0_24px_72px_rgba(0,0,0,0.04)]">
         <div className="site-content-shell bg-background py-5">
           <div
             key={`${menu.id}-${animationCycle}`}

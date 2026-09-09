@@ -6,7 +6,6 @@ import HeaderDesktopNavigation from "@/components/header-desktop-navigation"
 import { HeaderHelpCenterButton } from "@/components/header-help-center-button"
 import HeaderLanguageDropdown from "@/components/header-language-dropdown"
 import HeaderMobileNavigation from "@/components/header-mobile-navigation"
-import { HeaderThemeToggle } from "@/components/header-theme-toggle"
 import { Link } from "@/i18n/navigation"
 import { HEADER_WORDMARK_PATH, SITE_NAME, siteRoutes } from "@/lib/site"
 
@@ -42,7 +41,6 @@ export default function Header(): React.JSX.Element {
 
         <div className="hidden items-center gap-1.5 lg:flex lg:justify-self-end xl:gap-2">
           <HeaderHelpCenterButton />
-          <HeaderThemeToggle />
           <HeaderLanguageDropdown />
         </div>
 

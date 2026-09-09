@@ -91,7 +91,7 @@ export default async function Home({ params }: LocaleParamsProps) {
                 href="https://app.avana.cc"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1] dark:bg-white/[0.12] dark:hover:bg-white/[0.16]"
+                className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1]"
               >
                 {t("hero.secondaryCta")}
                 <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />

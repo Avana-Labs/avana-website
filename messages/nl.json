@@ -164,12 +164,6 @@
       "latestFrom": "Laatste van Avana",
       "readNewsroom": "Lees nieuwsredactie"
     },
-    "theme": {
-      "lightMode": "Lichte modus",
-      "darkMode": "Donkere modus",
-      "systemMode": "Systeem",
-      "tapToChange": "Tik om te wijzigen"
-    },
     "exportMenu": {
       "copyPage": "Pagina kopiëren",
       "copied": "Gekopieerd",

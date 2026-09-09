@@ -164,12 +164,6 @@
       "latestFrom": "Neueste von Avana",
       "readNewsroom": "Nachrichtenraum lesen"
     },
-    "theme": {
-      "lightMode": "Hellmodus",
-      "darkMode": "Dunkelmodus",
-      "systemMode": "Systemmodus",
-      "tapToChange": "Tippen zum Wechseln"
-    },
     "exportMenu": {
       "copyPage": "Seite kopieren",
       "copied": "Kopiert",

@@ -164,12 +164,6 @@
       "latestFrom": "Najnowsze z Avana",
       "readNewsroom": "Czytaj newsroom"
     },
-    "theme": {
-      "lightMode": "Tryb jasny",
-      "darkMode": "Tryb ciemny",
-      "systemMode": "Systemowy",
-      "tapToChange": "Dotknij, aby zmienić"
-    },
     "exportMenu": {
       "copyPage": "Kopiuj stronę",
       "copied": "Skopiowano",

@@ -164,12 +164,6 @@
       "latestFrom": "Lo último de Avana",
       "readNewsroom": "Leer sala de redacción"
     },
-    "theme": {
-      "lightMode": "Modo claro",
-      "darkMode": "Modo oscuro",
-      "systemMode": "Sistema",
-      "tapToChange": "Toca para cambiar"
-    },
     "exportMenu": {
       "copyPage": "Copiar página",
       "copied": "Copiado",

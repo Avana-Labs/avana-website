@@ -92,7 +92,7 @@ export default function HeaderLanguageDropdown({
       {isOpen ? (
         <div role="menu" className={`absolute z-50 pt-2 ${isMobile ? "end-[-3.25rem]" : "end-0"}`}>
           <div
-            className={`max-h-[28rem] overflow-y-auto rounded-[16px] border border-border bg-popover py-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)] dark:shadow-[0_18px_50px_rgba(0,0,0,0.45)] ${
+            className={`max-h-[28rem] overflow-y-auto rounded-[16px] border border-border bg-popover py-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)] ${
               isMobile ? "w-[20rem]" : "w-[23rem]"
             }`}
           >

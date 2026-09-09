@@ -24,14 +24,7 @@ export default async function PlatformToolsShowcaseSection({ locale }: { locale:
           alt="Lending tools product overview"
           fill
           sizes="(max-width: 1200px) 100vw, 1120px"
-          className="object-cover object-center dark:hidden"
-        />
-        <Image
-          src={brandAssetPath("/images/Avana Lend Dark.png")}
-          alt="Lending tools product overview"
-          fill
-          sizes="(max-width: 1200px) 100vw, 1120px"
-          className="hidden object-cover object-center dark:block"
+          className="object-cover object-center"
         />
       </div>
     </section>

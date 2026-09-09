@@ -164,12 +164,6 @@
       "latestFrom": "העדכונים האחרונים מ-Avana",
       "readNewsroom": "קרא חדר חדשות"
     },
-    "theme": {
-      "lightMode": "מצב בהיר",
-      "darkMode": "מצב כהה",
-      "systemMode": "מערכת",
-      "tapToChange": "הקש לשינוי"
-    },
     "exportMenu": {
       "copyPage": "העתק עמוד",
       "copied": "הועתק",

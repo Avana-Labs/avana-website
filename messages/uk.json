@@ -164,12 +164,6 @@
       "latestFrom": "Останні новини з Avana",
       "readNewsroom": "Читати новинне агентство"
     },
-    "theme": {
-      "lightMode": "Світлий режим",
-      "darkMode": "Темний режим",
-      "systemMode": "Система",
-      "tapToChange": "Натисніть, щоб змінити"
-    },
     "exportMenu": {
       "copyPage": "Копіювати сторінку",
       "copied": "Скопійовано",

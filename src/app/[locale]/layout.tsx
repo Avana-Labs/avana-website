@@ -6,7 +6,6 @@ import { notFound } from "next/navigation"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { diatypeFont } from "@/app/site-fonts"
-import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getLocaleDefinition, getLocaleDir } from "@/i18n/locales"
@@ -116,10 +115,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
-    { media: "(prefers-color-scheme: dark)", color: "#050505" },
-  ],
+  themeColor: "#FFFFFF",
 }
 
 const shouldRenderVercelInsights = process.env.VERCEL === "1" || Boolean(process.env.VERCEL_ENV)
@@ -155,8 +151,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className={`${diatypeFont.variable} overflow-x-clip bg-background font-sans text-foreground`}>
-        <ThemeProvider>
-          <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
+        <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:start-4 focus:z-[100] focus:rounded-lg focus:bg-[#01AACF] focus:px-4 focus:py-2 focus:text-[#0F1518] focus:outline-none focus:ring-2 focus:ring-[#01AACF] focus:ring-offset-2"
@@ -171,7 +166,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
           </div>
           </NextIntlClientProvider>
-        </ThemeProvider>
         {shouldRenderVercelInsights ? <SpeedInsights /> : null}
         {shouldRenderVercelInsights ? <Analytics /> : null}
       </body>

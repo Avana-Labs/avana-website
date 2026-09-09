@@ -49,7 +49,7 @@ const accordionItems: AccordionItem[] = [
     description:
       "Autonomous agents watch your collateral 24/7, adjusting positions and triggering stop-losses long before liquidation risk.",
     prompt: "“Keep my health factor above 1.6 by automatically deleveraging if volatility spikes”",
-    imageSrc: "/images/Avana Express Night.png",
+    imageSrc: "/images/Avana Express Light.png",
     imageAlt: "Avana 24/7 position monitoring and automated risk guards",
   },
   {
@@ -78,7 +78,7 @@ export function AskAiShowcase() {
         <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-12 md:items-start">
           {/* Desktop media column (changes dynamically based on active tab) */}
           <div className="hidden md:block md:col-span-6">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900/60 shadow-lg ring-1 ring-black/10 dark:ring-white/10">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-lg ring-1 ring-black/10">
               {accordionItems.map((item, index) => {
                 const isActive = activeIndex === index
                 if (!isActive) return null
@@ -171,7 +171,7 @@ export function AskAiShowcase() {
                           {/* Mobile inline media */}
                           {isExpanded && (
                             <div className="h-full w-full md:hidden mt-4">
-                              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900/60 shadow-lg ring-1 ring-black/10 dark:ring-white/10">
+                              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-lg ring-1 ring-black/10">
                                 <Image
                                   src={item.imageSrc}
                                   alt={item.imageAlt}
@@ -194,8 +194,8 @@ export function AskAiShowcase() {
                       <div className="relative h-[1px] w-full">
                         <div
                           className={cn(
-                            "absolute inset-0 bg-black dark:bg-white transition-opacity",
-                            isExpanded ? "opacity-[0.04] dark:opacity-[0.08]" : "opacity-[0.12] dark:opacity-[0.16]"
+                            "absolute inset-0 bg-black transition-opacity",
+                            isExpanded ? "opacity-[0.04]" : "opacity-[0.12]"
                           )}
                         />
                       </div>

@@ -164,12 +164,6 @@
       "latestFrom": "Avanaからの最新情報",
       "readNewsroom": "ニュースルームを読む"
     },
-    "theme": {
-      "lightMode": "ライトモード",
-      "darkMode": "ダークモード",
-      "systemMode": "システム",
-      "tapToChange": "タップして変更"
-    },
     "exportMenu": {
       "copyPage": "ページをコピー",
       "copied": "コピーしました",

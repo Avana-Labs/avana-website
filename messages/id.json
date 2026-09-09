@@ -164,12 +164,6 @@
       "latestFrom": "Terbaru dari Avana",
       "readNewsroom": "Baca ruang berita"
     },
-    "theme": {
-      "lightMode": "Mode Terang",
-      "darkMode": "Mode Gelap",
-      "systemMode": "Sistem",
-      "tapToChange": "Ketuk untuk mengubah"
-    },
     "exportMenu": {
       "copyPage": "Salin halaman",
       "copied": "Disalin",

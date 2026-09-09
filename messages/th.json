@@ -164,12 +164,6 @@
       "latestFrom": "ล่าสุดจาก Avana",
       "readNewsroom": "อ่านห้องข่าว"
     },
-    "theme": {
-      "lightMode": "โหมดสว่าง",
-      "darkMode": "โหมดมืด",
-      "systemMode": "ระบบ",
-      "tapToChange": "แตะเพื่อเปลี่ยน"
-    },
     "exportMenu": {
       "copyPage": "คัดลอกหน้า",
       "copied": "คัดลอกแล้ว",

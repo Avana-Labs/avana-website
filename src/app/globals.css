@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme inline {
   --font-weight-thin: 400;
   --font-weight-extralight: 400;
@@ -141,52 +139,6 @@
   --apy-band-base: #d5f3fa;
   --apy-band-premium: #7dd4e8;
   --apy-band-risk: #01aacf;
-}
-
-.dark {
-  color-scheme: dark;
-  --text-primary: #f5f5f5;
-  --background: #050505;
-  --foreground: #f5f5f5;
-  --card: #0c0c0c;
-  --card-foreground: #f5f5f5;
-  --popover: #111111;
-  --popover-foreground: #f5f5f5;
-  --primary: #f5f5f5;
-  --primary-foreground: #050505;
-  --secondary: #141414;
-  --secondary-foreground: #f5f5f5;
-  --muted: #141414;
-  --muted-foreground: #a3a3a3;
-  --accent: #141414;
-  --accent-foreground: #f5f5f5;
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: var(--avana-cyan);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #f5f5f5;
-  --sidebar-primary-foreground: #050505;
-  --sidebar-accent: #141414;
-  --sidebar-accent-foreground: #f5f5f5;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: rgba(255, 255, 255, 0.2);
-  --type-color-secondary: color-mix(in oklab, var(--foreground) 72%, transparent);
-  --type-color-tertiary: color-mix(in oklab, var(--foreground) 55%, transparent);
-  --header-surface: rgba(5, 5, 5, 0.94);
-  --surface-muted: #111111;
-  --surface-elevated: #0c0c0c;
-  --apy-band-inactive: color-mix(in oklab, var(--foreground) 10%, transparent);
-  --apy-band-base: color-mix(in oklab, var(--avana-cyan) 22%, var(--background));
-  --apy-band-premium: color-mix(in oklab, var(--avana-cyan) 48%, var(--background));
-  --apy-band-risk: var(--avana-cyan);
 }
 
 @layer base {
@@ -1096,10 +1048,6 @@
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-.dark .border-token-border-light {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1214,10 +1162,6 @@
   --sd-text-sec: #73726c;
 }
 
-.dark .marketing-lead-header {
-  --sd-text-sec: #8c8982;
-}
-
 .marketing-lead-header .type-md-lg {
   font-size: clamp(1.25rem, 1.8vw, 1.625rem);
   line-height: 1.25;
@@ -1242,13 +1186,6 @@
   --sd-card-border: rgba(38, 37, 30, 0.08);
   --sd-text-sec: #73726c;
   --sd-radius: 4px;
-}
-
-.dark #avana-products,
-.dark #multiply-markets {
-  --sd-card-bg: #1b1913;
-  --sd-card-border: rgba(255, 255, 255, 0.08);
-  --sd-text-sec: #8c8982;
 }
 
 #avana-products .bg-theme-bg,
@@ -1316,27 +1253,8 @@
   display: block;
 }
 
-.dark #avana-products .media-light,
-.dark #multiply-markets .media-light {
-  display: none;
-}
-
-#avana-products .media-dark,
-#multiply-markets .media-dark {
-  display: none;
-}
-
-.dark #avana-products .media-dark,
-.dark #multiply-markets .media-dark {
-  display: block;
-}
-
 #avana-products .bg-theme-card-warm-hex {
   background-color: #f3ede6;
-}
-
-.dark #avana-products .bg-theme-card-warm-hex {
-  background-color: #1c1713;
 }
 
 /* Developer documentation tables and code */
@@ -1361,231 +1279,6 @@ body:has([data-developer-doc-shell]) footer.site-content-shell {
   display: none;
 }
 
-/* Dark mode: remap common hardcoded utility surfaces */
-.dark .bg-white {
-  background-color: var(--background);
-}
-
-.dark .bg-gray-50,
-.dark .bg-gray-50\/50,
-.dark .bg-gray-50\/80 {
-  background-color: var(--muted);
-}
-
-.dark .bg-gray-100 {
-  background-color: color-mix(in oklab, var(--muted) 88%, var(--foreground));
-}
-
-.dark .bg-\[\#e8edf5\],
-.dark .bg-\[\#eef3f5\] {
-  background-color: var(--surface-muted);
-}
-
-.dark .border-gray-100,
-.dark .border-gray-100\/80,
-.dark .border-gray-200,
-.dark .border-gray-300,
-.dark .border-\[\#bcc8d6\],
-.dark .border-\[\#d8e1ef\],
-.dark .border-\[\#8ec5e2\] {
-  border-color: var(--border);
-}
-
-.dark .border-black\/8,
-.dark .border-black\/10,
-.dark .border-black\/30 {
-  border-color: var(--border);
-}
-
-.dark .text-gray-400,
-.dark .text-gray-500,
-.dark .text-gray-600,
-.dark .text-gray-700,
-.dark .text-gray-800,
-.dark .text-gray-900 {
-  color: var(--type-color-secondary);
-}
-
-.dark .text-slate-700,
-.dark .text-slate-950 {
-  color: var(--type-color-secondary);
-}
-
-.dark .hover\:text-slate-950:hover {
-  color: var(--foreground);
-}
-
-.dark .text-black,
-.dark .text-black\/46,
-.dark .text-black\/58,
-.dark .text-black\/62,
-.dark .text-black\/74,
-.dark .text-black\/76,
-.dark .text-black\/95 {
-  color: var(--type-color-secondary);
-}
-
-.dark .text-\[\#303236\] {
-  color: var(--type-color-secondary);
-}
-
-.dark .hover\:bg-black\/\[0\.045\]:hover {
-  background-color: color-mix(in oklab, var(--foreground) 6%, transparent);
-}
-
-.dark .bg-black\/\[0\.025\] {
-  background-color: color-mix(in oklab, var(--foreground) 4%, transparent);
-}
-
-.dark .feature-card {
-  background-color: var(--card);
-  border: 1px solid var(--border);
-}
-
-.dark .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section h2,
-.dark .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section h3 {
-  color: var(--foreground);
-}
-
-.dark .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section :is(p, li, td, dd) {
-  color: var(--type-color-secondary);
-}
-
-.dark .type-doc-body,
-.dark .type-doc-callout {
-  color: var(--type-color-secondary);
-}
-
-.dark .type-doc-section-title,
-.dark .type-doc-subsection-title {
-  color: var(--foreground);
-}
-
-.dark .site-article-content :is(p, li, td),
-.dark .site-editorial-content :is(p, li, td) {
-  color: var(--type-color-secondary);
-}
-
-.dark .site-article-content :is(h2, h3, h4),
-.dark .site-editorial-content :is(h2, h3, h4) {
-  color: var(--foreground);
-}
-
-.dark .site-editorial-content :is(strong, em.text-gray-500) {
-  color: var(--type-color-secondary);
-}
-
-.dark .site-editorial-content .text-gray-900,
-.dark .site-editorial-content .text-lg.font-medium.text-gray-900,
-.dark .type-page-title.text-gray-900 {
-  color: var(--foreground);
-}
-
-.dark .prose-gray :where(p, li, td, blockquote) {
-  color: var(--type-color-secondary);
-}
-
-.dark .prose-gray :where(h2, h3, h4, strong) {
-  color: var(--foreground);
-}
-
-.dark .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] pre {
-  border-color: var(--border);
-  background-color: var(--muted);
-  color: var(--foreground);
-}
-
-.dark .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] :not(pre) > code {
-  background-color: var(--muted);
-  color: var(--foreground);
-}
-
-.dark .hero-feature-mockup,
-.dark .hero-feature-mockup.bg-white {
-  background-color: #ffffff !important;
-  border-color: rgb(229 231 235) !important;
-}
-
-.dark .hero-feature-mockup .bg-white {
-  background-color: #ffffff !important;
-}
-
-.dark .hero-feature-mockup .bg-gray-50,
-.dark .hero-feature-mockup .bg-gray-50\/80 {
-  background-color: rgb(249 250 251) !important;
-}
-
-.dark .hero-feature-mockup .bg-gray-100 {
-  background-color: rgb(243 244 246) !important;
-}
-
 .brand-token-image {
   mix-blend-mode: multiply;
-}
-
-.dark .brand-token-image {
-  filter: saturate(1.05) contrast(1.02);
-}
-
-.dark .type-doc-inline-code {
-  background-color: var(--muted);
-  color: var(--foreground);
-}
-
-.dark .type-doc-panel {
-  border-color: var(--border);
-  background-color: var(--muted);
-  color: var(--type-color-secondary);
-}
-
-.dark .type-doc-table {
-  border-color: var(--border);
-}
-
-.dark .type-doc-table thead {
-  background-color: color-mix(in oklab, var(--muted) 88%, var(--foreground));
-}
-
-.dark .type-doc-table :is(th, td) {
-  border-bottom-color: var(--border);
-}
-
-.dark .type-doc-table th {
-  color: var(--foreground);
-}
-
-.dark .type-doc-table td {
-  color: var(--type-color-secondary);
-}
-
-.dark .bg-amber-50,
-.dark .bg-amber-50\/70 {
-  background-color: color-mix(in oklab, #f59e0b 16%, var(--muted)) !important;
-}
-
-.dark .bg-red-50,
-.dark .bg-red-50\/70 {
-  background-color: color-mix(in oklab, #ef4444 16%, var(--muted)) !important;
-}
-
-.dark .bg-cyan-50,
-.dark .bg-cyan-50\/70 {
-  background-color: color-mix(in oklab, var(--avana-cyan) 14%, var(--muted)) !important;
-}
-
-.dark .border-amber-200 {
-  border-color: color-mix(in oklab, #f59e0b 35%, var(--border)) !important;
-}
-
-.dark .border-red-200 {
-  border-color: color-mix(in oklab, #ef4444 35%, var(--border)) !important;
-}
-
-.dark .border-cyan-200 {
-  border-color: color-mix(in oklab, var(--avana-cyan) 35%, var(--border)) !important;
-}
-
-.dark .text-amber-800,
-.dark .text-amber-700 {
-  color: color-mix(in oklab, #fbbf24 85%, var(--foreground)) !important;
 }

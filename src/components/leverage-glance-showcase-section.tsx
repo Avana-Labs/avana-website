@@ -20,14 +20,7 @@ export default async function LeverageGlanceShowcaseSection({ locale }: { locale
           alt="Core product tools for first-time loopers"
           fill
           sizes="(max-width: 1200px) 100vw, 1120px"
-          className="object-cover object-center dark:hidden"
-        />
-        <Image
-          src={brandAssetPath("/images/Avana Multiply Dark.png")}
-          alt="Core product tools for first-time loopers"
-          fill
-          sizes="(max-width: 1200px) 100vw, 1120px"
-          className="hidden object-cover object-center dark:block"
+          className="object-cover object-center"
         />
       </div>
     </section>

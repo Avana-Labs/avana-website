@@ -164,12 +164,6 @@
       "latestFrom": "Avana'den en son",
       "readNewsroom": "Haber odasını oku"
     },
-    "theme": {
-      "lightMode": "Açık mod",
-      "darkMode": "Koyu mod",
-      "systemMode": "Sistem",
-      "tapToChange": "Değiştirmek için dokunun"
-    },
     "exportMenu": {
       "copyPage": "Sayfayı kopyala",
       "copied": "Kopyalandı",

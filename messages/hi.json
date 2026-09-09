@@ -164,12 +164,6 @@
       "latestFrom": "Avana से नवीनतम",
       "readNewsroom": "न्यूज़रूम पढ़ें"
     },
-    "theme": {
-      "lightMode": "लाइट मोड",
-      "darkMode": "डार्क मोड",
-      "systemMode": "सिस्टम",
-      "tapToChange": "बदलने के लिए टैप करें"
-    },
     "exportMenu": {
       "copyPage": "पृष्ठ कॉपी करें",
       "copied": "कॉपी हो गया",

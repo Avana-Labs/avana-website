@@ -164,12 +164,6 @@
       "latestFrom": "آخر الأخبار من Avana",
       "readNewsroom": "اقرأ غرفة الأخبار"
     },
-    "theme": {
-      "lightMode": "الوضع الفاتح",
-      "darkMode": "الوضع الداكن",
-      "systemMode": "النظام",
-      "tapToChange": "اضغط للتغيير"
-    },
     "exportMenu": {
       "copyPage": "نسخ الصفحة",
       "copied": "تم النسخ",

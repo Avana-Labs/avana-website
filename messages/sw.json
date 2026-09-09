@@ -164,12 +164,6 @@
       "latestFrom": "Hivi karibuni kutoka Avana",
       "readNewsroom": "Soma chumba cha habari"
     },
-    "theme": {
-      "lightMode": "Hali ya mwanga",
-      "darkMode": "Hali ya giza",
-      "systemMode": "Mfumo",
-      "tapToChange": "Gusa kubadilisha"
-    },
     "exportMenu": {
       "copyPage": "Nakili ukurasa",
       "copied": "Imenakiliwa",

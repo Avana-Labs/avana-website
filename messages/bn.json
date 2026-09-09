@@ -164,12 +164,6 @@
       "latestFrom": "সর্বশেষ  থেকে",
       "readNewsroom": "সংবাদ কক্ষ পড়ুন"
     },
-    "theme": {
-      "lightMode": "লাইট মোড",
-      "darkMode": "ডার্ক মোড",
-      "systemMode": "সিস্টেম",
-      "tapToChange": "পরিবর্তন করতে ট্যাপ করুন"
-    },
     "exportMenu": {
       "copyPage": "পৃষ্ঠা কপি করুন",
       "copied": "কপি হয়েছে",

@@ -164,12 +164,6 @@
       "latestFrom": "來自Avana的最新消息",
       "readNewsroom": "閱讀新聞編輯部"
     },
-    "theme": {
-      "lightMode": "淺色模式",
-      "darkMode": "深色模式",
-      "systemMode": "跟隨系統",
-      "tapToChange": "點擊切換"
-    },
     "exportMenu": {
       "copyPage": "複製頁面",
       "copied": "已複製",

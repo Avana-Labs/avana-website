@@ -218,12 +218,12 @@ export function BrandGuidelinesGrid() {
                   alt={t("Crowded spacing example")}
                   className="w-full max-w-[4.5rem]"
                 />
-                <span className="text-base font-semibold text-[#2F414B] dark:text-foreground">{t("Partner")}</span>
+                <span className="text-base font-semibold text-[#2F414B]">{t("Partner")}</span>
               </div>
             ) : null}
             <span className="pointer-events-none absolute inset-x-5 top-1/2 h-1 -translate-y-1/2 rotate-[-48deg] rounded-full bg-[#ff8f6f]" />
           </div>
-          <p className="text-center text-xs leading-tight text-gray-600 dark:text-type-secondary">{t(item.text)}</p>
+          <p className="text-center text-xs leading-tight text-gray-600">{t(item.text)}</p>
         </div>
       ))}
     </div>
@@ -242,7 +242,7 @@ export function BrandTokenPreview({
   return (
     <div className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden p-6 ${brandTokenSurfaceClassName}`}>
       <ThemeAwareBrandImage
-        asset={{ light: src, dark: src }}
+        asset={{ light: src }}
         alt={alt}
         className={imageClassName}
         knockOutLightBackground
