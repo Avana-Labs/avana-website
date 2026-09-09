@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { LendMarketsDeck } from "@/components/lend-markets-deck"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
@@ -89,20 +90,8 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                     className="media-light absolute inset-0 z-0"
                     style={{ backgroundColor: "#fff" }}
                   />
-                  <div className="z-20 col-span-full row-span-full h-full min-h-0">
-                    <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
-                      <div className="relative w-full max-w-[340px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black/10 xl:max-w-[380px]">
-                        <Image
-                          src="/marketing-static/automate/card-time-to-merge.png"
-                          alt="Avana Lend into Hub-connected markets"
-                          loading="lazy"
-                          width={954}
-                          height={796}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    </div>
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <LendMarketsDeck />
                   </div>
                 </div>
               </figure>
