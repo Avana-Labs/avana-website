@@ -236,7 +236,7 @@ export async function generateMetadata({ params }: LocaleParamsProps) {
 export default async function BorrowPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
     <main className="bg-white">
       <FeaturePageHero
         title={

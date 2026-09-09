@@ -134,7 +134,7 @@ export async function generateMetadata({ params }: LocaleParamsProps) {
 export default async function MultiplyPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "position-safety-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
     <main className="bg-white">
       <FeaturePageHero
         title={
