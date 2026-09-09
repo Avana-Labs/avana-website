@@ -15,25 +15,12 @@ interface SectionEyebrowProps {
   tone?: SectionEyebrowTone
 }
 
-const toneClasses: Record<SectionEyebrowTone, string> = {
-  blue: "text-[#01AACF]",
-  emerald: "text-[#01AACF]",
-  violet: "text-[#01AACF]",
-  amber: "text-[#01AACF]",
-  cyan: "text-[#01AACF]",
-  rose: "text-[#01AACF]",
-  slate: "text-[#01AACF]",
-}
-
-export function SectionEyebrow({ children, className = "", tone = "blue" }: SectionEyebrowProps) {
+export function SectionEyebrow({ children, className = "" }: SectionEyebrowProps) {
+  // Rendered as the dark medium first line of the section header, matching
+  // MarketingLeadHeader. `tone` is accepted for API compatibility but no longer
+  // affects color.
   return (
-    <span
-      className={cn(
-        "type-eyebrow inline-flex",
-        toneClasses[tone],
-        className,
-      )}
-    >
+    <span className={cn("type-lead-title block w-full", className)}>
       {children}
     </span>
   )

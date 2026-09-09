@@ -364,6 +364,38 @@
   letter-spacing: var(--type-tracking-section);
 }
 
+/* Unified section-header lines — match MarketingLeadHeader (dark title + gray subtitle) */
+.type-lead-title {
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.0125em;
+  color: var(--foreground);
+}
+
+.type-lead-subtitle {
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.0125em;
+  color: #73726c;
+}
+
+/* Tighten the eyebrow→title gap to MarketingLeadHeader's 2px, regardless of
+   whether the wrapper spaced them with flex gap, space-y, or a title margin.
+   These header wrappers only ever hold the eyebrow + title (2 children). */
+*:has(> .type-lead-title + .site-section-title) {
+  gap: 0;
+}
+
+.type-lead-title:has(+ .site-section-title) {
+  margin-bottom: 0 !important;
+}
+
+.type-lead-title + .site-section-title {
+  margin-top: 0.125rem !important;
+}
+
 .type-body-copy {
   font-size: var(--type-body-size);
   line-height: 1.75;
@@ -854,15 +886,25 @@
   --site-eyebrow-color: var(--avana-cyan);
 }
 
+/* Eyebrow'd blog headings match the unified section-header look:
+   dark medium eyebrow line + gray medium title line. */
+.site-blog-article section[id] > h2[data-eyebrow] {
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
+  line-height: 1.25;
+  letter-spacing: -0.0125em;
+  gap: 0.125rem;
+  color: #73726c;
+}
+
 .site-blog-article section[id] > h2[data-eyebrow]::before {
   content: attr(data-eyebrow);
   display: inline-flex;
-  font-size: var(--type-eyebrow-size);
+  font-size: clamp(1.25rem, 1.8vw, 1.625rem);
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: var(--type-tracking-label);
-  margin-bottom: 0.05rem;
-  color: var(--site-eyebrow-color);
+  line-height: 1.25;
+  letter-spacing: -0.0125em;
+  margin-bottom: 0;
+  color: var(--foreground);
 }
 
 @media (min-width: 640px) {

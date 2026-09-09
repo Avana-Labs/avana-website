@@ -35,7 +35,13 @@ export function SectionIntro({
       )}
     >
       {eyebrow ? <SectionEyebrow tone={eyebrowTone}>{eyebrow}</SectionEyebrow> : null}
-      <SectionTitle as={titleAs} variant={titleVariant} className={titleClassName}>
+      <SectionTitle
+        as={titleAs}
+        // With an eyebrow, the title is the gray second line; without one it is
+        // the dark lead line.
+        variant={!eyebrow && titleVariant === "section" ? "lead" : titleVariant}
+        className={titleClassName}
+      >
         {title}
       </SectionTitle>
     </div>
