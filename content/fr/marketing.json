@@ -359,7 +359,13 @@
       "à 5,5 % d’APR sans retirer de liquidité ni renoncer aux frais de trading.",
       "Gagnez des intérêts grâce à la demande d’emprunt sur LP",
       "Comment les équipes mettent le crédit LP au travail",
-      "le crédit LP au travail"
+      "le crédit LP au travail",
+      "Accédez à des prêts sur des centaines de pools",
+      "Continuez à percevoir des frais de trading tout en tirant du crédit sur votre LP.",
+      "Marchés Multiply pour boucler le capital, ajuster le risque des pools et gérer la santé des positions.",
+      "Sécurité des positions",
+      "Conçu pour un levier sûr",
+      "Plafond d’emprunt"
     ]
   },
   "webapp-hero": {
@@ -676,6 +682,47 @@
       "Questions fréquentes.",
       "Questions fréquentes",
       "Questions fréquentes"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Libérez le capital des marchés AMM",
+      "Trois marchés natifs pour emprunter, percevoir des intérêts et gérer le levier.",
+      "Empruntez sur vos positions LP",
+      "Empruntez sur vos positions LP pendant que votre liquidité reste active dans l’AMM sous-jacent.",
+      "Prêtez sur les marchés Hub",
+      "Fournissez du capital aux marchés de prêt connectés au Hub et profitez de la demande des emprunteurs adossés aux LP.",
+      "Multipliez les rendements de liquidité",
+      "Utilisez un crédit adossé aux LP pour créer un levier encadré sans quitter votre position de liquidité de base.",
+      "Avana Emprunter sur des positions LP",
+      "Avana Prêter sur les marchés connectés au Hub",
+      "Avana Multiplier le rendement à levier encadré"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Pilotez votre portefeuille avec Ask AI",
+      "Simulez des boucles de rendement, automatisez vos garde-fous d’emprunt et exécutez en langage courant.",
+      "Répondez à votre prochain « et si ? »",
+      "Demandez l’impact d’une baisse de marché de 20 % sur votre facteur de santé, ou simulez une boucle de rendement 3x avant d’engager le moindre capital.",
+      "« Simule une boucle de rendement 3x ETH-USDC et affiche mon prix de liquidation si l’ETH chute de 15 % »",
+      "Transformez cinq transactions en une phrase",
+      "Échangez des jetons, franchissez les chaînes et déposez dans des pools de liquidité en une seule fois, sans changer de réseau ni signer cinq approbations.",
+      "« Échange 5 ETH contre des USDC, transfère vers Arbitrum et dépose dans le tri-pool Curve »",
+      "Définissez des règles conditionnelles et laissez faire",
+      "Demandez à Ask AI d’emprunter uniquement lorsque les taux passent sous 4 %, ou de rééquilibrer votre LP si les prix du pool s’écartent de votre cible.",
+      "« Emprunte 25 000 USDC sur ma position LP dès que l’APR d’emprunt Aave passe sous 3,8 % »",
+      "Dormez malgré la volatilité des marchés",
+      "Des agents autonomes surveillent votre collatéral 24h/24 et 7j/7, ajustant les positions et déclenchant des stop-loss bien avant tout risque de liquidation.",
+      "« Maintiens mon facteur de santé au-dessus de 1,6 en réduisant automatiquement le levier si la volatilité s’envole »",
+      "Repérez les meilleurs rendements sans y passer des heures",
+      "Demandez quels pools offrent le meilleur rapport frais/risque pour vos actifs, comparez la profondeur des DEX en temps réel et déployez en un clic.",
+      "« Trouve le pool au rendement de frais le plus élevé pour le wstETH avec au moins 5 M$ de profondeur de liquidité sur tous les DEX »",
+      "Interface de simulation et de gestion de portefeuille Avana Multiply",
+      "Flux d’exécution automatisée multi-étapes Avana Express",
+      "Suivi des taux et paramètres de prêt conditionnels Avana Borrow",
+      "Surveillance de position 24h/24 et garde-fous de risque automatisés Avana",
+      "Interface de découverte de rendement et de comparaison de pools Avana Lend"
     ]
   }
 }

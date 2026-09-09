@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { lookupPhrase, usePhraseMap } from "@/components/phrase-map-context"
 import { Sparkles } from "lucide-react"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 
@@ -64,14 +65,19 @@ const accordionItems: AccordionItem[] = [
 ]
 
 export function AskAiShowcase() {
+  // Client island: the parent server wrapper cannot rewrite strings across the
+  // client boundary, so translate through the phrase map provided by
+  // LocalizedMarketing instead.
+  const map = usePhraseMap()
+  const t = (text: string) => lookupPhrase(map, text)
   const [activeIndex, setActiveIndex] = useState<number>(0)
 
   return (
     <section className="site-content-shell site-section-gap">
       <MarketingLeadHeader
         className="mb-6 sm:mb-8"
-        title="Command your portfolio with Ask AI"
-        subtitle="Simulate yield loops, automate borrow guards, and execute in plain English."
+        title={t("Command your portfolio with Ask AI")}
+        subtitle={t("Simulate yield loops, automate borrow guards, and execute in plain English.")}
       />
 
       <div className="w-full">
@@ -94,7 +100,7 @@ export function AskAiShowcase() {
                   >
                     <Image
                       src={item.imageSrc}
-                      alt={item.imageAlt}
+                      alt={t(item.imageAlt)}
                       fill
                       sizes="(max-width: 1024px) 50vw, 650px"
                       className="object-cover object-top"
@@ -104,7 +110,7 @@ export function AskAiShowcase() {
                     <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/85 via-black/50 to-transparent">
                       <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs text-white backdrop-blur-md ring-1 ring-white/20">
                         <Sparkles className="h-3.5 w-3.5 text-cyan-300 shrink-0" aria-hidden="true" />
-                        <span className="font-mono text-[0.78rem] tracking-tight">{item.prompt}</span>
+                        <span className="font-mono text-[0.78rem] tracking-tight">{t(item.prompt)}</span>
                       </div>
                     </div>
                   </div>
@@ -129,7 +135,7 @@ export function AskAiShowcase() {
                         aria-expanded={isExpanded}
                         aria-controls={`content_${item.id}`}
                       >
-                        <h3 className="flex-grow py-4 text-start font-normal text-mkt-p1">{item.title}</h3>
+                        <h3 className="flex-grow py-4 text-start font-normal text-mkt-p1">{t(item.title)}</h3>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -167,14 +173,14 @@ export function AskAiShowcase() {
                         }}
                       >
                         <div className="flex min-h-0 min-w-0 flex-col [&>*]:m-0">
-                          <p className="not-last:mb-[1.1em]">{item.description}</p>
+                          <p className="not-last:mb-[1.1em]">{t(item.description)}</p>
                           {/* Mobile inline media */}
                           {isExpanded && (
                             <div className="h-full w-full md:hidden mt-4">
                               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-lg ring-1 ring-black/10">
                                 <Image
                                   src={item.imageSrc}
-                                  alt={item.imageAlt}
+                                  alt={t(item.imageAlt)}
                                   fill
                                   sizes="(max-width: 768px) 100vw, 500px"
                                   className="object-cover object-top"
@@ -182,7 +188,7 @@ export function AskAiShowcase() {
                                 <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/85 via-black/50 to-transparent">
                                   <div className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 text-xs text-white backdrop-blur-md ring-1 ring-white/20">
                                     <Sparkles className="h-3 w-3 text-cyan-300 shrink-0" aria-hidden="true" />
-                                    <span className="font-mono text-[0.72rem] tracking-tight">{item.prompt}</span>
+                                    <span className="font-mono text-[0.72rem] tracking-tight">{t(item.prompt)}</span>
                                   </div>
                                 </div>
                               </div>

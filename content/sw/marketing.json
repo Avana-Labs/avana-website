@@ -359,7 +359,13 @@
       "kwa 5.5% APR bila kutoa ukwasi au kuacha ada za biashara.",
       "Pata riba kutokana na mahitaji ya mkopaji wa LP",
       "Njia ambazo timu zinatumia mikopo ya LP",
-      "Mkopo wa LP kwa kazi"
+      "Mkopo wa LP kwa kazi",
+      "Fikia mikopo katika mabwawa mamia",
+      "Endelea kupata ada za biashara huku ukichukua mkopo dhidi ya LP yako.",
+      "Masoko ya Multiply ili kuzungusha mtaji, kurekebisha hatari ya bwawa, na kudhibiti afya ya nafasi.",
+      "Usalama wa Nafasi",
+      "Imeundwa kwa mtaji wa mkopo salama",
+      "Kiwango cha juu cha mkopo"
     ]
   },
   "webapp-hero": {
@@ -676,6 +682,47 @@
       "Maswali yanayoulizwa mara kwa mara.",
       "Maswali yanayoulizwa mara kwa mara",
       "maswali"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Fungua mtaji kutoka masoko ya AMM",
+      "Masoko matatu asilia ya kukopa, kupata riba, na kudhibiti mtaji wa mkopo.",
+      "Kopa dhidi ya nafasi za LP",
+      "Kopa dhidi ya nafasi za LP huku ukwasi wako ukiendelea kufanya kazi katika AMM ya msingi.",
+      "Kopesha katika masoko ya Hub",
+      "Toa mtaji kwa masoko ya mikopo yaliyounganishwa na Hub na upate mapato kutokana na mahitaji ya wakopaji wenye dhamana ya LP.",
+      "Ongeza mara nyingi mapato ya ukwasi",
+      "Tumia mkopo wenye dhamana ya LP kuunda mtaji wa mkopo unaosimamiwa bila kuondoka kwenye nafasi yako ya msingi ya ukwasi.",
+      "Avana Kukopa dhidi ya nafasi za LP",
+      "Avana Kukopesha katika masoko yaliyounganishwa na Hub",
+      "Avana Multiply mapato ya mtaji wa mkopo unaosimamiwa"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Ongoza portfolio yako kwa Ask AI",
+      "Iga mizunguko ya mapato, weka ulinzi wa mikopo kiotomatiki, na tekeleza kwa lugha ya kawaida.",
+      "Jibu swali lako lijalo la “itakuwaje kama?”",
+      "Uliza jinsi kushuka kwa soko kwa asilimia 20 kunavyoathiri health factor yako, au iga mzunguko wa mapato wa mara 3 kabla ya kuweka mtaji wowote.",
+      "“Iga mzunguko wa mapato wa 3x ETH-USDC na nionyeshe bei yangu ya kufilisiwa iwapo ETH itashuka kwa 15%”",
+      "Geuza miamala mitano kuwa sentensi moja",
+      "Badilisha tokeni, unganisha minyororo, na weka fedha kwenye mabwawa ya ukwasi kwa mpigo mmoja, bila kubadilisha mtandao wala kusaini idhini tano.",
+      "“Badilisha ETH 5 kuwa USDC, ihamishe hadi Arbitrum, na uiweke katika bwawa la Curve la sarafu tatu”",
+      "Weka kanuni za masharti kisha uachie",
+      "Mwambie Ask AI akope tu wakati viwango vinashuka chini ya 4%, au asawazishe LP yako iwapo bei za bwawa zitatoka nje ya lengo lako.",
+      "“Kopa USDC 25,000 dhidi ya nafasi yangu ya LP kila mara APR ya mkopo ya Aave inaposhuka chini ya 3.8%”",
+      "Lala kwa amani licha ya kuyumba kwa soko",
+      "Mawakala wa kujiendesha hufuatilia dhamana yako saa 24 kwa siku, wakirekebisha nafasi na kuwasha stop-loss muda mrefu kabla ya hatari ya kufilisiwa.",
+      "“Weka health factor yangu juu ya 1.6 kwa kupunguza mtaji wa mkopo kiotomatiki iwapo mabadiliko yataongezeka”",
+      "Gundua mapato bora bila kutafuta kwa saa nyingi",
+      "Uliza ni mabwawa gani yanayotoa uwiano bora wa ada na hatari kwa mali zako, linganisha kina cha DEX kwa wakati halisi, na uwekeze kwa mbofyo mmoja.",
+      "“Tafuta bwawa lenye APY ya ada ya juu zaidi kwa wstETH lenye kina cha ukwasi cha angalau dola milioni 5 katika DEX zote”",
+      "Kiolesura cha uigaji na usimamizi wa portfolio cha Avana Multiply",
+      "Mtiririko wa utekelezaji otomatiki wa hatua nyingi wa Avana Express",
+      "Ufuatiliaji wa viwango na vigezo vya mkopo vyenye masharti vya Avana Borrow",
+      "Ufuatiliaji wa nafasi saa 24 na ulinzi otomatiki wa hatari wa Avana",
+      "Kiolesura cha kugundua mapato na kulinganisha mabwawa cha Avana Lend"
     ]
   }
 }

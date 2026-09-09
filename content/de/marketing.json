@@ -359,7 +359,13 @@
       "bei 5,5 % APR, ohne Liquidität abzuziehen oder Handelsgebühren aufzugeben.",
       "Zinsen aus der Nachfrage von LP-Kreditnehmern verdienen",
       "So setzen Teams LP-Kredit ein",
-      "LP-Kredit einsetzen"
+      "LP-Kredit einsetzen",
+      "Greifen Sie auf Kredite über Hunderte von Pools zu",
+      "Verdienen Sie weiter Handelsgebühren, während Sie Kredit gegen Ihre LP aufnehmen.",
+      "Multiply-Märkte, um Kapital zu loopen, Poolrisiko abzustimmen und die Positionsgesundheit zu steuern.",
+      "Positionssicherheit",
+      "Für sicheren Hebel entwickelt",
+      "Kreditobergrenze"
     ]
   },
   "webapp-hero": {
@@ -676,6 +682,47 @@
       "Häufig gestellte Fragen.",
       "Häufig gefragt",
       "Fragen"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Kapital aus AMM-Märkten freisetzen",
+      "Drei native Märkte zum Leihen, Zinsverdienen und Steuern von Hebel.",
+      "Gegen LP-Positionen leihen",
+      "Leihen Sie gegen LP-Positionen, während Ihre Liquidität im zugrunde liegenden AMM aktiv bleibt.",
+      "In Hub-Märkte verleihen",
+      "Stellen Sie Kapital in Hub-verbundenen Kreditmärkten bereit und profitieren Sie von der Nachfrage LP-besicherter Kreditnehmer.",
+      "Liquiditätsrenditen vervielfachen",
+      "Nutzen Sie LP-besicherten Kredit für gesteuerten Hebel, ohne Ihre Basis-Liquiditätsposition zu verlassen.",
+      "Avana Leihen gegen LP-Positionen",
+      "Avana Verleihen in Hub-verbundene Märkte",
+      "Avana Multiply gesteuerte Hebelrendite"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Steuern Sie Ihr Portfolio mit Ask AI",
+      "Simulieren Sie Rendite-Loops, automatisieren Sie Kreditgrenzen und führen Sie in normaler Sprache aus.",
+      "Beantworten Sie Ihr nächstes „Was wäre wenn?“",
+      "Fragen Sie, wie sich ein Markteinbruch von 20 % auf Ihren Health-Faktor auswirkt, oder simulieren Sie einen 3x-Rendite-Loop, bevor Sie Kapital einsetzen.",
+      "„Simuliere einen 3x ETH-USDC-Rendite-Loop und zeige meinen Liquidationspreis, wenn ETH um 15 % fällt“",
+      "Fünf Transaktionen in einen Satz verwandeln",
+      "Tauschen Sie Token, überbrücken Sie Chains und zahlen Sie in Liquiditätspools ein – in einem Zug, ohne Netzwerkwechsel und ohne fünf Freigaben zu signieren.",
+      "„Tausche 5 ETH in USDC, bridge nach Arbitrum und zahle in den Curve-Tri-Pool ein“",
+      "Bedingungen festlegen und loslassen",
+      "Weisen Sie Ask AI an, nur zu leihen, wenn die Zinsen unter 4 % fallen, oder Ihre LP neu auszubalancieren, wenn Poolpreise von Ihrem Ziel abweichen.",
+      "„Leihe 25.000 USDC gegen meine LP-Position, sobald der Aave-Kredit-APR unter 3,8 % fällt“",
+      "Ruhig schlafen trotz volatiler Märkte",
+      "Autonome Agenten überwachen Ihre Sicherheiten rund um die Uhr, passen Positionen an und lösen Stop-Loss lange vor dem Liquidationsrisiko aus.",
+      "„Halte meinen Health-Faktor über 1,6, indem du bei Volatilitätsspitzen automatisch den Hebel reduzierst“",
+      "Spitzenrenditen erkennen, ohne sich zu verlieren",
+      "Fragen Sie, welche Pools das beste Gebühren-Risiko-Verhältnis für Ihre Assets bieten, vergleichen Sie DEX-Tiefe in Echtzeit und deployen Sie per Klick.",
+      "„Finde den Pool mit der höchsten Gebühren-APY für wstETH mit mindestens 5 Mio. $ Liquiditätstiefe über alle DEXs“",
+      "Avana Multiply – Oberfläche für Simulation und Portfolioverwaltung",
+      "Avana Express – mehrstufiger automatisierter Ausführungsablauf",
+      "Avana Borrow – Zinsüberwachung und bedingte Kreditparameter",
+      "Avana – Positionsüberwachung rund um die Uhr und automatisierte Risikoschutzmechanismen",
+      "Avana Lend – Oberfläche für Renditesuche und Poolvergleich"
     ]
   }
 }

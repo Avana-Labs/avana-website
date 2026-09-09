@@ -117,7 +117,7 @@ export default async function Home({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <AvanaProductsSection />
+      <AvanaProductsSection locale={locale} />
 
       <HeroSection locale={locale} />
 

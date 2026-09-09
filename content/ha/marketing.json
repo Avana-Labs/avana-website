@@ -359,7 +359,13 @@
       "a 5.5% APR ba tare da cire ruwan jari ko barin kudaden kasuwanci ba.",
       "Samu riba daga bukatar masu aron LP",
       "Hanyoyin da ƙungiyoyi ke amfani da bashi na LP",
-      "Bashi na LP don aiki"
+      "Bashi na LP don aiki",
+      "Samun lamuni a cikin daruruwan tafkuna",
+      "Ci gaba da samun kuɗin sabis na ciniki yayin da kake ɗaukar rance kan LP ɗinka.",
+      "Kasuwannin Multiply don sake zagayar da jari, daidaita haɗarin tafki, da sarrafa lafiyar matsayi.",
+      "Tsaron Matsayi",
+      "An tsara shi don lefaris mai aminci",
+      "Iyakar aro"
     ]
   },
   "webapp-hero": {
@@ -676,6 +682,47 @@
       "Tambayoyi da ake yawan yi.",
       "Tambayoyi akai-akai",
       "tambayoyi"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Buɗe jari daga kasuwannin AMM",
+      "Kasuwanni uku na asali don aro, samun riba, da sarrafa lefaris.",
+      "Yi aro kan matsayin LP",
+      "Yi aro kan matsayin LP yayin da kuɗin ruwanka ke ci gaba da aiki a cikin AMM na tushe.",
+      "Ba da rance a kasuwannin Hub",
+      "Samar da jari ga kasuwannin rance da ke haɗe da Hub kuma ka samu riba daga buƙatar masu aro da ke da lamunin LP.",
+      "Ninka ribar kuɗin ruwa",
+      "Yi amfani da rancen da LP ke tallafawa don ƙirƙirar lefaris mai sarrafuwa ba tare da fita daga matsayinka na asali ba.",
+      "Avana Aro kan matsayin LP",
+      "Avana Ba da rance a kasuwannin da ke haɗe da Hub",
+      "Avana Multiply ribar lefaris mai sarrafuwa"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Sarrafa fayilinka na jari da Ask AI",
+      "Yi kwaikwayon zagayen riba, sarrafa kariyar aro ta atomatik, kuma ka aiwatar da harshe mai sauƙi.",
+      "Amsa tambayarka ta gaba ta “idan kuwa?”",
+      "Tambaya yadda faɗuwar kasuwa da kashi 20 ke shafar health factor ɗinka, ko ka yi kwaikwayon zagayen riba sau 3 kafin ka saka wani jari.",
+      "“Yi kwaikwayon zagayen riba sau 3 na ETH-USDC kuma ka nuna farashin sayarwa idan ETH ya faɗi da kashi 15”",
+      "Mai da mu'amaloli biyar zuwa jimla ɗaya",
+      "Ka canza tokens, ka haɗa sarƙoƙi, kuma ka ajiye a tafkunan kuɗin ruwa a lokaci ɗaya, ba tare da canza hanyar sadarwa ko sa hannu kan izini biyar ba.",
+      "“Canza ETH 5 zuwa USDC, ka tura zuwa Arbitrum, kuma ka ajiye a tafkin Curve mai kuɗi uku”",
+      "Saita ƙa'idojin sharaɗi sannan ka huta",
+      "Ka gaya wa Ask AI ya yi aro kawai lokacin da farashin ya sauka ƙasa da kashi 4, ko ya daidaita LP ɗinka idan farashin tafki ya karkace daga burinka.",
+      "“Ka ari USDC 25,000 kan matsayin LP dina duk lokacin da APR na aron Aave ya sauka ƙasa da kashi 3.8”",
+      "Ka yi barci lafiya duk da sauyin kasuwa",
+      "Wakilai masu zaman kansu suna sa ido kan lamuninka awa 24, suna daidaita matsayi tare da kunna stop-loss tun kafin haɗarin sayarwa.",
+      "“Ka riƙe health factor dina sama da 1.6 ta hanyar rage lefaris ta atomatik idan sauyi ya tashi”",
+      "Gano mafi kyawun riba ba tare da dogon bincike ba",
+      "Tambaya waɗanne tafkuna ne ke ba da mafi kyawun rabon kuɗin sabis zuwa haɗari ga kadarorinka, ka kwatanta zurfin DEX kai tsaye, kuma ka tura da dannawa ɗaya.",
+      "“Nemo tafkin da ke da mafi girman APY na kuɗin sabis ga wstETH mai zurfin kuɗin ruwa aƙalla dala miliyan 5 a duk DEX”",
+      "Hanyar kwaikwayo da sarrafa fayilin jari na Avana Multiply",
+      "Tsarin aiwatarwa ta atomatik mai matakai da yawa na Avana Express",
+      "Sa ido kan farashi da sigogin rance na sharaɗi na Avana Borrow",
+      "Sa ido kan matsayi awa 24 da kariyar haɗari ta atomatik na Avana",
+      "Hanyar gano riba da kwatanta tafkuna na Avana Lend"
     ]
   }
 }

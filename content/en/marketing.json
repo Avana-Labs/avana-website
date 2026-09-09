@@ -359,7 +359,13 @@
       "at 5.5% APR without withdrawing liquidity or giving up trading fees.",
       "Earn interest from LP borrower demand",
       "Ways teams put LP credit to work",
-      "LP credit to work"
+      "LP credit to work",
+      "Access loans across hundreds of pools",
+      "Keep earning trading fees while drawing credit against your LP.",
+      "Multiply Markets to loop capital, tune pool risk, and manage position health.",
+      "Position Safety",
+      "Designed for safe leverage",
+      "Borrow cap"
     ]
   },
   "webapp-hero": {
@@ -676,6 +682,47 @@
       "Frequently asked questions.",
       "Frequently asked",
       "questions"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Unlock capital from AMM markets",
+      "Three native markets to borrow, earn interest, and manage leverage.",
+      "Borrow against LP positions",
+      "Borrow against LP positions while your liquidity stays active in the underlying AMM.",
+      "Lend into Hub markets",
+      "Supply capital into Hub-connected lending markets and earn from LP-backed borrower demand.",
+      "Multiply liquidity yields",
+      "Use LP-backed credit to create managed leverage without exiting your base liquidity position.",
+      "Avana Borrow against LP positions",
+      "Avana Lend into Hub-connected markets",
+      "Avana Multiply managed leverage yield"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Command your portfolio with Ask AI",
+      "Simulate yield loops, automate borrow guards, and execute in plain English.",
+      "Answer your next “what if?”",
+      "Ask how a 20% market dip impacts your health factor, or simulate a 3x yield loop before committing any capital.",
+      "“Simulate a 3x ETH-USDC yield loop and show my liquidation price if ETH drops 15%”",
+      "Turn five transactions into one sentence",
+      "Swap tokens, bridge chains, and deposit into liquidity pools in one go—without switching networks or signing five approvals.",
+      "“Swap 5 ETH for USDC, bridge to Arbitrum, and deposit into the Curve tri-pool”",
+      "Set conditional rules and walk away",
+      "Tell Ask AI to borrow only when rates drop below 4%, or rebalance your LP if pool prices deviate beyond your target.",
+      "“Borrow 25,000 USDC against my LP position whenever Aave borrow APR drops below 3.8%”",
+      "Sleep through volatile market swings",
+      "Autonomous agents watch your collateral 24/7, adjusting positions and triggering stop-losses long before liquidation risk.",
+      "“Keep my health factor above 1.6 by automatically deleveraging if volatility spikes”",
+      "Spot peak yields without the rabbit hole",
+      "Ask which pools offer the best fee-to-risk ratio for your assets, compare real-time DEX depth, and deploy with a click.",
+      "“Find the highest fee APY pool for wstETH with at least $5M liquidity depth across all DEXs”",
+      "Avana Multiply simulation and portfolio management interface",
+      "Avana Express multi-step automated execution workflow",
+      "Avana Borrow rate monitoring and conditional loan parameters",
+      "Avana 24/7 position monitoring and automated risk guards",
+      "Avana Lend yield discovery and pool comparison interface"
     ]
   }
 }

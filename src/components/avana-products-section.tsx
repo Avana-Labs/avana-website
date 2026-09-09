@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import type { AppLocale } from "@/i18n/locales"
+import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
-export function AvanaProductsSection() {
-  return (
+export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ["avana-products-section"], (
     <section
       id="avana-products"
       className="w-full bg-inherit site-section-gap"
@@ -145,5 +147,5 @@ export function AvanaProductsSection() {
         </div>
       </div>
     </section>
-  )
+  ))
 }
