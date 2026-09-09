@@ -66,14 +66,13 @@ export function AskAiShowcase() {
 
   return (
     <section className="site-content-shell site-section-gap">
-      <div className="mb-6 rounded-[4px] bg-[#fafafa] p-5 sm:mb-8 sm:p-6">
-        <MarketingLeadHeader
-          title={t("Command your portfolio with Ask AI")}
-          subtitle={t(
-            "Simulate yield loops, automate borrow guards, and execute in plain English.",
-          )}
-        />
-      </div>
+      <MarketingLeadHeader
+        className="mb-6 sm:mb-8"
+        title={t("Command your portfolio with Ask AI")}
+        subtitle={t(
+          "Simulate yield loops, automate borrow guards, and execute in plain English.",
+        )}
+      />
 
       <div className="w-full">
         <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-12 md:items-start">
