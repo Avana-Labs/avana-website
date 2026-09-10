@@ -8,10 +8,9 @@ import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSect
 import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
 import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
-import { cn } from "@/lib/utils"
-import { getTokenIconSrc } from "@/lib/token-icons"
 import { brandAssetPath } from "@/lib/brand-assets"
 import { FeaturePageHero } from "@/components/feature-page-hero"
+import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
@@ -101,111 +100,21 @@ const lpHubMarkets = [
     title: "Stable LP Hub",
     description:
       "Stablecoin LP markets built for tight pricing, low slippage, and minimal impermanent loss.",
-    pools: ["USDC / GHO", "USDT / USDC", "GHO / USDe", "USDe / USDC", "USDT / GHO"],
-    borrowable: ["USDC", "USDT", "GHO", "USDe", "DAI"],
+    variant: "stable",
   },
   {
     title: "Correlated LP Hub",
     description:
       "LP markets for assets that move together, built for tighter risk bands and cleaner borrowing power.",
-    pools: ["ETH / wstETH", "wstETH / cbETH", "ETH / rETH", "USDe / USDC", "GHO / USDe"],
-    borrowable: ["ETH", "wstETH", "USDC", "GHO", "USDe"],
+    variant: "correlated",
   },
   {
     title: "Volatile LP Hub",
     description:
       "Major DeFi asset LP markets for wider price ranges and higher risk-reward strategies.",
-    pools: ["ETH / USDC", "WBTC / ETH", "cbBTC / USDC", "AAVE / ETH"],
-    borrowable: ["ETH", "wstETH", "WBTC", "cbBTC", "USDT", "USDC", "GHO", "AAVE"],
+    variant: "volatile",
   },
 ] as const
-
-function HubTokenImage({ symbol, overlap = false }: { symbol: string; overlap?: boolean }) {
-  const src = getTokenIconSrc(symbol)
-
-  if (!src) {
-    const initials = symbol.slice(0, 3).toUpperCase()
-    return (
-      <span
-        aria-hidden="true"
-        className={cn(
-          "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted text-[0.5rem] font-semibold text-foreground",
-          overlap && "-ml-1.5",
-        )}
-      >
-        {initials}
-      </span>
-    )
-  }
-
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt=""
-      aria-hidden="true"
-      loading="lazy"
-      decoding="async"
-      className={cn("h-5 w-5 shrink-0 rounded-full object-contain", overlap && "-ml-1.5")}
-    />
-  )
-}
-
-function HubPoolIcon({ pool }: { pool: string }) {
-  if (pool.includes("More")) {
-    return (
-      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#01AACF] text-[0.7rem] font-semibold text-white">
-        +
-      </span>
-    )
-  }
-
-  const [first, second] = pool.split(" / ")
-
-  return (
-    <span className="flex items-center">
-      {[first, second].map((token, index) => (
-        <HubTokenImage key={`${pool}-${token}`} symbol={token} overlap={index > 0} />
-      ))}
-    </span>
-  )
-}
-
-function HubSingleTokenIcon({ token }: { token: string }) {
-  return <HubTokenImage symbol={token} />
-}
-
-function HubTokenGroup({
-  label,
-  tokens,
-  withPoolIcons = false,
-  withTokenIcons = false,
-}: {
-  label: string
-  tokens: readonly string[]
-  withPoolIcons?: boolean
-  withTokenIcons?: boolean
-}) {
-  return (
-    <div className="mt-5 first:mt-0">
-      <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-type-tertiary">
-        {label}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {tokens.map((token) => (
-          <span
-            key={`${label}-${token}`}
-            className="inline-flex h-8 items-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-semibold tracking-[-0.015em] text-foreground"
-          >
-            {withPoolIcons ? <HubPoolIcon pool={token} /> : null}
-            {withTokenIcons ? <HubSingleTokenIcon token={token} /> : null}
-            {token}
-          </span>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function BorrowMarketCard({
   number,
@@ -315,9 +224,8 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                     {hub.description}
                   </FeatureCardDescription>
 
-                  <div className="mt-5 rounded-[4px] bg-white p-5">
-                    <HubTokenGroup label="LP pool collateral" tokens={hub.pools} withPoolIcons />
-                    <HubTokenGroup label="Borrowable" tokens={hub.borrowable} withTokenIcons />
+                  <div className="mt-5 rounded-[4px] bg-white p-2">
+                    <AvanaHubWave variant={hub.variant} />
                   </div>
                 </article>
               ))}
