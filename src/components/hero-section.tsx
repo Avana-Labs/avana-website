@@ -110,20 +110,34 @@ const lpUseCases: {
 
 const positionSafetyItems = [
   {
-    title: "Leverage Layer",
-    description: "Draw LP-backed credit and deploy borrowed capital into the market.",
+    number: "01",
+    title: "Enterprise-grade security and vaults",
+    description:
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
   },
   {
-    title: "Unwind Layer",
-    description: "Close, reduce, repay, or liquidate with debt coverage first.",
+    number: "02",
+    title: "Contain risk at the market level",
+    description:
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
   },
   {
-    title: "Risk Layer",
-    description: "Track collateral, debt, and leverage in real time before risk rises.",
+    number: "03",
+    title: "Verify every price twice",
+    description:
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
   },
   {
-    title: "Monitoring Layer",
-    description: "Watch collateral, debt, leverage, liquidation, and health in one view.",
+    number: "04",
+    title: "Enforce collateral at execution",
+    description:
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+  },
+  {
+    number: "05",
+    title: "Liquidate only what is necessary",
+    description:
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
   },
 ] as const
 
@@ -705,21 +719,21 @@ function HeroSectionBody(locale: AppLocale) {
               alt="Avana coin illustration"
               width={1714}
               height={1601}
-              className="h-auto w-full"
-              sizes="(min-width: 768px) 50vw, calc(100vw - 2.5rem)"
+              className="h-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[28rem]"
+              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
             />
           </div>
 
           <div className="min-w-0">
             <MarketingLeadHeader
-              title="Position Safety"
-              subtitle="Designed for safe leverage"
+              title="Powered by Aave v4."
+              subtitle="Engineered for resilience by Avana."
             />
 
             <Accordion
               type="single"
               collapsible
-              defaultValue="leverage-layer"
+              defaultValue="enterprise-grade-security-and-vaults"
               orientation="vertical"
               className="mt-7 w-full"
             >
@@ -730,7 +744,10 @@ function HeroSectionBody(locale: AppLocale) {
                   className="border-b border-border py-6 first:border-t last:border-b"
                 >
                   <AccordionTrigger className="type-card-title group p-0 text-left text-foreground hover:no-underline [&>svg.size-4]:hidden">
-                    {item.title}
+                    <span className="flex flex-1 items-center justify-between gap-4">
+                      <span>{item.title}</span>
+                      <span className="type-meta-label text-type-tertiary">{item.number}</span>
+                    </span>
                     <FaqToggleIcons />
                   </AccordionTrigger>
                   <AccordionContent className="type-body-copy max-w-[34rem] pb-0 pt-4">
