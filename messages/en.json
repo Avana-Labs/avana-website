@@ -309,7 +309,8 @@
   },
   "pricing": {
     "title": "Pricing",
-    "subtitle": "Rates and returns depend on the market, position, and route you use.",
+    "subtitleLine1": "Rates and returns depend on the market,",
+    "subtitleLine2": "position, and route you use.",
     "interfaceRate": "Upfront Interface fees — 15 bps (0.15%)",
     "includes": "Includes:",
     "borrow": {

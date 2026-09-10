@@ -67,7 +67,9 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
               {t("title")}
             </h1>
             <p className="mt-6 max-w-2xl text-[1.05rem] leading-7 tracking-[-0.02em] text-type-secondary md:text-[1.15rem]">
-              {t("subtitle")}
+              <span>{t("subtitleLine1")}</span>
+              <br className="sm:hidden" />{" "}
+              <span>{t("subtitleLine2")}</span>
             </p>
             <div className="mt-8 inline-flex items-center rounded-full border border-border bg-muted/60 px-5 py-2.5 text-[0.95rem] font-medium tracking-[-0.015em] text-foreground shadow-[0_8px_24px_-18px_rgba(15,21,24,0.45)]">
               {t("interfaceRate")}
