@@ -348,6 +348,31 @@
         "two": "Exposure stays tied to the underlying pool",
         "three": "Leverage and unwind controls stay visible"
       }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "interfaceFee": {
+          "question": "What does Avana charge for using the interface?",
+          "answer": "The official interface fee is 15 bps (0.15%) when applicable. It is shown before signature and is separate from gas, swap fees, Aave interest, and liquidation costs."
+        },
+        "borrowRate": {
+          "question": "Is borrowing interest fixed?",
+          "answer": "No. Borrowing interest is set by the selected Aave v4 market and can move with utilization and market parameters. The current rate is shown before you borrow."
+        },
+        "lendingApy": {
+          "question": "How is lending APY determined?",
+          "answer": "Lending returns are market-driven and depend on utilization and LP-backed borrower demand. The live APY is shown in the interface before you supply."
+        },
+        "separateCosts": {
+          "question": "Which costs are separate from Avana fees?",
+          "answer": "Network gas, DEX swap fees, Aave market interest, and any liquidation execution costs are separate from the official interface fee. Review the transaction details before signing."
+        },
+        "feeChanges": {
+          "question": "Can fees and rates change?",
+          "answer": "Yes. Market rates move with utilization and risk parameters, and interface policy can change over time. Always verify the current amount shown for your route before signing."
+        }
+      }
     }
   },
   "faq": {

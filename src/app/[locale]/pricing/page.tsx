@@ -1,10 +1,9 @@
 import { Check } from "lucide-react"
 import { getTranslations } from "next-intl/server"
-import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
-import { LocalizedMarketing } from "@/components/localized-marketing"
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 import { siteRoutes } from "@/lib/site"
+import { SectionTitle } from "@/components/shared"
 
 export async function generateMetadata({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
@@ -57,9 +56,31 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
     },
   ] as const
 
+  const pricingFaqItems = [
+    {
+      question: t("faq.items.interfaceFee.question"),
+      answer: t("faq.items.interfaceFee.answer"),
+    },
+    {
+      question: t("faq.items.borrowRate.question"),
+      answer: t("faq.items.borrowRate.answer"),
+    },
+    {
+      question: t("faq.items.lendingApy.question"),
+      answer: t("faq.items.lendingApy.answer"),
+    },
+    {
+      question: t("faq.items.separateCosts.question"),
+      answer: t("faq.items.separateCosts.answer"),
+    },
+    {
+      question: t("faq.items.feeChanges.question"),
+      answer: t("faq.items.feeChanges.answer"),
+    },
+  ] as const
+
   return (
-    <LocalizedMarketing locale={locale} keys={["homepage/HomepageFaqSection"]}>
-      <main className="bg-background">
+    <main className="bg-background">
       <section className="px-4 pb-16 pt-16 sm:px-6 md:pb-24 md:pt-20 lg:px-8 lg:pt-24">
         <div className="mx-auto max-w-[92rem]">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -128,11 +149,31 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
           </div>
 
           <section className="mt-16 border-t border-border/80 pt-16 md:mt-24 md:pt-24">
-            <HomepageFaqSection />
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] md:gap-6 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:gap-8">
+              <div className="space-y-3 md:max-w-[25rem] md:pt-2">
+                <SectionTitle variant="lead" className="max-w-none">
+                  {t("faq.title")}
+                </SectionTitle>
+              </div>
+              <div className="min-w-0 md:pl-16 lg:pl-24 xl:pl-28">
+                <div className="w-full border-t border-gray-200">
+                  {pricingFaqItems.map((item) => (
+                    <details key={item.question} className="group border-b border-gray-200 py-6">
+                      <summary className="flex cursor-pointer list-none items-center gap-4 text-left text-[1.05rem] font-medium leading-6 tracking-[-0.02em] text-foreground marker:hidden [&::-webkit-details-marker]:hidden">
+                        <span>{item.question}</span>
+                        <span className="ml-auto shrink-0 text-2xl font-normal leading-none text-type-tertiary transition-transform duration-150 group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="max-w-2xl pt-3 text-[0.95rem] leading-7 text-type-secondary">{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </section>
-      </main>
-    </LocalizedMarketing>
+    </main>
   )
 }
