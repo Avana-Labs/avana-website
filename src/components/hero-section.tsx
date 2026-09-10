@@ -179,8 +179,6 @@ function HeroSectionBody(locale: AppLocale) {
         </PerformanceDiv>
       </div>
 
-      <AskAiShowcase />
-
       <div className="site-content-shell site-section-gap flex flex-col site-section-stack">
         <div id="multiply-markets" className="w-full">
           <PerformanceDiv>
@@ -602,6 +600,15 @@ function HeroSectionBody(locale: AppLocale) {
             </div>
 
             <style>{`
+              .ce-ticker-risk {
+                animation: ce-tr 16s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-tr {
+                0%, 22% { transform: translateY(0); }
+                28%, 50% { transform: translateY(-25%); }
+                56%, 78% { transform: translateY(-50%); }
+                84%, 100% { transform: translateY(-75%); }
+              }
               .ce-range-dot {
                 animation: ce-dot 4.5s ease-in-out infinite;
               }
@@ -611,7 +618,7 @@ function HeroSectionBody(locale: AppLocale) {
               }
               .ce-eq {
                 transform-origin: bottom;
-                animation: ce-eq 1.6s ease-in-out infinite;
+                animation: ce-eq 1.6s ease-in-out infinite, ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
               }
               .ce-eq-2 { animation-delay: 0.2s; }
               .ce-eq-3 { animation-delay: 0.4s; }
@@ -619,17 +626,51 @@ function HeroSectionBody(locale: AppLocale) {
                 0%, 100% { transform: scaleY(0.55); }
                 50% { transform: scaleY(1); }
               }
+              .ce-state {
+                animation: ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-state {
+                0%, 20% { background-color: #10b981; }
+                25%, 45% { background-color: #f59e0b; }
+                50%, 70% { background-color: #ef4444; }
+                75%, 100% { background-color: #10b981; }
+              }
+              .ce-health-bar {
+                animation: ce-health-bar 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-health-bar {
+                0%, 20% { width: 45%; background-color: #10b981; }
+                25%, 45% { width: 68%; background-color: #f59e0b; }
+                50%, 70% { width: 88%; background-color: #ef4444; }
+                75%, 100% { width: 45%; background-color: #10b981; }
+              }
+              .ce-amt {
+                animation: ce-amt 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+              }
+              @keyframes ce-amt {
+                0%, 20% { transform: translateY(0%); }
+                25%, 45% { transform: translateY(-25%); }
+                50%, 70% { transform: translateY(-50%); }
+                75%, 100% { transform: translateY(-75%); }
+              }
               @media (prefers-reduced-motion: reduce) {
+                .ce-ticker-risk,
                 .ce-range-dot,
-                .ce-eq {
+                .ce-eq,
+                .ce-amt,
+                .ce-state,
+                .ce-health-bar {
                   animation: none !important;
                 }
               }
             `}</style>
           </PerformanceDiv>
         </div>
+      </div>
 
+      <AskAiShowcase />
 
+      <div className="site-content-shell site-section-gap flex flex-col site-section-stack">
       <div>
         <MarketingLeadHeader
           title="Who it's for"
