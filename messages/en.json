@@ -322,8 +322,7 @@
         "one": "Market-set interest rate",
         "two": "Accrues only on outstanding debt",
         "three": "Shown before you confirm"
-      },
-      "cta": "Borrowing docs"
+      }
     },
     "lend": {
       "title": "Lend",
@@ -335,8 +334,7 @@
         "one": "Yield varies with utilization",
         "two": "Supply into supported lending markets",
         "three": "Live APY shown in the interface"
-      },
-      "cta": "Lending docs"
+      }
     },
     "multiply": {
       "title": "Multiply",
@@ -348,8 +346,7 @@
         "one": "Use supported LP positions as collateral",
         "two": "Exposure stays tied to the underlying pool",
         "three": "Leverage and unwind controls stay visible"
-      },
-      "cta": "Multiply overview"
+      }
     },
     "moreInfo": "For the full fee mechanics, read the FAQ and developer documentation.",
     "faqCta": "Read the FAQ",

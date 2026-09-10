@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check } from "lucide-react"
+import { Check } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 import { Link } from "@/i18n/navigation"
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
@@ -26,8 +26,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
         t("borrow.items.two"),
         t("borrow.items.three"),
       ],
-      cta: t("borrow.cta"),
-      href: "/developers/getting-started/borrow-assets",
       featured: true,
     },
     {
@@ -41,8 +39,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
         t("lend.items.two"),
         t("lend.items.three"),
       ],
-      cta: t("lend.cta"),
-      href: "/developers/architecture/lend-spoke",
       featured: false,
     },
     {
@@ -56,8 +52,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
         t("multiply.items.two"),
         t("multiply.items.three"),
       ],
-      cta: t("multiply.cta"),
-      href: siteRoutes.multiply,
       featured: false,
     },
   ] as const
@@ -125,17 +119,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                   </ul>
                 </div>
 
-                <Link
-                  href={card.href}
-                  className={`group mt-auto inline-flex h-11 w-fit items-center gap-2 rounded-full px-5 text-[0.95rem] font-medium transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 ${
-                    card.featured
-                      ? "bg-background text-foreground hover:bg-type-accent hover:text-foreground"
-                      : "bg-foreground/[0.08] text-foreground hover:bg-foreground hover:text-background"
-                  }`}
-                >
-                  {card.cta}
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
