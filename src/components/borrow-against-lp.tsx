@@ -55,11 +55,7 @@ export function BorrowAgainstLP() {
           width: 100%;
           max-width: 380px;
           margin: 0 auto;
-          padding: 15px 16px;
-          border: 1px solid rgba(15, 21, 24, 0.08);
-          border-radius: 14px;
-          background: #ffffff;
-          box-shadow: 0 1px 2px rgba(15, 21, 24, 0.04);
+          padding: 6px 8px;
           color: #0f1518;
         }
         .bal-head { display: flex; align-items: center; gap: 11px; }
