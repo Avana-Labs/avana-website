@@ -44,22 +44,6 @@ const socialIcons = {
       />
     </svg>
   ),
-  telegram: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5">
-      <path
-        fill="currentColor"
-        d="M21.6 4.8 18.5 20c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8L18 7.6c.4-.3-.1-.5-.6-.2L7 14.2l-4.7-1.5c-1-.3-1-.9.2-1.3L20 4.2c.9-.3 1.5.2 1.2.6Z"
-      />
-    </svg>
-  ),
-  discourse: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5">
-      <path
-        fill="currentColor"
-        d="M12 3.75a8.25 8.25 0 0 0-7.67 11.3l-1.1 4.2 4.12-1.2A8.25 8.25 0 1 0 12 3.75Zm0 2.1a6.15 6.15 0 0 1 5.8 8.2l-.14.38.58 2.2-2.16-.63-.33.18A6.15 6.15 0 1 1 12 5.85Zm-2.6 6.1a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm5.2 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm-2.6 3.55c1.14 0 2.2-.45 2.98-1.26l-1.02-.99a2.72 2.72 0 0 1-3.92 0l-1.02.99A4.16 4.16 0 0 0 12 15.5Z"
-      />
-    </svg>
-  ),
 } as const
 
 export default async function Footer(): Promise<React.JSX.Element> {
@@ -67,24 +51,14 @@ export default async function Footer(): Promise<React.JSX.Element> {
 
   const socialLinks: readonly SocialLink[] = [
     {
-      href: "https://twitter.com/dexmini",
+      href: "https://twitter.com/avana_labs",
       label: t("footer.socialAria", { network: t("footer.twitter") }),
       icon: socialIcons.twitter,
     },
     {
-      href: "https://github.com/aave",
+      href: "https://github.com/Avana-Labs",
       label: t("footer.socialAria", { network: t("footer.github") }),
       icon: socialIcons.github,
-    },
-    {
-      href: "https://t.me/dexmini",
-      label: t("footer.socialAria", { network: t("footer.telegram") }),
-      icon: socialIcons.telegram,
-    },
-    {
-      href: "https://governance.aave.com",
-      label: t("footer.socialAria", { network: t("footer.discourse") }),
-      icon: socialIcons.discourse,
     },
   ]
 
@@ -117,10 +91,8 @@ export default async function Footer(): Promise<React.JSX.Element> {
     {
       title: t("footer.social"),
       links: [
-        { href: "https://twitter.com/dexmini", label: t("footer.twitter"), external: true },
-        { href: "https://github.com/aave", label: t("footer.github"), external: true },
-        { href: "https://t.me/dexmini", label: t("footer.telegram"), external: true },
-        { href: "https://governance.aave.com", label: t("footer.discourse"), external: true },
+        { href: "https://twitter.com/avana_labs", label: t("footer.twitter"), external: true },
+        { href: "https://github.com/Avana-Labs", label: t("footer.github"), external: true },
       ],
       className: "lg:hidden",
     },
@@ -157,19 +129,39 @@ export default async function Footer(): Promise<React.JSX.Element> {
             <p className="max-w-sm text-[1.02rem] font-normal leading-7 tracking-[-0.02em] text-type-secondary">
               {t("footer.blurb")}
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  aria-label={link.label}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground transition hover:border-type-accent/40 hover:bg-type-accent/8"
-                >
-                  {link.icon}
-                </a>
-              ))}
+            <div className="space-y-3">
+              <p className="text-sm font-medium text-type-tertiary">{t("footer.social")}</p>
+              <div className="grid max-w-sm grid-cols-2 gap-2">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    aria-label={link.label}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex min-w-0 items-center gap-2.5 rounded-xl border border-border/80 bg-background px-3 py-2.5 text-foreground transition hover:border-type-accent/40 hover:bg-type-accent/8"
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-muted/40 transition-colors group-hover:border-type-accent/30 group-hover:bg-background">
+                      {link.icon}
+                    </span>
+                    <span className="truncate text-sm font-medium">{link.label}</span>
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-hidden="true"
+                      className="ml-auto h-3.5 w-3.5 shrink-0 text-type-tertiary transition-transform group-hover:translate-x-0.5 group-hover:text-type-accent"
+                    >
+                      <path
+                        d="m6 3 5 5-5 5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
