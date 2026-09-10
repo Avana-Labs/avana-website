@@ -26,61 +26,85 @@ export default function HomepageFaqSection() {
       value: "item-1",
       question: "Do I have to sell or exit my LP position?",
       answer: (
-        <>
-          {t("No. Your")} <DeFiTerm term="lp">LP</DeFiTerm>{" "}
-          {t("Avana uses your LP shares as")}{" "}
-          <DeFiTerm term="collateral">{t("collateral")}</DeFiTerm>.
-        </>
+        <div className="space-y-2">
+          <p>
+            {t("No. Your")} <DeFiTerm term="lp">LP</DeFiTerm>{" "}
+            {t("position stays active in the underlying AMM while you borrow against it.")}
+          </p>
+          <p>
+            {t("Avana uses your LP shares as")} {" "}
+            <DeFiTerm term="collateral">{t("collateral")}</DeFiTerm>{" "}
+            {t("so the position can keep earning fees instead of being sold first.")}
+          </p>
+        </div>
       ),
     },
     {
       value: "item-2",
       question: "How much can I borrow?",
       answer: (
-        <>
-          {t("Up to 70% of your LP's value, depending on pool type, volatility, and")}{" "}
-          <DeFiTerm term="oracle">{t("oracle")}</DeFiTerm>{" "}
-          {t("confidence. No minimum amounts. Higher-quality collateral unlocks more borrowing room.")}
-        </>
+        <div className="space-y-2">
+          <p>{t("Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.")}</p>
+          <p>
+            {t("The amount depends on pool type, volatility, and")} {" "}
+            <DeFiTerm term="oracle">{t("oracle")}</DeFiTerm>{" "}
+            {t("confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.")}
+          </p>
+        </div>
       ),
     },
     {
       value: "item-3",
       question: "What happens if my LP value drops?",
       answer: (
-        <>
-          {t("If your")} <DeFiTerm term="ltv">{t("loan-to-value ratio")}</DeFiTerm>{" "}
-          {t("exceeds the")}{" "}
-          <DeFiTerm term="liquidation-threshold">{t("liquidation threshold")}</DeFiTerm>
-          {t(", part of your position may be")}{" "}
-          <DeFiTerm term="liquidation">{t("liquidated")}</DeFiTerm>.
-        </>
+        <div className="space-y-2">
+          <p>
+            {t("If your")} <DeFiTerm term="ltv">{t("loan-to-value ratio")}</DeFiTerm>{" "}
+            {t("rises as the LP value falls, your borrowing buffer becomes smaller.")}
+          </p>
+          <p>
+            {t("If it exceeds the")} {" "}
+            <DeFiTerm term="liquidation-threshold">{t("liquidation threshold")}</DeFiTerm>{", "}
+            {t("part of your position may be")} {" "}
+            <DeFiTerm term="liquidation">{t("liquidated")}</DeFiTerm>{" "}
+            {t("to restore health or repay the debt.")}
+          </p>
+        </div>
       ),
     },
     {
       value: "item-4",
       question: "Is my risk isolated?",
       answer: (
-        <>
-          {t("Yes. Each")} <DeFiTerm term="lp-position">{t("LP position")}</DeFiTerm>{" "}
-          {t(
-            "is managed independently with isolated risk. System-wide safety is enforced through Aave v4's",
-          )}{" "}
-          <DeFiTerm term="hub">Hub</DeFiTerm>
-          {t("-and-")}
-          <DeFiTerm term="spoke">{t("Spoke")}</DeFiTerm> {t("architecture.")}
-        </>
+        <div className="space-y-2">
+          <p>
+            {t("Yes. Each")} <DeFiTerm term="lp-position">{t("LP position")}</DeFiTerm>{" "}
+            {t("is managed independently so one market does not silently absorb another market's risk.")}
+          </p>
+          <p>
+            {t("System-wide safety is enforced through Aave v4's")} {" "}
+            <DeFiTerm term="hub">{t("Hub")}</DeFiTerm>
+            {t("-and-")}
+            <DeFiTerm term="spoke">{t("Spoke")}</DeFiTerm> {t("architecture.")}
+          </p>
+        </div>
       ),
     },
     {
       value: "item-5",
       question: "Can I repay early or close my position?",
       answer: (
-        <>
-          {t("Yes.")} <DeFiTerm term="repay">{t("Repay")}</DeFiTerm> {t("anytime, reduce your")}{" "}
-          <DeFiTerm term="borrow">{t("borrow")}</DeFiTerm>
-          {t(", or")} <DeFiTerm term="withdraw">{t("withdraw")}</DeFiTerm>.
-        </>
+        <div className="space-y-2">
+          <p>
+            {t("Yes. There are no fixed loan terms, so you can")} {" "}
+            <DeFiTerm term="repay">{t("Repay")}</DeFiTerm> {t("at any time, in part or in full.")}
+          </p>
+          <p>
+            {t("You can also reduce your")} {" "}
+            <DeFiTerm term="borrow">{t("borrow")}</DeFiTerm>{", or "}
+            <DeFiTerm term="withdraw">{t("withdraw")}</DeFiTerm> {t("collateral as your position remains healthy.")}
+          </p>
+        </div>
       ),
     },
   ]
