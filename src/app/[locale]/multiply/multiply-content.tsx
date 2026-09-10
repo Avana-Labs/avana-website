@@ -15,6 +15,7 @@ import LeverageGlanceShowcaseSection from "@/components/leverage-glance-showcase
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { siteRoutes } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
@@ -203,13 +204,10 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="max-w-[58rem] space-y-4 text-left">
-              <SectionIntro
-                eyebrow="Why looping"
-                eyebrowTone="violet"
-                title={<span className="md:whitespace-nowrap">Multiply your yield up to 10x</span>}
-              />
-            </div>
+            <MarketingLeadHeader
+              title="Why looping"
+              subtitle="Multiply your yield up to 10x"
+            />
 
             <div className="mt-10 -mx-5 overflow-x-auto px-5 pb-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] md:mx-0 md:mt-16 md:overflow-visible md:px-0 md:pb-0 md:snap-none [&::-webkit-scrollbar]:hidden">
               <div className="flex w-max gap-8 md:grid md:w-full md:grid-cols-2 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">

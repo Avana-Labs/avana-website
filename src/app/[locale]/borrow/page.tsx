@@ -12,6 +12,7 @@ import { brandAssetPath } from "@/lib/brand-assets"
 import { FeaturePageHero } from "@/components/feature-page-hero"
 import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
@@ -237,13 +238,10 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="max-w-[58rem] space-y-3 text-left sm:space-y-4">
-              <SectionEyebrow tone="blue">Borrow with Confidence</SectionEyebrow>
-              <SectionTitle className="max-w-[18ch] sm:max-w-[22ch] lg:max-w-none">
-                <span className="block sm:inline">Protected at the</span>{" "}
-                <span className="block sm:inline">pool level</span>
-              </SectionTitle>
-            </div>
+            <MarketingLeadHeader
+              title="Borrow with Confidence"
+              subtitle="Protected at the pool level"
+            />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
               {borrowPartnerFeatures.map((feature) => (
