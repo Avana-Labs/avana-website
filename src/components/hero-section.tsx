@@ -728,7 +728,7 @@ function HeroSectionBody(locale: AppLocale) {
       <AskAiShowcase />
 
       <div className="site-content-shell site-section-gap flex flex-col site-section-stack">
-        <section className="border-t border-border pt-12 sm:pt-16">
+        <section>
           <MarketingLeadHeader
             title="Put your LP positions to work"
             subtitle="Ways teams use LP collateral without giving up liquidity or fee income."

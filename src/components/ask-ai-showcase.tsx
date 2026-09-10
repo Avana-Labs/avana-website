@@ -1,13 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { cn } from "@/lib/utils"
 import { lookupPhrase, usePhraseMap } from "@/components/phrase-map-context"
 import { AskAiConversation } from "@/components/ask-ai-conversation"
+import { FaqToggleIcons } from "@/components/faq-toggle-icons"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 interface AccordionItem {
   id: string
+  number: string
   title: string
   description: string
   prompt: string
@@ -16,6 +23,7 @@ interface AccordionItem {
 const accordionItems: AccordionItem[] = [
   {
     id: "answer-what-if",
+    number: "01",
     title: "Answer your next “what if?”",
     description:
       "Ask how a 20% market dip impacts your health factor, or simulate a 3x yield loop before committing any capital.",
@@ -24,6 +32,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     id: "one-sentence-execution",
+    number: "02",
     title: "Turn five transactions into one sentence",
     description:
       "Swap tokens, bridge chains, and deposit into liquidity pools in one go—without switching networks or signing five approvals.",
@@ -32,6 +41,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     id: "set-triggers",
+    number: "03",
     title: "Set conditional rules and walk away",
     description:
       "Tell Ask AI to borrow only when rates drop below 4%, or rebalance your LP if pool prices deviate beyond your target.",
@@ -40,6 +50,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     id: "sleep-through-volatility",
+    number: "04",
     title: "Sleep through volatile market swings",
     description:
       "Autonomous agents watch your collateral 24/7, adjusting positions and triggering stop-losses long before liquidation risk.",
@@ -48,6 +59,7 @@ const accordionItems: AccordionItem[] = [
   },
   {
     id: "spot-peak-yields",
+    number: "05",
     title: "Spot peak yields without the rabbit hole",
     description:
       "Ask which pools offer the best fee-to-risk ratio for your assets, compare real-time DEX depth, and deploy with a click.",
@@ -67,113 +79,64 @@ export function AskAiShowcase() {
   return (
     <section className="site-content-shell site-section-gap">
       <MarketingLeadHeader
-        className="mb-6 sm:mb-8"
         title={t("Command your portfolio with Ask AI")}
         subtitle={t(
           "Simulate yield loops, automate borrow guards, and execute in plain English.",
         )}
       />
 
-      <div className="w-full">
-        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-12 md:items-start">
-          {/* Desktop media column (changes dynamically based on active tab) */}
-          <div className="hidden md:block md:col-span-6">
+      <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
+        <div className="hidden items-center justify-center md:flex">
+          <div className="w-full max-w-[28rem]">
             <AskAiConversation
               key={accordionItems[activeIndex].id}
               scenario={activeIndex}
               prompt={t(accordionItems[activeIndex].prompt)}
             />
           </div>
+        </div>
 
-          {/* Accordion column */}
-          <div className="col-span-1 min-w-0 md:col-span-6 md:pl-6 lg:pl-10">
-            <div className="group/accordion flex w-full flex-col border-token-border-light border-y md:border-none">
-              <div>
-                {accordionItems.map((item, index) => {
-                  const isExpanded = activeIndex === index
-                  return (
-                    <div key={item.id} className="group flex flex-col">
-                      <button
-                        id={`trigger_${item.id}`}
-                        type="button"
-                        onClick={() => setActiveIndex(index)}
-                        className="text-token-text-primary flex items-center gap-4 text-start transition-opacity hover:opacity-80"
-                        aria-expanded={isExpanded}
-                        aria-controls={`content_${item.id}`}
-                      >
-                        <h3 className="flex-grow py-4 text-start font-normal text-mkt-p1">
-                          {t(item.title)}
-                        </h3>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          aria-hidden="true"
-                          className={cn(
-                            "flex-shrink-0 transition-transform duration-200 text-token-text-primary",
-                            isExpanded ? "rotate-180" : "rotate-0",
-                          )}
-                        >
-                          <path
-                            d="M4 6L8 10L12 6"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-
-                      <div
-                        id={`content_${item.id}`}
-                        aria-labelledby={`trigger_${item.id}`}
-                        aria-hidden={!isExpanded}
-                        className={cn(
-                          "text-mkt-p2 text-token-text-primary/60 grid overflow-hidden transition-[grid-template-rows,padding-bottom,opacity] motion-reduce:transition-none",
-                          isExpanded
-                            ? "grid-rows-[minmax(0,1fr)] pb-6 opacity-100"
-                            : "grid-rows-[minmax(0,0fr)] pb-0 opacity-0",
-                        )}
-                        style={{
-                          transitionDuration: "300ms",
-                          transitionTimingFunction:
-                            "cubic-bezier(0.4, 0, 0.2, 1)",
-                          willChange:
-                            "grid-template-rows, padding-bottom, opacity",
-                        }}
-                      >
-                        <div className="flex min-h-0 min-w-0 flex-col [&>*]:m-0">
-                          <p className="not-last:mb-[1.1em]">
-                            {t(item.description)}
-                          </p>
-                          {/* Mobile inline media */}
-                          {isExpanded && (
-                            <div className="h-full w-full md:hidden mt-4">
-                              <AskAiConversation
-                                scenario={index}
-                                prompt={t(item.prompt)}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="relative h-[1px] w-full">
-                        <div
-                          className={cn(
-                            "absolute inset-0 bg-black transition-opacity",
-                            isExpanded ? "opacity-[0.04]" : "opacity-[0.12]",
-                          )}
-                        />
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
+        <div className="min-w-0">
+          <Accordion
+            type="single"
+            value={accordionItems[activeIndex].id}
+            onValueChange={(value) => {
+              const nextIndex = accordionItems.findIndex(
+                (item) => item.id === value,
+              )
+              if (nextIndex >= 0) setActiveIndex(nextIndex)
+            }}
+            orientation="vertical"
+            className="w-full"
+          >
+            {accordionItems.map((item, index) => (
+              <AccordionItem
+                key={item.id}
+                value={item.id}
+                className="border-b border-border py-6 first:border-t last:border-b"
+              >
+                <AccordionTrigger className="type-card-title group p-0 text-left text-foreground hover:no-underline [&>svg.size-4]:hidden">
+                  <span className="flex flex-1 items-center justify-between gap-4">
+                    <span>{t(item.title)}</span>
+                    <span className="type-meta-label text-type-tertiary">
+                      {item.number}
+                    </span>
+                  </span>
+                  <FaqToggleIcons />
+                </AccordionTrigger>
+                <AccordionContent className="type-body-copy max-w-[34rem] pb-0 pt-4">
+                  <p>{t(item.description)}</p>
+                  <div className="mt-6 md:hidden">
+                    <AskAiConversation
+                      key={item.id}
+                      scenario={index}
+                      prompt={t(item.prompt)}
+                    />
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
