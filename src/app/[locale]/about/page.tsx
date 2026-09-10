@@ -1,11 +1,48 @@
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import Image from "next/image"
+import { Blocks, ChartNoAxesCombined, ShieldCheck, Workflow, type LucideIcon } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import ProtocolRoadmapSection from "@/components/protocol-roadmap-section"
-import { SectionIntro, SectionLead } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle, SectionIntro, SectionLead } from "@/components/shared"
 import { SITE_NAME } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
+
+const riskTeams: {
+  number: string
+  title: string
+  description: string
+  icon: LucideIcon
+}[] = [
+  {
+    number: "01",
+    title: "Protocol team",
+    description:
+      "Protocol owns the design and implementation of Avana's lending system, including smart contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control, execution environment, and upgrades across integrated AMMs and lending hubs.",
+    icon: Blocks,
+  },
+  {
+    number: "02",
+    title: "Operations team",
+    description:
+      "Operations coordinates the day-to-day protocol layer, including treasury processes, incentive programs, ecosystem growth, contributor workflows, and collateral onboarding operations.",
+    icon: Workflow,
+  },
+  {
+    number: "03",
+    title: "Market Risk team",
+    description:
+      "Market Risk owns the quantitative side of LP collateral: liquidity depth, volatility, price behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter tuning across market conditions.",
+    icon: ChartNoAxesCombined,
+  },
+  {
+    number: "04",
+    title: "Collateral Risk team",
+    description:
+      "Collateral Risk owns the qualitative side of onboarding and monitoring, including asset structure, liquidity sources, governance dependencies, protocol dependencies, and broader collateral integrity across supported markets.",
+    icon: ShieldCheck,
+  },
+]
 
 export async function generateMetadata({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
@@ -75,49 +112,19 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
                   Risk management in Avana is split across specialized contributor scopes so no single team owns every
                   assumption behind an LP collateral market.
                 </p>
-                <div className="space-y-5">
-                  <div className="space-y-2">
-                    <h3 className="type-body-copy text-foreground">
-                      01. Protocol team
-                    </h3>
-                    <p className="type-body-copy">
-                      Protocol owns the design and implementation of Avana&apos;s lending system, including smart
-                      contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control,
-                      execution environment, and upgrades across integrated AMMs and lending hubs.
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="type-body-copy text-foreground">
-                      02. Operations team
-                    </h3>
-                    <p className="type-body-copy">
-                      Operations coordinates the day-to-day protocol layer, including treasury processes, incentive
-                      programs, ecosystem growth, contributor workflows, and collateral onboarding operations.
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="type-body-copy text-foreground">
-                      03. Market Risk team
-                    </h3>
-                    <p className="type-body-copy">
-                      Market Risk owns the quantitative side of LP collateral: liquidity depth, volatility, price
-                      behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter
-                      tuning across market conditions.
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="type-body-copy text-foreground">
-                      04. Collateral Risk team
-                    </h3>
-                    <p className="type-body-copy">
-                      Collateral Risk owns the qualitative side of onboarding and monitoring, including asset structure,
-                      liquidity sources, governance dependencies, protocol dependencies, and broader collateral
-                      integrity across supported markets.
-                    </p>
-                  </div>
+                <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+                  {riskTeams.map(({ number, title, description, icon: Icon }) => (
+                    <article
+                      key={title}
+                      className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 md:min-h-[17rem] md:p-6"
+                    >
+                      <Icon className="size-7 text-type-accent" strokeWidth={1.8} aria-hidden="true" />
+                      <FeatureCardTitle className="mt-7">
+                        {number}. {title}
+                      </FeatureCardTitle>
+                      <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
+                    </article>
+                  ))}
                 </div>
                 <p className="type-body-copy text-foreground">
                   The goal is clean separation, with technical execution, operations, market modeling, and collateral
