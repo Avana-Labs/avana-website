@@ -135,11 +135,7 @@ export default async function CopilotIntroductionPage({ params }: LocaleParamsPr
             <Link href="/developers/integrations/router-contract" className="text-[#01AACF] hover:underline">
               Router &amp; Adapters
             </Link>{" "}
-            reference and{" "}
-            <Link href="/developers/copilot/protocols" className="text-[#01AACF] hover:underline">
-              Supported Protocols
-            </Link>{" "}
-            for the adapter interfaces this relies on.
+            reference for the adapter interfaces this relies on.
           </p>
         </section>
 

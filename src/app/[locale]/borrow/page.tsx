@@ -9,11 +9,13 @@ import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle 
 import { PerformanceSection } from "@/components/ui/performance-section"
 import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
 import { brandAssetPath } from "@/lib/brand-assets"
+import { protocols } from "@/data/protocols"
 import { FeaturePageHero } from "@/components/feature-page-hero"
 import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
+import { SupportedDexDirectory } from "@/components/supported-dex-directory"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
 const PositionSafetyCardsSection = dynamic(() => import("@/components/position-safety-cards-section"))
@@ -116,6 +118,10 @@ const lpHubMarkets = [
     variant: "volatile",
   },
 ] as const
+
+const supportedDexes = protocols.filter(
+  (protocol) => protocol.category === "DEX" && protocol.shortName !== "GMX-P",
+)
 
 function BorrowMarketCard({
   number,
@@ -258,7 +264,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <PerformanceSection className="site-section-gap">
+      <SupportedDexDirectory protocols={supportedDexes} />
+
+      <PerformanceSection id="dex-coverage" className="site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div className="flex flex-col gap-8 md:gap-12">
@@ -322,7 +330,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
                 <SectionEyebrow tone="blue">Liquidity pools</SectionEyebrow>
                 <SectionTitle className="md:whitespace-nowrap">
