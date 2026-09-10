@@ -22,6 +22,7 @@ interface FooterSection {
 interface SocialLink {
   href: string
   label: string
+  name: string
   icon: React.ReactNode
 }
 
@@ -53,11 +54,13 @@ export default async function Footer(): Promise<React.JSX.Element> {
     {
       href: "https://twitter.com/avana_labs",
       label: t("footer.socialAria", { network: t("footer.twitter") }),
+      name: t("footer.twitter"),
       icon: socialIcons.twitter,
     },
     {
       href: "https://github.com/Avana-Labs",
       label: t("footer.socialAria", { network: t("footer.github") }),
+      name: t("footer.github"),
       icon: socialIcons.github,
     },
   ]
@@ -144,7 +147,7 @@ export default async function Footer(): Promise<React.JSX.Element> {
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-muted/40 transition-colors group-hover:border-type-accent/30 group-hover:bg-background">
                       {link.icon}
                     </span>
-                    <span className="truncate text-sm font-medium">{link.label}</span>
+                    <span className="truncate text-sm font-medium">{link.name}</span>
                     <svg
                       viewBox="0 0 16 16"
                       aria-hidden="true"
