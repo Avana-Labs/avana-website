@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { LazySection } from "@/components/ui/lazy-section"
 import type { LucideIcon } from "lucide-react"
 import {
@@ -20,6 +21,7 @@ import { PerformanceDiv } from "@/components/ui/performance-section"
 import { TokenLogo } from "@/components/token-logo"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+import { FaqToggleIcons } from "@/components/faq-toggle-icons"
 
 function repeatItems<T>(items: T[], count: number, offset: number) {
   if (items.length === 0) return []
@@ -696,34 +698,47 @@ function HeroSectionBody(locale: AppLocale) {
         </div>
       </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] md:items-start md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)]">
-          <div className="space-y-4 md:self-start">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
+          <div className="flex aspect-square items-center justify-center">
+            <Image
+              src="/images/Avana Coin.webp"
+              alt="Avana coin illustration"
+              width={1714}
+              height={1601}
+              className="h-auto w-full"
+              sizes="(min-width: 768px) 50vw, calc(100vw - 2.5rem)"
+            />
+          </div>
+
+          <div className="min-w-0">
             <MarketingLeadHeader
               title="Position Safety"
               subtitle="Designed for safe leverage"
             />
-            <ol className="mt-7 grid max-w-[32rem] gap-4">
-              {positionSafetyItems.map((item, index) => (
-                <li key={item.title} className="flex gap-3">
-                  <span className="type-meta-label mt-0.5 shrink-0">{index + 1}.</span>
-                  <p className="type-body-copy">
-                    <span className="text-foreground">{item.title}.</span> {item.description}
-                  </p>
-                </li>
+
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue="leverage-layer"
+              orientation="vertical"
+              className="mt-7 w-full"
+            >
+              {positionSafetyItems.map((item) => (
+                <AccordionItem
+                  key={item.title}
+                  value={item.title.toLowerCase().replaceAll(" ", "-")}
+                  className="border-b border-border py-6 first:border-t last:border-b"
+                >
+                  <AccordionTrigger className="type-card-title group p-0 text-left text-foreground hover:no-underline [&>svg.size-4]:hidden">
+                    {item.title}
+                    <FaqToggleIcons />
+                  </AccordionTrigger>
+                  <AccordionContent className="type-body-copy max-w-[34rem] pb-0 pt-4">
+                    {item.description}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </ol>
-          </div>
-          <div className="flex items-center justify-center pt-1 md:justify-end">
-            <div className="relative w-full max-w-[17rem] sm:max-w-[22rem] md:max-w-[25rem] lg:max-w-[28rem] xl:max-w-[31rem]">
-              <Image
-                src="/images/Avana Coin.webp"
-                alt="Avana coin illustration"
-                width={1714}
-                height={1601}
-                className="h-auto w-full"
-                sizes="(min-width: 1280px) 31rem, (min-width: 1024px) 28rem, (min-width: 768px) 25rem, (min-width: 640px) 22rem, 17rem"
-              />
-            </div>
+            </Accordion>
           </div>
         </div>
 
