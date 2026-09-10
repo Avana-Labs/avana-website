@@ -71,7 +71,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
               <br className="sm:hidden" />{" "}
               <span>{t("subtitleLine2")}</span>
             </p>
-            <div className="mt-8 inline-flex items-center rounded-full border border-border bg-muted/60 px-5 py-2.5 text-[0.95rem] font-medium tracking-[-0.015em] text-foreground shadow-[0_8px_24px_-18px_rgba(15,21,24,0.45)]">
+            <div className="mt-8 inline-flex h-[43px] items-center rounded-full bg-[#01AACF] px-[1.35rem] text-base font-medium leading-none tracking-[-0.015em] text-white transition-colors hover:bg-[#00a0c2]">
               {t("interfaceRate")}
             </div>
           </div>
