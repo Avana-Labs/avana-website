@@ -229,14 +229,6 @@ export function AskAiConversation({
       role="group"
       aria-label={t("Ask AI conversation")}
     >
-      <div className="ask-window-bar">
-        <span className="ask-window-dots" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-        <span className="ask-window-title">Ask AI</span>
-      </div>
       <div className="ask-conversation-body">
         <div className="ask-transcript" ref={transcriptRef}>
           <div aria-hidden="true">

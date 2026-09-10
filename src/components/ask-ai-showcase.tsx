@@ -86,8 +86,8 @@ export function AskAiShowcase() {
       />
 
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
-        <div className="hidden items-center justify-center md:flex">
-          <div className="w-full max-w-[28rem]">
+        <div className="hidden min-w-0 items-center md:flex">
+          <div className="w-full">
             <AskAiConversation
               key={accordionItems[activeIndex].id}
               scenario={activeIndex}
