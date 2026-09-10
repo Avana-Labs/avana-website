@@ -712,50 +712,52 @@ function HeroSectionBody(locale: AppLocale) {
         </div>
       </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
-          <div className="flex aspect-square items-center justify-center">
-            <Image
-              src="/images/Avana Coin.webp"
-              alt="Avana coin illustration"
-              width={1714}
-              height={1601}
-              className="h-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[28rem]"
-              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
-            />
-          </div>
+        <div>
+          <MarketingLeadHeader
+            title="Powered by Aave v4."
+            subtitle="Engineered for resilience by Avana."
+          />
 
-          <div className="min-w-0">
-            <MarketingLeadHeader
-              title="Powered by Aave v4."
-              subtitle="Engineered for resilience by Avana."
-            />
+          <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
+            <div className="flex items-center justify-center">
+              <Image
+                src="/images/Avana Coin.webp"
+                alt="Avana coin illustration"
+                width={1714}
+                height={1601}
+                className="h-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[28rem]"
+                sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
+              />
+            </div>
 
-            <Accordion
-              type="single"
-              collapsible
-              defaultValue="enterprise-grade-security-and-vaults"
-              orientation="vertical"
-              className="mt-7 w-full"
-            >
-              {positionSafetyItems.map((item) => (
-                <AccordionItem
-                  key={item.title}
-                  value={item.title.toLowerCase().replaceAll(" ", "-")}
-                  className="border-b border-border py-6 first:border-t last:border-b"
-                >
-                  <AccordionTrigger className="type-card-title group p-0 text-left text-foreground hover:no-underline [&>svg.size-4]:hidden">
-                    <span className="flex flex-1 items-center justify-between gap-4">
-                      <span>{item.title}</span>
-                      <span className="type-meta-label text-type-tertiary">{item.number}</span>
-                    </span>
-                    <FaqToggleIcons />
-                  </AccordionTrigger>
-                  <AccordionContent className="type-body-copy max-w-[34rem] pb-0 pt-4">
-                    {item.description}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="min-w-0">
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="enterprise-grade-security-and-vaults"
+                orientation="vertical"
+                className="w-full"
+              >
+                {positionSafetyItems.map((item) => (
+                  <AccordionItem
+                    key={item.title}
+                    value={item.title.toLowerCase().replaceAll(" ", "-")}
+                    className="border-b border-border py-6 first:border-t last:border-b"
+                  >
+                    <AccordionTrigger className="type-card-title group p-0 text-left text-foreground hover:no-underline [&>svg.size-4]:hidden">
+                      <span className="flex flex-1 items-center justify-between gap-4">
+                        <span>{item.title}</span>
+                        <span className="type-meta-label text-type-tertiary">{item.number}</span>
+                      </span>
+                      <FaqToggleIcons />
+                    </AccordionTrigger>
+                    <AccordionContent className="type-body-copy max-w-[34rem] pb-0 pt-4">
+                      {item.description}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
 
