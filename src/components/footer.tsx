@@ -125,7 +125,7 @@ export default async function Footer(): Promise<React.JSX.Element> {
               {t("footer.blurb")}
             </p>
             <div className="pt-1">
-              <div className="grid max-w-sm grid-cols-2 gap-3">
+              <div className="flex flex-wrap gap-2">
                 {socialLinks.map((link) => (
                   <a
                     key={link.label}
@@ -133,16 +133,16 @@ export default async function Footer(): Promise<React.JSX.Element> {
                     aria-label={link.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="group relative isolate inline-flex min-h-[4.5rem] min-w-0 items-center gap-3 overflow-hidden rounded-2xl border border-border/70 bg-[linear-gradient(135deg,var(--surface-elevated),color-mix(in_oklab,var(--surface-muted)_72%,white))] px-3.5 py-3 text-foreground shadow-[0_10px_28px_-20px_rgba(15,21,24,0.45)] transition duration-300 hover:-translate-y-0.5 hover:border-type-accent/45 hover:shadow-[0_16px_34px_-20px_rgba(1,170,207,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-type-accent/50"
+                    className="group inline-flex min-w-0 items-center gap-2.5 rounded-full border border-border/80 bg-background px-4 py-2.5 text-sm font-medium text-foreground transition-[background-color,border-color,color] duration-200 hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-type-accent/50"
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border/80 bg-background/85 text-foreground shadow-[0_3px_10px_-6px_rgba(15,21,24,0.7)] transition duration-300 group-hover:border-type-accent/35 group-hover:text-type-accent">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center text-foreground transition-colors group-hover:text-background">
                       {link.icon}
                     </span>
-                    <span className="truncate text-[0.95rem] font-medium tracking-[-0.01em]">{link.name}</span>
+                    <span className="truncate tracking-[-0.015em]">{link.name}</span>
                     <svg
                       viewBox="0 0 16 16"
                       aria-hidden="true"
-                      className="ml-auto h-3.5 w-3.5 shrink-0 text-type-tertiary transition-transform group-hover:translate-x-0.5 group-hover:text-type-accent"
+                      className="ml-0.5 h-3.5 w-3.5 shrink-0 text-type-tertiary transition-[color,transform] group-hover:translate-x-0.5 group-hover:text-background"
                     >
                       <path
                         d="m6 3 5 5-5 5"
