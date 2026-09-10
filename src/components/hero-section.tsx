@@ -42,7 +42,7 @@ const hubColors: Record<HomepagePool["hub"], string> = {
 
 function PoolCard({ pool }: { pool: HomepagePool }) {
   return (
-    <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition duration-150 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
+    <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)]">
       <div className="relative flex items-center shrink-0">
         <TokenLogo symbol={pool.token0.symbol} className="z-10" />
         <TokenLogo symbol={pool.token1.symbol} className="-ml-2" />
@@ -155,15 +155,17 @@ function HeroSectionBody(locale: AppLocale) {
 
             <LazySection defer minHeight="296px" rootMargin="600px" className="w-full space-y-2 overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent_0%,black_11%,black_89%,transparent_100%)]">
               {[
-                { items: repeatItems(homepagePools, 8, 0), motion: "animate-scroll-left", duration: "62s" },
-                { items: repeatItems(homepagePools, 8, 6), motion: "animate-scroll-right", duration: "70s" },
-                { items: repeatItems(homepagePools, 8, 12), motion: "animate-scroll-left-slow", duration: "78s" },
-                { items: repeatItems(homepagePools, 8, 18), motion: "animate-scroll-right-slow", duration: "86s" },
+                // Frozen mid-scroll: no animation, just staggered offsets so each
+                // row sits differently — some cards fully in, some half-out.
+                { items: repeatItems(homepagePools, 8, 0), offset: "-1.5rem" },
+                { items: repeatItems(homepagePools, 8, 6), offset: "-9rem" },
+                { items: repeatItems(homepagePools, 8, 12), offset: "-5rem" },
+                { items: repeatItems(homepagePools, 8, 18), offset: "-13rem" },
               ].map((row, rowIndex) => (
                 <div key={rowIndex} className="overflow-hidden">
                   <div
-                    className={`flex w-max items-center gap-3 ${row.motion}`}
-                    style={{ animationDuration: row.duration }}
+                    className="flex w-max items-center gap-3"
+                    style={{ transform: `translateX(${row.offset})` }}
                   >
                     {row.items.map((pool, index) => (
                       <PoolCard key={`row-${rowIndex}-${index}-a`} pool={pool} />
