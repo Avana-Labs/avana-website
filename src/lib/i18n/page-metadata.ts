@@ -13,6 +13,7 @@ type MetaKey =
   | "faq"
   | "newsroom"
   | "developers"
+  | "pricing"
   | "privacy"
   | "terms"
 

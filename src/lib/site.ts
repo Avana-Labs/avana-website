@@ -18,6 +18,7 @@ export const siteRoutes = {
   lend: "/lend",
   multiply: "/multiply",
   developers: "/developers",
+  pricing: "/pricing",
   developersIntro: "/developers/introduction",
   newsroom: "/newsroom",
   blog: "/newsroom",

@@ -17,6 +17,7 @@
       "products": "Products",
       "resources": "Resources",
       "developers": "Developers",
+      "pricing": "Pricing",
       "helpCenter": "Help Center",
       "aaveArfc": "Aave ARFC",
       "borrow": "Borrow",
@@ -224,6 +225,10 @@
       "title": "Developers",
       "description": "Technical documentation for integrating with Avana. Learn about LP token collateral, health factors, liquidation flows, and smart contract architecture on Aave v4."
     },
+    "pricing": {
+      "title": "Pricing",
+      "description": "Clear pricing for borrowing, lending, and LP-backed strategies on Avana."
+    },
     "privacy": {
       "title": "Privacy Policy",
       "description": "Avana privacy policy."
@@ -301,6 +306,70 @@
       "title": "Brand kit",
       "subtitle": "Marks, colors, and guidance for partner-facing surfaces"
     }
+  },
+  "pricing": {
+    "eyebrow": "Protocol pricing",
+    "title": "Pricing",
+    "subtitle": "Clear costs for borrowing, lending, and LP-backed strategies on Avana.",
+    "currentRates": "Current rates",
+    "noFixedTiers": "No fixed tiers",
+    "rateNote": "Rates and returns depend on the market, position, and route you use. The current cost is shown before you sign.",
+    "includes": "Includes:",
+    "borrow": {
+      "title": "Borrow",
+      "subtitle": "For LP-backed credit",
+      "value": "Variable",
+      "unit": "interest",
+      "description": "Borrowing costs follow the selected Aave v4 market.",
+      "items": {
+        "one": "Market-set interest rate",
+        "two": "Accrues only on outstanding debt",
+        "three": "Shown before you confirm"
+      },
+      "cta": "Borrowing docs"
+    },
+    "lend": {
+      "title": "Lend",
+      "subtitle": "Supply capital to the Hub",
+      "value": "Market",
+      "unit": "APY",
+      "description": "Earn from LP-backed demand through Avana's Lend Spoke.",
+      "items": {
+        "one": "Yield varies with utilization",
+        "two": "Supply into supported lending markets",
+        "three": "Live APY shown in the interface"
+      },
+      "cta": "Lending docs"
+    },
+    "lpFees": {
+      "title": "LP fee claims",
+      "subtitle": "Keep your position active",
+      "value": "No exit",
+      "unit": "required",
+      "description": "Claim eligible trading fees without closing the LP position backing your loan.",
+      "items": {
+        "one": "Fees continue accruing in the AMM",
+        "two": "Health checks run before and after claims",
+        "three": "Principal stays active as collateral"
+      },
+      "cta": "Fee claim docs"
+    },
+    "interface": {
+      "title": "Interface fees",
+      "subtitle": "Official frontend services",
+      "value": "Upfront",
+      "unit": "disclosure",
+      "description": "Any enabled frontend or service fee is separated from protocol borrowing economics.",
+      "items": {
+        "one": "Separate from gas and swap costs",
+        "two": "Displayed before signature",
+        "three": "Policy can change over time"
+      },
+      "cta": "Fee policy docs"
+    },
+    "moreInfo": "For the full fee mechanics, read the FAQ and developer documentation.",
+    "faqCta": "Read the FAQ",
+    "docsCta": "Open documentation"
   },
   "faq": {
     "title": "FAQ",
