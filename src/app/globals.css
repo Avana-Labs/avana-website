@@ -1356,8 +1356,7 @@ body:has([data-developer-doc-shell]) footer.site-content-shell {
 /* Ask AI: lightweight, finite conversation playback. */
 .ask-conversation {
   color: var(--avana-ink);
-  background: #f8f8f6;
-  border: 1px solid rgb(0 0 0 / 9%);
+  background: #fafafa;
   border-radius: 28px;
   overflow: hidden;
   font-size: 14px;
