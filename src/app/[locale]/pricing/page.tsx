@@ -60,21 +60,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
       href: siteRoutes.multiply,
       featured: false,
     },
-    {
-      title: t("interface.title"),
-      subtitle: t("interface.subtitle"),
-      value: t("interface.value"),
-      unit: t("interface.unit"),
-      description: t("interface.description"),
-      items: [
-        t("interface.items.one"),
-        t("interface.items.two"),
-        t("interface.items.three"),
-      ],
-      cta: t("interface.cta"),
-      href: "/developers/architecture/platform-fees",
-      featured: false,
-    },
   ] as const
 
   return (

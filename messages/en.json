@@ -351,19 +351,6 @@
       },
       "cta": "Multiply overview"
     },
-    "interface": {
-      "title": "Interface fees",
-      "subtitle": "Official frontend services",
-      "value": "Upfront",
-      "unit": "disclosure",
-      "description": "Any enabled frontend or service fee is separated from protocol borrowing economics.",
-      "items": {
-        "one": "Separate from gas and swap costs",
-        "two": "Displayed before signature",
-        "three": "Policy can change over time"
-      },
-      "cta": "Fee policy docs"
-    },
     "moreInfo": "For the full fee mechanics, read the FAQ and developer documentation.",
     "faqCta": "Read the FAQ",
     "docsCta": "Open documentation"
