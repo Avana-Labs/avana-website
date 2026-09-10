@@ -309,9 +309,8 @@
   },
   "pricing": {
     "title": "Pricing",
-    "subtitle": "Clear costs for borrowing, lending, and LP-backed strategies on Avana.",
-    "interfaceRate": "Interface fees — 10 bps",
-    "rateNote": "Rates and returns depend on the market, position, and route you use. The current cost is shown before you sign.",
+    "subtitle": "Rates and returns depend on the market, position, and route you use.",
+    "interfaceRate": "Upfront Interface fees — 15 bps (0.15%)",
     "includes": "Includes:",
     "borrow": {
       "title": "Borrow",

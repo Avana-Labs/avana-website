@@ -91,7 +91,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             <div className="mt-8 inline-flex items-center rounded-full border border-border bg-muted/60 px-5 py-2.5 text-[0.95rem] font-medium tracking-[-0.015em] text-foreground shadow-[0_8px_24px_-18px_rgba(15,21,24,0.45)]">
               {t("interfaceRate")}
             </div>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-type-tertiary">{t("rateNote")}</p>
           </div>
 
           <div className="mt-14 grid gap-3 md:grid-cols-2 xl:mt-16 xl:grid-cols-4">
