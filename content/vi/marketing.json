@@ -61,13 +61,12 @@
       "Vay một cách tự tin",
       "Được bảo vệ tại",
       "cấp độ pool",
-      "Phủ sóng DEX",
-      "Được hỗ trợ trên các DEX hàng đầu",
-      "Tích hợp DEX",
       "Liquidity pool",
       "Mọi chi tiết về pool, được giải thích đầy đủ",
       "Xem trước kiểu tài liệu của các thị trường cho vay được hỗ trợ",
-      "Câu hỏi thường gặp"
+      "Câu hỏi thường gặp",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "Một giao thức cho vay cho các khoản vay được đảm bảo bởi LP",
       "Một giao thức cho vay cho",
       "Giới thiệu Avana:",
-      "chúng tôi rất muốn nghe ý kiến từ bạn."
+      "chúng tôi rất muốn nghe ý kiến từ bạn.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "Không xoay hoặc lật dấu hiệu.",
       "Không đổi màu logo ngoài các phối màu đã duyệt.",
       "Không cắt dấu hiệu hoặc đặt nó quá sát mép.",
-      "Không chật chội dấu hiệu bằng logo đối tác hoặc nhãn giao diện."
+      "Không chật chội dấu hiệu bằng logo đối tác hoặc nhãn giao diện.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,47 +380,50 @@
       "Thị trường Multiply để lặp vốn, tinh chỉnh rủi ro pool và quản lý sức khỏe vị thế.",
       "An toàn vị thế",
       "Được thiết kế cho đòn bẩy an toàn",
-      "Hạn mức vay"
+      "Hạn mức vay",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Hình ảnh chính trang chủ Avana"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Vay",
-      "Vay dựa trên các vị trí LP trong khi thanh khoản của bạn vẫn hoạt động trong AMM cơ sở.",
-      "Giao diện khả năng vay mượn",
-      "Cho vay",
-      "Cung cấp vốn vào các thị trường cho vay kết nối với Hub và kiếm lợi nhuận từ nhu cầu của người vay được LP bảo trợ.",
-      "Giao diện tài khoản tiền mặt thị trường cho vay",
-      "object-cover object-top",
-      "Nhân",
-      "Sử dụng tín dụng được hỗ trợ bởi LP để tạo đòn bẩy có quản lý mà không rút khỏi vị thế thanh khoản cơ sở của bạn.",
-      "Giao diện danh mục đầu tư",
-      "Gặp Avana",
-      "Vào năm 2021,",
-      "Aave",
-      "phát động",
-      "Thị trường AMM",
-      "và đã chứng minh",
-      "Vị trí LP",
-      "có thể được sử dụng làm tài sản thế chấp, nhưng nó được xây dựng cho các DEX đơn giản hơn của thời đó.",
-      "Avana",
-      "tiếp tục từ đó, được thiết kế cho các DEX và loại LP ngày nay, coi mỗi vị thế như",
-      "tài sản thế chấp",
-      "tiếp tục từ nơi đó dừng lại, được thiết kế cho các DEX và loại LP ngày nay,",
-      "Thị trường Avana",
-      "Mở khóa Vốn",
-      "từ Thị trường AMM",
-      "Giải phóng Vốn từ Thị trường AMM",
-      "Tìm hiểu thêm",
-      "Vào năm 2021, Aave đã ra mắt Thị trường AMM và chứng minh rằng các vị trí LP có thể được dùng làm tài sản thế chấp, nhưng nó được xây dựng cho các DEX đơn giản của thời đó. Avana tiếp tục từ điểm đó, được thiết kế cho các DEX và loại LP ngày nay, coi mỗi vị trí là tài sản thế chấp được định hình bởi các oracle kép và các kiểm soát rủi ro mạnh mẽ hơn.",
-      "Một giao thức cho vay",
-      "cho các khoản vay được hỗ trợ bởi LP",
-      "Một giao thức cho vay cho các khoản vay được đảm bảo bởi LP"
+      "Hình ảnh chính trang chủ Avana",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
@@ -554,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "Thị trường cung ứng",
-      "Cho vay trên các thị trường"
+      "Cho vay trên các thị trường",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -611,37 +654,6 @@
       "Đang tiến hành"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Vùng an toàn",
-      "Yếu tố sức khỏe > 1,5. Việc sử dụng vay vẫn trong giới hạn, phí tiếp tục tăng, và LP của bạn vẫn nguyên vẹn.",
-      "Vùng cảnh báo",
-      "Yếu tố Sức khỏe 1.0-1.5. Bạn sẽ nhận được thông báo để trả nợ, thêm tài sản đảm bảo, hoặc để tự động hóa cắt giảm rủi ro.",
-      "Thanh lý",
-      "Yếu tố sức khỏe < 1.0. Phí được áp dụng trước, vốn LP cần thiết được giải phóng, và giá trị còn lại trả lại cho bạn.",
-      "An toàn vị thế",
-      "Mọi trạng thái sức khỏe, được giải thích đầy đủ",
-      "Theo dõi tình trạng sức khỏe, cảnh báo và thanh lý trước khi một khoản vay được hỗ trợ bởi LP cần hành động.",
-      "Tình trạng sức khỏe vị trí",
-      "Khu vực an toàn",
-      "phí phát sinh",
-      "Cảnh báo",
-      "Ngưỡng",
-      "Đang tiến gần tới thanh lý",
-      "Các hành động có sẵn",
-      "Giảm số dư vay",
-      "border-amber-200 bg-amber-50",
-      "Thêm tài sản đảm bảo",
-      "Tăng nhân tố sức khỏe",
-      "Tự động giảm đòn bẩy",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Chuỗi",
-      "Phí áp dụng",
-      "Số dư đã trả lại",
-      "Chỉ phần gốc cần thiết được tháo ra"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Lãi suất cơ sở Hub",
@@ -651,7 +663,8 @@
       "Rủi ro cụ thể của nhóm đóng góp vào chênh lệch cuối cùng, nâng cao tiềm năng lợi nhuận cho cùng một khoản tiền nhàn rỗi.",
       "Lãi suất APY Avana",
       "Cùng tiền nhàn rỗi, APY cao hơn",
-      "đến"
+      "đến",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -682,7 +695,19 @@
       "Tích lũy quyền vay trên nhiều",
       "Theo dõi sức khỏe của từng vị trí cùng nhau",
       "Thêm hoặc điều chỉnh tài sản thế chấp theo thị trường",
-      "Minh họa các vị trí kết hợp LP của Avana"
+      "Minh họa các vị trí kết hợp LP của Avana",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -712,7 +737,8 @@
       "Dùng tín dụng bảo đảm bằng LP để tạo đòn bẩy có kiểm soát mà không cần rời vị thế thanh khoản gốc.",
       "Avana Vay dựa trên vị thế LP",
       "Avana Cho vay vào thị trường kết nối Hub",
-      "Avana Multiply lợi suất đòn bẩy có kiểm soát"
+      "Avana Multiply lợi suất đòn bẩy có kiểm soát",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

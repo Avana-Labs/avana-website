@@ -61,13 +61,12 @@
       "Empreste com confiança",
       "Protegido no",
       "nível do pool",
-      "Cobertura DEX",
-      "Suportado nos principais DEX",
-      "Integrações DEX",
       "Pools de liquidez",
       "Cada detalhe do pool, bem explicado",
       "Prévia estilo documento dos mercados de empréstimo suportados",
-      "Perguntas frequentes"
+      "Perguntas frequentes",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "Um protocolo de empréstimo para empréstimos lastreados em LP",
       "Um protocolo de empréstimo para",
       "Apresentamos a Avana:",
-      "adoraríamos ouvir de você."
+      "adoraríamos ouvir de você.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "Não rode nem vire a marca.",
       "Não recolora o logo fora das cores aprovadas.",
       "Não recorte a marca nem a coloque demasiado perto de uma borda.",
-      "Não aperte a marca com logos de parceiros ou rótulos de interface."
+      "Não aperte a marca com logos de parceiros ou rótulos de interface.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,47 +380,50 @@
       "Mercados Multiply para reciclar capital, ajustar o risco dos pools e gerir a saúde das posições.",
       "Segurança das posições",
       "Concebido para alavancagem segura",
-      "Limite de empréstimo"
+      "Limite de empréstimo",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Visual hero da homepage da Avana"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Emprestar",
-      "Tome emprestado contra posições LP enquanto sua liquidez permanece ativa no AMM subjacente.",
-      "Interface de capacidade de empréstimo",
-      "Fornecer",
-      "Forneça capital em mercados de lending conectados ao Hub e ganhe com a demanda de tomadores lastreados em LP.",
-      "Interface de conta cash do mercado Lend",
-      "object-cover object-top",
-      "Multiplicar",
-      "Use crédito lastreado em LP para criar alavancagem gerenciada sem sair da sua posição de liquidez base.",
-      "Interface de portfólio",
-      "Conheça a Avana",
-      "Em 2021,",
-      "Aave",
-      "lançou",
-      "Mercado AMM",
-      "e mostrou que",
-      "posições LP",
-      "podiam servir como colateral, mas foi feito para os DEXs mais simples daquela era.",
-      "Avana",
-      "retoma de onde aquilo parou, desenhada para os DEXs e tipos de LP de hoje, tratando cada posição como",
-      "colateral",
-      "retoma de onde aquilo parou, desenhada para os DEXs e tipos de LP de hoje,",
-      "Mercados Avana",
-      "Desbloqueie capital",
-      "de mercados AMM",
-      "Desbloqueie capital de mercados AMM",
-      "Saiba mais",
-      "Em 2021, a Aave lançou AMM Market e mostrou que posições LP podiam servir como colateral, mas foi feito para os DEXs mais simples daquela era. A Avana retoma de onde aquilo parou, desenhada para os DEXs e tipos de LP de hoje, tratando cada posição como colateral moldado por duplo oráculo e controles de risco mais fortes.",
-      "Um protocolo de empréstimo",
-      "para empréstimos lastreados em LP",
-      "Um protocolo de empréstimo para empréstimos lastreados em LP"
+      "Visual hero da homepage da Avana",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
@@ -554,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "Mercados de supply",
-      "Forneça em vários mercados"
+      "Forneça em vários mercados",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -611,37 +654,6 @@
       "Em progresso"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Zona segura",
-      "Fator de saúde > 1.5. O uso do empréstimo permanece dentro da capacidade, as taxas continuam acumulando e seu LP fica intacto.",
-      "Zona de aviso",
-      "Fator de saúde 1.0-1.5. Você é notificado para reembolsar dívida, adicionar colateral ou deixar a automação reduzir a exposição.",
-      "Liquidação",
-      "Fator de saúde < 1.0. As taxas são aplicadas primeiro, o principal LP necessário é desmontado e o valor residual volta para você.",
-      "Segurança da posição",
-      "Cada estado de saúde, bem explicado",
-      "Acompanhe estados de saúde, aviso e liquidação antes que um empréstimo lastreado em LP precise de ação.",
-      "Saúde da posição",
-      "Zona segura",
-      "taxas acumulando",
-      "Aviso",
-      "Limiar",
-      "Aproximando-se da liquidação",
-      "Ações disponíveis",
-      "Reduzir o saldo do empréstimo",
-      "border-amber-200 bg-amber-50",
-      "Adicionar colateral",
-      "Aumentar o fator de saúde",
-      "Deleveraging automatizado",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Sequência",
-      "Taxas aplicadas",
-      "Residual devolvido",
-      "Só o principal necessário é desmontado"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Taxa base do Hub",
@@ -651,7 +663,8 @@
       "O risco específico do pool contribui com o spread final, elevando o potencial de retorno do mesmo cash idle.",
       "APY Avana",
       "O mesmo cash idle com maior APY",
-      "para"
+      "para",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -682,7 +695,19 @@
       "Some poder de empréstimo em múltiplas",
       "Acompanhe a saúde de cada posição junto com",
       "Adicione ou ajuste colateral conforme o mercado",
-      "Ilustração Avana de combinação de posições LP"
+      "Ilustração Avana de combinação de posições LP",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -712,7 +737,8 @@
       "Use crédito garantido por LP para criar alavancagem gerida sem sair da sua posição de liquidez base.",
       "Avana Tomar emprestado com posições LP",
       "Avana Emprestar em mercados ligados ao Hub",
-      "Avana Multiply rendimento com alavancagem gerida"
+      "Avana Multiply rendimento com alavancagem gerida",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

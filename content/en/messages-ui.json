@@ -13,12 +13,6 @@
       "helpCenter": "Help Center: email support",
       "themeToggle": "Theme preference"
     },
-    "theme": {
-      "systemMode": "System",
-      "lightMode": "Light Mode",
-      "darkMode": "Dark Mode",
-      "tapToChange": "Tap to change"
-    },
     "nav": {
       "products": "Products",
       "resources": "Resources",
@@ -68,7 +62,7 @@
       "understandLiquidationDesc": "How LP-backed positions are monitored and settled."
     },
     "footer": {
-      "blurb": "Avana is a lending protocol built on Aave V4 that enables AMM liquidity pool positions to be used as collateral. Liquidity providers from Uniswap, Balancer, Curve, or Aerodrome can deposit supported LP positions, have them evaluated inside market-specific risk frameworks, and borrow against them while the positions stay active in the underlying pools.",
+      "blurb": "Avana is an LP-collateral protocol on Aave v4 that helps liquidity providers borrow against active positions while staying in the pool.",
       "explore": "Explore",
       "resources": "Resources",
       "docs": "Docs",
@@ -246,15 +240,15 @@
       "titleLine1": "Avana is the lending market",
       "titleLine2": "built for AMM liquidity pools.",
       "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Read the ARFC",
       "secondaryCta": "Try Sandbox"
     },

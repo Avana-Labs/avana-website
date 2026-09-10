@@ -61,13 +61,12 @@
       "안심하고 대출하세요",
       "보호 수준:",
       "풀 단위",
-      "DEX 커버리지",
-      "주요 DEX에서 지원",
-      "DEX 연동",
       "유동성 풀",
       "모든 풀 세부사항을 명확히 설명",
       "지원되는 차입 시장의 문서 스타일 미리보기",
-      "자주 묻는 질문"
+      "자주 묻는 질문",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "LP 담보 대출을 위한 렌딩 프로토콜",
       "렌딩 프로토콜",
       "Avana 소개:",
-      "연락 주시면 감사하겠습니다."
+      "연락 주시면 감사하겠습니다.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "마크를 회전하거나 뒤집지 마세요.",
       "승인된 배색 밖에서 로고 색을 바꾸지 마세요.",
       "마크를 자르거나 가장자리에 너무 가까이 두지 마세요.",
-      "파트너 로고나 UI 라벨로 마크 주변을 빽빽하게 채우지 마세요."
+      "파트너 로고나 UI 라벨로 마크 주변을 빽빽하게 채우지 마세요.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,47 +380,50 @@
       "자본을 루프하고 풀 리스크를 조정하며 포지션 건전성을 관리하는 Multiply 마켓.",
       "포지션 안전성",
       "안전한 레버리지를 위해 설계",
-      "대출 한도"
+      "대출 한도",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Avana 홈페이지 히어로 비주얼"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "대출",
-      "기초 AMM에서 유동성이 활성 상태인 동안 LP 포지션을 담보로 대출하세요.",
-      "대출 한도 인터페이스",
-      "공급",
-      "Hub 연결 대출 시장에 자본을 공급하고 LP 지원 차입자 수요로부터 수익을 창출하세요.",
-      "대출 시장 현금 계좌 인터페이스",
-      "object-cover object-top",
-      "멀티플라이",
-      "기본 유동성 포지션을 벗어나지 않고 관리된 레버리지를 생성하기 위해 LP 지원 신용을 사용하세요.",
-      "포트폴리오 인터페이스",
-      "Avana를 만나보세요",
-      "2021년에,",
-      "Aave",
-      "출시된",
-      "AMM 시장",
-      "그리고 입증했다",
-      "LP 포지션",
-      "담보로 사용할 수는 있었지만, 당시의 더 단순한 DEX들을 위해 만들어진 것이었다.",
-      "Avana",
-      "그것이 중단된 지점에서 이어지며, 오늘날의 DEX와 LP 유형을 위해 설계되었고, 각 포지션을 다음과 같이 취급합니다",
-      "담보",
-      "그것이 중단된 지점에서 이어지며, 오늘날의 DEX와 LP 유형을 위해 설계되었습니다,",
-      "Avana 시장",
-      "자본 확보",
-      "AMM 시장에서",
-      "AMM 시장에서 자본을 확보하세요",
-      "자세히 보기",
-      "2021년, Aave는 AMM 마켓을 출시하고 LP 포지션이 담보로 사용될 수 있음을 입증했지만, 이는 당시의 단순한 DEX를 위해 만들어진 것이었습니다. Avana은 그 지점에서 이어지며, 오늘날의 DEX와 LP 유형을 위해 설계되어 각 포지션을 이중 오라클과 더 강력한 리스크 통제로 형성된 담보로 취급합니다.",
-      "대출 프로토콜",
-      "LP 담보 대출용",
-      "LP 담보 대출을 위한 렌딩 프로토콜"
+      "Avana 홈페이지 히어로 비주얼",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
@@ -554,7 +572,32 @@
       "신세틱스",
       "그래프",
       "공급 시장",
-      "여러 시장에 공급"
+      "여러 시장에 공급",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -611,37 +654,6 @@
       "진행 중"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "안전 구간",
-      "건강 지수 > 1.5. 대출 사용량은 용량 내에 유지되며, 수수료는 계속 누적되고, 당신의 LP은 그대로 유지됩니다.",
-      "경고 구간",
-      "건강 지수 1.0-1.5. 부채 상환, 담보 추가, 또는 자동화로 위험 노출을 줄이도록 알림을 받습니다.",
-      "청산",
-      "건강 지수 < 1.0. 수수료가 먼저 적용되며, 필요한 LP 원금이 청산되고 잔여 가치는 당신에게 반환됩니다.",
-      "포지션 안전성",
-      "모든 건강 상태, 완전히 설명됨",
-      "LP 지원 대출이 조치를 필요로 하기 전에 건강 상태, 경고 상태, 청산 상태를 추적하세요.",
-      "포지션 건강",
-      "안전 지대",
-      "발생하는 수수료",
-      "경고",
-      "임계값",
-      "청산에 접근 중",
-      "사용 가능한 동작",
-      "대출 잔액 줄이기",
-      "border-amber-200 bg-amber-50",
-      "담보 추가",
-      "체력 증가",
-      "자동 디레버리징",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "순서",
-      "수수료가 적용됩니다",
-      "잔여 반환",
-      "필요한 원금만 환매됩니다"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Hub 기본 금리",
@@ -651,7 +663,8 @@
       "특정 풀 위험은 최종 스프레드를 기여하며, 동일한 유휴 자금의 수익 잠재력을 높입니다.",
       "Avana APY",
       "같은 유휴 자금, 더 높은 APY",
-      "~"
+      "~",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -682,7 +695,19 @@
       "여러 개에 걸쳐 대출 한도를 누적하다",
       "각 포지션의 건강 상태를 함께 추적하세요",
       "시장에 따라 담보를 추가하거나 조정하세요",
-      "Avana 위치 LP 결합 그림"
+      "Avana 위치 LP 결합 그림",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -712,7 +737,8 @@
       "LP 담보 신용을 활용해 기존 유동성 포지션을 청산하지 않고 관리형 레버리지를 구성하세요.",
       "Avana LP 포지션 담보 대출",
       "Avana Hub 연결 마켓 예치",
-      "Avana Multiply 관리형 레버리지 수익"
+      "Avana Multiply 관리형 레버리지 수익",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

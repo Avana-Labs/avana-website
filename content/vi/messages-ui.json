@@ -9,7 +9,9 @@
       "closeMenu": "Đóng menu",
       "language": "Ngôn ngữ: {language}",
       "logo": "Logo {site}",
-      "helpfulLinks": "Liên kết hữu ích"
+      "helpfulLinks": "Liên kết hữu ích",
+      "helpCenter": "Trung tâm trợ giúp: gửi email hỗ trợ",
+      "themeToggle": "Tùy chọn giao diện"
     },
     "nav": {
       "products": "Sản phẩm",
@@ -23,7 +25,7 @@
       "about": "Giới thiệu",
       "newsroom": "Phòng tin tức",
       "brand": "Thương hiệu",
-      "faq": "FAQ",
+      "faq": "Câu hỏi thường gặp",
       "privacy": "Quyền riêng tư",
       "terms": "Điều khoản",
       "overview": "Tổng quan",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Trang này không khả dụng.",
       "body": "Địa chỉ có thể sai hoặc trang có thể đã bị di chuyển.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Về trang chủ",
+      "faq": "Câu hỏi thường gặp"
     },
     "sandboxNotice": "Sandbox dữ liệu chỉ hiển thị để xem trước. APYs, giá cả và lợi nhuận chỉ mang tính minh họa và có thể khác với điều kiện thị trường thực tế.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Chia sẻ trên LinkedIn",
       "previousPost": "Bài viết trước",
       "nextPost": "Bài viết tiếp theo",
-      "onThisPage": "On this page"
+      "onThisPage": "Trên trang này"
     },
     "docs": {
       "previous": "Trước",
@@ -99,7 +101,8 @@
         "liquidation": "Khung pháp lý thanh lý",
         "integrations": "Các tích hợp được hỗ trợ",
         "safety": "Cơ chế an toàn",
-        "legal": "Pháp lý & Tuân thủ"
+        "legal": "Pháp lý & Tuân thủ",
+        "copilot": "Hỏi AI"
       },
       "items": {
         "overview": "Tổng quan",
@@ -131,7 +134,11 @@
         "bugBounty": "Tiền thưởng lỗi phần mềm",
         "insuranceFunds": "Quỹ bảo hiểm",
         "securityDisclosures": "Công bố bảo mật",
-        "legalDisclaimer": "Tuyên bố pháp lý"
+        "legalDisclaimer": "Tuyên bố pháp lý",
+        "aiIntroduction": "Giới thiệu AI",
+        "copilotProtocols": "Giao thức được hỗ trợ",
+        "copilotPrompts": "Ví dụ prompt",
+        "copilotWorkflow": "Quy trình tác nhân"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Mới nhất từ Avana",
       "readNewsroom": "Đọc phòng tin"
+    },
+    "exportMenu": {
+      "copyPage": "Sao chép trang",
+      "copied": "Đã sao chép",
+      "copyPageMarkdown": "Sao chép trang dưới dạng Markdown",
+      "copyPageLink": "Sao chép liên kết trang",
+      "copyPageLinkDescription": "Sao chép URL trang này vào bảng nhớ tạm",
+      "openInChatGPT": "Mở trong ChatGPT",
+      "openInClaude": "Mở trong Claude",
+      "openInGrok": "Mở trong Grok",
+      "openInPerplexity": "Mở trong Perplexity",
+      "askAboutPage": "Đặt câu hỏi về trang này",
+      "reviewPrompt": "Xem nội dung trang Avana bên dưới và trả lời các câu hỏi."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana là thị trường cho vay DeFi",
       "titleLine2": "được tối ưu hóa cho các pool thanh khoản AMM.",
       "subtitle": "Vay crypto, hàng hóa, ngoại hối (FX) và tài sản thế giới thực (RWA) onchain bằng cách sử dụng vị thế thanh khoản AMM làm tài sản thế chấp.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Đọc đề xuất ARFC",
       "secondaryCta": "Trải nghiệm Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Câu hỏi thường gặp",
     "subtitle": "Câu trả lời về Avana, LP tài sản thế chấp, và Aave v4",
     "englishOnlyNote": "Toàn bộ câu trả lời FAQ được hiển thị bằng tiếng Anh cho đến khi đánh giá của ngôn ngữ này hoàn tất."
   },

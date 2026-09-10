@@ -9,7 +9,9 @@
       "closeMenu": "Menü schließen",
       "language": "Sprache: {language}",
       "logo": "{site}-Logo",
-      "helpfulLinks": "Hilfreiche Links"
+      "helpfulLinks": "Hilfreiche Links",
+      "helpCenter": "Hilfezentrum: Support per E-Mail",
+      "themeToggle": "Design-Einstellung"
     },
     "nav": {
       "products": "Produkte",
@@ -23,7 +25,7 @@
       "about": "Über",
       "newsroom": "Nachrichtenredaktion",
       "brand": "Marke",
-      "faq": "FAQ",
+      "faq": "Häufig gestellte Fragen",
       "privacy": "Privatsphäre",
       "terms": "Bedingungen",
       "overview": "Übersicht",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Diese Seite ist nicht verfügbar.",
       "body": "Die Adresse könnte falsch sein oder die Seite wurde möglicherweise verschoben.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Zur Startseite",
+      "faq": "Häufig gestellte Fragen"
     },
     "sandboxNotice": "Sandbox Daten nur zur Vorschau angezeigt. APYs, Preise und Renditen sind illustrativ und können von den aktuellen Marktbedingungen abweichen.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Auf LinkedIn teilen",
       "previousPost": "Vorheriger Beitrag",
       "nextPost": "Nächster Beitrag",
-      "onThisPage": "On this page"
+      "onThisPage": "Auf dieser Seite"
     },
     "docs": {
       "previous": "Zurück",
@@ -99,7 +101,8 @@
         "liquidation": "Liquidationsrahmen",
         "integrations": "Unterstützte Integrationen",
         "safety": "Sicherheitsmechanismen",
-        "legal": "Recht & Compliance"
+        "legal": "Recht & Compliance",
+        "copilot": "KI fragen"
       },
       "items": {
         "overview": "Übersicht",
@@ -111,8 +114,8 @@
         "repayLoans": "Darlehen zurückzahlen",
         "withdrawCollateral": "Sicherheiten abheben",
         "claimLpFees": "Anspruch LP Gebühren",
-        "borrowSpoke": "Borrow Spoke",
-        "lendSpoke": "Lend Spoke",
+        "borrowSpoke": "Borrow-Spoke",
+        "lendSpoke": "Lend-Spoke",
         "collateralFactors": "Kollateralfaktoren",
         "healthFactor": "Gesundheitsfaktor",
         "platformFees": "Plattformgebühren",
@@ -131,7 +134,11 @@
         "bugBounty": "Fehlerprämie",
         "insuranceFunds": "Versicherungsfonds",
         "securityDisclosures": "Sicherheitsbekanntmachungen",
-        "legalDisclaimer": "Rechtlicher Hinweis"
+        "legalDisclaimer": "Rechtlicher Hinweis",
+        "aiIntroduction": "KI-Einführung",
+        "copilotProtocols": "Unterstützte Protokolle",
+        "copilotPrompts": "Prompt-Beispiele",
+        "copilotWorkflow": "Agenten-Workflow"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Neueste von Avana",
       "readNewsroom": "Nachrichtenraum lesen"
+    },
+    "exportMenu": {
+      "copyPage": "Seite kopieren",
+      "copied": "Kopiert",
+      "copyPageMarkdown": "Seite als Markdown kopieren",
+      "copyPageLink": "Seitenlink kopieren",
+      "copyPageLinkDescription": "URL dieser Seite in die Zwischenablage kopieren",
+      "openInChatGPT": "In ChatGPT öffnen",
+      "openInClaude": "In Claude öffnen",
+      "openInGrok": "In Grok öffnen",
+      "openInPerplexity": "In Perplexity öffnen",
+      "askAboutPage": "Fragen zu dieser Seite stellen",
+      "reviewPrompt": "Prüfen Sie den Inhalt dieser Avana-Seite und beantworten Sie Fragen."
     }
   },
   "meta": {
@@ -166,7 +186,7 @@
     "twitterTitle": "Avana - Gegen LP Positionen leihen",
     "twitterDescription": "Schalte Liquidität aus deinen LP Token auf Aave v4 frei",
     "titleTemplate": "{title} | Avana",
-    "team": "Avana Team",
+    "team": "Avana-Team",
     "ogAlt": "Avana - DeFi Liquiditätsprotokoll",
     "home": {
       "title": "Gegen LP Positionen auf Aave v4 leihen",
@@ -220,15 +240,15 @@
       "titleLine1": "Avana ist der Lending-Markt,",
       "titleLine2": "speziell entwickelt für AMM-Liquiditätspools.",
       "subtitle": "Leihen Sie Krypto, Rohstoffe, Devisen und Real-World-Assets onchain – mit Ihren AMM-Liquiditätspositionen als Kollateral.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC lesen",
       "secondaryCta": "Sandbox testen"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Häufig gestellte Fragen",
     "subtitle": "Antworten zu Avana, LP Sicherheiten und Aave v4",
     "englishOnlyNote": "Vollständige FAQ-Antworten werden auf Englisch angezeigt, bis die Überprüfung dieser Locale abgeschlossen ist."
   },

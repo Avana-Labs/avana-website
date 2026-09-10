@@ -9,7 +9,9 @@
       "closeMenu": "मेनू बंद करें",
       "language": "भाषा: {language}",
       "logo": "{site} लोगो",
-      "helpfulLinks": "सहायक लिंक"
+      "helpfulLinks": "सहायक लिंक",
+      "helpCenter": "सहायता केंद्र: सपोर्ट को ईमेल करें",
+      "themeToggle": "थीम वरीयता"
     },
     "nav": {
       "products": "उत्पाद",
@@ -23,7 +25,7 @@
       "about": "के बारे में",
       "newsroom": "समाचार कक्ष",
       "brand": "ब्रांड",
-      "faq": "FAQ",
+      "faq": "अक्सर पूछे जाने वाले प्रश्न",
       "privacy": "गोपनीयता",
       "terms": "शर्तें",
       "overview": "सारांश",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "यह पृष्ठ उपलब्ध नहीं है।",
       "body": "पता गलत हो सकता है या पेज स्थानांतरित हो गया हो सकता है।",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "होमपेज पर जाएं",
+      "faq": "अक्सर पूछे जाने वाले प्रश्न"
     },
     "sandboxNotice": "Sandbox डेटा केवल पूर्वावलोकन के लिए दिखाया गया है। APYs, कीमतें, और रिटर्न केवल उदाहरणात्मक हैं और वास्तविक बाजार की परिस्थितियों से भिन्न हो सकते हैं।",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "LinkedIn पर साझा करें",
       "previousPost": "पिछला पोस्ट",
       "nextPost": "अगला पोस्ट",
-      "onThisPage": "On this page"
+      "onThisPage": "इस पृष्ठ पर"
     },
     "docs": {
       "previous": "पिछला",
@@ -99,7 +101,8 @@
         "liquidation": "विलय ढांचा",
         "integrations": "सपोर्टेड इंटिग्रेशन",
         "safety": "सुरक्षा तंत्र",
-        "legal": "कानूनी और अनुपालन"
+        "legal": "कानूनी और अनुपालन",
+        "copilot": "AI से पूछें"
       },
       "items": {
         "overview": "सारांश",
@@ -131,7 +134,11 @@
         "bugBounty": "बग बाउंटी",
         "insuranceFunds": "बीमा कोष",
         "securityDisclosures": "सुरक्षा प्रकटीकरण",
-        "legalDisclaimer": "कानूनी अस्वीकरण"
+        "legalDisclaimer": "कानूनी अस्वीकरण",
+        "aiIntroduction": "AI परिचय",
+        "copilotProtocols": "समर्थित प्रोटोकॉल",
+        "copilotPrompts": "प्रॉम्प्ट उदाहरण",
+        "copilotWorkflow": "एजेंट वर्कफ़्लो"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Avana से नवीनतम",
       "readNewsroom": "न्यूज़रूम पढ़ें"
+    },
+    "exportMenu": {
+      "copyPage": "पृष्ठ कॉपी करें",
+      "copied": "कॉपी हो गया",
+      "copyPageMarkdown": "पृष्ठ को Markdown के रूप में कॉपी करें",
+      "copyPageLink": "पृष्ठ लिंक कॉपी करें",
+      "copyPageLinkDescription": "इस पृष्ठ का URL क्लिपबोर्ड पर कॉपी करें",
+      "openInChatGPT": "ChatGPT में खोलें",
+      "openInClaude": "Claude में खोलें",
+      "openInGrok": "Grok में खोलें",
+      "openInPerplexity": "Perplexity में खोलें",
+      "askAboutPage": "इस पृष्ठ के बारे में प्रश्न पूछें",
+      "reviewPrompt": "नीचे दिए Avana पृष्ठ की सामग्री की समीक्षा करें और प्रश्नों के उत्तर दें।"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana एक विकेंद्रीकृत लेंडिंग मार्केट है,",
       "titleLine2": "विशेष रूप से AMM लिक्विडिटी पूल्स के लिए निर्मित।",
       "subtitle": "अपनी AMM लिक्विडिटी पोजीशन को संपार्श्विक (कोलैटरल) के रूप में उपयोग करके ऑन-चेन क्रिप्टो, कमोडिटीज़, FX और रियल वर्ल्ड एसेट्स (RWA) उधार लें।",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC प्रस्ताव पढ़ें",
       "secondaryCta": "Sandbox आज़माएँ"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "अक्सर पूछे जाने वाले प्रश्न",
     "subtitle": "Avana, LP आंशिक सुरक्षा और Aave v4 के बारे में उत्तर",
     "englishOnlyNote": "पूरे FAQ उत्तर अंग्रेज़ी में दिखाए जाते हैं जब तक कि इस स्थानीय भाषा की समीक्षा पूरी नहीं हो जाती।"
   },

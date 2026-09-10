@@ -9,7 +9,9 @@
       "closeMenu": "بستن منو",
       "language": "زبان: {language}",
       "logo": "لوگوی {site}",
-      "helpfulLinks": "لینک‌های مفید"
+      "helpfulLinks": "لینک‌های مفید",
+      "helpCenter": "مرکز راهنما: ایمیل به پشتیبانی",
+      "themeToggle": "ترجیح پوسته"
     },
     "nav": {
       "products": "محصولات",
@@ -23,7 +25,7 @@
       "about": "درباره",
       "newsroom": "اتاق خبر",
       "brand": "برند",
-      "faq": "FAQ",
+      "faq": "سوالات متداول",
       "privacy": "حریم خصوصی",
       "terms": "شرایط",
       "overview": "مرور کلی",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "این صفحه در دسترس نیست.",
       "body": "آدرس ممکن است اشتباه باشد یا صفحه ممکن است منتقل شده باشد.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "رفتن به صفحه اصلی",
+      "faq": "سوالات متداول"
     },
     "sandboxNotice": "Sandbox داده‌ها تنها برای پیش‌نمایش نمایش داده شده‌اند. APYها، قیمت‌ها و بازده‌ها نمونه‌ای هستند و ممکن است با شرایط واقعی بازار متفاوت باشند.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "به اشتراک‌گذاری در لینکدین",
       "previousPost": "پست قبلی",
       "nextPost": "پست بعدی",
-      "onThisPage": "On this page"
+      "onThisPage": "در این صفحه"
     },
     "docs": {
       "previous": "قبلی",
@@ -99,7 +101,8 @@
         "liquidation": "چارچوب تصفیه",
         "integrations": "ادغام‌های پشتیبانی‌شده",
         "safety": "مکانیسم‌های ایمنی",
-        "legal": "حقوقی و انطباق"
+        "legal": "حقوقی و انطباق",
+        "copilot": "پرسش از هوش مصنوعی"
       },
       "items": {
         "overview": "مرور کلی",
@@ -131,7 +134,11 @@
         "bugBounty": "جایزه باگ",
         "insuranceFunds": "صندوق‌های بیمه",
         "securityDisclosures": "افشای امنیتی",
-        "legalDisclaimer": "سلب مسئولیت قانونی"
+        "legalDisclaimer": "سلب مسئولیت قانونی",
+        "aiIntroduction": "معرفی هوش مصنوعی",
+        "copilotProtocols": "پروتکل‌های پشتیبانی‌شده",
+        "copilotPrompts": "نمونه پرامپت‌ها",
+        "copilotWorkflow": "گردش کار عامل"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "جدیدترین‌ها از Avana",
       "readNewsroom": "خواندن اتاق خبر"
+    },
+    "exportMenu": {
+      "copyPage": "کپی صفحه",
+      "copied": "کپی شد",
+      "copyPageMarkdown": "کپی صفحه به‌صورت Markdown",
+      "copyPageLink": "کپی لینک صفحه",
+      "copyPageLinkDescription": "کپی URL این صفحه در کلیپ‌بورد",
+      "openInChatGPT": "باز کردن در ChatGPT",
+      "openInClaude": "باز کردن در Claude",
+      "openInGrok": "باز کردن در Grok",
+      "openInPerplexity": "باز کردن در Perplexity",
+      "askAboutPage": "پرسش درباره این صفحه",
+      "reviewPrompt": "محتوای صفحه Avana زیر را بررسی کنید و به سؤالات پاسخ دهید."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana بازار وام‌دهی آن‌چین است",
       "titleLine2": "که منحصراً برای استخرهای نقدینگی AMM طراحی شده است.",
       "subtitle": "با استفاده از موقعیت‌های نقدینگی AMM خود به عنوان وثیقه، رمزارزها، کالاها، فارکس و دارایی‌های دنیای واقعی (RWA) را به صورت آن‌چین وام بگیرید.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "خواندن پروپوزال ARFC",
       "secondaryCta": "امتحان محیط Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "سوالات متداول",
     "subtitle": "پاسخ‌ها درباره Avana، LP وثیقه، و Aave v4",
     "englishOnlyNote": "پاسخ‌های کامل پرسش‌های متداول به زبان انگلیسی نمایش داده می‌شوند تا بازبینی این مکان تمام شود."
   },

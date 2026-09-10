@@ -61,13 +61,12 @@
       "放心借款",
       "保护层级在",
       "资金池层面",
-      "DEX 覆盖",
-      "覆盖主流 DEX",
-      "DEX 集成",
       "流动性池",
       "每个资金池细节，完整说明",
       "受支持借款市场的文档式预览",
-      "常见问题"
+      "常见问题",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "面向 LP 支持贷款的借贷协议",
       "借贷协议，专注",
       "认识 Avana：",
-      "我们很乐意与你交流。"
+      "我们很乐意与你交流。",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "不要旋转或翻转标志。",
       "不要在核准配色之外为标志重新上色。",
       "不要裁切标志，也不要把它放得太靠近边缘。",
-      "不要用合作方标志或界面文案挤占标志周围的空间。"
+      "不要用合作方标志或界面文案挤占标志周围的空间。",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,47 +380,50 @@
       "Multiply 市场，助你循环使用资金、调节池风险并管理仓位健康度。",
       "仓位安全",
       "为安全杠杆而设计",
-      "借款上限"
+      "借款上限",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Avana 首页主视觉"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "借款",
-      "对 LP 仓位借款，同时让流动性在 AMM 中保持活跃。",
-      "借款能力界面",
-      "出借",
-      "向连接 Hub 的借贷市场供应资金，并从 LP 支持借款需求中赚取收益。",
-      "出借市场现金账户界面",
-      "object-cover object-top",
-      "倍增",
-      "用 LP 支持信贷创建可管理杠杆，无需离开流动性仓位。",
-      "投资组合界面",
-      "认识 Avana",
-      "2021 年，",
-      "Aave",
-      "推出了",
-      "AMM 市场",
-      "并证明",
-      "LP 仓位",
-      "可以作为抵押——但面向当时更简单的 DEX。",
-      "Avana",
-      "从那里继续，专为当今 DEX 与 LP 类型而建，把每个仓位当作",
-      "抵押品",
-      "从那里继续，专为当今 DEX 与 LP 类型而建，",
-      "Avana 市场",
-      "调动资金",
-      "在 AMM 市场中",
-      "在 AMM 市场中调动资金",
-      "了解更多",
-      "2021 年，Aave 推出 AMM Market，并证明 LP 仓位可以作为抵押——但面向当时更简单的 DEX。Avana 接续前进：面向当今 DEX 与 LP 类型，把每个仓位当作由双预言机与更严格风险控制校准的抵押品。",
-      "借贷协议",
-      "以 LP 仓位为支撑",
-      "以 LP 仓位为支撑的借贷协议"
+      "Avana 首页主视觉",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
@@ -554,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "供应市场",
-      "覆盖全部市场出借"
+      "覆盖全部市场出借",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -611,37 +654,6 @@
       "进行中"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "安全区",
-      "健康因子 > 1.5。借款利用率在能力范围内，手续费继续累积，LP 保持完整。",
-      "警戒区",
-      "健康因子 1.0–1.5。系统提示你还款、追加抵押，或让自动化降低敞口。",
-      "清算",
-      "健康因子 < 1.0。先应用手续费，再解绑所需 LP 本金，剩余价值返还给你。",
-      "仓位安全",
-      "每个健康状态，清晰说明",
-      "在 LP 支持贷款需要行动前，跟踪健康度、警报与清算。",
-      "仓位健康度",
-      "安全区",
-      "手续费累积中",
-      "警报",
-      "阈值",
-      "接近清算",
-      "可用操作",
-      "降低借款余额",
-      "border-amber-200 bg-amber-50",
-      "追加抵押",
-      "提高健康因子",
-      "自动去杠杆",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "顺序",
-      "已应用手续费",
-      "剩余价值已返还",
-      "仅解绑所需本金"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Hub 基础利率",
@@ -651,7 +663,8 @@
       "每个资金池的专属风险加上最终利差，为同样闲置流动性提升收益潜力。",
       "Avana 年化收益",
       "同样闲置资金，更高 APY",
-      "至"
+      "至",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -682,7 +695,19 @@
       "跨多个仓位累计借款能力",
       "并行跟踪每个仓位的健康度",
       "按市场追加或调整抵押",
-      "Avana 插图：组合 LP 仓位"
+      "Avana 插图：组合 LP 仓位",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -712,7 +737,8 @@
       "使用 LP 抵押信贷构建受管理的杠杆，无需退出你的基础流动性头寸。",
       "Avana 以 LP 头寸为抵押借款",
       "Avana 在接入 Hub 的市场放贷",
-      "Avana Multiply 受管理杠杆收益"
+      "Avana Multiply 受管理杠杆收益",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

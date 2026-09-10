@@ -9,7 +9,9 @@
       "closeMenu": "মেনু বন্ধ করুন",
       "language": "ভাষা: {language}",
       "logo": "{site} লোগো",
-      "helpfulLinks": "সহায়ক লিঙ্কসমূহ"
+      "helpfulLinks": "সহায়ক লিঙ্কসমূহ",
+      "helpCenter": "সহায়তা কেন্দ্র: সাপোর্টে ইমেইল করুন",
+      "themeToggle": "থিম পছন্দ"
     },
     "nav": {
       "products": "পণ্য",
@@ -23,7 +25,7 @@
       "about": "সম্পর্কে",
       "newsroom": "সংবাদ কক্ষ",
       "brand": "ব্র্যান্ড",
-      "faq": "FAQ",
+      "faq": "সচরাচর জিজ্ঞাসিত প্রশ্ন",
       "privacy": "গোপনীয়তা",
       "terms": "শর্তাবলী",
       "overview": "সংক্ষিপ্ত বিবরণ",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "এই পৃষ্ঠা উপলব্ধ নয়।",
       "body": "ঠিকানাটি ভুল হতে পারে বা পৃষ্ঠা যেকোনো স্থানে চলে গিয়েছে।",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "হোমপেজে যান",
+      "faq": "সচরাচর জিজ্ঞাসিত প্রশ্ন"
     },
     "sandboxNotice": "Sandbox ডেটা শুধুমাত্র প্রিভিউর জন্য দেখানো হয়েছে। APY-এর দাম এবং রিটার্ন উদাহরণস্বরূপ এবং প্রকৃত বাজারের অবস্থার থেকে ভিন্ন হতে পারে।",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "লিঙ্কডইনে শেয়ার করুন",
       "previousPost": "পূর্ববর্তী পোস্ট",
       "nextPost": "পরবর্তী পোস্ট",
-      "onThisPage": "On this page"
+      "onThisPage": "এই পৃষ্ঠায়"
     },
     "docs": {
       "previous": "পূর্ববর্তী",
@@ -99,7 +101,8 @@
         "liquidation": "লিকুইডেশন ফ্রেমওয়ার্ক",
         "integrations": "সমর্থিত ইন্টিগ্রেশনস",
         "safety": "নিরাপত্তা ব্যবস্থাগুলি",
-        "legal": "আইন ও নিয়মনীতি"
+        "legal": "আইন ও নিয়মনীতি",
+        "copilot": "AI-কে জিজ্ঞাসা করুন"
       },
       "items": {
         "overview": "সংক্ষিপ্ত বিবরণ",
@@ -131,7 +134,11 @@
         "bugBounty": "বাগ বাউন্টি",
         "insuranceFunds": "বিমা তহবিল",
         "securityDisclosures": "সিকিউরিটি প্রকাশ",
-        "legalDisclaimer": "আইনগত অস্বীকার"
+        "legalDisclaimer": "আইনগত অস্বীকার",
+        "aiIntroduction": "AI পরিচিতি",
+        "copilotProtocols": "সমর্থিত প্রোটোকল",
+        "copilotPrompts": "প্রম্পট উদাহরণ",
+        "copilotWorkflow": "এজেন্ট ওয়ার্কফ্লো"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "সর্বশেষ  থেকে",
       "readNewsroom": "সংবাদ কক্ষ পড়ুন"
+    },
+    "exportMenu": {
+      "copyPage": "পৃষ্ঠা কপি করুন",
+      "copied": "কপি হয়েছে",
+      "copyPageMarkdown": "Markdown হিসেবে পৃষ্ঠা কপি করুন",
+      "copyPageLink": "পৃষ্ঠার লিংক কপি করুন",
+      "copyPageLinkDescription": "এই পৃষ্ঠার URL ক্লিপবোর্ডে কপি করুন",
+      "openInChatGPT": "ChatGPT-এ খুলুন",
+      "openInClaude": "Claude-এ খুলুন",
+      "openInGrok": "Grok-এ খুলুন",
+      "openInPerplexity": "Perplexity-তে খুলুন",
+      "askAboutPage": "এই পৃষ্ঠা সম্পর্কে প্রশ্ন করুন",
+      "reviewPrompt": "নিচের Avana পৃষ্ঠার বিষয়বস্তু পর্যালোচনা করে প্রশ্নের উত্তর দিন।"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana হলো একটি অন-চেন ঋণ বাজার,",
       "titleLine2": "বিশেষভাবে AMM লিকুইডিটি পুলের জন্য নির্মিত।",
       "subtitle": "আপনার AMM লিকুইডিটি পজিশনকে জামানত হিসেবে ব্যবহার করে অন-চেন ক্রিপ্টো, পণ্য, FX এবং বাস্তব বিশ্বের সম্পদ (RWA) ঋণ নিন।",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC প্রস্তাব পড়ুন",
       "secondaryCta": "Sandbox ব্যবহার করে দেখুন"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "সচরাচর জিজ্ঞাসিত প্রশ্ন",
     "subtitle": "Avana, LP জমানা, এবং Aave v4 সম্পর্কে উত্তরসমূহ",
     "englishOnlyNote": "পূর্ণ FAQ উত্তরগুলি ইংরেজিতে প্রদর্শিত হয় যতক্ষণ না এই লোকেলের পর্যালোচনা সম্পূর্ণ হয়।"
   },

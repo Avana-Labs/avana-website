@@ -9,7 +9,9 @@
       "closeMenu": "メニューを閉じる",
       "language": "言語: {language}",
       "logo": "{site} ロゴ",
-      "helpfulLinks": "役立つリンク"
+      "helpfulLinks": "役立つリンク",
+      "helpCenter": "ヘルプセンター：サポートにメール",
+      "themeToggle": "テーマ設定"
     },
     "nav": {
       "products": "製品",
@@ -23,7 +25,7 @@
       "about": "約",
       "newsroom": "ニュースルーム",
       "brand": "ブランド",
-      "faq": "FAQ",
+      "faq": "よくある質問",
       "privacy": "プライバシー",
       "terms": "条件",
       "overview": "概要",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "このページは利用できません。",
       "body": "アドレスが間違っているか、ページが移動した可能性があります。",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "ホームページへ",
+      "faq": "よくある質問"
     },
     "sandboxNotice": "Sandbox データはプレビュー用のみ表示されています。APY、価格およびリターンは例示的なものであり、実際の市場状況とは異なる場合があります。",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "LinkedInで共有",
       "previousPost": "前の投稿",
       "nextPost": "次の投稿",
-      "onThisPage": "On this page"
+      "onThisPage": "このページの内容"
     },
     "docs": {
       "previous": "前",
@@ -99,7 +101,8 @@
         "liquidation": "清算の枠組み",
         "integrations": "サポートされている統合",
         "safety": "安全装置",
-        "legal": "法務・コンプライアンス"
+        "legal": "法務・コンプライアンス",
+        "copilot": "AI に質問"
       },
       "items": {
         "overview": "概要",
@@ -131,7 +134,11 @@
         "bugBounty": "バグ報奨金",
         "insuranceFunds": "保険基金",
         "securityDisclosures": "セキュリティの開示",
-        "legalDisclaimer": "法的免責事項"
+        "legalDisclaimer": "法的免責事項",
+        "aiIntroduction": "AI 入門",
+        "copilotProtocols": "対応プロトコル",
+        "copilotPrompts": "プロンプト例",
+        "copilotWorkflow": "エージェントのワークフロー"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Avanaからの最新情報",
       "readNewsroom": "ニュースルームを読む"
+    },
+    "exportMenu": {
+      "copyPage": "ページをコピー",
+      "copied": "コピーしました",
+      "copyPageMarkdown": "Markdown としてページをコピー",
+      "copyPageLink": "ページリンクをコピー",
+      "copyPageLinkDescription": "このページの URL をクリップボードにコピー",
+      "openInChatGPT": "ChatGPT で開く",
+      "openInClaude": "Claude で開く",
+      "openInGrok": "Grok で開く",
+      "openInPerplexity": "Perplexity で開く",
+      "askAboutPage": "このページについて質問する",
+      "reviewPrompt": "以下の Avana ページの内容を確認し、質問に答えてください。"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "AvanaはAMM流動性プールに特化した",
       "titleLine2": "分散型レンディング市場です。",
       "subtitle": "AMM流動性ポジションを担保として活用し、暗号資産、コモディティ、為替（FX）、実世界資産（RWA）をオンチェーンで借り入れ。",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC提案を読む",
       "secondaryCta": "Sandboxを試す"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "よくある質問",
     "subtitle": "Avana、LP の担保、そして Aave v4 に関する回答",
     "englishOnlyNote": "このロケールのレビューが完了するまで、FAQの完全な回答は英語で表示されます。"
   },
