@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
-import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle, SandboxNotice, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
 import { brandAssetPath } from "@/lib/brand-assets"
 import { protocols } from "@/data/protocols"
@@ -284,6 +284,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                   className="object-cover object-center"
                 />
               </div>
+              <SandboxNotice className="mt-4 sm:mt-5" />
             </div>
 
             <div className="flex flex-col gap-12 md:gap-14">
