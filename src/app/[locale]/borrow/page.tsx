@@ -7,7 +7,6 @@ import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, Shie
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
-import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
 import { brandAssetPath } from "@/lib/brand-assets"
 import { protocols } from "@/data/protocols"
 import { FeaturePageHero } from "@/components/feature-page-hero"
@@ -266,70 +265,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <SupportedDexDirectory protocols={supportedDexes} />
 
-      <PerformanceSection id="dex-coverage" className="site-section-gap">
+      <PerformanceSection className="site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
-            <div className="flex flex-col gap-8 md:gap-12">
-              <div className="flex flex-col gap-2">
-                <SectionEyebrow tone="emerald">DEX Coverage</SectionEyebrow>
-                <SectionTitle>Supported across top DEXs</SectionTitle>
-              </div>
-              <div className="flex flex-1 items-stretch gap-2 flex-col sm:flex-row">
-                <div className="grid w-full flex-1 grid-cols-3 gap-2">
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#111727] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#FFFFFF] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000827] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[linear-gradient(45deg,#FC6901_0%,#F3B900_100%)] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000000] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F5F5F5] [&>svg]:size-3/5"></div>
-                  </div>
-                </div>
-                <div className="flex w-full flex-1">
-                  <div className="flex h-[150px] w-full flex-col items-center justify-center rounded-lg bg-gradient-to-b from-blue-50 to-blue-100 p-2 text-center sm:h-auto">
-                    <div className="flex size-full flex-col items-center justify-center rounded-md border border-blue-200 bg-white">
-                      <div className="text-base font-medium leading-normal text-blue-600 md:text-lg">
-                        <div className={`flex items-center text-[32px] font-bold md:text-[48px] ${CYAN_HIGHLIGHT_TEXT_CLASS}`}>
-                          12+
-                        </div>
-                        <span>DEX Integrations</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="grid w-full flex-1 grid-cols-3 gap-2">
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#7D00FF] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000000] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F3EFCD] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#061121] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[linear-gradient(90deg,#E35930_-6.83%,#E84125_100%)] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F1F7FF] [&>svg]:size-3/5"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
                 <SectionEyebrow tone="blue">Liquidity pools</SectionEyebrow>
