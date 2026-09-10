@@ -34,6 +34,12 @@ function repeatItems<T>(items: T[], count: number, offset: number) {
 /**
  * HeroSection - Homepage secondary content shell.
  */
+const hubColors: Record<HomepagePool["hub"], string> = {
+  "Stable LP Hub": "#10b981",
+  "Correlated LP Hub": "#3b82f6",
+  "Volatile LP Hub": "#f59e0b",
+}
+
 function PoolCard({ pool }: { pool: HomepagePool }) {
   return (
     <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)] transition duration-150 ease-out hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(15,23,42,0.06)]">
@@ -48,9 +54,9 @@ function PoolCard({ pool }: { pool: HomepagePool }) {
           </span>
           <span className="text-[0.8rem] text-type-tertiary">{pool.dex}</span>
         </div>
-        <div className="mt-0.5 flex items-center gap-1.5">
-          <span className="type-meta-label">TVL</span>
-          <span className="text-[0.76rem] text-type-secondary">{pool.tvl}</span>
+        <div className="mt-0.5 flex items-center gap-1.5 whitespace-nowrap">
+          <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: hubColors[pool.hub] }} />
+          <span className="text-[0.76rem] text-type-secondary">{pool.hub}</span>
         </div>
       </div>
     </div>
