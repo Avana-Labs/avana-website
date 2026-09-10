@@ -76,13 +76,13 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             </div>
           </div>
 
-          <div className="mt-14 grid gap-3 md:grid-cols-2 xl:mt-16 xl:grid-cols-4">
+          <div className="mx-auto mt-14 grid max-w-[76rem] gap-3 md:grid-cols-2 xl:mt-16 xl:grid-cols-3">
             {feeCards.map((card) => (
               <article
                 key={card.title}
                 className={`flex min-h-[35rem] flex-col rounded-xl border p-5 md:min-h-[38rem] md:p-6 ${
                   card.featured
-                    ? "border-foreground/15 bg-[#fafafa] shadow-[0_16px_36px_-28px_rgba(15,21,24,0.55)]"
+                    ? "border-foreground/15 bg-[#fafafa]"
                     : "border-border/70 bg-[#fafafa] text-foreground"
                 }`}
               >
