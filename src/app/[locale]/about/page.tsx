@@ -22,13 +22,13 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto text-center">
             <h1
-              aria-label={`Introducing ${SITE_NAME}: A lending protocol for LP-backed loans`}
+              aria-label={`Introducing ${SITE_NAME}: The lending market for AMM liquidity.`}
               className="type-display-title text-foreground"
             >
               <span>{`Introducing ${SITE_NAME}:`}</span>
               <br />
               <span className="text-type-accent">
-                A lending protocol for LP-backed loans
+                The lending market for AMM liquidity.
               </span>
             </h1>
           </div>
@@ -45,9 +45,9 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl space-y-8 lg:mt-14">
-            <SectionLead variant="display">
-              One of crypto&apos;s most important sources of collateral is hiding in plain sight:{" "}
-              <span className="text-type-accent">AMM liquidity.</span>
+            <SectionLead variant="display" className="lg:[font-size:var(--type-body-size)]">
+              Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity
+              positions usable as collateral across DeFi.
             </SectionLead>
             <p className="type-body-copy">
               Major AMMs already hold billions in liquidity, yet LP positions are still treated mostly as passive
