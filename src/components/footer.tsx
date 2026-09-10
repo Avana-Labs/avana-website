@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server"
 import Link from "next/link"
 import { withLocale } from "@/lib/i18n/path"
 import { HEADER_WORDMARK_PATH, SITE_NAME, siteRoutes } from "@/lib/site"
+import { cn } from "@/lib/utils"
 
 interface FooterLink {
   href: string
@@ -24,11 +25,12 @@ interface SocialLink {
   label: string
   name: string
   icon: React.ReactNode
+  className: string
 }
 
 const socialIcons = {
   twitter: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5">
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5">
       <path
         d="M4 4L20 20M20 4L4 20"
         stroke="currentColor"
@@ -38,7 +40,7 @@ const socialIcons = {
     </svg>
   ),
   github: (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5">
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-3.5">
       <path
         fill="currentColor"
         d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.68c-2.78.61-3.37-1.18-3.37-1.18-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.33 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.57 9.57 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.69.9.69 1.82v2.7c0 .26.18.57.69.48A10 10 0 0 0 12 2Z"
@@ -56,12 +58,14 @@ export default async function Footer(): Promise<React.JSX.Element> {
       label: t("footer.socialAria", { network: t("footer.twitter") }),
       name: t("footer.twitter"),
       icon: socialIcons.twitter,
+      className: "bg-[#01AACF] text-white hover:bg-[#00a0c2]",
     },
     {
       href: "https://github.com/Avana-Labs",
       label: t("footer.socialAria", { network: t("footer.github") }),
       name: t("footer.github"),
       icon: socialIcons.github,
+      className: "bg-black/[0.06] text-foreground hover:bg-black/[0.1]",
     },
   ]
 
@@ -133,16 +137,19 @@ export default async function Footer(): Promise<React.JSX.Element> {
                     aria-label={link.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex min-w-0 items-center gap-2.5 rounded-full border border-border/80 bg-background px-4 py-2.5 text-sm font-medium text-foreground transition-[background-color,border-color,color] duration-200 hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-type-accent/50"
+                    className={cn(
+                      "group inline-flex h-8 min-w-0 items-center gap-1.5 rounded-full px-3 text-sm font-medium leading-none transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-type-accent/50",
+                      link.className,
+                    )}
                   >
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center text-foreground transition-colors group-hover:text-background">
+                    <span className="flex size-3.5 shrink-0 items-center justify-center">
                       {link.icon}
                     </span>
                     <span className="truncate tracking-[-0.015em]">{link.name}</span>
                     <svg
                       viewBox="0 0 16 16"
                       aria-hidden="true"
-                      className="ml-0.5 h-3.5 w-3.5 shrink-0 text-type-tertiary transition-[color,transform] group-hover:translate-x-0.5 group-hover:text-background"
+                      className="size-3 shrink-0 transition-transform group-hover:translate-x-0.5"
                     >
                       <path
                         d="m6 3 5 5-5 5"
