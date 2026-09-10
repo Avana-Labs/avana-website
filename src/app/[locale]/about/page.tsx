@@ -45,7 +45,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl space-y-8 lg:mt-14">
-            <SectionLead variant="display" className="lg:[font-size:var(--type-body-size)]">
+            <SectionLead variant="body">
               Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity
               positions usable as collateral across DeFi.
             </SectionLead>
