@@ -16,10 +16,10 @@ export function BorrowAgainstLP() {
       <div className="bal-head">
         <span className="bal-pair">
           {gho ? (
-            <Image className="bal-coin" src={gho} alt="" width={38} height={38} loading="lazy" />
+            <Image className="bal-coin" src={gho} alt="" width={48} height={48} loading="lazy" />
           ) : null}
           {aave ? (
-            <Image className="bal-coin bal-coin-2" src={aave} alt="" width={38} height={38} loading="lazy" />
+            <Image className="bal-coin bal-coin-2" src={aave} alt="" width={48} height={48} loading="lazy" />
           ) : null}
         </span>
         <span className="bal-names">
@@ -60,8 +60,8 @@ export function BorrowAgainstLP() {
         }
         .bal-head { display: flex; align-items: center; gap: 11px; }
         .bal-pair { position: relative; display: inline-flex; flex: none; align-items: center; }
-        .bal-coin { width: 38px; height: 38px; border-radius: 9999px; display: block; }
-        .bal-coin-2 { margin-left: -10px; }
+        .bal-coin { width: 48px; height: 48px; border-radius: 9999px; display: block; }
+        .bal-coin-2 { margin-left: -13px; }
         .bal-names { display: flex; flex-direction: column; min-width: 0; gap: 2px; }
         .bal-name { font-size: 0.9375rem; font-weight: 600; line-height: 1.2; }
         .bal-meta { font-size: 0.72rem; color: #73726c; line-height: 1.2; }
