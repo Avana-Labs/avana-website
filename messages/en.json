@@ -347,10 +347,7 @@
         "two": "Exposure stays tied to the underlying pool",
         "three": "Leverage and unwind controls stay visible"
       }
-    },
-    "moreInfo": "For the full fee mechanics, read the FAQ and developer documentation.",
-    "faqCta": "Read the FAQ",
-    "docsCta": "Open documentation"
+    }
   },
   "faq": {
     "title": "FAQ",

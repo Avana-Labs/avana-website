@@ -1,6 +1,7 @@
 import { Check } from "lucide-react"
 import { getTranslations } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
+import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
+import { LocalizedMarketing } from "@/components/localized-marketing"
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 import { siteRoutes } from "@/lib/site"
@@ -57,7 +58,8 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
   ] as const
 
   return (
-    <main className="bg-background">
+    <LocalizedMarketing locale={locale} keys={["homepage/HomepageFaqSection"]}>
+      <main className="bg-background">
       <section className="px-4 pb-16 pt-16 sm:px-6 md:pb-24 md:pt-20 lg:px-8 lg:pt-24">
         <div className="mx-auto max-w-[92rem]">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -123,25 +125,12 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             ))}
           </div>
 
-          <div className="mx-auto mt-12 flex max-w-2xl flex-col items-center gap-4 text-center md:mt-16">
-            <p className="text-[1.05rem] leading-7 tracking-[-0.02em] text-type-secondary">{t("moreInfo")}</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link
-                href={siteRoutes.faq}
-                className="inline-flex h-11 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-type-accent hover:text-foreground"
-              >
-                {t("faqCta")}
-              </Link>
-              <Link
-                href={siteRoutes.developers}
-                className="inline-flex h-11 items-center rounded-full border border-border px-5 text-sm font-medium text-foreground transition-colors hover:border-type-accent hover:text-type-accent"
-              >
-                {t("docsCta")}
-              </Link>
-            </div>
-          </div>
+          <section className="mt-16 border-t border-border/80 pt-16 md:mt-24 md:pt-24">
+            <HomepageFaqSection />
+          </section>
         </div>
       </section>
-    </main>
+      </main>
+    </LocalizedMarketing>
   )
 }
