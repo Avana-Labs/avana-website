@@ -308,7 +308,6 @@
     }
   },
   "pricing": {
-    "eyebrow": "Protocol pricing",
     "title": "Pricing",
     "subtitle": "Clear costs for borrowing, lending, and LP-backed strategies on Avana.",
     "currentRates": "Current rates",
@@ -341,18 +340,18 @@
       },
       "cta": "Lending docs"
     },
-    "lpFees": {
-      "title": "LP fee claims",
-      "subtitle": "Keep your position active",
-      "value": "No exit",
-      "unit": "required",
-      "description": "Claim eligible trading fees without closing the LP position backing your loan.",
+    "multiply": {
+      "title": "Multiply",
+      "subtitle": "For managed LP exposure",
+      "value": "Variable",
+      "unit": "strategy rate",
+      "description": "Amplify LP exposure with managed multiply strategies backed by supported AMM positions.",
       "items": {
-        "one": "Fees continue accruing in the AMM",
-        "two": "Health checks run before and after claims",
-        "three": "Principal stays active as collateral"
+        "one": "Use supported LP positions as collateral",
+        "two": "Exposure stays tied to the underlying pool",
+        "three": "Leverage and unwind controls stay visible"
       },
-      "cta": "Fee claim docs"
+      "cta": "Multiply overview"
     },
     "interface": {
       "title": "Interface fees",

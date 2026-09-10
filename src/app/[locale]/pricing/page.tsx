@@ -46,18 +46,18 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
       featured: false,
     },
     {
-      title: t("lpFees.title"),
-      subtitle: t("lpFees.subtitle"),
-      value: t("lpFees.value"),
-      unit: t("lpFees.unit"),
-      description: t("lpFees.description"),
+      title: t("multiply.title"),
+      subtitle: t("multiply.subtitle"),
+      value: t("multiply.value"),
+      unit: t("multiply.unit"),
+      description: t("multiply.description"),
       items: [
-        t("lpFees.items.one"),
-        t("lpFees.items.two"),
-        t("lpFees.items.three"),
+        t("multiply.items.one"),
+        t("multiply.items.two"),
+        t("multiply.items.three"),
       ],
-      cta: t("lpFees.cta"),
-      href: "/developers/getting-started/claim-lp-fees",
+      cta: t("multiply.cta"),
+      href: siteRoutes.multiply,
       featured: false,
     },
     {
@@ -82,10 +82,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
       <section className="px-4 pb-16 pt-16 sm:px-6 md:pb-24 md:pt-20 lg:px-8 lg:pt-24">
         <div className="mx-auto max-w-[92rem]">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.12em] text-type-accent">
-              {t("eyebrow")}
-            </p>
-            <h1 className="mt-4 text-[clamp(3.25rem,7vw,5.75rem)] font-normal leading-[0.95] tracking-[-0.065em] text-foreground">
+            <h1 className="text-[clamp(3.25rem,7vw,5.75rem)] font-normal leading-[0.95] tracking-[-0.065em] text-foreground">
               {t("title")}
             </h1>
             <p className="mt-6 max-w-2xl text-[1.05rem] leading-7 tracking-[-0.02em] text-type-secondary md:text-[1.15rem]">
