@@ -146,8 +146,8 @@ export default function HeaderDesktopMenuPanel({
       }`}
       aria-hidden={!isOpen}
     >
-      <div className="border-b border-border bg-background shadow-[0_24px_72px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_72px_rgba(0,0,0,0.35)]">
-        <div className="w-full bg-background px-4 py-5 sm:px-6 md:px-5 md:py-5 lg:px-6 xl:px-8">
+      <div className="border-b border-border bg-background shadow-[0_24px_72px_rgba(0,0,0,0.04)]">
+        <div className="site-content-shell bg-background py-5">
           <div
             key={`${menu.id}-${animationCycle}`}
             className="grid gap-6 lg:min-h-[14.75rem] lg:grid-cols-[minmax(0,19rem)_minmax(15rem,18rem)] lg:gap-2.5 xl:grid-cols-[minmax(0,20rem)_minmax(15rem,18rem)] xl:gap-3"

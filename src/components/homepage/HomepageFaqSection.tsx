@@ -88,7 +88,7 @@ export default function HomepageFaqSection() {
   return (
     <div className="grid grid-cols-1 gap-8 pb-4 md:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] md:gap-6 md:pb-0 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:gap-8">
       <div className="space-y-3 md:max-w-[25rem] md:pt-2">
-        <SectionTitle className="max-w-none">
+        <SectionTitle variant="lead" className="max-w-none">
           {t("Frequently asked questions")}
         </SectionTitle>
       </div>

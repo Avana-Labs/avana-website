@@ -1,9 +1,11 @@
 import Image from "next/image"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+import { brandAssetPath } from "@/lib/brand-assets"
 
-export default async function PlatformToolsShowcaseSection() {
-  return withMarketingI18n(['platform-tools-showcase-section'], (
+export default async function PlatformToolsShowcaseSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ['platform-tools-showcase-section'], (
     <section
       data-section="platform-tools-showcase"
       data-theme="beige"
@@ -16,9 +18,9 @@ export default async function PlatformToolsShowcaseSection() {
         </SectionTitle>
       </div>
 
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
+      <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
         <Image
-          src="/images/ways-to-use-avana.png"
+          src={brandAssetPath("/images/Avana Lend Light.png")}
           alt="Lending tools product overview"
           fill
           sizes="(max-width: 1200px) 100vw, 1120px"

@@ -1,5 +1,6 @@
 import { Code2, Coins, Globe2, LayoutDashboard, Layers3, RefreshCcw, Rocket, ShieldCheck } from "lucide-react"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 type RoadmapStatus = "Released" | "In Progress" | "Q2" | "Q3" | "Q4" | "Q1 2027"
@@ -155,8 +156,8 @@ function RoadmapMilestoneIcon({ label }: { label: string }) {
   return <Code2 className={iconClassName} aria-hidden="true" />
 }
 
-export default async function ProtocolRoadmapSection() {
-  return withMarketingI18n(['protocol-roadmap-section'], (
+export default async function ProtocolRoadmapSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ['protocol-roadmap-section'], (
     <section className="space-y-8" id="roadmap">
       <div className="space-y-3">
         <SectionEyebrow tone="cyan">What comes next</SectionEyebrow>

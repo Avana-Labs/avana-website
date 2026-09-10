@@ -1,12 +1,13 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { ArrowUpRight, BookOpenText, ChevronDown } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useEffect, useRef, useState } from "react"
 import { desktopMenuButtons, type DesktopMenuId } from "@/components/header-nav-data"
 import { Link, usePathname } from "@/i18n/navigation"
-import { AAVE_ARFC_LABEL, siteRoutes } from "@/lib/site"
+import { siteRoutes } from "@/lib/site"
+// import { AAVE_ARFC_LABEL, siteRoutes } from "@/lib/site"
+// import { ArrowUpRight } from "lucide-react"
 
 const DeferredHeaderDesktopMenuPanel = dynamic(() => import("@/components/header-desktop-menu-panel"), { ssr: false })
 
@@ -70,7 +71,7 @@ export default function HeaderDesktopNavigation() {
     <>
       <nav
         aria-label={t("a11y.primaryNav")}
-        className="hidden min-w-0 items-center lg:ms-4 lg:me-auto lg:flex lg:gap-3 xl:ms-6 xl:gap-7 2xl:gap-8"
+        className="hidden min-w-0 items-center lg:flex lg:justify-self-center lg:gap-7 xl:gap-8"
         onMouseEnter={warmDesktopMenuPanel}
         onMouseLeave={scheduleDesktopMenuClose}
       >
@@ -89,14 +90,9 @@ export default function HeaderDesktopNavigation() {
               onMouseEnter={() => openDesktopMenu(menu.id)}
               onFocus={() => openDesktopMenu(menu.id)}
               onClick={() => openDesktopMenu(menu.id)}
-              className={`site-header-nav-link group relative inline-flex items-center gap-1 px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out xl:gap-1.5 ${isHighlighted ? "text-type-accent" : "text-foreground/62 hover:text-foreground/94"}`}
+              className={`site-header-nav-link group relative inline-flex items-center px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${isHighlighted ? "text-type-accent" : "text-foreground hover:text-type-accent"}`}
             >
               <span>{menuLabels[menu.id]}</span>
-              <ChevronDown
-                aria-hidden="true"
-                className={`h-[15px] w-[15px] shrink-0 transition-transform duration-200 ease-out ${isOpen ? "rotate-180" : "rotate-0"}`}
-                strokeWidth={2.35}
-              />
             </button>
           )
         })}
@@ -104,17 +100,11 @@ export default function HeaderDesktopNavigation() {
           href={siteRoutes.faq}
           onMouseEnter={closeDesktopMenu}
           onFocus={closeDesktopMenu}
-          aria-label={t("nav.helpCenter")}
-          title={t("nav.helpCenter")}
-          className={`site-header-nav-link group relative inline-flex items-center gap-1.5 px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${pathname === siteRoutes.faq ? "text-type-accent" : "text-foreground/62 hover:text-type-accent"}`}
+          className={`site-header-nav-link group relative inline-flex items-center px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${pathname === siteRoutes.faq ? "text-type-accent" : "text-foreground hover:text-type-accent"}`}
         >
-          <span className="hidden xl:inline">{t("nav.helpCenter")}</span>
-          <BookOpenText
-            aria-hidden="true"
-            className="h-[17px] w-[17px] shrink-0 transition-transform duration-200 ease-out group-hover:scale-105 xl:h-[15px] xl:w-[15px]"
-            strokeWidth={2.35}
-          />
+          {t("nav.helpCenter")}
         </Link>
+        {/* Temporarily hidden — bring back later
         <a
           href="https://governance.aave.com/"
           target="_blank"
@@ -132,6 +122,7 @@ export default function HeaderDesktopNavigation() {
             strokeWidth={2.35}
           />
         </a>
+        */}
       </nav>
 
       {desktopMenuRendered !== null ? (

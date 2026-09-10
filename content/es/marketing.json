@@ -285,7 +285,12 @@
       "Tinta Avana",
       "Color principal de texto y logo oscuro. Úsalo cuando importan el contraste y la autoridad.",
       "Cian Avana",
-      "Acento primario para estados activos, enlaces, highlights clave y CTAs liderados por Avana."
+      "Acento primario para estados activos, enlaces, highlights clave y CTAs liderados por Avana.",
+      "No estires ni comprimas el logo.",
+      "No gires ni voltees la marca.",
+      "No recolorees el logo fuera de las combinaciones aprobadas.",
+      "No recortes la marca ni la coloques demasiado cerca de un borde.",
+      "No satures la marca con logos de partners ni etiquetas de UI."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "al 5,5% APR sin retirar liquidez ni renunciar a las comisiones de trading.",
       "Gana intereses de la demanda de prestatarios LP",
       "Formas en que los equipos ponen el crédito LP a trabajar",
-      "crédito LP a trabajar"
+      "crédito LP a trabajar",
+      "Accede a préstamos en cientos de pools",
+      "Sigue ganando comisiones de trading mientras obtienes crédito con tu LP.",
+      "Mercados Multiply para reciclar capital, ajustar el riesgo de los pools y gestionar la salud de las posiciones.",
+      "Seguridad de las posiciones",
+      "Diseñado para un apalancamiento seguro",
+      "Límite de préstamo"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Preguntas frecuentes.",
       "Preguntas",
       "frecuentes"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Libera capital de los mercados AMM",
+      "Tres mercados nativos para pedir prestado, generar intereses y gestionar el apalancamiento.",
+      "Pide prestado con tus posiciones LP",
+      "Pide prestado con tus posiciones LP mientras tu liquidez sigue activa en el AMM subyacente.",
+      "Presta en los mercados Hub",
+      "Aporta capital a los mercados de préstamo conectados al Hub y gana con la demanda de prestatarios respaldados por LP.",
+      "Multiplica los rendimientos de liquidez",
+      "Usa crédito respaldado por LP para crear apalancamiento gestionado sin salir de tu posición de liquidez base.",
+      "Avana Pedir prestado con posiciones LP",
+      "Avana Prestar en mercados conectados al Hub",
+      "Avana Multiplicar rendimiento con apalancamiento gestionado"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Controla tu cartera con Ask AI",
+      "Simula bucles de rendimiento, automatiza los límites de préstamo y ejecuta en lenguaje natural.",
+      "Responde a tu próximo «¿y si?»",
+      "Pregunta cómo afecta una caída del 20 % del mercado a tu factor de salud, o simula un bucle de rendimiento 3x antes de comprometer capital.",
+      "«Simula un bucle de rendimiento 3x ETH-USDC y muestra mi precio de liquidación si ETH cae un 15 %»",
+      "Convierte cinco transacciones en una frase",
+      "Intercambia tokens, cruza cadenas y deposita en pools de liquidez de una sola vez, sin cambiar de red ni firmar cinco aprobaciones.",
+      "«Cambia 5 ETH por USDC, pasa a Arbitrum y deposita en el tri-pool de Curve»",
+      "Define reglas condicionales y despreocúpate",
+      "Dile a Ask AI que pida prestado solo cuando las tasas bajen del 4 %, o que reequilibre tu LP si los precios del pool se desvían de tu objetivo.",
+      "«Pide prestados 25.000 USDC con mi posición LP siempre que el APR de préstamo de Aave baje del 3,8 %»",
+      "Duerme tranquilo pese a la volatilidad",
+      "Agentes autónomos vigilan tu colateral 24/7, ajustando posiciones y activando stop-loss mucho antes del riesgo de liquidación.",
+      "«Mantén mi factor de salud por encima de 1,6 desapalancando automáticamente si se dispara la volatilidad»",
+      "Detecta los mejores rendimientos sin perderte en los detalles",
+      "Pregunta qué pools ofrecen la mejor relación comisión-riesgo para tus activos, compara la profundidad de los DEX en tiempo real y despliega con un clic.",
+      "«Encuentra el pool con mayor APY por comisiones para wstETH con al menos 5 M$ de profundidad de liquidez en todos los DEX»",
+      "Interfaz de simulación y gestión de cartera de Avana Multiply",
+      "Flujo de ejecución automatizada de varios pasos de Avana Express",
+      "Seguimiento de tasas y parámetros de préstamo condicionales de Avana Borrow",
+      "Supervisión de posiciones 24/7 y protecciones de riesgo automatizadas de Avana",
+      "Interfaz de descubrimiento de rendimiento y comparación de pools de Avana Lend"
     ]
   }
 }

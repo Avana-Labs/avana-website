@@ -1,0 +1,117 @@
+import { BorrowAgainstLP } from "@/components/borrow-against-lp"
+import { LendMarketsDeck } from "@/components/lend-markets-deck"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import { MultiplyAssetsLoop } from "@/components/multiply-assets-loop"
+import type { AppLocale } from "@/i18n/locales"
+import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+
+export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
+  return withMarketingI18n(locale, ["avana-products-section"], (
+    <section
+      id="avana-products"
+      className="w-full bg-inherit site-section-gap"
+    >
+      <div className="site-content-shell">
+        <MarketingLeadHeader
+          className="mb-6 sm:mb-8"
+          title="Unlock capital from AMM markets"
+          subtitle="Three native markets to borrow, earn interest, and manage leverage."
+        />
+
+        <div className="grid grid-cols-1 gap-4 xl:grid-cols-3 items-stretch">
+          {/* Card 1: Borrow */}
+          <div className="h-full">
+            <div className="card flex h-full grow-1 flex-col">
+              <div className="type-base max-w-prose flex grow flex-col">
+                <div>
+                  <h2>Borrow against LP positions</h2>
+                  <div className="text-pretty">
+                    Borrow against LP positions while your liquidity stays active in the underlying AMM.
+                  </div>
+                </div>
+              </div>
+              <figure className="pt-g1.75">
+                <div
+                  className="media-border-container relative grid grid-cols-1 grid-rows-1"
+                  style={
+                    {
+                      "--layered-media-bg-light": "#FFFFFF",
+                      "--layered-media-bg-dark": "#3C3935",
+                      height: "190px",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div
+                    className="media-light absolute inset-0 z-0"
+                    style={{ backgroundColor: "#fff" }}
+                  />
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <BorrowAgainstLP />
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          {/* Card 2: Lend */}
+          <div className="h-full">
+            <div className="card flex h-full grow-1 flex-col">
+              <div className="type-base max-w-prose flex grow flex-col">
+                <div>
+                  <h2>Lend into Hub markets</h2>
+                  <div className="text-pretty">
+                    Supply capital into Hub-connected lending markets and earn from LP-backed borrower demand.
+                  </div>
+                </div>
+              </div>
+              <figure className="pt-g1.75">
+                <div
+                  className="media-border-container relative grid grid-cols-1 grid-rows-1"
+                  style={
+                    {
+                      "--layered-media-bg-light": "#FFFFFF",
+                      "--layered-media-bg-dark": "#4A443B",
+                      height: "190px",
+                    } as React.CSSProperties
+                  }
+                >
+                  <div
+                    className="media-light absolute inset-0 z-0"
+                    style={{ backgroundColor: "#fff" }}
+                  />
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <LendMarketsDeck />
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          {/* Card 3: Multiply */}
+          <div className="h-full">
+            <div className="card flex h-full grow-1 flex-col">
+              <div className="type-base max-w-prose flex grow flex-col">
+                <div>
+                  <h2>Multiply liquidity yields</h2>
+                  <div className="text-pretty">
+                    Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit.
+                  </div>
+                </div>
+              </div>
+              <figure className="pt-g1.75">
+                <div
+                  className="media-border-container relative grid grid-cols-1 grid-rows-1"
+                  style={{ backgroundColor: "#fff", height: "190px" }}
+                >
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <MultiplyAssetsLoop />
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))
+}

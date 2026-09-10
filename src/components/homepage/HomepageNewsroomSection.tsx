@@ -1,4 +1,5 @@
-import { getLocale, getTranslations } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
+import { getTranslations } from "next-intl/server"
 import { formatContentDate } from "@/lib/content-i18n/format-date"
 import { Link } from "@/i18n/navigation"
 import { ChevronRight } from "lucide-react"
@@ -13,6 +14,7 @@ import { getNewsroomPosts, type NewsroomCollection, type NewsroomPost } from "@/
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 type HomepageNewsroomSectionProps = {
+  locale: AppLocale
   eyebrow?: string
   eyebrowTone?: SectionEyebrowTone
   title?: string
@@ -30,6 +32,7 @@ type HomepageNewsroomSectionProps = {
  * Section chrome (eyebrow / title / CTA / bylines) uses messages + phrase map.
  */
 export default async function HomepageNewsroomSection({
+  locale,
   eyebrow,
   eyebrowTone = "blue",
   title,
@@ -38,16 +41,15 @@ export default async function HomepageNewsroomSection({
   showDividers = true,
   showTopBorder,
 }: HomepageNewsroomSectionProps) {
-  const locale = await getLocale()
-  const tNav = await getTranslations("common.nav")
-  const tNews = await getTranslations("common.newsroom")
+  const tNav = await getTranslations({ locale, namespace: "common.nav" })
+  const tNews = await getTranslations({ locale, namespace: "common.newsroom" })
   const resolvedEyebrow = eyebrow ?? tNav("newsroom")
   const resolvedTitle = title ?? tNews("latestFrom")
   const readCta = tNews("readNewsroom")
-  const resolvedPosts = posts ?? (await getNewsroomPosts(collection))
+  const resolvedPosts = posts ?? (await getNewsroomPosts(locale, collection))
   const hasTopBorder = showTopBorder ?? showDividers
 
-  return withMarketingI18n(["homepage/HomepageNewsroomSection"], (
+  return withMarketingI18n(locale, ["homepage/HomepageNewsroomSection"], (
     <section data-section="newsroom-teasers">
       <div className="mb-8 flex max-w-[48rem] flex-col gap-3 md:mb-10">
         <SectionEyebrow tone={eyebrowTone}>{resolvedEyebrow}</SectionEyebrow>

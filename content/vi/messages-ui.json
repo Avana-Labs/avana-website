@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Cách các vị trí được hỗ trợ bởi LP được giám sát và thanh toán."
     },
     "footer": {
-      "blurb": "Avana là một giao thức thế chấp LP trên Aave v4 giúp các nhà cung cấp thanh khoản vay dựa trên các vị thế đang hoạt động trong khi vẫn giữ trong pool.",
+      "blurb": "Avana là giao thức cho vay được xây dựng trên Aave V4 cho phép sử dụng các vị thế pool thanh khoản AMM làm tài sản thế chấp. Các nhà cung cấp thanh khoản từ Uniswap, Balancer, Curve hoặc Aerodrome có thể gửi các vị thế LP được hỗ trợ, đánh giá rủi ro theo từng thị trường cụ thể và vay thế chấp trong khi các vị thế vẫn hoạt động bình thường trong các pool cơ sở.",
       "explore": "Khám phá",
       "resources": "Tài nguyên",
       "docs": "Tài liệu",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "Được cung cấp bởi Aave v4",
-      "title": "Vay dựa trên LP vị trí",
-      "titleLine1": "Vay chống lại",
-      "titleLine2": "Vị trí thanh khoản",
-      "subtitle": "Tiếp tục kiếm phí giao dịch trong khi mở khóa thanh khoản từ các vị trí Uniswap, Curve và Balancer.",
+      "title": "Avana là thị trường cho vay DeFi được tối ưu hóa cho các pool thanh khoản AMM.",
+      "titleLine1": "Avana là thị trường cho vay DeFi",
+      "titleLine2": "được tối ưu hóa cho các pool thanh khoản AMM.",
+      "subtitle": "Vay crypto, hàng hóa, ngoại hối (FX) và tài sản thế giới thực (RWA) onchain bằng cách sử dụng vị thế thanh khoản AMM làm tài sản thế chấp.",
       "subtitleMobileLines": [
-        "Truy cập lên đến 80% giá trị của Bể Thanh Khoản của bạn",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Truy cập tới 80% giá trị của Quỹ Thanh khoản của bạn với lãi suất 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "Thử Sandbox",
-      "secondaryCta": "Đọc tài liệu"
+      "primaryCta": "Đọc đề xuất ARFC",
+      "secondaryCta": "Trải nghiệm Sandbox"
+    },
+    "intro": {
+      "text": "<ink>Tháng 3 năm 2021, Aave Protocol đã giới thiệu AMM Market.</ink> Đây là giao thức tiên phong đưa thanh khoản AMM vào làm tài sản thế chấp và chứng minh vị thế LP hoàn toàn có thể làm tài sản đảm bảo cho khoản vay; tuy nhiên nó chỉ phù hợp với các DEX sơ khai thời bấy giờ. <ink>Avana nâng tầm ý tưởng đó lên thế hệ tiếp theo</ink>: được thiết kế chuyên biệt cho các DEX thanh khoản tập trung tinh vi hiện nay, giúp người dùng <ink>vay crypto, FX và tài sản thế giới thực onchain trực tiếp từ vị thế pool thanh khoản AMM của mình</ink>."
     },
     "features": {
       "eyebrow": "Các tính năng chính",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "Gặp Avana",
       "body": "Avana chuyển LP vị trí thành tài sản đảm bảo có thể sử dụng trên Aave v4 để các nhà cung cấp thanh khoản có thể vay mà không rời khỏi nhóm."
+    },
+    "trustedBy": {
+      "caption": "Được tin dùng bởi các đội ngũ phát triển và triển khai sản phẩm Web3 hàng đầu"
+    },
+    "cta": {
+      "title": "Trải nghiệm Avana ngay."
     }
   },
   "product": {

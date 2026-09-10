@@ -306,7 +306,7 @@ export function LlmExportMenu({ className }: LlmExportMenuProps) {
         {isOpen && (
           <div
             role="menu"
-            className="absolute right-0 z-20 mt-2 w-[min(16.5rem,calc(100vw-1rem))] overflow-hidden rounded-[15px] border border-border bg-popover shadow-[0_8px_18px_rgba(15,23,42,0.05)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.45)] sm:w-[16.5rem]"
+            className="absolute right-0 z-20 mt-2 w-[min(16.5rem,calc(100vw-1rem))] overflow-hidden rounded-[15px] border border-border bg-popover shadow-[0_8px_18px_rgba(15,23,42,0.05)] sm:w-[16.5rem]"
           >
             <div className="p-[2px]">
               <button

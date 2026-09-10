@@ -4,9 +4,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('getting-started/claim-lp-fees', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'getting-started/claim-lp-fees', {
     title: "Claim LP Fees",
     description: "How to claim accrued LP trading fees on Avana without exiting your collateral position.",
   })
@@ -20,8 +22,9 @@ const sections = [
   { id: "key-benefits", title: "Key Benefits" },
 ]
 
-export default async function ClaimLPFeesPage() {
-  return withDocsI18n("getting-started/claim-lp-fees", (
+export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "getting-started/claim-lp-fees", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

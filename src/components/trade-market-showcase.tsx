@@ -120,7 +120,7 @@ function LogoPill({ ticker }: { ticker: string }) {
 
 function MarketChip({ item }: { item: MarketItem }) {
   return (
-    <article className="flex h-[3.45rem] w-[8.6rem] shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-2.5 shadow-[0_3px_8px_rgba(15,23,42,0.02)] sm:w-[8.95rem] dark:shadow-[0_3px_8px_rgba(0,0,0,0.25)]">
+    <article className="flex h-[3.45rem] w-[8.6rem] shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-2.5 shadow-[0_3px_8px_rgba(15,23,42,0.02)] sm:w-[8.95rem]">
       <LogoPill ticker={item.ticker} />
       <div className="min-w-0">
         <div className="truncate text-[0.8rem] font-semibold leading-tight tracking-[-0.02em] text-foreground">

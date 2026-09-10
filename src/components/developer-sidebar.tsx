@@ -37,6 +37,7 @@
  * @see src/app/developers/layout.tsx - Where this component is rendered
  * @see src/components/page-navigation.tsx - Uses exported navigationSections
  */
+import { useDesktopLayout } from "@/components/ui/use-desktop-layout"
 import { useTranslations } from "next-intl"
 import type { CSSProperties } from "react"
 import { useEffect, useRef } from "react"
@@ -196,6 +197,7 @@ const sectionColors: Record<string, typeof activeSectionStyles> = {
 }
 
 export default function DeveloperSidebar() {
+  const isDesktop = useDesktopLayout()
   const t = useTranslations("common")
   const pathname = usePathname()
   const normalizedPathname = pathname || "/"
@@ -255,7 +257,9 @@ export default function DeveloperSidebar() {
     })
 
     return () => window.cancelAnimationFrame(frame)
-  }, [normalizedPathname])
+  }, [normalizedPathname, isDesktop])
+
+  if (!isDesktop) return null
 
   return (
     <aside

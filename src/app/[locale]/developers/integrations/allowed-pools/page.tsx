@@ -4,9 +4,11 @@ import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('integrations/allowed-pools', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'integrations/allowed-pools', {
     title: "Allowed LP Pools",
     description: "Governance-defined allowlist and review criteria for LP pools that Avana is willing to admit as collateral.",
   })
@@ -47,8 +49,9 @@ const reviewCriteria = [
   "Operational support for indexing, fee handling, and liquidation routing",
 ]
 
-export default async function AllowedPoolsPage() {
-  return withDocsI18n("integrations/allowed-pools", (
+export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "integrations/allowed-pools", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

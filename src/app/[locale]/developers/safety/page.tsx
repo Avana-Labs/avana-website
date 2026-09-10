@@ -3,9 +3,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('safety', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'safety', {
     title: "Safety Mechanisms - Risk Framework",
     description: "Protocol-wide risk management for the Avana Hub and LP Collateral Spokes, including roles, bounded updates, and emergency controls.",
   })
@@ -189,8 +191,9 @@ const emergencyDisclosures = [
   "The path back to normal operation",
 ]
 
-export default async function RiskFrameworkPage() {
-  return withDocsI18n("safety", (
+export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "safety", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

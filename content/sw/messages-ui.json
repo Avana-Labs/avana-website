@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Jinsi nafasi zinazotungwa na LP zinavyofuatiliwa na kuliwekwa sawa."
     },
     "footer": {
-      "blurb": "Avana ni itifaki ya dhamana ya LP kwenye Aave v4 inayosaidia watoa kioevu kukopa dhidi ya nafasi zilizo hai huku wakibaki kwenye bwawa.",
+      "blurb": "Avana ni itifaki ya mikopo iliyojengwa kwenye Aave V4 inayowezesha nafasi za bwawa la ukwasi wa AMM kutumika kama dhamana. Watoa ukwasi kutoka Uniswap, Balancer, Curve, au Aerodrome wanaweza kuweka nafasi za LP zinazoungwa mkono, zikatathminiwa ndani ya mifumo ya hatari mahususi ya soko, na kukopa dhidi yake huku nafasi hizo zikisalia kuwa hai katika mabwawa husika.",
       "explore": "Chunguza",
       "resources": "Rasilimali",
       "docs": "Nguvu",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "Iliyotiwa nguvu na Aave v4",
-      "title": "Kopa dhidi ya nafasi LP",
-      "titleLine1": "Kopa Dhidi ya",
-      "titleLine2": "Hali za Ukinifu",
-      "subtitle": "Endelea kupata fedha za kibiashara wakati unafungua fedha taslimu kutoka nafasi za Uniswap, Curve, na Balancer.",
+      "title": "Avana ni soko la ukopeshaji la DeFi lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
+      "titleLine1": "Avana ni soko la ukopeshaji la DeFi",
+      "titleLine2": "lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
+      "subtitle": "Kopa sarafu fiche, bidhaa, FX, na rasilimali za ulimwengu halisi (RWA) kwenye mnyororo ukitumia nafasi zako za ukwasi za AMM kama dhamana ya mkopo.",
       "subtitleMobileLines": [
-        "Pata upo hadi 80% ya thamani ya Ziwa lako la Uwezekano",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Pata hadi 80% ya thamani ya Maziwa Yako ya Usalama kwa 5.5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "Jaribu Sandbox",
-      "secondaryCta": "Soma nyaraka"
+      "primaryCta": "Soma Pendekezo la ARFC",
+      "secondaryCta": "Jaribu Sandbox"
+    },
+    "intro": {
+      "text": "<ink>Mnamo Machi 2021, Aave Protocol ilizindua AMM Market.</ink> Ilikuwa itifaki ya kwanza kabisa kutumia ukwasi wa AMM kama dhamana na kuthibitisha kwamba nafasi za LP zinaweza kutumika kama dhamana ya mkopo, ingawa iliundwa kwa ajili ya DEX rahisi za wakati huo. <ink>Avana inaleta uvumbuzi huo katika kizazi kijacho cha DeFi</ink>, ikiwa imeundwa mahususi kwa ajili ya DEX za kisasa zenye ukwasi uliokolea, ikiwezesha watumiaji <ink>kukopa sarafu fiche, FX, na rasilimali za ulimwengu halisi moja kwa moja kwenye mnyororo dhidi ya nafasi zao za mabwawa ya ukwasi ya AMM</ink>."
     },
     "features": {
       "eyebrow": "Vipengele Muhimu",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "Kutana Avana",
       "body": "Avana ingegeuzwa ikawa rasilimali ya kutumia kutoka kwenye nafasi LP kwenye Aave v4 ili watoa kioevu waweze kukopa bila kuondoka kwenye bwawa."
+    },
+    "trustedBy": {
+      "caption": "Inaaminiwa na timu zinazobuni na kuzindua bidhaa bora za kiwango cha juu za Web3"
+    },
+    "cta": {
+      "title": "Jaribu Avana sasa."
     }
   },
   "product": {

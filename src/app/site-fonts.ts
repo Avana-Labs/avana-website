@@ -12,25 +12,8 @@ export const diatypeFont = localFont({
   src: [
     {
       path: "../../public/fonts/diatype/ABCDiatypeVariable-Site-Trial.woff2",
-      weight: "400",
+      weight: "400 600",
       style: "normal",
-    },
-  ],
-})
-
-/**
- * Italic display moments are isolated to a few editorial surfaces, so the
- * dedicated italic face stays opt-in instead of joining the global preload set.
- */
-export const diatypeItalicFont = localFont({
-  display: "swap",
-  preload: false,
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-  src: [
-    {
-      path: "../../public/fonts/diatype/ABCDiatype-RegularItalic-Trial.woff2",
-      weight: "400",
-      style: "italic",
     },
   ],
 })

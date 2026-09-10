@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { existsSync } from "fs"
 import { join } from "path"
-import { getLocale } from "next-intl/server"
 import { formatContentDate } from "@/lib/content-i18n/format-date"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 import BlogPostLayout from "@/components/blog-post-layout"
 import { loadBlogContent } from "@/lib/content-i18n/load-content"
 import { buildOgImagePath, SITE_NAME } from "@/lib/site"
@@ -339,8 +339,8 @@ export function createBlogPage(slug: string) {
   const enPost = getBlogPost(slug)
   const image = getPostImage(enPost.image)
 
-  async function generateMetadata(): Promise<Metadata> {
-    const locale = await getLocale()
+  async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+    const locale = await resolveLocaleParam(params)
     const localizedPosts = (await loadBlogContent(locale)).posts as BlogPostDefinition[]
     const fallbackIndex = blogPosts.findIndex((entry) => entry.slug === slug)
     const post =
@@ -350,8 +350,8 @@ export function createBlogPage(slug: string) {
     return buildBlogMetadata(post as BlogPostDefinition)
   }
 
-  async function Page() {
-    const locale = await getLocale()
+  async function Page({ params }: LocaleParamsProps) {
+    const locale = await resolveLocaleParam(params)
     const localizedPosts = (await loadBlogContent(locale)).posts as BlogPostDefinition[]
     // English slug routes; loadBlogContent restores EN slugs on each locale file.
     const bySlug = localizedPosts.find((entry) => entry.slug === slug) as BlogPostDefinition | undefined

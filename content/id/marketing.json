@@ -285,7 +285,12 @@
       "Tinta Avana",
       "Teks utama dan warna logo gelap. Gunakan ini ketika kontras dan otoritas penting.",
       "Sian Avana",
-      "Aksen utama untuk status aktif, tautan, sorotan utama, dan ajakan bertindak yang dipimpin Avana."
+      "Aksen utama untuk status aktif, tautan, sorotan utama, dan ajakan bertindak yang dipimpin Avana.",
+      "Jangan meregangkan atau memampatkan logo.",
+      "Jangan memutar atau membalik tanda.",
+      "Jangan mewarnai ulang logo di luar palet yang disetujui.",
+      "Jangan memotong tanda atau menempatkannya terlalu dekat ke tepi.",
+      "Jangan menyesakkan tanda dengan logo mitra atau label UI."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "dengan APR 5,5% tanpa menarik likuiditas atau melepaskan biaya perdagangan.",
       "Dapatkan bunga dari permintaan peminjam LP",
       "Cara tim memanfaatkan kredit LP",
-      "Kredit LP untuk bekerja"
+      "Kredit LP untuk bekerja",
+      "Akses pinjaman di ratusan pool",
+      "Terus dapatkan biaya trading sambil menarik kredit dengan jaminan LP Anda.",
+      "Pasar Multiply untuk mengulang modal, menyetel risiko pool, dan mengelola kesehatan posisi.",
+      "Keamanan Posisi",
+      "Dirancang untuk leverage yang aman",
+      "Batas pinjaman"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Pertanyaan yang sering diajukan.",
       "Sering ditanyakan",
       "pertanyaan"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Bebaskan modal dari pasar AMM",
+      "Tiga pasar native untuk meminjam, memperoleh bunga, dan mengelola leverage.",
+      "Pinjam dengan jaminan posisi LP",
+      "Pinjam dengan jaminan posisi LP sementara likuiditas Anda tetap aktif di AMM dasarnya.",
+      "Berikan pinjaman di pasar Hub",
+      "Sediakan modal ke pasar pinjaman yang terhubung ke Hub dan raih imbal hasil dari permintaan peminjam berjaminan LP.",
+      "Lipatgandakan imbal hasil likuiditas",
+      "Gunakan kredit berjaminan LP untuk membangun leverage terkelola tanpa keluar dari posisi likuiditas dasar Anda.",
+      "Avana Meminjam dengan jaminan posisi LP",
+      "Avana Memberi pinjaman di pasar terhubung Hub",
+      "Avana Multiply imbal hasil leverage terkelola"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Kendalikan portofolio Anda dengan Ask AI",
+      "Simulasikan loop imbal hasil, otomatiskan pengaman pinjaman, dan jalankan dengan bahasa sehari-hari.",
+      "Jawab pertanyaan “bagaimana jika?” berikutnya",
+      "Tanyakan bagaimana penurunan pasar 20% memengaruhi health factor Anda, atau simulasikan loop imbal hasil 3x sebelum menempatkan modal.",
+      "“Simulasikan loop imbal hasil 3x ETH-USDC dan tampilkan harga likuidasi saya jika ETH turun 15%”",
+      "Ubah lima transaksi menjadi satu kalimat",
+      "Tukar token, jembatani antar-chain, dan setor ke pool likuiditas sekaligus, tanpa berpindah jaringan atau menandatangani lima persetujuan.",
+      "“Tukar 5 ETH ke USDC, jembatani ke Arbitrum, dan setor ke tri-pool Curve”",
+      "Tetapkan aturan bersyarat lalu tinggalkan",
+      "Minta Ask AI meminjam hanya saat suku bunga turun di bawah 4%, atau menyeimbangkan ulang LP Anda jika harga pool menyimpang dari target.",
+      "“Pinjam 25.000 USDC dengan jaminan posisi LP saya setiap kali APR pinjaman Aave turun di bawah 3,8%”",
+      "Tidur nyenyak di tengah gejolak pasar",
+      "Agen otonom mengawasi agunan Anda 24/7, menyesuaikan posisi dan memicu stop-loss jauh sebelum risiko likuidasi.",
+      "“Jaga health factor saya di atas 1,6 dengan otomatis mengurangi leverage saat volatilitas melonjak”",
+      "Temukan imbal hasil terbaik tanpa menelusuri berjam-jam",
+      "Tanyakan pool mana yang menawarkan rasio biaya terhadap risiko terbaik untuk aset Anda, bandingkan kedalaman DEX secara real-time, dan terapkan dengan sekali klik.",
+      "“Cari pool dengan APY biaya tertinggi untuk wstETH dengan kedalaman likuiditas minimal $5 juta di seluruh DEX”",
+      "Antarmuka simulasi dan pengelolaan portofolio Avana Multiply",
+      "Alur eksekusi otomatis multi-langkah Avana Express",
+      "Pemantauan suku bunga dan parameter pinjaman bersyarat Avana Borrow",
+      "Pemantauan posisi 24/7 dan pengaman risiko otomatis Avana",
+      "Antarmuka penemuan imbal hasil dan perbandingan pool Avana Lend"
     ]
   }
 }

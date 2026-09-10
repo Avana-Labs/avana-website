@@ -285,7 +285,12 @@
       "Avana Inkt",
       "Hoofdtekst en donkere logokleur. Gebruik het wanneer contrast en autoriteit belangrijk zijn.",
       "Avana cyaan",
-      "Primaire accent voor actieve toestanden, links, belangrijke hoogtepunten en Avana-geleide oproepen tot actie."
+      "Primaire accent voor actieve toestanden, links, belangrijke hoogtepunten en Avana-geleide oproepen tot actie.",
+      "Rek of comprimeer het logo niet.",
+      "Draai of spiegel het merkteken niet.",
+      "Verkleur het logo niet buiten de goedgekeurde kleuren.",
+      "Snijd het merkteken niet bij en plaats het niet te dicht bij een rand.",
+      "Druk het merkteken niet in met partnerlogo’s of UI-labels."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "tegen 5,5% jaarlijkse rente zonder liquiditeit op te nemen of handelskosten op te geven.",
       "Verdien rente uit vraag van LP-geldleners",
       "Manieren waarop teams LP-krediet inzetten",
-      "LP-krediet aan het werk"
+      "LP-krediet aan het werk",
+      "Krijg toegang tot leningen over honderden pools",
+      "Blijf handelskosten verdienen terwijl je krediet opneemt tegen je LP.",
+      "Multiply-markten om kapitaal te loopen, poolrisico af te stemmen en positiegezondheid te beheren.",
+      "Positieveiligheid",
+      "Ontworpen voor veilige hefboom",
+      "Leenlimiet"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Veelgestelde vragen.",
       "Veelgestelde",
       "vragen"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Maak kapitaal vrij uit AMM-markten",
+      "Drie native markten om te lenen, rente te verdienen en hefboom te beheren.",
+      "Leen tegen LP-posities",
+      "Leen tegen LP-posities terwijl je liquiditeit actief blijft in de onderliggende AMM.",
+      "Leen uit op Hub-markten",
+      "Breng kapitaal in op Hub-gekoppelde leenmarkten en verdien aan de vraag van LP-gedekte leners.",
+      "Vermenigvuldig liquiditeitsrendementen",
+      "Gebruik LP-gedekt krediet voor beheerde hefboom zonder je basispositie in liquiditeit te verlaten.",
+      "Avana Lenen tegen LP-posities",
+      "Avana Uitlenen op Hub-gekoppelde markten",
+      "Avana Multiply beheerd hefboomrendement"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Bestuur je portefeuille met Ask AI",
+      "Simuleer rendementsloops, automatiseer leengrenzen en voer uit in gewone taal.",
+      "Beantwoord je volgende ‘wat als?’",
+      "Vraag hoe een marktdaling van 20% je health factor beïnvloedt, of simuleer een 3x rendementsloop voordat je kapitaal inzet.",
+      "‘Simuleer een 3x ETH-USDC-rendementsloop en toon mijn liquidatieprijs als ETH 15% daalt’",
+      "Verander vijf transacties in één zin",
+      "Wissel tokens, overbrug chains en stort in liquiditeitspools in één keer, zonder van netwerk te wisselen of vijf goedkeuringen te ondertekenen.",
+      "‘Wissel 5 ETH voor USDC, bridge naar Arbitrum en stort in de Curve tri-pool’",
+      "Stel voorwaardelijke regels in en laat het los",
+      "Zeg Ask AI alleen te lenen als de rente onder 4% zakt, of je LP te herbalanceren als poolprijzen van je doel afwijken.",
+      "‘Leen 25.000 USDC tegen mijn LP-positie zodra de Aave-leen-APR onder 3,8% zakt’",
+      "Slaap door volatiele marktschommelingen heen",
+      "Autonome agents bewaken je onderpand 24/7, passen posities aan en activeren stop-loss ruim vóór liquidatierisico.",
+      "‘Houd mijn health factor boven 1,6 door automatisch af te bouwen bij volatiliteitspieken’",
+      "Vind toprendementen zonder eindeloos zoeken",
+      "Vraag welke pools de beste fee-risicoverhouding voor je activa bieden, vergelijk DEX-diepte in realtime en zet in met één klik.",
+      "‘Vind de pool met de hoogste fee-APY voor wstETH met minstens $5 mln liquiditeitsdiepte over alle DEX’en’",
+      "Avana Multiply-interface voor simulatie en portefeuillebeheer",
+      "Avana Express meerstaps geautomatiseerde uitvoeringsflow",
+      "Avana Borrow rentebewaking en voorwaardelijke leenparameters",
+      "Avana 24/7 positiebewaking en geautomatiseerde risicobescherming",
+      "Avana Lend-interface voor rendementsontdekking en poolvergelijking"
     ]
   }
 }

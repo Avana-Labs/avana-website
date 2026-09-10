@@ -285,7 +285,12 @@
       "Avana Atrament",
       "Główny tekst i ciemny kolor logo. Używaj go, gdy liczy się kontrast i autorytet.",
       "Avana Cyjan",
-      "Główny akcent dla aktywnych stanów, linków, kluczowych wyróżnień i wezwań do działania prowadzonych przez Avana."
+      "Główny akcent dla aktywnych stanów, linków, kluczowych wyróżnień i wezwań do działania prowadzonych przez Avana.",
+      "Nie rozciągaj ani nie ściskaj logo.",
+      "Nie obracaj ani nie odwracaj znaku.",
+      "Nie zmieniaj kolorów logo poza zatwierdzonymi wariantami.",
+      "Nie przycinaj znaku ani nie umieszczaj go zbyt blisko krawędzi.",
+      "Nie zagęszczaj znaku logotypami partnerów ani etykietami interfejsu."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "przy 5,5% APR bez wycofywania płynności ani rezygnowania z opłat handlowych.",
       "Zarabiaj odsetki od popytu pożyczkobiorców LP",
       "Sposoby, w jakie zespoły wykorzystują kredyt LP",
-      "kredyt LP w działaniu"
+      "kredyt LP w działaniu",
+      "Uzyskaj dostęp do pożyczek w setkach pul",
+      "Zarabiaj dalej na opłatach transakcyjnych, pobierając kredyt pod swoją LP.",
+      "Rynki Multiply do zapętlania kapitału, dostrajania ryzyka pul i zarządzania kondycją pozycji.",
+      "Bezpieczeństwo pozycji",
+      "Zaprojektowane dla bezpiecznej dźwigni",
+      "Limit pożyczki"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Najczęściej zadawane pytania.",
       "Często zadawane",
       "pytania"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Uwolnij kapitał z rynków AMM",
+      "Trzy natywne rynki do pożyczania, zarabiania odsetek i zarządzania dźwignią.",
+      "Pożyczaj pod pozycje LP",
+      "Pożyczaj pod pozycje LP, gdy Twoja płynność pozostaje aktywna w bazowym AMM.",
+      "Udzielaj pożyczek na rynkach Hub",
+      "Dostarczaj kapitał na rynki pożyczkowe połączone z Hubem i zarabiaj na popycie pożyczkobiorców zabezpieczonych LP.",
+      "Zwielokrotnij zyski z płynności",
+      "Wykorzystaj kredyt zabezpieczony LP, aby tworzyć zarządzaną dźwignię bez wychodzenia z bazowej pozycji płynności.",
+      "Avana Pożyczanie pod pozycje LP",
+      "Avana Udzielanie pożyczek na rynkach połączonych z Hubem",
+      "Avana Multiply zysk z zarządzanej dźwigni"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Zarządzaj portfelem za pomocą Ask AI",
+      "Symuluj pętle zysku, automatyzuj zabezpieczenia pożyczek i wykonuj polecenia zwykłym językiem.",
+      "Odpowiedz na kolejne „co jeśli?”",
+      "Zapytaj, jak spadek rynku o 20% wpłynie na Twój health factor, albo zasymuluj pętlę zysku 3x, zanim zaangażujesz kapitał.",
+      "„Zasymuluj pętlę zysku 3x ETH-USDC i pokaż moją cenę likwidacji, jeśli ETH spadnie o 15%”",
+      "Zamień pięć transakcji w jedno zdanie",
+      "Wymieniaj tokeny, przenoś się między łańcuchami i wpłacaj do puli płynności za jednym razem, bez zmiany sieci i podpisywania pięciu zatwierdzeń.",
+      "„Wymień 5 ETH na USDC, przenieś na Arbitrum i wpłać do tri-puli Curve”",
+      "Ustaw reguły warunkowe i odpuść",
+      "Powiedz Ask AI, aby pożyczało tylko wtedy, gdy stopy spadną poniżej 4%, albo zrównoważyło Twoją LP, gdy ceny puli odbiegną od celu.",
+      "„Pożycz 25 000 USDC pod moją pozycję LP, gdy tylko APR pożyczki Aave spadnie poniżej 3,8%”",
+      "Śpij spokojnie mimo wahań rynku",
+      "Autonomiczni agenci pilnują Twojego zabezpieczenia całą dobę, dostosowując pozycje i uruchamiając stop-lossy na długo przed ryzykiem likwidacji.",
+      "„Utrzymuj mój health factor powyżej 1,6, automatycznie zmniejszając dźwignię przy wzroście zmienności”",
+      "Znajdź najwyższe zyski bez godzin szukania",
+      "Zapytaj, które pule oferują najlepszy stosunek opłat do ryzyka dla Twoich aktywów, porównaj głębokość DEX-ów w czasie rzeczywistym i wdrażaj jednym kliknięciem.",
+      "„Znajdź pulę o najwyższym APY z opłat dla wstETH z płynnością co najmniej 5 mln USD na wszystkich DEX-ach”",
+      "Interfejs symulacji i zarządzania portfelem Avana Multiply",
+      "Wieloetapowy zautomatyzowany przepływ wykonania Avana Express",
+      "Monitorowanie stóp i warunkowe parametry pożyczki Avana Borrow",
+      "Całodobowe monitorowanie pozycji i automatyczne zabezpieczenia ryzyka Avana",
+      "Interfejs wyszukiwania zysków i porównywania pul Avana Lend"
     ]
   }
 }

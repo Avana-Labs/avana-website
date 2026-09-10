@@ -1,6 +1,6 @@
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
-import Image from "next/image"
 import { Link } from "@/i18n/navigation"
+import { FeaturePageHero } from "@/components/feature-page-hero"
 import type { LucideIcon } from "lucide-react"
 import {
   Activity,
@@ -13,9 +13,12 @@ import {
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import LeverageGlanceShowcaseSection from "@/components/leverage-glance-showcase-section"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import HomepageTestimonialSection from "@/components/homepage/HomepageTestimonialSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { siteRoutes } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const loopingBenefits: {
   title: string
@@ -59,25 +62,6 @@ const loopingBenefits: {
     icon: Undo2,
   },
 ]
-
-const leverageFeatureItems = [
-  {
-    title: "Leverage Layer",
-    description: "Draw LP-backed credit and deploy borrowed capital into the market.",
-  },
-  {
-    title: "Unwind Layer",
-    description: "Close, reduce, repay, or liquidate with debt coverage first.",
-  },
-  {
-    title: "Risk Layer",
-    description: "Track collateral, debt, and leverage in real time before risk rises.",
-  },
-  {
-    title: "Monitoring Layer",
-    description: "Watch collateral, debt, leverage, liquidation, and health in one view.",
-  },
-] as const
 
 const leverageWorkflowSteps = [
   {
@@ -141,68 +125,47 @@ const leverageFaqItems: InlineFaqItem[] = [
   },
 ] as const
 
-export async function generateMetadata() {
-  return createPageMetadata("multiply", "/multiply", {
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "multiply", "/multiply", {
     keywords: ["LP leverage","AMM leverage","DeFi leverage","DeFi perps","LP perps","LP collateral","Aave v4"],
   })
 }
 
-export default async function MultiplyPage() {
+export default async function MultiplyPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing keys={["multiply/multiply-content", "leverage-glance-showcase-section", "position-safety-section", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
     <main className="bg-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-[1200px] flex-col px-5 pt-10 sm:px-6 sm:pt-12 md:px-8 md:pt-20 lg:max-w-[64rem] 2xl:max-w-[72rem] lg:min-h-0 lg:px-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                    <Image
-                      src="/images/Hero__4_.webp"
-                      alt="Avana leverage market interface"
-                      width={1400}
-                      height={1400}
-                      priority
-                      className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                      sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                    />
-                  </div>
-                </div>
-
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[12ch] text-foreground md:mb-5">
-                    <span>Amplify yield</span>
-                    <br />
-                    <span>under control</span>
-                  </h1>
-
-                  <p className="type-display-lead mb-5 max-w-[38ch] sm:max-w-[42ch] md:mb-6">
-                    Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Looping
-                    </Link>
-                    <Link
-                      href={siteRoutes.developers}
-                      className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <FeaturePageHero
+        title={
+          <>
+            <span>Amplify yield</span>
+            <br />
+            <span>under control</span>
+          </>
+        }
+        description="Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure."
+        imageSrc="/images/Avana Multiply Hero.png"
+        imageAlt="Avana leverage market interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+        >
+          Try Looping
+        </Link>
+        <Link
+          href={siteRoutes.developers}
+          className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
+        >
+          View Docs
+        </Link>
+      </FeaturePageHero>
 
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">
@@ -234,20 +197,17 @@ export default async function MultiplyPage() {
 
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
-          <LeverageGlanceShowcaseSection />
+          <LeverageGlanceShowcaseSection locale={locale} />
         </div>
       </section>
 
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="max-w-[58rem] space-y-4 text-left">
-              <SectionIntro
-                eyebrow="Why looping"
-                eyebrowTone="violet"
-                title={<span className="md:whitespace-nowrap">Multiply your yield up to 10x</span>}
-              />
-            </div>
+            <MarketingLeadHeader
+              title="Why looping"
+              subtitle="Multiply your yield up to 10x"
+            />
 
             <div className="mt-10 -mx-5 overflow-x-auto px-5 pb-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] md:mx-0 md:mt-16 md:overflow-visible md:px-0 md:pb-0 md:snap-none [&::-webkit-scrollbar]:hidden">
               <div className="flex w-max gap-8 md:grid md:w-full md:grid-cols-2 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
@@ -272,52 +232,16 @@ export default async function MultiplyPage() {
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] md:items-start md:gap-8 lg:gap-10 xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)]">
-              <div className="space-y-4 md:self-start">
-                <SectionIntro
-                  eyebrow="Position Safety"
-                  eyebrowTone="emerald"
-                  title={
-                    <>
-                      <span className="block">Designed for</span>
-                      <span className="block">safe leverage</span>
-                    </>
-                  }
-                  titleClassName="max-w-[14ch] md:max-w-none"
-                />
-                <ol className="mt-7 grid max-w-[32rem] gap-4">
-                  {leverageFeatureItems.map((item, index) => (
-                    <li key={item.title} className="flex gap-3">
-                      <span className="type-meta-label mt-0.5 shrink-0">{index + 1}.</span>
-                      <p className="type-body-copy">
-                        <span className="text-foreground">{item.title}.</span> {item.description}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-              <div className="flex items-center justify-center pt-1 md:justify-end">
-                <div className="relative w-full max-w-[17rem] sm:max-w-[22rem] md:max-w-[25rem] lg:max-w-[28rem] xl:max-w-[31rem]">
-                  <Image
-                    src="/images/Avana Coin.webp"
-                    alt="Avana coin illustration"
-                    width={1714}
-                    height={1601}
-                    className="h-auto w-full"
-                    sizes="(min-width: 1280px) 31rem, (min-width: 1024px) 28rem, (min-width: 768px) 25rem, (min-width: 640px) 22rem, 17rem"
-                  />
-                </div>
-              </div>
-            </div>
+            <HomepageTestimonialSection />
           </div>
         </div>
       </section>
 
-
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col px-4 sm:px-6">
+      <div className="site-content-shell flex flex-col">
         <div className="relative z-0 flex flex-1 flex-col">
           <div className="site-content-width flex flex-col site-section-stack site-section-gap pb-16 md:pb-20 2xl:pb-18">
             <HomepageNewsroomSection
+              locale={locale}
               collection="leverage"
               eyebrowTone="rose"
             />

@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "วิธีการตรวจสอบและชำระบัญชีตำแหน่งที่ได้รับการสนับสนุนโดย LP"
     },
     "footer": {
-      "blurb": "Avana เป็นโปรโตคอลหลักประกัน LP บน Aave v4 ที่ช่วยให้ผู้ให้สภาพคล่องกู้ยืมจากตำแหน่งที่ใช้งานอยู่ในขณะที่ยังคงอยู่ในพูล",
+      "blurb": "Avana เป็นโปรโตคอลการกู้ยืมที่สร้างขึ้นบน Aave V4 ซึ่งช่วยให้สามารถใช้สถานะพูลสภาพคล่อง AMM เป็นหลักประกันได้ ผู้ให้บริการสภาพคล่องจาก Uniswap, Balancer, Curve หรือ Aerodrome สามารถฝากสถานะ LP ที่รองรับ รับการประเมินภายใต้กรอบความเสี่ยงเฉพาะของแต่ละตลาด และกู้ยืมโดยใช้หลักประกันดังกล่าวในขณะที่สถานะยังคงทำงานอยู่ในพูลอ้างอิง",
       "explore": "สำรวจ",
       "resources": "ทรัพยากร",
       "docs": "เอกสาร",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "ขับเคลื่อนโดย Aave v4",
-      "title": "ยืมโดยใช้ LP ตำแหน่งเป็นหลักประกัน",
-      "titleLine1": "ยืมโดยใช้เป็นหลักประกัน",
-      "titleLine2": "ตำแหน่งสภาพคล่อง",
-      "subtitle": "ทำรายได้ค่าธรรมเนียมการซื้อขายต่อไปในขณะที่ปลดล็อกสภาพคล่องจากตำแหน่ง Uniswap, Curve, และ Balancer",
+      "title": "Avana คือตลาดการกู้ยืมแบบ Onchain ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
+      "titleLine1": "Avana คือตลาดการกู้ยืมแบบ Onchain",
+      "titleLine2": "ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
+      "subtitle": "กู้ยืมคริปโต, สินค้าโภคภัณฑ์, FX และสินทรัพย์ในโลกจริง (RWA) บนเชน โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
       "subtitleMobileLines": [
-        "เข้าถึงมูลค่าของสภาพคล่องพูลของคุณได้สูงสุด 80%",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "เข้าถึงมูลค่าของสภาพคล่องของคุณได้สูงสุดถึง 80% ในอัตรา 5.5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "ลอง Sandbox",
-      "secondaryCta": "อ่านเอกสาร"
+      "primaryCta": "อ่านข้อเสนอ ARFC",
+      "secondaryCta": "ทดลองใช้ Sandbox"
+    },
+    "intro": {
+      "text": "<ink>ย้อนกลับไปในเดือนมีนาคม 2021 Aave Protocol ได้เปิดตัว AMM Market</ink> ซึ่งถือเป็นโปรโตคอลแรกของโลกที่นำสภาพคล่องของ AMM มาใช้เป็นหลักประกันเงินกู้ และพิสูจน์ว่าสถานะ LP สามารถค้ำประกันได้จริง แต่ในยุคนั้นยังถูกออกแบบมาสำหรับ DEX และโมเดลสภาพคล่องแบบเรียบง่าย <ink>Avana ได้นำแนวคิดนั้นก้าวข้ามสู่ยุคถัดไป</ink> โดยออกแบบขึ้นโดยเฉพาะสำหรับ DEX แบบ Concentrated Liquidity ที่มีความซับซ้อนในปัจจุบัน ช่วยให้ผู้ใช้สามารถ<ink>กู้ยืมคริปโต, FX และสินทรัพย์ในโลกแห่งความเป็นจริงบนเชน โดยใช้สถานะ AMM Liquidity Pool ของตนเป็นหลักประกัน</ink>"
     },
     "features": {
       "eyebrow": "คุณสมบัติหลัก",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "พบ Avana",
       "body": "Avana แปลง LP ตำแหน่งให้เป็นหลักประกันที่ใช้งานได้บน Aave v4 เพื่อให้ผู้ให้สภาพคล่องสามารถยืมโดยไม่ต้องออกจากพูล"
+    },
+    "trustedBy": {
+      "caption": "ได้รับความไว้วางใจจากทีมชั้นนำที่พัฒนาและส่งมอบผลิตภัณฑ์ Web3 คุณภาพสูง"
+    },
+    "cta": {
+      "title": "ลองใช้ Avana ตอนนี้เลย"
     }
   },
   "product": {

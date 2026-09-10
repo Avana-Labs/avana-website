@@ -1,17 +1,14 @@
 import { Suspense } from "react"
 import { getFaqCategories } from "@/app/[locale]/faq/faq-content"
 import { FaqFromSearchParams, FaqView } from "@/app/[locale]/faq/faq-client"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 /**
  * FAQ loads category bodies from content/{locale}/faq.json using the route
  * locale param (not cookies) so SSG for every locale is correct.
  */
-export default async function FaqPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
-  const { locale } = await params
+export default async function FaqPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   const categories = await getFaqCategories(locale)
   const defaultCategory = categories[0]?.name ?? ""
 

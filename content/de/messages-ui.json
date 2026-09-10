@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Wie LP-gestützte Positionen überwacht und abgewickelt werden."
     },
     "footer": {
-      "blurb": "Avana ist ein LP-Besicherungsprotokoll auf Aave v4, das Liquiditätsanbietern hilft, gegen aktive Positionen zu leihen, während sie im Pool bleiben.",
+      "blurb": "Avana ist ein auf Aave V4 aufgebautes Kreditprotokoll, das es ermöglicht, AMM-Liquiditätspool-Positionen als Sicherheiten zu nutzen. Liquiditätsanbieter von Uniswap, Balancer, Curve oder Aerodrome können unterstützte LP-Positionen hinterlegen, diese innerhalb marktspezifischer Risikorahmen bewerten lassen und Kredite dagegen aufnehmen, während die Positionen in den zugrunde liegenden Pools aktiv bleiben.",
       "explore": "Erkunden",
       "resources": "Ressourcen",
       "docs": "Dokumente",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "Angetrieben von Aave v4",
-      "title": "Auf LP Positionen leihen",
-      "titleLine1": "Gegen Darlehen aufnehmen",
-      "titleLine2": "Liquiditätspositionen",
-      "subtitle": "Verdienen Sie weiterhin Handelsgebühren, während Sie Liquidität aus den Positionen Uniswap, Curve und Balancer freischalten.",
+      "title": "Avana ist der Lending-Markt, speziell entwickelt für AMM-Liquiditätspools.",
+      "titleLine1": "Avana ist der Lending-Markt,",
+      "titleLine2": "speziell entwickelt für AMM-Liquiditätspools.",
+      "subtitle": "Leihen Sie Krypto, Rohstoffe, Devisen und Real-World-Assets onchain – mit Ihren AMM-Liquiditätspositionen als Kollateral.",
       "subtitleMobileLines": [
-        "Greifen Sie auf bis zu 80 % des Werts Ihres Liquiditätspools zu",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Greifen Sie auf bis zu 80 % Ihres Liquiditätspoolwerts zu 5,5 % APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "Versuche Sandbox",
-      "secondaryCta": "Dokumente lesen"
+      "primaryCta": "ARFC lesen",
+      "secondaryCta": "Sandbox testen"
+    },
+    "intro": {
+      "text": "<ink>Im März 2021 launchte das Aave-Protokoll den AMM Market.</ink> Es war das erste Protokoll, das AMM-Liquidität als Kollateral nutzte und bewies, dass LP-Positionen als Kreditsicherheit dienen können – damals allerdings optimiert für einfachere DEXs und Liquiditätsmodelle. <ink>Avana bringt dieses Konzept in die nächste Generation</ink>: maßgeschneidert für die heutigen hochkomplexen DEXs und Liquiditätspositionen, damit Nutzer <ink>Krypto, Devisen und Real-World-Assets direkt onchain gegen ihre AMM-Liquiditätspool-Positionen leihen können</ink>."
     },
     "features": {
       "eyebrow": "Hauptmerkmale",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "Treffen Avana",
       "body": "Avana wandelt unterstützte LP Positionen in nutzbares Sicherheiten auf Aave v4 um, sodass Liquiditätsanbieter leihen können, ohne den Pool zu verlassen."
+    },
+    "trustedBy": {
+      "caption": "Das Vertrauen führender Teams, die erstklassige Web3-Produkte entwickeln und launchen"
+    },
+    "cta": {
+      "title": "Jetzt Avana ausprobieren."
     }
   },
   "product": {

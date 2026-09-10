@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "如何监控和结算LP支持的头寸。"
     },
     "footer": {
-      "blurb": "Avana 是一个在 Aave v4 上的 LP 抵押协议，它帮助流动性提供者在保持在池中的同时，对活跃头寸进行借贷。",
+      "blurb": "Avana 是基于 Aave V4 构建的借贷协议，支持将 AMM 流动性池头寸用作抵押品。来自 Uniswap、Balancer、Curve 或 Aerodrome 的流动性提供者可以存入受支持的 LP 头寸，在特定市场的风险框架内进行评估，并在头寸继续在底层池中保持活跃的同时进行借贷。",
       "explore": "探索",
       "resources": "资源",
       "docs": "文档",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "由Aave v4提供支持",
-      "title": "以LP个头寸借款",
-      "titleLine1": "以……作抵押借款",
-      "titleLine2": "流动性头寸",
-      "subtitle": "在从Uniswap、Curve和Balancer头寸解锁流动性的同时继续赚取交易费用。",
+      "title": "Avana 是专为 AMM 流动性池打造的链上借贷市场。",
+      "titleLine1": "Avana 是专为 AMM 流动性池",
+      "titleLine2": "打造的链上借贷市场。",
+      "subtitle": "以您的 AMM 流动性头寸为抵押品，在链上借入加密资产、大宗商品、外汇及现实世界资产（RWA）。",
       "subtitleMobileLines": [
-        "访问高达您流动性池价值的80%",
-        "在5.5% APR 不撤出流动性或",
-        "放弃交易费用。"
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "以5.5%的利率访问高达您流动性池价值的80% APR",
-        "无需撤回流动性或放弃交易费用。"
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "尝试 Sandbox",
-      "secondaryCta": "阅读文档"
+      "primaryCta": "阅读 ARFC 提案",
+      "secondaryCta": "体验 Sandbox"
+    },
+    "intro": {
+      "text": "<ink>早在 2021 年 3 月，Aave 协议就推出了 AMM Market。</ink>它开创性地将 AMM 流动性引入抵押品领域，首次证明 LP 头寸可用于借贷担保；但它受限于当时早期的简单 DEX 与恒定乘积流动性模型。<ink>Avana 将这一开拓性理念带入下一代 DeFi</ink>，专门面向当今日益精密的集中流动性 DEX 与复杂 LP 头寸量身打造，让流动性提供者能够<ink>直接以其 AMM 流动性池头寸为抵押，在链上借入加密资产、外汇和现实世界资产</ink>。"
     },
     "features": {
       "eyebrow": "主要特点",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "遇见Avana",
       "body": "Avana 将 LP 个仓位转化为在 Aave v4 上可用的抵押品，以便流动性提供者可以在不离开资金池的情况下借款。"
+    },
+    "trustedBy": {
+      "caption": "深受打造与发布高质量 Web3 产品团队的信赖"
+    },
+    "cta": {
+      "title": "立即体验 Avana。"
     }
   },
   "product": {

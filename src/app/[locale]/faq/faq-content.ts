@@ -1,5 +1,5 @@
 import { revalidateTag } from "next/cache"
-import { getLocale } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { defaultLocale } from "@/i18n/locales"
 import { loadFaqContent } from "@/lib/content-i18n/load-content"
 
@@ -34,12 +34,11 @@ async function loadCategoriesForLocale(locale: string): Promise<FaqCategory[]> {
   return data.categories as FaqCategory[]
 }
 
-export async function getFaqCategories(locale?: string): Promise<FaqCategory[]> {
-  const resolved = locale ?? (await getLocale())
-  return loadCategoriesForLocale(resolved)
+export async function getFaqCategories(locale: AppLocale): Promise<FaqCategory[]> {
+  return loadCategoriesForLocale(locale)
 }
 
-export async function buildFaqSchema(locale: string = defaultLocale) {
+export async function buildFaqSchema(locale: AppLocale = defaultLocale) {
   const categories = await getFaqCategories(locale)
   const questions = categories.flatMap((category) => category.questions.slice(0, 3))
 

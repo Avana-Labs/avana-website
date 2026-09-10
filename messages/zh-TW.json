@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "如何監控和結算LP支持的頭寸。"
     },
     "footer": {
-      "blurb": "Avana 是一個在 Aave v4 上的 LP 抵押協議，它幫助流動性提供者在保持在池中的同時，對活躍頭寸進行借貸。",
+      "blurb": "Avana 是基於 Aave V4 構建的借貸協議，支援將 AMM 流動性池頭寸用作抵押品。來自 Uniswap、Balancer、Curve 或 Aerodrome 的流動性提供者可以存入受支援的 LP 頭寸，在特定市場的風險框架內進行評估，並在頭寸繼續在底層池中保持活躍的同時進行借貸。",
       "explore": "探索",
       "resources": "資源",
       "docs": "文檔",
@@ -164,12 +164,6 @@
       "latestFrom": "來自Avana的最新消息",
       "readNewsroom": "閱讀新聞編輯部"
     },
-    "theme": {
-      "lightMode": "淺色模式",
-      "darkMode": "深色模式",
-      "systemMode": "跟隨系統",
-      "tapToChange": "點擊切換"
-    },
     "exportMenu": {
       "copyPage": "複製頁面",
       "copied": "已複製",
@@ -242,21 +236,24 @@
   "home": {
     "hero": {
       "eyebrow": "由Aave v4提供支持",
-      "title": "以LP個頭寸借款",
-      "titleLine1": "以……作抵押借款",
-      "titleLine2": "流動性頭寸",
-      "subtitle": "在從Uniswap、Curve和Balancer頭寸解鎖流動性的同時繼續賺取交易費用。",
-      "subtitleMobileLines": [
-        "訪問高達您流動性池價值的80%",
-        "年利率 5.5%，無需撤出流動性或",
-        "放棄交易手續費。"
-      ],
-      "subtitleDesktopLines": [
-        "以5.5%的利率訪問高達您流動性池價值的80% APR",
-        "年利率 5.5%，無需撤出流動性或放棄交易手續費。"
-      ],
-      "primaryCta": "嘗試 Sandbox",
-      "secondaryCta": "閱讀文檔"
+      "title": "Avana 是專為 AMM 流動性池打造的鏈上借貸市場。",
+      "titleLine1": "Avana 是專為 AMM 流動性池",
+      "titleLine2": "打造的鏈上借貸市場。",
+      "subtitle": "以您的 AMM 流動性部位為抵押品，在鏈上借入加密資產、大宗商品、外匯及現實世界資產（RWA）。",
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
+      "primaryCta": "閱讀 ARFC 提案",
+      "secondaryCta": "體驗 Sandbox"
+    },
+    "intro": {
+      "text": "<ink>早在 2021 年 3 月，Aave 協議就推出了 AMM Market。</ink>它開創性地將 AMM 流動性引入抵押品領域，首次證明 LP 部位可用於借貸擔保；但它受限於當時早期的簡單 DEX 與恆定乘積流動性模型。<ink>Avana 將這一開拓性理念帶入下一代 DeFi</ink>，專門面向當今日益精密的集中流動性 DEX 與複雜 LP 部位量身打造，讓流動性提供者能夠<ink>直接以其 AMM 流動性池部位為抵押，在鏈上借入加密資產、外匯和現實世界資產</ink>。"
     },
     "features": {
       "eyebrow": "主要特點",
@@ -272,6 +269,12 @@
     "buildTomorrow": {
       "title": "遇見Avana",
       "body": "Avana 將 LP 個倉位轉化為在 Aave v4 上可用的抵押品，以便流動性提供者可以在不離開資金池的情況下借款。"
+    },
+    "trustedBy": {
+      "caption": "深受打造與發布高品質 Web3 產品團隊的信賴"
+    },
+    "cta": {
+      "title": "立即體驗 Avana。"
     }
   },
   "product": {

@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Comment les positions garanties par LP sont surveillées et réglées."
     },
     "footer": {
-      "blurb": "Avana est un protocole à collatéral LP sur Aave v4 qui aide les fournisseurs de liquidité à emprunter contre des positions actives tout en restant dans le pool.",
+      "blurb": "Avana est un protocole de prêt conçu sur Aave V4 permettant d’utiliser les positions de pool de liquidité AMM comme collatéral. Les fournisseurs de liquidité de Uniswap, Balancer, Curve ou Aerodrome peuvent déposer des positions LP prises en charge, les faire évaluer au sein de cadres de risque spécifiques à chaque marché et emprunter contre celles-ci tout en maintenant les positions actives dans les pools sous-jacents.",
       "explore": "Explorer",
       "resources": "Ressources",
       "docs": "Documents",
@@ -164,12 +164,6 @@
       "latestFrom": "Dernier de Avana",
       "readNewsroom": "Lire salle de rédaction"
     },
-    "theme": {
-      "lightMode": "Mode clair",
-      "darkMode": "Mode sombre",
-      "systemMode": "Système",
-      "tapToChange": "Appuyer pour changer"
-    },
     "exportMenu": {
       "copyPage": "Copier la page",
       "copied": "Copié",
@@ -242,21 +236,24 @@
   "home": {
     "hero": {
       "eyebrow": "Propulsé par Aave v4",
-      "title": "Emprunter contre LP positions",
-      "titleLine1": "Emprunter contre",
-      "titleLine2": "Positions de liquidité",
-      "subtitle": "Continuez à gagner des frais de trading tout en débloquant la liquidité des positions Uniswap, Curve et Balancer.",
-      "subtitleMobileLines": [
-        "Accédez jusqu'à 80 % de la valeur de votre pool de liquidité",
-        "à 5,5 % TAEG sans retirer de liquidité ni",
-        "abandonner les frais de trading."
-      ],
-      "subtitleDesktopLines": [
-        "Accédez jusqu'à 80 % de la valeur de votre pool de liquidité à 5,5 % APR",
-        "à 5,5 % TAEG sans retirer de liquidité ni abandonner les frais de trading."
-      ],
-      "primaryCta": "Essayez Sandbox",
-      "secondaryCta": "Lire les documents"
+      "title": "Avana est le marché de prêt conçu pour les pools de liquidité AMM.",
+      "titleLine1": "Avana est le marché de prêt",
+      "titleLine2": "conçu pour les pools de liquidité AMM.",
+      "subtitle": "Empruntez des cryptos, des matières premières, des devises FX et des actifs du monde réel onchain en utilisant vos positions de liquidité AMM comme collatéral.",
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
+      "primaryCta": "Lire l'ARFC",
+      "secondaryCta": "Essayer Sandbox"
+    },
+    "intro": {
+      "text": "<ink>En mars 2021, Aave Protocol a lancé AMM Market.</ink> Il est devenu le premier protocole à utiliser la liquidité AMM comme garantie et à prouver que les positions de LP pouvaient servir de collatéral, mais il a été conçu pour les DEX et les modèles de liquidité plus simples de son époque. <ink>Avana propulse cette idée vers la nouvelle génération</ink>, spécialement conçue pour les DEX et les positions de liquidité de plus en plus sophistiqués d’aujourd’hui, permettant aux utilisateurs <ink>d’emprunter des cryptos, du Forex et des actifs du monde réel onchain contre leurs positions de pool de liquidité AMM</ink>."
     },
     "features": {
       "eyebrow": "Caractéristiques principales",
@@ -272,6 +269,12 @@
     "buildTomorrow": {
       "title": "Rencontrez Avana",
       "body": "Avana transforme LP positions en garantie utilisable sur Aave v4 afin que les fournisseurs de liquidité puissent emprunter sans quitter le pool."
+    },
+    "trustedBy": {
+      "caption": "Adopté par les équipes qui conçoivent et déploient des produits Web3 de haute qualité"
+    },
+    "cta": {
+      "title": "Essayez Avana maintenant."
     }
   },
   "product": {

@@ -6,9 +6,11 @@ import { MessageSquare, Brain, Database, Calculator, BarChart3, RefreshCw } from
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata("copilot/workflow", {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, "copilot/workflow", {
     title: "Agent Workflow",
     description:
       "The end-to-end workflow Avana's Ask AI follows to turn intent into secure, optimized on-chain results.",
@@ -155,8 +157,9 @@ const steps: Step[] = [
   },
 ]
 
-export default async function CopilotWorkflowPage() {
-  return withDocsI18n("copilot/workflow", (
+export default async function CopilotWorkflowPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "copilot/workflow", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

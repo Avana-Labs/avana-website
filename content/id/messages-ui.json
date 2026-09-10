@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "Bagaimana posisi yang didukung LP dipantau dan diselesaikan."
     },
     "footer": {
-      "blurb": "Avana adalah protokol LP-jaminan di Aave v4 yang membantu penyedia likuiditas meminjam terhadap posisi aktif sambil tetap berada di pool.",
+      "blurb": "Avana adalah protokol peminjaman yang dibangun di atas Aave V4 yang memungkinkan posisi liquidity pool AMM digunakan sebagai jaminan. Penyedia likuiditas dari Uniswap, Balancer, Curve, atau Aerodrome dapat mendepositkan posisi LP yang didukung, dievaluasi dalam kerangka risiko spesifik pasar, dan meminjam dengan jaminan tersebut sementara posisi tetap aktif di underlying pool.",
       "explore": "Jelajahi",
       "resources": "Sumber Daya",
       "docs": "Dokumen",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "Didukung oleh Aave v4",
-      "title": "Pinjam dengan jaminan LP posisi",
-      "titleLine1": "Meminjam dengan jaminan",
-      "titleLine2": "Posisi Likuiditas",
-      "subtitle": "Terus dapatkan biaya perdagangan sambil membuka likuiditas dari posisi Uniswap, Curve, dan Balancer.",
+      "title": "Avana adalah pasar pinjaman DeFi yang dirancang untuk liquidity pool AMM.",
+      "titleLine1": "Avana adalah pasar pinjaman DeFi",
+      "titleLine2": "yang dirancang untuk liquidity pool AMM.",
+      "subtitle": "Pinjam kripto, komoditas, valas (FX), dan aset dunia nyata (RWA) onchain menggunakan posisi likuiditas AMM Anda sebagai agunan.",
       "subtitleMobileLines": [
-        "Akses hingga 80% dari nilai Pool Likuiditas Anda",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Akses hingga 80% dari nilai Pool Likuiditas Anda dengan 5,5% APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "Coba Sandbox",
-      "secondaryCta": "Baca dokumen"
+      "primaryCta": "Baca Proposal ARFC",
+      "secondaryCta": "Coba Sandbox"
+    },
+    "intro": {
+      "text": "<ink>Pada Maret 2021, Aave Protocol meluncurkan AMM Market.</ink> Ini menjadi protokol pertama yang memanfaatkan likuiditas AMM sebagai jaminan dan membuktikan posisi LP dapat digunakan sebagai agunan pinjaman, meski saat itu dibangun untuk model DEX awal yang masih sederhana. <ink>Avana membawa inovasi tersebut ke generasi berikutnya</ink>, dirancang khusus untuk DEX likuiditas terkonsentrasi yang canggih saat ini, memungkinkan pengguna <ink>meminjam kripto, FX, dan aset dunia nyata secara onchain menggunakan posisi liquidity pool AMM mereka</ink>."
     },
     "features": {
       "eyebrow": "Fitur Utama",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "Temui Avana",
       "body": "Avana putaran mendukung LP posisi menjadi jaminan yang dapat digunakan di Aave v4 sehingga penyedia likuiditas dapat meminjam tanpa meninggalkan pool."
+    },
+    "trustedBy": {
+      "caption": "Dipercaya oleh tim-tim terdepan yang membangun dan merilis produk Web3 berkualitas tinggi"
+    },
+    "cta": {
+      "title": "Coba Avana sekarang."
     }
   },
   "product": {

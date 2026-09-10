@@ -285,7 +285,12 @@
       "Avana Mürekkep",
       "Ana metin ve koyu logo rengi. Kontrast ve otoritenin önemli olduğu durumlarda kullanın.",
       "Avana Camgöbeği",
-      "Aktif durumlar, bağlantılar, önemli vurgular ve Avana-öncülüğündeki harekete geçirici çağrılar için birincil vurgu."
+      "Aktif durumlar, bağlantılar, önemli vurgular ve Avana-öncülüğündeki harekete geçirici çağrılar için birincil vurgu.",
+      "Logoyu germeyin veya sıkıştırmayın.",
+      "İşareti döndürmeyin veya çevirmeyin.",
+      "Logoyu onaylı renklerin dışında yeniden boyamayın.",
+      "İşareti kırpmayın ve bir kenara çok yaklaştırmayın.",
+      "İşareti partner logoları veya arayüz etiketleriyle sıkıştırmayın."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "Likiditeyi çekmeden veya işlem ücretlerinden vazgeçmeden %5,5 APR ile.",
       "LP borçlu talebinden faiz kazanın",
       "Ekipler LP kredisini nasıl kullanır",
-      "LP kredisini işe koyun"
+      "LP kredisini işe koyun",
+      "Yüzlerce havuzda kredilere erişin",
+      "LP’niz karşılığında kredi çekerken işlem ücretleri kazanmaya devam edin.",
+      "Sermayeyi döngülemek, havuz riskini ayarlamak ve pozisyon sağlığını yönetmek için Multiply piyasaları.",
+      "Pozisyon Güvenliği",
+      "Güvenli kaldıraç için tasarlandı",
+      "Borçlanma limiti"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Sık sorulan sorular.",
       "Sık sorulan",
       "sorular"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "AMM piyasalarındaki sermayeyi serbest bırakın",
+      "Borçlanmak, faiz kazanmak ve kaldıracı yönetmek için üç yerel piyasa.",
+      "LP pozisyonlarınız karşılığında borçlanın",
+      "Likiditeniz temel AMM’de aktif kalırken LP pozisyonlarınız karşılığında borçlanın.",
+      "Hub piyasalarında borç verin",
+      "Hub’a bağlı borç verme piyasalarına sermaye sağlayın ve LP teminatlı borçlanma talebinden kazanç elde edin.",
+      "Likidite getirilerini katlayın",
+      "Temel likidite pozisyonunuzdan çıkmadan yönetilen kaldıraç oluşturmak için LP teminatlı krediyi kullanın.",
+      "Avana LP pozisyonları karşılığında borçlanma",
+      "Avana Hub’a bağlı piyasalarda borç verme",
+      "Avana Multiply yönetilen kaldıraç getirisi"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Portföyünüzü Ask AI ile yönetin",
+      "Getiri döngülerini simüle edin, borçlanma korumalarını otomatikleştirin ve sade dille işlem yapın.",
+      "Bir sonraki “ya olursa?” sorunuzu yanıtlayın",
+      "Piyasada %20’lik bir düşüşün health factor’ünüzü nasıl etkileyeceğini sorun ya da sermaye ayırmadan önce 3x getiri döngüsünü simüle edin.",
+      "“3x ETH-USDC getiri döngüsünü simüle et ve ETH %15 düşerse tasfiye fiyatımı göster”",
+      "Beş işlemi tek cümleye dönüştürün",
+      "Token takas edin, zincirler arasında köprü kurun ve likidite havuzlarına tek seferde yatırın; ağ değiştirmeden ve beş onay imzalamadan.",
+      "“5 ETH’yi USDC’ye çevir, Arbitrum’a köprüle ve Curve tri-pool’a yatır”",
+      "Koşullu kurallar belirleyin ve arkanıza yaslanın",
+      "Ask AI’ya yalnızca oranlar %4’ün altına düştüğünde borçlanmasını ya da havuz fiyatları hedefinizden saparsa LP’nizi yeniden dengelemesini söyleyin.",
+      "“Aave borçlanma APR’si %3,8’in altına düştüğünde LP pozisyonum karşılığında 25.000 USDC borçlan”",
+      "Dalgalı piyasalarda rahat uyuyun",
+      "Otonom ajanlar teminatınızı 7/24 izler, pozisyonları ayarlar ve tasfiye riskinden çok önce stop-loss tetikler.",
+      "“Volatilite yükselirse kaldıracı otomatik azaltarak health factor’ümü 1,6’nın üzerinde tut”",
+      "Zirve getirileri saatler harcamadan bulun",
+      "Varlıklarınız için en iyi ücret-risk oranını hangi havuzların sunduğunu sorun, DEX derinliğini gerçek zamanlı karşılaştırın ve tek tıkla konumlanın.",
+      "“wstETH için tüm DEX’lerde en az 5 milyon $ likidite derinliğine sahip, en yüksek ücret APY’li havuzu bul”",
+      "Avana Multiply simülasyon ve portföy yönetimi arayüzü",
+      "Avana Express çok adımlı otomatik yürütme akışı",
+      "Avana Borrow oran izleme ve koşullu kredi parametreleri",
+      "Avana 7/24 pozisyon izleme ve otomatik risk korumaları",
+      "Avana Lend getiri keşfi ve havuz karşılaştırma arayüzü"
     ]
   }
 }

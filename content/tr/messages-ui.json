@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "LP destekli pozisyonlar nasıl izlenir ve sonuçlandırılır."
     },
     "footer": {
-      "blurb": "Avana, likidite sağlayıcılarının aktif pozisyonlarına karşı borç almasına yardımcı olan ve havuzda kalmasını sağlayan Aave v4 üzerinde bir LP teminatlı protokoldür.",
+      "blurb": "Avana, AMM likidite havuzu pozisyonlarının teminat olarak kullanılmasını sağlayan, Aave V4 üzerine inşa edilmiş bir borç verme protokolüdür. Uniswap, Balancer, Curve veya Aerodrome likidite sağlayıcıları, desteklenen LP pozisyonlarını yatırabilir, piyasaya özgü risk çerçevelerinde değerlendirilmesini sağlayabilir ve pozisyonlar temel havuzlarda aktif kalmaya devam ederken bunlara karşı borç alabilirler.",
       "explore": "Keşfet",
       "resources": "Kaynaklar",
       "docs": "Belgeler",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4 tarafından desteklenmektedir",
-      "title": "LP pozisyona karşı borç al",
-      "titleLine1": "Teminat Karşılığı Ödünç Al",
-      "titleLine2": "Likidite Pozisyonları",
-      "subtitle": "Uniswap, Curve ve Balancer pozisyonlarından likidite açarken işlem ücretleri kazanmaya devam edin.",
+      "title": "Avana, AMM likidite havuzları için geliştirilmiş borç verme ve kredi piyasasıdır.",
+      "titleLine1": "Avana, AMM likidite havuzları için",
+      "titleLine2": "geliştirilmiş borç verme ve kredi piyasasıdır.",
+      "subtitle": "AMM likidite pozisyonlarınızı teminat göstererek zincir üzerinde kripto, emtia, döviz (FX) ve gerçek dünya varlıkları (RWA) borç alın.",
       "subtitleMobileLines": [
-        "Likidite Havuzunuzun değerinin %80'ine kadar erişim sağlayın",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "Likidite Havuzunuzun değerinin %80'ine kadar %5,5 ile erişim sağlayın APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "Deneyin Sandbox",
-      "secondaryCta": "Belgeleri oku"
+      "primaryCta": "ARFC Önerisini Oku",
+      "secondaryCta": "Sandbox'ı Dene"
+    },
+    "intro": {
+      "text": "<ink>Mart 2021’de Aave Protocol, AMM Market’i hayata geçirdi.</ink> AMM likiditesini teminat olarak kullanan ve LP pozisyonlarının kredi teminatı olabileceğini kanıtlayan ilk protokol oldu; ancak o dönemin basit DEX’leri ve likidite modelleri için tasarlanmıştı. <ink>Avana bu vizyonu yeni nesil DeFi’ye taşıyor</ink>. Günümüzün gelişmiş konsantre likiditeye sahip DEX’leri için özel olarak inşa edilen Avana, kullanıcıların <ink>AMM likidite havuzu pozisyonları karşılığında zincir üzerinde kripto, döviz ve gerçek dünya varlıkları borç almalarına</ink> olanak tanır."
     },
     "features": {
       "eyebrow": "Temel Özellikler",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "Tanış Avana",
       "body": "Avana, LP pozisyonu kullanılabilir teminat haline getirir Aave v4 üzerinde, böylece likidite sağlayıcıları havuzdan çıkmadan borç alabilir."
+    },
+    "trustedBy": {
+      "caption": "Üst düzey Web3 ürünleri geliştiren ve yayınlayan ekiplerin güvenilir tercihi"
+    },
+    "cta": {
+      "title": "Avana’yı şimdi deneyin."
     }
   },
   "product": {

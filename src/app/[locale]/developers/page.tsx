@@ -13,6 +13,7 @@ import {
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { DeveloperDocSectionHeader } from "@/components/developer-doc-section-header"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const sections = [
   { id: "welcome", title: "Welcome" },
@@ -103,12 +104,14 @@ function SectionHeader({
   return <DeveloperDocSectionHeader title={title} description={description} />
 }
 
-export async function generateMetadata() {
-  return createPageMetadata("developers", "/developers", { ogType: "developers" })
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "developers", "/developers", { ogType: "developers" })
 }
 
-export default async function DevelopersPage() {
-  return withDocsI18n("hub", (
+export default async function DevelopersPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "hub", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-4xl flex-1">
         <section id="welcome" className="scroll-mt-32 pb-10">

@@ -4,9 +4,11 @@ import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata('introduction/key-concepts', {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, 'introduction/key-concepts', {
     title: "Key Concepts",
     description: "Understand the core concepts behind Avana, including LP collateral behavior, conservative valuation, Hub borrowing, and liquidation.",
   })
@@ -21,8 +23,9 @@ const sections = [
   { id: "fee-collection", title: "Fee Treatment" },
 ]
 
-export default async function KeyConceptsPage() {
-  return withDocsI18n("introduction/key-concepts", (
+export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "introduction/key-concepts", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader title="Key Concepts" />

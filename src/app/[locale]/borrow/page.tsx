@@ -3,14 +3,17 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { LocalizedMarketing } from "@/components/localized-marketing"
-import { Activity, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
+import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
 import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
-import { cn } from "@/lib/utils"
-import { getTokenIconSrc } from "@/lib/token-icons"
+import { brandAssetPath } from "@/lib/brand-assets"
+import { FeaturePageHero } from "@/components/feature-page-hero"
+import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import { MarketingLeadHeader } from "@/components/marketing-lead-header"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
 const PositionSafetyCardsSection = dynamic(() => import("@/components/position-safety-cards-section"))
@@ -95,117 +98,24 @@ const borrowPartnerFeatures = [
 
 const lpHubMarkets = [
   {
-    category: "Lowest-risk hub",
     title: "Stable LP Hub",
     description:
       "Stablecoin LP markets built for tight pricing, low slippage, and minimal impermanent loss.",
-    pools: ["USDC / GHO", "USDT / USDC", "GHO / USDe", "USDe / USDC", "USDT / GHO"],
-    borrowable: ["USDC", "USDT", "GHO", "USDe", "DAI"],
+    variant: "stable",
   },
   {
-    category: "Global Strategy hub",
     title: "Correlated LP Hub",
     description:
       "LP markets for assets that move together, built for tighter risk bands and cleaner borrowing power.",
-    pools: ["ETH / wstETH", "wstETH / cbETH", "ETH / rETH", "USDe / USDC", "GHO / USDe"],
-    borrowable: ["ETH", "wstETH", "USDC", "GHO", "USDe"],
+    variant: "correlated",
   },
   {
-    category: "Higher-range hub",
     title: "Volatile LP Hub",
     description:
       "Major DeFi asset LP markets for wider price ranges and higher risk-reward strategies.",
-    pools: ["ETH / USDC", "WBTC / ETH", "cbBTC / USDC", "AAVE / ETH", "+4 More"],
-    borrowable: ["ETH", "wstETH", "WBTC", "cbBTC", "USDT", "USDC", "GHO", "AAVE"],
+    variant: "volatile",
   },
 ] as const
-
-function HubTokenImage({ symbol, overlap = false }: { symbol: string; overlap?: boolean }) {
-  const src = getTokenIconSrc(symbol)
-
-  if (!src) {
-    const initials = symbol.slice(0, 3).toUpperCase()
-    return (
-      <span
-        aria-hidden="true"
-        className={cn(
-          "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted text-[0.5rem] font-semibold text-foreground",
-          overlap && "-ml-1.5",
-        )}
-      >
-        {initials}
-      </span>
-    )
-  }
-
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt=""
-      aria-hidden="true"
-      loading="lazy"
-      decoding="async"
-      className={cn("h-5 w-5 shrink-0 rounded-full object-contain", overlap && "-ml-1.5")}
-    />
-  )
-}
-
-function HubPoolIcon({ pool }: { pool: string }) {
-  if (pool.includes("More")) {
-    return (
-      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#01AACF] text-[0.7rem] font-semibold text-white">
-        +
-      </span>
-    )
-  }
-
-  const [first, second] = pool.split(" / ")
-
-  return (
-    <span className="flex items-center">
-      {[first, second].map((token, index) => (
-        <HubTokenImage key={`${pool}-${token}`} symbol={token} overlap={index > 0} />
-      ))}
-    </span>
-  )
-}
-
-function HubSingleTokenIcon({ token }: { token: string }) {
-  return <HubTokenImage symbol={token} />
-}
-
-function HubTokenGroup({
-  label,
-  tokens,
-  withPoolIcons = false,
-  withTokenIcons = false,
-}: {
-  label: string
-  tokens: readonly string[]
-  withPoolIcons?: boolean
-  withTokenIcons?: boolean
-}) {
-  return (
-    <div className="mt-5 first:mt-0">
-      <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-type-tertiary">
-        {label}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {tokens.map((token) => (
-          <span
-            key={`${label}-${token}`}
-            className="inline-flex h-8 items-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-semibold tracking-[-0.015em] text-foreground"
-          >
-            {withPoolIcons ? <HubPoolIcon pool={token} /> : null}
-            {withTokenIcons ? <HubSingleTokenIcon token={token} /> : null}
-            {token}
-          </span>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function BorrowMarketCard({
   number,
@@ -218,78 +128,49 @@ function BorrowMarketCard({
 }) {
   return (
     <div className="flex h-full flex-col feature-card rounded-2xl p-6 md:p-8">
-      <span className="text-4xl text-gray-300/80 md:text-5xl">{number}</span>
+      <span className="text-4xl text-[#01AACF] md:text-5xl">{number}</span>
       <FeatureCardTitle className="mt-6">{title}</FeatureCardTitle>
       <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
     </div>
   )
 }
 
-export async function generateMetadata() {
-  return createPageMetadata("borrow", "/borrow")
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "borrow", "/borrow")
 }
 
-export default async function BorrowPage() {
+export default async function BorrowPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "position-safety-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
+    <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
     <main className="bg-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-[1200px] flex-col px-5 pt-10 sm:px-6 sm:pt-12 md:px-8 md:pt-20 lg:max-w-[64rem] 2xl:max-w-[72rem] lg:min-h-0 lg:px-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-              {/* Left Column - Hero Image */}
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                    <Image
-                      src="/images/Hero__4_.webp"
-                      alt="App interface"
-                      width={1200}
-                      height={1200}
-                      quality={58}
-                      priority
-                      className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                      sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                    />
-                </div>
-              </div>
+      <FeaturePageHero
+        title={
+          <>
+            Borrow against
+            <br />
+            AMM positions
+          </>
+        }
+        description="Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool."
+        imageSrc="/images/Avana Borrow Hero.png"
+        imageAlt="Avana Borrow product interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-black/[0.06] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-black/[0.1]"
+        >
+          Try Sandbox
+          <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />
+        </Link>
+      </FeaturePageHero>
 
-              {/* Right Column - Text Content */}
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[11ch] text-foreground md:mb-5">
-                    <span>Borrow against</span>
-                    <br />
-                    <span>AMM positions</span>
-                  </h1>
-
-                  <p className="mb-5 max-w-[34ch] text-base leading-relaxed text-type-secondary sm:max-w-[38ch] md:mb-6 md:text-lg">
-                    Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Borrowing
-                    </Link>
-                    <Link
-                      href="/developers"
-                      className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-900 transition-colors hover:bg-gray-100"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <section className="border-t border-[#01AACF] bg-white site-section-gap">
+      <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[90rem]">
             <div className="flex flex-col gap-6">
@@ -321,7 +202,7 @@ export default async function BorrowPage() {
         </div>
       </section>
 
-      <section className="bg-white site-section-gap">
+      <section id="avana-hubs" className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[90rem]">
             <div className="flex flex-col gap-6">
@@ -333,25 +214,20 @@ export default async function BorrowPage() {
               </div>
             </div>
 
-            <div className="mt-10 grid gap-5 lg:mt-16 lg:grid-cols-3">
+            <div className="mt-10 grid items-start gap-5 lg:mt-16 lg:grid-cols-3">
               {lpHubMarkets.map((hub) => (
                 <article
                   key={hub.title}
-                  className="flex h-full flex-col feature-card rounded-2xl border border-border p-6 md:p-8"
+                  className="flex flex-col feature-card rounded-[4px] p-5"
                 >
-                  <p className="text-sm font-semibold tracking-[-0.01em] text-[#01AACF]">
-                    {hub.category}
-                  </p>
-                  <FeatureCardTitle className="mt-4">{hub.title}</FeatureCardTitle>
-                  <FeatureCardDescription className="mt-3 min-h-[4.5rem] max-w-[22rem]">
+                  <FeatureCardTitle>{hub.title}</FeatureCardTitle>
+                  <FeatureCardDescription className="mt-1.5 max-w-[22rem]">
                     {hub.description}
                   </FeatureCardDescription>
 
-                  <div className="mt-8 border-t border-border pt-6">
-                    <HubTokenGroup label="LP pool collateral" tokens={hub.pools} withPoolIcons />
-                    <HubTokenGroup label="Borrowable" tokens={hub.borrowable} withTokenIcons />
+                  <div className="mt-5 rounded-[4px] bg-white p-2">
+                    <AvanaHubWave variant={hub.variant} />
                   </div>
-
                 </article>
               ))}
             </div>
@@ -362,13 +238,10 @@ export default async function BorrowPage() {
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
-            <div className="max-w-[58rem] space-y-3 text-left sm:space-y-4">
-              <SectionEyebrow tone="blue">Borrow with Confidence</SectionEyebrow>
-              <SectionTitle className="max-w-[18ch] sm:max-w-[22ch] lg:max-w-none">
-                <span className="block sm:inline">Protected at the</span>{" "}
-                <span className="block sm:inline">pool level</span>
-              </SectionTitle>
-            </div>
+            <MarketingLeadHeader
+              title="Borrow with Confidence"
+              subtitle="Protected at the pool level"
+            />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
               {borrowPartnerFeatures.map((feature) => (
@@ -456,9 +329,9 @@ export default async function BorrowPage() {
                   Every Pool details, fully explained
                 </SectionTitle>
               </div>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
+              <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
                 <Image
-                  src="/images/borrow-markets-visual.png"
+                  src={brandAssetPath("/images/Avana Borrow Light.png")}
                   alt="Document-style preview of supported borrowing markets"
                   fill
                   sizes="(max-width: 1200px) 100vw, 1120px"
@@ -468,19 +341,19 @@ export default async function BorrowPage() {
             </div>
 
             <div className="flex flex-col gap-12 md:gap-14">
-              <BorrowPowerSection />
-              <PositionSafetyCardsSection />
+              <BorrowPowerSection locale={locale} />
+              <PositionSafetyCardsSection locale={locale} />
             </div>
 
           </div>
         </div>
       </PerformanceSection>
 
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 flex flex-col">
+      <div className="site-content-shell flex flex-col">
         <div className="flex-1 flex flex-col relative z-0">
         {/* Rest of page content */}
         <div className="site-content-width flex flex-col site-section-stack site-section-gap pb-16 md:pb-20 2xl:pb-18">
-          <HomepageNewsroomSection collection="borrow" eyebrowTone="blue" />
+          <HomepageNewsroomSection locale={locale} collection="borrow" eyebrowTone="blue" />
 
           <div className="pb-16 md:pb-24 2xl:pb-22">
             <InlineFaqSection title="Frequently asked questions" items={openSpokeFaqItems} eyebrowTone="blue" withTopBorder={false} />

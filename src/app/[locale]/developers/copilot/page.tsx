@@ -18,9 +18,11 @@ import {
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
-export async function generateMetadata(): Promise<Metadata> {
-  return createDocsMetadata("copilot", {
+export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
+  const locale = await resolveLocaleParam(params)
+  return createDocsMetadata(locale, "copilot", {
     title: "Ask AI",
     description:
       "How Avana's Ask AI turns natural-language investment intent into data-driven, automated DeFi actions.",
@@ -94,8 +96,9 @@ const benefits: Array<{ icon: LucideIcon; title: string; body: string }> = [
   },
 ]
 
-export default async function CopilotIntroductionPage() {
-  return withDocsI18n("copilot", (
+export default async function CopilotIntroductionPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return withDocsI18n(locale, "copilot", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader

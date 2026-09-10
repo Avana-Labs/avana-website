@@ -1,13 +1,14 @@
 import { createPageMetadata } from "@/lib/i18n/page-metadata"
 import dynamic from "next/dynamic"
-import Image from "next/image"
 import { Link } from "@/i18n/navigation"
+import { FeaturePageHero } from "@/components/feature-page-hero"
 import type { LucideIcon } from "lucide-react"
 import { Gauge, Layers, LockKeyhole, MoveRight, TrendingUp, WalletCards } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { FeatureCardDescription, FeatureCardTitle, SectionIntro } from "@/components/shared"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
+import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 
 const PlatformToolsShowcaseSection = dynamic(() => import("@/components/platform-tools-showcase-section"))
 const InvestApySection = dynamic(() => import("@/components/invest-apy-section"))
@@ -110,71 +111,43 @@ function KeyFeatureCard({
   )
 }
 
-export async function generateMetadata() {
-  return createPageMetadata("lend", "/lend", {
+export async function generateMetadata({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
+  return createPageMetadata(locale, "lend", "/lend", {
     keywords: [
       "LP-backed credit","DeFi lending","stablecoin yield","Aave v4","onchain yield","supply markets",
     ],
   })
 }
 
-export default async function LendPage() {
+export default async function LendPage({ params }: LocaleParamsProps) {
+  const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
+    <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
     <main className="bg-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-[1200px] flex-col px-5 pt-10 sm:px-6 sm:pt-12 md:px-8 md:pt-20 lg:max-w-[64rem] 2xl:max-w-[72rem] lg:min-h-0 lg:px-0">
-        <div className="relative z-0">
-          <section className="pb-0 lg:pb-10 xl:pb-12">
-            <div className="w-full pt-3 pb-0 md:pt-5">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-              {/* Left Column - Hero Image */}
-                <div className="order-2 mb-8 w-full lg:mb-0 lg:w-[55%]">
-                  <div className="relative mx-auto w-full max-w-none lg:mx-0 lg:max-w-[650px] xl:max-w-[700px]">
-                  <Image
-                    src="/images/Hero__4_.webp"
-                    alt="App interface"
-                    width={1200}
-                    height={1200}
-                    quality={58}
-                    priority
-                    className="w-full h-auto rounded-[24px] md:rounded-[32px] lg:rounded-[40px]"
-                    sizes="(max-width: 1024px) calc(100vw - 40px), 700px"
-                  />
-                </div>
-              </div>
-
-              {/* Right Column - Text Content */}
-                <div className="order-1 mb-8 w-full text-left lg:order-2 lg:mb-0 lg:w-[45%]">
-                  <h1 className="type-display-title mb-3 max-w-[18ch] text-foreground md:mb-5 md:max-w-[16ch]">
-                    Earn interest on your assets
-                  </h1>
-
-                  <p className="type-display-lead mb-5 max-w-[34ch] sm:max-w-[38ch] md:mb-6">
-                    Supply single assets and earn yields where LP collateral creates real borrow utilization.
-                  </p>
-
-                  <div className="flex max-w-md flex-row flex-wrap items-start gap-2 sm:gap-3">
-                    <Link
-                      href="https://app.avana.cc"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
-                    >
-                      Try Lending
-                    </Link>
-                    <Link
-                      href="/developers"
-                      className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
-                    >
-                      View Docs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <FeaturePageHero
+        title="Earn interest on your assets"
+        description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
+        imageSrc="/images/Avana Lend Hero.png"
+        imageAlt="Avana Lend product interface"
+        imageWidth={1254}
+        imageHeight={1254}
+      >
+        <Link
+          href="https://app.avana.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+        >
+          Try Lending
+        </Link>
+        <Link
+          href="/developers"
+          className="inline-flex items-center justify-center rounded-full border border-border bg-white px-4 py-2 text-xs text-foreground transition-colors hover:bg-muted"
+        >
+          View Docs
+        </Link>
+      </FeaturePageHero>
 
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">
@@ -238,15 +211,15 @@ export default async function LendPage() {
 
       <InvestApySection />
 
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 flex flex-col">
+      <div className="site-content-shell flex flex-col">
         <div className="flex-1 flex flex-col relative z-0">
         {/* Rest of page content */}
         <div className="site-content-width flex flex-col site-section-stack site-section-gap pb-16 md:pb-20 2xl:pb-18">
           <InvestGrowthCalculatorSection />
 
-          <PlatformToolsShowcaseSection />
+          <PlatformToolsShowcaseSection locale={locale} />
 
-          <HomepageNewsroomSection collection="invest" eyebrowTone="emerald" />
+          <HomepageNewsroomSection locale={locale} collection="invest" eyebrowTone="emerald" />
 
           <div className="pb-16 md:pb-24 2xl:pb-22">
             <InlineFaqSection title="Frequently asked questions" items={stableSpokeFaqItems} eyebrowTone="emerald" withTopBorder={false} />

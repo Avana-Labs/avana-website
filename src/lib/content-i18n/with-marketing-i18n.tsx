@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { getLocale } from "next-intl/server"
+import type { AppLocale } from "@/i18n/locales"
 import { localizeTree } from "@/components/localize-strings"
 import { defaultLocale } from "@/i18n/locales"
 import { getMarketingMaps } from "@/lib/content-i18n/load-content"
@@ -12,10 +12,10 @@ import { getMarketingMaps } from "@/lib/content-i18n/load-content"
  * its own tree — same pattern as withDocsI18n.
  */
 export async function withMarketingI18n(
+  locale: AppLocale,
   keys: string[],
   node: ReactNode,
 ): Promise<ReactNode> {
-  const locale = await getLocale()
   if (locale === defaultLocale) return node
   const map = await getMarketingMaps(locale, keys)
   if (!map || Object.keys(map).length === 0) return node

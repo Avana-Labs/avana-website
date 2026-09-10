@@ -285,7 +285,12 @@
       "Mực Avana",
       "Màu văn bản chính và logo tối. Sử dụng nó khi độ tương phản và uy quyền quan trọng.",
       "Xanh lơ Avana",
-      "Màu nhấn chính cho các trạng thái đang hoạt động, liên kết, điểm nổi bật chính và các hành động kêu gọi do Avana dẫn dắt."
+      "Màu nhấn chính cho các trạng thái đang hoạt động, liên kết, điểm nổi bật chính và các hành động kêu gọi do Avana dẫn dắt.",
+      "Không kéo giãn hoặc nén logo.",
+      "Không xoay hoặc lật dấu hiệu.",
+      "Không đổi màu logo ngoài các phối màu đã duyệt.",
+      "Không cắt dấu hiệu hoặc đặt nó quá sát mép.",
+      "Không chật chội dấu hiệu bằng logo đối tác hoặc nhãn giao diện."
     ]
   },
   "hero-section": {
@@ -354,7 +359,13 @@
       "với lãi suất hàng năm 5,5% mà không rút thanh khoản hoặc từ bỏ phí giao dịch.",
       "Kiếm lãi từ nhu cầu vay của người đi vay LP",
       "Cách các đội sử dụng tín dụng LP",
-      "Tín dụng LP cho công việc"
+      "Tín dụng LP cho công việc",
+      "Tiếp cận các khoản vay trên hàng trăm pool",
+      "Tiếp tục kiếm phí giao dịch trong khi rút tín dụng dựa trên LP của bạn.",
+      "Thị trường Multiply để lặp vốn, tinh chỉnh rủi ro pool và quản lý sức khỏe vị thế.",
+      "An toàn vị thế",
+      "Được thiết kế cho đòn bẩy an toàn",
+      "Hạn mức vay"
     ]
   },
   "webapp-hero": {
@@ -671,6 +682,47 @@
       "Câu hỏi thường gặp.",
       "Thường được hỏi",
       "câu hỏi"
+    ]
+  },
+  "avana-products-section": {
+    "strings": [
+      "Giải phóng vốn từ các thị trường AMM",
+      "Ba thị trường gốc để vay, hưởng lãi và quản lý đòn bẩy.",
+      "Vay dựa trên vị thế LP",
+      "Vay dựa trên vị thế LP trong khi thanh khoản của bạn vẫn hoạt động trong AMM cơ sở.",
+      "Cho vay vào các thị trường Hub",
+      "Cung cấp vốn cho các thị trường cho vay kết nối Hub và hưởng lợi từ nhu cầu vay được bảo đảm bằng LP.",
+      "Nhân lợi suất thanh khoản",
+      "Dùng tín dụng bảo đảm bằng LP để tạo đòn bẩy có kiểm soát mà không cần rời vị thế thanh khoản gốc.",
+      "Avana Vay dựa trên vị thế LP",
+      "Avana Cho vay vào thị trường kết nối Hub",
+      "Avana Multiply lợi suất đòn bẩy có kiểm soát"
+    ]
+  },
+  "ask-ai-showcase": {
+    "strings": [
+      "Điều khiển danh mục của bạn bằng Ask AI",
+      "Mô phỏng vòng lặp lợi suất, tự động hóa ngưỡng bảo vệ khoản vay và thực thi bằng ngôn ngữ đời thường.",
+      "Trả lời câu hỏi “nếu như?” tiếp theo của bạn",
+      "Hỏi xem thị trường giảm 20% ảnh hưởng thế nào đến health factor, hoặc mô phỏng vòng lặp lợi suất 3x trước khi rót vốn.",
+      "“Mô phỏng vòng lặp lợi suất 3x ETH-USDC và cho biết giá thanh lý của tôi nếu ETH giảm 15%”",
+      "Biến năm giao dịch thành một câu",
+      "Hoán đổi token, bắc cầu giữa các chuỗi và gửi vào pool thanh khoản trong một lần, không cần đổi mạng hay ký năm lần phê duyệt.",
+      "“Đổi 5 ETH sang USDC, bắc cầu sang Arbitrum và gửi vào tri-pool của Curve”",
+      "Đặt quy tắc có điều kiện rồi yên tâm",
+      "Bảo Ask AI chỉ vay khi lãi suất xuống dưới 4%, hoặc tái cân bằng LP nếu giá pool lệch khỏi mục tiêu của bạn.",
+      "“Vay 25.000 USDC dựa trên vị thế LP của tôi mỗi khi APR vay của Aave xuống dưới 3,8%”",
+      "Ngủ ngon qua những phiên biến động",
+      "Các tác nhân tự động theo dõi tài sản thế chấp 24/7, điều chỉnh vị thế và kích hoạt cắt lỗ từ rất sớm trước rủi ro thanh lý.",
+      "“Giữ health factor của tôi trên 1,6 bằng cách tự động giảm đòn bẩy khi biến động tăng vọt”",
+      "Tìm lợi suất cao nhất mà không mất hàng giờ",
+      "Hỏi pool nào có tỷ lệ phí trên rủi ro tốt nhất cho tài sản của bạn, so sánh độ sâu DEX theo thời gian thực và triển khai chỉ với một cú nhấp.",
+      "“Tìm pool có APY phí cao nhất cho wstETH với độ sâu thanh khoản tối thiểu 5 triệu USD trên tất cả các DEX”",
+      "Giao diện mô phỏng và quản lý danh mục Avana Multiply",
+      "Luồng thực thi tự động nhiều bước của Avana Express",
+      "Theo dõi lãi suất và tham số khoản vay có điều kiện của Avana Borrow",
+      "Giám sát vị thế 24/7 và bảo vệ rủi ro tự động của Avana",
+      "Giao diện khám phá lợi suất và so sánh pool của Avana Lend"
     ]
   }
 }

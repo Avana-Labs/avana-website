@@ -1,5 +1,6 @@
 import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle, type SectionEyebrowTone } from "@/components/shared"
 import type { ReactNode } from "react"
+import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 type ProductFeatureItem = {
@@ -8,6 +9,7 @@ type ProductFeatureItem = {
 }
 
 type ProductFeatureScrollSectionProps = {
+  locale: AppLocale
   eyebrow?: string
   eyebrowTone?: SectionEyebrowTone
   title: ReactNode
@@ -17,6 +19,7 @@ type ProductFeatureScrollSectionProps = {
 }
 
 export default async function ProductFeatureScrollSection({
+  locale,
   eyebrow = "Key Features",
   eyebrowTone = "blue",
   title,
@@ -24,7 +27,7 @@ export default async function ProductFeatureScrollSection({
   items,
   panels,
 }: ProductFeatureScrollSectionProps) {
-  return withMarketingI18n(['product-feature-scroll-section'], (
+  return withMarketingI18n(locale, ['product-feature-scroll-section'], (
     <section>
       <div className="mb-8 max-w-[650px] space-y-3 text-left">
         <SectionEyebrow tone={eyebrowTone}>{eyebrow}</SectionEyebrow>

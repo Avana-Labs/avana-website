@@ -6,8 +6,6 @@ import { notFound } from "next/navigation"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { diatypeFont } from "@/app/site-fonts"
-import { ThemeProvider } from "@/components/theme-provider"
-import { ThemeInitScript } from "@/components/theme-init-script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getLocaleDefinition, getLocaleDir } from "@/i18n/locales"
@@ -131,12 +129,17 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale)
 
-  const messages = await getMessages()
+  const messages = await getMessages({ locale })
   const t = await getTranslations({ locale, namespace: "common" })
   const dir = getLocaleDir(locale)
 
   return (
-    <html lang={locale} dir={dir} className={diatypeFont.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={dir}
+      suppressHydrationWarning
+      style={{ "--font-diatype": diatypeFont.style.fontFamily } as React.CSSProperties}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -147,10 +150,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteSchema) }}
         />
       </head>
-      <body className="overflow-x-clip bg-background font-sans text-foreground">
-        <ThemeInitScript />
-        <ThemeProvider>
-          <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
+      <body className={`${diatypeFont.variable} overflow-x-clip bg-background font-sans text-foreground`}>
+        <NextIntlClientProvider locale={locale} messages={{ common: messages.common }}>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:start-4 focus:z-[100] focus:rounded-lg focus:bg-[#01AACF] focus:px-4 focus:py-2 focus:text-[#0F1518] focus:outline-none focus:ring-2 focus:ring-[#01AACF] focus:ring-offset-2"
@@ -165,7 +166,6 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
           </div>
           </NextIntlClientProvider>
-        </ThemeProvider>
         {shouldRenderVercelInsights ? <SpeedInsights /> : null}
         {shouldRenderVercelInsights ? <Analytics /> : null}
       </body>

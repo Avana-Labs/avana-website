@@ -57,12 +57,12 @@ const symbolToIcon: Record<string, string> = {
 
 export function getTokenIconSrc(symbol: string): string | null {
   const direct = symbolToIcon[symbol]
-  if (direct) return `${ICON_BASE}/${direct}.png`
+  if (direct) return `${ICON_BASE}/${direct}.webp`
 
   const caseInsensitiveMatch = Object.keys(symbolToIcon).find(
     (key) => key.toLowerCase() === symbol.toLowerCase(),
   )
-  if (caseInsensitiveMatch) return `${ICON_BASE}/${symbolToIcon[caseInsensitiveMatch]}.png`
+  if (caseInsensitiveMatch) return `${ICON_BASE}/${symbolToIcon[caseInsensitiveMatch]}.webp`
 
   return null
 }

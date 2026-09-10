@@ -62,7 +62,7 @@
       "understandLiquidationDesc": "Cómo se monitorean y liquidan las posiciones respaldadas por LP."
     },
     "footer": {
-      "blurb": "Avana es un protocolo de colateral LP en Aave v4 que ayuda a los proveedores de liquidez a pedir prestado contra posiciones activas mientras permanecen en el pool.",
+      "blurb": "Avana es un protocolo de préstamos creado sobre Aave V4 que permite utilizar posiciones de pools de liquidez AMM como colateral. Los proveedores de liquidez de Uniswap, Balancer, Curve o Aerodrome pueden depositar posiciones de LP admitidas, someterlas a evaluación dentro de marcos de riesgo específicos del mercado y tomar préstamos contra ellas mientras las posiciones siguen activas en los pools subyacentes.",
       "explore": "Explorar",
       "resources": "Recursos",
       "docs": "Documentos",
@@ -164,12 +164,6 @@
       "latestFrom": "Lo último de Avana",
       "readNewsroom": "Leer sala de redacción"
     },
-    "theme": {
-      "lightMode": "Modo claro",
-      "darkMode": "Modo oscuro",
-      "systemMode": "Sistema",
-      "tapToChange": "Toca para cambiar"
-    },
     "exportMenu": {
       "copyPage": "Copiar página",
       "copied": "Copiado",
@@ -242,21 +236,24 @@
   "home": {
     "hero": {
       "eyebrow": "Desarrollado por Aave v4",
-      "title": "Pedir prestado contra LP posiciones",
-      "titleLine1": "Pedir prestado contra",
-      "titleLine2": "Posiciones de liquidez",
-      "subtitle": "Sigue ganando comisiones de trading mientras desbloqueas liquidez de las posiciones Uniswap, Curve y Balancer.",
-      "subtitleMobileLines": [
-        "Accede hasta al 80% del valor de tu Pool de Liquidez",
-        "al 5,5 % TAE sin retirar liquidez ni",
-        "renunciar a las comisiones de trading."
-      ],
-      "subtitleDesktopLines": [
-        "Accede hasta al 80% del valor de tu Fondo de Liquidez al 5.5% APR",
-        "al 5,5 % TAE sin retirar liquidez ni renunciar a las comisiones de trading."
-      ],
-      "primaryCta": "Intenta Sandbox",
-      "secondaryCta": "Leer documentos"
+      "title": "Avana es el mercado de préstamos diseñado para pools de liquidez AMM.",
+      "titleLine1": "Avana es el mercado de préstamos",
+      "titleLine2": "diseñado para pools de liquidez AMM.",
+      "subtitle": "Pide prestado cripto, materias primas, FX y activos del mundo real onchain utilizando tus posiciones de liquidez AMM como colateral.",
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
+      "primaryCta": "Leer el ARFC",
+      "secondaryCta": "Probar Sandbox"
+    },
+    "intro": {
+      "text": "<ink>En marzo de 2021, Aave Protocol lanzó AMM Market.</ink> Se convirtió en el primer protocolo en utilizar la liquidez de AMM como garantía y demostrar que las posiciones de LP podían servir como colateral, pero fue concebido para los DEX y modelos de liquidez más simples de aquella época. <ink>Avana lleva esa idea a una nueva generación</ink>, diseñada específicamente para los DEX y las posiciones de liquidez cada vez más sofisticadas de hoy, permitiendo a los usuarios <ink>pedir prestado cripto, divisas FX y activos del mundo real onchain contra sus posiciones en pools de liquidez AMM</ink>."
     },
     "features": {
       "eyebrow": "Características clave",
@@ -272,6 +269,12 @@
     "buildTomorrow": {
       "title": "Conoce Avana",
       "body": "Avana convierte las LP posiciones en garantía utilizable en Aave v4 para que los proveedores de liquidez puedan pedir prestado sin salir del grupo."
+    },
+    "trustedBy": {
+      "caption": "Con la confianza de equipos que desarrollan y lanzan productos Web3 de alta calidad"
+    },
+    "cta": {
+      "title": "Prueba Avana ahora."
     }
   },
   "product": {

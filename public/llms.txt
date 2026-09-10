@@ -1,0 +1,57 @@
+# Avana
+
+> Avana is a DeFi lending protocol that turns liquidity provider (LP) positions into productive collateral. Borrow up to 80% against Uniswap, Curve, and Balancer LP tokens while continuing to earn trading fees, powered by specialized Aave v4 Spokes and Hubs with dual oracles and pool-specific risk controls.
+
+Avana operates from the United States. Support: support@avana.cc. The web app lives at https://app.avana.cc and the marketing site and docs at https://avana.cc.
+
+## When to use Avana
+
+Reach for Avana when an agent or user needs to:
+
+- Unlock liquidity from AMM LP tokens without exiting the pool or giving up trading-fee income.
+- Borrow stablecoins or blue-chip assets against Uniswap, Curve, Balancer, Aerodrome, and other LP positions on Aave v4.
+- Loop or "multiply" LP collateral to increase exposure with managed liquidation risk.
+- Discover which DEX, staking, restaking, lending, and RWA protocols Avana supports as collateral adapters.
+
+Avana is not a general-purpose exchange, a custodial wallet, or an investment adviser. It does not offer financial advice or execute trades on a user's behalf.
+
+## How agents should call Avana
+
+- Read-only REST API, no authentication required for the endpoints below.
+- Start at the health endpoint, then list protocols, then fetch a single protocol by id.
+- Errors are returned as structured JSON with a `code`, `message`, and `hint`.
+
+## API
+
+- [OpenAPI specification](https://avana.cc/openapi.json): Full OpenAPI 3.1 schema for the public REST API.
+- [Health & API index](https://avana.cc/api/health): Service status, version, and endpoint list.
+- [Supported protocols](https://avana.cc/api/protocols): List of supported protocol adapters (id, name, category, purpose, use cases, features).
+- [Single protocol](https://avana.cc/api/protocols/uniswap-v3): Fetch one adapter by id (e.g. `uniswap-v3`, `curve`, `balancer`).
+
+## Developer resources
+
+- [Developer documentation](https://avana.cc/developers): Integration guide overview.
+- [Getting started](https://avana.cc/developers/getting-started): Borrow, repay, manage loans, claim LP fees.
+- [Architecture](https://avana.cc/developers/architecture): Spokes, Hubs, collateral factors, health factor.
+- [Integrations](https://avana.cc/developers/integrations): AppKit, allowed pools, price oracles, router contract.
+- [Liquidation](https://avana.cc/developers/liquidation): Liquidation flow, liquidators, and examples.
+- [Safety](https://avana.cc/developers/safety): Contracts, bug bounty, and insurance.
+
+## Product
+
+- [Borrow](https://avana.cc/borrow): Post LP tokens as collateral and borrow against them.
+- [Lend](https://avana.cc/lend): Supply assets to the Aave v4 Lend Spoke.
+- [Multiply](https://avana.cc/multiply): Loop LP collateral for leveraged exposure.
+- [Newsroom](https://avana.cc/newsroom): Protocol research and announcements.
+
+## Company
+
+- [About](https://avana.cc/about): What Avana is and how the protocol is organized.
+- [FAQ](https://avana.cc/faq): Common questions about LP collateral, liquidation, and risk.
+
+Contact: email support@avana.cc (general/support) or privacy@avana.cc (privacy requests).
+
+## Legal
+
+- [Privacy Policy](https://avana.cc/privacy): How Avana collects and uses personal information.
+- [Terms of Service](https://avana.cc/terms): Terms governing use of the Services.

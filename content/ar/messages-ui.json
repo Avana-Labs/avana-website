@@ -60,7 +60,7 @@
       "understandLiquidationDesc": "كيف يتم مراقبة وتسوية المناصب المدعومة بـ LP."
     },
     "footer": {
-      "blurb": "Avana هو بروتوكول LP مضمون على Aave v4 يساعد مزودي السيولة على الاقتراض مقابل المراكز النشطة مع البقاء في المجمع.",
+      "blurb": "Avana هو بروتوكول إقراض مبني على Aave V4 يتيح استخدام مراكز مجمعات سيولة AMM كضمان. يمكن لمزودي السيولة من Uniswap أو Balancer أو Curve أو Aerodrome إيداع مراكز LP المدعومة، وتقييمها ضمن أطر مخاطر خاصة بكل سوق، والاقتراض مقابلها بينما تظل المراكز نشطة في المجمعات الأساسية.",
       "explore": "اِسْتَكْشِف",
       "resources": "الموارد",
       "docs": "مستندات",
@@ -216,21 +216,24 @@
   "home": {
     "hero": {
       "eyebrow": "مدعوم بواسطة Aave v4",
-      "title": "اقترض مقابل LP مواضع",
-      "titleLine1": "اقترض مقابل",
-      "titleLine2": "مراكز السيولة",
-      "subtitle": "استمر في كسب رسوم التداول أثناء تحرير السيولة من المواقع Uniswap وCurve وBalancer.",
+      "title": "Avana هو سوق الإقراض اللامركزي المصمم خصيصاً لمجمعات سيولة AMM.",
+      "titleLine1": "Avana هو سوق الإقراض اللامركزي",
+      "titleLine2": "المصمم خصيصاً لمجمعات سيولة AMM.",
+      "subtitle": "اقترض العملات المشفرة، السلع، العملات الأجنبية (FX)، وأصول العالم الحقيقي (RWA) على السلسلة باستخدام مراكز سيولة AMM كضمان.",
       "subtitleMobileLines": [
-        "الوصول إلى ما يصل إلى 80٪ من قيمة تجمع السيولة الخاص بك",
-        "at 5.5% APR without withdrawing liquidity or",
-        "giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets",
+        "onchain using your AMM liquidity positions",
+        "as collateral."
       ],
       "subtitleDesktopLines": [
-        "الوصول إلى ما يصل إلى 80٪ من قيمة حوض السيولة الخاص بك بنسبة 5.5٪ APR",
-        "without withdrawing liquidity or giving up trading fees."
+        "Borrow crypto, commodities, FX, and real world assets onchain",
+        "using your AMM liquidity positions as collateral."
       ],
-      "primaryCta": "جرّب Sandbox",
-      "secondaryCta": "اقرأ المستندات"
+      "primaryCta": "اقرأ مقترح ARFC",
+      "secondaryCta": "جرّب Sandbox"
+    },
+    "intro": {
+      "text": "<ink>في مارس 2021، أطلق بروتوكول Aave سوق AMM Market.</ink> وكان أول بروتوكول يتيح استخدام سيولة AMM كضمان مالي ويثبت أن مراكز مزودي السيولة (LP) يمكن أن تعمل كضمان للإقراض، لكنه صُمم للنماذج البسيطة لمنصات DEX آنذاك. <ink>ينقل Avana هذه الرؤية إلى الجيل القادم من DeFi</ink>، حيث تم تصميمه خصيصاً لمنصات DEX الحديثة ذات السيولة المركزة، مما يتيح للمستخدمين <ink>اقتراض العملات الرقمية والعملات الأجنبية وأصول العالم الحقيقي على السلسلة مقابل مراكزهم في مجمعات سيولة AMM</ink>."
     },
     "features": {
       "eyebrow": "الميزات الرئيسية",
@@ -246,6 +249,12 @@
     "buildTomorrow": {
       "title": "قابل Avana",
       "body": "Avana يحول المواقع المدعومة LP إلى ضمان قابل للاستخدام على Aave v4 بحيث يمكن لمقدمي السيولة الاقتراض دون مغادرة المجمع."
+    },
+    "trustedBy": {
+      "caption": "يحظى بثقة الفرق الرائدة التي تبني وتطلق أفضل منتجات Web3"
+    },
+    "cta": {
+      "title": "جرّب Avana الآن."
     }
   },
   "product": {
