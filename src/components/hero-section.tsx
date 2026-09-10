@@ -8,12 +8,16 @@ import {
   Building2,
   ChevronDown,
   Globe2,
+  HandCoins,
+  Landmark,
   Layers,
+  PiggyBank,
+  Repeat2,
+  TrendingUp,
   Zap,
 } from "lucide-react"
 import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
-import { FeatureCardDescription, FeatureCardTitle } from "@/components/shared"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { AskAiShowcase } from "@/components/ask-ai-showcase"
 import { homepagePools, type HomepagePool } from "@/data/homepage"
@@ -106,6 +110,42 @@ const lpUseCases: {
       "Borrow when timing matters, then redeploy capital as opportunities open across the broader market.",
     icon: Zap,
   },
+  {
+    title: "Preserve fee income",
+    description:
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+    icon: PiggyBank,
+  },
+  {
+    title: "Avoid forced LP exits",
+    description:
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+    icon: Landmark,
+  },
+  {
+    title: "Compound LP returns",
+    description:
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Rotate between markets",
+    description:
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+    icon: Repeat2,
+  },
+  {
+    title: "Bootstrap protocol liquidity",
+    description:
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+    icon: HandCoins,
+  },
+  {
+    title: "Fund market making",
+    description:
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+    icon: Layers,
+  },
 ]
 
 const positionSafetyItems = [
@@ -140,7 +180,6 @@ const positionSafetyItems = [
       "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
   },
 ] as const
-
 
 export default async function HeroSection({ locale }: { locale: AppLocale }) {
   return withMarketingI18n(
@@ -689,28 +728,32 @@ function HeroSectionBody(locale: AppLocale) {
       <AskAiShowcase />
 
       <div className="site-content-shell site-section-gap flex flex-col site-section-stack">
-      <div>
-        <MarketingLeadHeader
-          title="Who it's for"
-          subtitle="Ways teams put LP credit to work"
-        />
+        <section className="border-t border-border pt-12 sm:pt-16">
+          <MarketingLeadHeader
+            title="Put your LP positions to work"
+            subtitle="Ways teams use LP collateral without giving up liquidity or fee income."
+          />
 
-        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
-          {lpUseCases.map((item) => {
-            const Icon = item.icon
+          <div className="mt-10 grid gap-x-12 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            {lpUseCases.map((item) => {
+              const Icon = item.icon
 
-            return (
-              <article key={item.title} className="flex flex-col bg-transparent">
-                <Icon className="h-10 w-10 text-[#01AACF] sm:h-11 sm:w-11" strokeWidth={1.5} aria-hidden="true" />
-                <FeatureCardTitle className="mt-4 sm:mt-5">{item.title}</FeatureCardTitle>
-                <FeatureCardDescription className="mt-2 max-w-[22rem]">
-                  {item.description}
-                </FeatureCardDescription>
-              </article>
-            )
-          })}
-        </div>
-      </div>
+              return (
+                <article key={item.title} className="flex items-start gap-3">
+                  <Icon
+                    className="mt-0.5 size-[18px] shrink-0 text-type-tertiary"
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="type-supporting text-foreground">{item.title}</h3>
+                    <p className="mt-1 type-meta-label">{item.description}</p>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
 
         <div>
           <MarketingLeadHeader
