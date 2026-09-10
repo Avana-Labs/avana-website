@@ -149,7 +149,7 @@ export function LendMarketsDeck() {
           border: 1px solid rgba(15, 21, 24, 0.08);
           border-radius: 12px;
           background: #ffffff;
-          padding: 14px 16px;
+          padding: 11px 14px;
           box-shadow: 0 1px 2px rgba(15, 21, 24, 0.04);
         }
         .lmd-top {
@@ -162,8 +162,8 @@ export function LendMarketsDeck() {
           flex: none;
         }
         .lmd-token img {
-          width: 52px;
-          height: 52px;
+          width: 42px;
+          height: 42px;
           border-radius: 9999px;
         }
         .lmd-names {
@@ -190,12 +190,12 @@ export function LendMarketsDeck() {
           font-variant-numeric: tabular-nums;
         }
         .lmd-band {
-          margin-top: 12px;
+          margin-top: 9px;
         }
         .lmd-chart {
           display: block;
           width: 100%;
-          height: 54px;
+          height: 40px;
         }
         @media (prefers-reduced-motion: reduce) {
           .lmd-track {

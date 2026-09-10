@@ -1,4 +1,4 @@
-import Image from "next/image"
+import { BorrowAgainstLP } from "@/components/borrow-against-lp"
 import { LendMarketsDeck } from "@/components/lend-markets-deck"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { MultiplyAssetsLoop } from "@/components/multiply-assets-loop"
@@ -37,7 +37,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                     {
                       "--layered-media-bg-light": "#FFFFFF",
                       "--layered-media-bg-dark": "#3C3935",
-                      height: "380px",
+                      height: "190px",
                     } as React.CSSProperties
                   }
                 >
@@ -45,20 +45,8 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                     className="media-light absolute inset-0 z-0"
                     style={{ backgroundColor: "#fff" }}
                   />
-                  <div className="z-20 col-span-full row-span-full h-full min-h-0">
-                    <div className="flex h-full w-full items-center justify-center px-g1.75 py-g1.75">
-                      <div className="relative w-full max-w-[340px] overflow-hidden rounded-lg shadow-lg ring-1 ring-black/10 xl:max-w-[380px]">
-                        <Image
-                          src="/marketing-static/automate/card-code-quality.png"
-                          alt="Avana Borrow against LP positions"
-                          loading="lazy"
-                          width={954}
-                          height={796}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-                          className="h-auto w-full"
-                        />
-                      </div>
-                    </div>
+                  <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
+                    <BorrowAgainstLP />
                   </div>
                 </div>
               </figure>
@@ -83,7 +71,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                     {
                       "--layered-media-bg-light": "#FFFFFF",
                       "--layered-media-bg-dark": "#4A443B",
-                      height: "380px",
+                      height: "190px",
                     } as React.CSSProperties
                   }
                 >
@@ -113,7 +101,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
               <figure className="pt-g1.75">
                 <div
                   className="media-border-container relative grid grid-cols-1 grid-rows-1"
-                  style={{ backgroundColor: "#fff", height: "380px" }}
+                  style={{ backgroundColor: "#fff", height: "190px" }}
                 >
                   <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
                     <MultiplyAssetsLoop />

@@ -237,12 +237,6 @@ function HeroSectionBody(locale: AppLocale) {
                               <circle cx="67" cy="147" r="3.5" fill="#01AACF" />
                             </svg>
 
-                            {/* Traveling capital dot */}
-                            <div
-                              className="ce-loop-dot absolute h-2.5 w-2.5 rounded-full bg-[#01AACF]"
-                              style={{ left: "19.17%", top: "41%", boxShadow: "0 0 8px 2px rgba(1,170,207,0.55)" }}
-                            />
-
                             {/* Net APY chip (top-right) */}
                             <div
                               className="absolute rounded-lg border border-border/70 bg-card/95 px-2 py-1"
@@ -437,7 +431,7 @@ function HeroSectionBody(locale: AppLocale) {
                                         ))}
                                       </div>
                                       <div className="mt-4 flex items-center gap-2 text-[11px] font-medium text-emerald-600">
-                                        <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                                        <div className="h-2 w-2 rounded-full bg-emerald-500" />
                                         Borrowing enabled
                                       </div>
                                     </div>
@@ -608,15 +602,6 @@ function HeroSectionBody(locale: AppLocale) {
             </div>
 
             <style>{`
-              .ce-ticker-risk {
-                animation: ce-tr 16s cubic-bezier(0.76, 0, 0.24, 1) infinite;
-              }
-              @keyframes ce-tr {
-                0%, 22% { transform: translateY(0); }
-                28%, 50% { transform: translateY(-25%); }
-                56%, 78% { transform: translateY(-50%); }
-                84%, 100% { transform: translateY(-75%); }
-              }
               .ce-range-dot {
                 animation: ce-dot 4.5s ease-in-out infinite;
               }
@@ -626,7 +611,7 @@ function HeroSectionBody(locale: AppLocale) {
               }
               .ce-eq {
                 transform-origin: bottom;
-                animation: ce-eq 1.6s ease-in-out infinite, ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+                animation: ce-eq 1.6s ease-in-out infinite;
               }
               .ce-eq-2 { animation-delay: 0.2s; }
               .ce-eq-3 { animation-delay: 0.4s; }
@@ -634,61 +619,9 @@ function HeroSectionBody(locale: AppLocale) {
                 0%, 100% { transform: scaleY(0.55); }
                 50% { transform: scaleY(1); }
               }
-              .ce-state {
-                animation: ce-state 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
-              }
-              @keyframes ce-state {
-                0%, 20% { background-color: #10b981; }
-                25%, 45% { background-color: #f59e0b; }
-                50%, 70% { background-color: #ef4444; }
-                75%, 100% { background-color: #10b981; }
-              }
-              .ce-health-bar {
-                animation: ce-health-bar 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
-              }
-              @keyframes ce-health-bar {
-                0%, 20% { width: 45%; background-color: #10b981; }
-                25%, 45% { width: 68%; background-color: #f59e0b; }
-                50%, 70% { width: 88%; background-color: #ef4444; }
-                75%, 100% { width: 45%; background-color: #10b981; }
-              }
-              .ce-shimmer {
-                animation: ce-shimmer 2.4s ease-in-out infinite;
-              }
-              @keyframes ce-shimmer {
-                0% { transform: translateX(-120%); }
-                100% { transform: translateX(360%); }
-              }
-              .ce-loop-dot {
-                transform: translate(-50%, -50%);
-                animation: ce-loop 2.6s ease-in-out infinite;
-              }
-              @keyframes ce-loop {
-                0% { top: 41%; left: 19.17%; opacity: 0; }
-                12% { opacity: 1; }
-                52% { top: 73.5%; left: 19.17%; opacity: 1; }
-                70% { top: 73.5%; left: 27.9%; opacity: 1; }
-                82% { top: 73.5%; left: 27.9%; opacity: 0; }
-                100% { top: 41%; left: 19.17%; opacity: 0; }
-              }
-              .ce-amt {
-                animation: ce-amt 10.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
-              }
-              @keyframes ce-amt {
-                0%, 20% { transform: translateY(0%); }
-                25%, 45% { transform: translateY(-25%); }
-                50%, 70% { transform: translateY(-50%); }
-                75%, 100% { transform: translateY(-75%); }
-              }
               @media (prefers-reduced-motion: reduce) {
-                .ce-ticker-risk,
                 .ce-range-dot,
-                .ce-eq,
-                .ce-shimmer,
-                .ce-loop-dot,
-                .ce-amt,
-                .ce-state,
-                .ce-health-bar {
+                .ce-eq {
                   animation: none !important;
                 }
               }

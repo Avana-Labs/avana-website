@@ -12,11 +12,11 @@ type Coin = {
 // Overlapping cluster of real token icons that float on a continuous, seamless
 // loop — each coin bobs on its own phase so the group never rests.
 const coins: Coin[] = [
-  { symbol: "WETH", size: 56, dur: "3.4s", delay: "-0.2s" },
-  { symbol: "GHO", size: 62, dur: "3.0s", delay: "-1.1s" },
-  { symbol: "USDC", size: 76, dur: "3.7s", delay: "-0.6s", center: true },
-  { symbol: "USDT", size: 62, dur: "3.1s", delay: "-1.6s" },
-  { symbol: "WBTC", size: 56, dur: "3.3s", delay: "-0.9s" },
+  { symbol: "WETH", size: 68, dur: "3.4s", delay: "-0.2s" },
+  { symbol: "GHO", size: 74, dur: "3.0s", delay: "-1.1s" },
+  { symbol: "USDC", size: 92, dur: "3.7s", delay: "-0.6s", center: true },
+  { symbol: "USDT", size: 74, dur: "3.1s", delay: "-1.6s" },
+  { symbol: "WBTC", size: 68, dur: "3.3s", delay: "-0.9s" },
 ]
 
 export function MultiplyAssetsLoop() {
