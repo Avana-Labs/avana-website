@@ -84,8 +84,8 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                 key={card.title}
                 className={`flex min-h-[35rem] flex-col rounded-xl border p-5 md:min-h-[38rem] md:p-6 ${
                   card.featured
-                    ? "border-foreground/15 bg-[#f0efec] shadow-[0_16px_36px_-28px_rgba(15,21,24,0.55)]"
-                    : "border-border/70 bg-[#f4f3f0] text-foreground"
+                    ? "border-foreground/15 bg-[#fafafa] shadow-[0_16px_36px_-28px_rgba(15,21,24,0.55)]"
+                    : "border-border/70 bg-[#fafafa] text-foreground"
                 }`}
               >
                 <div>
