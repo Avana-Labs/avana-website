@@ -19,13 +19,8 @@ const dexLinks: Record<string, string> = {
   AE: "https://aerodrome.finance",
   BAL: "https://balancer.fi",
   BAL2: "https://balancer.fi",
-  VL: "https://velodrome.finance",
-  BNT: "https://bancor.network",
-  CAKE: "https://pancakeswap.finance",
-  CML: "https://camelot.exchange",
+  COW: "https://swap.cow.fi/#/1/swap/WETH/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
   SUSHI: "https://sushi.com",
-  iZi: "https://izumi.finance",
-  MAV: "https://www.mav.xyz",
 }
 
 export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapter[] }) {

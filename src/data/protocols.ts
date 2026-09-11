@@ -122,36 +122,6 @@ export const protocols: ProtocolAdapter[] = [
     ]
   },
   {
-    name: "Velodrome Adapter",
-    shortName: "VL",
-    category: "DEX",
-    purpose: "Facilitates liquidity migration for Velodrome, an Optimism-native AMM.",
-    useCases: [
-      "Migrate liquidity between Velodrome pools",
-      "Claim rewards and stake LP tokens"
-    ],
-    features: [
-      "Deposit",
-      "Withdraw",
-      "Rewards"
-    ]
-  },
-  {
-    name: "Bancor Adapter",
-    shortName: "BNT",
-    category: "DEX",
-    purpose: "Supports Bancor's single-sided exposure and impermanent loss protection.",
-    useCases: [
-      "Migrate liquidity while maintaining IL protection",
-      "Claim BNT rewards and stake LP tokens"
-    ],
-    features: [
-      "Deposit",
-      "Withdraw",
-      "Rewards"
-    ]
-  },
-  {
     name: "Pendle Adapter",
     shortName: "PND",
     category: "Yield",
@@ -167,34 +137,18 @@ export const protocols: ProtocolAdapter[] = [
     ]
   },
   {
-    name: "PancakeSwap Adapter",
-    shortName: "CAKE",
+    name: "CoW Swap Adapter",
+    shortName: "COW",
     category: "DEX",
-    purpose: "Supports liquidity migration for PancakeSwap, a leading DEX on BNB Chain.",
+    purpose: "Supports CoW Swap, an intent-based DEX using batch auctions for MEV-protected trades.",
     useCases: [
-      "Migrate LP tokens between PancakeSwap pools",
-      "Claim CAKE rewards and stake LP tokens"
+      "Swap tokens via batch auctions with MEV protection",
+      "Route liquidity through CoW Protocol solvers"
     ],
     features: [
       "Deposit",
       "Withdraw",
-      "Swap",
-      "Rewards"
-    ]
-  },
-  {
-    name: "Camelot Adapter",
-    shortName: "CML",
-    category: "DEX",
-    purpose: "Facilitates liquidity migration for Camelot, an Arbitrum-native AMM.",
-    useCases: [
-      "Migrate liquidity between Camelot pools",
-      "Claim GRAIL rewards and stake LP tokens"
-    ],
-    features: [
-      "Deposit",
-      "Withdraw",
-      "Rewards"
+      "Swap"
     ]
   },
   {
@@ -617,36 +571,6 @@ export const protocols: ProtocolAdapter[] = [
       "Withdraw",
       "Swap",
       "Rewards"
-    ]
-  },
-  {
-    name: "iZiSwap Adapter",
-    shortName: "iZi",
-    category: "DEX",
-    purpose: "Supports the iZiSwap DEX.",
-    useCases: [
-      "Swap tokens on iZiSwap",
-      "Provide liquidity"
-    ],
-    features: [
-      "Deposit",
-      "Withdraw",
-      "Swap"
-    ]
-  },
-  {
-    name: "Maverick Protocol Adapter",
-    shortName: "MAV",
-    category: "DEX",
-    purpose: "Enables interaction with the Maverick Protocol, a dynamic AMM.",
-    useCases: [
-      "Swap tokens on Maverick",
-      "Provide liquidity"
-    ],
-    features: [
-      "Deposit",
-      "Withdraw",
-      "Swap"
     ]
   },
   {
