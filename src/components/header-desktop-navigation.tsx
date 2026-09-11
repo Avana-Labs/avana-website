@@ -97,6 +97,14 @@ export default function HeaderDesktopNavigation() {
           )
         })}
         <Link
+          href={siteRoutes.pricing}
+          onMouseEnter={closeDesktopMenu}
+          onFocus={closeDesktopMenu}
+          className={`site-header-nav-link group relative inline-flex items-center px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${pathname === siteRoutes.pricing ? "text-type-accent" : "text-foreground hover:text-type-accent"}`}
+        >
+          {t("nav.pricing")}
+        </Link>
+        <Link
           href={siteRoutes.faq}
           onMouseEnter={closeDesktopMenu}
           onFocus={closeDesktopMenu}

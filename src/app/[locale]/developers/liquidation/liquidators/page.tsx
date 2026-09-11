@@ -14,20 +14,20 @@ const coverageModel = [
   {
     title: "DEX-specific handling",
     body:
-      "Liquidation is not a generic token sale. Operators need DEX-aware logic for fee realization, position removal, routing, and settlement into the debt asset.",
+      "An LP unwind includes DEX-specific fee collection, liquidity removal, and routing into the debt asset. Operators need execution support for each collateral format they intend to liquidate.",
   },
   {
     title: "Coverage quality",
     body:
-      "LP positions are harder to unwind than simple tokens. Operators that model the full route for supported DEXs usually handle stress better than bots that only react to a health trigger.",
+      "Detecting an eligible account is only the first step. Execution also depends on a viable route from its LP collateral to the debt asset, including available liquidity and any fees or costs incurred along the way.",
   },
 ]
 
 const operationalChecklist = [
-  "Track the same risk state the protocol uses, not a separate heuristic.",
-  "Unwind from a clean state transition in one atomic job whenever possible.",
-  "Price fee realization, route depth, and residual value before optimizing for speed alone.",
-  "Treat partial coverage and full coverage as separate cases with separate routing assumptions.",
+  "Monitor the collateral valuation and debt state used by the protocol's eligibility checks.",
+  "Coordinate debt repayment and settlement atomically wherever the supported route permits it.",
+  "Include fee collection, route depth, and residual value in execution estimates.",
+  "Model the amounts and routes for partial and full debt coverage separately.",
 ]
 
 const executionRequirements = [
@@ -65,13 +65,10 @@ export default async function DeveloperLiquidatorsPage({ params }: LocaleParamsP
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Liquidations are permissionless once a position crosses the liquidation threshold. Any
-            eligible liquidator can repay the allowed debt amount and trigger the settlement path.
-          </p>
-          <p className="type-doc-body">
-            LP collateral is harder to unwind than simple token collateral. Liquidators track the
+            <>Liquidations are permissionless once a position crosses the liquidation threshold. Any
+            eligible liquidator can repay the allowed debt amount and trigger the settlement path.</>{" "}<>LP collateral is harder to unwind than simple token collateral. Liquidators track the
             same risk state, vault-token mapping, route depth, and unwind assumptions used by the
-            protocol.
+            protocol.</>{" "}<>{"LP-backed positions do not all behave the same way during liquidation. A fungible LP token can often be redeemed or transferred proportionally, while a Uniswap v3 NFT is a single discrete position whose range, fee accrual, and unwind route matter at the position level."}</>
           </p>
         </section>
 
@@ -108,8 +105,7 @@ export default async function DeveloperLiquidatorsPage({ params }: LocaleParamsP
             ))}
           </ul>
           <p className="mt-4 type-doc-body">
-            Build DEX-specific unwind, fee realization, and debt repayment as one workflow.
-            Disconnected steps make it easier for a coverable liquidation to fail in execution.
+            DEX-specific liquidity removal, fee collection, and debt repayment form one liquidation workflow. A failure in any of these steps can prevent completion even when the position&apos;s estimated value is sufficient to cover the debt.
           </p>
         </section>
       </div>

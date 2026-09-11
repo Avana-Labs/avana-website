@@ -61,13 +61,12 @@
       "विश्वास के साथ उधार लें",
       "पर संरक्षित",
       "pool स्तर",
-      "DEX कवरेज",
-      "शीर्ष DEXs में समर्थित",
-      "DEX एकीकरण",
       "Liquidity pool",
       "हर पूल का विवरण, पूरी तरह से समझाया गया",
       "समर्थित उधार बाजारों का दस्तावेज़-शैली पूर्वावलोकन",
-      "अक्सर पूछे जाने वाले प्रश्न"
+      "अक्सर पूछे जाने वाले प्रश्न",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "एलपी-समर्थित ऋणों के लिए एक उधार प्रोटोकॉल",
       "के लिए एक उधार देने की प्रोटोकॉल",
       "Avana प्रस्तुत करना:",
-      "हमें आपसे सुनकर खुशी होगी।"
+      "हमें आपसे सुनकर खुशी होगी।",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "चिह्न को घुमाएँ या पलटें नहीं।",
       "अनुमोदित रंगों के बाहर लोगो का रंग न बदलें।",
       "चिह्न को काटें नहीं और इसे किनारे के बहुत पास न रखें।",
-      "पार्टनर लोगो या UI लेबल से चिह्न के आसपास जगह न घेरें।"
+      "पार्टनर लोगो या UI लेबल से चिह्न के आसपास जगह न घेरें।",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "पूँजी को लूप करने, पूल जोखिम समायोजित करने और पोज़ीशन स्वास्थ्य प्रबंधित करने के लिए Multiply बाज़ार।",
       "पोज़ीशन सुरक्षा",
       "सुरक्षित लीवरेज के लिए डिज़ाइन किया गया",
-      "उधार सीमा"
+      "उधार सीमा",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Avana होमपेज हीरो विज़ुअल"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "उधार लें",
-      "LP पोजीशनों के खिलाफ उधार लें जबकि आपकी लिक्विडिटी मूल AMM में सक्रिय बनी रहती है।",
-      "उधार क्षमता इंटरफ़ेस",
-      "उधार दें",
-      "Hub-संयुक्त उधार बाजारों में पूंजी प्रदान करें और LP-समर्थित उधारकर्ता मांग से कमाई करें।",
-      "लेंड मार्केट कैश अकाउंट इंटरफ़ेस",
-      "object-cover object-top",
-      "गुणा",
-      "LP-संरक्षित क्रेडिट का उपयोग करके प्रबंधित लीवरेज बनाएं बिना अपनी मूल तरलता स्थिति को छोड़े।",
-      "पोर्टफोलियो इंटरफ़ेस",
-      "Avana से मिलें",
-      "साल 2021 में,",
-      "Aave",
-      "शुरू किया",
-      "AMM बाज़ार",
-      "और साबित हुआ",
-      "एलपी पद",
-      "जो जमानत के रूप में काम कर सकता था, लेकिन इसे उस समय के साधारण DEXs के लिए बनाया गया था।",
-      "Avana",
-      "जहां वह रुका था वहां से शुरू करता है, आज के DEXs और LP प्रकारों के लिए डिज़ाइन किया गया, प्रत्येक पोज़िशन को इस तरह से मानते हुए",
-      "जमानत",
-      "जहाँ वह बंद हुआ था वहीं से शुरू होता है, आज की DEXs और LP प्रकारों के लिए डिज़ाइन किया गया,",
-      "Avana मार्केट्स",
-      "पूंजी को अनलॉक करें",
-      "एएमएम मार्केट्स से",
-      "एएमएम बाजारों से पूंजी अनलॉक करें",
-      "और जानें",
-      "साल 2021 में, Aave ने AMM मार्केट लॉन्च किया और यह सिद्ध किया कि LP पोज़िशन को गारंटी के रूप में इस्तेमाल किया जा सकता है, लेकिन यह उस समय के सरल DEXs के लिए बनाया गया था। Avana वहीं से आगे बढ़ता है, आज के DEXs और LP प्रकारों के लिए डिज़ाइन किया गया है, प्रत्येक पोज़िशन को डुअल ऑरॅकल और मजबूत जोखिम नियंत्रणों द्वारा आकारित गारंटी के रूप में मानता है।",
-      "एक उधार देने की प्रोटोकॉल",
-      "एलपी-समर्थित ऋणों के लिए",
-      "एलपी-समर्थित ऋणों के लिए एक उधार प्रोटोकॉल"
+      "Avana होमपेज हीरो विज़ुअल",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "अलग-थलग स्पोक बाजार",
-      "प्रत्येक स्पोक बाज़ार एलपी-विशिष्ट मूल्यांकन, जोखिम नियंत्रण और परिसमापन तर्क को अलग करता है, इसलिए एक स्थान या पूल डिज़ाइन में तनाव पूरे प्रोटोकॉल में नहीं फैलता और असंबंधित पदों को प्रभावित नहीं करता।",
-      "डुअल-ओरेकल मूल्य निर्धारण",
-      "किसी भी ऋण क्रिया की पुष्टि से पहले Chainlink फीड और AMM TWAP मूल्य निर्धारण को सहनशीलता के भीतर सहमत होना चाहिए, जिससे फ्लैश-लोन हेरफेर, अस्थायी मूल्य विरूपण, या एक मात्र विषाक्त ओरेकल पठन के जोखिम को कम किया जा सके।",
-      "हमेशा अधिक सुरक्षा संपार्श्विकित",
-      "हर ऋण सुरक्षित प्रतिभूतिपूर्वक रखा जाता है सावधान उधारी सीमाओं, अनुकूलित ऋण-से-मूल्य सीमा और लाइव स्वास्थ्य निगरानी के माध्यम से जो जोखिम को उजागर करती है इससे पहले कि वह संचय होने का अवसर पाए।",
-      "उधारकर्ता-सुरक्षात्मक परिसमापन",
-      "लिक्विडेशन को नियंत्रित निष्पादन के साथ पोजीशनों को समाप्त करने के लिए डिज़ाइन किया गया है: अप्राप्त शुल्क पहले लागू होते हैं, मूलधन केवल आवश्यकतानुसार समाप्त किया जाता है, और किसी भी अधिशेष मूल्य को उधारकर्ता को वापस किया जाता है।",
+      "आपका नियंत्रण लाभ",
+      "निर्धारित करें कि प्रत्येक लूप कितनी आक्रामक रूप से चलता है और वहीं रोकें जहाँ जोखिम सही लगे। प्रत्येक मल्टीप्लाई मार्केट कैप्स को उसके LP संपार्श्विक, ऑरेकल मूल्य निर्धारण, और परिसमापन मार्ग द्वारा सुरक्षित रूप से समर्थित सीमा तक लेवरेज करें, ताकि कोई स्थिति अपनी सीमाओं से आगे न बढ़ सके।",
+      "हर लूप पर लाइव स्वास्थ्य",
+      "हर जोड़ा गया लूप आपके स्वास्थ्य कारक, उधारी शक्ति और परिसमापन सीमा को वास्तविक समय में अपडेट करता है, ताकि आप सीधे देख सकें कि किसी लीवरेज सेटिंग से स्थिति किनारे की ओर बढ़ने से पहले कितना बफर छोड़ती है।",
+      "नियंत्रित ढील",
+      "यदि एक लीवरेज्ड पोज़िशन अपनी सीमा के करीब पहुँचती है, Avana चरणों में लूप को अनवाइंड करता है, ऋण चुकाता है और सब कुछ एक साथ बंद करने के बजाय धीरे-धीरे जोखिम कम करता है। असंग्रहीत शुल्क पहले लागू होते हैं, और कोई भी अतिरिक्त राशि आपको वापस कर दी जाती है।",
+      "प्रति-बाजार उत्तोलन सीमाएँ",
+      "लिवरेज केवल उन LP प्रकारों के लिए सक्षम है जिनकी विश्वसनीय मूल्यांकन, परिभाषित जोखिम मानदंड और परीक्षण किए गए अनवाइंड अनुमान हैं। पृथक Spoke बाजार यह सुनिश्चित करते हैं कि एक लिवरेज्ड पूल में तनाव असंबंधित पोज़िशनों में न फैले।",
       "डिज़ाइन द्वारा सुरक्षा",
-      "तरलता स्थितियों के इर्द-गिर्द डिजाइन किया गया जोखिम",
+      "जोखिम नियंत्रण के साथ लीवरेज",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "निकालें",
       "अक्सर पूछे जाने वाले",
       "प्रश्न",
-      "अक्सर पूछे जाने वाले प्रश्न"
+      "अक्सर पूछे जाने वाले प्रश्न",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "सप्लाई बाजार",
-      "बाजारों में उधार दें"
+      "बाजारों में उधार दें",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "प्रगति में"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "सुरक्षित ज़ोन",
-      "स्वास्थ्य कारक > 1.5। उधार उपयोग क्षमता के भीतर रहता है, शुल्क लगातार बढ़ते रहते हैं, और आपका एलपी सुरक्षित रहता है।",
-      "चेतावनी ज़ोन",
-      "स्वास्थ्य कारक 1.0-1.5। आपको ऋण चुकाने, संपार्श्विक जोड़ने, या स्वचालन को जोखिम घटाने देने की सूचना दी जाती है।",
-      "लिक्विडेशन",
-      "स्वास्थ्य कारक < 1.0। शुल्क पहले लागू होते हैं, आवश्यक LP मूलधन वापस लिया जाता है, और बाकी मूल्य आपको लौटाया जाता है।",
-      "पोज़िशन सुरक्षा",
-      "हर स्वास्थ्य स्थिति, पूरी तरह से समझाई गई",
-      "LP-समर्थित ऋण को कार्रवाई की आवश्यकता होने से पहले स्वास्थ्य, चेतावनी, और परिसमापन की स्थितियों को ट्रैक करें।",
-      "स्थिति स्वास्थ्य",
-      "सुरक्षित क्षेत्र",
-      "संचित शुल्क",
-      "चेतावनी",
-      "सीमा",
-      "लिक्विडेशन की ओर बढ़ना",
-      "उपलब्ध क्रियाएँ",
-      "उधार शेष घटाएँ",
-      "border-amber-200 bg-amber-50",
-      "संपार्श्विक जोड़ें",
-      "स्वास्थ्य कारक बढ़ाएँ",
-      "स्वचालित ऋण घटाना",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "क्रम",
-      "शुल्क लागू",
-      "शेष वापस किया गया",
-      "केवल आवश्यक मूलधन ही अनवाइंड किया गया है"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Hub आधार दर",
@@ -635,7 +663,8 @@
       "विशिष्ट पूल जोखिम अंतिम स्प्रेड में योगदान देता है, समान निःशुल्क नकदी के लिए रिटर्न की संभावना बढ़ाता है।",
       "Avana एपीवाई",
       "वही निष्क्रिय कैश, अधिक APY रिटर्न",
-      "को"
+      "को",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "कई के बीच स्टैक उधारी शक्ति",
       "प्रत्येक स्थिति के स्वास्थ्य को साथ में ट्रैक करें",
       "बाजार के अनुसार संपार्श्विक जोड़ें या समायोजित करें",
-      "Avana कॉम्बाइन एलपी पोज़ीशन्स चित्रण"
+      "Avana कॉम्बाइन एलपी पोज़ीशन्स चित्रण",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "अपनी मूल लिक्विडिटी पोज़ीशन से बाहर निकले बिना प्रबंधित लीवरेज बनाने के लिए LP-समर्थित क्रेडिट का उपयोग करें।",
       "Avana LP पोज़ीशन पर उधार",
       "Avana Hub से जुड़े बाज़ारों में उधार देना",
-      "Avana Multiply प्रबंधित लीवरेज प्रतिफल"
+      "Avana Multiply प्रबंधित लीवरेज प्रतिफल",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

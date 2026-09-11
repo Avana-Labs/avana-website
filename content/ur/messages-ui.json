@@ -9,7 +9,9 @@
       "closeMenu": "مینو بند کریں",
       "language": "زبان: {language}",
       "logo": "{site} لوگو",
-      "helpfulLinks": "مددگار روابط"
+      "helpfulLinks": "مددگار روابط",
+      "helpCenter": "مدد مرکز: سپورٹ کو ای میل کریں",
+      "themeToggle": "تھیم کی ترجیح"
     },
     "nav": {
       "products": "مصنوعات",
@@ -23,7 +25,7 @@
       "about": "کے بارے میں",
       "newsroom": "خبروں کا کمرہ",
       "brand": "برانڈ",
-      "faq": "FAQ",
+      "faq": "عمومی سوالات",
       "privacy": "رازداری",
       "terms": "شرائط",
       "overview": "جائزہ",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "یہ صفحہ دستیاب نہیں ہے۔",
       "body": "پتہ غلط ہو سکتا ہے یا صفحہ منتقل ہو چکا ہے۔",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "ہوم پیج پر جائیں",
+      "faq": "عمومی سوالات"
     },
     "sandboxNotice": "Sandbox صرف پیش نظارہ کے لیے دکھایا گیا ڈیٹا۔ APY، قیمتیں، اور منافع مثالی ہیں اور حقیقی مارکیٹ کی صورتحال سے مختلف ہو سکتے ہیں۔",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "لنکڈ اِن پر شیئر کریں",
       "previousPost": "پچھلا پوسٹ",
       "nextPost": "اگلا پوسٹ",
-      "onThisPage": "On this page"
+      "onThisPage": "اس صفحے پر"
     },
     "docs": {
       "previous": "پچھلا",
@@ -99,7 +101,8 @@
         "liquidation": "لیکویڈیشن فریم ورک",
         "integrations": "معاونت یافتہ انضمام",
         "safety": "حفاظتی میکنزم",
-        "legal": "قانونی اور تعمیل"
+        "legal": "قانونی اور تعمیل",
+        "copilot": "AI سے پوچھیں"
       },
       "items": {
         "overview": "جائزہ",
@@ -131,7 +134,11 @@
         "bugBounty": "بگ باؤنٹی",
         "insuranceFunds": "انشورنس فنڈز",
         "securityDisclosures": "سیکیورٹی انکشافات",
-        "legalDisclaimer": "قانونی دستبرداری"
+        "legalDisclaimer": "قانونی دستبرداری",
+        "aiIntroduction": "AI تعارف",
+        "copilotProtocols": "معاون پروٹوکولز",
+        "copilotPrompts": "پرامپٹ مثالیں",
+        "copilotWorkflow": "ایجنٹ ورک فلو"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "تازہ ترین Avana سے",
       "readNewsroom": "نیوز روم پڑھیں"
+    },
+    "exportMenu": {
+      "copyPage": "صفحہ کاپی کریں",
+      "copied": "کاپی ہو گیا",
+      "copyPageMarkdown": "صفحہ Markdown کے طور پر کاپی کریں",
+      "copyPageLink": "صفحے کا لنک کاپی کریں",
+      "copyPageLinkDescription": "اس صفحے کا URL کلپ بورڈ پر کاپی کریں",
+      "openInChatGPT": "ChatGPT میں کھولیں",
+      "openInClaude": "Claude میں کھولیں",
+      "openInGrok": "Grok میں کھولیں",
+      "openInPerplexity": "Perplexity میں کھولیں",
+      "askAboutPage": "اس صفحے کے بارے میں سوالات پوچھیں",
+      "reviewPrompt": "نیچے دیے گئے Avana صفحے کا مواد دیکھیں اور سوالات کے جوابات دیں۔"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana ایک آن چین لینڈنگ مارکیٹ ہے",
       "titleLine2": "جو خاص طور پر AMM لیکویڈیٹی پولز کے لیے بنائی گئی ہے۔",
       "subtitle": "اپنی AMM لیکویڈیٹی پوزیشنز کو ضمانت (Collateral) بنا کر آن چین کرپٹو، اجناس، فاریکس (FX) اور حقیقی دنیا کے اثاثے (RWA) ادھار لیں۔",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC تجویز پڑھیں",
       "secondaryCta": "Sandbox آزمائیں"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "عمومی سوالات",
     "subtitle": "جوابات Avana، LP ضمانت، اور Aave v4 کے بارے میں",
     "englishOnlyNote": "مکمل FAQ کے جوابات اس وقت انگریزی میں دکھائے جاتے ہیں جب تک کہ اس مقامی زبان کا جائزہ مکمل نہ ہو جائے۔"
   },

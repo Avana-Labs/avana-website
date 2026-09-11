@@ -9,7 +9,9 @@
       "closeMenu": "Zamknij menu",
       "language": "Język: {language}",
       "logo": "Logo {site}",
-      "helpfulLinks": "Przydatne linki"
+      "helpfulLinks": "Przydatne linki",
+      "helpCenter": "Centrum pomocy: napisz do wsparcia",
+      "themeToggle": "Preferencje motywu"
     },
     "nav": {
       "products": "Produkty",
@@ -23,7 +25,7 @@
       "about": "O",
       "newsroom": "Redakcja",
       "brand": "Marka",
-      "faq": "FAQ",
+      "faq": "Najczęściej zadawane pytania",
       "privacy": "Prywatność",
       "terms": "Warunki",
       "overview": "Przegląd",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Ta strona jest niedostępna.",
       "body": "Adres może być nieprawidłowy lub strona mogła zostać przeniesiona.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Przejdź do strony głównej",
+      "faq": "Najczęściej zadawane pytania"
     },
     "sandboxNotice": "Sandbox dane pokazane tylko w podglądzie. APYs, ceny i zwroty są przykładowe i mogą różnić się od rzeczywistych warunków rynkowych.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Udostępnij na LinkedIn",
       "previousPost": "Poprzedni wpis",
       "nextPost": "Następny post",
-      "onThisPage": "On this page"
+      "onThisPage": "Na tej stronie"
     },
     "docs": {
       "previous": "Poprzedni",
@@ -99,7 +101,8 @@
         "liquidation": "Ramowy plan likwidacji",
         "integrations": "Obsługiwane integracje",
         "safety": "Mechanizmy bezpieczeństwa",
-        "legal": "Prawo i zgodność"
+        "legal": "Prawo i zgodność",
+        "copilot": "Zapytaj AI"
       },
       "items": {
         "overview": "Przegląd",
@@ -131,7 +134,11 @@
         "bugBounty": "Program nagród za błędy",
         "insuranceFunds": "Fundusze ubezpieczeniowe",
         "securityDisclosures": "Ujawnienia bezpieczeństwa",
-        "legalDisclaimer": "Zastrzeżenie prawne"
+        "legalDisclaimer": "Zastrzeżenie prawne",
+        "aiIntroduction": "Wprowadzenie do AI",
+        "copilotProtocols": "Obsługiwane protokoły",
+        "copilotPrompts": "Przykłady promptów",
+        "copilotWorkflow": "Przepływ agenta"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Najnowsze z Avana",
       "readNewsroom": "Czytaj newsroom"
+    },
+    "exportMenu": {
+      "copyPage": "Kopiuj stronę",
+      "copied": "Skopiowano",
+      "copyPageMarkdown": "Kopiuj stronę jako Markdown",
+      "copyPageLink": "Kopiuj link do strony",
+      "copyPageLinkDescription": "Skopiuj adres URL tej strony do schowka",
+      "openInChatGPT": "Otwórz w ChatGPT",
+      "openInClaude": "Otwórz w Claude",
+      "openInGrok": "Otwórz w Grok",
+      "openInPerplexity": "Otwórz w Perplexity",
+      "askAboutPage": "Zadaj pytania o tę stronę",
+      "reviewPrompt": "Przejrzyj treść tej strony Avana i odpowiedz na pytania."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana to rynek pożyczkowy,",
       "titleLine2": "stworzony dla pul płynności AMM.",
       "subtitle": "Pożyczaj krypto, towary, waluty FX i aktywa świata rzeczywistego (RWA) onchain, używając pozycji płynności AMM jako zabezpieczenia.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Przeczytaj ARFC",
       "secondaryCta": "Wypróbuj Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Najczęściej zadawane pytania",
     "subtitle": "Odpowiedzi dotyczące Avana, LP zabezpieczenia i Aave v4",
     "englishOnlyNote": "Pełne odpowiedzi w FAQ są wyświetlane w języku angielskim, dopóki przegląd tej lokalizacji nie zostanie zakończony."
   },

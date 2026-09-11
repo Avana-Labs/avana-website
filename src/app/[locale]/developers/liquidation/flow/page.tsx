@@ -31,12 +31,12 @@ const runtimeSteps = [
   {
     title: "Source execution liquidity",
     body:
-      "The liquidator acquires temporary liquidity, commonly through a flashloan-style path, so debt can be repaid without pre-funding the full unwind out of pocket.",
+      "The liquidator sources the capital needed to repay debt before LP settlement completes. A flashloan-based route can provide temporary liquidity; a prefunded route uses the liquidator's own capital.",
   },
   {
     title: "Repay debt and seize the vault collateral",
     body:
-      "The relevant Borrow Spoke settles debt into the credit layer, takes custody of the vault collateral, and hands the position into LP-specific settlement.",
+      "The Borrow Spoke coordinates debt settlement with the Hub and transfers the seized vault collateral into the LP-specific settlement process.",
   },
   {
     title: "Burn the vault token and mark the backing position",
@@ -54,17 +54,17 @@ const stateTransitions = [
   {
     title: "ACTIVE to LIQUIDATING",
     body:
-      "Once Aave permits liquidation, the selected position leaves ACTIVE state and enters LIQUIDATING state. The borrower should no longer be able to withdraw it.",
+      (<>{"Once Aave permits liquidation, the selected position moves from ACTIVE to LIQUIDATING. Borrower withdrawal is blocked while that position is in settlement."}{" "}{"The settlement layer uses the collateral family, backing-position identifier, and configured unwind route to resolve the position and clear its corresponding vault supply."}</>),
   },
   {
     title: "LIQUIDATING to SETTLED",
     body:
-      "After the real LP position has been unwound or sold, the backing supply is cleared and the position becomes SETTLED.",
+      (<>{"After the real LP position has been unwound or sold, the backing supply is cleared and the position becomes SETTLED."}{" "}{"Settlement value is applied in a fixed order. It first covers debt, then the liquidator reward, then settlement costs. Any value left after those obligations is surplus, and that surplus follows the market rule for the collateral being settled."}</>),
   },
   {
     title: "State rule",
     body:
-      "A vault token cannot remain outstanding after its backing LP position has been removed. If the vault tokens are burned, the LP position must be withdrawn, unwound, or moved into settlement.",
+      (<>{"A vault token cannot remain outstanding after its backing LP position has been removed. If the vault tokens are burned, the LP position must be withdrawn, unwound, or moved into settlement."}{" "}{"Liquidation connects two representations of the same collateral: the vault token balance recorded in Aave and the backing LP position tracked by Avana. Seizure of the vault token must resolve to the corresponding LP position so settlement removes both the backing position and its collateral representation consistently."}</>),
   },
 ]
 
@@ -81,13 +81,10 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Liquidation starts when an account&apos;s health factor falls below the liquidation
+            <>Liquidation starts when an account&apos;s health factor falls below the liquidation
             threshold. Aave handles debt accounting and the liquidation entry point against the
-            ERC-20 vault collateral. Avana handles the LP settlement behind that vault token.
-          </p>
-          <p className="type-doc-body">
-            Debt is repaid, vault collateral is seized, the matching vault token is burned, the real
-            LP position is settled, and any residual value is returned according to the market rule.
+            ERC-20 vault collateral. Avana handles the LP settlement behind that vault token.</>{" "}<>Debt is repaid, vault collateral is seized, the matching vault token is burned, the real
+            LP position is settled, and any residual value is returned according to the market rule.</>
           </p>
         </section>
 
@@ -128,9 +125,7 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
         <section id="state-transitions" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">State Transitions</h2>
           <p className="mb-4 type-doc-body">
-            Different LP families are all trying to reach the same end state, but they do not get
-            there through identical exits. Adapter-based handling lets each pool family follow the
-            unwind path that matches its own mechanics.
+            LP families use different settlement methods to reach the SETTLED state. The adapter selects the method required by the position format, such as redeeming fungible LP shares or resolving an individual position NFT.
           </p>
           <div className="space-y-4">
             {stateTransitions.map((item) => (
@@ -146,15 +141,8 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
           <h2 className="mb-4 type-doc-section-title">Operator Notes</h2>
           <div className="space-y-3 type-doc-body">
             <p>
-              Liquidation bots should index active positions, refresh debt drift, and price
-              accounts from the same oracle stack used by the protocol rather than from raw AMM
-              spot state alone.
-            </p>
-            <p>
-              Profitability checks should account for slippage, route depth, flashloan costs, and
-              execution risk. Large or unusual unwinds may benefit from private execution paths to
-              reduce adverse MEV exposure.
-            </p>
+            <>Liquidation monitoring combines indexed positions, current debt including accrued interest, and the protocol&apos;s oracle valuation. Raw AMM spot prices alone do not reproduce the collateral values used for eligibility checks.</>{" "}<>An execution estimate includes slippage, route depth, temporary-liquidity costs, and transaction risk. For large or unusual unwinds, private transaction delivery may reduce exposure to adverse MEV.</>
+          </p>
             <p>
               Thresholds, rewards, and admission rules come from the architecture and risk docs.
             </p>

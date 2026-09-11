@@ -67,11 +67,15 @@ function collectFromSource(filePath) {
   const sf = ts.createSourceFile(filePath, src, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX)
   const strings = []
   const seen = new Set()
+  // Client marketing islands use a local `t` wrapper around lookupPhrase.
+  // Capture its arguments explicitly so short fragments ("No. Your", "Hub",
+  // etc.) stay in the phrase catalog instead of silently falling back to EN.
+  const hasPhraseLookup = src.includes("lookupPhrase")
 
-  function add(raw) {
+  function add(raw, force = false) {
     if (typeof raw !== "string") return
     const n = normalize(raw)
-    if (!n || isJunk(n) || seen.has(n)) return
+    if (!n || (!force && isJunk(n)) || seen.has(n)) return
     // keep only likely human-readable copy
     const hasLetter = /[\p{L}]/u.test(n)
     if (!hasLetter) return
@@ -82,6 +86,13 @@ function collectFromSource(filePath) {
   }
 
   function visit(node) {
+    if (hasPhraseLookup && ts.isCallExpression(node) && ts.isIdentifier(node.expression) && node.expression.text === "t") {
+      const firstArg = node.arguments[0]
+      if (firstArg && (ts.isStringLiteral(firstArg) || ts.isNoSubstitutionTemplateLiteral(firstArg))) {
+        add(firstArg.text, true)
+      }
+    }
+
     if (ts.isJsxText(node)) {
       add(node.getText(sf))
     } else if (ts.isJsxAttribute(node) && node.initializer) {
@@ -197,6 +208,21 @@ function walk(dir, base = "") {
   }
 }
 walk(docsRoot)
+
+if (process.argv.includes("--docs-only")) {
+  writeJson("content/en/docs.json", docs)
+  process.exit(0)
+}
+
+if (process.argv.includes("--check-docs")) {
+  const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "content/en/docs.json"), "utf8"))
+  if (JSON.stringify(docs) !== JSON.stringify(catalog)) {
+    console.error("Documentation source and English catalog differ. Run the docs extraction and update all locale catalogs together.")
+    process.exit(1)
+  }
+  console.log("Documentation source matches the English catalog.")
+  process.exit(0)
+}
 
 // -------- marketing pages + components --------
 const marketingFiles = {

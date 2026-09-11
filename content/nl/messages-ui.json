@@ -9,7 +9,9 @@
       "closeMenu": "Sluit menu",
       "language": "Taal: {language}",
       "logo": "{site}-logo",
-      "helpfulLinks": "Handige links"
+      "helpfulLinks": "Handige links",
+      "helpCenter": "Helpcentrum: e-mail naar support",
+      "themeToggle": "Themavoorkeur"
     },
     "nav": {
       "products": "Producten",
@@ -23,8 +25,8 @@
       "about": "Over",
       "newsroom": "Nieuwsredactie",
       "brand": "Merk",
-      "faq": "FAQ",
-      "privacy": "Privacy",
+      "faq": "Veelgestelde vragen",
+      "privacy": "Privacybeleid",
       "terms": "Voorwaarden",
       "overview": "Overzicht",
       "architecture": "Architectuur",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Deze pagina is niet beschikbaar.",
       "body": "Het adres kan verkeerd zijn of de pagina kan verplaatst zijn.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Naar homepage",
+      "faq": "Veelgestelde vragen"
     },
     "sandboxNotice": "Sandbox gegevens getoond voor voorbeeldweergave alleen. APYs, prijzen en rendementen zijn illustratief en kunnen afwijken van de actuele marktomstandigheden.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Delen op LinkedIn",
       "previousPost": "Vorige post",
       "nextPost": "Volgende post",
-      "onThisPage": "On this page"
+      "onThisPage": "Op deze pagina"
     },
     "docs": {
       "previous": "Vorige",
@@ -99,7 +101,8 @@
         "liquidation": "Liquidatiekader",
         "integrations": "Ondersteunde integraties",
         "safety": "Veiligheidsmechanismen",
-        "legal": "Juridisch & Compliance"
+        "legal": "Juridisch & Compliance",
+        "copilot": "Vraag AI"
       },
       "items": {
         "overview": "Overzicht",
@@ -131,7 +134,11 @@
         "bugBounty": "Bug-bounty",
         "insuranceFunds": "Verzekeringsfondsen",
         "securityDisclosures": "Beveiligingsmeldingen",
-        "legalDisclaimer": "Juridische disclaimer"
+        "legalDisclaimer": "Juridische disclaimer",
+        "aiIntroduction": "AI-introductie",
+        "copilotProtocols": "Ondersteunde protocollen",
+        "copilotPrompts": "Promptvoorbeelden",
+        "copilotWorkflow": "Agentworkflow"
       }
     },
     "faqUi": {
@@ -147,15 +154,28 @@
     },
     "tags": {
       "all": "Alles",
-      "product": "Product",
+      "product": "Productaanbod",
       "strategy": "Strategie",
       "guides": "Gidsen",
-      "protocol": "Protocol",
+      "protocol": "Protocolstack",
       "institutions": "Instellingen"
     },
     "newsroom": {
       "latestFrom": "Laatste van Avana",
       "readNewsroom": "Lees nieuwsredactie"
+    },
+    "exportMenu": {
+      "copyPage": "Pagina kopiëren",
+      "copied": "Gekopieerd",
+      "copyPageMarkdown": "Pagina kopiëren als Markdown",
+      "copyPageLink": "Paginalink kopiëren",
+      "copyPageLinkDescription": "Kopieer de URL van deze pagina naar het klembord",
+      "openInChatGPT": "Openen in ChatGPT",
+      "openInClaude": "Openen in Claude",
+      "openInGrok": "Openen in Grok",
+      "openInPerplexity": "Openen in Perplexity",
+      "askAboutPage": "Stel vragen over deze pagina",
+      "reviewPrompt": "Bekijk de inhoud van deze Avana-pagina en beantwoord de vragen."
     }
   },
   "meta": {
@@ -166,7 +186,7 @@
     "twitterTitle": "Avana - Lenen tegen LP Posities",
     "twitterDescription": "Ontgrendel liquiditeit van je LP tokens op Aave v4",
     "titleTemplate": "{title} | Avana",
-    "team": "Avana Team",
+    "team": "Avana-team",
     "ogAlt": "Avana - DeFi Liquiditeitsprotocol",
     "home": {
       "title": "Lenen tegen LP posities op Aave v4",
@@ -220,15 +240,15 @@
       "titleLine1": "Avana is de leenmarkt,",
       "titleLine2": "gebouwd voor AMM-liquiditeitspools.",
       "subtitle": "Leen onchain crypto, grondstoffen, FX en real-world assets (RWA) met je AMM-liquiditeitsposities als onderpand.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Lees het ARFC",
       "secondaryCta": "Probeer Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Veelgestelde vragen",
     "subtitle": "Antwoorden over Avana, LP onderpand, en Aave v4",
     "englishOnlyNote": "Volledige FAQ-antwoorden worden in het Engels weergegeven totdat de beoordeling van deze locatie is voltooid."
   },

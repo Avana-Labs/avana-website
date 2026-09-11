@@ -25,6 +25,7 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
     { href: siteRoutes.newsroom, label: t("nav.newsroom") },
     { href: siteRoutes.faq, label: t("nav.helpCenter") },
     { href: siteRoutes.developers, label: t("nav.developers") },
+    { href: siteRoutes.pricing, label: t("nav.pricing") },
     // Temporarily hidden — bring back later
     // { href: "https://governance.aave.com/", label: AAVE_ARFC_LABEL, external: true },
     { href: "https://app.avana.cc", label: t("cta.sandboxLong"), external: true },

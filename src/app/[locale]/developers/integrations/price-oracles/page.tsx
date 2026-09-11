@@ -35,27 +35,27 @@ const architectureChecklist = [
   {
     title: "Price underlying assets from external robust oracles",
     description:
-      "Start from resilient external feeds for the underlying assets so collateral does not inherit the full noise or manipulability of raw pool spot state.",
+      "External feeds provide reference prices for the underlying tokens. This separates the asset-price input from the pool's instantaneous trading price, which can be affected by short-lived trades or manipulation.",
   },
   {
     title: "Derive LP value conservatively",
     description:
-      "Rebuild fungible LP balances or decompose concentrated-liquidity positions from reserves, liquidity, range, and fees using a deterministic path that the spoke can reason about.",
+      "The oracle reconstructs fungible LP balances or decomposes concentrated-liquidity positions using reserves, liquidity, range, and accrued fees. These inputs determine the assets represented by the position.",
   },
   {
     title: "Haircut for impermanent loss and liquidation slippage",
     description:
-      "Discount the reconstructed mark to a recoverable collateral value that assumes stress, slippage, and imperfect exits rather than a clean redemption at theoretical NAV.",
+      "The reconstructed value is discounted for stressed market conditions, liquidation slippage, and the position's exit route. The resulting value estimates what liquidation could recover.",
   },
   {
     title: "Cap exposure by LP family and pool depth",
     description:
-      "Apply controls based on LP family, pool class, and available depth so thinner or more complex markets do not receive the same borrow limits as deeper and simpler ones.",
+      "Exposure controls use the LP family, pool type, and available liquidity depth to limit how much borrowing a market can support.",
   },
   {
-    title: "Liquidate based on recoverable unwind value, not optimistic NAV",
+    title: "Apply recoverable value to borrowing and liquidation",
     description:
-      "Use the value that can reasonably be realized through the unwind path when granting borrow power and deciding liquidation, rather than the best-case mark value.",
+      "Borrowing capacity and liquidation checks use the estimated value recoverable through the configured unwind route.",
   },
 ]
 
@@ -109,24 +109,13 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Overview</h2>
           <p className="type-doc-body mb-4">
-            Avana prices LP collateral by reconstructing the position and valuing the assets inside
+            <>Avana prices LP collateral by reconstructing the position and valuing the assets inside
             it. For fungible LPs, the protocol derives value from external asset prices and pool
             balance reconstruction. For concentrated liquidity, it decomposes the position by
-            liquidity, range, current tick, token exposure, and accrued fees.
-          </p>
-          <p className="type-doc-body mb-4">
-            The result is discounted into recoverable collateral value. Borrow power is based on what
-            the position can realistically support under the market&apos;s risk assumptions, not on
-            an optimistic net asset value.
-          </p>
-          <p className="type-doc-body mb-6">
-            That distinction between mark value and recoverable value is what keeps the oracle
-            useful for lending instead of just analytics. ERC-20 LPs, NFT LPs, and multi-asset
-            pools can share one high-level interface only because each class goes through its own
-            validation and manipulation-resistance checks before the value reaches the spoke.
+            liquidity, range, current tick, token exposure, and accrued fees.</>{" "}<>The result is discounted to estimate recoverable collateral value under the market&apos;s risk assumptions. Borrowing capacity therefore reflects both the position&apos;s underlying assets and the conditions under which they could be recovered during liquidation.</>{" "}<>The distinction between position value and recoverable value matters because the oracle supplies inputs to lending decisions. ERC-20 LP tokens, position NFTs, and multi-asset pools share an interface, but each format has its own reconstruction, validation, and manipulation checks before its value reaches the Borrow Spoke.</>
           </p>
 
-          <div className="rounded-xl border border-cyan-200 bg-cyan-50/70 p-5">
+          <div className="doc-topic">
             <h3 className="type-doc-subsection-title mb-3">LP collateral value depends on:</h3>
             <ul className="space-y-3">
               {collateralValueDrivers.map((item) => (
@@ -141,10 +130,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="oracle-interface" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Oracle Interface: IOracle</h2>
           <p className="type-doc-body mb-4">
-            Borrow Spokes need one contract surface even though LP formats differ a lot across
-            DEXs. `IOracle` provides that common shape and keeps principal value, accrued fees, and
-            reserved buffers separate so later risk logic does not have to guess which part of the
-            position it is looking at:
+            `IOracle` gives Borrow Spokes a common valuation interface across LP formats. Its return values distinguish principal, accrued fees, and reserved buffers so the caller can account for each component separately:
           </p>
           
           <div className="type-doc-code-block-dark mb-4">
@@ -159,24 +145,22 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
           </div>
 
           <div className="space-y-3">
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <span className="type-doc-subsection-title">fullValue</span>
               <span className="type-doc-body ml-2">Reconstructed value of the principal liquidity before later liquidation stress adjustments are applied.</span>
             </div>
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <span className="type-doc-subsection-title">feeValue</span>
               <span className="type-doc-body ml-2">Value of the fees accrued by the position that can be recognized alongside principal.</span>
             </div>
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <span className="type-doc-subsection-title">reserveValue</span>
               <span className="type-doc-body ml-2">Reserved portion held back for oracle, unwind, and protocol risk buffers.</span>
             </div>
           </div>
 
           <p className="mt-4 type-doc-body">
-            The interface hides DEX-specific plumbing from the spoke. That lets the same caller
-            handle ERC-20 LPs, NFT LPs, and multi-asset pools through one return shape while still
-            leaving room for conservative, collateral-family-specific treatment behind the scenes.
+            The adapter behind this interface handles the DEX-specific reconstruction and validation. Borrow Spokes receive the same return fields for ERC-20 LP tokens, position NFTs, and multi-asset pools, while each implementation applies the checks required by its collateral type.
           </p>
         </section>
 
@@ -189,9 +173,9 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
 
           <div className="space-y-4">
             {architectureChecklist.map((item, index) => (
-              <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-4">
+              <div key={item.title} className="doc-topic">
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-100 text-xs font-semibold text-cyan-700">
+                  <span className="doc-step-number">
                     {index + 1}
                   </span>
                   <div>
@@ -207,9 +191,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="dex-handling" className="mb-10">
           <h2 className="type-doc-section-title mb-4">DEX-Specific Handling</h2>
           <p className="type-doc-body mb-4">
-            Different DEXs expose different pieces of state, and the oracle uses those inputs to
-            reconstruct the position and verify pricing. Pool-derived data is not accepted blindly
-            as a direct collateral mark.
+            Each DEX exposes different position and pool data. The oracle reconstructs the underlying assets from that data and verifies the resulting valuation against its reference prices and risk controls.
           </p>
           
           <div className="overflow-x-auto">
@@ -237,14 +219,11 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="twap-computation" className="mb-10">
           <h2 className="type-doc-section-title mb-4">TWAP Computation by DEX</h2>
           <p className="type-doc-body mb-4">
-            TWAPs are verification inputs. They sit beside external asset prices and deterministic
-            position reconstruction to check whether the pool state being observed is consistent
-            with a credible unwind path. They help reject suspicious or short-lived distortions,
-            but they do not replace the broader oracle model on their own.
+            Time-weighted average prices (TWAPs) provide verification data alongside external asset prices and position reconstruction. Comparing these inputs helps identify short-lived price distortions or inconsistent pool state. TWAP data supplements the valuation process rather than supplying the collateral value on its own.
           </p>
           
           <div className="space-y-3">
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Uniswap V2 & SushiSwap</h3>
               <p className="type-doc-body">
                 On-chain cumulative price data over a 1-hour window is used to cross-check the
@@ -252,29 +231,27 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
                 short-lived pool distortions.
               </p>
             </div>
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Uniswap V3</h3>
               <p className="type-doc-body">
-                Position-aware checks incorporate tick range, liquidity distribution, and accrued
-                fees so the protocol can verify the decomposed token exposure of each NFT LP rather
-                than treating the NFT as a black box.
+                For concentrated-liquidity positions, checks use tick range, liquidity distribution, and accrued fees to verify the token exposure represented by each NFT.
               </p>
             </div>
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Balancer</h3>
               <p className="type-doc-body">
                 Weighted token observations are combined with pool weights to validate multi-asset
                 inventory splits before the oracle assigns a conservative collateral value.
               </p>
             </div>
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Curve</h3>
               <p className="type-doc-body">
                 Stablecoin observations are used mainly to detect stale feeds, reserve drift, and
                 short-term anomalies while external prices remain the primary anchor.
               </p>
             </div>
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Trader Joe & Aerodrome</h3>
               <p className="type-doc-body">
                 Cumulative price observations over a 30-60 minute window help validate
@@ -333,8 +310,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
           <h2 className="type-doc-section-title mb-4">Configurable Oracle Parameters</h2>
           <p className="type-doc-body mb-4">
             Pool-specific oracle settings are configured per token through{" "}
-            <code className="type-doc-inline-code">setTokenConfig</code>. The table below shows
-            the parameters that define how a token and its associated pool should be checked:
+            <code className="type-doc-inline-code">setTokenConfig</code>. The table below lists the parameters used to validate a token&apos;s price feed and associated pool:
           </p>
           
           <div className="overflow-x-auto">

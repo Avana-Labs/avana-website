@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     siteRoutes.developers,
     siteRoutes.newsroom,
     siteRoutes.faq,
+    siteRoutes.pricing,
     siteRoutes.borrow,
     siteRoutes.lend,
     siteRoutes.multiply,

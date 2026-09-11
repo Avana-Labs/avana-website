@@ -1,7 +1,7 @@
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Download } from "lucide-react"
 import { brandOutfitFont } from "@/app/[locale]/brand/brand-fonts"
-import { BrandColorPalette, BrandGuidelinesGrid, BrandLogoShowcase, BrandTokenPreview } from "@/app/[locale]/brand/brand-interactions"
+import { BrandColorPalette, BrandGuidelinesGrid, BrandLogoShowcase } from "@/app/[locale]/brand/brand-interactions"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
 
@@ -11,7 +11,6 @@ const brandSections = {
   logo: { eyebrow: "Primary mark", title: "Logo" },
   typography: { eyebrow: "Voice & rhythm", title: "Typography" },
   color: { eyebrow: "Palette system", title: "Color" },
-  concept: { eyebrow: "Avana Token", title: "Icon" },
   guidelines: { eyebrow: "Use it well", title: "Logo Guidelines" },
 } as const
 
@@ -129,45 +128,6 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             </div>
 
             <BrandColorPalette />
-          </section>
-
-          <section className="site-section-gap">
-            <div className="mb-8 space-y-3 md:mb-12">
-              <SectionEyebrow tone="cyan">{brandSections.concept.eyebrow}</SectionEyebrow>
-              <SectionTitle>{brandSections.concept.title}</SectionTitle>
-            </div>
-
-            <div className="grid items-center gap-8 md:grid-cols-2">
-              <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-semibold text-foreground">Primary Token Mark</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Avana token uses the circular mark as the default asset image for exchange listings, token pages,
-                  market tables, and launch materials.
-                </p>
-              </div>
-
-              <BrandTokenPreview
-                src="/images/brand/avana-token-circle.jpg"
-                alt="Avana circular 3D token icon"
-                imageClassName="h-[72%] w-[72%] object-contain"
-              />
-            </div>
-
-            <div className="mt-12 grid items-center gap-8 md:grid-cols-2">
-              <div className="flex flex-col gap-3">
-                <h3 className="text-xl font-semibold text-foreground">Framed Token Mark</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
-                  Avana token uses the rounded-square mark for interfaces that expect a square asset tile, including
-                  wallets, app grids, dashboards, and compact product views.
-                </p>
-              </div>
-
-              <BrandTokenPreview
-                src="/images/brand/avana-token-square.jpg"
-                alt="Avana rounded-square 3D token icon"
-                imageClassName="h-[88%] w-[88%] object-contain"
-              />
-            </div>
           </section>
 
           <section className="site-section-gap">

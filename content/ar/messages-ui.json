@@ -9,7 +9,9 @@
       "closeMenu": "إغلاق القائمة",
       "language": "اللغة: {language}",
       "logo": "شعار {site}",
-      "helpfulLinks": "روابط مفيدة"
+      "helpfulLinks": "روابط مفيدة",
+      "helpCenter": "مركز المساعدة: راسل الدعم",
+      "themeToggle": "تفضيل المظهر"
     },
     "nav": {
       "products": "المنتجات",
@@ -23,7 +25,7 @@
       "about": "حول",
       "newsroom": "غرفة الأخبار",
       "brand": "علامة تجارية",
-      "faq": "FAQ",
+      "faq": "الأسئلة الشائعة",
       "privacy": "الخصوصية",
       "terms": "الشروط",
       "overview": "نظرة عامة",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "هذه الصفحة غير متوفرة.",
       "body": "قد يكون العنوان خاطئًا أو أن الصفحة قد انتقلت.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "الانتقال إلى الصفحة الرئيسية",
+      "faq": "الأسئلة الشائعة"
     },
     "sandboxNotice": "Sandbox البيانات المعروضة للمعاينة فقط. APY الأسعار والعوائد توضيحية وقد تختلف عن ظروف السوق الحية.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "شارك على لينكدإن",
       "previousPost": "المنشور السابق",
       "nextPost": "المنشور التالي",
-      "onThisPage": "On this page"
+      "onThisPage": "في هذه الصفحة"
     },
     "docs": {
       "previous": "السابق",
@@ -99,7 +101,8 @@
         "liquidation": "إطار التصفية",
         "integrations": "التكاملات المدعومة",
         "safety": "آليات السلامة",
-        "legal": "القانونية والامتثال"
+        "legal": "القانونية والامتثال",
+        "copilot": "اسأل الذكاء الاصطناعي"
       },
       "items": {
         "overview": "نظرة عامة",
@@ -131,7 +134,11 @@
         "bugBounty": "مكافأة الثغرات",
         "insuranceFunds": "صناديق التأمين",
         "securityDisclosures": "الإفصاحات الأمنية",
-        "legalDisclaimer": "تنبيه قانوني"
+        "legalDisclaimer": "تنبيه قانوني",
+        "aiIntroduction": "مقدمة عن الذكاء الاصطناعي",
+        "copilotProtocols": "البروتوكولات المدعومة",
+        "copilotPrompts": "أمثلة على المطالبات",
+        "copilotWorkflow": "سير عمل الوكيل"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "آخر الأخبار من Avana",
       "readNewsroom": "اقرأ غرفة الأخبار"
+    },
+    "exportMenu": {
+      "copyPage": "نسخ الصفحة",
+      "copied": "تم النسخ",
+      "copyPageMarkdown": "نسخ الصفحة بصيغة Markdown",
+      "copyPageLink": "نسخ رابط الصفحة",
+      "copyPageLinkDescription": "نسخ عنوان URL لهذه الصفحة إلى الحافظة",
+      "openInChatGPT": "فتح في ChatGPT",
+      "openInClaude": "فتح في Claude",
+      "openInGrok": "فتح في Grok",
+      "openInPerplexity": "فتح في Perplexity",
+      "askAboutPage": "اطرح أسئلة حول هذه الصفحة",
+      "reviewPrompt": "راجع محتوى صفحة Avana أدناه وأجب عن الأسئلة."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana هو سوق الإقراض اللامركزي",
       "titleLine2": "المصمم خصيصاً لمجمعات سيولة AMM.",
       "subtitle": "اقترض العملات المشفرة، السلع، العملات الأجنبية (FX)، وأصول العالم الحقيقي (RWA) على السلسلة باستخدام مراكز سيولة AMM كضمان.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "اقرأ مقترح ARFC",
       "secondaryCta": "جرّب Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "الأسئلة الشائعة",
     "subtitle": "أجوبة حول Avana، LP الضمان، وAave v4",
     "englishOnlyNote": "يتم عرض إجابات الأسئلة الشائعة الكاملة باللغة الإنجليزية حتى اكتمال مراجعة هذه النسخة الإقليمية."
   },

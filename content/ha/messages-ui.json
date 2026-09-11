@@ -9,7 +9,9 @@
       "closeMenu": "Rufe menu",
       "language": "Harshe: {language}",
       "logo": "Logo na {site}",
-      "helpfulLinks": "Mahimman hanyoyi"
+      "helpfulLinks": "Mahimman hanyoyi",
+      "helpCenter": "Cibiyar taimako: aika imel zuwa tallafi",
+      "themeToggle": "Zaɓin jigo"
     },
     "nav": {
       "products": "Kayayyaki",
@@ -23,7 +25,7 @@
       "about": "Game da",
       "newsroom": "Dakin labarai",
       "brand": "Alamar kasuwanci",
-      "faq": "FAQ",
+      "faq": "Tambayoyin da ake yawan yi",
       "privacy": "Sirri",
       "terms": "Sharuɗɗa",
       "overview": "Bayanin Gabaɗaya",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Wannan shafi ba ya samuwa.",
       "body": "Adireshin na iya zama ba daidai ba ko shafin na iya yin motsi.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Je shafin gida",
+      "faq": "Tambayoyin da ake yawan yi"
     },
     "sandboxNotice": "Sandbox bayanai an nuna su don duba kawai. APYs, farashi, da ribar suna misali ne kuma na iya bambanta da yanayin kasuwa na ainihi.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Raba a LinkedIn",
       "previousPost": "Sakon da ya gabata",
       "nextPost": "Sakon na gaba",
-      "onThisPage": "On this page"
+      "onThisPage": "A wannan shafi"
     },
     "docs": {
       "previous": "Na baya",
@@ -99,7 +101,8 @@
         "liquidation": "Tsarin Ƙarshewa",
         "integrations": "Haɗin da ake tallafawa",
         "safety": "Hanyoyin Tsaro",
-        "legal": "Shari'a da Bin Doka"
+        "legal": "Shari'a da Bin Doka",
+        "copilot": "Tambayi AI"
       },
       "items": {
         "overview": "Bayanin Gabaɗaya",
@@ -131,7 +134,11 @@
         "bugBounty": "Lambar Ladabi ga Kwari",
         "insuranceFunds": "Kudaden Inshora",
         "securityDisclosures": "Bayanan Tsaro",
-        "legalDisclaimer": "Bayani na Shari'a"
+        "legalDisclaimer": "Bayani na Shari'a",
+        "aiIntroduction": "Gabatarwar AI",
+        "copilotProtocols": "Protocols da ake goyan baya",
+        "copilotPrompts": "Misalan prompt",
+        "copilotWorkflow": "Tsarin aikin wakili"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Sabo daga Avana",
       "readNewsroom": "Karanta ɗakin labarai"
+    },
+    "exportMenu": {
+      "copyPage": "Kwafi shafi",
+      "copied": "An kwafa",
+      "copyPageMarkdown": "Kwafi shafi a matsayin Markdown",
+      "copyPageLink": "Kwafi hanyar shafi",
+      "copyPageLinkDescription": "Kwafi URL na wannan shafi zuwa allo",
+      "openInChatGPT": "Bude a ChatGPT",
+      "openInClaude": "Bude a Claude",
+      "openInGrok": "Bude a Grok",
+      "openInPerplexity": "Bude a Perplexity",
+      "askAboutPage": "Yi tambayoyi game da wannan shafi",
+      "reviewPrompt": "Duba abun cikin shafin Avana a kasa kuma ka amsa tambayoyi."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana ita ce kasuwar bayar da lamuni ta DeFi",
       "titleLine2": "wadda aka kera ta musamman don matattaran samar da kudaden AMM.",
       "subtitle": "Ranci kudaden crypto, kayayyaki, FX, da kadarorin zahiri na duniya (RWA) a kan sarka ta hanyar amfani da matsayin samar da kudaden AMM dinka a matsayin jinginar lamuni.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Karanta Shawarar ARFC",
       "secondaryCta": "Gwada Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Tambayoyin da ake yawan yi",
     "subtitle": "Amsoshi game da Avana, LP jinginar, da Aave v4",
     "englishOnlyNote": "Amsoshin cikakken FAQ ana nuna su da Turanci har sai an kammala bita na wannan yanki."
   },

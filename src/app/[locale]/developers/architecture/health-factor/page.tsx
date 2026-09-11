@@ -35,18 +35,15 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Health factor measures the relationship between risk-adjusted collateral value and
+            <>Health factor measures the relationship between risk-adjusted collateral value and
             outstanding debt inside a Borrow Spoke. Adjusted collateral value already includes
             Avana&apos;s LP valuation, collateral factors, pool-level risk treatment, and
-            recoverable-value assumptions.
-          </p>
-          <p className="type-doc-body">
-            If health falls below the liquidation boundary, the position becomes eligible for
+            recoverable-value assumptions.</>{" "}<>If health falls below the liquidation boundary, the position becomes eligible for
             liquidation. See the{" "}
             <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
               Liquidation Framework
             </Link>{" "}
-            for what happens next.
+            for what happens next.</>{" "}<>{"Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after collateral factors and risk discounts. Each position contributes based on its own pool, range, liquidity, and risk settings."}</>
           </p>
         </section>
 
@@ -74,17 +71,8 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Monitoring Bands</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              <strong className="text-gray-900">Healthy:</strong> collateral stays comfortably above
-              debt, with room for normal market movement.
-            </p>
-            <p>
-              <strong className="text-gray-900">Watchlist:</strong> the account still passes checks,
-              but the buffer is thin. Consider repaying, adding collateral, or reducing exposure.
-            </p>
-            <p>
-              <strong className="text-gray-900">Liquidatable:</strong> health has crossed the
-              liquidation threshold. The recovery path can begin.
-            </p>
+            <><strong className="text-gray-900">Healthy:</strong> adjusted collateral value exceeds debt, leaving a buffer before the liquidation threshold.</>{" "}<><strong className="text-gray-900">Watchlist:</strong> the account passes health checks but has a smaller buffer. Repayment or additional approved collateral can increase that buffer.</>{" "}<><strong className="text-gray-900">Liquidatable:</strong> the account has crossed the liquidation threshold and is eligible for the configured liquidation process.</>
+          </p>
           </div>
           <p className="mt-4 type-doc-body">
             Interface warnings may appear earlier than the hard liquidation threshold to give users
@@ -96,13 +84,9 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Response Path</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              When health weakens, the borrower can repay debt, add approved LP collateral, or take
-              other actions that improve the account under the spoke&apos;s health checks.
-            </p>
-            <p>
-              Once health crosses the liquidation boundary, liquidators can unwind the required
-              collateral path to restore solvency according to the market&apos;s liquidation rules.
-            </p>
+            <>When health weakens, the borrower can repay debt, add approved LP collateral, or take
+              other actions that improve the account under the spoke&apos;s health checks.</>{" "}<>Once health crosses the liquidation boundary, liquidators can begin recovering value from the collateral under the market&apos;s liquidation rules.</>
+          </p>
           </div>
         </section>
 
@@ -112,7 +96,7 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
             <li>Borrowing more reduces health because debt rises against the same collateral.</li>
             <li>Repaying debt improves health immediately.</li>
             <li>Adding approved collateral can increase headroom if the spoke accepts and values it.</li>
-            <li>Claiming fees, withdrawing collateral, or changing positions can reduce health — check the post-action state first.</li>
+            <li>Claiming fees, withdrawing collateral, or changing a position can reduce its collateral contribution. These actions are subject to checks on the resulting account health.</li>
           </ul>
           <p className="mt-4 type-doc-body">
             See{" "}

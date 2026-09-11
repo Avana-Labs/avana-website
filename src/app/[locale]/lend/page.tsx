@@ -123,7 +123,7 @@ export async function generateMetadata({ params }: LocaleParamsProps) {
 export default async function LendPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
-    <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
+    <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "trade-market-showcase", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
     <main className="bg-white">
       <FeaturePageHero
         title="Earn interest on your assets"

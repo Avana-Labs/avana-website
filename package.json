@@ -10,6 +10,7 @@
     "lighthouse:check": "node scripts/check-lighthouse-budgets.mjs",
     "check:agents": "node scripts/check-agent-readiness.mjs",
     "check:i18n": "node scripts/check-marketing-i18n.mjs",
+    "check:docs-i18n": "node scripts/extract-content.mjs --check-docs && python3 scripts/validate-docs-i18n.py",
     "lint": "eslint"
   },
   "dependencies": {

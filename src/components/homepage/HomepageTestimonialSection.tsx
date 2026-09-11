@@ -10,24 +10,24 @@ const TRANSITION_DURATION = 300
 
 const featureHighlights = [
   {
-    label: "Isolated Spoke markets",
+    label: "Leverage you control",
     description:
-      "Each Spoke market isolates LP-specific valuation, risk controls, and liquidation logic, so stress in one venue or pool design cannot cascade across the rest of the protocol or compromise unrelated positions.",
+      "Set how aggressive each loop runs and stop where the risk still feels right. Every multiply market caps leverage to what its LP collateral, oracle pricing, and liquidation route can safely support, so a position cannot fold beyond its limits.",
   },
   {
-    label: "Dual-oracle pricing",
+    label: "Live health on every loop",
     description:
-      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before any loan action is confirmed, reducing exposure to flash-loan manipulation, transient price distortion, or a single toxic oracle read.",
+      "Each added loop updates your health factor, borrowing power, and liquidation threshold in real time, so you can see exactly how much buffer a leverage setting leaves before the position drifts toward the edge.",
   },
   {
-    label: "Always overcollateralized",
+    label: "Controlled unwind",
     description:
-      "Every loan remains overcollateralized through conservative borrowing limits, adaptive loan-to-value thresholds, and live health monitoring that surfaces risk before it has room to compound.",
+      "If a leveraged position approaches its limit, Avana unwinds loops in steps, repaying debt and reducing exposure gradually instead of closing everything at once. Uncollected fees are applied first, and any surplus is returned to you.",
   },
   {
-    label: "Borrower-protective liquidation",
+    label: "Per-market leverage limits",
     description:
-      "Liquidation is designed to unwind positions with controlled execution: uncollected fees are applied first, principal is only unwound as needed, and any surplus value is returned to the borrower.",
+      "Leverage is only enabled for LP types with reliable valuation, defined risk parameters, and tested unwind assumptions. Isolated Spoke markets keep stress in one leveraged pool from cascading into unrelated positions.",
   },
 ]
 
@@ -94,7 +94,7 @@ export default function HomepageTestimonialSection() {
     >
       <div className="mb-8 space-y-3 md:mb-10">
         <SectionEyebrow tone="rose">{t("Safety by design")}</SectionEyebrow>
-        <SectionTitle>{t("Risk designed around liquidity positions")}</SectionTitle>
+        <SectionTitle>{t("Leverage with risk controls built in")}</SectionTitle>
       </div>
 
       <div className="flex flex-col lg:flex-row">

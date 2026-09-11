@@ -36,85 +36,32 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            A Borrow Spoke is an isolated LP-collateral market. It decides which pools are supported,
+            <>A Borrow Spoke is an isolated LP-collateral market. It decides which pools are supported,
             how each LP position is valued, what collateral factors apply, which assets can be
-            borrowed, and how liquidation works for that market.
-          </p>
-          <p className="type-doc-body">
-            Borrow Spokes are separated because LP positions do not all behave the same. A
-            stablecoin LP, a correlated ETH-staked ETH LP, and a volatile governance-token LP need
-            different risk settings, different caps, and sometimes different liquidation routes.
+            borrowed, and how liquidation works for that market.</>{" "}<>Borrow Spokes separate collateral markets whose positions require different risk treatment. Stablecoin LPs, correlated ETH and staked-ETH LPs, and volatile governance-token LPs can have different collateral factors, exposure caps, and liquidation routes.</>
           </p>
         </section>
 
         <section id="user-experience" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrow Flow</h2>
           <p className="mb-4 type-doc-body">
-            From the user side, one spoke handles the full account lifecycle: deposit LP collateral,
-            check borrowing capacity, borrow, repay, and claim fees when allowed. The interface
-            stays consistent even when underlying LP formats differ across DEXs.
+            A Borrow Spoke manages the account lifecycle: accepting LP collateral, calculating borrowing capacity, recording borrows and repayments, and permitting eligible fee claims. DEX-specific handling allows this lifecycle to apply across different LP formats.
           </p>
         </section>
 
         <section id="example-flow" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Example Flow</h2>
-          <div className="space-y-6">
-            <div className="border-b border-gray-100 pb-4">
-              <h3 className="mb-2 type-doc-subsection-title">Step 1: Deposit LP collateral</h3>
-              <p className="type-doc-body">
-                The user deposits an approved LP position. The liquidity stays in the pool, but the
-                spoke records it as collateral and starts tracking value and health.
-              </p>
-            </div>
-            <div className="border-b border-gray-100 pb-4">
-              <h3 className="mb-2 type-doc-subsection-title">Step 2: Capacity is calculated</h3>
-              <p className="type-doc-body">
-                The spoke reconstructs the position, prices the underlying exposure, applies
-                collateral factors, and shows the resulting borrowing capacity.
-              </p>
-            </div>
-            <div className="border-b border-gray-100 pb-4">
-              <h3 className="mb-2 type-doc-subsection-title">Step 3: Borrow assets</h3>
-              <p className="type-doc-body">
-                The user draws assets from Hub liquidity up to their capacity. Debt and health
-                update in the spoke after the borrow confirms.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Step 4: Add more collateral</h3>
-              <p className="type-doc-body">
-                Additional approved LP positions can be deposited later. Each position is valued on
-                its own before contributing to aggregate capacity.
-              </p>
-            </div>
+          <div className="doc-prose">
+            <p className="type-doc-body"><>The user deposits an approved LP position. The liquidity stays in the pool, but the
+                spoke records it as collateral and starts tracking value and health.</>{" "}<>The spoke reconstructs the position, prices the underlying exposure, applies
+                collateral factors, and shows the resulting borrowing capacity.</>{" "}<>Once the checks pass, the Borrow Spoke draws the requested asset from Hub liquidity. The confirmed borrow updates debt and account health within that spoke.</>{" "}<>Additional approved LP positions can be deposited later. Each position is valued on
+                its own before contributing to aggregate capacity.</></p>
           </div>
         </section>
 
         <section id="three-tier-architecture" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Three-Tier Architecture</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Borrowers</h3>
-              <p className="type-doc-body">
-                Users interact with the Borrow Spoke to deposit collateral, borrow, repay, and
-                manage their loan.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Borrow Spoke (Avana)</h3>
-              <p className="type-doc-body">
-                Values LP positions, enforces health checks, and coordinates liquidation when
-                collateral no longer supports the debt.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Aave v4 Hub</h3>
-              <p className="type-doc-body">
-                Shared liquidity and accounting layer. Borrow Spokes draw from Hub reserves after
-                spoke-side checks pass.
-              </p>
-            </div>
-          </div>
+          <p className="type-doc-body">{"The architecture separates shared lending accounts from LP-specific collateral management. The Hub manages reserves and debt, while each Borrow Spoke determines borrowing capacity and liquidation handling for its supported LP markets. The Lend Spoke routes supplier deposits into the Hub, so supplying capital does not require managing an LP position."}</p>
         </section>
 
         <section id="data-flow" className="mb-10">
@@ -133,8 +80,7 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
               compounds through the configured rate model while the spoke keeps account state in sync.
             </li>
             <li className="type-doc-body">
-              <strong className="text-gray-900">Liquidation if required</strong> — unhealthy
-              accounts move through the liquidation path to restore solvency.
+              <strong className="text-gray-900">Liquidation if required</strong> — accounts below the liquidation threshold enter the configured collateral recovery process.
             </li>
           </ol>
 
@@ -186,28 +132,11 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
             reserve accounting, and the balance-sheet side of borrowing while the spoke handles
             LP-specific risk.
           </p>
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Capital supply</h3>
-              <p className="type-doc-body">
-                Assets such as USDC, DAI, and ETH enter through the Lend Spoke and Hub. The Borrow
-                Spoke decides how much of that liquidity an LP-backed account may access.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Credit lines</h3>
-              <p className="type-doc-body">
-                Each Borrow Spoke has a credit line that limits how much Hub liquidity it can draw,
-                keeping LP underwriting isolated while sharing capital efficiency.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-2 type-doc-subsection-title">Independent health factors</h3>
-              <p className="type-doc-body">
-                Collateral in multiple Borrow Spokes is evaluated separately. Surplus in one market
-                does not automatically cover a deficit in another.
-              </p>
-            </div>
+          <div className="doc-prose">
+            <p className="type-doc-body"><>Assets such as USDC, DAI, and ETH enter through the Lend Spoke and Hub. The Borrow
+                Spoke decides how much of that liquidity an LP-backed account may access.</>{" "}<>Each Borrow Spoke has a credit line that limits how much Hub liquidity it can draw,
+                keeping LP underwriting isolated while sharing capital efficiency.</>{" "}<>Collateral in multiple Borrow Spokes is evaluated separately. Surplus in one market
+                does not automatically cover a deficit in another.</></p>
           </div>
         </section>
       </div>

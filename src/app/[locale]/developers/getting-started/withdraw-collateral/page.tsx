@@ -34,14 +34,9 @@ export default async function WithdrawCollateralPage({ params }: LocaleParamsPro
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Withdrawing returns your LP position from Avana custody back to your wallet. The easiest
-            path is full debt repayment first — once debt is zero, collateral is no longer securing
-            a loan and withdrawal is straightforward.
-          </p>
-          <p className="type-doc-body">
-            You can also withdraw while debt is still open if the remaining collateral still supports
+            <>Withdrawal transfers an LP token or position NFT from Avana&apos;s custody back to the borrower&apos;s wallet. Once the associated debt is fully repaid, the position no longer needs to secure that loan. While debt remains, withdrawal depends on the value of the collateral left in the account.</>{" "}<>You can also withdraw while debt is still open if the remaining collateral still supports
             the outstanding debt after the withdrawal. Avana runs a health check before releasing
-            the position.
+            the position.</>{" "}<>{"Interest keeps accruing on open debt until you repay. The amount shown in the interface includes accrued interest, not just the original borrow."}</>
           </p>
         </section>
 
@@ -51,8 +46,7 @@ export default async function WithdrawCollateralPage({ params }: LocaleParamsPro
             <div>
               <p className="type-doc-subsection-title">1. Repay debt if needed</p>
               <p className="mt-1 type-doc-body">
-                If you still owe debt, repay enough so the remaining collateral can support what is
-                left. Full repayment is the simplest path.
+                If debt remains, repayment may be needed before the remaining collateral can support it without the position being withdrawn. Full repayment removes that loan&apos;s collateral requirement.
               </p>
             </div>
             <div>
@@ -65,8 +59,7 @@ export default async function WithdrawCollateralPage({ params }: LocaleParamsPro
             <div>
               <p className="type-doc-subsection-title">3. Health check and release</p>
               <p className="mt-1 type-doc-body">
-                The Borrow Spoke recalculates your account without the withdrawn position. If health
-                is still valid, the LP token or position NFT is returned to your wallet.
+                The Borrow Spoke recalculates account health with the requested collateral removed. If the remaining account passes the health check, the LP token or position NFT is released to the borrower&apos;s wallet.
               </p>
             </div>
           </div>

@@ -34,13 +34,7 @@ export default async function IncentivesPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Incentives are an overlay, not part of the lending core. The protocol is defined by LP
-            valuation, Borrow Spoke risk controls, Hub liquidity, and liquidation. Campaigns can
-            encourage participation, but they do not change those mechanics.
-          </p>
-          <p className="type-doc-body">
-            Campaigns are operational and time limited. This does not imply a specific rewards
-            program is live on every deployment.
+            <>Incentive campaigns distribute rewards alongside Avana&apos;s lending operations. Their eligibility and reward calculations are separate from LP valuation, Borrow Spoke risk controls, Hub liquidity, and liquidation eligibility.</>{" "}<>Campaign availability and duration depend on the deployment. A program described here is not necessarily active on every network.</>
           </p>
         </section>
 
@@ -56,31 +50,24 @@ export default async function IncentivesPage({ params }: LocaleParamsProps) {
         <section id="distribution-principles" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Distribution Principles</h2>
           <p className="mb-4 type-doc-body">
-            When incentives exist, they should be understandable, auditable, and kept separate from
-            core risk logic. Reward math may depend on activity, duration, or campaign rules, but it
-            should not change how Avana values collateral or decides liquidation eligibility.
+            Reward calculations may depend on activity, participation duration, or other campaign rules. These calculations determine reward entitlement; they do not change collateral value, borrowing capacity, or liquidation eligibility.
           </p>
         </section>
 
         <section id="claiming-and-reconciliation" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Claiming & Reconciliation</h2>
           <p className="mb-4 type-doc-body">
-            Claim paths, vesting schedules, and reconciliation methods are campaign-specific. They
+            <>Claim paths, vesting schedules, and reconciliation methods are campaign-specific. They
             may be handled onchain, through a dedicated rewards controller, or through offchain
-            accounting published by the campaign operator.
-          </p>
-          <p className="type-doc-body">
-            Integrators should verify the active claim path and eligibility rules for the deployment
-            they are targeting.
+            accounting published by the campaign operator.</>{" "}<>Integrators should verify the active claim path and eligibility rules for the deployment
+            they are targeting.</>
           </p>
         </section>
 
         <section id="status" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Current Status</h2>
           <p className="type-doc-body">
-            Treat incentives as deployment-specific and season-specific. If a campaign is live,
-            its details should be announced separately with explicit dates, rules, and distribution
-            terms.
+            Each campaign has its own deployment, dates, eligibility rules, and distribution terms. Its published announcement provides the information needed to identify which activity qualifies and how rewards are distributed.
           </p>
         </section>
       </div>

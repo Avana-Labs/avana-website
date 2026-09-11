@@ -9,7 +9,9 @@
       "closeMenu": "关闭菜单",
       "language": "语言：{language}",
       "logo": "{site} 徽标",
-      "helpfulLinks": "有用的链接"
+      "helpfulLinks": "有用的链接",
+      "helpCenter": "帮助中心：发送邮件至支持团队",
+      "themeToggle": "主题偏好"
     },
     "nav": {
       "products": "产品",
@@ -76,7 +78,7 @@
     "notFound": {
       "title": "此页面不可用。",
       "body": "地址可能错误，或者页面可能已移动。",
-      "home": "转到主页",
+      "home": "返回首页",
       "faq": "常见问题"
     },
     "sandboxNotice": "Sandbox 数据仅供预览。APY 秒、价格和回报为示例，可能与实时市场情况不同。",
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "分享到领英",
       "previousPost": "上一篇",
       "nextPost": "下一篇帖子",
-      "onThisPage": "在此页面上"
+      "onThisPage": "本页内容"
     },
     "docs": {
       "previous": "上一个",
@@ -99,7 +101,8 @@
         "liquidation": "清算框架",
         "integrations": "支持的集成",
         "safety": "安全机制",
-        "legal": "法律与合规"
+        "legal": "法律与合规",
+        "copilot": "询问 AI"
       },
       "items": {
         "overview": "概览",
@@ -131,7 +134,11 @@
         "bugBounty": "漏洞赏金",
         "insuranceFunds": "保险基金",
         "securityDisclosures": "安全披露",
-        "legalDisclaimer": "法律免责声明"
+        "legalDisclaimer": "法律免责声明",
+        "aiIntroduction": "AI 简介",
+        "copilotProtocols": "支持的协议",
+        "copilotPrompts": "提示示例",
+        "copilotWorkflow": "智能体工作流"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "来自Avana的最新消息",
       "readNewsroom": "阅读新闻编辑部"
+    },
+    "exportMenu": {
+      "copyPage": "复制页面",
+      "copied": "已复制",
+      "copyPageMarkdown": "以 Markdown 格式复制页面",
+      "copyPageLink": "复制页面链接",
+      "copyPageLinkDescription": "将此页面 URL 复制到剪贴板",
+      "openInChatGPT": "在 ChatGPT 中打开",
+      "openInClaude": "在 Claude 中打开",
+      "openInGrok": "在 Grok 中打开",
+      "openInPerplexity": "在 Perplexity 中打开",
+      "askAboutPage": "就此页面提问",
+      "reviewPrompt": "请查阅以下 Avana 页面内容并回答问题。"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana 是专为 AMM 流动性池",
       "titleLine2": "打造的链上借贷市场。",
       "subtitle": "以您的 AMM 流动性头寸为抵押品，在链上借入加密资产、大宗商品、外汇及现实世界资产（RWA）。",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "阅读 ARFC 提案",
       "secondaryCta": "体验 Sandbox"
     },

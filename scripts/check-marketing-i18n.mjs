@@ -8,8 +8,8 @@ import path from "node:path";
  *
  * The lookup fails soft by design -- an absent group or a short array just
  * renders the English string. That is the right runtime behaviour and the wrong
- * build behaviour: two groups (`avana-products-section`, `ask-ai-showcase`)
- * shipped English to all 26 locales because nothing checked they existed.
+ * build behaviour: missing or stale groups can silently ship English or keep
+ * deleted-page copy alive because nothing checks them.
  *
  * This asserts what the runtime cannot:
  *   1. every group a component asks for exists in every locale
@@ -76,6 +76,14 @@ const failures = [];
 for (const [group, sourceFile] of groups) {
   if (!(group in english)) {
     failures.push(`"${group}" requested by ${sourceFile} but absent from content/${DEFAULT_LOCALE}/marketing.json`);
+  }
+}
+
+// A removed page or component must not leave a dead phrase-map group behind.
+// Stale groups make catalogs drift indefinitely and hide real missing coverage.
+for (const group of Object.keys(english)) {
+  if (!groups.has(group)) {
+    failures.push(`stale marketing group "${group}" remains in content/${DEFAULT_LOCALE}/marketing.json`);
   }
 }
 

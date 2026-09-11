@@ -59,14 +59,9 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Lenders supply assets such as ETH, BTC, GHO, USDC, USDT, or other supported tokens into
+            <>Lenders supply assets such as ETH, BTC, GHO, USDC, USDT, or other supported tokens into
             the lender-facing side of the protocol. That capital routes through the Hub to support
-            borrowing across LP-collateral markets.
-          </p>
-          <p className="type-doc-body">
-            Lenders do not manage LP ranges, impermanent loss, or AMM-specific collateral
-            operations. Borrow Spokes handle LP underwriting and liquidation logic, while lender
-            capital powers the credit layer.
+            borrowing across LP-collateral markets.</>{" "}<>Suppliers provide the assets used for loans rather than managing the LP positions that secure them. Borrow Spokes handle LP valuation, collateral restrictions, and liquidation, while the Hub accounts for the supplied capital and borrowing against it.</>{" "}<>{"The architecture separates shared lending accounts from LP-specific collateral management. The Hub manages reserves and debt, while each Borrow Spoke determines borrowing capacity and liquidation handling for its supported LP markets. The Lend Spoke routes supplier deposits into the Hub, so supplying capital does not require managing an LP position."}</>
           </p>
         </section>
 
@@ -82,7 +77,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             {capitalFlow.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-gray-200 bg-white p-4"
+                className="doc-topic"
               >
                 <h3 className="mb-1 type-doc-subsection-title">{item.title}</h3>
                 <p className="type-doc-body">{item.description}</p>
@@ -100,14 +95,9 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
         <section id="risk-adjusted-yield" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Risk-Adjusted Yield</h2>
           <p className="mb-4 type-doc-body">
-            Supplier yield comes from borrowers paying interest to access liquidity backed by LP
+            <>Supplier yield comes from borrowers paying interest to access liquidity backed by LP
             collateral. Avana combines the shared Hub base rate with spoke-level risk premiums tied
-            to the LP markets being funded.
-          </p>
-          <p className="type-doc-body">
-            Rates move with market conditions, available liquidity, utilization, and the risk
-            profile of underlying borrower markets. Actual returns depend on live configuration, not
-            a fixed assumption from documentation.
+            to the LP markets being funded.</>{" "}<>Supply rates vary with available liquidity, utilization, market conditions, and the risk profile of the borrowing markets. An integration needs the current deployment&apos;s rate and reserve data to display a current return estimate.</>
           </p>
         </section>
 
@@ -119,7 +109,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             alone.
           </p>
 
-          <div className="type-doc-panel">
+          <div className="doc-topic">
             <h3 className="mb-3 type-doc-subsection-title">
               Signals that may inform risk updates
             </h3>

@@ -9,7 +9,9 @@
       "closeMenu": "ปิดเมนู",
       "language": "ภาษา: {language}",
       "logo": "โลโก้ {site}",
-      "helpfulLinks": "ลิงก์ที่เป็นประโยชน์"
+      "helpfulLinks": "ลิงก์ที่เป็นประโยชน์",
+      "helpCenter": "ศูนย์ช่วยเหลือ: อีเมลฝ่ายสนับสนุน",
+      "themeToggle": "การตั้งค่าธีม"
     },
     "nav": {
       "products": "ผลิตภัณฑ์",
@@ -23,7 +25,7 @@
       "about": "เกี่ยวกับ",
       "newsroom": "ห้องข่าว",
       "brand": "แบรนด์",
-      "faq": "FAQ",
+      "faq": "คำถามที่พบบ่อย",
       "privacy": "ความเป็นส่วนตัว",
       "terms": "ข้อกำหนด",
       "overview": "ภาพรวม",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "หน้านี้ไม่สามารถใช้ได้",
       "body": "ที่อยู่อาจไม่ถูกต้องหรือหน้าเว็บอาจถูกย้าย",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "ไปที่หน้าแรก",
+      "faq": "คำถามที่พบบ่อย"
     },
     "sandboxNotice": "Sandbox ข้อมูลที่แสดงเพื่อการดูตัวอย่างเท่านั้น APY ราคา ผลตอบแทน และผลลัพธ์เป็นเพียงตัวอย่างและอาจแตกต่างจากสภาวะตลาดจริง",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "แชร์บน LinkedIn",
       "previousPost": "โพสต์ก่อนหน้า",
       "nextPost": "โพสต์ถัดไป",
-      "onThisPage": "On this page"
+      "onThisPage": "ในหน้านี้"
     },
     "docs": {
       "previous": "ก่อนหน้า",
@@ -99,7 +101,8 @@
         "liquidation": "กรอบงานการชำระบัญชี",
         "integrations": "การรวมระบบที่รองรับ",
         "safety": "กลไกความปลอดภัย",
-        "legal": "กฎหมายและการปฏิบัติตาม"
+        "legal": "กฎหมายและการปฏิบัติตาม",
+        "copilot": "ถาม AI"
       },
       "items": {
         "overview": "ภาพรวม",
@@ -131,7 +134,11 @@
         "bugBounty": "โปรแกรมรายงานช่องโหว่",
         "insuranceFunds": "กองทุนประกันภัย",
         "securityDisclosures": "การเปิดเผยด้านความปลอดภัย",
-        "legalDisclaimer": "ข้อจำกัดความรับผิดทางกฎหมาย"
+        "legalDisclaimer": "ข้อจำกัดความรับผิดทางกฎหมาย",
+        "aiIntroduction": "แนะนำ AI",
+        "copilotProtocols": "โปรโตคอลที่รองรับ",
+        "copilotPrompts": "ตัวอย่างพรอมต์",
+        "copilotWorkflow": "เวิร์กโฟลว์ของเอเจนต์"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "ล่าสุดจาก Avana",
       "readNewsroom": "อ่านห้องข่าว"
+    },
+    "exportMenu": {
+      "copyPage": "คัดลอกหน้า",
+      "copied": "คัดลอกแล้ว",
+      "copyPageMarkdown": "คัดลอกหน้าเป็น Markdown",
+      "copyPageLink": "คัดลอกลิงก์หน้า",
+      "copyPageLinkDescription": "คัดลอก URL ของหน้านี้ไปยังคลิปบอร์ด",
+      "openInChatGPT": "เปิดใน ChatGPT",
+      "openInClaude": "เปิดใน Claude",
+      "openInGrok": "เปิดใน Grok",
+      "openInPerplexity": "เปิดใน Perplexity",
+      "askAboutPage": "ถามคำถามเกี่ยวกับหน้านี้",
+      "reviewPrompt": "ตรวจสอบเนื้อหาหน้า Avana ด้านล่างและตอบคำถาม"
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana คือตลาดการกู้ยืมแบบ Onchain",
       "titleLine2": "ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
       "subtitle": "กู้ยืมคริปโต, สินค้าโภคภัณฑ์, FX และสินทรัพย์ในโลกจริง (RWA) บนเชน โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "อ่านข้อเสนอ ARFC",
       "secondaryCta": "ทดลองใช้ Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "คำถามที่พบบ่อย",
     "subtitle": "คำตอบเกี่ยวกับ Avana, LP หลักประกัน, และ Aave v4",
     "englishOnlyNote": "คำตอบ FAQ แบบเต็มจะแสดงเป็นภาษาอังกฤษจนกว่าการตรวจทานของพื้นที่นี้จะเสร็จสมบูรณ์"
   },

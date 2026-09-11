@@ -61,13 +61,12 @@
       "Pinjam dengan Percaya Diri",
       "Dilindungi di",
       "level pool",
-      "Cakupan DEX",
-      "Didukung di DEX teratas",
-      "Integrasi DEX",
       "Liquidity pool",
       "Setiap detail Kolam, dijelaskan secara lengkap",
       "Pratinjau gaya dokumen dari pasar peminjaman yang didukung",
-      "Pertanyaan yang sering diajukan"
+      "Pertanyaan yang sering diajukan",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "Sebuah protokol pinjaman untuk pinjaman yang didukung LP",
       "Sebuah protokol peminjaman untuk",
       "Memperkenalkan Avana:",
-      "kami sangat ingin mendengar kabar dari Anda."
+      "kami sangat ingin mendengar kabar dari Anda.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "Jangan memutar atau membalik tanda.",
       "Jangan mewarnai ulang logo di luar palet yang disetujui.",
       "Jangan memotong tanda atau menempatkannya terlalu dekat ke tepi.",
-      "Jangan menyesakkan tanda dengan logo mitra atau label UI."
+      "Jangan menyesakkan tanda dengan logo mitra atau label UI.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "Pasar Multiply untuk mengulang modal, menyetel risiko pool, dan mengelola kesehatan posisi.",
       "Keamanan Posisi",
       "Dirancang untuk leverage yang aman",
-      "Batas pinjaman"
+      "Batas pinjaman",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Visual utama halaman depan Avana"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Pinjam",
-      "Meminjam dengan jaminan posisi LP sementara likuiditas Anda tetap aktif di AMM yang mendasarinya.",
-      "Antarmuka kapasitas pinjam",
-      "Pinjamkan",
-      "Memasok modal ke pasar pinjaman yang terhubung dengan Hub dan menghasilkan dari permintaan peminjam yang didukung LP.",
-      "Antarmuka akun kas pasar pinjaman",
-      "object-cover object-top",
-      "Kalikan",
-      "Gunakan kredit yang didukung LP untuk menciptakan leverage terkelola tanpa keluar dari posisi likuiditas dasar Anda.",
-      "Antarmuka portofolio",
-      "Kenali Avana",
-      "Pada tahun 2021,",
-      "Aave",
-      "diluncurkan",
-      "Pasar AMM",
-      "dan terbukti",
-      "posisi LP",
-      "bisa dijadikan jaminan, tetapi itu dibangun untuk DEX yang lebih sederhana pada era itu.",
-      "Avana",
-      "melanjutkan dari situ, dirancang untuk DEX dan jenis LP saat ini, memperlakukan setiap posisi sebagai",
-      "jaminan",
-      "melanjutkan dari situ, dirancang untuk DEX dan jenis LP saat ini,",
-      "Pasar Avana",
-      "Membuka Modal",
-      "dari Pasar AMM",
-      "Membuka Modal dari Pasar AMM",
-      "Pelajari lebih lanjut",
-      "Pada tahun 2021, Aave meluncurkan AMM Market dan membuktikan bahwa posisi LP dapat digunakan sebagai jaminan, tetapi itu dibangun untuk DEX yang lebih sederhana pada waktu itu. Avana melanjutkan dari titik tersebut, dirancang untuk DEX dan jenis LP saat ini, memperlakukan setiap posisi sebagai jaminan yang dibentuk oleh dua oracle dan kontrol risiko yang lebih kuat.",
-      "Sebuah protokol peminjaman",
-      "untuk pinjaman yang didukung LP",
-      "Sebuah protokol pinjaman untuk pinjaman yang didukung LP"
+      "Visual utama halaman depan Avana",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Pasar Spoke Terisolasi",
-      "Setiap pasar Spoke mengisolasi penilaian khusus LP, kontrol risiko, dan logika likuidasi, sehingga tekanan di satu tempat atau desain pool tidak dapat menyebar ke seluruh protokol atau membahayakan posisi yang tidak terkait.",
-      "Penetapan harga dual-orakel",
-      "Data feed Chainlink dan harga AMM TWAP harus sesuai dalam batas toleransi sebelum tindakan pinjaman apa pun dikonfirmasi, mengurangi risiko manipulasi pinjaman kilat, distorsi harga sementara, atau pembacaan oracle tunggal yang beracun.",
-      "Selalu overcollateralized",
-      "Setiap pinjaman tetap memiliki jaminan berlebih melalui batas peminjaman yang konservatif, ambang batas pinjaman-terhadap-nilai yang adaptif, dan pemantauan kesehatan secara langsung yang menampilkan risiko sebelum memiliki kesempatan untuk berkembang.",
-      " Likuidasi yang melindungi peminjam",
-      " Likuidasi dirancang untuk membongkar posisi dengan eksekusi yang terkendali: biaya yang belum terkumpul diterapkan terlebih dahulu, prinsip hanya dibongkar sesuai kebutuhan, dan setiap nilai surplus dikembalikan kepada peminjam.",
+      "Pengungkit yang Anda kendalikan",
+      "Tetapkan seberapa agresif setiap loop berjalan dan berhenti di mana risikonya masih terasa tepat. Setiap perkalian kapitalisasi pasar memanfaatkan leverage sesuai dengan LP agunan, penentuan harga oracle, dan jalur likuidasi yang dapat didukung secara aman, sehingga suatu posisi tidak dapat melampaui batasnya.",
+      "Hidup sehat di setiap putaran",
+      "Setiap loop yang ditambahkan memperbarui faktor kesehatan, daya pinjam, dan ambang likuidasi Anda secara real time, sehingga Anda dapat melihat dengan tepat seberapa banyak buffer yang ditinggalkan oleh pengaturan leverage sebelum posisi bergerak ke tepi.",
+      "Pelunasan terkendali",
+      "Jika posisi dengan leverage mendekati batasnya, Avana membongkar loop secara bertahap, melunasi utang dan mengurangi eksposur secara bertahap alih-alih menutup semuanya sekaligus. Biaya yang belum diterima diterapkan terlebih dahulu, dan kelebihan apa pun dikembalikan kepada Anda.",
+      "Batas leverage per pasar",
+      "Leverage hanya diaktifkan untuk LP jenis dengan valuasi yang dapat diandalkan, parameter risiko yang ditentukan, dan asumsi unwind yang telah diuji. Pasar Spoke yang terisolasi menjaga agar stres pada satu pool leverage tidak merembet ke posisi yang tidak terkait.",
       "Keamanan berdasarkan desain",
-      "Risiko yang dirancang di sekitar posisi likuiditas",
+      "Memanfaatkan dengan kontrol risiko yang sudah dibangun",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "tarik",
       "Pertanyaan yang sering",
       "diajukan",
-      "Pertanyaan yang sering diajukan"
+      "Pertanyaan yang sering diajukan",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "Pasar pasokan",
-      "Meminjamkan di seluruh pasar"
+      "Meminjamkan di seluruh pasar",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "Sedang Berlangsung"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Zona aman",
-      "Faktor Kesehatan > 1,5. Penggunaan pinjaman tetap dalam kapasitas, biaya terus bertambah, dan LP Anda tetap utuh.",
-      "Zona peringatan",
-      "Faktor Kesehatan 1,0-1,5. Anda akan diberitahu untuk melunasi utang, menambahkan jaminan, atau membiarkan otomatisasi mengurangi eksposur.",
-      "Likuidasi",
-      "Faktor Kesehatan < 1,0. Biaya diterapkan terlebih dahulu, modal LP yang diperlukan dibuka, dan nilai sisa dikembalikan kepada Anda.",
-      "Keamanan posisi",
-      "Setiap kondisi kesehatan, dijelaskan sepenuhnya",
-      "Lacak kondisi kesehatan, peringatan, dan likuidasi sebelum pinjaman yang didukung LP memerlukan tindakan.",
-      "Kesehatan posisi",
-      "Zona aman",
-      "biaya yang menumpuk",
-      "Peringatan",
-      "Ambang",
-      "Mendekati likuidasi",
-      "Tindakan yang tersedia",
-      "Kurangi saldo pinjaman",
-      "border-amber-200 bg-amber-50",
-      "Tambahkan jaminan",
-      "Tingkatkan faktor kesehatan",
-      "Pengurangan utang otomatis",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Urutan",
-      "Biaya berlaku",
-      "Sisa dikembalikan",
-      "Hanya pokok yang dibutuhkan yang dibuka"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Suku bunga dasar Hub",
@@ -635,7 +663,8 @@
       "Risiko pool spesifik berkontribusi pada selisih terakhir, meningkatkan potensi pengembalian untuk uang tunai yang sama yang menganggur.",
       "APY Avana",
       "Kas menganggur yang sama, imbal hasil APY lebih tinggi",
-      "ke"
+      "ke",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "Menumpuk daya pinjam di beberapa",
       "Lacak kesehatan setiap posisi bersamaan",
       "Tambahkan atau sesuaikan jaminan sesuai pasar",
-      "Ilustrasi kombinasi posisi LP Avana"
+      "Ilustrasi kombinasi posisi LP Avana",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "Gunakan kredit berjaminan LP untuk membangun leverage terkelola tanpa keluar dari posisi likuiditas dasar Anda.",
       "Avana Meminjam dengan jaminan posisi LP",
       "Avana Memberi pinjaman di pasar terhubung Hub",
-      "Avana Multiply imbal hasil leverage terkelola"
+      "Avana Multiply imbal hasil leverage terkelola",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

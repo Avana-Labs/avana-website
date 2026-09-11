@@ -34,21 +34,16 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana may charge frontend or service fees on official interfaces. Those charges are
-            separate from the protocol&apos;s collateral, oracle, and liquidation rules.
-          </p>
-          <p className="type-doc-callout type-doc-callout-info type-doc-body">
-            Fee rates, exemptions, and rollout status are operational settings. Verify them in the
-            live interface or release materials before relying on them.
+            <>Avana may charge frontend or service fees on official interfaces. Those charges are
+            separate from the protocol&apos;s collateral, oracle, and liquidation rules.</>{" "}<>Fee rates, exemptions, and rollout status are operational settings. Verify them in the
+            live interface or release materials before relying on them.</>
           </p>
         </section>
 
         <section id="interface-vs-protocol" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Interface vs Protocol</h2>
           <p className="mb-4 type-doc-body">
-            Core contracts govern LP admission, borrowing capacity, and liquidation. Interface fees,
-            if enabled, sit on top as frontend business policy rather than as a change to the borrow
-            or risk engine.
+            Core contracts determine collateral admission, borrowing capacity, debt, and liquidation. An interface fee applies to a particular frontend or service transaction; it is separate from those protocol calculations.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Protocol economics determine debt accrual, collateral treatment, and liquidation outcomes</li>
@@ -60,8 +55,7 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
         <section id="disclosure" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Disclosure</h2>
           <p className="mb-4 type-doc-body">
-            Any interface fee should be shown clearly before signature so users can distinguish it
-            from gas costs, swap fees, and protocol-level debt or liquidation effects.
+            An interface fee is a distinct cost alongside network gas, any swap fees, and debt-related charges. For an integration&apos;s transaction review, itemize these costs separately so the user can identify what each charge covers.
           </p>
         </section>
 

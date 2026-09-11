@@ -61,13 +61,12 @@
       "اعتماد سے قرض لیں",
       "محفوظ",
       "پول سطح پر",
-      "DEX کوریج",
-      "بڑے DEX پر معاون",
-      "DEX انضمام",
       "لیکویڈیٹی پولز",
       "ہر پول کی تفصیل، مکمل وضاحت",
       "معاون قرض مارکیٹس کا دستاویزی پیش منظر",
-      "عمومی سوالات"
+      "عمومی سوالات",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "ایل پی کی ضمانت والے قرضوں کے لیے قرض دینے کا پروٹوکول",
       "ایک قرض دینے کا پروٹوکول",
       "پیش ہے Avana:",
-      "ہمیں آپ سے سن کر خوشی ہوگی۔"
+      "ہمیں آپ سے سن کر خوشی ہوگی۔",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "نشان کو گھمائیں یا الٹیں نہیں۔",
       "منظور شدہ رنگوں سے باہر لوگو کا رنگ نہ بدلیں۔",
       "نشان کو کاٹیں نہیں اور کنارے کے بہت قریب نہ رکھیں۔",
-      "پارٹنر لوگو یا UI لیبلز سے نشان کے گرد جگہ نہ گھیریں۔"
+      "پارٹنر لوگو یا UI لیبلز سے نشان کے گرد جگہ نہ گھیریں۔",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "Multiply مارکیٹس تاکہ سرمایہ لوپ کریں، پول رسک ایڈجسٹ کریں اور پوزیشن ہیلتھ سنبھالیں۔",
       "پوزیشن سیفٹی",
       "محفوظ لیوریج کے لیے ڈیزائن کیا گیا",
-      "قرض کی حد"
+      "قرض کی حد",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Avana ہوم پیج ہیرو بصری"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "قرض لینا",
-      "AMM کے بنیادی اثاثے میں آپ کی لیکویڈیٹی فعال رہتے ہوئے LP پوزیشنز کے خلاف قرض لیں۔",
-      "ادھار کی گنجائش کا انٹرفیس",
-      "ادھار دینا",
-      "Hub سے جڑے ہوئے قرضہ دینے والے بازاروں میں سرمایہ فراہم کریں اور LP سے حمایت یافتہ قرض لینے والوں کی طلب سے کمائیں۔",
-      "لینڈ مارکیٹ کیش اکاؤنٹ انٹرفیس",
-      "object-cover object-top",
-      "ضرب دیں",
-      "اپنی بنیادی لیکویڈیٹی پوزیشن چھوڑے بغیر مینیج شدہ لیوریج بنانے کے لیے LP-کی حمایت یافتہ کریڈٹ استعمال کریں۔",
-      "پورٹ فولیو انٹرفیس",
-      "ملیں Avana",
-      "سن 2021 میں,",
-      "Aave",
-      "شروع کیا",
-      "AMM بازار",
-      "اور ثابت کیا",
-      "LP پوزیشنز",
-      "یہ بطور ضمانت کام دے سکتا تھا، لیکن یہ اُس دور کے سادہ DEXs کے لیے بنایا گیا تھا۔",
-      "Avana",
-      "جہاں وہ ختم ہوا تھا وہاں سے آغاز کرتا ہے، آج کے DEXs اور LP اقسام کے لیے ڈیزائن کیا گیا، ہر پوزیشن کو اس طرح treat کرتے ہوئے",
-      "ضمانت",
-      "جہاں وہ رک گیا تھا وہاں سے اٹھاتا ہے، آج کے DEXs اور LP اقسام کے لیے بنایا گیا،",
-      "Avana بازار",
-      "سرمایہ کھولیں",
-      "ایم مارکیٹس سے",
-      "ایم مارکیٹس سے سرمایہ کھولیں",
-      "مزید جانیں",
-      "سال 2021 میں، Aave نے AMM مارکیٹ لانچ کی اور ثابت کیا کہ LP پوزیشنز بطور ضمانت کام کر سکتی ہیں، لیکن یہ اس دور کے سادہ DEXs کے لیے بنایا گیا تھا۔ Avana وہیں سے آگے بڑھتا ہے جہاں یہ ختم ہوا، آج کے DEXs اور LP کی اقسام کے لیے ڈیزائن کیا گیا ہے، ہر پوزیشن کو ڈوئل اوریکلز اور مضبوط خطرے کے کنٹرولز کے ذریعے شکل دی گئی ضمانت کے طور پر سمجھتا ہے۔",
-      "ایک قرض دینے کا پروٹوکول",
-      "LP کی پشت پناہی والے قرضوں کے لیے",
-      "ایل پی کی ضمانت والے قرضوں کے لیے قرض دینے کا پروٹوکول"
+      "Avana ہوم پیج ہیرو بصری",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "الگ تھلگ سپوک مارکیٹس",
-      "ہر اسپوک مارکیٹ LP-مخصوص تشخیص، رسک کنٹرولز، اور تصفیہ کے منطقی اصول کو الگ کرتی ہے، اسی لیے کسی ایک وینیو یا پول ڈیزائن میں دباؤ پورے پروٹوکول میں پھیل نہیں سکتا یا غیر متعلقہ پوزیشنز کو متاثر نہیں کر سکتا۔",
-      "دوہرا اوریکل قیمت گذاری",
-      "چین لنک فیڈز اور AMM ٹی ڈبلیو اے پی قیمتیں کسی بھی قرض کی کارروائی کی تصدیق سے پہلے ہدایت کے دائرہ کار میں متفق ہونی چاہئیں، تاکہ فلیش لون کے استحصال، عارضی قیمت میں خرابی، یا کسی واحد زہریلے اوریکل ریڈ کے خطرے کو کم کیا جا سکے۔",
-      "ہمیشہ زائد ضمانت دی گئی",
-      "ہر قرض محتاط قرض لینے کی حدوں، لچکدار لون ٹو ویلیو کے حدود، اور زندہ صحت کی نگرانی کے ذریعے زیادہ ضمانت یافتہ رہتا ہے جو خطرہ ظاہر کرتی ہے اس سے پہلے کہ وہ بڑھنے کا موقع پائے۔",
-      "قرض لینے والے کے تحفظ والی لیکوڈیشن",
-      "لیکوڈیشن کا مقصد محتاط عمل درآمد کے ساتھ پوزیشنز کو ختم کرنا ہے: غیر جمع شدہ فیسیں پہلے لگائی جاتی ہیں، اصل رقم صرف ضرورت کے مطابق ختم کی جاتی ہے، اور کسی بھی اضافی قیمت کو قرض لینے والے کو واپس کر دیا جاتا ہے۔",
+      "ریوڑ آپ کنٹرول کرتے ہیں",
+      "ہر لوپ کتنی جارحانہ چلتا ہے سیٹ کریں اور وہاں روکیں جہاں خطرہ ابھی بھی مناسب لگے۔ ہر ملٹی پلائی مارکیٹ کیپ لیوریج کو اس کی LP کولیٹرل، اوریکل پرائسنگ، اور لکوئڈیشن روٹ کی محفوظ سپورٹ کے مطابق رکھتا ہے، تاکہ کوئی پوزیشن اپنی حدود سے تجاوز نہ کر سکے۔",
+      "ہر لوپ پر زندہ صحت",
+      "ہر شامل شدہ لوپ آپ کے ہیلتھ فیکٹر، قرض لینے کی طاقت، اور لکوئڈیشن تھریش ہولڈ کو ریئل ٹائم میں اپ ڈیٹ کرتا ہے، تاکہ آپ بالکل دیکھ سکیں کہ لیوریج سیٹنگ پوزیشن کے کنارے کی طرف بڑھنے سے پہلے کتنا بفر چھوڑتی ہے۔",
+      "کنٹرول شدہ ان وائنڈ",
+      "اگر ایک لیوریجڈ پوزیشن اپنی حد کے قریب پہنچ جائے، Avana مرحلہ وار لوپس کو ختم کرتا ہے، قرض واپس کرتا ہے اور سب کچھ ایک ساتھ بند کرنے کے بجائے ایکسپوژر کو بتدریج کم کرتا ہے۔ جمع نہ ہونے والی فیسیں پہلے لگائی جاتی ہیں، اور کوئی بھی اضافی رقم آپ کو واپس کی جاتی ہے۔",
+      "ہر مارکیٹ کے لیے لیوریج کی حدیں",
+      "لیفریج صرف LP قسموں کے لیے فعال ہے جن کی قابل اعتماد قیمت کے تعین، متعین شدہ خطرے کے پیرامیٹر، اور آزمودہ ان وائنڈ مفروضات ہوں۔ الگ تھلگ Spoke مارکیٹیں ایک لیوریجڈ پول میں دباؤ کو غیر متعلقہ پوزیشنوں میں منتقل ہونے سے روکتی ہیں۔",
       "ڈیزائن کے ذریعہ حفاظت",
-      "خطرہ جو لیکویڈیٹی کی پوزیشنز کے گرد ڈیزائن کیا گیا ہو",
+      "اسے جوکھم کنٹرول کے ساتھ فائدہ اٹھائیں",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "نکالنا",
       "اکثر پوچھے جانے والے",
       "سوالات",
-      "عمومی سوالات"
+      "عمومی سوالات",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "سنتھیٹکس",
       "گراف",
       "سپلائی مارکیٹیں",
-      "مارکیٹوں میں قرض دینا"
+      "مارکیٹوں میں قرض دینا",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "جاری"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "محفوظ علاقہ",
-      "صحت کا عنصر > 1.5۔ قرض کا استعمال صلاحیت کے اندر رہتا ہے، فیسیں جمع ہوتی رہتی ہیں، اور آپ کا LP برقرار رہتا ہے۔",
-      "خبردار زون",
-      "صحت کا عنصر 1.0-1.5۔ آپ کو قرض کی واپسی، ضمانت شامل کرنے، یا خودکار نظام کو رسک کم کرنے دینے کی اطلاع دی جاتی ہے۔",
-      "تحفظ ختم ہونا",
-      "صحت کا عنصر < 1.0۔ سب سے پہلے فیس لاگو ہوتی ہے، ضروری LP اصل رقم واپس کی جاتی ہے، اور باقی قیمت آپ کو واپس ملتی ہے۔",
-      "مقام کی حفاظت",
-      "ہر صحت کی حالت، مکمل طور پر وضاحت کے ساتھ",
-      "صحت، وارننگ، اور لیکویڈیشن کی حالتوں کو ٹریک کریں اس سے پہلے کہ LP-کی حمایت یافتہ قرض پر کارروائی کی ضرورت ہو۔",
-      "صحت کی حالت",
-      "محفوظ علاقہ",
-      "جمع ہونے والی فیس",
-      "خبردار",
-      "دروازے کی دہلیز",
-      "لیکویڈیشن کے قریب",
-      "دستیاب اقدامات",
-      "قرض کا بقایا کم کریں",
-      "border-amber-200 bg-amber-50",
-      "ضمانت شامل کریں",
-      "صحت کے عامل کو بڑھائیں",
-      "خودکار قرض کم کرنا",
-      "border-gray-200 bg-gray-50",
-      "ایچ ایف < 1.0",
-      "تسلسل",
-      "فیس لاگو کی گئی",
-      "بقایا واپس کیا گیا",
-      "صرف مطلوبہ اصل رقم کھولی گئی ہے"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "ہب بیس ریٹ",
@@ -635,7 +663,8 @@
       "مخصوص پول کا خطرہ آخری اسپریڈ میں حصہ ڈالتا ہے، اور اسی غیر فعال نقدی کے لیے منافع کی صلاحیت بڑھاتا ہے۔",
       "Avana APY",
       "وہی ساکن نقدی، زیادہ APY منافع کے ساتھ",
-      "سے"
+      "سے",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "متعدد پر قرض لینے کی طاقت جمع کریں",
       "ہر پوزیشن کی صحت کے ساتھ ساتھ نگرانی کریں",
       "مارکیٹ کے مطابق ضمانت شامل کریں یا ایڈجسٹ کریں",
-      "Avana مجموعہ LP موقف کی تصویر کشی"
+      "Avana مجموعہ LP موقف کی تصویر کشی",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "LP سے ضمانت یافتہ کریڈٹ استعمال کرکے منظم لیوریج بنائیں، اپنی بنیادی لیکویڈیٹی پوزیشن چھوڑے بغیر۔",
       "Avana LP پوزیشنز کے عوض قرض",
       "Avana Hub سے منسلک مارکیٹس میں قرض دہی",
-      "Avana Multiply منظم لیوریج منافع"
+      "Avana Multiply منظم لیوریج منافع",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

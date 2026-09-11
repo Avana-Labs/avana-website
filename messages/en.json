@@ -17,6 +17,7 @@
       "products": "Products",
       "resources": "Resources",
       "developers": "Developers",
+      "pricing": "Pricing",
       "helpCenter": "Help Center",
       "aaveArfc": "Aave ARFC",
       "borrow": "Borrow",
@@ -224,6 +225,10 @@
       "title": "Developers",
       "description": "Technical documentation for integrating with Avana. Learn about LP token collateral, health factors, liquidation flows, and smart contract architecture on Aave v4."
     },
+    "pricing": {
+      "title": "Pricing",
+      "description": "Clear pricing for borrowing, lending, and LP-backed strategies on Avana."
+    },
     "privacy": {
       "title": "Privacy Policy",
       "description": "Avana privacy policy."
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Brand kit",
       "subtitle": "Marks, colors, and guidance for partner-facing surfaces"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitleLine1": "Rates and returns depend on the market,",
+    "subtitleLine2": "position, and route you use.",
+    "interfaceRate": "Upfront Interface fees — 15 bps (0.15%)",
+    "includes": "Includes:",
+    "borrow": {
+      "title": "Borrow",
+      "subtitle": "For LP-backed credit",
+      "value": "Variable",
+      "unit": "interest",
+      "description": "Borrowing costs follow the selected Aave v4 market.",
+      "items": {
+        "one": "Market-set interest rate",
+        "two": "Accrues only on outstanding debt",
+        "three": "Shown before you confirm"
+      }
+    },
+    "lend": {
+      "title": "Lend",
+      "subtitle": "Supply capital to the Hub",
+      "value": "Market",
+      "unit": "APY",
+      "description": "Earn from LP-backed demand through Avana's Lend Spoke.",
+      "items": {
+        "one": "Yield varies with utilization",
+        "two": "Supply into supported lending markets",
+        "three": "Live APY shown in the interface"
+      }
+    },
+    "multiply": {
+      "title": "Multiply",
+      "subtitle": "For managed LP exposure",
+      "value": "Variable",
+      "unit": "strategy rate",
+      "description": "Amplify LP exposure with managed multiply strategies backed by supported AMM positions.",
+      "items": {
+        "one": "Use supported LP positions as collateral",
+        "two": "Exposure stays tied to the underlying pool",
+        "three": "Leverage and unwind controls stay visible"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": {
+        "interfaceFee": {
+          "question": "What does Avana charge for using the interface?",
+          "answer": "The official interface fee is 15 bps (0.15%) when applicable. It is shown before signature and is separate from gas, swap fees, Aave interest, and liquidation costs."
+        },
+        "borrowRate": {
+          "question": "Is borrowing interest fixed?",
+          "answer": "No. Borrowing interest is set by the selected Aave v4 market and can move with utilization and market parameters. The current rate is shown before you borrow."
+        },
+        "lendingApy": {
+          "question": "How is lending APY determined?",
+          "answer": "Lending returns are market-driven and depend on utilization and LP-backed borrower demand. The live APY is shown in the interface before you supply."
+        },
+        "separateCosts": {
+          "question": "Which costs are separate from Avana fees?",
+          "answer": "Network gas, DEX swap fees, Aave market interest, and any liquidation execution costs are separate from the official interface fee. Review the transaction details before signing."
+        },
+        "feeChanges": {
+          "question": "Can fees and rates change?",
+          "answer": "Yes. Market rates move with utilization and risk parameters, and interface policy can change over time. Always verify the current amount shown for your route before signing."
+        }
+      }
     }
   },
   "faq": {

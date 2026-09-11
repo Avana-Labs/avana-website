@@ -9,7 +9,9 @@
       "closeMenu": "Tutup menu",
       "language": "Bahasa: {language}",
       "logo": "logo {site}",
-      "helpfulLinks": "Tautan yang berguna"
+      "helpfulLinks": "Tautan yang berguna",
+      "helpCenter": "Pusat Bantuan: email dukungan",
+      "themeToggle": "Preferensi tema"
     },
     "nav": {
       "products": "Produk",
@@ -23,7 +25,7 @@
       "about": "Tentang",
       "newsroom": "Ruang Berita",
       "brand": "Merek",
-      "faq": "FAQ",
+      "faq": "Pertanyaan yang sering diajukan",
       "privacy": "Privasi",
       "terms": "Syarat",
       "overview": "Gambaran Umum",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Halaman ini tidak tersedia.",
       "body": "Alamat mungkin salah atau halaman mungkin telah berpindah.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Ke beranda",
+      "faq": "Pertanyaan yang sering diajukan"
     },
     "sandboxNotice": "Sandbox data ditampilkan hanya untuk pratinjau. APYs, harga, dan hasil adalah ilustratif dan dapat berbeda dari kondisi pasar nyata.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Bagikan di LinkedIn",
       "previousPost": "Postingan sebelumnya",
       "nextPost": "Postingan berikutnya",
-      "onThisPage": "On this page"
+      "onThisPage": "Di halaman ini"
     },
     "docs": {
       "previous": "Sebelumnya",
@@ -99,7 +101,8 @@
         "liquidation": "Kerangka Likuidasi",
         "integrations": "Integrasi yang Didukung",
         "safety": "Mekanisme Keamanan",
-        "legal": "Hukum & Kepatuhan"
+        "legal": "Hukum & Kepatuhan",
+        "copilot": "Tanya AI"
       },
       "items": {
         "overview": "Gambaran Umum",
@@ -131,7 +134,11 @@
         "bugBounty": "Hadiah Bug",
         "insuranceFunds": "Dana Asuransi",
         "securityDisclosures": "Pengungkapan Keamanan",
-        "legalDisclaimer": "Penafian Hukum"
+        "legalDisclaimer": "Penafian Hukum",
+        "aiIntroduction": "Pengantar AI",
+        "copilotProtocols": "Protokol yang didukung",
+        "copilotPrompts": "Contoh prompt",
+        "copilotWorkflow": "Alur kerja agen"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Terbaru dari Avana",
       "readNewsroom": "Baca ruang berita"
+    },
+    "exportMenu": {
+      "copyPage": "Salin halaman",
+      "copied": "Disalin",
+      "copyPageMarkdown": "Salin halaman sebagai Markdown",
+      "copyPageLink": "Salin tautan halaman",
+      "copyPageLinkDescription": "Salin URL halaman ini ke papan klip",
+      "openInChatGPT": "Buka di ChatGPT",
+      "openInClaude": "Buka di Claude",
+      "openInGrok": "Buka di Grok",
+      "openInPerplexity": "Buka di Perplexity",
+      "askAboutPage": "Ajukan pertanyaan tentang halaman ini",
+      "reviewPrompt": "Tinjau konten halaman Avana di bawah dan jawab pertanyaannya."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana adalah pasar pinjaman DeFi",
       "titleLine2": "yang dirancang untuk liquidity pool AMM.",
       "subtitle": "Pinjam kripto, komoditas, valas (FX), dan aset dunia nyata (RWA) onchain menggunakan posisi likuiditas AMM Anda sebagai agunan.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Baca Proposal ARFC",
       "secondaryCta": "Coba Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Pertanyaan yang sering diajukan",
     "subtitle": "Jawaban tentang Avana, LP jaminan, dan Aave v4",
     "englishOnlyNote": "Jawaban FAQ lengkap ditampilkan dalam bahasa Inggris sampai ulasan untuk lokasi ini selesai."
   },

@@ -9,7 +9,9 @@
       "closeMenu": "Закрыть меню",
       "language": "Язык: {language}",
       "logo": "логотип {site}",
-      "helpfulLinks": "Полезные ссылки"
+      "helpfulLinks": "Полезные ссылки",
+      "helpCenter": "Центр помощи: написать в поддержку",
+      "themeToggle": "Настройка темы"
     },
     "nav": {
       "products": "Продукты",
@@ -23,7 +25,7 @@
       "about": "О",
       "newsroom": "Редакция",
       "brand": "Бренд",
-      "faq": "FAQ",
+      "faq": "Частые вопросы",
       "privacy": "Конфиденциальность",
       "terms": "Условия",
       "overview": "Обзор",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Эта страница недоступна.",
       "body": "Адрес может быть неверным или страница могла быть перемещена.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "На главную",
+      "faq": "Частые вопросы"
     },
     "sandboxNotice": "Sandbox данные показаны только для предварительного просмотра. APYs, цены и доходность являются иллюстративными и могут отличаться от реальных рыночных условий.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Поделиться в LinkedIn",
       "previousPost": "Предыдущий пост",
       "nextPost": "Следующий пост",
-      "onThisPage": "On this page"
+      "onThisPage": "На этой странице"
     },
     "docs": {
       "previous": "Предыдущий",
@@ -99,7 +101,8 @@
         "liquidation": "Рамки ликвидации",
         "integrations": "Поддерживаемые интеграции",
         "safety": "Механизмы безопасности",
-        "legal": "Юридические вопросы и соответствие требованиям"
+        "legal": "Юридические вопросы и соответствие требованиям",
+        "copilot": "Спросить ИИ"
       },
       "items": {
         "overview": "Обзор",
@@ -131,7 +134,11 @@
         "bugBounty": "Награда за баг",
         "insuranceFunds": "Страховые фонды",
         "securityDisclosures": "Раскрытие информации о безопасности",
-        "legalDisclaimer": "Юридический отказ от ответственности"
+        "legalDisclaimer": "Юридический отказ от ответственности",
+        "aiIntroduction": "Введение в ИИ",
+        "copilotProtocols": "Поддерживаемые протоколы",
+        "copilotPrompts": "Примеры промптов",
+        "copilotWorkflow": "Рабочий процесс агента"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Последнее с Avana",
       "readNewsroom": "Читать новостную редакцию"
+    },
+    "exportMenu": {
+      "copyPage": "Копировать страницу",
+      "copied": "Скопировано",
+      "copyPageMarkdown": "Копировать страницу как Markdown",
+      "copyPageLink": "Копировать ссылку на страницу",
+      "copyPageLinkDescription": "Скопировать URL этой страницы в буфер обмена",
+      "openInChatGPT": "Открыть в ChatGPT",
+      "openInClaude": "Открыть в Claude",
+      "openInGrok": "Открыть в Grok",
+      "openInPerplexity": "Открыть в Perplexity",
+      "askAboutPage": "Задать вопросы об этой странице",
+      "reviewPrompt": "Изучите содержимое страницы Avana ниже и ответьте на вопросы."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana — кредитный рынок,",
       "titleLine2": "созданный для пулов ликвидности AMM.",
       "subtitle": "Занимайте криптовалюту, биржевые товары, валюту (FX) и реальные активы (RWA) ончейн под залог своих позиций ликвидности AMM.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Читать ARFC",
       "secondaryCta": "Попробовать Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Частые вопросы",
     "subtitle": "Ответы о Avana, LP залоге и Aave v4",
     "englishOnlyNote": "Полные ответы в разделе FAQ отображаются на английском языке, пока не завершена проверка для этой локали."
   },

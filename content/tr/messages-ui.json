@@ -9,7 +9,9 @@
       "closeMenu": "Menüyü kapat",
       "language": "Dil: {language}",
       "logo": "{site} logosu",
-      "helpfulLinks": "Yararlı bağlantılar"
+      "helpfulLinks": "Yararlı bağlantılar",
+      "helpCenter": "Yardım merkezi: desteğe e-posta gönder",
+      "themeToggle": "Tema tercihi"
     },
     "nav": {
       "products": "Ürünler",
@@ -23,7 +25,7 @@
       "about": "Hakkında",
       "newsroom": "Haber Odası",
       "brand": "Marka",
-      "faq": "FAQ",
+      "faq": "Sıkça sorulan sorular",
       "privacy": "Gizlilik",
       "terms": "Şartlar",
       "overview": "Genel Bakış",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Bu sayfa kullanılamıyor.",
       "body": "Adres yanlış olabilir veya sayfa taşınmış olabilir.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Ana sayfaya git",
+      "faq": "Sıkça sorulan sorular"
     },
     "sandboxNotice": "Sandbox veriler sadece önizleme için gösterilmektedir. APYler, fiyatlar ve getiriler örnek teşkil eder ve gerçek piyasa koşullarından farklı olabilir.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "LinkedIn'de paylaş",
       "previousPost": "Önceki gönderi",
       "nextPost": "Sonraki gönderi",
-      "onThisPage": "On this page"
+      "onThisPage": "Bu sayfada"
     },
     "docs": {
       "previous": "Önceki",
@@ -99,7 +101,8 @@
         "liquidation": "Tasfiye Çerçevesi",
         "integrations": "Desteklenen Entegrasyonlar",
         "safety": "Güvenlik Mekanizmaları",
-        "legal": "Hukuk & Uyum"
+        "legal": "Hukuk & Uyum",
+        "copilot": "Yapay zekaya sor"
       },
       "items": {
         "overview": "Genel Bakış",
@@ -131,7 +134,11 @@
         "bugBounty": "Hata Ödülü",
         "insuranceFunds": "Sigorta Fonları",
         "securityDisclosures": "Güvenlik Açıklamaları",
-        "legalDisclaimer": "Yasal Uyarı"
+        "legalDisclaimer": "Yasal Uyarı",
+        "aiIntroduction": "Yapay zekaya giriş",
+        "copilotProtocols": "Desteklenen protokoller",
+        "copilotPrompts": "Prompt örnekleri",
+        "copilotWorkflow": "Ajan iş akışı"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Avana'den en son",
       "readNewsroom": "Haber odasını oku"
+    },
+    "exportMenu": {
+      "copyPage": "Sayfayı kopyala",
+      "copied": "Kopyalandı",
+      "copyPageMarkdown": "Sayfayı Markdown olarak kopyala",
+      "copyPageLink": "Sayfa bağlantısını kopyala",
+      "copyPageLinkDescription": "Bu sayfanın URL'sini panoya kopyala",
+      "openInChatGPT": "ChatGPT'de aç",
+      "openInClaude": "Claude'da aç",
+      "openInGrok": "Grok'ta aç",
+      "openInPerplexity": "Perplexity'de aç",
+      "askAboutPage": "Bu sayfa hakkında soru sor",
+      "reviewPrompt": "Aşağıdaki Avana sayfasının içeriğini inceleyin ve soruları yanıtlayın."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana, AMM likidite havuzları için",
       "titleLine2": "geliştirilmiş borç verme ve kredi piyasasıdır.",
       "subtitle": "AMM likidite pozisyonlarınızı teminat göstererek zincir üzerinde kripto, emtia, döviz (FX) ve gerçek dünya varlıkları (RWA) borç alın.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC Önerisini Oku",
       "secondaryCta": "Sandbox'ı Dene"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Sıkça sorulan sorular",
     "subtitle": "Avana, LP teminat ve Aave v4 hakkındaki cevaplar",
     "englishOnlyNote": "Tam SSS yanıtları bu yerelleştirmenin incelemesi tamamlanana kadar İngilizce olarak gösterilir."
   },

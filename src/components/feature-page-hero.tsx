@@ -24,7 +24,7 @@ export function FeaturePageHero({
 }: FeaturePageHeroProps) {
   return (
     <section
-      className="items-center mx-auto grid grid-cols-12 gap-6 px-4 sm:px-8 xl:max-w-screen-2xl w-full max-w-[calc(var(--breakpoint-xl)*10/12)] pt-10 sm:pt-14 md:pt-20 pb-4 md:pb-8"
+      className="site-content-shell items-center grid grid-cols-12 gap-6 pt-10 sm:pt-14 md:pt-20 pb-4 md:pb-8"
       aria-labelledby="feature-page-hero"
     >
       <div className="col-span-12 sm:col-span-6 xl:col-span-5 xl:col-start-2">

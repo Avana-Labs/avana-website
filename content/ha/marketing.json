@@ -61,13 +61,12 @@
       "Ara da Tabbataccen Iko",
       "An kare a",
       "matakin pool",
-      "Rufin DEX",
-      "Ana goyan baya a manyan DEXs",
-      "Haɗin DEX",
       "Liquidity pool",
       "Duk bayanin wurin wanka, an bayyana shi sosai",
       "Fuskar takarda na samfoti na kasuwannin aron da aka goyi baya",
-      "Tambayoyin da ake yawan yi"
+      "Tambayoyin da ake yawan yi",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "Tsarin ba da lamuni don bashi mai tallafin LP",
       "Wata ƙa'idar bayar da rance don",
       "Gabatar da Avana:",
-      "Muna son jin daga gare ku."
+      "Muna son jin daga gare ku.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "Kada ka juya ko juye alamar.",
       "Kada ka sake canza launin tambarin a wajen launukan da aka amince.",
       "Kada ka yanke alamar ko sanya ta kusa da gefe sosai.",
-      "Kada ka cika alamar da tambarin abokan tarayya ko lakabin UI."
+      "Kada ka cika alamar da tambarin abokan tarayya ko lakabin UI.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "Kasuwannin Multiply don sake zagayar da jari, daidaita haɗarin tafki, da sarrafa lafiyar matsayi.",
       "Tsaron Matsayi",
       "An tsara shi don lefaris mai aminci",
-      "Iyakar aro"
+      "Iyakar aro",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Babban hoto na shafin gida na Avana"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Aro",
-      "A aro bisa matsayin LP yayin da ruwan kuɗin ku ke aiki a cikin AMM na asali.",
-      "Fuskar ikon aro",
-      "Bashi",
-      "Sanya babban jari cikin kasuwannin lamuni da ke haɗe da Hub kuma ku sami riba daga buƙatun masu aro waɗanda LP ke tallafawa.",
-      "Fuskar asusun kuɗi na kasuwar lamuni",
-      "object-cover object-top",
-      "Ninka",
-      "Yi amfani da bashi da aka goyi bayan LP don ƙirƙirar batse mai sarrafawa ba tare da barin matsayin ruwa na asali ba.",
-      "Fuskar fayil ɗin aiki",
-      "Haɗu da Avana",
-      "A shekarar 2021,",
-      "Aave",
-      "an ƙaddamar",
-      "Kasuwancin AMM",
-      "kuma ya tabbatar",
-      "Matsayin LP",
-      "za a iya amfani da shi a matsayin jingina, amma an gina shi don DEXs masu sauƙi na wancan lokacin.",
-      "Avana",
-      "yana ɗauka daga inda aka tsaya, an ƙera shi don DEXs na yau da nau'ikan LP, yana ɗaukar kowace matsayi a matsayin",
-      "takardar garanti",
-      "yana ɗaukar daga inda wannan ya tsaya, an tsara shi don DEXs na yau da nau'ikan LP,",
-      "Kasuwannin Avana",
-      "Bude Babban Jari",
-      "daga Kasuwannin AMM",
-      "Saki Babban Jari daga Kasuwannin AMM",
-      "Ƙara koyo",
-      "A shekarar 2021, Aave ta kaddamar da Kasuwar AMM kuma ta tabbatar da cewa matsayin LP zai iya zama jinginar, amma an gina shi ne don sauƙaƙan DEXs na wancan lokacin. Avana tana karɓar abin da ya rage, an tsara ta don DEXs na yau da nau'ikan LP, tana ɗaukar kowace matsayi a matsayin jinginar da ke samuwa ta hanyar oracles biyu da ƙarfin sarrafa haɗari mafi ƙarfi.",
-      "Tsarin bayar da bashi",
-      "don bashi mai goyon bayan LP",
-      "Tsarin ba da lamuni don bashi mai tallafin LP"
+      "Babban hoto na shafin gida na Avana",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Kasuwannin Ƙarni dabam",
-      "Kowane kasuwar Spoke yana ware kimanta LP na musamman, sarrafa haɗari, da ka'idar fitar da kuɗi, don haka matsin lamba a wuri guda ko tsarin pooln ba zai iya bazuwa a sauran tsarin ba ko ya lalata matsayi marasa alaƙa ba.",
-      "Farashin tushen magin biyu",
-      "Abubuwan da Chainlink ke bayarwa da farashin AMM TWAP dole ne su yi daidai cikin iyaka kafin a tabbatar da duk wani aikin bashi, wanda ke rage hadarin damfara da rance na flash, canjin farashi na dan lokaci, ko karanta oracle mai guba guda.",
-      "Koyaushe ana bayar da jinginar fiye da kima",
-      "Kowane bashi yana ci gaba da kasancewa da ƙarancin haɗari ta hanyar iyakokin aro na hankali, iyakokin darajar bashi da ake daidaitawa, da kuma sa ido na lafiya kai tsaye wanda ke bayyana haɗari kafin ya samu damar ƙaruwa.",
-      "Sasantawa mai kare mai aro",
-      "Kwashe kudi an tsara shi don shawo kan matsayi tare da aiwatarwa mai sarrafawa: ana amfani da kudade da ba a karɓa ba da farko, ana rage babban jari kawai kamar yadda ake bukata, kuma duk wani ƙimar karin kudi ana mayar da shi ga mai aro.",
+      "Arzikin da kake sarrafawa",
+      "Saita yadda kowanne zagaye ke yin aiki cikin azanci kuma tsaya inda haɗarin har yanzu yake jin daidai. Kowanne kasuwar da aka ninka yana haɓaka zuwa abin da jinginar LP, farashin orak, da hanyar lalacewa za su iya tallafawa cikin aminci, don haka wani matsayi ba zai iya rushewa fiye da iyakokinsa ba.",
+      "Rayuwa mai lafiya a kowane zagaye",
+      "Kowane kewayawa da aka ƙara yana sabunta matsayin lafiyar ku, ikon aron ku, da iyakar sayarwa a cikin ainihin lokaci, don haka za ku ga daidai yadda ƙayyadadden amfani da aron ku ke barin tsari kafin matsayin ya kusanci gefen matsayi.",
+      "Sakin iko",
+      "Idan matsayin da aka ɗora da bashi ya kusanci iyakarsa, Avana yana warware madaukai a matakai, yana biyan bashi da rage haɗari a hankali maimakon rufe komai a lokaci guda. Ana amfani da kuɗaɗen da ba a karɓa ba da farko, sannan duk wani abin da ya rage ana mayar maka.",
+      "Iyakan leverage na kowane kasuwa",
+      "An ba da damar amfani da bashi ne kawai ga LP iri tare da ƙimar daraja mai dogaro, ƙayyadaddun iyakoki na haɗari, da gwaje-gwajen sharuddan sakin bashi. Kasuwanni Spoke masu zaman kansu suna kiyaye damuwa a cikin wani rukunin da aka ɗauke da bashi daga yaduwa zuwa matsayi marasa alaƙa.",
       "Lafiya ta hanyar tsari",
-      "Hadari da aka tsara wurin matsayin ruwa",
+      "Amfani da leverage tare da sarrafa haɗari da aka gina a ciki",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "janye",
       "Tambayoyi akai-akai",
       "tambayoyi",
-      "Tambayoyin da ake yawan yi"
+      "Tambayoyin da ake yawan yi",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "Kasuwannin kayan aiki",
-      "Arziki a kasuwanni dabam-dabam"
+      "Arziki a kasuwanni dabam-dabam",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "A Ciki"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Yankin aminci",
-      "Matsayin Lafiya > 1.5. Amfani da aron kudi yana cikin iyaka, kudade suna ci gaba da taruwa, kuma LP ɗinka yana kasancewa lafiya.",
-      "Yankin gargaɗi",
-      "Matsayin Lafiya 1.0-1.5. Ana sanar da kai don biyan bashi, ƙara jinginar kaya, ko barin tsarin atomatik ya rage haɗari.",
-      "Sayar da jingina",
-      "Lafiyar Abubuwa < 1.0. Ana karban kudade da farko, babban jari na LP da ake bukata yana komawa, kuma darajar ragaji tana dawowa gare ku.",
-      "Amincin matsayi",
-      "Kowane yanayin lafiya, an bayyana shi gaba ɗaya",
-      "Bibiya lafiyar kudi, faɗakarwa, da yanayin lalacewa kafin rance da LP ke tallafawa ya buƙaci mataki.",
-      "Matsayin lafiya",
-      "Yankin aminci",
-      "kuɗaɗen da ke tarawa",
-      "Gargaɗi",
-      "Ƙofa",
-      "Kusantar rushewa",
-      "Ayyukan da ake da su",
-      "Rage ma'auni na aro",
-      "border-amber-200 bg-amber-50",
-      "Ƙara jingina",
-      "Kara lafiyar jiki",
-      "Rage bashi ta atomatik",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Jerin",
-      "An yi amfani da kuɗi",
-      "Sauran da aka mayar",
-      "Ana sakin kawai babban bukata"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Farashin tushe na Hub",
@@ -635,7 +663,8 @@
       "Takamaiman haɗarin pooln yana ba da gudummawar rarrabawa na ƙarshe, yana ƙara yawan dawowa ga irin wannan kuɗin da bai yi aiki ba.",
       "APY na Avana",
       "Wannan kuɗin da ba a amfani da shi, APY mafi girma",
-      "zuwa"
+      "zuwa",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "Haɗa ƙarfin aro a fadin da yawa",
       "Bin lafiyar kowane matsayi tare",
       "Ƙara ko daidaita jinginar a kasuwa",
-      "Hoton haɗin wuraren LP na Avana"
+      "Hoton haɗin wuraren LP na Avana",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "Yi amfani da rancen da LP ke tallafawa don ƙirƙirar lefaris mai sarrafuwa ba tare da fita daga matsayinka na asali ba.",
       "Avana Aro kan matsayin LP",
       "Avana Ba da rance a kasuwannin da ke haɗe da Hub",
-      "Avana Multiply ribar lefaris mai sarrafuwa"
+      "Avana Multiply ribar lefaris mai sarrafuwa",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

@@ -5,15 +5,16 @@ import { Link } from "@/i18n/navigation"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
-import { FeatureCardDescription, FeatureCardTitle, SectionEyebrow, SectionTitle } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle, SandboxNotice, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
-import { CYAN_HIGHLIGHT_TEXT_CLASS } from "@/lib/highlight"
 import { brandAssetPath } from "@/lib/brand-assets"
+import { protocols } from "@/data/protocols"
 import { FeaturePageHero } from "@/components/feature-page-hero"
 import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
+import { SupportedDexDirectory } from "@/components/supported-dex-directory"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
 const PositionSafetyCardsSection = dynamic(() => import("@/components/position-safety-cards-section"))
@@ -117,6 +118,10 @@ const lpHubMarkets = [
   },
 ] as const
 
+const supportedDexes = protocols.filter(
+  (protocol) => protocol.category === "DEX" && protocol.shortName !== "GMX-P",
+)
+
 function BorrowMarketCard({
   number,
   title,
@@ -172,7 +177,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
-          <div className="mx-auto w-full max-w-[90rem]">
+          <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
                 <SectionEyebrow tone="violet">How it works</SectionEyebrow>
@@ -204,7 +209,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <section id="avana-hubs" className="bg-white site-section-gap">
         <div className="site-content-shell">
-          <div className="mx-auto w-full max-w-[90rem]">
+          <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
                 <SectionEyebrow tone="blue">Avana Hubs Strategy</SectionEyebrow>
@@ -258,71 +263,12 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
+      <SupportedDexDirectory protocols={supportedDexes} />
+
       <PerformanceSection className="site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
-            <div className="flex flex-col gap-8 md:gap-12">
-              <div className="flex flex-col gap-2">
-                <SectionEyebrow tone="emerald">DEX Coverage</SectionEyebrow>
-                <SectionTitle>Supported across top DEXs</SectionTitle>
-              </div>
-              <div className="flex flex-1 items-stretch gap-2 flex-col sm:flex-row">
-                <div className="grid w-full flex-1 grid-cols-3 gap-2">
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#111727] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#FFFFFF] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000827] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[linear-gradient(45deg,#FC6901_0%,#F3B900_100%)] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000000] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F5F5F5] [&>svg]:size-3/5"></div>
-                  </div>
-                </div>
-                <div className="flex w-full flex-1">
-                  <div className="flex h-[150px] w-full flex-col items-center justify-center rounded-lg bg-gradient-to-b from-blue-50 to-blue-100 p-2 text-center sm:h-auto">
-                    <div className="flex size-full flex-col items-center justify-center rounded-md border border-blue-200 bg-white">
-                      <div className="text-base font-medium leading-normal text-blue-600 md:text-lg">
-                        <div className={`flex items-center text-[32px] font-bold md:text-[48px] ${CYAN_HIGHLIGHT_TEXT_CLASS}`}>
-                          12+
-                        </div>
-                        <span>DEX Integrations</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="grid w-full flex-1 grid-cols-3 gap-2">
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#7D00FF] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#000000] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F3EFCD] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#061121] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[linear-gradient(90deg,#E35930_-6.83%,#E84125_100%)] [&>svg]:size-3/5"></div>
-                  </div>
-                  <div className="aspect-square rounded-lg border border-gray-200 bg-white p-1 md:p-1.5">
-                    <div className="flex size-full items-center justify-center rounded-md border border-gray-200 bg-[#F1F7FF] [&>svg]:size-3/5"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-6">
+            <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
                 <SectionEyebrow tone="blue">Liquidity pools</SectionEyebrow>
                 <SectionTitle className="md:whitespace-nowrap">
@@ -338,6 +284,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
                   className="object-cover object-center"
                 />
               </div>
+              <SandboxNotice className="mt-4 sm:mt-5" />
             </div>
 
             <div className="flex flex-col gap-12 md:gap-14">

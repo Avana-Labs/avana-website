@@ -9,7 +9,9 @@
       "closeMenu": "Закрити меню",
       "language": "Мова: {language}",
       "logo": "логотип {site}",
-      "helpfulLinks": "Корисні посилання"
+      "helpfulLinks": "Корисні посилання",
+      "helpCenter": "Центр допомоги: написати в підтримку",
+      "themeToggle": "Налаштування теми"
     },
     "nav": {
       "products": "Продукти",
@@ -23,7 +25,7 @@
       "about": "Про",
       "newsroom": "Редакція",
       "brand": "Бренд",
-      "faq": "FAQ",
+      "faq": "Часті запитання",
       "privacy": "Конфіденційність",
       "terms": "Умови",
       "overview": "Огляд",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Ця сторінка недоступна.",
       "body": "Адреса може бути неправильною або сторінка могла переміститися.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "На головну",
+      "faq": "Часті запитання"
     },
     "sandboxNotice": "Sandbox дані показані лише для попереднього перегляду. APYs, ціни та прибутки є ілюстративними і можуть відрізнятися від умов реального ринку.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Поділитися на LinkedIn",
       "previousPost": "Попередній пост",
       "nextPost": "Наступний пост",
-      "onThisPage": "On this page"
+      "onThisPage": "На цій сторінці"
     },
     "docs": {
       "previous": "Попередній",
@@ -99,7 +101,8 @@
         "liquidation": "Рамки ліквідації",
         "integrations": "Підтримувані інтеграції",
         "safety": "Механізми безпеки",
-        "legal": "Юридичний та комплаєнс"
+        "legal": "Юридичний та комплаєнс",
+        "copilot": "Запитати ШІ"
       },
       "items": {
         "overview": "Огляд",
@@ -131,7 +134,11 @@
         "bugBounty": "Програма винагороди за помилки",
         "insuranceFunds": "Страхові фонди",
         "securityDisclosures": "Розкриття інформації про безпеку",
-        "legalDisclaimer": "Юридична заява"
+        "legalDisclaimer": "Юридична заява",
+        "aiIntroduction": "Вступ до ШІ",
+        "copilotProtocols": "Підтримувані протоколи",
+        "copilotPrompts": "Приклади промптів",
+        "copilotWorkflow": "Робочий процес агента"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Останні новини з Avana",
       "readNewsroom": "Читати новинне агентство"
+    },
+    "exportMenu": {
+      "copyPage": "Копіювати сторінку",
+      "copied": "Скопійовано",
+      "copyPageMarkdown": "Копіювати сторінку як Markdown",
+      "copyPageLink": "Копіювати посилання на сторінку",
+      "copyPageLinkDescription": "Скопіювати URL цієї сторінки в буфер обміну",
+      "openInChatGPT": "Відкрити в ChatGPT",
+      "openInClaude": "Відкрити в Claude",
+      "openInGrok": "Відкрити в Grok",
+      "openInPerplexity": "Відкрити в Perplexity",
+      "askAboutPage": "Поставити запитання про цю сторінку",
+      "reviewPrompt": "Перегляньте вміст сторінки Avana нижче та дайте відповіді на запитання."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana — це кредитний ринок,",
       "titleLine2": "створений для пулів ліквідності AMM.",
       "subtitle": "Позичайте криптовалюту, сировинні активи, валюту (FX) та активи реального світу (RWA) ончейн під заставу позицій ліквідності AMM.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Читати ARFC",
       "secondaryCta": "Спробувати Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Часті запитання",
     "subtitle": "Відповіді про Avana, LP заставу та Aave v4",
     "englishOnlyNote": "Повні відповіді на запитання показуються англійською, доки не буде завершено перевірку цього локалізованого варіанту."
   },

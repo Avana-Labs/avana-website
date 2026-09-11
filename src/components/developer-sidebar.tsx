@@ -78,7 +78,6 @@ import {
   FileWarning,
   Gavel,
   Bot,
-  Boxes,
   MessageSquare,
 } from "lucide-react"
 
@@ -137,7 +136,6 @@ export const navigationSections = [
     icon: Bot,
     items: [
       { href: "/developers/copilot", labelKey: "docs.items.aiIntroduction", icon: Bot },
-      { href: "/developers/copilot/protocols", labelKey: "docs.items.copilotProtocols", icon: Boxes },
       { href: "/developers/copilot/query-example", labelKey: "docs.items.copilotPrompts", icon: MessageSquare },
       { href: "/developers/copilot/workflow", labelKey: "docs.items.copilotWorkflow", icon: Workflow },
     ],

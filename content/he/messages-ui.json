@@ -9,7 +9,9 @@
       "closeMenu": "סגור תפריט",
       "language": "שפה: {language}",
       "logo": "לוגו {site}",
-      "helpfulLinks": "קישורים מועילים"
+      "helpfulLinks": "קישורים מועילים",
+      "helpCenter": "מרכז עזרה: שליחת אימייל לתמיכה",
+      "themeToggle": "העדפת ערכת נושא"
     },
     "nav": {
       "products": "מוצרים",
@@ -23,7 +25,7 @@
       "about": "אודות",
       "newsroom": "חדר חדשות",
       "brand": "מותג",
-      "faq": "FAQ",
+      "faq": "שאלות נפוצות",
       "privacy": "פרטיות",
       "terms": "תנאים",
       "overview": "סקירה",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "דף זה אינו זמין.",
       "body": "הכתובת עשויה להיות שגויה או שהדף ייתכן שעבר למקום אחר.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "לדף הבית",
+      "faq": "שאלות נפוצות"
     },
     "sandboxNotice": "Sandbox הנתונים מוצגים להצגה בלבד. APY שניות, מחירים ותשואות הם להמחשה ועשויים להיות שונים מתנאי השוק בפועל.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "שתף בלינקדאין",
       "previousPost": "פוסט קודם",
       "nextPost": "פוסט הבא",
-      "onThisPage": "On this page"
+      "onThisPage": "בעמוד זה"
     },
     "docs": {
       "previous": "קודם",
@@ -99,7 +101,8 @@
         "liquidation": "מסגרת חיסול",
         "integrations": "אינטגרציות נתמכות",
         "safety": "מנגנוני בטיחות",
-        "legal": "משפטי וציות"
+        "legal": "משפטי וציות",
+        "copilot": "שאל את הבינה המלאכותית"
       },
       "items": {
         "overview": "סקירה",
@@ -131,7 +134,11 @@
         "bugBounty": "פרס באגים",
         "insuranceFunds": "קרנות ביטוח",
         "securityDisclosures": "גילויים ביטחוניים",
-        "legalDisclaimer": "כתב ויתור משפטי"
+        "legalDisclaimer": "כתב ויתור משפטי",
+        "aiIntroduction": "מבוא לבינה מלאכותית",
+        "copilotProtocols": "פרוטוקולים נתמכים",
+        "copilotPrompts": "דוגמאות לפרומפטים",
+        "copilotWorkflow": "זרימת עבודה של הסוכן"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "העדכונים האחרונים מ-Avana",
       "readNewsroom": "קרא חדר חדשות"
+    },
+    "exportMenu": {
+      "copyPage": "העתק עמוד",
+      "copied": "הועתק",
+      "copyPageMarkdown": "העתק עמוד כ-Markdown",
+      "copyPageLink": "העתק קישור לעמוד",
+      "copyPageLinkDescription": "העתק את כתובת העמוד ללוח",
+      "openInChatGPT": "פתח ב-ChatGPT",
+      "openInClaude": "פתח ב-Claude",
+      "openInGrok": "פתח ב-Grok",
+      "openInPerplexity": "פתח ב-Perplexity",
+      "askAboutPage": "שאל שאלות על עמוד זה",
+      "reviewPrompt": "עיין בתוכן עמוד Avana למטה וענה על השאלות."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana היא זירת הלוואות מבוזרת,",
       "titleLine2": "שפותחה במיוחד עבור מאגרי נזילות AMM.",
       "subtitle": "לוו קריפטו, סחורות, מט\"ח (FX) ונכסי עולם אמיתי (RWA) ישירות על גבי הבלוקצ'יין, תוך שימוש בפוזיציות נזילות AMM כבטוחה.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "קראו את הצעת ה-ARFC",
       "secondaryCta": "התנסו ב-Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "שאלות נפוצות",
     "subtitle": "תשובות על Avana, LP בטוחה, ו-Aave v4",
     "englishOnlyNote": "תשובות מלאות לשאלות נפוצות מוצגות באנגלית עד לסיום הבדיקה של שפה זו."
   },

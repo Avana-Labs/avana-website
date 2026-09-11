@@ -61,13 +61,12 @@
       "Kopa kwa Kujiamini",
       "Imefadhiliwa katika",
       "kiwango cha pool",
-      "Ufunikaji wa DEX",
-      "Inasaidiwa katika DEXs za juu",
-      "Integrations za DEX",
       "Liquidity pool",
       "Kila maelezo ya Bwawa, yametolewa kwa ufafanuzi kamili",
       "Muhtasari wa mtindo wa hati wa masoko yaliyopatikana ya kukopa",
-      "Maswali yanayoulizwa mara kwa mara"
+      "Maswali yanayoulizwa mara kwa mara",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "Itifaki ya kukopesha kwa mikopo inayoungwa mkono na LP",
       "Itifaki ya ukopaji kwa",
       "Kutambulisha Avana:",
-      "Tungependa kusikia kutoka kwako."
+      "Tungependa kusikia kutoka kwako.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "Usizungushe wala kubalisha alama.",
       "Usibadilishe rangi ya nembo nje ya rangi zilizoidhinishwa.",
       "Usikate alama wala kuiweka karibu mno na ukingo.",
-      "Usijaze nafasi ya alama kwa nembo za washirika au lebo za UI."
+      "Usijaze nafasi ya alama kwa nembo za washirika au lebo za UI.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "Masoko ya Multiply ili kuzungusha mtaji, kurekebisha hatari ya bwawa, na kudhibiti afya ya nafasi.",
       "Usalama wa Nafasi",
       "Imeundwa kwa mtaji wa mkopo salama",
-      "Kiwango cha juu cha mkopo"
+      "Kiwango cha juu cha mkopo",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Picha ya shujaa ya ukurasa wa kwanza wa Avana"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Kopa",
-      "Kopa dhidi ya nafasi za LP huku fedha zako zikiwa hai katika AMM ya msingi.",
-      "Kiolesura cha uwezo wa kukopa",
-      "Kopesha",
-      "Weka mtaji katika masoko ya mikopo yanayounganishwa na Hub na upate kutoka kwa mahitaji ya wakopaji yanayoumbwa na LP.",
-      "Kiwango cha fedha cha soko la kukopesha kiolesura",
-      "object-cover object-top",
-      "Zidisha",
-      "Tumia mkopo unaounga mkono LP kuunda mkopo ulioendeshwa bila kutoka kwenye nafasi yako ya kioo cha msingi.",
-      "Kiolesura cha jalada",
-      "Kutana na Avana",
-      "Mnamo 2021,",
-      "Aave",
-      "ilizinduliwa",
-      "Soko la AMM",
-      "na kuthibitisha",
-      "nafasi za LP",
-      "ingeweza kutumika kama dhamana, lakini ilijengwa kwa DEXs rahisi za enzi hiyo.",
-      "Avana",
-      "inaendelea pale ilipoishia, imeundwa kwa DEXs na aina za LP za kisasa, ikitenda kila nafasi kama",
-      "dhamana",
-      "inaendelea pale ilipoacha, imeundwa kwa ajili ya aina za DEXs na LP za sasa,",
-      "Soko la Avana",
-      "Fungua Mtaji",
-      "kutoka AMM Markets",
-      "Fungua Mtaji kutoka Sokoni za AMM",
-      "Jifunze zaidi",
-      "Mnamo mwaka wa 2021, Aave ilizindua Soko la AMM na kuthibitisha kuwa nafasi za LP zinaweza kutumika kama dhamana, lakini lilijengwa kwa DEXs rahisi za wakati huo. Avana inaendelea kutoka hapo, imeundwa kwa DEXs na aina za LP za leo, ikitumia kila nafasi kama dhamana iliyoundwa na manabii wawili na udhibiti wa hatari wenye nguvu zaidi.",
-      "Itifaki ya ukopeshaji",
-      "kwa mikopo inayoumbwa na LP",
-      "Itifaki ya kukopesha kwa mikopo inayoungwa mkono na LP"
+      "Picha ya shujaa ya ukurasa wa kwanza wa Avana",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Soko la Vipeo Vilivyojengwa Peke Yake",
-      "Kila soko la Spoke linaweka pandeo la LP maalum la tathmini, udhibiti wa hatari, na mantiki ya uuzaji, kwa hivyo msongo katika eneo moja au muundo wa mfuko haufikii sehemu zingine za itifaki au kuathiri nafasi zisizohusiana.",
-      "Uchambuzi wa bei wa orake mbili",
-      "Vyakula vya Chainlink na bei ya AMM TWAP lazima vikubaliane ndani ya uvumilishi kabla ya hatua yoyote ya mkopo kuthibitishwa, kupunguza uwezekano wa udanganyifu wa mkopo wa muda mfupi, upotoshaji wa bei wa muda mfupi, au usomaji mmoja hatari wa oracle.",
-      "Daima yenye dhamana zaidi",
-      "Kila mkopo unaendelea kuwa na dhamana zaidi ya ya kawaida kupitia mipaka thabiti ya kukopa, viwango vinavyobadilika vya mkopo-kwa-thamani, na ufuatiliaji wa afya ya moja kwa moja unaoonyesha hatari kabla haijapata nafasi ya kuzidishwa.",
-      "Utoaji wa fedha uliolindwa kwa mkopaji",
-      "Utozaji kimsingi umeundwa ili kufungua nafasi kwa utekelezaji ulio na udhibiti: ada zisizokusanywa zinatumika kwanza, mwelekeo mkuu unaweza kufunguliwa tu inapohitajika, na thamani yoyote iliyobaki inarudishwa kwa mkopaji.",
+      "Tumia nguvu unayoidhibiti",
+      "Weka jinsi kila mzunguko unavyokimbia kwa nguvu na simamisha pale ambapo hatari bado inahisi sawa. Kila soko linalozidisha jumla ya thamani linalingana na rasilimali zake LP kama dhamana, bei za oracle, na njia ya kufutwa zinaweza kuunga mkono kwa usalama, hivyo nafasi haiwezi kukatishwa zaidi ya mipaka yake.",
+      "Ikiwa na afya hai katika kila mzunguko",
+      "Kila mzunguko unaoongezwa unasasisha kipengele chako cha afya, nguvu ya kukopa, na kiwango cha uuzaji wa mali kwa wakati halisi, hivyo unaweza kuona hasa ni kiasi gani cha hifadhi kikiacha mpangilio wa leverage kabla ya nafasi kuelekea mpaka.",
+      "Kupumzika kwa udhibiti",
+      "Iwapo nafasi ya kutumia mkopo inakaribia kikomo chake, Avana inafungua mizunguko hatua kwa hatua, ikilipa deni na kupunguza hatari taratibu badala ya kufunga kila kitu mara moja. Ada ambazo hazijakusanywa zinatolewa kwanza, na ziada yoyote inarudishwa kwako.",
+      "Vizingiti vya mkopo kwa kila soko",
+      "Kiwango cha mkopo kinawezeshwa tu kwa aina LP zenye thamani thabiti, vigezo vya hatari vilivyowekwa, na dhana zilizojaribiwa za kuvunja mikopo. Soko lililotengwa Spoke linaweka msongo katika bwawa moja la mkopo bila kueneza kwenye nafasi zisizohusiana.",
       "Usalama kwa kubuni",
-      "Hatari iliyoundwa kuzunguka nafasi za uraiani",
+      "Tumia mikopo na udhibiti wa hatari umejumuishwa",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "to withdraw",
       "Maswali yanayoulizwa mara kwa mara",
       "maswali",
-      "Maswali yanayoulizwa mara kwa mara"
+      "Maswali yanayoulizwa mara kwa mara",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "Synthetix",
       "The Graph",
       "Masoko ya usambazaji",
-      "Kopa katika masoko"
+      "Kopa katika masoko",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "Inaendelea"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Eneo salama",
-      "Kigezo cha Afya > 1.5. Matumizi ya mkopo yanabaki ndani ya uwezo, ada zinaendelea kukusanyika, na LP yako inabaki salama.",
-      "Eneo la onyo",
-      "Kigezo cha Afya 1.0-1.5. Unapokelewa taarifa ya kulipa deni, kuongeza dhamana, au kuruhusu automatisheni kupunguza mwendelezo wa hatari.",
-      "Uuzaji wa dhamana",
-      "Kigezo cha Afya < 1.0. Ada zinaanza kutozwa kwanza, msingi unaohitajika wa LP unavunjika, na thamani iliyosalia inarudi kwako.",
-      "Usalama wa nafasi",
-      "Kila hali ya afya, imeelezewa kikamilifu",
-      "Fuatilia hali ya afya, onyo, na ulipaji kabla ya mkopo unaotegemea LP kuhitaji hatua.",
-      "Afya ya nafasi",
-      "Eneo salama",
-      "ada zinazokusanyika",
-      "Onyo",
-      "Kizingiti",
-      "Kukaribia ufutaji",
-      "Vitendo vinavyopatikana",
-      "Punguza salio la mkopo",
-      "border-amber-200 bg-amber-50",
-      "Ongeza dhamana",
-      "Ongeza kiwango cha afya",
-      "Kupunguza deni kiotomatiki",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Mfuatano",
-      "Ada zilizotumika",
-      "Salio lililorudiwa",
-      "Ni deni tu linalohitajika ndilo limefunguliwa"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Kiwango cha msingi cha Hub",
@@ -635,7 +663,8 @@
       "Hatari maalum ya pool inachangia tofauti ya mwisho, ikiongeza uwezekano wa kurudiwa kwa fedha zile zile zisizotumika.",
       "APY ya Avana",
       "Pesa zilezile zisizotumika, APY ya juu zaidi",
-      "kwa"
+      "kwa",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "Weka nguvu ya kukopa katika kadhaa",
       "Fuata afya ya kila nafasi sambamba",
       "Ongeza au rekebisha dhamana kulingana na soko",
-      "Mchoro wa nafasi za mchanganyiko wa Avana LP"
+      "Mchoro wa nafasi za mchanganyiko wa Avana LP",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "Tumia mkopo wenye dhamana ya LP kuunda mtaji wa mkopo unaosimamiwa bila kuondoka kwenye nafasi yako ya msingi ya ukwasi.",
       "Avana Kukopa dhidi ya nafasi za LP",
       "Avana Kukopesha katika masoko yaliyounganishwa na Hub",
-      "Avana Multiply mapato ya mtaji wa mkopo unaosimamiwa"
+      "Avana Multiply mapato ya mtaji wa mkopo unaosimamiwa",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {

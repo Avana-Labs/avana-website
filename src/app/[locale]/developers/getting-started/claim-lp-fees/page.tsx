@@ -35,13 +35,9 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana tracks principal liquidity and accrued fees separately. That means you can claim
-            fee income from your LP without closing the position that backs your loan.
-          </p>
-          <p className="type-doc-body">
-            Fee claims still affect your collateral value, so Avana runs a health check before and
+            <>Avana accounts for principal liquidity and accrued fees separately. Where the LP format supports fee collection, a borrower can claim eligible fees without redeeming the principal position held as collateral.</>{" "}<>Fee claims still affect your collateral value, so Avana runs a health check before and
             after the claim. If claiming fees would push your account below the required collateral
-            boundary, the claim is blocked until you repay debt or add more collateral.
+            boundary, the claim is blocked until you repay debt or add more collateral.</>{" "}<>{"Interest increases outstanding debt over time, so health factor can decline even when the collateral position is unchanged. Unused borrowing capacity provides a buffer against that debt growth and changes in collateral value."}</>
           </p>
         </section>
 
@@ -49,31 +45,21 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">How It Works</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              In the Avana interface, open the claim-fees action for your deposited position. Avana
-              routes the claim through the DEX-specific path for that LP type.
-            </p>
-            <p>
-              For concentrated-liquidity DEXs, that is typically a collect-style call that pulls
+            <>A fee-claim request identifies the deposited position. Avana routes it through the DEX-specific collection method for that LP format.</>{" "}<>For concentrated-liquidity DEXs, that is typically a collect-style call that pulls
               accrued fees while leaving principal in the pool. For fungible LP tokens, Avana uses
-              the DEX&apos;s native fee-claim path when one is available.
-            </p>
-            <p>
-              After fees are claimed, Avana syncs the updated position state back into the Borrow
-              Spoke so health and borrowing capacity reflect the new balance.
-            </p>
+              the DEX&apos;s native fee-claim path when one is available.</>{" "}<>After fees are claimed, Avana syncs the updated position state back into the Borrow
+              Spoke so health and borrowing capacity reflect the new balance.</>
+          </p>
           </div>
         </section>
 
         <section id="health-checks" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Health Checks</h2>
           <p className="mb-4 type-doc-body">
-            Accrued fees can count toward your collateral buffer until they are claimed. When you
+            <>Accrued fees can count toward your collateral buffer until they are claimed. When you
             claim fees, that value leaves the position, which can lower health if your account is
-            already close to the liquidation threshold.
-          </p>
-          <p className="type-doc-body">
-            Repay debt or add collateral first if a fee claim would leave your account under the
-            required boundary.
+            already close to the liquidation threshold.</>{" "}<>Repay debt or add collateral first if a fee claim would leave your account under the
+            required boundary.</>
           </p>
         </section>
 
@@ -81,13 +67,8 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Fee Accounting</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              Avana&apos;s oracle model separates principal value from fee value so the protocol
-              knows how much of the position is core liquidity and how much is claimable fee income.
-            </p>
-            <p>
-              During liquidation, accrued fees may be applied before principal liquidity is unwound,
-              reducing how much of the core LP position has to be disturbed to cover debt.
-            </p>
+            <>The oracle reports principal value and fee value separately. This allows the Borrow Spoke to account for claimable fees in collateral valuation and to update that valuation when fees leave the position.</>{" "}<>During liquidation, eligible accrued fees may be collected before principal liquidity is unwound. Applying those fees to recovery can reduce the amount of principal needed to cover debt.</>
+          </p>
           </div>
           <p className="mt-4 type-doc-body">
             See{" "}
@@ -104,11 +85,11 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
 
         <section id="key-benefits" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Key Benefits</h2>
-          <ul className="space-y-2 type-doc-body">
-            <li>Your LP principal keeps earning fees and stays active in the pool while you borrow.</li>
-            <li>You can realize fee income without unwinding the collateral position.</li>
-            <li>Health checks prevent fee claims from pulling out too much value and leaving debt undersecured.</li>
-          </ul>
+          <p className="type-doc-body">
+            <>Your LP principal keeps earning fees and stays active in the pool while you borrow.</>{" "}
+            <>You can realize fee income without unwinding the collateral position.</>{" "}
+            <>Health checks prevent fee claims from pulling out too much value and leaving debt undersecured.</>
+          </p>
         </section>
       </div>
 

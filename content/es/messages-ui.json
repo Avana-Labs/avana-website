@@ -9,7 +9,9 @@
       "closeMenu": "Cerrar menú",
       "language": "Idioma: {language}",
       "logo": "logo de {site}",
-      "helpfulLinks": "Enlaces útiles"
+      "helpfulLinks": "Enlaces útiles",
+      "helpCenter": "Centro de ayuda: escribir a soporte",
+      "themeToggle": "Preferencia de tema"
     },
     "nav": {
       "products": "Productos",
@@ -23,7 +25,7 @@
       "about": "Acerca de",
       "newsroom": "Sala de prensa",
       "brand": "Marca",
-      "faq": "FAQ",
+      "faq": "Preguntas frecuentes",
       "privacy": "Privacidad",
       "terms": "Términos",
       "overview": "Resumen",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Esta página no está disponible.",
       "body": "La dirección puede estar incorrecta o la página puede haberse movido.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Ir a la página de inicio",
+      "faq": "Preguntas frecuentes"
     },
     "sandboxNotice": "Sandbox datos mostrados solo para vista previa. APYs, precios y rendimientos son ilustrativos y pueden diferir de las condiciones reales del mercado.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Compartir en LinkedIn",
       "previousPost": "Publicación anterior",
       "nextPost": "Siguiente publicación",
-      "onThisPage": "On this page"
+      "onThisPage": "En esta página"
     },
     "docs": {
       "previous": "Anterior",
@@ -99,7 +101,8 @@
         "liquidation": "Marco de Liquidación",
         "integrations": "Integraciones compatibles",
         "safety": "Mecanismos de seguridad",
-        "legal": "Legal y Cumplimiento"
+        "legal": "Legal y Cumplimiento",
+        "copilot": "Preguntar a la IA"
       },
       "items": {
         "overview": "Resumen",
@@ -131,7 +134,11 @@
         "bugBounty": "Recompensa por errores",
         "insuranceFunds": "Fondos de seguro",
         "securityDisclosures": "Divulgaciones de seguridad",
-        "legalDisclaimer": "Aviso legal"
+        "legalDisclaimer": "Aviso legal",
+        "aiIntroduction": "Introducción a la IA",
+        "copilotProtocols": "Protocolos compatibles",
+        "copilotPrompts": "Ejemplos de prompts",
+        "copilotWorkflow": "Flujo del agente"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Lo último de Avana",
       "readNewsroom": "Leer sala de redacción"
+    },
+    "exportMenu": {
+      "copyPage": "Copiar página",
+      "copied": "Copiado",
+      "copyPageMarkdown": "Copiar página como Markdown",
+      "copyPageLink": "Copiar enlace de la página",
+      "copyPageLinkDescription": "Copiar la URL de esta página al portapapeles",
+      "openInChatGPT": "Abrir en ChatGPT",
+      "openInClaude": "Abrir en Claude",
+      "openInGrok": "Abrir en Grok",
+      "openInPerplexity": "Abrir en Perplexity",
+      "askAboutPage": "Hacer preguntas sobre esta página",
+      "reviewPrompt": "Revisa el contenido de esta página de Avana y responde las preguntas."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana es el mercado de préstamos",
       "titleLine2": "diseñado para pools de liquidez AMM.",
       "subtitle": "Pide prestado cripto, materias primas, FX y activos del mundo real onchain utilizando tus posiciones de liquidez AMM como colateral.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Leer el ARFC",
       "secondaryCta": "Probar Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Preguntas frecuentes",
     "subtitle": "Respuestas sobre Avana, LP colateral, y Aave v4",
     "englishOnlyNote": "Las respuestas completas de las preguntas frecuentes se muestran en inglés hasta que se complete la revisión de esta localidad."
   },

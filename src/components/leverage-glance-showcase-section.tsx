@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SectionEyebrow, SectionTitle } from "@/components/shared"
+import { SandboxNotice, SectionEyebrow, SectionTitle } from "@/components/shared"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 import { brandAssetPath } from "@/lib/brand-assets"
@@ -23,6 +23,7 @@ export default async function LeverageGlanceShowcaseSection({ locale }: { locale
           className="object-cover object-center"
         />
       </div>
+      <SandboxNotice className="mt-4 sm:mt-5" />
     </section>
   ))
 }

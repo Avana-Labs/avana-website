@@ -56,7 +56,7 @@ const programs = [
       "Recursive exploit paths against mispriced LP collateral",
     ],
     highlighted: true,
-    note: "Highest severity ceiling: LP mispricing can create bad debt, insolvency, or unfair liquidations without a classic contract drain.",
+    note: "LP mispricing can have critical economic impact by enabling bad debt, insolvency, or incorrect liquidations, even without direct theft from a contract.",
   },
   {
     title: "Program C - Governance, Admin, and Protocol Infrastructure",
@@ -130,53 +130,37 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            The Avana Bug Bounty covers responsible disclosure across contracts, risk systems, and
-            supporting infrastructure that can affect user funds or protocol solvency.
-          </p>
-          <p className="mb-4 type-doc-body">
-            Because Avana uses AMM liquidity positions as collateral, scope includes both direct
-            contract bugs and failures where liquidity, pricing, or market state can be turned into
-            bad collateral value or broken liquidations.
-          </p>
-          <p className="type-doc-body type-doc-callout type-doc-callout-danger">
-            <strong>Severity is economic first:</strong> rewards track exploitability and outcomes
-            such as fund loss, insolvency, bad debt, or systemic collateral mispricing, not only
-            how large the code change looks.
+            <><>The Avana Bug Bounty covers responsible disclosure across contracts, risk systems, and
+            supporting infrastructure that can affect user funds or protocol solvency.</>{" "}<>The scope includes direct contract vulnerabilities and economic failures involving LP collateral. Manipulated prices, insufficient liquidity, or inconsistent position state can affect borrowing capacity or prevent liquidation from recovering debt.</></>{" "}<><strong>Severity is based on economic impact:</strong> assessment considers exploitability and outcomes such as fund loss, insolvency, bad debt, or systemic collateral mispricing. The size of the affected code is not a measure of the potential loss.</>
           </p>
         </section>
 
         <section id="scope-and-system-architecture" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Scope & System Architecture</h2>
           <p className="mb-6 type-doc-body">
-            Scope is split into subsystems so researchers can map a finding to the part of the
-            stack it actually threatens: core lending, LP valuation, governance and admin, or
-            offchain integrations.
+            Reports are grouped by the affected subsystem: core lending, LP valuation, governance and administration, or offchain integrations. The grouping identifies the component involved; severity depends on the demonstrated impact.
           </p>
 
           <div className="space-y-5">
             {programs.map((program) => (
               <div
                 key={program.title}
-                className={`rounded-xl border p-5 ${
-                  program.highlighted
-                    ? "border-rose-300 bg-gradient-to-br from-rose-50 via-white to-amber-50 shadow-sm"
-                    : "border-gray-200 bg-white"
-                }`}
+                className="doc-topic"
               >
-                <div className="mb-4 flex items-start justify-between gap-3">
+                <div className="mb-4 flex flex-col gap-3">
                   <div>
                     <h3 className="text-lg type-doc-subsection-title">{program.title}</h3>
                     <p className="mt-2 type-doc-body">{program.summary}</p>
                   </div>
                   {program.highlighted ? (
-                    <span className="shrink-0 rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-rose-700">
+                    <span className="text-sm font-medium text-type-secondary">
                       Highest sensitivity
                     </span>
                   ) : null}
                 </div>
 
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg bg-gray-50 p-4">
+                <div className="flex flex-col gap-4">
+                  <div>
                     <h4 className="mb-2 text-sm type-doc-subsection-title">Includes</h4>
                     <ul className="space-y-2 type-doc-body">
                       {program.includes.map((item) => (
@@ -187,7 +171,7 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
                     </ul>
                   </div>
 
-                  <div className="rounded-lg bg-gray-50 p-4">
+                  <div>
                     <h4 className="mb-2 text-sm type-doc-subsection-title">Primary risks</h4>
                     <ul className="space-y-2 type-doc-body">
                       {program.risks.map((item) => (
@@ -224,15 +208,14 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
         <section id="severity-philosophy" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Severity Philosophy</h2>
           <p className="mb-6 type-doc-body">
-            Generic vulnerability scores are not the main ranking method here. Findings are judged
-            by credible exploit paths and by the economic outcome they can create.
+            Severity assessment considers a credible exploit path and the economic harm it could cause, rather than relying only on a generic vulnerability score.
           </p>
 
           <div className="space-y-4">
             {severityLevels.map((level) => (
               <div
                 key={level.title}
-                className={`rounded-xl border p-4 ${level.style}`}
+                className="doc-topic"
               >
                 <h3 className="mb-1 type-doc-subsection-title">{level.title}</h3>
                 <p className="type-doc-body">{level.text}</p>
@@ -241,9 +224,7 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
           </div>
 
           <p className="mt-6 type-doc-body">
-            A bug that looks small in code can still be critical if it enables LP overvaluation or
-            bad debt. A technically interesting issue can rank lower if it does not have a credible
-            path to meaningful financial damage.
+            A finding that enables LP overvaluation or bad debt can be critical even if it affects little code. Findings without a credible path to significant economic harm receive a lower severity assessment.
           </p>
         </section>
       </div>

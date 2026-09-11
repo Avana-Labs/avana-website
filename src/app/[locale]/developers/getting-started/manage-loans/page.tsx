@@ -36,21 +36,15 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="type-doc-body">
-            An open loan on Avana is not static. Your LP keeps earning fees, token prices move, and
-            interest accrues on debt. Check health factor in the interface regularly and act before
-            you are close to liquidation.
+            <>An open loan changes as interest accrues and the underlying LP position&apos;s prices, inventory, and fees change. Monitoring therefore requires both the current debt and the risk-adjusted collateral value; the balances recorded when the loan opened are not enough to determine its current health.</>{" "}<>{"Accrued fees can count toward your collateral buffer until they are claimed. When you claim fees, that value leaves the position, which can lower health if your account is already close to the liquidation threshold."}</>
           </p>
         </section>
 
         <section id="borrowing-more" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrowing More</h2>
           <p className="mb-4 type-doc-body">
-            You can borrow more if you still have unused capacity and the Hub has liquidity for the
-            asset you want. Each additional borrow runs the same checks as the first one.
-          </p>
-          <p className="type-doc-body">
-            Partial repayment frees capacity immediately. It lowers debt, improves health, and can
-            make room for withdrawals or fee claims later.
+            <>An additional borrow uses the same collateral, capacity, liquidity, and health checks as the initial borrow. It can proceed only if the account has remaining capacity and the Hub can supply the requested asset within active caps.</>{" "}<>Partial repayment frees capacity immediately. It lowers debt, improves health, and can
+            make room for withdrawals or fee claims later.</>
           </p>
         </section>
 
@@ -58,17 +52,8 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Monitoring Health</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              <strong className="text-gray-900">Healthy:</strong> collateral value stays comfortably
-              above debt, with room for normal market movement.
-            </p>
-            <p>
-              <strong className="text-gray-900">Watchlist:</strong> the account still passes checks,
-              but the buffer is thin. Consider repaying, adding collateral, or reducing exposure.
-            </p>
-            <p>
-              <strong className="text-gray-900">Liquidatable:</strong> health has crossed the
-              liquidation threshold. The liquidation framework can take over.
-            </p>
+            <><strong className="text-gray-900">Healthy:</strong> adjusted collateral value exceeds debt, leaving a buffer before the liquidation threshold.</>{" "}<><strong className="text-gray-900">Watchlist:</strong> the account passes health checks but has a smaller buffer. Repayment or additional approved collateral can increase that buffer.</>{" "}<><strong className="text-gray-900">Liquidatable:</strong> the account has crossed the liquidation threshold and is eligible for the configured liquidation process.</>
+          </p>
           </div>
           <p className="mt-4 type-doc-body">
             See{" "}
@@ -93,15 +78,8 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Position Changes</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              While debt is open, your LP position keeps running in the pool. Price moves, fee
-              accrual, and pool inventory shifts can change your collateral value without you taking
-              any action. Avana recalculates health on these changes automatically.
-            </p>
-            <p>
-              If you want to claim fees, withdraw collateral, or change the position on the DEX, those
-              actions must go through Avana first. The Borrow Spoke checks whether your account stays
-              healthy after the action before allowing it.
-            </p>
+            <>A deposited LP position remains active in its pool while debt is open. Price changes, fee accrual, and inventory shifts affect the collateral value used in Avana&apos;s health calculations, even without a new transaction from the borrower.</>{" "}<>Fee claims, collateral withdrawals, and supported position changes pass through Avana while the position is held as collateral. The Borrow Spoke evaluates the resulting account health before allowing value to leave or the position to change.</>
+          </p>
           </div>
         </section>
 

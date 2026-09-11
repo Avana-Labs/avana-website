@@ -4,7 +4,7 @@
   "ui_messages": {
     "locales": {
       "zh-CN": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -14,12 +14,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "zh-TW": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -29,22 +54,72 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "hi": {
-        "untranslated_count": 1,
+        "untranslated_count": 6,
         "gaps": [
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "es": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -54,12 +129,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ar": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -69,32 +169,107 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "fr": {
-        "untranslated_count": 1,
+        "untranslated_count": 6,
         "gaps": [
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "bn": {
-        "untranslated_count": 1,
+        "untranslated_count": 6,
         "gaps": [
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "pt": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -104,12 +279,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ru": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -119,12 +319,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ur": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -134,12 +359,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "id": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -149,12 +399,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "de": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -164,12 +439,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ja": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -179,22 +479,72 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "fa": {
-        "untranslated_count": 1,
+        "untranslated_count": 6,
         "gaps": [
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "sw": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -204,12 +554,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "vi": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -219,12 +594,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "tr": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -234,12 +634,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ko": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -249,12 +674,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "ha": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -264,12 +714,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "it": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -279,12 +754,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "th": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -294,12 +794,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "pl": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -309,12 +834,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "uk": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -324,12 +874,37 @@
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
       },
       "nl": {
-        "untranslated_count": 2,
+        "untranslated_count": 7,
         "gaps": [
           {
             "path": "common.nav.aaveArfc",
@@ -340,15 +915,65 @@
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
             "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
+            "status": "identical_to_en"
           }
         ]
       },
       "he": {
-        "untranslated_count": 1,
+        "untranslated_count": 6,
         "gaps": [
           {
             "path": "meta.titleTemplate",
             "en": "{title} | Avana",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.1",
+            "en": "onchain using your AMM liquidity positions",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleMobileLines.2",
+            "en": "as collateral.",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.0",
+            "en": "Borrow crypto, commodities, FX, and real world assets onchain",
+            "status": "identical_to_en"
+          },
+          {
+            "path": "home.hero.subtitleDesktopLines.1",
+            "en": "using your AMM liquidity positions as collateral.",
             "status": "identical_to_en"
           }
         ]
@@ -356,6 +981,11 @@
     },
     "keys_by_frequency": {
       "meta.titleTemplate": 25,
+      "home.hero.subtitleMobileLines.0": 25,
+      "home.hero.subtitleMobileLines.1": 25,
+      "home.hero.subtitleMobileLines.2": 25,
+      "home.hero.subtitleDesktopLines.0": 25,
+      "home.hero.subtitleDesktopLines.1": 25,
       "common.nav.aaveArfc": 20
     }
   },
@@ -467,746 +1097,751 @@
     "marketing.json": {
       "locales": {
         "zh-CN": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "zh-TW": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "hi": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "es": {
-          "untranslated_count": 12,
+          "untranslated_count": 92,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[6]",
-              "en": "Curve USD",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ar": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "fr": {
-          "untranslated_count": 10,
+          "untranslated_count": 91,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[6]",
-              "en": "Curve USD",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[9]",
-              "en": "PayPal USD",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "bn": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "pt": {
-          "untranslated_count": 12,
+          "untranslated_count": 92,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[6]",
-              "en": "Curve USD",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ru": {
-          "untranslated_count": 7,
+          "untranslated_count": 87,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ur": {
-          "untranslated_count": 7,
+          "untranslated_count": 88,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[2]",
-              "en": "Avana APY",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "id": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "de": {
-          "untranslated_count": 4,
+          "untranslated_count": 85,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[21]",
-              "en": "border-gray-200 bg-gray-50",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
+              "status": "identical_to_en"
+            },
+            {
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ja": {
-          "untranslated_count": 9,
+          "untranslated_count": 89,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[2]",
-              "en": "Avana APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "fa": {
-          "untranslated_count": 6,
+          "untranslated_count": 87,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[6]",
-              "en": "Curve USD",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "sw": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "vi": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "tr": {
-          "untranslated_count": 10,
+          "untranslated_count": 90,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[2]",
-              "en": "Avana APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ko": {
-          "untranslated_count": 9,
+          "untranslated_count": 89,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[2]",
-              "en": "Avana APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "ha": {
-          "untranslated_count": 13,
+          "untranslated_count": 93,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "it": {
-          "untranslated_count": 12,
+          "untranslated_count": 92,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[4]",
-              "en": "USD Coin",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[6]",
-              "en": "Curve USD",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "th": {
-          "untranslated_count": 15,
+          "untranslated_count": 95,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[2]",
-              "en": "Avana APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "pl": {
-          "untranslated_count": 5,
+          "untranslated_count": 86,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[9]",
-              "en": "PayPal USD",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[21]",
-              "en": "border-gray-200 bg-gray-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "uk": {
-          "untranslated_count": 7,
+          "untranslated_count": 87,
           "samples": [
             {
-              "path": "hero-section.strings[44]",
-              "en": "$2.4M",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "nl": {
-          "untranslated_count": 5,
+          "untranslated_count": 86,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "trade-market-showcase.strings[9]",
-              "en": "PayPal USD",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[21]",
-              "en": "border-gray-200 bg-gray-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]
         },
         "he": {
-          "untranslated_count": 6,
+          "untranslated_count": 86,
           "samples": [
             {
-              "path": "BuildTomorrowSection.strings[6]",
-              "en": "object-cover object-top",
+              "path": "borrow/page.strings[57]",
+              "en": "Try Sandbox",
               "status": "identical_to_en"
             },
             {
-              "path": "homepage/HomepageTestimonialSection.strings[10]",
-              "en": "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }",
+              "path": "borrow/page.strings[58]",
+              "en": "Protected at the pool level",
               "status": "identical_to_en"
             },
             {
-              "path": "invest-growth-calculator-section.strings[9]",
-              "en": "3.5% APY",
+              "path": "about/page.strings[26]",
+              "en": "Protocol team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[17]",
-              "en": "border-amber-200 bg-amber-50",
+              "path": "about/page.strings[27]",
+              "en": "Operations team",
               "status": "identical_to_en"
             },
             {
-              "path": "position-safety-section.strings[21]",
-              "en": "border-gray-200 bg-gray-50",
+              "path": "about/page.strings[28]",
+              "en": "Market Risk team",
               "status": "identical_to_en"
             }
           ]

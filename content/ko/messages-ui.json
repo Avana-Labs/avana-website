@@ -9,7 +9,9 @@
       "closeMenu": "메뉴 닫기",
       "language": "언어: {language}",
       "logo": "{site} 로고",
-      "helpfulLinks": "유용한 링크"
+      "helpfulLinks": "유용한 링크",
+      "helpCenter": "도움말 센터: 지원팀에 이메일",
+      "themeToggle": "테마 설정"
     },
     "nav": {
       "products": "제품",
@@ -23,7 +25,7 @@
       "about": "소개",
       "newsroom": "뉴스룸",
       "brand": "브랜드",
-      "faq": "FAQ",
+      "faq": "자주 묻는 질문",
       "privacy": "개인정보",
       "terms": "약관",
       "overview": "개요",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "이 페이지를 사용할 수 없습니다.",
       "body": "주소가 잘못되었거나 페이지가 이동했을 수 있습니다.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "홈으로 이동",
+      "faq": "자주 묻는 질문"
     },
     "sandboxNotice": "Sandbox 데이터는 미리 보기용으로만 표시됩니다. APY초, 가격 및 수익률은 예시일 뿐이며 실제 시장 상황과 다를 수 있습니다.",
     "blogChrome": {
@@ -87,7 +89,20 @@
       "shareOnLinkedIn": "LinkedIn에 공유",
       "previousPost": "이전 게시물",
       "nextPost": "다음 글",
-      "onThisPage": "On this page"
+      "onThisPage": "이 페이지에서"
+    },
+    "exportMenu": {
+      "copyPage": "페이지 복사",
+      "copied": "복사됨",
+      "copyPageMarkdown": "Markdown으로 페이지 복사",
+      "copyPageLink": "페이지 링크 복사",
+      "copyPageLinkDescription": "이 페이지 URL을 클립보드에 복사",
+      "openInChatGPT": "ChatGPT에서 열기",
+      "openInClaude": "Claude에서 열기",
+      "openInGrok": "Grok에서 열기",
+      "openInPerplexity": "Perplexity에서 열기",
+      "askAboutPage": "이 페이지에 대해 질문하기",
+      "reviewPrompt": "아래 Avana 페이지 내용을 검토하고 질문에 답해 주세요."
     },
     "docs": {
       "previous": "이전",
@@ -99,7 +114,8 @@
         "liquidation": "청산 프레임워크",
         "integrations": "지원되는 통합",
         "safety": "안전 장치",
-        "legal": "법률 및 준수"
+        "legal": "법률 및 준수",
+        "copilot": "AI에게 묻기"
       },
       "items": {
         "overview": "개요",
@@ -131,7 +147,11 @@
         "bugBounty": "버그 바운티",
         "insuranceFunds": "보험 기금",
         "securityDisclosures": "보안 공개",
-        "legalDisclaimer": "법적 고지"
+        "legalDisclaimer": "법적 고지",
+        "aiIntroduction": "AI 소개",
+        "copilotProtocols": "지원 프로토콜",
+        "copilotPrompts": "프롬프트 예시",
+        "copilotWorkflow": "에이전트 워크플로"
       }
     },
     "faqUi": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana는 AMM 유동성 풀을 위해 설계된",
       "titleLine2": "온체인 렌딩 마켓입니다.",
       "subtitle": "AMM 유동성 포지션을 담보로 활용하여 온체인에서 암호화폐, 원자재, 외환(FX) 및 실물자산(RWA)을 대출받으세요.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "ARFC 제안서 읽기",
       "secondaryCta": "Sandbox 체험하기"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "자주 묻는 질문",
     "subtitle": "Avana, LP 담보 및 Aave v4에 대한 답변",
     "englishOnlyNote": "전체 FAQ 답변은 이 지역의 검토가 완료될 때까지 영어로 표시됩니다."
   },

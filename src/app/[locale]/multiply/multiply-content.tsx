@@ -209,21 +209,19 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
               subtitle="Multiply your yield up to 10x"
             />
 
-            <div className="mt-10 -mx-5 overflow-x-auto px-5 pb-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] md:mx-0 md:mt-16 md:overflow-visible md:px-0 md:pb-0 md:snap-none [&::-webkit-scrollbar]:hidden">
-              <div className="flex w-max gap-8 md:grid md:w-full md:grid-cols-2 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
-                {loopingBenefits.map((feature) => (
-                  <article
-                    key={feature.title}
-                    className="flex w-[15rem] shrink-0 snap-start flex-col bg-transparent md:w-auto md:shrink"
-                  >
-                    <feature.icon className="h-11 w-11 text-[#01AACF]" strokeWidth={1.5} aria-hidden="true" />
-                    <FeatureCardTitle className="mt-5">{feature.title}</FeatureCardTitle>
-                    <FeatureCardDescription className="mt-2 max-w-[22rem]">
-                      {feature.description}
-                    </FeatureCardDescription>
-                  </article>
-                ))}
-              </div>
+            <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
+              {loopingBenefits.map((feature) => (
+                <article
+                  key={feature.title}
+                  className="flex flex-col bg-transparent"
+                >
+                  <feature.icon className="h-11 w-11 text-[#01AACF]" strokeWidth={1.5} aria-hidden="true" />
+                  <FeatureCardTitle className="mt-5">{feature.title}</FeatureCardTitle>
+                  <FeatureCardDescription className="mt-2 max-w-[22rem]">
+                    {feature.description}
+                  </FeatureCardDescription>
+                </article>
+              ))}
             </div>
           </div>
         </div>

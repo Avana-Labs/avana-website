@@ -9,7 +9,9 @@
       "closeMenu": "Funga menyu",
       "language": "Lugha: {language}",
       "logo": "Nembo ya {site}",
-      "helpfulLinks": "Viungo vinavyosaidia"
+      "helpfulLinks": "Viungo vinavyosaidia",
+      "helpCenter": "Kituo cha msaada: tuma barua pepe kwa usaidizi",
+      "themeToggle": "Mapendeleo ya mandhari"
     },
     "nav": {
       "products": "Bidhaa",
@@ -23,7 +25,7 @@
       "about": "Kuhusu",
       "newsroom": "Chumba cha Habari",
       "brand": "Chapa",
-      "faq": "FAQ",
+      "faq": "Maswali yanayoulizwa mara kwa mara",
       "privacy": "Faragha",
       "terms": "Masharti",
       "overview": "Muhtasari",
@@ -76,8 +78,8 @@
     "notFound": {
       "title": "Ukurasa huu haupatikani.",
       "body": "Anwani inaweza kuwa si sahihi au ukurasa unaweza kuwa umehamia.",
-      "home": "Go to homepage",
-      "faq": "FAQ"
+      "home": "Nenda kwenye ukurasa wa mwanzo",
+      "faq": "Maswali yanayoulizwa mara kwa mara"
     },
     "sandboxNotice": "Sandbox data imeonyeshwa kwa ajili ya awali tu. APYs, bei, na mapato ni ya mfano na yanaweza kutofautiana na hali halisi za soko.",
     "blogChrome": {
@@ -87,7 +89,7 @@
       "shareOnLinkedIn": "Shiriki kwenye LinkedIn",
       "previousPost": "Chapisho lililotangulia",
       "nextPost": "Chapisho lijalo",
-      "onThisPage": "On this page"
+      "onThisPage": "Kwenye ukurasa huu"
     },
     "docs": {
       "previous": "Iliyopita",
@@ -99,7 +101,8 @@
         "liquidation": "Mfumo wa Utoaji Mali",
         "integrations": "Uingizaji wa Msaada",
         "safety": "Vifaa vya Usalama",
-        "legal": "Kisheria na Uzingatiaji"
+        "legal": "Kisheria na Uzingatiaji",
+        "copilot": "Uliza AI"
       },
       "items": {
         "overview": "Muhtasari",
@@ -131,7 +134,11 @@
         "bugBounty": "Zawadi ya Hitilafu",
         "insuranceFunds": "Fondi za Bima",
         "securityDisclosures": "Ufadhili wa Usalama",
-        "legalDisclaimer": "Tangazo la Kisheria"
+        "legalDisclaimer": "Tangazo la Kisheria",
+        "aiIntroduction": "Utangulizi wa AI",
+        "copilotProtocols": "Itifaki zinazotumika",
+        "copilotPrompts": "Mifano ya prompt",
+        "copilotWorkflow": "Mtiririko wa wakala"
       }
     },
     "faqUi": {
@@ -156,6 +163,19 @@
     "newsroom": {
       "latestFrom": "Hivi karibuni kutoka Avana",
       "readNewsroom": "Soma chumba cha habari"
+    },
+    "exportMenu": {
+      "copyPage": "Nakili ukurasa",
+      "copied": "Imenakiliwa",
+      "copyPageMarkdown": "Nakili ukurasa kama Markdown",
+      "copyPageLink": "Nakili kiungo cha ukurasa",
+      "copyPageLinkDescription": "Nakili URL ya ukurasa huu kwenye ubao wa kunakili",
+      "openInChatGPT": "Fungua katika ChatGPT",
+      "openInClaude": "Fungua katika Claude",
+      "openInGrok": "Fungua katika Grok",
+      "openInPerplexity": "Fungua katika Perplexity",
+      "askAboutPage": "Uliza maswali kuhusu ukurasa huu",
+      "reviewPrompt": "Kagua maudhui ya ukurasa wa Avana hapa chini na ujibu maswali."
     }
   },
   "meta": {
@@ -220,15 +240,15 @@
       "titleLine1": "Avana ni soko la ukopeshaji la DeFi",
       "titleLine2": "lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
       "subtitle": "Kopa sarafu fiche, bidhaa, FX, na rasilimali za ulimwengu halisi (RWA) kwenye mnyororo ukitumia nafasi zako za ukwasi za AMM kama dhamana ya mkopo.",
-      "subtitleMobileLines": [
-        "Borrow crypto, commodities, FX, and real world assets",
-        "onchain using your AMM liquidity positions",
-        "as collateral."
-      ],
-      "subtitleDesktopLines": [
-        "Borrow crypto, commodities, FX, and real world assets onchain",
-        "using your AMM liquidity positions as collateral."
-      ],
+      "subtitleMobileLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets",
+        "1": "onchain using your AMM liquidity positions",
+        "2": "as collateral."
+      },
+      "subtitleDesktopLines": {
+        "0": "Borrow crypto, commodities, FX, and real world assets onchain",
+        "1": "using your AMM liquidity positions as collateral."
+      },
       "primaryCta": "Soma Pendekezo la ARFC",
       "secondaryCta": "Jaribu Sandbox"
     },
@@ -283,7 +303,7 @@
     }
   },
   "faq": {
-    "title": "FAQ",
+    "title": "Maswali yanayoulizwa mara kwa mara",
     "subtitle": "Majibu kuhusu Avana, fedha za dhamana LP, na Aave v4",
     "englishOnlyNote": "Jibu kamili la Maswali Yanayoulizwa Mara Kwa Mara yanaonyeshwa kwa Kiingereza hadi uhakiki wa eneo hili kukamilika."
   },

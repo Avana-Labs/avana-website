@@ -37,7 +37,7 @@ const glossaryTerms = {
     {
       term: "Hub",
       definition:
-        "The shared monetary layer in Aave v4 that manages liquidity, reserves, accounting, and protocol-wide capital coordination across connected spokes.",
+        "The shared Aave v4 component that manages liquidity, reserves, and debt accounting for connected spokes.",
     },
     {
       term: "Hub-and-Spoke Architecture",
@@ -96,7 +96,7 @@ const glossaryTerms = {
     {
       term: "Risk Premium",
       definition:
-        "The risk-specific component layered on top of base borrowing conditions to reflect the LP collateral profile being financed.",
+        "The additional borrowing-rate component associated with the risk of the LP collateral market, applied alongside the Hub base rate.",
     },
     {
       term: "Reserve Factor",
@@ -130,7 +130,7 @@ const glossaryTerms = {
     {
       term: "Recoverable Value",
       definition:
-        "The amount the protocol believes can realistically be realized during a stressed unwind after liquidation slippage, pool conditions, and risk buffers are considered.",
+        "An estimate of the value recoverable from a position during a stressed liquidation, after accounting for slippage, pool conditions, and risk buffers.",
     },
     {
       term: "Transform",
@@ -154,7 +154,7 @@ const glossaryTerms = {
     {
       term: "Recovery Haircut",
       definition:
-        "A valuation discount applied so borrow power reflects recoverable unwind value rather than optimistic theoretical NAV.",
+        "A discount for potential losses during liquidation, applied when converting reconstructed LP value into borrowing capacity.",
     },
     {
       term: "Exposure Caps",
@@ -169,7 +169,7 @@ const glossaryTerms = {
     {
       term: "Governance Safety",
       definition:
-        "The set of review, timelock, veto, and emergency roles used by the Risk Framework to keep parameter changes disciplined.",
+        "The proposing, review, timelock, veto, and emergency roles that govern changes to protocol risk parameters.",
     },
     {
       term: "Reentrancy Protection",

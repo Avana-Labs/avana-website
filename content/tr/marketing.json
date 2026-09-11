@@ -61,13 +61,12 @@
       "Güvenle borçlanın",
       "Korumalı:",
       "havuz düzeyinde",
-      "DEX kapsamı",
-      "Önde gelen DEX’lerde desteklenir",
-      "DEX entegrasyonları",
       "Likidite havuzları",
       "Her havuzun detayı, net anlatımla",
       "Desteklenen borçlanma piyasalarının belge tarzı önizlemesi",
-      "Sık sorulan sorular"
+      "Sık sorulan sorular",
+      "Try Sandbox",
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -215,7 +214,13 @@
       "LP teminatlı krediler için bir lending protokolü",
       "Bir lending protokolü:",
       "Avana’yı tanıtıyoruz:",
-      "sizden haber almak isteriz."
+      "sizden haber almak isteriz.",
+      "Protocol team",
+      "Operations team",
+      "Market Risk team",
+      "Collateral Risk team",
+      "The lending market for AMM liquidity.",
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
     ]
   },
   "brand/page": {
@@ -290,7 +295,17 @@
       "İşareti döndürmeyin veya çevirmeyin.",
       "Logoyu onaylı renklerin dışında yeniden boyamayın.",
       "İşareti kırpmayın ve bir kenara çok yaklaştırmayın.",
-      "İşareti partner logoları veya arayüz etiketleriyle sıkıştırmayın."
+      "İşareti partner logoları veya arayüz etiketleriyle sıkıştırmayın.",
+      "Do not add shadows, gradients, outlines, or effects.",
+      "Stretched logo example",
+      "Rotated icon example",
+      "Recolored logo example",
+      "Second recolored logo example",
+      "Cropped logo example",
+      "Logo with effects example",
+      "Crowded spacing example",
+      "Partner",
+      "copied"
     ]
   },
   "hero-section": {
@@ -365,61 +380,64 @@
       "Sermayeyi döngülemek, havuz riskini ayarlamak ve pozisyon sağlığını yönetmek için Multiply piyasaları.",
       "Pozisyon Güvenliği",
       "Güvenli kaldıraç için tasarlandı",
-      "Borçlanma limiti"
+      "Borçlanma limiti",
+      "Stable LP Hub",
+      "Correlated LP Hub",
+      "Volatile LP Hub",
+      "Preserve fee income",
+      "Access working capital while the underlying position stays deployed and continues earning trading fees.",
+      "Avoid forced LP exits",
+      "Meet near-term capital needs without unwinding liquidity, realizing losses, or disrupting a market.",
+      "Compound LP returns",
+      "Borrow against an active position and redeploy into new liquidity when expected returns justify the added risk.",
+      "Rotate between markets",
+      "Finance a new pool before exiting an existing one, keeping capital productive through a market transition.",
+      "Bootstrap protocol liquidity",
+      "Use protocol-owned LP positions to fund incentives, integrations, and expansion without selling treasury assets.",
+      "Fund market making",
+      "Turn long-term LP inventory into credit for quoting, hedging, and maintaining depth across active venues.",
+      "Enterprise-grade security and vaults",
+      "Collateral is protected in non-custodial smart-contract vaults, with access controls and protocol-enforced rules governing deposits, withdrawals, borrowing, and liquidation.",
+      "Contain risk at the market level",
+      "Each market runs through an isolated Aave v4 Spoke with its own collateral rules, exposure limits, and emergency controls, preventing risk in one market from spreading across the system.",
+      "Verify every price twice",
+      "Chainlink feeds and AMM TWAP pricing must agree within tolerance before a loan action can execute, blocking manipulated, distorted, or unreliable price data from entering the system.",
+      "Enforce collateral at execution",
+      "Borrow limits and health checks are enforced before every action, keeping debt below verified collateral value and stopping positions from increasing risk after their safety margin is breached.",
+      "Liquidate only what is necessary",
+      "When a position becomes unsafe, Avana targets the amount required to cover debt and restore health, then returns any remaining collateral value to the borrower.",
+      "Use LP-backed credit for managed leverage, keeping your LP position.",
+      "Net APY",
+      "Leverage",
+      "Supply",
+      "wstETH",
+      "Borrow",
+      "USDC",
+      "Put your LP positions to work",
+      "Ways teams use LP collateral without giving up liquidity or fee income.",
+      "Powered by Aave v4.",
+      "Engineered for resilience by Avana.",
+      "Avana coin illustration"
     ]
   },
   "webapp-hero": {
     "strings": [
-      "Avana ana sayfa hero görseli"
-    ]
-  },
-  "BuildTomorrowSection": {
-    "strings": [
-      "Borçlan",
-      "Altta yatan AMM içinde likiditeniz aktif kalarak LP pozisyona karşı borç alın.",
-      "Borçlanma kapasitesi arayüzü",
-      "Likidite sağla",
-      "Hub ile bağlantılı kredi piyasalarına sermaye sağlayın ve LP destekli borçlu talebinden kazanç elde edin.",
-      "Borç verme piyasası nakit hesap arayüzü",
-      "object-cover object-top",
-      "Çarpan",
-      "Temel likidite pozisyonunuzdan çıkmadan yönetilen kaldıraç oluşturmak için LP destekli krediyi kullanın.",
-      "Portföy arayüzü",
-      "Avana ile tanışın",
-      "2021 yılında,",
-      "Aave",
-      "başlatıldı",
-      "AMM Pazar",
-      "ve kanıtlandı",
-      "LP pozisyonları",
-      "teminat olarak hizmet edebilirdi, ama o dönemlerin daha basit DEX'leri için inşa edilmiştir.",
-      "Avana",
-      "orada bıraktığı yerden devam ediyor, bugünün DEX'leri ve LP tipleri için tasarlanmış, her pozisyonu olarak ele alıyor",
-      "teminat",
-      "oradan devam ediyor, bugünün DEX'leri ve LP türleri için tasarlandı,",
-      "Avana Pazarlar",
-      "Sermayeyi açın",
-      "AMM piyasalarından",
-      "AMM piyasalarından sermaye açın",
-      "Daha fazla",
-      "2021 yılında, Aave AMM Market'i başlattı ve LP pozisyonların teminat olarak kullanılabileceğini kanıtladı, ancak bu o dönemin daha basit DEX'leri için tasarlanmıştı. Avana, buradan devam ediyor, bugünün DEX'leri ve LP türleri için tasarlandı, her pozisyonu çift oracle ve daha güçlü risk kontrolleri tarafından şekillendirilen teminat olarak ele alıyor.",
-      "Bir borç verme protokolü",
-      "LP teminatlı krediler için",
-      "LP teminatlı krediler için bir lending protokolü"
+      "Avana ana sayfa hero görseli",
+      "Avana Express homepage hero interface"
     ]
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "İzole Spoke piyasaları",
-      "Her Spoke piyasası, LP-özgü değerleme, risk kontrolleri ve tasfiye mantığını izole eder, bu nedenle bir piyasadaki veya havuz tasarımındaki stres, protokolün geri kalanına yayılmaz veya ilgisiz pozisyonları tehlikeye atmaz.",
-      "Çift oracle fiyatlama",
-      "Chainlink beslemeleri ve AMM TWAP fiyatlaması, herhangi bir kredi işlemi onaylanmadan önce hoşgörü sınırları içinde uyuşmalıdır; bu, flash-loan manipülasyonuna, geçici fiyat sapmasına veya tek bir toksik oracle okumaya maruziyeti azaltır.",
-      "Her zaman aşırı teminatlı",
-      "Her kredi, muhafazakar borçlanma limitleri, uyarlanabilir kredi-değer oranı eşikleri ve riskin artmadan önce ortaya çıkmasını sağlayan canlı sağlık izleme ile aşırı teminatlı olarak kalır.",
-      "Borçluyu koruyan likidasyon",
-      "Tasfiye, pozisyonları kontrollü bir şekilde çözmek için tasarlanmıştır: tahsil edilmemiş ücretler öncelikle uygulanır, ana para yalnızca gerektiği kadar çözülür ve herhangi bir fazla değer borçluya iade edilir.",
+      "Kontrol ettiğiniz kaldıraç",
+      "Her döngünün ne kadar agresif çalışacağını belirleyin ve risk hala uygun hissettirdiği yerde durun. Her çarpan piyasa değerini, teminatı, oracle fiyatlamasını ve tasfiye yolunu güvenle destekleyebileceği şekilde kaldırır, böylece bir pozisyon sınırlarının ötesinde çökemez.",
+      "Her döngüde canlı sağlık",
+      "Eklenen her döngü, sağlık faktörünüzü, borçlanma gücünüzü ve tasfiye eşiğinizi gerçek zamanlı olarak günceller, böylece bir kaldıraç ayarının pozisyon kenara doğru kaymadan önce ne kadar tampon bıraktığını tam olarak görebilirsiniz.",
+      "Kontrollü gevşeme",
+      "Eğer bir kaldıraçlı pozisyon sınırına yaklaşırsa, Avana işlemleri adım adım çözer, borcu öder ve her şeyi bir kerede kapatmak yerine pozisyonu kademeli olarak azaltır. Toplanmamış ücretler önce uygulanır ve fazla olan kısmı size geri verilir.",
+      "Pazar başına kaldıraç sınırları",
+      "Kaldıraç yalnızca güvenilir değerleme, tanımlanmış risk parametreleri ve test edilmiş tasfiye varsayımlarına sahip LP tür için etkinleştirilir. İzole Spoke pazar, bir kaldıraç havuzundaki baskının ilgisiz pozisyonlara yayılmasını önler.",
       "Tasarımla güvenlik",
-      "Likidite pozisyonlarına göre tasarlanmış risk",
+      "Risk kontrolleri içinde yer alan kaldıraç",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
@@ -456,7 +474,23 @@
       "çek",
       "Sık sorulan",
       "sorular",
-      "Sık sorulan sorular"
+      "Sık sorulan sorular",
+      "position stays active in the underlying AMM while you borrow against it.",
+      "so the position can keep earning fees instead of being sold first.",
+      "Borrowing power is based on the risk-adjusted value of your LP position, not a fixed percentage.",
+      "The amount depends on pool type, volatility, and",
+      "confidence. There are no minimum amounts, and higher-quality collateral unlocks more room.",
+      "rises as the LP value falls, your borrowing buffer becomes smaller.",
+      "If it exceeds the",
+      "part of your position may be",
+      "to restore health or repay the debt.",
+      "is managed independently so one market does not silently absorb another market's risk.",
+      "System-wide safety is enforced through Aave v4's",
+      "Hub",
+      "Yes. There are no fixed loan terms, so you can",
+      "at any time, in part or in full.",
+      "You can also reduce your",
+      "collateral as your position remains healthy."
     ]
   },
   "homepage/HomepageNewsroomSection": {
@@ -538,7 +572,32 @@
       "Synthetix'in",
       "Grafik",
       "Arz piyasaları",
-      "Piyasalar arasında likidite sağlayın"
+      "Piyasalar arasında likidite sağlayın",
+      "Ripple USD",
+      "Global Dollar",
+      "Euro Coin",
+      "USD+",
+      "Savings Dai",
+      "Frax USD",
+      "Convex",
+      "Balancer",
+      "Aura",
+      "SushiSwap",
+      "PancakeSwap",
+      "Aerodrome",
+      "Arbitrum",
+      "Optimism",
+      "Polygon",
+      "Base",
+      "Solana",
+      "Avalanche",
+      "Blast",
+      "Zora",
+      "Worldcoin",
+      "Moonwell",
+      "Gnosis",
+      "Degen",
+      "Brett"
     ]
   },
   "protocol-roadmap-section": {
@@ -595,37 +654,6 @@
       "Devam ediyor"
     ]
   },
-  "position-safety-section": {
-    "strings": [
-      "Güvenli bölge",
-      "Sağlık Faktörü > 1,5. Borç kullanımı kapasite dahilinde kalır, ücretler birikmeye devam eder ve LP korunur.",
-      "Uyarı bölgesi",
-      "Sağlık Faktörü 1.0-1.5. Borcu ödemek, teminat eklemek veya otomasyonun riski kesmesine izin vermek için bildirim alırsınız.",
-      "Likidasyon",
-      "Sağlık Faktörü < 1,0. Önce ücretler uygulanır, gerekli LP anapara çözülür ve kalan değer size geri döner.",
-      "Pozisyon güvenliği",
-      "Her sağlık durumu, tamamen açıklanmış",
-      "LP destekli bir kredi işlem gerektirmeden önce sağlık, uyarı ve tasfiye durumlarını izleyin.",
-      "Pozisyon sağlığı",
-      "Güvenli bölge",
-      "biriken ücretler",
-      "Uyarı",
-      "Eşik",
-      "Tasfiye yaklaşımı",
-      "Mevcut işlemler",
-      "Borç bakiyesini azalt",
-      "border-amber-200 bg-amber-50",
-      "Teminat ekle",
-      "Sağlık faktörünü artır",
-      "Otomatik kaldıraç azaltma",
-      "border-gray-200 bg-gray-50",
-      "HF < 1.0",
-      "Dizi",
-      "Ücretler uygulandı",
-      "Artık iade edildi",
-      "Sadece gereken ana para çözülür"
-    ]
-  },
   "invest-apy-section": {
     "strings": [
       "Hub baz oranı",
@@ -635,7 +663,8 @@
       "Belirli havuz riski, aynı kullanılmayan nakit için getiri potansiyelini artırarak nihai spreadi oluşturur.",
       "Avana APY",
       "Aynı atıl nakit, daha yüksek APY getirisi",
-      "ile"
+      "ile",
+      "type-card-title text-[clamp(0.92rem,3.6vw,1.9rem)] leading-[1.06] tracking-[-0.05em] transition-colors duration-200"
     ]
   },
   "leverage-glance-showcase-section": {
@@ -666,7 +695,19 @@
       "Birden fazlası arasında borçlanma gücünü biriktirmek",
       "Her pozisyonun sağlığını yanında takip et",
       "Piyasa koşullarına göre teminat ekleyin veya ayarlayın",
-      "Avana pozisyonları birleştir LP ilustrasyon"
+      "Avana pozisyonları birleştir LP ilustrasyon",
+      "Combine supported LP collateral",
+      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
+      "Borrow against total capacity",
+      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
+      "Preserve position-level controls",
+      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
+      "Add collateral as you grow",
+      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
+      "Manage one collateral account",
+      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combine collateral. Unlock more credit.",
+      "One borrowing account across every supported LP position."
     ]
   },
   "platform-tools-showcase-section": {
@@ -696,7 +737,8 @@
       "Temel likidite pozisyonunuzdan çıkmadan yönetilen kaldıraç oluşturmak için LP teminatlı krediyi kullanın.",
       "Avana LP pozisyonları karşılığında borçlanma",
       "Avana Hub’a bağlı piyasalarda borç verme",
-      "Avana Multiply yönetilen kaldıraç getirisi"
+      "Avana Multiply yönetilen kaldıraç getirisi",
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
     ]
   },
   "ask-ai-showcase": {
