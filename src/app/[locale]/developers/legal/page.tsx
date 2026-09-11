@@ -48,14 +48,11 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
         <section id="overview" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Overview</h2>
           <p className="type-doc-body mb-4">
-            In accordance with our <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>, 
+            <>In accordance with our <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>,
             access to the Avana website and its associated services is restricted for individuals or entities 
             in certain jurisdictions. This page provides the current list of restricted territories and explains 
-            the access restrictions in place.
-          </p>
-          <p className="type-doc-callout type-doc-callout-danger">
-            <strong>Important:</strong> Any attempt to access the Avana platform from a Restricted 
-            Jurisdiction will result in immediate redirection to the Terms of Use and a denial of access.
+            the access restrictions in place.</>{" "}<><strong>Important:</strong> Any attempt to access the Avana platform from a Restricted
+            Jurisdiction will result in immediate redirection to the Terms of Use and a denial of access.</>
           </p>
         </section>
 
@@ -67,7 +64,7 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
           </p>
           
           <div className="space-y-3">
-            <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div className="doc-topic">
               <ul className="type-doc-body space-y-2">
                 <li>• <strong>Reside within</strong> any of the Restricted Jurisdictions</li>
                 <li>• <strong>Are citizens of</strong> any of the Restricted Jurisdictions</li>
@@ -122,7 +119,7 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
             As stated in our Terms of Use (Section 1.2), you may not access or use the Services if you are:
           </p>
           
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="doc-topic">
             <ul className="type-doc-body space-y-2">
               <li>• The subject of any sanctions administered or enforced by the U.S. Department of the 
                 Treasury&apos;s Office of Foreign Assets Control (OFAC), the U.S. Department of State, or any 
@@ -143,11 +140,11 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
         <section id="related-policies" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Related Policies</h2>
           <p className="type-doc-body mb-4">
-            For complete information about your rights and obligations when using Avana, please review:
+            The following policies describe eligibility, access conditions, and obligations when using Avana services:
           </p>
           
           <div className="space-y-3">
-            <Link href="/terms" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
+            <Link href="/terms" className="block doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Terms of Service</h3>
               <p className="type-doc-body">
                 Complete terms and conditions governing your use of Avana services, including 
@@ -155,7 +152,7 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
               </p>
             </Link>
 
-            <Link href="/privacy" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
+            <Link href="/privacy" className="block doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Privacy Policy</h3>
               <p className="type-doc-body">
                 Information about how we collect, use, and protect your personal information when 
@@ -163,7 +160,7 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
               </p>
             </Link>
 
-            <Link href="/developers/legal/disclaimer" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
+            <Link href="/developers/legal/disclaimer" className="block doc-topic">
               <h3 className="type-doc-subsection-title mb-1">Legal Disclaimer</h3>
               <p className="type-doc-body">
                 Important disclaimers regarding risks, warranties, and liability limitations.

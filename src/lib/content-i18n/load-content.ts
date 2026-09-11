@@ -213,11 +213,11 @@ export async function getDocsStringMap(locale: string, pageKey: string): Promise
   const [en, loc] = await Promise.all([loadDocsContent(defaultLocale), loadDocsContent(locale)])
   const map: Record<string, string> = {}
 
-  // Prefer the active page key first, then merge every page so localization
-  // still works if middleware fails to pass the pathname header.
+  // Shared phrases provide a fallback. Merge the active page last so its
+  // translations win when a phrase has a page-specific meaning.
   const orderedKeys = [
-    pageKey,
     ...Object.keys(en).filter((key) => key !== pageKey),
+    pageKey,
   ]
   for (const key of orderedKeys) {
     const enPage = en[key]

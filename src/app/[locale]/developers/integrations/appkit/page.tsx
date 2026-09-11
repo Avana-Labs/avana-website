@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'integrations/appkit', {
     title: "AppKit",
-    description: "Developer guide to AppKit placement, partner handoff, and how Avana credit is embedded inside third-party product surfaces without moving risk logic out of Avana.",
+    description: "How AppKit passes wallet and market context from a partner application into Avana's borrowing flow.",
   })
 }
 
@@ -24,25 +24,25 @@ const integrationPoints = [
   {
     title: "Intent capture",
     body:
-      "AppKit belongs where users already understand their LP positions, portfolio state, or swap context, so the borrow entry appears next to existing intent instead of forcing a brand-new flow.",
+      "A partner can place the borrowing entry point alongside an LP position, portfolio, or swap view. That view supplies the position and market context for the handoff to Avana.",
   },
   {
     title: "Protocol handoff",
     body:
-      "The partner passes wallet and market context into Avana. The borrow flow can then open with that context already set instead of asking the user to rebuild it by hand.",
+      "The partner passes wallet and market context into Avana so the borrowing flow opens with the relevant account and market already selected.",
   },
   {
     title: "Partner economics",
     body:
-      "Partners may use referral, routing, or integration revenue structures, but they do not become the lender or the risk engine. Avana keeps credit, risk, and settlement.",
+      "Partner arrangements may include referral, routing, or integration revenue. These arrangements do not transfer lending, risk assessment, or settlement responsibilities from Avana to the partner application.",
   },
 ]
 
 const implementationNotes = [
-  "Place the credit entry near the LP position or portfolio view the user already trusts.",
-  "Pass wallet and market context into the borrow flow so the handoff does not feel like a reset.",
-  "Leave risk and settlement on Avana. Do not rebuild spoke valuation or liquidation logic in the partner UI.",
-  "Decide copy, placement, and launch gating before go live because they shape the integration, not just the polish layer.",
+  "Associate the borrowing entry point with the LP position or portfolio view that supplies its context.",
+  "Pass the relevant wallet and market context into the borrowing flow.",
+  "Use Avana's collateral valuation and liquidation rules rather than duplicating their calculations in the partner interface.",
+  "Define which users can access the entry point and how the interface explains the transition to Avana.",
 ]
 
 const partnerControls = [
@@ -65,15 +65,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            AppKit is for third-party products that already own the user relationship, such as
-            DEXs, wallets, and portfolio apps where LP positions are already visible. The partner
-            product frames the moment, captures context, and decides where the borrow entry appears.
-            Avana runs the actual loan path.
-          </p>
-          <p className="type-doc-body">
-            AppKit is for partners that already own the user relationship — DEXs, wallets, and
-            portfolio apps where LP positions are already visible. The partner controls placement
-            and handoff. Avana runs the actual loan path.
+            <>AppKit connects DEXs, wallets, and portfolio applications to Avana&apos;s LP-backed borrowing flow. The partner application selects where the entry point appears and passes the user&apos;s wallet and market context. Avana handles the loan operations, collateral checks, and settlement.</>{" "}<>{"An adapter provides execution support for an LP format. Collateral admission also requires compatible valuation and liquidation support, so deploying an adapter alone does not enable a pool for borrowing."}</>
           </p>
         </section>
 
@@ -81,7 +73,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
           <h2 className="mb-4 type-doc-section-title">Integration Model</h2>
           <div className="space-y-4">
             {integrationPoints.map((item) => (
-              <div key={item.title} className="type-doc-panel">
+              <div key={item.title} className="doc-topic">
                 <h3 className="mb-2 type-doc-subsection-title">{item.title}</h3>
                 <p className="type-doc-body">{item.body}</p>
               </div>
@@ -92,12 +84,11 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="partner-controls" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Partner Controls</h2>
           <p className="mb-4 type-doc-body">
-            AppKit does not force one presentation model. Partners control the entry points and the
-            amount of surrounding guidance, while leaving protocol decisions inside Avana.
+            Partners control the presentation of the borrowing entry point and its surrounding guidance. Those choices affect how users reach the flow; collateral eligibility and transaction checks remain part of Avana.
           </p>
           <ul className="space-y-3 type-doc-body">
             {partnerControls.map((item) => (
-              <li key={item} className="rounded-lg border border-gray-200 bg-white px-4 py-3">
+              <li key={item} className="doc-topic">
                 {item}
               </li>
             ))}
@@ -107,9 +98,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="implementation-notes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Implementation Notes</h2>
           <p className="mb-4 type-doc-body">
-            The best integrations feel like a continuation of the existing product flow, not a hard
-            jump into an unrelated lending app. These notes are the practical baseline for getting
-            that handoff right.
+            An AppKit integration connects an existing position view to the corresponding Avana borrowing flow. The implementation tasks below cover placement, context transfer, and the boundary between the partner interface and Avana&apos;s protocol operations.
           </p>
           <div className="space-y-3 type-doc-body">
             {implementationNotes.map((item) => (
@@ -123,13 +112,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="launch-notes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Launch Notes</h2>
           <p className="mb-4 type-doc-body">
-            Launch AppKit as an integration project, not just a link placement. Confirm the user
-            path, review where the entry sits, and make sure the Avana credit path stays clearly
-            separated from the partner shell where responsibility changes.
-          </p>
-          <p className="type-doc-body">
-            Also check what happens when the credit surface is hidden, whether deep links into the
-            borrow flow are safe, and how missing wallet, market, or collateral context is handled.
+            <>Before enabling the integration, verify the complete path from the partner&apos;s position view to Avana&apos;s borrowing flow. The interface needs to make the selected account, market, and transition to Avana clear.</>{" "}<>Include hidden entry points, direct links, and missing wallet, market, or collateral context in that review. These cases affect whether the flow opens with the information needed to evaluate a borrow.</>
           </p>
         </section>
       </div>

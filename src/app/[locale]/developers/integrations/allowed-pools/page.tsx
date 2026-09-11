@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'integrations/allowed-pools', {
     title: "Allowed LP Pools",
-    description: "Governance-defined allowlist and review criteria for LP pools that Avana is willing to admit as collateral.",
+    description: "How Avana's governance-controlled allowlist determines which LP pools can be used as collateral.",
   })
 }
 
@@ -25,11 +25,11 @@ const sections = [
 const poolFamilies = [
   {
     family: "Stable and correlated pools",
-    treatment: "Often the easiest to admit when pricing is reliable, peg behavior is understood, and unwind depth remains strong.",
+    treatment: "Admission depends on reliable pricing, understood peg behavior, and sufficient liquidity for liquidation.",
   },
   {
     family: "Blue-chip volatile pools",
-    treatment: "Can be supported, but usually with more conservative collateral factors, liquidity checks, and tougher liquidation assumptions.",
+    treatment: "Support depends on collateral factors, liquidity checks, and liquidation assumptions appropriate to the assets' volatility.",
   },
   {
     family: "Concentrated liquidity positions",
@@ -58,20 +58,14 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
 
           title="Allowed LP Pools"
 
-          description="Governance-controlled allowlist for the pools and LP families Avana is prepared to accept as collateral."
+          description="How pool approval determines collateral eligibility before position valuation and borrowing checks."
 
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana only accepts LP collateral from pools that have been reviewed and approved. The
-            allowlist exists because LP support is not automatic for every pool on a DEX. The
-            protocol needs enough information to price the position, manage liquidation, and bound
-            the risk it is taking on.
-          </p>
-          <p className="type-doc-body">
-            Pool approval works alongside{" "}
+            <>Avana accepts LP collateral only from reviewed and approved pools. Approval applies to individual pools, so an integration with a DEX does not automatically enable all of its LP positions. The review establishes whether Avana can value the position, hold it as collateral, and recover value through liquidation.</>{" "}<>Pool approval works alongside{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
               Collateral Factors
             </Link>{" "}
@@ -80,16 +74,14 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
               Risk Framework
             </Link>
             . The allowlist decides whether a pool may enter the system; collateral factors decide how
-            much borrowable value each admitted position can contribute.
+            much borrowable value each admitted position can contribute.</>{" "}<>{"Each supported DEX family has an adapter for operations such as fee collection and liquidity removal. The adapter implements the calls required by that LP format, keeping DEX-specific execution separate from the rest of the transaction flow."}</>
           </p>
         </section>
 
         <section id="review-criteria" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Review Criteria</h2>
           <p className="mb-4 type-doc-body">
-            A pool enters the allowlist only when the protocol can answer the same basic questions
-            every time: can it price the position, can it exit the position, and can it monitor the
-            risk in production.
+            Pool review covers pricing, liquidation, and ongoing monitoring. The criteria below determine whether those operations can be supported for the pool and its LP format.
           </p>
           <ul className="space-y-3 type-doc-body">
             {reviewCriteria.map((criterion) => (
@@ -115,14 +107,7 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
         <section id="risk-application" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Risk Application</h2>
           <p className="mb-4 type-doc-body">
-            Pool approval does not mean a position gets generous credit treatment. After a pool is
-            admitted, each LP position is still valued on its own, discounted according to its risk
-            treatment, and then added to the user&apos;s borrowing capacity inside the Borrow Spoke.
-          </p>
-          <p className="type-doc-body">
-            That is why pool approval and collateral valuation are tightly linked. A pool can be
-            safe enough to admit while still requiring conservative caps, lower LTVs, or stricter
-            liquidation handling once it is live.
+            <>Approval establishes that a pool is eligible for collateral use. Each deposited position is then valued separately and adjusted for risk before it contributes to the account&apos;s borrowing capacity.</>{" "}<>An approved pool may still require lower collateral factors, tighter exposure caps, or a specific liquidation route. These controls determine how the pool can be used after admission.</>
           </p>
         </section>
 
@@ -130,13 +115,8 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Integration Notes</h2>
           <div className="space-y-3 type-doc-body">
             <p>
-              Builders should think in terms of approved pool templates and deployment-specific
-              allowlists, not as if every LP on a DEX is automatically supported.
-            </p>
-            <p>
-              New pool families usually require coordinated work across oracle handling, liquidation
-              routing, risk limits, and monitoring infrastructure before they are safe to enable.
-            </p>
+            <>Integrations need both the supported pool template and the target deployment&apos;s allowlist to determine whether a position is eligible. DEX compatibility alone does not establish collateral support.</>{" "}<>Adding a pool family involves oracle handling, custody and liquidation adapters, risk limits, and monitoring. Each of these dependencies is part of the enablement review.</>
+          </p>
           </div>
         </section>
       </div>

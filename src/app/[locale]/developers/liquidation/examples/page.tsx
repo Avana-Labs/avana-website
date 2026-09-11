@@ -27,7 +27,7 @@ const sections = [
 const edgeCases = [
   "The position may be mostly one-sided by the time liquidation starts, especially for concentrated liquidity.",
   "Pool depth may be sufficient for valuation but still thin enough to require conservative unwind routing.",
-  "Claimable fees can improve recoveries, but they should not be treated as guaranteed until actually realized.",
+  "Claimable fees contribute to recovery only when collection succeeds; estimates can differ from the amount actually received.",
   "A borrower may have several positions contributing to one spoke-level borrowing capacity, so liquidation sequencing matters.",
 ]
 
@@ -44,16 +44,11 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            These examples show how liquidation plays out across common LP formats under the{" "}
+            <>These examples show how liquidation plays out across common LP formats under the{" "}
             <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
               Liquidation Framework
             </Link>
-            .
-          </p>
-          <p className="type-doc-body">
-            In every case the job is the same: use conservative collateral marks, repay debt into
-            the credit layer, unwind the LP through a supported path, and return any residual value
-            left after execution costs and the liquidation reward.
+            .</>{" "}<>Each scenario uses the protocol&apos;s collateral valuation, repays debt through the Hub, and resolves the LP through its supported settlement route. Execution costs and the liquidator reward are deducted before any residual value is distributed.</>
           </p>
         </section>
 
@@ -79,9 +74,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
           <h2 className="mb-4 type-doc-section-title">Concentrated Liquidity Example</h2>
           <div>
             <p className="mb-4 type-doc-body">
-              A concentrated-liquidity position drifts toward the edge of its active range. The
-              account may remain healthy for a while, then tip into liquidation once debt outpaces
-              the recoverable value of the current position state.
+              As the market price moves toward the edge of a concentrated-liquidity position&apos;s range, its token inventory and recoverable value change. Liquidation becomes possible when the resulting account health crosses the configured threshold.
             </p>
             <ul className="space-y-2 type-doc-body">
               <li>• The node values the position from its current range, liquidity, and token split.</li>
@@ -96,16 +89,14 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
           <h2 className="mb-4 type-doc-section-title">NFT Liquidation</h2>
           <div>
             <p className="mb-4 type-doc-body">
-              A borrower deposits a Uniswap v3 NFT and later the position becomes underwater. The
-              unwind is handled at the position level, not as a loose token slice, because the NFT
-              represents one specific backing position.
+              A borrower deposits a Uniswap v3 NFT and the account later becomes eligible for liquidation. Settlement resolves the individual NFT-backed position because its liquidity, range, and fees belong to that specific position.
             </p>
             <ul className="space-y-2 type-doc-body">
               <li>• Aave seizes the vault token balance tied to the NFT-backed position.</li>
               <li>• Avana burns the vault token and moves the real LP position into settlement.</li>
               <li>• The settlement module unwinds, sells, auctions, or transfers the position.</li>
               <li>• Debt is repaid first, the liquidator reward comes next, and any surplus follows the market rule.</li>
-              <li>• The borrower does not keep a clean partial claim on the same NFT after liquidation.</li>
+              <li>• Settlement of the NFT resolves the whole backing position; any surplus is handled separately under the market rule.</li>
             </ul>
           </div>
         </section>
@@ -122,7 +113,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
               <li>• The spoke reports one aggregate borrowing capacity to the Hub.</li>
               <li>• When the account becomes unhealthy, the liquidation node chooses the unwind path that best restores solvency.</li>
               <li>• One position may be enough to close the shortfall, or several may need to be partially or fully unwound.</li>
-              <li>• Order of execution, oracle consistency, and route depth matter next to the mark itself.</li>
+              <li>• Execution order, consistent oracle inputs, and route depth affect the amount recovered.</li>
             </ul>
           </div>
         </section>
@@ -141,9 +132,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="summary" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Summary</h2>
           <p className="type-doc-body">
-            Fungible LPs, concentrated ranges, NFT positions, and multi-position accounts have
-            different unwind details. The shared goal is to repay debt from recoverable LP value,
-            not optimistic NAV assumptions.
+            The LP format determines how collateral is redeemed, transferred, or otherwise settled. Across these examples, the debt repayment depends on value recovered through that route, with residual value handled under the market&apos;s settlement rules.
           </p>
         </section>
       </div>

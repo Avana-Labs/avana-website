@@ -1,6 +1,6 @@
 import { withDocsI18n } from "@/lib/content-i18n/with-docs-i18n"
-import type { Metadata } from "next"
 import { Link } from "@/i18n/navigation"
+import type { Metadata } from "next"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
@@ -8,245 +8,207 @@ import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-pa
 
 export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
   const locale = await resolveLocaleParam(params)
-  return createDocsMetadata(locale, 'legal/disclaimer', {
+  return createDocsMetadata(locale, "legal/disclaimer", {
     title: "Legal Disclaimer",
-    description: "Avana legal disclaimer - general disclaimer, no financial advice, risks, warranties, and limitation of liability.",
+    description: "How Avana's Terms of Service apply to its documentation, interface, and protocol integrations.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
-  { id: "general-disclaimer", title: "General Disclaimer" },
-  { id: "no-financial-advice", title: "No Financial Advice" },
-  { id: "risks", title: "Risks" },
-  { id: "no-warranties", title: "No Warranties" },
-  { id: "limitation-of-liability", title: "Limitation of Liability" },
-  { id: "related-policies", title: "Related Policies" },
+  { id: "general-disclaimer", title: "Services and smart contracts" },
+  { id: "no-financial-advice", title: "Information and advice" },
+  { id: "developer-responsibilities", title: "Access and developer responsibilities" },
+  { id: "risks", title: "Protocol and integration risks" },
+  { id: "testnet", title: "Testnet use" },
+  { id: "no-warranties", title: "Warranties and availability" },
+  { id: "limitation-of-liability", title: "Liability and indemnification" },
+  { id: "disputes", title: "Disputes and governing law" },
+  { id: "related-policies", title: "Related policies" },
 ]
+
+const policyLink = "text-[#01AACF] hover:underline"
 
 export default async function LegalDisclaimerPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return withDocsI18n(locale, "legal/disclaimer", (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
-      {/* Main content */}
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
-
           title="Legal Disclaimer"
-
-          description="Legal notices governing use of the protocol and documentation."
-
+          description="The terms that apply when you read the documentation, use Avana's interface, or build a protocol integration."
         />
 
-        <p className="type-doc-body type-doc-callout type-doc-callout-warning mb-8">
-          <strong>Important:</strong> Please read this disclaimer carefully before using 
-          Avana. By using the protocol, you acknowledge that you have read, understood, 
-          and agree to be bound by these terms. For complete terms, please review our{" "}
-          <Link href="/terms" className="text-blue-600 underline hover:text-blue-700">Terms of Service</Link> and{" "}
-          <Link href="/privacy" className="text-blue-600 underline hover:text-blue-700">Privacy Policy</Link>.
-        </p>
-
         <section id="overview" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Overview</h2>
-          <p className="type-doc-body mb-4">
-            This disclaimer supplements and should be read in conjunction with our full{" "}
-            <Link href="/terms" className="text-blue-600 hover:underline">Terms of Service</Link>. 
-            The Terms of Service constitute a legally binding agreement between you and Avana 
-            concerning your access to and use of the protocol and related services.
+          <h2 className="mb-4 type-doc-section-title">Overview</h2>
+          <p className="type-doc-body">
+            This page explains provisions of Avana&apos;s{" "}
+            <Link href="/terms" className={policyLink}>Terms of Service</Link>{" "}
+            that are relevant to developers. It is a summary, not a replacement for the Terms
+            or an amendment to them. Accessing or using the Services constitutes acceptance of
+            the Terms, including revisions that take effect when posted. The complete Terms
+            define the agreement between you and Avana; refer to them for the applicable
+            wording, conditions, and exceptions.
           </p>
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        </section>
+
+        <section id="general-disclaimer" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Services and smart contracts</h2>
+          <div className="doc-prose">
             <p className="type-doc-body">
-              <strong>From our homepage:</strong> &quot;Borrowing against LP tokens involves risk, including 
-              liquidation if market conditions move against your position. Avana does not custody 
-              your funds, rehypothecate LP positions, or alter how your liquidity operates on underlying 
-              AMMs. Only borrow amounts you are comfortable maintaining through market volatility.&quot;
+              Avana provides technical services, including a test environment, a web interface,
+              and informational resources. The protocol consists of open-source smart contracts
+              that can receive and hold supported crypto assets. Section 2 distinguishes those
+              contracts from the Services and describes use of the contracts as being at the
+              user&apos;s own risk. Avana does not control third-party applications built on the
+              protocol or the activity of users interacting with it.
+            </p>
+            <p className="type-doc-body">
+              The interface does not hold private keys, control assets on a user&apos;s behalf,
+              or modify or reverse submitted blockchain transactions. This is distinct from a
+              deposit into a protocol contract, where the contract holds collateral according
+              to its rules. Section 3.2 also reserves Avana&apos;s right to charge or modify
+              interface fees. See{" "}
+              <Link href="/terms#avana-protocol" className={policyLink}>Sections 2 and 3</Link>{" "}
+              for the full distinction between the protocol and the interface.
             </p>
           </div>
         </section>
 
-        <section id="general-disclaimer" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">General Disclaimer</h2>
-          <p className="type-doc-body mb-4">
-            Avana is an experimental decentralized finance protocol. The protocol is 
-            provided &quot;as is&quot; without any representations or warranties of any kind, either 
-            express or implied.
-          </p>
-          <p className="type-doc-body mb-4">
-            As stated in our Terms of Service (Section 2): &quot;The Avana Protocol includes 
-            functionality whereby certain open source smart contracts can receive and hold certain 
-            digital currency or other crypto assets. There is a risk that the open source software, 
-            including any upgrades, may introduce bugs, viruses, Trojan horses, or other vulnerabilities 
-            or changes that could result in a partial or complete disruption of the protocol or loss, 
-            damage, or destruction of your crypto assets.&quot;
-          </p>
+        <section id="no-financial-advice" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Information and advice</h2>
           <p className="type-doc-body">
-            Any reliance you place on such information is strictly at your own risk. We will 
-            not be liable for any loss or damage arising from the use of this protocol or 
-            documentation.
+            Documentation, tutorials, articles, and other resources explain the system for
+            informational and educational purposes. They do not replace an independent
+            evaluation of an integration or a financial decision, and the Terms state that
+            they may not be a complete or exclusive source of information. Avana is not acting
+            as a broker, dealer, exchange, investment adviser, custodian, or financial service
+            provider and does not undertake a fiduciary obligation to users. Section 4 addresses
+            reliance on these resources and responsibility for associated losses.
           </p>
         </section>
 
-        <section id="no-financial-advice" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">No Financial Advice</h2>
-          <p className="type-doc-body mb-4">
-            As stated prominently in our Terms of Service: &quot;THE SERVICES INCLUDE, AMONG OTHER THINGS, 
-            THE INFORMATIONAL RESOURCES, WHICH MAY PROVIDE INFORMATION RELATED TO AVANA. AVANA 
-            IS NOT A BROKER, DEALER, EXCHANGE, INVESTMENT ADVISER, CUSTODIAN OR FINANCIAL SERVICE PROVIDER 
-            OF ANY KIND. WE DO NOT HAVE A FIDUCIARY RELATIONSHIP WITH, OR OBLIGATION TO, YOU IN CONNECTION 
-            WITH THE SERVICES.&quot;
-          </p>
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-            <ul className="type-doc-body space-y-2">
-              <li>• This material is for informational purposes only</li>
-              <li>• It is not an offer or solicitation to invest in, buy, or sell any interests or shares</li>
-              <li>• It is not intended to provide accounting, legal, tax advice, or investment recommendations</li>
-              <li>• We are not registered investment advisors or broker-dealers</li>
-              <li>• We do not provide personalized financial recommendations</li>
-              <li>• Past performance does not guarantee future results</li>
-              <li>• You should consult qualified professionals before making financial decisions</li>
-              <li>• Cryptocurrency investments are highly volatile and risky</li>
-            </ul>
+        <section id="developer-responsibilities" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Access and developer responsibilities</h2>
+          <div className="doc-prose">
+            <p className="type-doc-body">
+              Access is subject to the eligibility and sanctions restrictions in Section 1.
+              Users remain responsible for applicable legal and tax obligations, protecting
+              wallet keys, and transactions signed with those keys. Sections 5 and 11 prohibit
+              unauthorized access, disruption, abusive request volumes, and misleading
+              integrations. Third-party wallets, protocols, and services have their own terms,
+              fees, privacy practices, and risks, which also apply when they are used through
+              an Avana integration.
+            </p>
+            <p className="type-doc-body">
+              Code availability does not give every part of the Services the same license.
+              Section 6 describes the Services license, restrictions on Avana&apos;s marks, and
+              the treatment of feedback. Where a software component has a separate open-source
+              or business-source license, Section 6.2 provides that the component&apos;s license
+              governs it. An integration therefore needs to account for the terms of each
+              component it uses as well as the rules for accessing the Services.
+            </p>
           </div>
         </section>
 
         <section id="risks" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Risks</h2>
-          <p className="type-doc-body mb-4">
-            Section 8 of our Terms of Service outlines the risks associated with using Avana:
-          </p>
-          
-          <div className="space-y-4">
-            <div className="type-doc-callout type-doc-callout-danger">
-              <h3 className="type-doc-subsection-title mb-2">Experimental Technology</h3>
-              <p className="type-doc-body">
-                &quot;The Services may incorporate experimental and novel technology and the use of such 
-                technology involves a high degree of risk. There are numerous reasons the Services or 
-                underlying blockchain networks could fail in an unexpected way, resulting in the total 
-                and absolute loss of any crypto assets held in your digital wallet.&quot;
-              </p>
-            </div>
-
-            <div className="type-doc-callout type-doc-callout-warning">
-              <h3 className="type-doc-subsection-title mb-2">Operational Challenges</h3>
-              <p className="type-doc-body">
-                &quot;The Services and/or underlying blockchain networks may experience or be the subject 
-                of cyber-attacks, unexpected surges in transaction volume, or other operational or 
-                technical difficulties or vulnerabilities that may cause interruptions related to 
-                your use of the Services.&quot;
-              </p>
-            </div>
-
-            <div className="type-doc-callout type-doc-callout-warning">
-              <h3 className="type-doc-subsection-title mb-2">Regulatory Uncertainty</h3>
-              <p className="type-doc-body">
-                &quot;The Services, the Avana Protocol and/or any underlying blockchain networks may 
-                not be available or appropriate for use in all jurisdictions and you may be subject 
-                to legal and regulatory compliance obligations in connection with your use of the 
-                Services in certain jurisdictions.&quot;
-              </p>
-            </div>
-
-            <div>
-              <h3 className="type-doc-subsection-title mb-2">LP-Specific Risks</h3>
-              <ul className="type-doc-body space-y-1">
-                <li>• Impermanent loss can reduce collateral value</li>
-                <li>• Liquidation risk if market conditions move against your position</li>
-                <li>• Underlying DEX smart contract risk</li>
-                <li>• Concentrated liquidity positions can become worthless out of range</li>
-              </ul>
-            </div>
+          <h2 className="mb-4 type-doc-section-title">Protocol and integration risks</h2>
+          <div className="doc-prose">
+            <p className="type-doc-body">
+              The Terms describe the protocol and its dependencies as experimental technology.
+              Contract vulnerabilities, upgrades, network failures, cyberattacks, and service
+              interruptions can cause transactions to fail or assets to be lost. Compatible
+              assets and networks can also change. The interface does not remove these risks,
+              and an example or test result in the documentation does not establish that a
+              later transaction will produce the same outcome.
+            </p>
+            <p className="type-doc-body">
+              LP-backed borrowing depends on the value recoverable from the underlying position.
+              Market movement, pool inventory, oracle inputs, and liquidation liquidity can
+              affect collateral value and account health. If an account crosses its liquidation
+              threshold, its collateral may be settled to repay debt. These mechanics explain
+              how protocol risk can affect an integration; they do not limit the broader risks
+              and user responsibilities described in{" "}
+              <Link href="/terms#risks" className={policyLink}>Section 8</Link>.
+            </p>
           </div>
+        </section>
+
+        <section id="testnet" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Testnet use</h2>
+          <p className="type-doc-body">
+            The Testnet exists for testing and improving integrations. Under Section 3.1, test
+            tokens have no monetary value outside the Testnet and cannot be redeemed or
+            converted for fiat, production crypto assets, or other value. Avana may change,
+            suspend, or discontinue all or part of the Testnet without notice. Test balances
+            and results describe a testing environment, not a claim on assets or confirmation
+            of equivalent production behavior.
+          </p>
         </section>
 
         <section id="no-warranties" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">No Warranties</h2>
-          <p className="type-doc-body mb-4">
-            As stated in Section 9.1 of our Terms of Service:
+          <h2 className="mb-4 type-doc-section-title">Warranties and availability</h2>
+          <p className="type-doc-body">
+            Section 9.1 provides the Services on an &quot;as-is&quot; and &quot;as-available&quot; basis,
+            except as expressly stated in the Terms. It disclaims express, implied, and
+            statutory warranties, including fitness for a particular purpose, merchantability,
+            non-infringement, and uninterrupted or error-free operation. Where applicable law
+            prevents a warranty or condition from being excluded, the Terms limit its scope
+            and duration to the minimum extent permitted by that law.
           </p>
-          <div className="type-doc-code-block-dark">
-            <p className="text-gray-300">
-              &quot;THE SERVICES ARE ISSUED ON AN &apos;AS-IS&apos; AND &apos;AS AVAILABLE&apos; BASIS AND AVANA DOES NOT 
-              MAKE ANY WARRANTIES WITH RESPECT TO SUCH &apos;AS-IS&apos; AND &apos;AS AVAILABLE&apos; BASIS OR OTHERWISE 
-              IN CONNECTION WITH THE TERMS AND AVANA HEREBY DISCLAIMS ANY AND ALL EXPRESS, IMPLIED 
-              OR STATUTORY WARRANTIES AND CONDITIONS, INCLUDING ANY WARRANTIES OR CONDITIONS OF 
-              NON-INFRINGEMENT, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AVAILABILITY, 
-              ERROR-FREE OR UNINTERRUPTED OPERATION.&quot;
+        </section>
+
+        <section id="limitation-of-liability" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Liability and indemnification</h2>
+          <div className="doc-prose">
+            <p className="type-doc-body">
+              Section 9.2 excludes specified categories of damages, including consequential,
+              indirect, incidental, and special damages, lost data, lost profits, and reductions
+              in value. It also limits Avana&apos;s aggregate liability under the Terms to US$100.
+              Section 9.3 explains that some exclusions or limits may not apply in jurisdictions
+              that do not permit them. These provisions need to be read together with the
+              conditions and exceptions in the Terms.
+            </p>
+            <p className="type-doc-body">
+              Section 9.4 sets out indemnification, defense, and reimbursement obligations for
+              claims connected with use of the Services or third-party services, breaches of
+              the Terms, submitted material, and unauthorized changes or use. The full scope,
+              covered parties, and procedures are stated in{" "}
+              <Link href="/terms#disclaimer-of-warranties" className={policyLink}>Section 9</Link>.
+              This summary does not expand or replace those obligations.
             </p>
           </div>
         </section>
 
-        <section id="limitation-of-liability" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Limitation of Liability</h2>
-          <p className="type-doc-body mb-4">
-            As stated in Section 9.2 of our Terms of Service:
-          </p>
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 mb-4">
-            <p className="type-doc-body">
-              &quot;IN NO EVENT SHALL AVANA BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, INDIRECT, INCIDENTAL 
-              OR SPECIAL DAMAGES OF ANY TYPE OR NATURE HOWEVER ARISING, INCLUDING, WITHOUT LIMITATION, 
-              EXEMPLARY OR PUNITIVE DAMAGES, LOST DATA, LOST PROFITS OR REVENUES OR DIMINUTION IN VALUE, 
-              ARISING OUT OF OR RELATING TO THE SERVICES OR YOUR USE OF THE AVANA PROTOCOL.&quot;
-            </p>
-          </div>
+        <section id="disputes" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Disputes and governing law</h2>
           <p className="type-doc-body">
-            This limitation applies regardless of the theory of liability (contract, tort, 
-            strict liability, or otherwise) and even if we have been advised of the possibility 
-            of such damages. Under no circumstances shall Avana&apos;s aggregate liability exceed 
-            one-hundred U.S. dollars ($100.00).
+            Section 10 specifies binding arbitration under the JAMS procedures identified in
+            the Terms, with arbitration in New York, New York. It includes notice at least 30
+            days before an arbitration demand, provisions for provisional remedies, and
+            class-action and jury-trial waivers, subject to the stated conditions and applicable
+            law. Section 12.8 specifies New York law. Read the complete{" "}
+            <Link href="/terms#dispute-resolution" className={policyLink}>dispute-resolution provisions</Link>{" "}
+            for the process and exceptions that apply.
           </p>
         </section>
 
         <section id="related-policies" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Related Policies</h2>
-          <p className="type-doc-body mb-4">
-            For complete legal information, please review the following documents:
-          </p>
-          
-          <div className="space-y-3">
-            <Link href="/terms" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
-              <h3 className="type-doc-subsection-title mb-1">Terms of Service</h3>
-              <p className="type-doc-body">
-                The complete legally binding agreement governing your use of Avana, including 
-                eligibility, prohibited activities, intellectual property, dispute resolution, and more.
-              </p>
-            </Link>
-
-            <Link href="/privacy" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
-              <h3 className="type-doc-subsection-title mb-1">Privacy Policy</h3>
-              <p className="type-doc-body">
-                How we collect, use, and protect your personal information, including data retention, 
-                cookies, and your rights under GDPR, CCPA, and other privacy regulations.
-              </p>
-            </Link>
-
-            <Link href="/developers/legal" className="block p-4 border border-gray-200 rounded-lg hover:border-gray-300 hover:bg-gray-50/50 transition-colors">
-              <h3 className="type-doc-subsection-title mb-1">Restricted Territories</h3>
-              <p className="type-doc-body">
-                Current list of jurisdictions restricted from accessing Avana services.
-              </p>
-            </Link>
-          </div>
-        </section>
-
-        <div className="type-doc-panel mt-8">
+          <h2 className="mb-4 type-doc-section-title">Related policies</h2>
           <p className="type-doc-body">
-            <strong>Last Updated:</strong> January 2026
+            The <Link href="/terms" className={policyLink}>Terms of Service</Link>{" "}
+            contain the complete agreement. The{" "}
+            <Link href="/privacy" className={policyLink}>Privacy Policy</Link>{" "}
+            explains the handling of personal information, and the{" "}
+            <Link href="/developers/legal" className={policyLink}>Restricted Territories</Link>{" "}
+            page lists service-access restrictions. Section 12.2 provides the contact for legal
+            notices: <a href="mailto:legal@avana.cc" className={policyLink}>legal@avana.cc</a>.
+            Refer to the current published policies when evaluating an integration or using
+            the Services.
           </p>
-          <p className="type-meta-label mt-2">
-            This disclaimer may be updated from time to time. Continued use of the protocol 
-            constitutes acceptance of any changes. Please refer to our{" "}
-            <Link href="/terms" className="text-blue-600 hover:underline">Terms of Service</Link> for 
-            the most current and complete legal terms.
-          </p>
-        </div>
+        </section>
       </div>
-
-      {/* Right scroll-spy sidebar */}
-      <DeveloperScrollSpyRail 
-        sections={sections} 
-        pageSummary="Legal notices governing use of the protocol and documentation."
-        sectionColor="slate"
-      />
+      <DeveloperScrollSpyRail sections={sections} sectionColor="rose" />
     </div>
   ))
 }

@@ -209,6 +209,21 @@ function walk(dir, base = "") {
 }
 walk(docsRoot)
 
+if (process.argv.includes("--docs-only")) {
+  writeJson("content/en/docs.json", docs)
+  process.exit(0)
+}
+
+if (process.argv.includes("--check-docs")) {
+  const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "content/en/docs.json"), "utf8"))
+  if (JSON.stringify(docs) !== JSON.stringify(catalog)) {
+    console.error("Documentation source and English catalog differ. Run the docs extraction and update all locale catalogs together.")
+    process.exit(1)
+  }
+  console.log("Documentation source matches the English catalog.")
+  process.exit(0)
+}
+
 // -------- marketing pages + components --------
 const marketingFiles = {
   page: "src/app/[locale]/page.tsx",

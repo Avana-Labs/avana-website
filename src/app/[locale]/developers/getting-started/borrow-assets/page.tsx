@@ -36,46 +36,16 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            After your LP is deposited and valued, you can borrow from the Hub using the capacity
-            shown in the interface. Choose the asset and amount, confirm the transaction, and the
-            borrowed tokens are sent to your wallet.
-          </p>
-          <p className="type-doc-body">
-            Interest accrues on open debt, so your health factor can change even if you do nothing.
-            Leave a buffer below your maximum borrow rather than drawing the full amount.
+            <>After deposit and valuation, a borrower can request an asset and amount within the account&apos;s available capacity. The Borrow Spoke checks the request and draws the asset from the Hub; the confirmed transaction sends the borrowed tokens to the borrower&apos;s wallet.</>{" "}<>Interest increases outstanding debt over time, so health factor can decline even when the collateral position is unchanged. Unused borrowing capacity provides a buffer against that debt growth and changes in collateral value.</>{" "}<>{"Avana values each LP position separately before aggregating borrowing capacity within a Borrow Spoke. Similar-looking positions can contribute different amounts because their pools, recoverable values, and collateral factors differ."}</>
           </p>
         </section>
 
         <section id="borrow-checks" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrow Checks</h2>
-          <div className="space-y-5 type-doc-body">
-            <div>
-              <p className="type-doc-subsection-title">Position and ownership checks</p>
-              <p className="mt-1 type-doc-body">
-                The spoke confirms your LP positions are still in the account, still approved, and
-                still recognized as collateral.
-              </p>
-            </div>
-            <div>
-              <p className="type-doc-subsection-title">Capacity check</p>
-              <p className="mt-1 type-doc-body">
-                The borrow amount must fit within your remaining borrowing capacity in that Borrow
-                Spoke.
-              </p>
-            </div>
-            <div>
-              <p className="type-doc-subsection-title">Hub liquidity and cap checks</p>
-              <p className="mt-1 type-doc-body">
-                The Hub must have enough of the requested asset available, and protocol caps must
-                allow the borrow.
-              </p>
-            </div>
-            <div>
-              <p className="type-doc-subsection-title">Post-borrow health check</p>
-              <p className="mt-1 type-doc-body">
-                Your account must stay above the liquidation threshold after the new debt is added.
-              </p>
-            </div>
+          <div className="doc-prose">
+            <p className="type-doc-body"><>The Borrow Spoke checks that the account still holds the deposited positions and that their pools remain approved for collateral use.</>{" "}<>The borrow amount must fit within your remaining borrowing capacity in that Borrow
+                Spoke.</>{" "}<>The Hub must have enough of the requested asset available, and protocol caps must
+                allow the borrow.</>{" "}<>Your account must stay above the liquidation threshold after the new debt is added.</></p>
           </div>
         </section>
 
@@ -108,30 +78,21 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Internal Accounting</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              <strong className="text-gray-900">Debt shares:</strong> new debt is recorded through a
+            <><strong className="text-gray-900">Debt shares:</strong> new debt is recorded through a
               debt-share model so interest can accrue over time without rewriting the full account
-              balance on every block.
-            </p>
-            <p>
-              <strong className="text-gray-900">Hub draw:</strong> the Borrow Spoke requests the
+              balance on every block.</>{" "}<><strong className="text-gray-900">Hub draw:</strong> the Borrow Spoke requests the
               asset from the Hub only after the spoke finishes the collateral, capacity, and health
-              checks.
-            </p>
-            <p>
-              <strong className="text-gray-900">State update:</strong> the user receives the borrowed
+              checks.</>{" "}<><strong className="text-gray-900">State update:</strong> the user receives the borrowed
               asset, and the spoke records the resulting debt state so future health checks,
-              repayments, and liquidation logic all reference the same updated account.
-            </p>
+              repayments, and liquidation logic all reference the same updated account.</>
+          </p>
           </div>
         </section>
 
         <section id="borrowable-assets" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrowable Assets</h2>
           <p className="mb-4 type-doc-body">
-            Each market shows which assets you can borrow — typically major stablecoins, GHO, ETH,
-            BTC, and other liquid assets configured for that deployment. A supported LP collateral
-            type does not unlock every borrow asset automatically; each debt asset is part of the
-            market configuration.
+            Borrowable assets are configured for each deployment and market. They can include major stablecoins, GHO, ETH, BTC, and other supported assets. Approval of an LP pool establishes collateral eligibility; it does not make every debt asset available to that market.
           </p>
           <p className="type-doc-body">
             Check the Avana interface on your target deployment for the live borrow list.
@@ -141,13 +102,9 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
         <section id="borrowing-power" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrowing Power</h2>
           <p className="mb-4 type-doc-body">
-            Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after
+            <>Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after
             collateral factors and risk discounts. Each position contributes based on its own pool,
-            range, liquidity, and risk settings.
-          </p>
-          <p className="type-doc-body">
-            The closer you borrow to your maximum, the less room you have for price moves or
-            volatility. See{" "}
+            range, liquidity, and risk settings.</>{" "}<>As debt approaches borrowing capacity, less capacity remains to absorb price changes or interest accrual. See{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
               Collateral Factors
             </Link>{" "}
@@ -155,7 +112,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
             <Link href="/developers/architecture/health-factor" className="text-[#01AACF] hover:underline">
               Health Factor
             </Link>{" "}
-            when sizing a borrow.
+            when sizing a borrow.</>
           </p>
         </section>
       </div>

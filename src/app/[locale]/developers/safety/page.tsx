@@ -37,7 +37,7 @@ const corePrinciples = [
   {
     title: "Public Consistency",
     description:
-      "The update described publicly should be the same update that is actually queued for execution.",
+      "Public disclosure identifies the parameter change submitted for execution so reviewers can compare the notice with the queued payload.",
   },
   {
     title: "Spoke Awareness",
@@ -47,7 +47,7 @@ const corePrinciples = [
   {
     title: "Defensive Asymmetry",
     description:
-      "The process is intentionally biased so reducing risk is faster and simpler than expanding it.",
+      "The framework gives exposure-reducing actions a more direct path than changes that expand protocol risk.",
   },
 ]
 
@@ -207,19 +207,12 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            The Avana Risk Framework defines how parameter changes are proposed, checked, and
+            <>The Avana Risk Framework defines how parameter changes are proposed, checked, and
             executed across the Hub and LP Collateral Spokes. It covers the controls used when the
             protocol adjusts supply and borrow caps, LT/LTV settings, interest-rate inputs, market
             status, and other parameters that depend on prices, utilization, pool depth,
             concentration, volatility, peg behavior, circuit breakers, position health, and
-            related state.
-          </p>
-          <p className="mb-4 type-doc-body">
-            LP collateral is not one homogeneous asset class. Stable LPs, correlated-asset LPs,
-            weighted pools, concentrated liquidity, and other AMM designs can each have their own
-            spoke-specific valuation path, liquidation path, and failure mode. The framework exists
-            so those differences are reflected in the update process instead of being hidden behind
-            a single generic risk setting.
+            related state.</>{" "}<>LP markets differ in their asset mix, valuation methods, liquidation routes, and failure modes. Stable, correlated, weighted, and concentrated-liquidity pools can therefore require different risk parameters. The framework applies those differences when reviewing updates to a spoke or pool.</>
           </p>
           <p className="mb-4 type-doc-body">
             Three roles stay separate throughout that process: Avana Risk Initiator, Avana Risk
@@ -228,17 +221,18 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
             emergency is intentionally narrower than the routine path.
           </p>
           <p className="type-doc-body type-doc-callout type-doc-callout-danger">
-            <strong>Operating rule:</strong> reducing risk should be easier than expanding it.
+            <strong>Operating rule:</strong> exposure-reducing actions follow a more direct path
+            than changes that expand protocol risk.
           </p>
         </section>
 
         <section id="core-principles" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Core Principles</h2>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex flex-col gap-4">
             {corePrinciples.map((principle) => (
               <div
                 key={principle.title}
-                className="rounded-xl border border-gray-200 bg-white p-4"
+                className="doc-topic"
               >
                 <h3 className="mb-2 type-doc-subsection-title">
                   {principle.title}
@@ -257,7 +251,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
             {roles.map((role) => (
               <div
                 key={role.title}
-                className="rounded-xl border border-gray-200 bg-white p-5"
+                className="doc-topic"
               >
                 <h3 className="text-lg type-doc-subsection-title">{role.title}</h3>
                 <p className="mt-2 type-doc-body">{role.summary}</p>
@@ -286,10 +280,10 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
             {updateFlow.map((item, index) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-gray-200 bg-white p-4"
+                className="doc-topic"
               >
                 <div className="flex items-start gap-3">
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-xs font-semibold text-rose-700">
+                  <span className="doc-step-number">
                     {index + 1}
                   </span>
                   <div>
@@ -309,15 +303,14 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         <section id="parameter-classes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Parameter Classes</h2>
           <p className="mb-6 type-doc-body">
-            Parameter changes do not all carry the same risk, so the framework groups them by how
-            much authority they should require and how quickly they should be able to move.
+            Parameter changes are grouped by their effect on risk. Each class defines the required authority and execution path, from bounded routine updates to changes that require broader governance approval.
           </p>
 
           <div className="space-y-4">
             {parameterClasses.map((group) => (
               <div
                 key={group.title}
-                className={`rounded-xl border p-4 ${group.tone}`}
+                className="doc-topic"
               >
                 <h3 className="mb-1 type-doc-subsection-title">
                   {group.title}
@@ -340,16 +333,14 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         <section id="public-disclosure" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Public Disclosure</h2>
           <p className="mb-6 type-doc-body">
-            Every routine update should be published before submission in a format that lets
-            developers, users, and reviewers compare the notice with the exact action that is later
-            queued.
+            Public notice precedes submission in the routine update flow. It records the affected markets and proposed parameters so developers and reviewers can compare the stated change with the payload queued for execution.
           </p>
 
-          <div className="type-doc-panel">
+          <div className="doc-topic">
             <h3 className="mb-3 type-doc-subsection-title">
               Minimum disclosure standard
             </h3>
-            <ul className="grid gap-3 type-doc-body md:grid-cols-2">
+            <ul className="flex flex-col gap-3 type-doc-body">
               {disclosureItems.map((item) => (
                 <li key={item} className="type-doc-callout">
                   {item}
@@ -359,22 +350,18 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
           </div>
 
           <p className="mt-4 type-doc-body">
-            Consistent disclosure makes it easier to review a proposal for scope creep, mismatched
-            assumptions, or simple execution mistakes.
+            Comparing these fields with the queued payload reveals differences in the affected markets, parameter values, timing, or assumptions before execution.
           </p>
         </section>
 
         <section id="emergency-actions" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Emergency Actions</h2>
           <p className="mb-4 type-doc-body">
-            Emergency actions are for containment, not routine tuning. They should be used rarely,
-            kept as narrow as possible, and structured so the protocol can return to the standard
-            path once the immediate risk is understood. The Risk Defender should only act when a
-            defined or highly probable failure condition makes the normal timelocked route unsafe.
+            The Risk Defender&apos;s emergency path is limited to containing defined or highly probable failures when waiting for the normal timelock would be unsafe. Its narrower authority allows defensive actions such as restricting borrowing or disabling an affected adapter. Routine parameter changes continue to use the Initiator and Guardian process.
           </p>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl border border-red-200 bg-red-50/70 p-4">
+          <div className="flex flex-col gap-4">
+            <div className="doc-topic">
               <h3 className="mb-3 type-doc-subsection-title">
                 Emergency triggers
               </h3>
@@ -387,7 +374,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-4">
+            <div className="doc-topic">
               <h3 className="mb-3 type-doc-subsection-title">
                 Required post-action disclosure
               </h3>
@@ -409,9 +396,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         </section>
 
         <p className="type-doc-body">
-          Recommendation, review, and emergency containment remain separate because LP collateral
-          is a collection of markets with different structures and failure modes, not one
-          interchangeable asset list.
+          The separation of proposing, review, and emergency roles applies across LP markets, while each market retains its own valuation assumptions, risk limits, and liquidation behavior.
         </p>
       </div>
 

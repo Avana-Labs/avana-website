@@ -42,12 +42,7 @@ export default async function RouterContractPage({ params }: LocaleParamsProps) 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            The router coordinates DEX-specific mechanics — deposits, withdrawals, fee claims, and
-            unwind steps — so those actions do not have to be scattered across every flow that
-            touches LP collateral.
-          </p>
-          <p className="type-doc-body">
-            The router does not decide risk. Collateral factors, health checks, and liquidation
+            <>The router coordinates deposits, withdrawals, fee claims, and liquidation steps through DEX-specific adapters. Each caller can use this shared execution layer instead of assembling the underlying DEX calls independently.</>{" "}<>The router does not decide risk. Collateral factors, health checks, and liquidation
             eligibility remain in the Borrow Spoke, Hub, oracle stack, and risk framework. See{" "}
             <Link href="/developers/architecture" className="text-[#01AACF] hover:underline">
               Borrow Spoke
@@ -56,29 +51,21 @@ export default async function RouterContractPage({ params }: LocaleParamsProps) 
             <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
               Liquidation Framework
             </Link>
-            .
+            .</>
           </p>
         </section>
 
         <section id="role-in-system" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Role in System</h2>
           <p className="mb-4 type-doc-body">
-            Different DEXs expose different entry, exit, and fee-collection methods. The router
-            gives Avana one integration layer for those mechanics so builders are not forced to
-            implement each DEX separately in every flow.
+            DEXs expose different methods for entering a position, removing liquidity, and collecting fees. The router connects Avana&apos;s transaction flows to those methods through a common integration layer.
           </p>
         </section>
 
         <section id="adapter-model" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Adapter Model</h2>
           <p className="mb-4 type-doc-body">
-            Each supported DEX family has an adapter that knows how to claim fees, remove liquidity,
-            and expose the actions the protocol needs for that LP format. That keeps DEX-specific
-            behavior isolated instead of leaking into every user-facing code path.
-          </p>
-          <p className="type-doc-body">
-            Adapter support only matters when valuation and liquidation support exist for that DEX.
-            A new adapter by itself does not make a pool safe for collateral admission.
+            <>Each supported DEX family has an adapter for operations such as fee collection and liquidity removal. The adapter implements the calls required by that LP format, keeping DEX-specific execution separate from the rest of the transaction flow.</>{" "}<>An adapter provides execution support for an LP format. Collateral admission also requires compatible valuation and liquidation support, so deploying an adapter alone does not enable a pool for borrowing.</>
           </p>
         </section>
 

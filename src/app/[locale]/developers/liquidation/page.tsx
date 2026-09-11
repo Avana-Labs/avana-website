@@ -38,16 +38,7 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
         <section id="overview" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Aave is the system that decides when a position can be liquidated, but it does not
-            know how to settle the underlying LP. Avana uses Aave for debt accounting, health
-            checks, and the liquidation entry point, then takes over to resolve the real position
-            that sits behind the vault collateral.
-          </p>
-          <p className="type-doc-body">
-            The critical design constraint is that two views of collateral must stay aligned. Aave
-            sees an ERC-20 vault token balance, while Avana tracks the LP position that actually
-            backs that balance. Liquidation remains sound only if seizing the vault representation
-            always leads to the correct LP settlement path.
+            <>Aave determines liquidation eligibility and handles debt accounting and seizure of the ERC-20 vault collateral. Avana maps that collateral to its backing LP position and executes the settlement method required by the LP format.</>{" "}<>Liquidation connects two representations of the same collateral: the vault token balance recorded in Aave and the backing LP position tracked by Avana. Seizure of the vault token must resolve to the corresponding LP position so settlement removes both the backing position and its collateral representation consistently.</>
           </p>
           <p className="mt-4 type-doc-body">
             For the operator-facing sequence, see{" "}
@@ -93,23 +84,19 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
         <section id="core-rules" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Core Rules</h2>
           <p className="mb-4 type-doc-body">
-            The main rule is simple but strict: Aave liquidates the ERC-20 vault collateral, and
-            Avana settles the LP position behind that vault collateral. Everything else in the
-            design exists to keep those two steps consistent.
+            The liquidation process links Aave&apos;s seizure of ERC-20 vault collateral to Avana&apos;s settlement of the backing LP position. The rules below describe the relationship between vault supply, recoverable collateral, and settlement proceeds.
           </p>
           <ul className="space-y-4">
             <li>
               <span className="type-doc-subsection-title">Vault tokens must map to real value</span>
               <p className="mt-0.5 type-doc-body">
-                A liquidated vault token amount must always correspond to real LP collateral value,
-                not a synthetic balance that cannot be recovered.
+                Each amount of vault collateral selected for liquidation must correspond to recoverable value in its backing LP position.
               </p>
             </li>
             <li>
               <span className="type-doc-subsection-title">Backing collateral cannot stay outstanding</span>
               <p className="mt-0.5 type-doc-body">
-                Once the LP position is settled, the corresponding vault token must be burned so the
-                representation does not outlive the asset it was meant to track.
+                Settlement removes the LP position from active collateral. The corresponding vault tokens must also be burned so they cannot continue representing collateral that is no longer held.
               </p>
             </li>
             <li>
@@ -121,8 +108,7 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
             <li>
               <span className="type-doc-subsection-title">Surplus follows the market rule</span>
               <p className="mt-0.5 type-doc-body">
-                Debt gets covered first, then the liquidator reward, then settlement costs, and
-                only then does any remaining value follow the market&apos;s surplus rule.
+                Settlement proceeds cover debt first, followed by the liquidator reward and settlement costs. Any remaining value is distributed under the market&apos;s surplus rule.
               </p>
             </li>
           </ul>
@@ -131,14 +117,10 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
         <section id="lp-complexity" className="mb-10">
           <h2 className="type-doc-section-title mb-4">LP Collateral Complexity</h2>
           <p className="mb-4 type-doc-body">
-            LP-backed positions do not all behave the same way during liquidation. A fungible LP
+            <>LP-backed positions do not all behave the same way during liquidation. A fungible LP
             token can often be redeemed or transferred proportionally, while a Uniswap v3 NFT is a
             single discrete position whose range, fee accrual, and unwind route matter at the
-            position level.
-          </p>
-          <p className="type-doc-body">
-            That is why the settlement layer needs to know the collateral family, the exact backing
-            position, and the intended unwind path before it clears the matching vault supply.
+            position level.</>{" "}<>The settlement layer uses the collateral family, backing-position identifier, and configured unwind route to resolve the position and clear its corresponding vault supply.</>
           </p>
         </section>
 
@@ -171,42 +153,20 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
 
         <section id="position-state" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Position State</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="mb-1 type-doc-subsection-title">ACTIVE</h3>
-              <p className="type-doc-body">
-                The position is still contributing collateral value, and the outstanding vault
-                tokens remain fully backed by that live LP position.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-1 type-doc-subsection-title">LIQUIDATING</h3>
-              <p className="type-doc-body">
-                The selected collateral is no longer withdrawable by the borrower and is actively
-                moving through the settlement path.
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-1 type-doc-subsection-title">SETTLED</h3>
-              <p className="type-doc-body">
-                The LP position has been resolved, and the matching vault tokens must no longer be
-                outstanding.
-              </p>
-            </div>
+          <div className="doc-prose">
+            <p className="type-doc-body"><>The position is still contributing collateral value, and the outstanding vault
+                tokens remain fully backed by that live LP position.</>{" "}<>The selected collateral is no longer withdrawable by the borrower and is actively
+                moving through the settlement path.</>{" "}<>The LP position has been resolved, and the matching vault tokens must no longer be
+                outstanding.</></p>
           </div>
         </section>
 
         <section id="surplus-handling" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Surplus Handling</h2>
           <p className="mb-4 type-doc-body">
-            Settlement value is applied in a fixed order. It first covers debt, then the
+            <>Settlement value is applied in a fixed order. It first covers debt, then the
             liquidator reward, then settlement costs. Any value left after those obligations is
-            surplus, and that surplus follows the market rule for the collateral being settled.
-          </p>
-          <p className="type-doc-body">
-            If settlement value is not enough to cover the debt and reward, the market needs an
-            explicit bad-debt path. Liquidation documentation should describe that shortfall as a
-            real state to handle, not as something that disappears automatically.
+            surplus, and that surplus follows the market rule for the collateral being settled.</>{" "}<>If recoveries are insufficient, a shortfall remains after settlement. It requires the market&apos;s bad-debt handling; completing the LP unwind does not itself eliminate the unpaid obligation.</>
           </p>
         </section>
 
@@ -221,8 +181,8 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
           <ul className="space-y-2 type-doc-body">
             <li>Liquidators must track the same risk state and collateral state that the protocol uses.</li>
             <li>Execution must remain atomic from debt repayment through settlement.</li>
-            <li>Fee realization, route depth, and residual value should be modeled before optimizing only for speed.</li>
-            <li>Partial coverage and full coverage are different cases and should not share the same routing assumptions.</li>
+            <li>Execution estimates include fee realization, route depth, and residual value, as well as transaction timing.</li>
+            <li>Partial and full debt coverage require different routing amounts and recovery estimates.</li>
           </ul>
         </section>
       </div>

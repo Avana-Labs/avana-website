@@ -33,7 +33,7 @@ export default function DevelopersLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex min-h-screen min-w-0 flex-1 overflow-x-clip bg-background">
+    <div data-developer-doc-layout className="flex min-h-screen min-w-0 flex-1 overflow-x-clip bg-background">
       <div className="site-content-width flex min-w-0 w-full flex-1">
         <DeferredDeveloperSidebar />
         <div className="min-w-0 flex-1 px-4 py-8 sm:px-6 lg:px-10">

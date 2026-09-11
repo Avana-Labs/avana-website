@@ -62,14 +62,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana lends against LP collateral, so security review has to cover more than whether a
-            contract compiles or transfers balances correctly. It also has to cover how pricing,
-            custody, liquidation, and privileged controls behave when the market is under stress.
-          </p>
-          <p className="type-doc-body">
-            Contract review, economic review, and operational review all matter for LP markets.
-            They reinforce each other and should be treated as one security program, not as three
-            unrelated checklists.
+            <>LP-backed lending connects contract accounting to position custody, oracle prices, and DEX-specific liquidation routes. Security review therefore covers both transaction execution and the effect of changing market conditions on collateral value and recovery.</>{" "}<>Contract, economic, and operational review address different parts of that system. A valid contract call can still produce an incorrect lending result if its price input is stale or its assumed liquidation route cannot execute.</>
           </p>
         </section>
 
@@ -85,28 +78,26 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
         <section id="multi-layer-security" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Multi-Layer Security</h2>
           <div className="space-y-4">
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <h3 className="mb-1 type-doc-subsection-title">Contract review</h3>
               <p className="type-doc-body">
-                Core contract surfaces, adapters, and privileged control paths should be reviewed
-                before new LP families or new execution paths are enabled.
+                Review of a new LP family or execution path covers the affected core contracts, DEX adapters, and privileged controls before enablement.
               </p>
             </div>
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <h3 className="mb-1 type-doc-subsection-title">Economic stress testing</h3>
               <p className="type-doc-body">
-                Test market shocks, oracle edge cases, and liquidation routing failures, not just
-                unit-level contract behavior.
+                Stress testing examines market shocks, oracle edge cases, and liquidation-routing failures alongside individual contract behavior.
               </p>
             </div>
-            <div className="type-doc-panel">
+            <div className="doc-topic">
               <h3 className="mb-1 type-doc-subsection-title">External review channels</h3>
               <p className="type-doc-body">
                 Formal audits and the{" "}
                 <Link href="/developers/safety/bug-bounty" className="text-blue-600 hover:underline">
                   Bug Bounty
                 </Link>{" "}
-                program should both stay active. One does not replace the other.
+                program provide complementary review channels: audits assess a defined code scope, while bounty reports can identify additional exploitable behavior.
               </p>
             </div>
           </div>
@@ -127,23 +118,16 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
         <section id="trust-boundaries" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Trust Boundaries</h2>
           <ul className="space-y-3 type-doc-body">
-            <li>• Onchain accounting and liquidation settlement should be deterministic once triggered.</li>
-            <li>• Oracle sources, DEX adapters, and operational liquidator infrastructure are external dependencies and should be monitored as such.</li>
-            <li>• Governance, pause authority, and upgrades are privileged powers that should remain bounded, reviewable, and timelocked wherever possible.</li>
+            <li>• Onchain accounting and settlement require deterministic state changes so debt, vault supply, and backing collateral remain consistent.</li>
+            <li>• Price feeds, DEX adapters, and liquidator infrastructure introduce dependencies whose failures can affect valuation or recovery.</li>
+            <li>• Governance, pause authority, and upgrades are privileged controls. Their roles, limits, and applicable timelocks define who can change protocol behavior.</li>
           </ul>
         </section>
 
         <section id="audit-readiness" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Audit Readiness</h2>
           <p className="mb-4 type-doc-body">
-            This page does not publish speculative auditor schedules or placeholder milestones.
-            Audit reports, scopes, and remediation notes should be published when they actually
-            exist and can be reviewed in full.
-          </p>
-          <p className="type-doc-body">
-            High value audit targets usually include new LP family support, new liquidation paths,
-            new oracle models, and any change that expands privileged control or recoverable value
-            assumptions.
+            <>Published audit reports identify the code and scope reviewed, the findings, and documented remediation. Deployment review depends on those reports; this page does not establish an audit status or completion date.</>{" "}<>Changes to LP support, liquidation routes, oracle models, privileged roles, or recovery assumptions affect the review scope because they change how collateral is admitted, valued, or settled.</>
           </p>
         </section>
       </div>

@@ -53,14 +53,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            To borrow against LP collateral on Avana, start by depositing a supported position into
-            the app. Pick an approved pool, connect your wallet, and submit the deposit for the LP
-            you already hold on a supported DEX.
-          </p>
-          <p className="type-doc-body">
-            Avana records the position, values it, and adds it to your borrowing capacity in the
-            relevant Borrow Spoke. Your liquidity stays in the pool and keeps accruing fees. Deposit
-            does not borrow for you — it sets up the collateral you can borrow against next.
+            <>Depositing an LP position establishes the collateral account used for borrowing. The borrower selects an approved market, authorizes transfer of the LP token or position NFT, and submits the deposit from a wallet that holds the position.</>{" "}<>Avana records custody of the position, values it, and adds its risk-adjusted contribution to borrowing capacity in the relevant Borrow Spoke. The underlying liquidity remains in the AMM and continues to accrue fees. A deposit does not create debt; borrowing is a separate transaction.</>
           </p>
         </section>
 
@@ -110,20 +103,13 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Technical Details</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-              <strong className="text-gray-900">Borrowing power updates with the market.</strong>{" "}
-              Your capacity is recalculated from the live LP position as prices, fees, and pool state
-              change — not locked at the deposit-time mark.
-            </p>
-            <p>
-              <strong className="text-gray-900">LP formats differ by DEX.</strong>{" "}
+            <><strong className="text-gray-900">Borrowing power updates with the market.</strong>{" "}
+              Capacity is recalculated from the LP position as prices, fees, and pool state change. The valuation recorded at deposit does not fix the position&apos;s borrowing capacity for the duration of a loan.</>{" "}<><strong className="text-gray-900">LP formats differ by DEX.</strong>{" "}
               Some pools issue fungible LP tokens; concentrated-liquidity DEXs use position NFTs or
-              position-manager shares. Avana handles both through the same spoke custody model.
-            </p>
-            <p>
-              <strong className="text-gray-900">No unwind on deposit.</strong>{" "}
+              position-manager shares. Avana handles both through the same spoke custody model.</>{" "}<><strong className="text-gray-900">No unwind on deposit.</strong>{" "}
               You are not removing liquidity from the pool when you deposit. The position stays
-              active in the AMM.
-            </p>
+              active in the AMM.</>
+          </p>
           </div>
         </section>
 

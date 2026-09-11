@@ -1,6 +1,7 @@
 import { withDocsI18n } from "@/lib/content-i18n/with-docs-i18n"
 import { Link } from "@/i18n/navigation"
 import type { Metadata } from "next"
+import { Fragment } from "react"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
@@ -36,7 +37,7 @@ const dexFamilies = [
   {
     title: "Custom or hook-based designs",
     body:
-      "Advanced pool architectures need a clear oracle model, safe custody path, and liquidation adapter before they can be supported.",
+      "Custom and hook-based pool designs require oracle support, a defined custody path, and a liquidation adapter for their specific position format.",
   },
 ]
 
@@ -53,12 +54,9 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana supports curated LP collateral markets across AMMs such as Uniswap, Balancer,
+            <>Avana supports curated LP collateral markets across AMMs such as Uniswap, Balancer,
             Curve, and Aerodrome as markets are launched. Support is approved pool by approved pool,
-            not automatically granted to every pool on a DEX.
-          </p>
-          <p className="type-doc-body">
-            Each supported market needs reliable asset pricing, enough liquidity depth, a defined
+            not automatically granted to every pool on a DEX.</>{" "}<>Each supported market needs reliable asset pricing, enough liquidity depth, a defined
             unwind route, market caps, and collateral settings that match the pool type. See{" "}
             <Link href="/developers/integrations/allowed-pools" className="text-[#01AACF] hover:underline">
               Allowed LP Pools
@@ -67,47 +65,38 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
             <Link href="/developers/integrations/price-oracles" className="text-[#01AACF] hover:underline">
               Price Oracles
             </Link>{" "}
-            for admission and valuation details.
+            for admission and valuation details.</>
           </p>
         </section>
 
         <section id="appkit" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">AppKit</h2>
           <p className="mb-4 type-doc-body">
-            AppKit lets DEXs, wallets, and portfolio apps embed Avana credit inside their existing
-            user flows instead of sending users to a separate lending app.
-          </p>
-          <p className="type-doc-body">
-            See the{" "}
+            <>AppKit lets DEXs, wallets, and portfolio apps embed Avana credit inside their existing
+            user flows instead of sending users to a separate lending app.</>{" "}<>See the{" "}
             <Link href="/developers/integrations/appkit" className="text-[#01AACF] hover:underline">
               AppKit guide
             </Link>{" "}
-            for partner controls, handoff patterns, and launch notes.
+            for partner controls, handoff patterns, and launch notes.</>
           </p>
         </section>
 
         <section id="dex-families" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">DEX Families</h2>
-          <div className="space-y-4">
-            {dexFamilies.map((family) => (
-              <div key={family.title} className="type-doc-panel">
-                <h3 className="mb-2 type-doc-subsection-title">{family.title}</h3>
-                <p className="type-doc-body">{family.body}</p>
-              </div>
+          <p className="type-doc-body">
+            {dexFamilies.map((family, index) => (
+              <Fragment key={family.title}>
+                {index > 0 ? " " : null}{family.body}
+              </Fragment>
             ))}
-          </div>
+          </p>
         </section>
 
         <section id="enablement-status" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Enablement Status</h2>
           <p className="mb-4 type-doc-body">
-            Whether a DEX is enabled on a given network is a deployment decision. A DEX family can
-            be supportable in theory but still disabled on a specific deployment until oracle
-            coverage, liquidation routing, and risk parameters are ready.
-          </p>
-          <p className="type-doc-body">
-            Check the Avana interface, release notes, or contract registry for what is live on your
-            target deployment.
+            <>DEX enablement is specific to a network and deployment. Support for a DEX family does not establish that its pools are enabled there: oracle coverage, liquidation routes, and risk parameters must also be configured.</>{" "}<>Check the Avana interface, release notes, or contract registry for what is live on your
+            target deployment.</>
           </p>
         </section>
 
