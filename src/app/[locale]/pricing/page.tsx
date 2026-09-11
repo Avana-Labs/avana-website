@@ -81,8 +81,8 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
 
   return (
     <main className="bg-background">
-      <section className="px-4 pb-16 pt-16 sm:px-6 md:pb-24 md:pt-20 lg:px-8 lg:pt-24">
-        <div className="mx-auto max-w-[92rem]">
+      <section className="pb-16 pt-16 md:pb-24 md:pt-20 lg:pt-24">
+        <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <h1 className="text-[clamp(3.25rem,7vw,5.75rem)] font-normal leading-[0.95] tracking-[-0.065em] text-foreground">
               {t("title")}

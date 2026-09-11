@@ -177,7 +177,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <section className="bg-white site-section-gap">
         <div className="site-content-shell">
-          <div className="mx-auto w-full max-w-[90rem]">
+          <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
                 <SectionEyebrow tone="violet">How it works</SectionEyebrow>
@@ -209,7 +209,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <section id="avana-hubs" className="bg-white site-section-gap">
         <div className="site-content-shell">
-          <div className="mx-auto w-full max-w-[90rem]">
+          <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
                 <SectionEyebrow tone="blue">Avana Hubs Strategy</SectionEyebrow>

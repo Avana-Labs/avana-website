@@ -27,7 +27,7 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
   return (
     <section id="supported-dexes" className="site-section-gap">
       <div className="site-content-shell">
-        <div className="mx-auto w-full max-w-[90rem]">
+        <div className="mx-auto w-full">
           <div className="mb-8 flex max-w-[600px] flex-col gap-2">
             <SectionEyebrow tone="emerald">Supported DEXs</SectionEyebrow>
             <SectionTitle>Every supported liquidity venue</SectionTitle>

@@ -1078,6 +1078,15 @@
   }
 }
 
+/* Universal marketing content width.
+   One place controls how wide page content runs: cap every shared content
+   wrapper to 76rem so all marketing pages share the borrow page's column.
+   Scoped to #main-content (footer sits outside it) and excludes developer
+   docs, which keep their own shell via [data-developer-doc-shell]. */
+body:not(:has([data-developer-doc-shell])) #main-content :is(.site-content-shell, .site-content-width) {
+  max-width: 76rem;
+}
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
