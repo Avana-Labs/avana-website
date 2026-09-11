@@ -11,9 +11,26 @@ const iconClasses = [
   "bg-[#e5e5e5] text-[#4e4e4e]",
 ] as const
 
+const dexLinks: Record<string, string> = {
+  U2: "https://uniswap.org",
+  U3: "https://uniswap.org",
+  U4: "https://uniswap.org",
+  CRV: "https://curve.fi",
+  AE: "https://aerodrome.finance",
+  BAL: "https://balancer.fi",
+  BAL2: "https://balancer.fi",
+  VL: "https://velodrome.finance",
+  BNT: "https://bancor.network",
+  CAKE: "https://pancakeswap.finance",
+  CML: "https://camelot.exchange",
+  SUSHI: "https://sushi.com",
+  iZi: "https://izumi.finance",
+  MAV: "https://www.mav.xyz",
+}
+
 export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapter[] }) {
   return (
-    <section id="supported-dexes" className="bg-[#f8f8f6] site-section-gap">
+    <section id="supported-dexes" className="site-section-gap">
       <div className="site-content-shell">
         <div className="mx-auto w-full max-w-[90rem]">
           <div className="mb-8 flex max-w-[600px] flex-col gap-2">
@@ -21,24 +38,16 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
             <SectionTitle>Every supported liquidity venue</SectionTitle>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-16">
-            <aside className="hidden lg:block">
-              <p className="text-[1.15rem] font-medium tracking-[-0.02em] text-[#3d3e39]">Chains</p>
-              <ul className="mt-8 flex flex-col gap-3 text-[1.05rem] text-[#777871]">
-                {["Ethereum", "Base", "Arbitrum", "Optimism", "BNB Chain", "Polygon", "zkSync Era", "Linea"].map(
-                  (chain) => (
-                    <li key={chain}>{chain}</li>
-                  ),
-                )}
-              </ul>
-            </aside>
-
+          <div>
             <div className="min-w-0">
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {protocols.map((protocol, index) => (
-                  <article
+                  <a
                     key={protocol.name}
-                    className="group flex min-h-[5rem] items-center gap-3 rounded-lg bg-white px-3 py-2.5 transition-colors hover:bg-[#f1f1ef] sm:gap-4 sm:px-4"
+                    href={dexLinks[protocol.shortName]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex min-h-[5rem] items-center gap-3 rounded-lg bg-[#fafafa] px-3 py-2.5 transition-colors hover:bg-[#f1f1ef] sm:gap-4 sm:px-4"
                   >
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[0.55rem] font-semibold tracking-[-0.02em] shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${iconClasses[index % iconClasses.length]}`}>
                       {protocol.shortName}
@@ -56,7 +65,7 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />
-                  </article>
+                  </a>
                 ))}
               </div>
             </div>
