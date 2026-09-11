@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Kasuwannin Ƙarni dabam",
-      "Kowane kasuwar Spoke yana ware kimanta LP na musamman, sarrafa haɗari, da ka'idar fitar da kuɗi, don haka matsin lamba a wuri guda ko tsarin pooln ba zai iya bazuwa a sauran tsarin ba ko ya lalata matsayi marasa alaƙa ba.",
-      "Farashin tushen magin biyu",
-      "Abubuwan da Chainlink ke bayarwa da farashin AMM TWAP dole ne su yi daidai cikin iyaka kafin a tabbatar da duk wani aikin bashi, wanda ke rage hadarin damfara da rance na flash, canjin farashi na dan lokaci, ko karanta oracle mai guba guda.",
-      "Koyaushe ana bayar da jinginar fiye da kima",
-      "Kowane bashi yana ci gaba da kasancewa da ƙarancin haɗari ta hanyar iyakokin aro na hankali, iyakokin darajar bashi da ake daidaitawa, da kuma sa ido na lafiya kai tsaye wanda ke bayyana haɗari kafin ya samu damar ƙaruwa.",
-      "Sasantawa mai kare mai aro",
-      "Kwashe kudi an tsara shi don shawo kan matsayi tare da aiwatarwa mai sarrafawa: ana amfani da kudade da ba a karɓa ba da farko, ana rage babban jari kawai kamar yadda ake bukata, kuma duk wani ƙimar karin kudi ana mayar da shi ga mai aro.",
+      "Arzikin da kake sarrafawa",
+      "Saita yadda kowanne zagaye ke yin aiki cikin azanci kuma tsaya inda haɗarin har yanzu yake jin daidai. Kowanne kasuwar da aka ninka yana haɓaka zuwa abin da jinginar LP, farashin orak, da hanyar lalacewa za su iya tallafawa cikin aminci, don haka wani matsayi ba zai iya rushewa fiye da iyakokinsa ba.",
+      "Rayuwa mai lafiya a kowane zagaye",
+      "Kowane kewayawa da aka ƙara yana sabunta matsayin lafiyar ku, ikon aron ku, da iyakar sayarwa a cikin ainihin lokaci, don haka za ku ga daidai yadda ƙayyadadden amfani da aron ku ke barin tsari kafin matsayin ya kusanci gefen matsayi.",
+      "Sakin iko",
+      "Idan matsayin da aka ɗora da bashi ya kusanci iyakarsa, Avana yana warware madaukai a matakai, yana biyan bashi da rage haɗari a hankali maimakon rufe komai a lokaci guda. Ana amfani da kuɗaɗen da ba a karɓa ba da farko, sannan duk wani abin da ya rage ana mayar maka.",
+      "Iyakan leverage na kowane kasuwa",
+      "An ba da damar amfani da bashi ne kawai ga LP iri tare da ƙimar daraja mai dogaro, ƙayyadaddun iyakoki na haɗari, da gwaje-gwajen sharuddan sakin bashi. Kasuwanni Spoke masu zaman kansu suna kiyaye damuwa a cikin wani rukunin da aka ɗauke da bashi daga yaduwa zuwa matsayi marasa alaƙa.",
       "Lafiya ta hanyar tsari",
-      "Hadari da aka tsara wurin matsayin ruwa",
+      "Amfani da leverage tare da sarrafa haɗari da aka gina a ciki",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

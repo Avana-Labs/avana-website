@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Soko la Vipeo Vilivyojengwa Peke Yake",
-      "Kila soko la Spoke linaweka pandeo la LP maalum la tathmini, udhibiti wa hatari, na mantiki ya uuzaji, kwa hivyo msongo katika eneo moja au muundo wa mfuko haufikii sehemu zingine za itifaki au kuathiri nafasi zisizohusiana.",
-      "Uchambuzi wa bei wa orake mbili",
-      "Vyakula vya Chainlink na bei ya AMM TWAP lazima vikubaliane ndani ya uvumilishi kabla ya hatua yoyote ya mkopo kuthibitishwa, kupunguza uwezekano wa udanganyifu wa mkopo wa muda mfupi, upotoshaji wa bei wa muda mfupi, au usomaji mmoja hatari wa oracle.",
-      "Daima yenye dhamana zaidi",
-      "Kila mkopo unaendelea kuwa na dhamana zaidi ya ya kawaida kupitia mipaka thabiti ya kukopa, viwango vinavyobadilika vya mkopo-kwa-thamani, na ufuatiliaji wa afya ya moja kwa moja unaoonyesha hatari kabla haijapata nafasi ya kuzidishwa.",
-      "Utoaji wa fedha uliolindwa kwa mkopaji",
-      "Utozaji kimsingi umeundwa ili kufungua nafasi kwa utekelezaji ulio na udhibiti: ada zisizokusanywa zinatumika kwanza, mwelekeo mkuu unaweza kufunguliwa tu inapohitajika, na thamani yoyote iliyobaki inarudishwa kwa mkopaji.",
+      "Tumia nguvu unayoidhibiti",
+      "Weka jinsi kila mzunguko unavyokimbia kwa nguvu na simamisha pale ambapo hatari bado inahisi sawa. Kila soko linalozidisha jumla ya thamani linalingana na rasilimali zake LP kama dhamana, bei za oracle, na njia ya kufutwa zinaweza kuunga mkono kwa usalama, hivyo nafasi haiwezi kukatishwa zaidi ya mipaka yake.",
+      "Ikiwa na afya hai katika kila mzunguko",
+      "Kila mzunguko unaoongezwa unasasisha kipengele chako cha afya, nguvu ya kukopa, na kiwango cha uuzaji wa mali kwa wakati halisi, hivyo unaweza kuona hasa ni kiasi gani cha hifadhi kikiacha mpangilio wa leverage kabla ya nafasi kuelekea mpaka.",
+      "Kupumzika kwa udhibiti",
+      "Iwapo nafasi ya kutumia mkopo inakaribia kikomo chake, Avana inafungua mizunguko hatua kwa hatua, ikilipa deni na kupunguza hatari taratibu badala ya kufunga kila kitu mara moja. Ada ambazo hazijakusanywa zinatolewa kwanza, na ziada yoyote inarudishwa kwako.",
+      "Vizingiti vya mkopo kwa kila soko",
+      "Kiwango cha mkopo kinawezeshwa tu kwa aina LP zenye thamani thabiti, vigezo vya hatari vilivyowekwa, na dhana zilizojaribiwa za kuvunja mikopo. Soko lililotengwa Spoke linaweka msongo katika bwawa moja la mkopo bila kueneza kwenye nafasi zisizohusiana.",
       "Usalama kwa kubuni",
-      "Hatari iliyoundwa kuzunguka nafasi za uraiani",
+      "Tumia mikopo na udhibiti wa hatari umejumuishwa",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

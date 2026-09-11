@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Izolowane rynki Spoke",
-      "Każdy rynek Spoke izoluje wycenę właściwą dla LP, kontrole ryzyka i logikę likwidacji, więc stres w jednym venue lub projekcie poola nie może rozlać się na resztę protokołu ani zagrozić niezwiązanym pozycjom.",
-      "Wycena dual-oracle",
-      "Feedy Chainlink i wycena AMM TWAP muszą się zgadzać w tolerancji, zanim potwierdzona zostanie akcja pożyczki — to ogranicza ekspozycję na flash-loan manipulation, przejściowe zniekształcenie ceny lub jeden toksyczny odczyt oracle.",
-      "Zawsze nadzabezpieczone",
-      "Każda pożyczka pozostaje nadzabezpieczona dzięki konserwatywnym limitom pożyczek, adaptacyjnym progom loan-to-value i monitoringowi zdrowia na żywo, który pokazuje ryzyko, zanim zdąży narosnąć.",
-      "Likwidacja chroniąca pożyczkobiorcę",
-      "Likwidacja jest zaprojektowana pod kontrolowane execution: najpierw nieodebrane opłaty, principal tylko w potrzebnym zakresie, a nadwyżka wraca do pożyczkobiorcy.",
+      "Dźwignia, którą kontrolujesz",
+      "Ustaw, jak agresywnie działa każda pętla i zatrzymaj się tam, gdzie ryzyko nadal wydaje się odpowiednie. Każdy pomnożony kapitał rynkowy zwiększa dźwignię w stosunku do tego, co jego LP zabezpieczenie, wycena przez orakla i ścieżka likwidacji mogą bezpiecznie udźwignąć, więc pozycja nie może przekroczyć swoich granic.",
+      "Żyj zdrowo na każdej pętli",
+      "Każda dodana pętla aktualizuje Twój współczynnik zdrowia, moc pożyczkową i próg likwidacyjny w czasie rzeczywistym, dzięki czemu możesz dokładnie zobaczyć, ile bufora pozostawia ustawienie dźwigni, zanim pozycja zacznie zbliżać się do granicy.",
+      "Kontrolowane rozwinięcie",
+      "Jeśli pozycja lewarowana zbliża się do swojego limitu, Avana rozwiązuje pętle w krokach, spłacając długi i stopniowo zmniejszając ekspozycję zamiast zamykać wszystko na raz. Niezebrane opłaty są naliczane w pierwszej kolejności, a wszelka nadwyżka jest zwracana tobie.",
+      "Ograniczenia dźwigni dla poszczególnych rynków",
+      "Dźwignia finansowa jest włączona tylko dla LP typów o wiarygodnej wycenie, z określonymi parametrami ryzyka i przetestowanymi założeniami wycofania. Izolowane Spoke rynki zapobiegają przenoszeniu się stresu z jednej puli z dźwignią na niezwiązane pozycje.",
       "Bezpieczeństwo z założenia",
-      "Ryzyko zaprojektowane wokół pozycji płynności",
+      "Dźwignia z wbudowanymi kontrolami ryzyka",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

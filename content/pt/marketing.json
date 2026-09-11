@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Mercados Spoke isolados",
-      "Cada mercado Spoke isola a valuation específica de LP, os controles de risco e a lógica de liquidação, para que o estresse em um venue ou design de pool não se propague pelo restante do protocolo nem comprometa posições não relacionadas.",
-      "Precificação com duplo oráculo",
-      "Os feeds da Chainlink e o pricing TWAP do AMM precisam concordar dentro da tolerância antes de qualquer ação de empréstimo ser confirmada, reduzindo a exposição a manipulação flash-loan, distorção transitória de preços ou uma leitura tóxica de um único oráculo.",
-      "Sempre sobregarantido",
-      "Todo empréstimo permanece sobregarantido por limites conservadores de empréstimo, limiares LTV adaptativos e monitoramento de saúde ao vivo que evidencia o risco antes que ele tenha espaço para se acumular.",
-      "Liquidação protetora do tomador",
-      "A liquidação é desenhada para desmontar posições com execução controlada: taxas não cobradas são aplicadas primeiro, o principal só é desmontado conforme necessário e qualquer valor excedente volta ao tomador.",
+      "Alavancagem que você controla",
+      "Defina quão agressivo cada loop opera e pare onde o risco ainda parecer adequado. Cada multiplicação de capital de mercado alavanca o que seu LP colateral, precificação por oráculos e rota de liquidação podem suportar com segurança, para que uma posição não ultrapasse seus limites.",
+      "Saúde ao vivo em cada volta",
+      "Cada loop adicionado atualiza seu fator de saúde, poder de empréstimo e limite de liquidação em tempo real, para que você possa ver exatamente quanto de margem uma configuração de alavancagem deixa antes que a posição se aproxime do limite.",
+      "Desenrolar controlado",
+      "Se uma posição alavancada se aproxima do seu limite, Avana desfaz os ciclos em etapas, pagando a dívida e reduzindo a exposição gradualmente em vez de fechar tudo de uma vez. Taxas não cobradas são aplicadas primeiro, e qualquer excedente é devolvido a você.",
+      "Limites de alavancagem por mercado",
+      "A alavancagem é ativada apenas para LP tipos com avaliação confiável, parâmetros de risco definidos e suposições de liquidação testadas. Mercados Spoke isolados mantêm o estresse em um único pool alavancado de se espalhar para posições não relacionadas.",
       "Segurança by design",
-      "Risco desenhado em torno de posições de liquidez",
+      "Alavancagem com controles de risco incorporados",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

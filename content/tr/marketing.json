@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "İzole Spoke piyasaları",
-      "Her Spoke piyasası, LP-özgü değerleme, risk kontrolleri ve tasfiye mantığını izole eder, bu nedenle bir piyasadaki veya havuz tasarımındaki stres, protokolün geri kalanına yayılmaz veya ilgisiz pozisyonları tehlikeye atmaz.",
-      "Çift oracle fiyatlama",
-      "Chainlink beslemeleri ve AMM TWAP fiyatlaması, herhangi bir kredi işlemi onaylanmadan önce hoşgörü sınırları içinde uyuşmalıdır; bu, flash-loan manipülasyonuna, geçici fiyat sapmasına veya tek bir toksik oracle okumaya maruziyeti azaltır.",
-      "Her zaman aşırı teminatlı",
-      "Her kredi, muhafazakar borçlanma limitleri, uyarlanabilir kredi-değer oranı eşikleri ve riskin artmadan önce ortaya çıkmasını sağlayan canlı sağlık izleme ile aşırı teminatlı olarak kalır.",
-      "Borçluyu koruyan likidasyon",
-      "Tasfiye, pozisyonları kontrollü bir şekilde çözmek için tasarlanmıştır: tahsil edilmemiş ücretler öncelikle uygulanır, ana para yalnızca gerektiği kadar çözülür ve herhangi bir fazla değer borçluya iade edilir.",
+      "Kontrol ettiğiniz kaldıraç",
+      "Her döngünün ne kadar agresif çalışacağını belirleyin ve risk hala uygun hissettirdiği yerde durun. Her çarpan piyasa değerini, teminatı, oracle fiyatlamasını ve tasfiye yolunu güvenle destekleyebileceği şekilde kaldırır, böylece bir pozisyon sınırlarının ötesinde çökemez.",
+      "Her döngüde canlı sağlık",
+      "Eklenen her döngü, sağlık faktörünüzü, borçlanma gücünüzü ve tasfiye eşiğinizi gerçek zamanlı olarak günceller, böylece bir kaldıraç ayarının pozisyon kenara doğru kaymadan önce ne kadar tampon bıraktığını tam olarak görebilirsiniz.",
+      "Kontrollü gevşeme",
+      "Eğer bir kaldıraçlı pozisyon sınırına yaklaşırsa, Avana işlemleri adım adım çözer, borcu öder ve her şeyi bir kerede kapatmak yerine pozisyonu kademeli olarak azaltır. Toplanmamış ücretler önce uygulanır ve fazla olan kısmı size geri verilir.",
+      "Pazar başına kaldıraç sınırları",
+      "Kaldıraç yalnızca güvenilir değerleme, tanımlanmış risk parametreleri ve test edilmiş tasfiye varsayımlarına sahip LP tür için etkinleştirilir. İzole Spoke pazar, bir kaldıraç havuzundaki baskının ilgisiz pozisyonlara yayılmasını önler.",
       "Tasarımla güvenlik",
-      "Likidite pozisyonlarına göre tasarlanmış risk",
+      "Risk kontrolleri içinde yer alan kaldıraç",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

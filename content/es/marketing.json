@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Mercados Spoke aislados",
-      "Cada mercado Spoke aísla la valoración específica de LP, los controles de riesgo y la lógica de liquidación, de modo que el estrés en un venue o diseño de pool no pueda propagarse al resto del protocolo ni comprometer posiciones no relacionadas.",
-      "Precios con doble oráculo",
-      "Los feeds de Chainlink y el pricing TWAP del AMM deben coincidir dentro de la tolerancia antes de confirmar cualquier acción de préstamo, reduciendo la exposición a manipulación flash-loan, distorsión transitoria de precios o una lectura tóxica de un solo oráculo.",
-      "Siempre sobregarantizado",
-      "Cada préstamo permanece sobregarantizado mediante límites de préstamo conservadores, umbrales LTV adaptativos y monitoreo de salud en vivo que muestra el riesgo antes de que tenga espacio para acumularse.",
-      "Liquidación protectora del prestatario",
-      "La liquidación está diseñada para desarmar posiciones con ejecución controlada: primero se aplican las comisiones no cobradas, el principal solo se desarma según sea necesario y cualquier valor sobrante se devuelve al prestatario.",
+      "Palanca que controlas",
+      "Establece qué tan agresivo se ejecuta cada ciclo y detente donde el riesgo todavía se sienta adecuado. Cada multiplicación de capitalizaciones de mercado apalanca lo que su LP colateral, precios del oráculo y ruta de liquidación pueden soportar de manera segura, por lo que una posición no puede ceder más allá de sus límites.",
+      "Vive salud en cada vuelta",
+      "Cada bucle añadido actualiza tu factor de salud, poder de endeudamiento y umbral de liquidación en tiempo real, para que puedas ver exactamente cuánto margen deja una configuración de apalancamiento antes de que la posición se acerque al límite.",
+      "Desenrollado controlado",
+      "Si una posición apalancada se acerca a su límite, Avana despeja los bucles en pasos, pagando la deuda y reduciendo la exposición gradualmente en lugar de cerrar todo de una vez. Las tarifas no cobradas se aplican primero, y cualquier excedente se te devuelve.",
+      "Límites de apalancamiento por mercado",
+      "El apalancamiento solo está habilitado para LP tipos con valoración confiable, parámetros de riesgo definidos y supuestos de desapalancamiento probados. Los Spoke mercados aislados evitan que el estrés en una piscina apalancada se propague a posiciones no relacionadas.",
       "Seguridad por diseño",
-      "Riesgo diseñado en torno a posiciones de liquidez",
+      "Apalancamiento con controles de riesgo integrados",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

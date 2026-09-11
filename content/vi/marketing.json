@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Thị trường đầu mối cô lập",
-      "Mỗi thị trường Spoke cô lập các đánh giá, kiểm soát rủi ro và logic thanh lý cụ thể của LP, vì vậy căng thẳng ở một kênh hoặc thiết kế pool không thể lan truyền sang các phần còn lại của giao thức hoặc làm ảnh hưởng đến các vị thế không liên quan.",
-      "Định giá hai oracle",
-      "Dữ liệu từ Chainlink và giá trung bình thời gian theo AMM phải thống nhất trong giới hạn cho phép trước khi bất kỳ hành động cho vay nào được xác nhận, giảm rủi ro bị thao túng bởi flash-loan, biến động giá tạm thời, hoặc một lần đọc oracle độc hại.",
-      "Luôn luôn được bảo đảm vượt mức",
-      "Mỗi khoản vay vẫn được đảm bảo vượt mức thông qua các giới hạn vay thận trọng, ngưỡng tỷ lệ vay trên giá trị thích ứng, và giám sát tình trạng trực tiếp giúp phát hiện rủi ro trước khi nó có cơ hội tích lũy.",
-      "Thanh lý bảo vệ người vay",
-      "Thanh lý được thiết kế để giải quyết các vị thế với việc thực hiện được kiểm soát: các khoản phí chưa thu được áp dụng trước, vốn gốc chỉ được giải quyết khi cần thiết, và bất kỳ giá trị thặng dư nào sẽ được trả lại cho người vay.",
+      "Đòn bẩy bạn kiểm soát",
+      "Đặt mức độ chạy của mỗi vòng lặp và dừng lại khi rủi ro vẫn cảm thấy phù hợp. Mỗi thị trường nhân vốn hóa thị trường lên dựa trên mức đòn bẩy mà tài sản thế chấp LP, giá oracle và đường thanh lý có thể hỗ trợ an toàn, vì vậy một vị thế không thể vượt quá giới hạn của nó.",
+      "Sống khỏe trên mọi vòng lặp",
+      "Mỗi vòng lặp thêm vào sẽ cập nhật ngay yếu tố sức khỏe, khả năng vay và ngưỡng thanh lý của bạn theo thời gian thực, vì vậy bạn có thể thấy chính xác bao nhiêu đệm mà cài đặt đòn bẩy để lại trước khi vị thế tiến gần đến giới hạn.",
+      "Tháo gỡ có kiểm soát",
+      "Nếu một vị thế sử dụng đòn bẩy tiến gần đến giới hạn của nó, Avana sẽ mở vòng lặp theo từng bước, trả nợ và giảm rủi ro từ từ thay vì đóng tất cả cùng một lúc. Các khoản phí chưa thu được sẽ được áp dụng trước, và bất kỳ phần thặng dư nào sẽ được trả lại cho bạn.",
+      "Giới hạn đòn bẩy theo từng thị trường",
+      "Đòn bẩy chỉ được bật cho LP loại có định giá đáng tin cậy, các tham số rủi ro xác định và các giả định giải phóng đã được kiểm tra. Spoke thị trường riêng lẻ giữ cho áp lực trong một nhóm đòn bẩy không lan sang các vị trí không liên quan.",
       "An toàn theo thiết kế",
-      "Rủi ro được thiết kế xung quanh các vị thế thanh khoản",
+      "Đòn bẩy với kiểm soát rủi ro tích hợp sẵn",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

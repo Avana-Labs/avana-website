@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Geïsoleerde Spoke-markten",
-      "Elke Spoke-markt isoleert LP-specifieke waardering, risicocontroles en liquidatielogica, zodat stress in één venue of poolontwerp niet naar de rest van het protocol kan doorslaan of niet-verwante posities kan compromitteren.",
-      "Dual-oracle-pricing",
-      "Chainlink-feeds en AMM-TWAP-pricing moeten binnen tolerantie overeenkomen voordat een loan action wordt bevestigd — dat verlaagt exposure aan flash-loan-manipulatie, tijdelijke prijsvervorming of één toxische oracle-read.",
-      "Altijd overcollateralized",
-      "Elke lening blijft overcollateralized via conservatieve leenlimieten, adaptieve loan-to-value-drempels en live health-monitoring die risico zichtbaar maakt voordat het kan oplopen.",
-      "Voor de lener beschermende liquidatie",
-      "Liquidatie is ontworpen voor gecontroleerde execution: niet-geclaimde fees eerst, principal alleen voor zover nodig, en surpluswaarde terug naar de lener.",
+      "Heffing die u bedient",
+      "Stel in hoe agressief elke lus draait en stop waar het risico nog steeds juist aanvoelt. Elke vermenigvuldigende marktkapitalisatie past de hefboom aan op wat de LP onderpand, orakelprijzen en liquidatieroute veilig kunnen ondersteunen, zodat een positie niet voorbij zijn grenzen kan instorten.",
+      "Leef gezond bij elke lus",
+      "Elke toegevoegde lus werkt je gezondheidsfactor, leenvermogen en liquidatiedrempel in realtime bij, zodat je precies kunt zien hoeveel buffer een hefboominstelling laat voordat de positie naar de rand afdrijft.",
+      "Geleidelijke ontspanning",
+      "Als een hefboompositie zijn limiet nadert, lost Avana lussen stapsgewijs op, waarbij schulden worden afgelost en de blootstelling geleidelijk wordt verminderd in plaats van alles in één keer te sluiten. Niet geïnde vergoedingen worden eerst toegepast en eventuele overschotten worden aan u teruggegeven.",
+      "Per-marktleverage limieten",
+      " Hefboomwerking is alleen ingeschakeld voor LP typen met betrouwbare waardering, gedefinieerde risicoparameters en geteste afwikkelingsaannames. Geïsoleerde Spoke markten voorkomen dat stress in één hefboompool doorsijpelt naar niet-gerelateerde posities.",
       "Veiligheid door ontwerp",
-      "Risico ontworpen rond liquiditeitsposities",
+      "Gebruik van hefboom met ingebouwde risicobeheersing",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

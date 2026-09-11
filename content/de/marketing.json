@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Isolierte Spoke-Märkte",
-      "Jeder Spoke-Markt isoliert LP-spezifische Bewertung, Risikokontrollen und Liquidationslogik — damit Stress in einer Venue oder einem Pool-Design nicht auf den Rest des Protokolls übergreift oder unverwandte Positionen gefährdet.",
-      "Dual-Oracle-Pricing",
-      "Chainlink-Feeds und AMM-TWAP-Pricing müssen innerhalb der Toleranz übereinstimmen, bevor eine Loan Action bestätigt wird — das reduziert Exposure gegenüber Flash-Loan-Manipulation, transienter Preisverzerrung oder einem einzelnen toxischen Oracle-Read.",
-      "Immer überbesichert",
-      "Jeder Kredit bleibt überbesichert durch konservative Ausleihlimits, adaptive Loan-to-Value-Schwellen und Live-Health-Monitoring, das Risiko sichtbar macht, bevor es sich aufschaukeln kann.",
-      "Kreditnehmerfreundliche Liquidation",
-      "Liquidation ist für kontrollierte Execution ausgelegt: nicht beanspruchte Fees zuerst, Principal nur so weit nötig, und Überschusswert zurück an den Kreditnehmer.",
+      "Hebel, den Sie kontrollieren",
+      "Stellen Sie ein, wie aggressiv jede Schleife läuft, und stoppen Sie, wo das Risiko noch angemessen erscheint. Jeder multipliziert die Marktkapitalisierung mit der Hebelwirkung, die durch sein LP Sicherheiten, Orakelpreise und Liquidationsweg sicher unterstützt werden kann, sodass eine Position ihre Grenzen nicht überschreiten kann.",
+      "Gesunde Lebensweise auf jeder Schleife",
+      "Jede hinzugefügte Schleife aktualisiert in Echtzeit Ihren Gesundheitsfaktor, Ihre Kreditaufnahmefähigkeit und Ihre Liquidationsschwelle, sodass Sie genau sehen können, wie viel Puffer eine Hebeleinstellung lässt, bevor die Position sich der Grenze nähert.",
+      "Kontrolliertes Abwickeln",
+      "Wenn eine gehebelte Position sich ihrem Limit nähert, Avana wickelt Schleifen schrittweise ab, indem Schulden zurückgezahlt und die Exponierung schrittweise reduziert wird, anstatt alles auf einmal zu schließen. Nicht eingezogene Gebühren werden zuerst angewendet, und ein eventueller Überschuss wird an Sie zurückgegeben.",
+      "Marktspezifische Hebelgrenzen",
+      "Hebelwirkung ist nur für LP Typen mit zuverlässiger Bewertung, definierten Risikoparametern und getesteten Auflösungsannahmen aktiviert. Isolierte Spoke Märkte verhindern, dass Stress in einem Hebelpool auf unbezügliche Positionen übergreift.",
       "Safety by Design",
-      "Risiko rund um Liquidity Positions gestaltet",
+      "Hebelwirkung mit integrierten Risikokontrollen",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

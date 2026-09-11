@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Marchés Spoke isolés",
-      "Chaque marché Spoke isole l’évaluation spécifique aux LP, les contrôles de risque et la logique de liquidation, pour qu’un stress sur un lieu ou un design de pool ne se propage pas au reste du protocole ni ne compromette des positions non liées.",
-      "Tarification à double oracle",
-      "Les flux Chainlink et la tarification TWAP AMM doivent s’accorder dans la tolérance avant qu’une action de prêt soit confirmée — ce qui réduit l’exposition à la manipulation par flash loan, aux distorsions de prix transitoires ou à une lecture d’oracle unique toxique.",
-      "Toujours surcollatéralisé",
-      "Chaque prêt reste surcollatéralisé grâce à des plafonds d’emprunt prudents, des seuils LTV adaptatifs et une surveillance de santé en direct qui fait remonter le risque avant qu’il ne s’accumule.",
-      "Liquidation protectrice pour l’emprunteur",
-      "La liquidation est conçue pour dénouer les positions avec une exécution contrôlée : frais non perçus d’abord, principal uniquement si nécessaire, et toute valeur excédentaire rendue à l’emprunteur.",
+      "Effet de levier que vous contrôlez",
+      "Définissez à quel point chaque boucle doit être agressive et arrêtez-vous lorsque le risque semble encore acceptable. Chaque capitalisation boursière multipliée tire parti de ce que sa LP garantie, le prix de l'oracle et la route de liquidation peuvent supporter en toute sécurité, de sorte qu'une position ne puisse pas dépasser ses limites.",
+      "Santé en direct à chaque boucle",
+      "Chaque boucle ajoutée met à jour votre facteur de santé, votre pouvoir d'emprunt et votre seuil de liquidation en temps réel, afin que vous puissiez voir exactement combien de marge un réglage de levier laisse avant que la position ne se rapproche de la limite.",
+      "Déroulement contrôlé",
+      "Si une position à effet de levier approche de sa limite, Avana défait les boucles par étapes, remboursant la dette et réduisant l'exposition progressivement au lieu de tout fermer d'un coup. Les frais non collectés sont appliqués en premier, et tout excédent vous est retourné.",
+      "Limites de levier par marché",
+      "L'effet de levier n'est activé que pour LP types avec une valorisation fiable, des paramètres de risque définis et des hypothèses de désengagement testées. Des Spoke marchés isolés empêchent le stress dans un pool à effet de levier de se propager à des positions non liées.",
       "Sécurité dès la conception",
-      "Une gestion des risques conçue pour les positions de liquidité",
+      "Effet de levier avec des contrôles de risque intégrés",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

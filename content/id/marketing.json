@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Pasar Spoke Terisolasi",
-      "Setiap pasar Spoke mengisolasi penilaian khusus LP, kontrol risiko, dan logika likuidasi, sehingga tekanan di satu tempat atau desain pool tidak dapat menyebar ke seluruh protokol atau membahayakan posisi yang tidak terkait.",
-      "Penetapan harga dual-orakel",
-      "Data feed Chainlink dan harga AMM TWAP harus sesuai dalam batas toleransi sebelum tindakan pinjaman apa pun dikonfirmasi, mengurangi risiko manipulasi pinjaman kilat, distorsi harga sementara, atau pembacaan oracle tunggal yang beracun.",
-      "Selalu overcollateralized",
-      "Setiap pinjaman tetap memiliki jaminan berlebih melalui batas peminjaman yang konservatif, ambang batas pinjaman-terhadap-nilai yang adaptif, dan pemantauan kesehatan secara langsung yang menampilkan risiko sebelum memiliki kesempatan untuk berkembang.",
-      " Likuidasi yang melindungi peminjam",
-      " Likuidasi dirancang untuk membongkar posisi dengan eksekusi yang terkendali: biaya yang belum terkumpul diterapkan terlebih dahulu, prinsip hanya dibongkar sesuai kebutuhan, dan setiap nilai surplus dikembalikan kepada peminjam.",
+      "Pengungkit yang Anda kendalikan",
+      "Tetapkan seberapa agresif setiap loop berjalan dan berhenti di mana risikonya masih terasa tepat. Setiap perkalian kapitalisasi pasar memanfaatkan leverage sesuai dengan LP agunan, penentuan harga oracle, dan jalur likuidasi yang dapat didukung secara aman, sehingga suatu posisi tidak dapat melampaui batasnya.",
+      "Hidup sehat di setiap putaran",
+      "Setiap loop yang ditambahkan memperbarui faktor kesehatan, daya pinjam, dan ambang likuidasi Anda secara real time, sehingga Anda dapat melihat dengan tepat seberapa banyak buffer yang ditinggalkan oleh pengaturan leverage sebelum posisi bergerak ke tepi.",
+      "Pelunasan terkendali",
+      "Jika posisi dengan leverage mendekati batasnya, Avana membongkar loop secara bertahap, melunasi utang dan mengurangi eksposur secara bertahap alih-alih menutup semuanya sekaligus. Biaya yang belum diterima diterapkan terlebih dahulu, dan kelebihan apa pun dikembalikan kepada Anda.",
+      "Batas leverage per pasar",
+      "Leverage hanya diaktifkan untuk LP jenis dengan valuasi yang dapat diandalkan, parameter risiko yang ditentukan, dan asumsi unwind yang telah diuji. Pasar Spoke yang terisolasi menjaga agar stres pada satu pool leverage tidak merembet ke posisi yang tidak terkait.",
       "Keamanan berdasarkan desain",
-      "Risiko yang dirancang di sekitar posisi likuiditas",
+      "Memanfaatkan dengan kontrol risiko yang sudah dibangun",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },

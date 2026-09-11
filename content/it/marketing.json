@@ -428,16 +428,16 @@
   },
   "homepage/HomepageTestimonialSection": {
     "strings": [
-      "Mercati Spoke isolati",
-      "Ogni mercato Spoke isola la valutazione specifica LP, i controlli di rischio e la logica di liquidazione, così lo stress in un venue o nel design di un pool non può propagarsi al resto del protocollo né compromettere posizioni non correlate.",
-      "Pricing a doppio oracolo",
-      "I feed Chainlink e il pricing TWAP dell’AMM devono concordare entro la tolleranza prima che qualsiasi azione di prestito sia confermata, riducendo l’esposizione a manipolazione flash-loan, distorsione transitoria dei prezzi o una lettura tossica di un singolo oracolo.",
-      "Sempre sovracollateralizzato",
-      "Ogni prestito resta sovracollateralizzato grazie a limiti di prestito conservativi, soglie LTV adattive e monitoraggio live della salute che fa emergere il rischio prima che abbia spazio per accumularsi.",
-      "Liquidazione protettiva per il mutuatario",
-      "La liquidazione è progettata per smontare le posizioni con esecuzione controllata: prima si applicano le fee non riscosse, il principale viene smontato solo quanto serve e ogni valore residuo torna al mutuatario.",
+      "Leva che controlli",
+      "Imposta quanto aggressivamente ciascun ciclo viene eseguito e fermati dove il rischio sembra ancora giusto. Ogni moltiplicatore di capitalizzazione di mercato leva a ciò che il suo LP collaterale, il prezzo dell'oracolo e il percorso di liquidazione possono supportare in sicurezza, quindi una posizione non può crollare oltre i suoi limiti.",
+      "Vivi la salute ad ogni giro",
+      "Ogni ciclo aggiunto aggiorna in tempo reale il tuo fattore di salute, il potere di prestito e la soglia di liquidazione, così puoi vedere esattamente quanto margine lascia un'impostazione di leva prima che la posizione si avvicini al limite.",
+      "Svolgimento controllato",
+      "Se una posizione con leva si avvicina al suo limite, Avana smonta i cicli a passi, rimborsando il debito e riducendo l'esposizione gradualmente invece di chiudere tutto in una volta. Le commissioni non incassate vengono applicate per prime, e qualsiasi surplus ti viene restituito.",
+      "Limiti di leva per mercato",
+      "La leva è abilitata solo per LP tipi con valutazione affidabile, parametri di rischio definiti e assunzioni di scarico testate. I mercati isolati Spoke impediscono che lo stress in un pool a leva si propaghi a posizioni non correlate.",
       "Sicurezza by design",
-      "Rischio progettato intorno alle posizioni di liquidità",
+      "Leva con controlli di rischio incorporati",
       "@keyframes feature-highlight-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }"
     ]
   },
