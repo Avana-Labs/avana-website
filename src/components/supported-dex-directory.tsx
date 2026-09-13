@@ -1,15 +1,20 @@
+import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 import type { ProtocolAdapter } from "@/data/protocols"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
 
-const iconClasses = [
-  "bg-[#dbe9ff] text-[#4268a8]",
-  "bg-[#f4dfd6] text-[#9b5b3e]",
-  "bg-[#e4e1fa] text-[#6757a6]",
-  "bg-[#dcefe5] text-[#3e8362]",
-  "bg-[#f2e7c5] text-[#90702d]",
-  "bg-[#e5e5e5] text-[#4e4e4e]",
-] as const
+const dexLogos: Record<string, string> = {
+  U2: "/Asset-Icons/uni.webp",
+  U3: "/Asset-Icons/uni.webp",
+  U4: "/Asset-Icons/uni.webp",
+  CRV: "/Asset-Icons/crv.webp",
+  AE: "/Asset-Icons/aero.webp",
+  BAL: "/Asset-Icons/bal.webp",
+  BAL2: "/Asset-Icons/bal.webp",
+  // Official mark: https://github.com/cowprotocol/cowswap/blob/main/libs/assets/src/images/logo-icon-cow.svg
+  COW: "/Asset-Icons/cowswap.svg",
+  SUSHI: "/Asset-Icons/sushiswap.webp",
+}
 
 const dexLinks: Record<string, string> = {
   U2: "https://uniswap.org",
@@ -36,7 +41,7 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
           <div>
             <div className="min-w-0">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {protocols.map((protocol, index) => (
+                {protocols.map((protocol) => (
                   <a
                     key={protocol.name}
                     href={dexLinks[protocol.shortName]}
@@ -44,8 +49,20 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                     rel="noopener noreferrer"
                     className="group flex min-h-[5rem] items-center gap-3 rounded-lg bg-[#fafafa] px-3 py-2.5 transition-colors hover:bg-[#f1f1ef] sm:gap-4 sm:px-4"
                   >
-                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[0.55rem] font-semibold tracking-[-0.02em] shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${iconClasses[index % iconClasses.length]}`}>
-                      {protocol.shortName}
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1 shadow-[0_1px_2px_rgba(0,0,0,0.04)]" aria-hidden="true">
+                      {dexLogos[protocol.shortName] ? (
+                        <Image
+                          src={dexLogos[protocol.shortName]}
+                          alt=""
+                          width={32}
+                          height={32}
+                          className="h-8 w-8 object-contain"
+                        />
+                      ) : (
+                        <span className="text-[0.55rem] font-semibold tracking-[-0.02em] text-[#4e4e4e]">
+                          {protocol.shortName}
+                        </span>
+                      )}
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="truncate text-[1rem] font-medium leading-tight tracking-[-0.02em] text-[#292a26] sm:text-[1.1rem]">
