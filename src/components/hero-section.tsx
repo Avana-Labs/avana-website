@@ -764,7 +764,7 @@ function HeroSectionBody(locale: AppLocale) {
           <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
             <div className="flex items-center justify-center">
               <Image
-                src="/images/Avana Coin.webp"
+                src="/images/Avana Coin Ring.png"
                 alt="Avana coin illustration"
                 width={1714}
                 height={1601}

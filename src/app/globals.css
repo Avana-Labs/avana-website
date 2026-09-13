@@ -1461,7 +1461,10 @@ body:has([data-developer-doc-shell]) footer.site-content-shell {
   height: 300px;
   flex: 1;
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+.ask-transcript::-webkit-scrollbar {
+  display: none;
 }
 .ask-welcome {
   height: 100%;
