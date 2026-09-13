@@ -32,9 +32,9 @@ const loopingBenefits: {
     icon: TrendingUp,
   },
   {
-    title: "Stretch every dollar",
+    title: "Account for borrowing costs",
     description:
-      "Use the same capital as collateral and leverage so less of your balance sits idle.",
+      "Reinvestment adds interest-bearing debt. Borrowing costs reduce the net return from the larger position.",
     icon: BadgePercent,
   },
   {
@@ -50,9 +50,9 @@ const loopingBenefits: {
     icon: Layers,
   },
   {
-    title: "Watch health live",
+    title: "Leave room for market moves",
     description:
-      "See debt, exposure, and safety together so you know when to add buffer or take profit.",
+      "Higher leverage increases sensitivity to price changes and leaves less room before liquidation.",
     icon: Activity,
   },
   {
@@ -75,8 +75,8 @@ const leverageWorkflowSteps = [
       "Deposit a supported LP position, then set your target exposure and multiplier for that market.",
   },
   {
-    title: "Manage live",
-    description: "Avana borrows, opens, and tracks the position so you can reduce, repay, or close in one place.",
+    title: "Open the loop",
+    description: "Avana handles the borrow, swap, and redeposit sequence to establish your chosen exposure.",
   },
 ] as const
 
@@ -172,9 +172,9 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
           <div className="flex flex-col gap-6">
             <div className="flex max-w-[600px] flex-col gap-2">
               <SectionIntro
-                eyebrow="How managed leverage works"
+                eyebrow="Build your first loop in three steps"
                 eyebrowTone="rose"
-                title={<span className="block lg:whitespace-nowrap">Open and manage a leverage position in three steps</span>}
+                title="Choose a market, set your leverage, and let Avana handle the borrow-and-reinvest sequence."
               />
             </div>
           </div>
@@ -205,8 +205,9 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
             <MarketingLeadHeader
-              title="Why use LP-backed leverage"
-              subtitle="Increase exposure while keeping risk visible"
+              className="max-w-none [&_.type-md-lg]:text-wrap!"
+              title="See what each reinvestment adds"
+              subtitle="Borrowed funds build a larger position, increasing both potential returns and losses."
             />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">

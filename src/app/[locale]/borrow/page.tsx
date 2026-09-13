@@ -180,8 +180,8 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="violet">How borrowing works</SectionEyebrow>
-                <SectionTitle>Turn active liquidity into borrowing power</SectionTitle>
+                <SectionEyebrow tone="violet">Start borrowing in three steps</SectionEyebrow>
+                <SectionTitle>Deposit an LP position, draw funds, and manage your loan.</SectionTitle>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <BorrowMarketCard
@@ -212,9 +212,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
-                <SectionEyebrow tone="blue">Market risk bands</SectionEyebrow>
-                <SectionTitle className="mt-2 max-w-none lg:whitespace-nowrap">
-                  Match your collateral to the right market
+                <SectionEyebrow tone="blue">Find the Hub for your collateral</SectionEyebrow>
+                <SectionTitle className="mt-2 max-w-none">
+                  Stable, correlated, and volatile LPs belong to different markets.
                 </SectionTitle>
               </div>
             </div>
@@ -244,8 +244,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
             <MarketingLeadHeader
-              title="Borrow while your LP keeps working"
-              subtitle="Pool-specific controls keep risk contained"
+              className="max-w-none [&_.type-md-lg]:text-wrap!"
+              title="Your borrowing limit follows the pool"
+              subtitle="Live valuation and dual-oracle checks account for changing LP conditions."
             />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
@@ -270,9 +271,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="blue">Supported borrowing markets</SectionEyebrow>
-                <SectionTitle className="md:whitespace-nowrap">
-                  See how each pool becomes borrowable
+                <SectionEyebrow tone="blue">Look inside a pool before committing</SectionEyebrow>
+                <SectionTitle>
+                  Review liquidity, utilization, and collateral details in the borrowing interface.
                 </SectionTitle>
               </div>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">

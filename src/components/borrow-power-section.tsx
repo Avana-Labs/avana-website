@@ -42,8 +42,9 @@ export default async function BorrowPowerSection({ locale }: { locale: AppLocale
   return withMarketingI18n(locale, ["borrow-power-section"], (
     <section className="bg-white">
       <MarketingLeadHeader
-        title="Bring multiple LP positions into one account"
-        subtitle="Borrow against combined capacity while each position keeps its own controls."
+        className="max-w-none [&_.type-md-lg]:text-wrap!"
+        title="Combine LPs to increase borrowing capacity"
+        subtitle="Each position contributes collateral while retaining its own risk controls."
       />
 
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">

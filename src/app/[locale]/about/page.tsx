@@ -102,9 +102,9 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
             </p>
             <div className="space-y-5 pt-8">
               <SectionIntro
-                eyebrow="How risk is owned"
+                eyebrow="Separate responsibilities, fewer blind spots"
                 eyebrowTone="cyan"
-                title="How Avana separates protocol, market, and collateral risk"
+                title="Four teams cover protocol engineering, operations, market modeling, and collateral review."
               />
 
               <div className="space-y-5">

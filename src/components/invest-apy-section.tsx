@@ -86,8 +86,8 @@ export default function InvestApySection() {
   const activeStage = APY_STAGES[activeStageIndex]
   const heatmap = buildHeatmap(activeStageIndex)
   const touchStartX = useRef<number | null>(null)
-  const eyebrow = useLocalizedPhrase("How supply yield is formed")
-  const sectionTitle = useLocalizedPhrase("See how LP-backed demand can lift your APY")
+  const eyebrow = useLocalizedPhrase("Understand what drives your rate")
+  const sectionTitle = useLocalizedPhrase("See how Hub utilization, Spoke premiums, and pool risk contribute to APY.")
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = event.touches[0]?.clientX ?? null

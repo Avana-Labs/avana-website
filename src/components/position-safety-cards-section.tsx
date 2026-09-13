@@ -56,9 +56,9 @@ export default async function PositionSafetyCardsSection({ locale }: { locale: A
     <section>
       <div className="space-y-3 text-left">
         <SectionIntro
-          eyebrow="When risk rises"
+          eyebrow="Know what happens if your loan becomes unsafe"
           eyebrowTone="violet"
-          title="Limit liquidation to the debt that needs coverage"
+          title="Partial liquidation aims to restore health, with any surplus collateral returned to you."
         />
       </div>
 

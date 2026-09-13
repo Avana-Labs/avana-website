@@ -160,13 +160,12 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
   return withMarketingI18n(locale, ['protocol-roadmap-section'], (
     <section className="space-y-8" id="roadmap">
       <div className="space-y-3">
-        <SectionEyebrow tone="cyan">Build sequence</SectionEyebrow>
-        <SectionTitle>How Avana is building the protocol in phases</SectionTitle>
+        <SectionEyebrow tone="cyan">Follow the path to launch</SectionEyebrow>
+        <SectionTitle>Borrow comes first, followed by Lend and Multiply.</SectionTitle>
       </div>
 
       <p className="type-body-copy">
-        Avana develops in three phases. Each phase builds on the one before it: Borrow Markets,
-        Lend Markets, then Multiply Markets.
+        Track the engineering, risk, and launch milestones within each phase.
       </p>
 
       <div className="flex flex-col gap-10">

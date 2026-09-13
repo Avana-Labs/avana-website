@@ -88,9 +88,9 @@ export default function InvestGrowthCalculatorSection() {
     <section>
       <div className="space-y-6 lg:space-y-10">
         <div className="space-y-3">
-          <SectionEyebrow tone="emerald">{t("Model your supply returns")}</SectionEyebrow>
+          <SectionEyebrow tone="emerald">{t("See what time adds to your deposit")}</SectionEyebrow>
           <SectionTitle className="max-w-none">
-            {t("Estimate how your deposit could grow over time")}
+            {t("Adjust the amount and duration to explore an illustrative return.")}
           </SectionTitle>
         </div>
 

@@ -8,9 +8,9 @@ export default async function LeverageGlanceShowcaseSection({ locale }: { locale
   return withMarketingI18n(locale, ['leverage-glance-showcase-section'], (
     <section className="bg-inherit">
       <div className="mb-6 flex max-w-[600px] flex-col gap-2 sm:mb-8 md:max-w-none">
-        <SectionEyebrow tone="rose">Leverage controls</SectionEyebrow>
+        <SectionEyebrow tone="rose">Keep debt and exposure in view</SectionEyebrow>
         <SectionTitle>
-          Open, monitor, and unwind a loop in one place
+          Monitor position health as prices and borrowing costs change.
         </SectionTitle>
       </div>
 

@@ -8,10 +8,10 @@ import { SectionEyebrow, SectionTitle } from "@/components/shared"
 const BRAND_KIT_URL = "/avana-brand-kit.zip"
 
 const brandSections = {
-  logo: { eyebrow: "Wordmark and icon system", title: "Choose the right Avana mark" },
-  typography: { eyebrow: "Type system", title: "Use typography to keep Avana clear" },
-  color: { eyebrow: "Color system", title: "Use Avana colors consistently" },
-  guidelines: { eyebrow: "Mark usage", title: "Protect the shape and spacing of the Avana mark" },
+  logo: { eyebrow: "Choose a mark for your layout", title: "Use the full wordmark or standalone icon in an approved colorway." },
+  typography: { eyebrow: "Set the tone with type", title: "Diatype is primary; use Outfit where Diatype is unavailable." },
+  color: { eyebrow: "Build with the core palette", title: "Pair white and ink with Avana cyan for emphasis." },
+  guidelines: { eyebrow: "Keep the logo intact", title: "Give it clear space and avoid stretching, recoloring, or adding effects." },
 } as const
 
 const faqItems: InlineFaqItem[] = [
