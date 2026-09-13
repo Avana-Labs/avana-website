@@ -8,10 +8,10 @@ import { SectionEyebrow, SectionTitle } from "@/components/shared"
 const BRAND_KIT_URL = "/avana-brand-kit.zip"
 
 const brandSections = {
-  logo: { eyebrow: "Primary mark", title: "Logo" },
-  typography: { eyebrow: "Voice & rhythm", title: "Typography" },
-  color: { eyebrow: "Palette system", title: "Color" },
-  guidelines: { eyebrow: "Use it well", title: "Logo Guidelines" },
+  logo: { eyebrow: "Wordmark and icon system", title: "Choose the right Avana mark" },
+  typography: { eyebrow: "Type system", title: "Use typography to keep Avana clear" },
+  color: { eyebrow: "Color system", title: "Use Avana colors consistently" },
+  guidelines: { eyebrow: "Mark usage", title: "Protect the shape and spacing of the Avana mark" },
 } as const
 
 const faqItems: InlineFaqItem[] = [
@@ -52,7 +52,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
             <h1 className="type-index-title text-foreground">
-              Brand
+              The Avana brand system
             </h1>
             <p className="max-w-xl text-[1rem] leading-[1.55] tracking-[-0.02em] text-type-secondary md:text-[1.05rem]">
               Official Avana logos, colors, typography, and rules for using the brand clearly.

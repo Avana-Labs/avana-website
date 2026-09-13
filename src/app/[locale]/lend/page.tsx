@@ -126,7 +126,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
     <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "trade-market-showcase", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
     <main className="bg-white">
       <FeaturePageHero
-        title="Earn interest on your assets"
+        title="Supply capital to LP-backed borrowers"
         description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
         imageSrc="/images/Avana Lend Hero.png"
         imageAlt="Avana Lend product interface"
@@ -152,7 +152,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="flex flex-col gap-3">
-            <SectionIntro eyebrow="How it works" eyebrowTone="emerald" title="Lending in three steps" />
+            <SectionIntro eyebrow="How supply works" eyebrowTone="emerald" title="Supply capital and start earning in three steps" />
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3">
@@ -191,9 +191,9 @@ export default async function LendPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mb-8 max-w-[600px] space-y-3 md:mb-10">
             <SectionIntro
-              eyebrow="Why supply"
+              eyebrow="Why supply to Avana markets"
               eyebrowTone="emerald"
-              title="Clear rates, flexible capital, one place to manage it"
+              title="Track yield, utilization, and liquidity in one place"
             />
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

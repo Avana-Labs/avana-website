@@ -160,8 +160,8 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
   return withMarketingI18n(locale, ['protocol-roadmap-section'], (
     <section className="space-y-8" id="roadmap">
       <div className="space-y-3">
-        <SectionEyebrow tone="cyan">What comes next</SectionEyebrow>
-        <SectionTitle>Roadmap</SectionTitle>
+        <SectionEyebrow tone="cyan">Build sequence</SectionEyebrow>
+        <SectionTitle>How Avana is building the protocol in phases</SectionTitle>
       </div>
 
       <p className="type-body-copy">

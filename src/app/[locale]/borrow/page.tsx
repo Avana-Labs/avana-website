@@ -180,25 +180,25 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="violet">How it works</SectionEyebrow>
-                <SectionTitle>Borrowing in three steps</SectionTitle>
+                <SectionEyebrow tone="violet">How borrowing works</SectionEyebrow>
+                <SectionTitle>Turn active liquidity into borrowing power</SectionTitle>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <BorrowMarketCard
                   number="1"
-                  title="Deposit LP"
+                  title="Deposit your LP as collateral"
                   description="Choose a supported LP position and deposit it as collateral while your liquidity stays active."
                 />
 
                 <BorrowMarketCard
                   number="2"
-                  title="Draw liquidity"
+                  title="Borrow against its risk-adjusted value"
                   description="Borrow against the risk-adjusted value of the position and receive funds straight in your wallet."
                 />
 
                 <BorrowMarketCard
                   number="3"
-                  title="Manage health"
+                  title="Manage debt before risk rises"
                   description="Repay, add collateral, or reduce debt before the position drifts toward the liquidation threshold."
                 />
               </div>
@@ -212,9 +212,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
-                <SectionEyebrow tone="blue">Avana Hubs Strategy</SectionEyebrow>
+                <SectionEyebrow tone="blue">Market risk bands</SectionEyebrow>
                 <SectionTitle className="mt-2 max-w-none lg:whitespace-nowrap">
-                  Choose the market type for your collateral
+                  Match your collateral to the right market
                 </SectionTitle>
               </div>
             </div>
@@ -244,8 +244,8 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
             <MarketingLeadHeader
-              title="Borrow with Confidence"
-              subtitle="Protected at the pool level"
+              title="Borrow while your LP keeps working"
+              subtitle="Pool-specific controls keep risk contained"
             />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
@@ -270,9 +270,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="blue">Liquidity pools</SectionEyebrow>
+                <SectionEyebrow tone="blue">Supported borrowing markets</SectionEyebrow>
                 <SectionTitle className="md:whitespace-nowrap">
-                  Every Pool details, fully explained
+                  See how each pool becomes borrowable
                 </SectionTitle>
               </div>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">

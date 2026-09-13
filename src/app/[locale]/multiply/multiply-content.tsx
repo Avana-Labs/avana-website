@@ -140,9 +140,9 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
       <FeaturePageHero
         title={
           <>
-            <span>Amplify yield</span>
+            <span>Turn LP collateral into</span>
             <br />
-            <span>under control</span>
+            <span>managed leverage</span>
           </>
         }
         description="Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure."
@@ -172,9 +172,9 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
           <div className="flex flex-col gap-6">
             <div className="flex max-w-[600px] flex-col gap-2">
               <SectionIntro
-                eyebrow="How it works"
+                eyebrow="How managed leverage works"
                 eyebrowTone="rose"
-                title={<span className="block lg:whitespace-nowrap">Looping in three steps</span>}
+                title={<span className="block lg:whitespace-nowrap">Open and manage a leverage position in three steps</span>}
               />
             </div>
           </div>
@@ -205,8 +205,8 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem]">
             <MarketingLeadHeader
-              title="Why looping"
-              subtitle="Multiply your yield up to 10x"
+              title="Why use LP-backed leverage"
+              subtitle="Increase exposure while keeping risk visible"
             />
 
             <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
