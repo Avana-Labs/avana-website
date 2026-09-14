@@ -302,6 +302,74 @@
       "subtitle": "파트너를 향한 표면에 대한 표시, 색상 및 안내"
     }
   },
+  "pricing": {
+    "title": "수수료",
+    "subtitleLine1": "금리와 수익률은 시장,",
+    "subtitleLine2": "포지션 및 선택한 경로에 따라 달라집니다.",
+    "interfaceRate": "인터페이스 수수료 — 15bps (0.15%)",
+    "includes": "포함:",
+    "borrow": {
+      "title": "대출",
+      "subtitle": "LP 담보 신용",
+      "value": "변동",
+      "unit": "이자",
+      "description": "대출 비용은 선택한 Aave v4 시장을 따릅니다.",
+      "items": {
+        "one": "시장이 정한 금리",
+        "two": "미상환 부채에만 발생",
+        "three": "확정 전에 표시"
+      }
+    },
+    "lend": {
+      "title": "예치",
+      "subtitle": "Hub에 자본 공급",
+      "value": "시장",
+      "unit": "APY",
+      "description": "Avana의 Lend Spoke를 통해 LP 담보 대출 수요에서 수익을 얻습니다.",
+      "items": {
+        "one": "이용률에 따라 수익률 변동",
+        "two": "지원되는 대출 시장에 공급",
+        "three": "실시간 APY를 인터페이스에 표시"
+      }
+    },
+    "multiply": {
+      "title": "배수",
+      "subtitle": "관리형 LP 익스포저",
+      "value": "변동",
+      "unit": "전략 금리",
+      "description": "지원되는 AMM 포지션을 담보로 관리형 전략을 사용해 LP 익스포저를 확대합니다.",
+      "items": {
+        "one": "지원되는 LP 포지션을 담보로 사용",
+        "two": "익스포저는 기초 풀과 연결",
+        "three": "레버리지와 종료 제어가 표시됨"
+      }
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "items": {
+        "interfaceFee": {
+          "question": "Avana 인터페이스 사용료는 얼마인가요?",
+          "answer": "공식 인터페이스 수수료는 적용되는 경우 15bps(0.15%)입니다. 서명 전에 표시되며 가스, 스왑 수수료, Aave 이자 및 청산 비용과 별도입니다."
+        },
+        "borrowRate": {
+          "question": "대출 이자는 고정인가요?",
+          "answer": "아니요. 선택한 Aave v4 시장이 대출 이자를 정하며 이용률과 시장 매개변수에 따라 변동합니다. 현재 금리는 대출 전에 표시됩니다."
+        },
+        "lendingApy": {
+          "question": "Lend APY는 어떻게 결정되나요?",
+          "answer": "수익률은 시장 이용률과 LP 담보 대출 수요에 따라 결정됩니다. 실시간 APY는 공급 전에 표시됩니다."
+        },
+        "separateCosts": {
+          "question": "Avana 수수료와 별도인 비용은 무엇인가요?",
+          "answer": "네트워크 가스, DEX 스왑 수수료, Aave 시장 이자 및 청산 실행 비용은 인터페이스 수수료와 별도입니다. 서명 전에 거래 세부정보를 확인하세요."
+        },
+        "feeChanges": {
+          "question": "수수료와 금리는 변경될 수 있나요?",
+          "answer": "예. 시장 금리는 이용률과 위험 매개변수에 따라 변동하며 인터페이스 정책도 변경될 수 있습니다. 서명 전에 항상 현재 금액을 확인하세요."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "자주 묻는 질문",
     "subtitle": "Avana, LP 담보 및 Aave v4에 대한 답변",

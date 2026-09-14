@@ -302,6 +302,74 @@
       "subtitle": "Alama, rangi, na mwongozo kwa uso unaokabiliwa na mshirika"
     }
   },
+  "pricing": {
+    "title": "Bei",
+    "subtitleLine1": "Viwango na mapato hutegemea soko,",
+    "subtitleLine2": "nafasi na njia unayochagua.",
+    "interfaceRate": "Ada ya kiolesura mapema — 15 bps (0.15%)",
+    "includes": "Inajumuisha:",
+    "borrow": {
+      "title": "Kukopa",
+      "subtitle": "Kwa mkopo unaoungwa mkono na LP",
+      "value": "Inabadilika",
+      "unit": "riba",
+      "description": "Gharama ya kukopa hufuata soko la Aave v4 lililochaguliwa.",
+      "items": {
+        "one": "Kiwango cha riba kinachowekwa na soko",
+        "two": "Hukusanywa kwenye deni lililobaki pekee",
+        "three": "Huonyeshwa kabla ya kuthibitisha"
+      }
+    },
+    "lend": {
+      "title": "Kukopesha",
+      "subtitle": "Weka mtaji kwenye Hub",
+      "value": "Cha soko",
+      "unit": "APY",
+      "description": "Pata mapato kutokana na mahitaji yanayoungwa mkono na LP kupitia Lend Spoke ya Avana.",
+      "items": {
+        "one": "Mapato hubadilika kulingana na matumizi",
+        "two": "Weka fedha kwenye masoko yanayoungwa mkono",
+        "three": "APY ya moja kwa moja huonyeshwa kwenye kiolesura"
+      }
+    },
+    "multiply": {
+      "title": "Kuzidisha",
+      "subtitle": "Kwa udhihirisho wa LP unaodhibitiwa",
+      "value": "Inabadilika",
+      "unit": "kiwango cha mkakati",
+      "description": "Ongeza udhihirisho wa LP kwa mikakati inayodhibitiwa inayoungwa mkono na nafasi za AMM.",
+      "items": {
+        "one": "Tumia nafasi za LP zinazoungwa mkono kama dhamana",
+        "two": "Udhihirisho hubaki umefungamana na pooli ya msingi",
+        "three": "Udhibiti wa leverage na kuondoka hubaki wazi"
+      }
+    },
+    "faq": {
+      "title": "Maswali yanayoulizwa mara kwa mara",
+      "items": {
+        "interfaceFee": {
+          "question": "Avana inatoza nini kwa kutumia kiolesura?",
+          "answer": "Ada rasmi ya kiolesura ni 15 bps (0.15%) inapohusika. Huonyeshwa kabla ya kusaini na ni tofauti na gesi, ada za kubadilisha, riba ya Aave na gharama za kufilisi."
+        },
+        "borrowRate": {
+          "question": "Je, riba ya kukopa ni ya kudumu?",
+          "answer": "Hapana. Riba huwekwa na soko la Aave v4 lililochaguliwa na inaweza kubadilika kulingana na matumizi na vigezo vya soko. Kiwango cha sasa huonyeshwa kabla ya kukopa."
+        },
+        "lendingApy": {
+          "question": "APY ya kukopesha huamuliwaje?",
+          "answer": "Mapato huamuliwa na soko na hutegemea matumizi na mahitaji ya wakopaji yanayoungwa mkono na LP. APY ya sasa huonyeshwa kabla ya kuweka fedha."
+        },
+        "separateCosts": {
+          "question": "Ni gharama zipi ni tofauti na ada za Avana?",
+          "answer": "Gesi ya mtandao, ada za kubadilisha za DEX, riba ya soko la Aave na gharama za utekelezaji wa kufilisi ni tofauti na ada rasmi ya kiolesura. Kagua maelezo ya muamala kabla ya kusaini."
+        },
+        "feeChanges": {
+          "question": "Je, ada na viwango vinaweza kubadilika?",
+          "answer": "Ndiyo. Viwango vya soko hubadilika kulingana na matumizi na vigezo vya hatari, na sera ya kiolesura inaweza kubadilika. Thibitisha kiasi cha sasa kinachoonyeshwa kabla ya kusaini."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "Maswali yanayoulizwa mara kwa mara",
     "subtitle": "Majibu kuhusu Avana, fedha za dhamana LP, na Aave v4",

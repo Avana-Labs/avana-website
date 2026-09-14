@@ -302,6 +302,74 @@
       "subtitle": "Marques, couleurs et indications pour les surfaces destinées aux partenaires"
     }
   },
+  "pricing": {
+    "title": "Tarification",
+    "subtitleLine1": "Les taux et les rendements dépendent du marché,",
+    "subtitleLine2": "de la position et du parcours choisi.",
+    "interfaceRate": "Frais d’interface — 15 pb (0,15 %)",
+    "includes": "Comprend :",
+    "borrow": {
+      "title": "Emprunter",
+      "subtitle": "Pour le crédit garanti par des LP",
+      "value": "Variable",
+      "unit": "intérêts",
+      "description": "Le coût de l’emprunt suit le marché Aave v4 sélectionné.",
+      "items": {
+        "one": "Taux fixé par le marché",
+        "two": "S’applique uniquement à la dette restante",
+        "three": "Affiché avant confirmation"
+      }
+    },
+    "lend": {
+      "title": "Prêter",
+      "subtitle": "Fournir du capital au Hub",
+      "value": "Marché",
+      "unit": "APY",
+      "description": "Gagnez un rendement grâce à la demande d’emprunt garantie par des LP via le Lend Spoke d’Avana.",
+      "items": {
+        "one": "Le rendement varie selon l’utilisation",
+        "two": "Fourniture sur les marchés pris en charge",
+        "three": "APY en direct affiché dans l’interface"
+      }
+    },
+    "multiply": {
+      "title": "Multiplier",
+      "subtitle": "Pour une exposition LP gérée",
+      "value": "Variable",
+      "unit": "taux de stratégie",
+      "description": "Amplifiez l’exposition LP avec des stratégies gérées garanties par des positions AMM prises en charge.",
+      "items": {
+        "one": "Utiliser des positions LP prises en charge comme garantie",
+        "two": "L’exposition reste liée au pool sous-jacent",
+        "three": "Les contrôles de levier et de sortie restent visibles"
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": {
+        "interfaceFee": {
+          "question": "Quels frais Avana facture-t-il pour utiliser l’interface ?",
+          "answer": "Les frais officiels d’interface sont de 15 pb (0,15 %) lorsqu’ils s’appliquent. Ils sont affichés avant la signature et sont distincts du gas, des frais de swap, des intérêts Aave et des coûts de liquidation."
+        },
+        "borrowRate": {
+          "question": "Les intérêts d’emprunt sont-ils fixes ?",
+          "answer": "Non. Ils sont définis par le marché Aave v4 sélectionné et peuvent évoluer avec l’utilisation et les paramètres du marché. Le taux actuel est affiché avant l’emprunt."
+        },
+        "lendingApy": {
+          "question": "Comment l’APY de prêt est-il déterminé ?",
+          "answer": "Le rendement dépend de l’utilisation du marché et de la demande d’emprunteurs garantis par des LP. L’APY en direct est affiché avant la fourniture."
+        },
+        "separateCosts": {
+          "question": "Quels coûts sont distincts des frais Avana ?",
+          "answer": "Le gas réseau, les frais de swap DEX, les intérêts du marché Aave et les coûts d’exécution d’une liquidation sont distincts des frais d’interface. Consultez les détails avant de signer."
+        },
+        "feeChanges": {
+          "question": "Les frais et les taux peuvent-ils changer ?",
+          "answer": "Oui. Les taux du marché évoluent avec l’utilisation et les paramètres de risque, et la politique de l’interface peut changer. Vérifiez toujours le montant affiché avant de signer."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "Questions fréquentes",
     "subtitle": "Réponses sur Avana, LP garanties, et Aave v4",

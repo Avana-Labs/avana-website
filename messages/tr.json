@@ -302,6 +302,74 @@
       "subtitle": "Ortak taraflara bakan yüzeyler için işaretler, renkler ve yönergeler"
     }
   },
+  "pricing": {
+    "title": "Fiyatlandırma",
+    "subtitleLine1": "Oranlar ve getiriler piyasaya,",
+    "subtitleLine2": "pozisyona ve seçtiğiniz rotaya bağlıdır.",
+    "interfaceRate": "Peşin arayüz ücreti — 15 bps (%0,15)",
+    "includes": "Dahil:",
+    "borrow": {
+      "title": "Borç al",
+      "subtitle": "LP destekli kredi için",
+      "value": "Değişken",
+      "unit": "faiz",
+      "description": "Borçlanma maliyeti seçilen Aave v4 piyasasını izler.",
+      "items": {
+        "one": "Piyasanın belirlediği faiz oranı",
+        "two": "Yalnızca mevcut borca işler",
+        "three": "Onaylamadan önce gösterilir"
+      }
+    },
+    "lend": {
+      "title": "Lend",
+      "subtitle": "Hub'a sermaye sağlayın",
+      "value": "Piyasa",
+      "unit": "APY",
+      "description": "Avana'nın Lend Spoke'u üzerinden LP destekli talepten kazanın.",
+      "items": {
+        "one": "Getiri kullanıma göre değişir",
+        "two": "Desteklenen borç verme piyasalarına arz sağlayın",
+        "three": "Canlı APY arayüzde gösterilir"
+      }
+    },
+    "multiply": {
+      "title": "Multiply",
+      "subtitle": "Yönetilen LP maruziyeti için",
+      "value": "Değişken",
+      "unit": "strateji oranı",
+      "description": "Desteklenen AMM pozisyonlarıyla desteklenen yönetilen stratejilerle LP maruziyetini artırın.",
+      "items": {
+        "one": "Desteklenen LP pozisyonlarını teminat olarak kullanın",
+        "two": "Maruziyet temel havuza bağlı kalır",
+        "three": "Kaldıraç ve kapatma kontrolleri görünür kalır"
+      }
+    },
+    "faq": {
+      "title": "Sık sorulan sorular",
+      "items": {
+        "interfaceFee": {
+          "question": "Avana arayüzü kullanmak için ne ücret alır?",
+          "answer": "Uygulandığında resmi arayüz ücreti 15 bps (%0,15)'tir. İmzadan önce gösterilir ve gas, takas ücretleri, Aave faizi ve tasfiye maliyetlerinden ayrıdır."
+        },
+        "borrowRate": {
+          "question": "Borçlanma faizi sabit mi?",
+          "answer": "Hayır. Faiz, seçilen Aave v4 piyasası tarafından belirlenir ve kullanım ile piyasa parametrelerine göre değişebilir. Güncel oran borçlanmadan önce gösterilir."
+        },
+        "lendingApy": {
+          "question": "Lending APY nasıl belirlenir?",
+          "answer": "Getiri piyasaya bağlıdır; kullanım ve LP destekli borçlu talebine göre değişir. Canlı APY arzdan önce gösterilir."
+        },
+        "separateCosts": {
+          "question": "Avana ücretlerinden ayrı hangi maliyetler vardır?",
+          "answer": "Ağ gas'ı, DEX takas ücretleri, Aave piyasa faizi ve tasfiye yürütme maliyetleri resmi arayüz ücretinden ayrıdır. İmzadan önce işlem ayrıntılarını inceleyin."
+        },
+        "feeChanges": {
+          "question": "Ücretler ve oranlar değişebilir mi?",
+          "answer": "Evet. Piyasa oranları kullanım ve risk parametreleriyle değişir; arayüz politikası da zamanla değişebilir. İmzadan önce rotanız için gösterilen güncel tutarı doğrulayın."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "Sıkça sorulan sorular",
     "subtitle": "Avana, LP teminat ve Aave v4 hakkındaki cevaplar",

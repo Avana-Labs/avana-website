@@ -114,7 +114,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-baseline gap-2 pb-7">
+                <div className="mt-8 flex items-baseline gap-2 border-b border-current/10 pb-7">
                   <span className="text-[clamp(2.35rem,3.5vw,3.35rem)] font-normal leading-none tracking-[-0.06em]">
                     {card.value}
                   </span>
@@ -148,7 +148,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             ))}
           </div>
 
-          <section className="mt-16 border-t border-border/80 pt-16 md:mt-24 md:pt-24">
+          <section className="mt-16 pt-16 md:mt-24 md:pt-24">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] md:gap-6 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:gap-8">
               <div className="space-y-3 md:max-w-[25rem] md:pt-2">
                 <SectionTitle variant="lead" className="max-w-none">

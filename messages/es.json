@@ -302,6 +302,74 @@
       "subtitle": "Marcas, colores y orientación para las superficies que enfrentan al socio"
     }
   },
+  "pricing": {
+    "title": "Precios",
+    "subtitleLine1": "Las tasas y los rendimientos dependen del mercado,",
+    "subtitleLine2": "la posición y la ruta que elijas.",
+    "interfaceRate": "Comisión de interfaz — 15 pb (0,15 %)",
+    "includes": "Incluye:",
+    "borrow": {
+      "title": "Pedir prestado",
+      "subtitle": "Para crédito respaldado por LP",
+      "value": "Variable",
+      "unit": "interés",
+      "description": "Los costes de préstamo siguen el mercado Aave v4 seleccionado.",
+      "items": {
+        "one": "Tasa fijada por el mercado",
+        "two": "Se acumula solo sobre la deuda pendiente",
+        "three": "Se muestra antes de confirmar"
+      }
+    },
+    "lend": {
+      "title": "Suministrar",
+      "subtitle": "Suministra capital al Hub",
+      "value": "Mercado",
+      "unit": "APY",
+      "description": "Obtén rendimiento de la demanda de prestatarios respaldados por LP a través del Lend Spoke de Avana.",
+      "items": {
+        "one": "El rendimiento varía con la utilización",
+        "two": "Suministro en mercados compatibles",
+        "three": "APY actual mostrado en la interfaz"
+      }
+    },
+    "multiply": {
+      "title": "Multiplicar",
+      "subtitle": "Para exposición LP gestionada",
+      "value": "Variable",
+      "unit": "tasa de estrategia",
+      "description": "Amplifica la exposición LP con estrategias gestionadas respaldadas por posiciones AMM compatibles.",
+      "items": {
+        "one": "Usa posiciones LP compatibles como garantía",
+        "two": "La exposición sigue vinculada al pool subyacente",
+        "three": "Los controles de apalancamiento y salida permanecen visibles"
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "interfaceFee": {
+          "question": "¿Qué cobra Avana por usar la interfaz?",
+          "answer": "La comisión oficial de la interfaz es de 15 pb (0,15 %) cuando corresponde. Se muestra antes de firmar y es independiente del gas, las comisiones de swap, los intereses de Aave y los costes de liquidación."
+        },
+        "borrowRate": {
+          "question": "¿Los intereses del préstamo son fijos?",
+          "answer": "No. Los intereses los determina el mercado Aave v4 seleccionado y pueden cambiar con la utilización y los parámetros del mercado. La tasa actual se muestra antes de pedir prestado."
+        },
+        "lendingApy": {
+          "question": "¿Cómo se determina el APY de suministro?",
+          "answer": "El rendimiento depende de la utilización y de la demanda de prestatarios respaldados por LP. El APY actual se muestra antes de suministrar."
+        },
+        "separateCosts": {
+          "question": "¿Qué costes son independientes de las comisiones de Avana?",
+          "answer": "El gas de red, las comisiones de swap DEX, los intereses del mercado Aave y los costes de ejecución de liquidaciones son independientes de la comisión de interfaz. Revisa los detalles antes de firmar."
+        },
+        "feeChanges": {
+          "question": "¿Pueden cambiar las comisiones y las tasas?",
+          "answer": "Sí. Las tasas del mercado cambian con la utilización y los parámetros de riesgo, y la política de interfaz puede cambiar. Verifica siempre el importe actual antes de firmar."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "Preguntas frecuentes",
     "subtitle": "Respuestas sobre Avana, LP colateral, y Aave v4",

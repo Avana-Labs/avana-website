@@ -302,6 +302,74 @@
       "subtitle": "Marcas, cores e orientação para superfícies voltadas para o parceiro"
     }
   },
+  "pricing": {
+    "title": "Preços",
+    "subtitleLine1": "As taxas e os rendimentos dependem do mercado,",
+    "subtitleLine2": "da posição e do percurso escolhido.",
+    "interfaceRate": "Taxa de interface — 15 pb (0,15%)",
+    "includes": "Inclui:",
+    "borrow": {
+      "title": "Pedir emprestado",
+      "subtitle": "Para crédito garantido por LP",
+      "value": "Variável",
+      "unit": "juros",
+      "description": "O custo do empréstimo segue o mercado Aave v4 selecionado.",
+      "items": {
+        "one": "Taxa definida pelo mercado",
+        "two": "Acumula apenas sobre a dívida em aberto",
+        "three": "Apresentado antes da confirmação"
+      }
+    },
+    "lend": {
+      "title": "Emprestar",
+      "subtitle": "Forneça capital ao Hub",
+      "value": "Mercado",
+      "unit": "APY",
+      "description": "Ganhe com a procura de empréstimos garantidos por LP através do Lend Spoke da Avana.",
+      "items": {
+        "one": "O rendimento varia com a utilização",
+        "two": "Fornecimento em mercados suportados",
+        "three": "APY atual apresentado na interface"
+      }
+    },
+    "multiply": {
+      "title": "Multiplicar",
+      "subtitle": "Para exposição LP gerida",
+      "value": "Variável",
+      "unit": "taxa da estratégia",
+      "description": "Aumente a exposição LP com estratégias geridas apoiadas por posições AMM suportadas.",
+      "items": {
+        "one": "Use posições LP suportadas como garantia",
+        "two": "A exposição permanece ligada ao pool subjacente",
+        "three": "Os controlos de alavancagem e saída permanecem visíveis"
+      }
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": {
+        "interfaceFee": {
+          "question": "O que a Avana cobra pelo uso da interface?",
+          "answer": "A taxa oficial da interface é de 15 pb (0,15%) quando aplicável. É mostrada antes da assinatura e é separada de gas, taxas de swap, juros Aave e custos de liquidação."
+        },
+        "borrowRate": {
+          "question": "Os juros do empréstimo são fixos?",
+          "answer": "Não. São definidos pelo mercado Aave v4 selecionado e podem mudar com a utilização e os parâmetros do mercado. A taxa atual é mostrada antes do empréstimo."
+        },
+        "lendingApy": {
+          "question": "Como é determinado o APY de lending?",
+          "answer": "O rendimento depende da utilização do mercado e da procura de empréstimos garantidos por LP. O APY atual é mostrado antes do fornecimento."
+        },
+        "separateCosts": {
+          "question": "Quais custos são separados das taxas da Avana?",
+          "answer": "Gas de rede, taxas de swap DEX, juros do mercado Aave e custos de execução da liquidação são separados da taxa de interface. Reveja os detalhes antes de assinar."
+        },
+        "feeChanges": {
+          "question": "As taxas e os juros podem mudar?",
+          "answer": "Sim. As taxas de mercado mudam com a utilização e os parâmetros de risco, e a política da interface pode mudar. Verifique sempre o valor atual antes de assinar."
+        }
+      }
+    }
+  },
   "faq": {
     "title": "Perguntas frequentes",
     "subtitle": "Respostas sobre Avana, LP colateral e Aave v4",
