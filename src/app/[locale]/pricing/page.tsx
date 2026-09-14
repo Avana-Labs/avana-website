@@ -101,10 +101,10 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             {feeCards.map((card) => (
               <article
                 key={card.title}
-                className={`flex h-full flex-col rounded-xl border p-5 md:p-6 ${
+                className={`flex h-full flex-col rounded-xl p-5 shadow-none md:p-6 ${
                   card.featured
-                    ? "border-foreground/15 bg-[#fafafa]"
-                    : "border-border/70 bg-[#fafafa] text-foreground"
+                    ? "bg-[#fafafa]"
+                    : "bg-[#fafafa] text-foreground"
                 }`}
               >
                 <div>
