@@ -47,8 +47,8 @@
       "Turn your liquidity pool positions into collateral and borrow against them here without leaving the pool.",
       "Try Borrowing",
       "View Docs",
-      "Start borrowing in three steps",
-      "Deposit an LP position, draw funds, and manage your loan.",
+      "How borrowing works",
+      "Turn active liquidity into borrowing power",
       "Deposit your LP as collateral",
       "Choose a supported LP position and deposit it as collateral while your liquidity stays active.",
       "Borrow against its risk-adjusted value",
@@ -58,15 +58,15 @@
       "Find the Hub for your collateral",
       "Stable, correlated, and volatile LPs belong to different markets.",
       "Borrowable",
-      "Your borrowing limit follows the pool",
+      "Borrow with Confidence",
       "Protected at the",
       "pool level",
-      "Look inside a pool before committing",
-      "Review liquidity, utilization, and collateral details in the borrowing interface.",
+      "Supported borrowing markets",
+      "See how each pool becomes borrowable",
       "Document-style preview of supported borrowing markets",
       "Frequently asked questions",
       "Try Sandbox",
-      "Live valuation and dual-oracle checks account for changing LP conditions."
+      "Protected at the pool level"
     ]
   },
   "lend/page": {
@@ -121,7 +121,7 @@
       "See how Hub utilization, Spoke premiums, and pool risk contribute to APY.",
       "Adjust the amount and duration to explore an illustrative return.",
       "Review balances, accrued interest, and available liquidity.",
-      "Supply capital to LP-backed borrowers"
+      "Earn interest on your assets"
     ]
   },
   "multiply/multiply-content": {
@@ -171,8 +171,8 @@
       "DeFi leverage",
       "LP collateral",
       "Avana leverage market interface",
-      "Turn LP collateral into",
-      "managed leverage",
+      "Amplify yield",
+      "under control",
       "Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure.",
       "Try Looping",
       "View Docs",
@@ -765,6 +765,12 @@
       "Avana Borrow rate monitoring and conditional loan parameters",
       "Avana 24/7 position monitoring and automated risk guards",
       "Avana Lend yield discovery and pool comparison interface"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "Supported AMMs",
+      "Every supported DEX Liquidity protocols"
     ]
   }
 }

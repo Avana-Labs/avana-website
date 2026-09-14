@@ -66,7 +66,7 @@
       "Pratinjau gaya dokumen dari pasar peminjaman yang didukung",
       "Pertanyaan yang sering diajukan",
       "Coba Sandbox",
-      "Protected at the pool level"
+      "Dilindungi di tingkat pool"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Pemantauan suku bunga dan parameter pinjaman bersyarat Avana Borrow",
       "Pemantauan posisi 24/7 dan pengaman risiko otomatis Avana",
       "Antarmuka penemuan imbal hasil dan perbandingan pool Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "AMM yang didukung",
+      "Semua protokol likuiditas DEX yang didukung"
     ]
   }
 }

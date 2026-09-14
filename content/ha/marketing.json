@@ -66,7 +66,7 @@
       "Fuskar takarda na samfoti na kasuwannin aron da aka goyi baya",
       "Tambayoyin da ake yawan yi",
       "Gwada Sandbox",
-      "Protected at the pool level"
+      "Ana kare shi a matakin tafki"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Sa ido kan farashi da sigogin rance na sharaɗi na Avana Borrow",
       "Sa ido kan matsayi awa 24 da kariyar haɗari ta atomatik na Avana",
       "Hanyar gano riba da kwatanta tafkuna na Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "AMM da ake goyan baya",
+      "Duk ka'idojin liquidity na DEX da ake goyan baya"
     ]
   }
 }

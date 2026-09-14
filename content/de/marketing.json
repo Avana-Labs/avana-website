@@ -66,7 +66,7 @@
       "Dokumentenartige Vorschau unterstützter Ausleihmärke",
       "Häufig gestellte Fragen",
       "Sandbox testen",
-      "Protected at the pool level"
+      "Auf Pool-Ebene geschützt"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Avana Borrow – Zinsüberwachung und bedingte Kreditparameter",
       "Avana – Positionsüberwachung rund um die Uhr und automatisierte Risikoschutzmechanismen",
       "Avana Lend – Oberfläche für Renditesuche und Poolvergleich"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "Unterstützte AMMs",
+      "Alle unterstützten DEX-Liquiditätsprotokolle"
     ]
   }
 }

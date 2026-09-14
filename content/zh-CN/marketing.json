@@ -66,7 +66,7 @@
       "受支持借款市场的文档式预览",
       "常见问题",
       "试用沙盒",
-      "Protected at the pool level"
+      "在资金池层面提供保护"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Avana Borrow 利率监控与条件贷款参数",
       "Avana 全天候头寸监控与自动风险防护",
       "Avana Lend 收益发现与资金池比较界面"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "支持的 AMM",
+      "所有支持的 DEX 流动性协议"
     ]
   }
 }

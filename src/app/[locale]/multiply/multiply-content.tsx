@@ -140,9 +140,9 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
       <FeaturePageHero
         title={
           <>
-            <span>Turn LP collateral into</span>
+            <span>Amplify yield</span>
             <br />
-            <span>managed leverage</span>
+            <span>under control</span>
           </>
         }
         description="Borrow, reinvest, and repeat through managed strategies designed to increase your market exposure."

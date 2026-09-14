@@ -66,7 +66,7 @@
       "Aperçu documentaire des marchés d’emprunt pris en charge",
       "Questions fréquentes",
       "Essayer le sandbox",
-      "Protected at the pool level"
+      "Protégé au niveau du pool"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Suivi des taux et paramètres de prêt conditionnels Avana Borrow",
       "Surveillance de position 24h/24 et garde-fous de risque automatisés Avana",
       "Interface de découverte de rendement et de comparaison de pools Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "AMM pris en charge",
+      "Tous les protocoles de liquidité DEX pris en charge"
     ]
   }
 }

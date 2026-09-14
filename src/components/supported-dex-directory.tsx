@@ -1,7 +1,9 @@
 import Image from "next/image"
 import { ChevronRight } from "lucide-react"
 import type { ProtocolAdapter } from "@/data/protocols"
+import type { AppLocale } from "@/i18n/locales"
 import { SectionEyebrow, SectionTitle } from "@/components/shared"
+import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 
 const dexLogos: Record<string, string> = {
   U2: "/Asset-Icons/uni.webp",
@@ -32,14 +34,20 @@ function getDexDisplayName(name: string) {
   return name.replace(/Uniswap v([234])/g, "Uniswap V$1").replace(/ Adapter$/, "")
 }
 
-export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapter[] }) {
-  return (
+export async function SupportedDexDirectory({
+  locale,
+  protocols,
+}: {
+  locale: AppLocale
+  protocols: ProtocolAdapter[]
+}) {
+  return withMarketingI18n(locale, ["supported-dex-directory"], (
     <section id="supported-dexes" className="site-section-gap">
       <div className="site-content-shell">
         <div className="mx-auto w-full">
           <div className="mb-8 flex max-w-[600px] flex-col gap-2">
-            <SectionEyebrow tone="emerald">Supported DEXs</SectionEyebrow>
-            <SectionTitle>Every supported liquidity venue</SectionTitle>
+            <SectionEyebrow tone="emerald">Supported AMMs</SectionEyebrow>
+            <SectionTitle>Every supported DEX Liquidity protocols</SectionTitle>
           </div>
 
           <div>
@@ -89,5 +97,5 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
         </div>
       </div>
     </section>
-  )
+  ))
 }

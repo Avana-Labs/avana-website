@@ -66,7 +66,7 @@
       "Anteprima documentale dei mercati di prestito supportati",
       "Domande frequenti",
       "Prova il sandbox",
-      "Protected at the pool level"
+      "Protetto a livello di pool"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Monitoraggio dei tassi e parametri di prestito condizionali Avana Borrow",
       "Monitoraggio delle posizioni 24 ore su 24 e protezioni di rischio automatizzate Avana",
       "Interfaccia di scoperta rendimenti e confronto pool Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "AMM supportati",
+      "Tutti i protocolli di liquidità DEX supportati"
     ]
   }
 }

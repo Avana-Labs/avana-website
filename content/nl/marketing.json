@@ -66,7 +66,7 @@
       "Documentachtige preview van ondersteunde leenmarkten",
       "Veelgestelde vragen",
       "Sandbox proberen",
-      "Protected at the pool level"
+      "Beschermd op poolniveau"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Avana Borrow rentebewaking en voorwaardelijke leenparameters",
       "Avana 24/7 positiebewaking en geautomatiseerde risicobescherming",
       "Avana Lend-interface voor rendementsontdekking en poolvergelijking"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "Ondersteunde AMM's",
+      "Alle ondersteunde DEX-liquiditeitsprotocollen"
     ]
   }
 }

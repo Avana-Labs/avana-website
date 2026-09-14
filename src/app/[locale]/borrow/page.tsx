@@ -141,8 +141,8 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="violet">Start borrowing in three steps</SectionEyebrow>
-                <SectionTitle>Deposit an LP position, draw funds, and manage your loan.</SectionTitle>
+                <SectionEyebrow tone="violet">How borrowing works</SectionEyebrow>
+                <SectionTitle>Turn active liquidity into borrowing power</SectionTitle>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <BorrowMarketCard
@@ -203,17 +203,15 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
 
       <BorrowValuationSection locale={locale} />
 
-      <SupportedDexDirectory protocols={supportedDexes} />
+      <SupportedDexDirectory locale={locale} protocols={supportedDexes} />
 
       <PerformanceSection className="site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="blue">Look inside a pool before committing</SectionEyebrow>
-                <SectionTitle>
-                  Review liquidity, utilization, and collateral details in the borrowing interface.
-                </SectionTitle>
+                <SectionEyebrow tone="blue">Supported borrowing markets</SectionEyebrow>
+                <SectionTitle>See how each pool becomes borrowable</SectionTitle>
               </div>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
                 <Image

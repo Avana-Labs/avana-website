@@ -66,7 +66,7 @@
       "Xem trước kiểu tài liệu của các thị trường cho vay được hỗ trợ",
       "Câu hỏi thường gặp",
       "Thử Sandbox",
-      "Protected at the pool level"
+      "Được bảo vệ ở cấp pool"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Theo dõi lãi suất và tham số khoản vay có điều kiện của Avana Borrow",
       "Giám sát vị thế 24/7 và bảo vệ rủi ro tự động của Avana",
       "Giao diện khám phá lợi suất và so sánh pool của Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "AMM được hỗ trợ",
+      "Tất cả giao thức thanh khoản DEX được hỗ trợ"
     ]
   }
 }

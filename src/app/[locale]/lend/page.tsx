@@ -126,7 +126,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
     <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "trade-market-showcase", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
     <main className="bg-white">
       <FeaturePageHero
-        title="Supply capital to LP-backed borrowers"
+        title="Earn interest on your assets"
         description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
         imageSrc="/images/Avana Lend Hero.png"
         imageAlt="Avana Lend product interface"

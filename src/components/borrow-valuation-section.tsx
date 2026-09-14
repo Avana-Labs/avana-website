@@ -45,8 +45,8 @@ export default async function BorrowValuationSection({ locale }: { locale: AppLo
         <div className="mx-auto w-full max-w-[76rem]">
           <MarketingLeadHeader
             className="max-w-none [&_.type-md-lg]:text-wrap!"
-            title="Your borrowing limit follows the pool"
-            subtitle="Live valuation and dual-oracle checks account for changing LP conditions."
+            title="Borrow with Confidence"
+            subtitle="Protected at the pool level"
           />
 
           <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">

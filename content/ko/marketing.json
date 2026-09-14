@@ -66,7 +66,7 @@
       "지원되는 차입 시장의 문서 스타일 미리보기",
       "자주 묻는 질문",
       "샌드박스 체험",
-      "Protected at the pool level"
+      "풀 수준에서 보호됩니다"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Avana Borrow 금리 모니터링 및 조건부 대출 설정",
       "Avana 24시간 포지션 모니터링 및 자동 리스크 가드",
       "Avana Lend 수익률 탐색 및 풀 비교 화면"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "지원되는 AMM",
+      "지원되는 모든 DEX 유동성 프로토콜"
     ]
   }
 }

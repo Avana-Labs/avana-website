@@ -66,7 +66,7 @@
       "Dokumentowy podgląd obsługiwanych rynków pożyczkowych",
       "Często zadawane pytania",
       "Wypróbuj sandbox",
-      "Protected at the pool level"
+      "Ochrona na poziomie puli"
     ]
   },
   "lend/page": {
@@ -765,6 +765,12 @@
       "Monitorowanie stóp i warunkowe parametry pożyczki Avana Borrow",
       "Całodobowe monitorowanie pozycji i automatyczne zabezpieczenia ryzyka Avana",
       "Interfejs wyszukiwania zysków i porównywania pul Avana Lend"
+    ]
+  },
+  "supported-dex-directory": {
+    "strings": [
+      "Obsługiwane AMM-y",
+      "Wszystkie obsługiwane protokoły płynności DEX"
     ]
   }
 }
