@@ -240,7 +240,7 @@ export function BlogIndex({
                         {post.title}
                       </h2>
                       <span className={`relative z-10 mt-4 text-xs font-medium ${theme.muted}`}>
-                        {formatContentDate(post.date, locale)}
+                        {formatContentDate(post.date, locale, true)}
                       </span>
                     </div>
                   </div>

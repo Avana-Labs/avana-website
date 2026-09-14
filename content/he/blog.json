@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "למה בטוחת LP צריכה Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "למה Avana משתמש ב-Smart Agents לניטור בריאות, שירות פוזיציות ייעודיות לזירה ושמירה על כיסוי חיסול אמין תחת לחץ.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "מפתחים",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "איך חיסול LP צריך לעבוד",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "איך Avana מחסל בטוחת LP עם שחרורים מבוקרים, התערבות חלקית, עמלות קודם כשאפשר ונתיבים ייעודיים לזירה.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "מפתחים",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "תמחור בטוחת LP עם אורקלים טובים יותר",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "איך Avana Oracle מעריך בטוחת LP דרך ערך בר-השבה, שחזור דטרמיניסטי והנחות השבה שמרניות.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "מפתחים",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "איך Avana מנהל סיכון בטוחת LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "איך Avana בונה אבטחה שכבתית לבטוחת LP — מארכיטקטורה ואורקלים עד בריאות, חיסול ותפעול.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "מפתחים",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "איך לגדר פוזיציית LP בשיקול דעת",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "איך ספקי נזילות יכולים להשתמש ב-Avana למימון כריות, גידור כיווני והרגלים ממושמעים בלי לצאת לגמרי מהבריכה.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "ל־LPים",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Looping תשואה עם בטוחת LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "איך לחשוב על yield looping עם בטוחת LP ב-Avana: כריות, מבחני לחץ, משמעת יציאה ומינוף בר-קיימא.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "ל־LPים",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "מה בטוחת LP מאפשרת",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "מה בטוחת LP ב-Avana מאפשרת: הלוואות, גידור, גמישות אוצר ושימוש יעיל יותר בהון נזילות פרודוקטיבי.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "ל־LPים",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "הלוואה מול LP של Aerodrome ב-Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "איך Avana תומך בפוזיציות LP של Aerodrome ב-Base כדי שישארו פעילות תוך גיבוי הלוואות דרך Spoke ייעודי של Aave v4.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "מפתחים",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "הלוואה מול LP של Curve ב-Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "איך Avana מטפל בבטוחת LP של Curve לבריכות יציבות ומתואמות דרך Spoke ייעודי של Aave v4.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "מפתחים",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "בטוחת LP של Balancer ב-Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "איך Avana תומך ב-LP של בריכות משוקללות של Balancer כבטוחה ב-Aave v4 בזמן שהחשיפה נשארת פעילה.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "מפתחים",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "הלוואה מול LP של Uniswap ב-Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "איך Avana הופך פוזיציות LP של Uniswap לבטוחת Aave v4 בזמן שהן נשארות בבריכה וממשיכות להרוויח עמלות.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "מפתחים",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "להפוך בטוחת LP לשימושית",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "למה עיצוב המוצר של Avana מדגיש הערכה ברורה, תקרות הלוואה ובריאות — כדי שבטוחת LP תהיה תפעולית, לא רק חזקה.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "מוצר",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana והצעד הבא לספקי נזילות",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "למה ספקי נזילות לא צריכים לבחור בין הרווחת עמלות לגישה להון, ואיך Avana מרחיב בטוחת LP ב-Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "קהילה",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "בטוחת LP למוסדות",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "איך בטוחת LP ב-Avana יכולה לעזור ל-DAO, אוצרות, קרנות וחברות קריפטו-נייטיב לגשת להון בלי לפרק נזילות פרודוקטיבית.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "למוסדות",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "לבנות על תשתית LP של Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "מבט מפתח על תשתית בטוחת LP של Avana: ניטור, אוטומציה, שירותי חיסול והזדמנויות לבונים.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "מפתחים",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "בתוך ארכיטקטורת בטוחת LP של Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "בתוך ארכיטקטורת בטוחת LP של Avana ב-Aave v4: Hub, Spokes, הערכה, עיצוב אורקל ולוגיקת חיסול.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "מפתחים",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: בטוחה טובה יותר, שליטה טובה יותר",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 מרחיב בטוחה מרובת פוזיציות, מוסיף בריכות נתמכות, משפר האצלה והתראות ומוריד עמלות עסקה.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "מוצר",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: שכבת בקרה לבטוחת LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "איך Avana Automate עוזר לנהל בטוחת LP עם אוטומציה לא-משמורתית לעמלות, איזון מחדש, הגנה ותחזוקה ממושמעת.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "מוצר",

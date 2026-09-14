@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Pourquoi le collatéral LP a besoin de Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Pourquoi Avana utilise des Smart Agents pour surveiller la santé, gérer les positions propres à chaque lieu et garder une couverture de liquidation fiable sous stress.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Développeurs",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Comment la liquidation LP devrait fonctionner",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Comment Avana liquide le collatéral LP avec des désengagements contrôlés, une intervention partielle, les frais d’abord lorsque c’est possible, et des chemins propres à chaque lieu.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Développeurs",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Pricer le collatéral LP avec de meilleurs oracles",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Comment Avana Oracle évalue le collatéral LP via la valeur récupérable, une reconstruction déterministe et des décotes de récupération conservatrices.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Développeurs",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Comment Avana gère le risque de collatéral LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Comment Avana structure une sécurité en couches pour le collatéral LP, de l’architecture et des oracles jusqu’à la santé, la liquidation et les opérations.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Développeurs",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Comment couvrir une position LP plus judicieusement",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Comment les LPs peuvent utiliser Avana pour financer des buffers, des offsets directionnels et des habitudes de couverture plus disciplinées sans sortir entièrement du pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Pour les LPs",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Boucler du rendement avec du collatéral LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Comment penser le yield looping avec le collatéral LP Avana : buffers, tests de stress, discipline de sortie et levier soutenable.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Pour les LPs",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Ce que le collatéral LP rend possible",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Ce que le collatéral LP Avana rend possible : emprunt, couverture, flexibilité de trésorerie et usage plus efficace du capital de liquidité productive.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Pour les LPs",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Emprunter sur des LP Aerodrome via Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Comment Avana prend en charge les positions LP Aerodrome sur Base pour qu’elles restent actives tout en soutenant l’emprunt via un Spoke Aave v4 dédié.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Développeurs",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Emprunter sur des LP Curve via Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Comment Avana traite le collatéral LP Curve pour les pools stables et corrélés via un Spoke Aave v4 dédié.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Développeurs",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Collatéral LP Balancer sur Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Comment Avana prend en charge les LP de pools pondérés Balancer comme garantie sur Aave v4, pendant que l’exposition reste active.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Développeurs",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Emprunter sur des LP Uniswap via Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Comment Avana transforme les positions LP Uniswap en collatéral Aave v4 pendant qu’elles restent dans le pool et continuent de générer des frais.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Développeurs",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Rendre le collatéral LP utilisable",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Pourquoi le design produit Avana insiste sur une évaluation claire, des plafonds d’emprunt et la santé — pour que le collatéral LP soit opérable, pas seulement puissant.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Produit",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana et l’étape suivante pour les LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Pourquoi les LPs ne devraient pas devoir choisir entre gagner des frais et accéder au capital, et comment Avana étend le collatéral LP sur Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Communauté",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Collatéral LP pour les institutions",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Comment le collatéral LP Avana peut aider DAO, trésoreries, fonds et entreprises crypto-natives à accéder au capital sans dénouer une liquidité productive.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Pour les institutions",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Construire sur l’infrastructure LP Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Une vue développeur de l’infrastructure de collatéral LP Avana : monitoring, automatisation, services de liquidation et opportunités pour les builders.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Développeurs",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "À l’intérieur de l’architecture de collatéral LP d’Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "À l’intérieur de l’architecture de collatéral LP d’Avana sur Aave v4 : Hub, Spokes, évaluation, design d’oracle et logique de liquidation.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Développeurs",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1 : meilleure garantie, meilleur contrôle",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 élargit le collatéral multi-positions, ajoute davantage de pools pris en charge, améliore délégation et alertes, et réduit les frais de transaction.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Produit",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate : une couche de contrôle pour le collatéral LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Comment Avana Automate aide à gérer le collatéral LP avec une automatisation non custodiale pour frais, rééquilibrage, protection et maintenance disciplinée.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Produit",

@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Vì sao Tài sản thế chấp LP cần Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Vì sao Avana dùng Smart Agents để theo dõi health, xử lý vị thế theo từng venue và giữ độ phủ thanh lý ổn định khi thị trường căng thẳng.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Thanh lý LP nên hoạt động thế nào",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Cách Avana thanh lý tài sản thế chấp LP với unwind có kiểm soát, can thiệp một phần, ưu tiên phí khi có thể, và lộ trình theo từng venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Nhà phát triển",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Định giá Tài sản thế chấp LP với Oracle tốt hơn",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Cách Avana Oracle định giá tài sản thế chấp LP bằng giá trị có thể thu hồi, tái dựng xác định và haircut thu hồi thận trọng.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Nhà phát triển",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Cách Avana Quản lý Rủi ro Tài sản thế chấp LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Cách Avana cấu trúc bảo mật nhiều lớp cho tài sản thế chấp LP, từ kiến trúc và oracle đến health, thanh lý và vận hành.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Nhà phát triển",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Cách Hedge Vị thế LP một cách Có chủ đích hơn",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Cách LP dùng Avana để tài trợ buffer, offset hướng và thói quen hedge kỷ luật hơn mà không cần thoát hoàn toàn khỏi pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Dành cho LP",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping với Tài sản thế chấp LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Cách nghĩ về yield looping với tài sản thế chấp LP của Avana: buffer, stress test, kỷ luật thoát lệnh và đòn bẩy bền vững.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Dành cho LP",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Tài sản thế chấp LP Mở ra điều gì",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Những gì tài sản thế chấp LP của Avana cho phép: vay, hedge, linh hoạt ngân quỹ và dùng vốn thanh khoản hiệu quả hơn.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Dành cho LP",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Vay với LP Aerodrome trên Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Cách Avana hỗ trợ vị thế LP Aerodrome trên Base để chúng vẫn hoạt động trong khi hỗ trợ vay qua Spoke Aave v4 riêng.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Vay với LP Curve trên Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Cách Avana xử lý tài sản thế chấp LP Curve cho pool ổn định và tương quan qua Spoke Aave v4 riêng.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Tài sản thế chấp LP Balancer trên Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Cách Avana hỗ trợ LP pool có trọng số của Balancer làm tài sản thế chấp trên Aave v4 trong khi mức phơi nhiễm vẫn hoạt động.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Vay với LP Uniswap trên Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Cách Avana biến vị thế LP Uniswap thành tài sản thế chấp Aave v4 trong khi chúng vẫn trong pool và tiếp tục nhận phí.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Làm cho Tài sản thế chấp LP Dễ dùng",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Vì sao thiết kế sản phẩm Avana chú trọng định giá rõ, hạn mức vay và health để tài sản thế chấp LP vận hành được, không chỉ mạnh trên giấy.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Sản phẩm",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana và Bước tiếp theo cho LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Vì sao nhà cung cấp thanh khoản không phải chọn giữa nhận phí và tiếp cận vốn, và cách Avana mở rộng tài sản thế chấp LP trên Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Cộng đồng",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Tài sản thế chấp LP cho Tổ chức",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Cách tài sản thế chấp LP của Avana giúp DAO, treasury, quỹ và công ty crypto tiếp cận vốn mà không tháo thanh khoản đang tạo doanh thu.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Dành cho tổ chức",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Xây trên Hạ tầng LP của Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Góc nhìn developer về hạ tầng tài sản thế chấp LP của Avana: giám sát, tự động hóa, dịch vụ thanh lý và cơ hội cho builder.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Nhà phát triển",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Bên trong Kiến trúc Tài sản thế chấp LP của Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Bên trong kiến trúc tài sản thế chấp LP của Avana trên Aave v4, gồm Hub, Spoke, định giá, thiết kế oracle và logic thanh lý.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Nhà phát triển",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: Tài sản thế chấp tốt hơn, Kiểm soát tốt hơn",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 mở rộng thế chấp nhiều vị thế, thêm pool được hỗ trợ, cải thiện ủy quyền và cảnh báo, đồng thời giảm chi phí giao dịch.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Sản phẩm",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: Lớp Kiểm soát cho Tài sản thế chấp LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Cách Avana Automate giúp người dùng quản lý tài sản thế chấp LP với tự động hóa không giám hộ cho phí, tái cân bằng, bảo vệ và bảo trì có kỷ luật.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Sản phẩm",

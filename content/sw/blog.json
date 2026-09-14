@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Kwa nini Dhamana ya LP Inahitaji Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Kwa nini Avana hutumia Smart Agents kufuatilia health, kuhudumia nafasi mahususi za venue, na kuweka cakupan ya uuzaji dhamana kuwa ya kuaminika chini ya mkazo.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Jinsi Uuzaji wa Dhamana ya LP Unavyopaswa Kufanya Kazi",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Jinsi Avana inavyouza dhamana ya LP kwa unwind iliyodhibitiwa, uingiliaji wa sehemu, ada kwanza inapowezekana, na njia mahususi za venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Wasanidi programu",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Kupanga Bei ya Dhamana ya LP kwa Oracle Bora",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Jinsi Avana Oracle inavyopanga bei ya dhamana ya LP kwa kutumia thamani inayoweza kurejeshwa, ujenzi wa upya wa uhakika, na haircut za kurejesha zenye tahadhari.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Wasanidi programu",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Jinsi Avana Inavyosimamia Hatari ya Dhamana ya LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Jinsi Avana inavyounda usalama wa tabaka kwa dhamana ya LP, kutoka usanifu na oracle hadi health, uuzaji dhamana, na uendeshaji.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Wasanidi programu",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Jinsi ya Kuhedge Nafasi ya LP kwa Uangalifu Zaidi",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Jinsi LP zinavyoweza kutumia Avana kufadhili buffer, fidia za mwelekeo, na tabia bora za hedge bila kuondoka kabisa kwenye pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Kwa LPs",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping kwa Dhamana ya LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Jinsi ya kufikiria yield looping kwa dhamana ya LP ya Avana, ikiwa ni pamoja na buffer, majaribio ya mkazo, nidhamu ya kutoka, na leverage endelevu.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Kwa LPs",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Dhamana ya LP Inawezesha Nini",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Yale ambayo dhamana ya LP ya Avana inawezesha katika ukopaji, hedging, unyumbufu wa hazina, na matumizi bora ya mtaji wa ukwasi wenye tija.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Kwa LPs",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Kukopa Dhidi ya LP za Aerodrome kwenye Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Jinsi Avana inavyosaidia nafasi za LP za Aerodrome kwenye Base zibaki hai huku zikiunga mkono ukopaji kupitia Spoke maalum ya Aave v4.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Kukopa Dhidi ya LP za Curve kwenye Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Jinsi Avana inavyoshughulikia dhamana ya LP ya Curve kwa pool thabiti na zinazohusiana kupitia Spoke maalum ya Aave v4.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Dhamana ya LP ya Balancer kwenye Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Jinsi Avana inavyosaidia LP za weighted pool za Balancer kama dhamana kwenye Aave v4 huku mfiduo ukibaki hai.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Kukopa Dhidi ya LP za Uniswap kwenye Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Jinsi Avana inavyogeuza nafasi za LP za Uniswap kuwa dhamana ya Aave v4 huku zikiendelea kuwa kwenye pool na kupata ada.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Kufanya Dhamana ya LP Iweze Kutumika",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Kwa nini ubunifu wa bidhaa wa Avana unajali uthamini wazi, mipaka ya kukopa, na health ili dhamana ya LP iweze kuendeshwa, si kuwa na nguvu tu.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Bidhaa",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana na Hatua Ifuatayo kwa LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Kwa nini watoa ukwasi hawapaswi kuchagua kati ya kupata ada na kupata mtaji, na jinsi Avana inavyopanua dhamana ya LP kwenye Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Jumuiya",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Dhamana ya LP kwa Taasisi",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Jinsi dhamana ya LP ya Avana inavyoweza kusaidia DAO, hazina, fedha, na kampuni za crypto kupata mtaji bila kufungua ukwasi wenye tija.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Kwa taasisi",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Kujenga kwenye Miundombinu ya LP ya Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Mtazamo wa msanidi wa miundombinu ya dhamana ya LP ya Avana, ikijumuisha ufuatiliaji, otomatiki, huduma za uuzaji dhamana, na fursa za wajenzi.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Wasanidi programu",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Ndani ya Usanifu wa Dhamana ya LP ya Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Ndani ya usanifu wa dhamana ya LP ya Avana kwenye Aave v4, ikijumuisha Hub, Spoke, uthamini, muundo wa oracle, na mantiki ya uuzaji dhamana.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Wasanidi programu",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: Dhamana Bora, Udhibiti Bora",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 inapanua dhamana ya nafasi nyingi, inaongeza pool zinazoungwa mkono, inaboresha ugawaji na arifa, na inapunguza gharama za muamala.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Bidhaa",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: Tabaka la Udhibiti kwa Dhamana ya LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Jinsi Avana Automate inavyosaidia watumiaji kusimamia dhamana ya LP kwa otomatiki isiyo ya uhifadhi kwa ada, urekebishaji, ulinzi, na matengenezo yenye nidhamu.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Bidhaa",

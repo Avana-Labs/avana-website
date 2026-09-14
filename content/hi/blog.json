@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "LP संपार्श्विक को Smart Agents की आवश्यकता क्यों है",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Avana health मॉनिटर करने, venue-विशिष्ट पोज़िशन संभालने और तनाव में लिक्विडेशन कवरेज भरोसेमंद रखने के लिए Smart Agents का उपयोग क्यों करता है।",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "LP लिक्विडेशन कैसे काम करना चाहिए",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Avana नियंत्रित unwind, आंशिक हस्तक्षेप, जहाँ संभव हो पहले फीस, और venue-विशिष्ट पथों के साथ LP संपार्श्विक को कैसे लिक्विडेट करता है।",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "डेवलपर्स",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "बेहतर Oracle से LP संपार्श्विक का मूल्य निर्धारण",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Avana Oracle पुनर्प्राप्य मूल्य, निर्धारणात्मक पुनर्निर्माण और रूढ़िवादी recovery haircut के साथ LP संपार्श्विक का मूल्य कैसे तय करता है।",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "डेवलपर्स",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana LP संपार्श्विक जोखिम का प्रबंधन कैसे करता है",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Avana आर्किटेक्चर और oracle से लेकर health, लिक्विडेशन और संचालन तक LP संपार्श्विक के लिए परतदार सुरक्षा कैसे बनाता है।",
       "image": "/images/blog/security-deep-dive.png",
       "category": "डेवलपर्स",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "LP पोज़िशन को अधिक सोच-समझकर हेज कैसे करें",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "LP Avana का उपयोग करके बफ़र, दिशात्मक ऑफसेट और अधिक अनुशासित हेज आदतों को कैसे फंड कर सकते हैं — बिना pool से पूरी तरह निकले।",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "LP सेकंड के लिए",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "LP संपार्श्विक के साथ Yield Looping",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Avana LP संपार्श्विक के साथ yield looping कैसे सोचें — बफ़र, स्ट्रेस टेस्ट, एग्ज़िट अनुशासन और सतत लेवरेज सहित।",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "LP सेकंड के लिए",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "LP संपार्श्विक क्या संभव बनाता है",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Avana LP संपार्श्विक उधार, हेजिंग, ट्रेजरी लचीलापन और उत्पादक तरलता के अधिक कुशल उपयोग में क्या संभव बनाता है।",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "LP सेकंड के लिए",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Aave v4 पर Aerodrome LP के विरुद्ध उधार",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Avana Base पर Aerodrome LP पोज़िशन का समर्थन कैसे करता है ताकि वे सक्रिय रहें और समर्पित Aave v4 Spoke के माध्यम से उधार का समर्थन करें।",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Aave v4 पर Curve LP के विरुद्ध उधार",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Avana स्थिर और सहसंबद्ध pool के लिए Curve LP संपार्श्विक को समर्पित Aave v4 Spoke के माध्यम से कैसे देखता है।",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Aave v4 पर Balancer LP संपार्श्विक",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Avana Balancer weighted pool LP को Aave v4 पर संपार्श्विक के रूप में कैसे सपोर्ट करता है, जबकि एक्सपोज़र सक्रिय रहता है।",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Aave v4 पर Uniswap LP के विरुद्ध उधार",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Avana Uniswap LP पोज़िशन को Aave v4 संपार्श्विक में कैसे बदलता है, जबकि वे pool में रहकर फीस कमाते रहते हैं।",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP संपार्श्विक को उपयोगी बनाना",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Avana का उत्पाद डिज़ाइन स्पष्ट मूल्यांकन, उधार सीमा और health पर क्यों ध्यान देता है — ताकि LP संपार्श्विक केवल शक्तिशाली नहीं, संचालित करने योग्य हो।",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "उत्पाद",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana और LP के लिए अगला कदम",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "लिक्विडिटी प्रदाताओं को फीस कमाने और पूंजी पाने के बीच चयन क्यों नहीं करना चाहिए, और Avana Aave v4 पर LP संपार्श्विक कैसे आगे बढ़ाता है।",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "समुदाय",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "संस्थानों के लिए LP संपार्श्विक",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Avana LP संपार्श्विक DAO, ट्रेजरी, फंड और क्रिप्टो कंपनियों को उत्पादक तरलता खोले बिना पूंजी पाने में कैसे मदद कर सकता है।",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "संस्थाओं के लिए",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Avana LP इंफ्रा पर निर्माण",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Avana LP संपार्श्विक इंफ्रा का डेवलपर दृष्टिकोण — मॉनिटरिंग, ऑटोमेशन, लिक्विडेशन सेवाएँ और बिल्डर अवसर।",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "डेवलपर्स",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Avana की LP संपार्श्विक आर्किटेक्चर के अंदर",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Aave v4 पर Avana की LP संपार्श्विक आर्किटेक्चर — Hub, Spoke, मूल्यांकन, oracle डिज़ाइन और लिक्विडेशन लॉजिक।",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "डेवलपर्स",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: बेहतर संपार्श्विक, बेहतर नियंत्रण",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 मल्टी-पोज़िशन संपार्श्विक बढ़ाता है, अधिक समर्थित pool जोड़ता है, प्रतिनिधिमंडल और अलर्ट सुधारता है, और लेनदेन ओवरहेड घटाता है।",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "उत्पाद",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: LP संपार्श्विक के लिए नियंत्रण परत",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Avana Automate उपयोगकर्ताओं को फीस, रीबैलेंसिंग, सुरक्षा और अनुशासित रखरखाव के लिए गैर-कस्टोडियल ऑटोमेशन के साथ LP संपार्श्विक प्रबंधित करने में कैसे मदद करता है।",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "उत्पाद",

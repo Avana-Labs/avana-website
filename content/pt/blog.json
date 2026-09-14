@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Por que o colateral LP precisa de Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Por que a Avana usa Smart Agents para monitorar saúde, atender posições específicas do venue e manter cobertura de liquidação confiável sob estresse.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Como a liquidação LP deveria funcionar",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Como a Avana liquida colateral LP com desmontagens controladas, intervenção parcial, taxas primeiro quando possível e rotas específicas do venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Desenvolvedores",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Precificar colateral LP com oráculos melhores",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Como o Avana Oracle precifica colateral LP usando valor recuperável, reconstrução determinística e haircuts conservadores de recuperação.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Desenvolvedores",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Como a Avana gerencia o risco de colateral LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Como a Avana estrutura segurança em camadas para colateral LP, da arquitetura e oráculos até saúde, liquidação e operações.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Desenvolvedores",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Como fazer hedge de uma posição LP com mais critério",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Como LPs podem usar a Avana para financiar buffers, offsets direcionais e hábitos de hedge mais disciplinados sem sair totalmente do pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Por LPs",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield looping com colateral LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Como pensar yield looping com colateral LP da Avana: buffers, stress testing, disciplina de saída e alavancagem sustentável.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Por LPs",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "O que o colateral LP torna possível",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "O que o colateral LP da Avana torna possível em empréstimos, hedge, flexibilidade de tesouraria e uso mais eficiente do capital de liquidez produtiva.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Por LPs",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Empréstimos contra LPs da Aerodrome na Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Como a Avana suporta posições LP da Aerodrome na Base para que permaneçam ativas enquanto respaldam empréstimos por um Spoke Aave v4 dedicado.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Empréstimos contra LPs da Curve na Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Como a Avana trata colateral LP da Curve em pools estáveis e correlacionados por um Spoke Aave v4 dedicado.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Colateral LP da Balancer na Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Como a Avana suporta LPs de pools ponderados da Balancer como colateral na Aave v4 enquanto a exposição permanece ativa.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Empréstimos contra LPs da Uniswap na Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Como a Avana transforma posições LP da Uniswap em colateral Aave v4 enquanto permanecem no pool e continuam ganhando taxas.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Tornar o colateral LP utilizável",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Por que o design de produto da Avana cuida de valuation clara, limites de empréstimo e saúde para que o colateral LP seja operável, não só poderoso.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Produto",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana e o próximo passo para LPs",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Por que provedores de liquidez não deveriam ter de escolher entre ganhar taxas e acessar capital, e como a Avana estende o colateral LP na Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Comunidade",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Colateral LP para instituições",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Como o colateral LP da Avana pode ajudar DAOs, tesourarias, fundos e empresas crypto-native a acessar capital sem desmontar liquidez produtiva.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Para Instituições",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Construir sobre a infraestrutura LP da Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Uma visão para desenvolvedores da infraestrutura de colateral LP da Avana: monitoramento, automação, serviços de liquidação e oportunidades para builders.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Desenvolvedores",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Dentro da arquitetura de colateral LP da Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Dentro da arquitetura de colateral LP da Avana na Aave v4: Hub, Spokes, valuation, design de oráculos e lógica de liquidação.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Desenvolvedores",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: melhor colateral, melhor controle",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "A Avana v1.1 amplia colateral multiposição, adiciona mais pools suportados, melhora delegação e alertas, e reduz overhead de transações.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Produto",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: uma camada de controle para colateral LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Como o Avana Automate ajuda a gerenciar colateral LP com automação não custodial para taxas, rebalanceamento, proteção e manutenção disciplinada.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Produto",

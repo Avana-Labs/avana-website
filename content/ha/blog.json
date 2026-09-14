@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Me Ya Sa Jinginar LP Ke Buƙatar Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Me ya sa Avana ke amfani da Smart Agents don saka idanu akan health, kula da matsayi na musamman na venue, da kiyaye ɗaukar sayar da jingina a ƙarƙashin matsin lamba.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Yadda Sayar da Jinginar LP Ya Kamata Ya Yi Aiki",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Yadda Avana ke sayar da jinginar LP tare da unwind mai sarrafawa, shiga bangare, farashi na farko inda zai yiwu, da hanyoyi na musamman na venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Masu haɓakawa",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Saita Farashin Jinginar LP da Mafi kyawun Oracle",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Yadda Avana Oracle ke saita farashin jinginar LP ta amfani da ƙimar da za a iya dawo da ita, sake ginawa mai tabbas, da haircut na dawo da kuɗi mai taka tsantsan.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Masu haɓakawa",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Yadda Avana Ke Gudanar da Haɗarin Jinginar LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Yadda Avana ke tsara tsaro mai yawa don jinginar LP, daga tsarin gini da oracle har zuwa health, sayar da jingina, da aiki.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Masu haɓakawa",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Yadda Za a Yi Hedge ga Matsayin LP da Fahimta",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Yadda LP za su yi amfani da Avana don ba da kuɗi ga buffer, daidaita alkibla, da ƙarin dabi'un hedge masu horo ba tare da fita daga pool gaba ɗaya ba.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Na tsawon LP na biyu",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping da Jinginar LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Yadda za a yi tunani game da yield looping da jinginar LP na Avana, ciki har da buffer, gwajin matsin lamba, horon fita, da leverage mai dorewa.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Na tsawon LP na biyu",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Abin da Jinginar LP Ta Yi Yiwu",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Abin da jinginar LP na Avana ta yi yiwu a cikin ari, hedging, sassaucin baitul mali, da amfani da jarin ruwan kuɗi mai amfani yadda ya kamata.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Na tsawon LP na biyu",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Ari akan LP na Aerodrome a kan Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Yadda Avana ke tallafawa matsayin LP na Aerodrome a Base don su ci gaba da aiki yayin tallafawa ari ta hanyar Spoke na Aave v4 na musamman.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Ari akan LP na Curve a kan Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Yadda Avana ke kula da jinginar LP na Curve don pool masu kwanciyar hankali da masu alaƙa ta hanyar Spoke na Aave v4 na musamman.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Jinginar LP na Balancer a kan Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Yadda Avana ke tallafawa LP na weighted pool na Balancer a matsayin jingina a kan Aave v4 yayin da fallasa ke ci gaba da aiki.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Ari akan LP na Uniswap a kan Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Yadda Avana ke mayar da matsayin LP na Uniswap zuwa jinginar Aave v4 yayin da suke cikin pool kuma suna ci gaba da samun kuɗin ciniki.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Sanya Jinginar LP Ta Zama Mai Amfani",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Me ya sa ƙirar samfurin Avana ke kula da bayyane ƙima, iyakokin ari, da health don jinginar LP ta zama mai sarrafawa, ba kawai mai ƙarfi ba.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Samfur",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana da Mataki na Gaba ga LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Me ya sa masu bayar da ruwan kuɗi ba sa buƙatar zaɓi tsakanin samun kuɗin ciniki da samun jari, da yadda Avana ke faɗaɗa jinginar LP a kan Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Al'umma",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Jinginar LP ga Cibiyoyi",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Yadda jinginar LP na Avana za ta taimaka wa DAO, baitul mali, asusu, da kamfanonin crypto su sami jari ba tare da buɗe ruwan kuɗi mai amfani ba.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Ga Cibiyoyi",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Gina a kan Kayayyakin LP na Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Ra'ayin mai haɓakawa game da kayayyakin jinginar LP na Avana, ciki har da saka idanu, atomatik, ayyukan sayar da jingina, da damar masu gina.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Masu haɓakawa",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "A Cikin Tsarin Jinginar LP na Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "A cikin tsarin jinginar LP na Avana a kan Aave v4, ciki har da Hub, Spoke, ƙima, ƙirar oracle, da dabaru na sayar da jingina.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Masu haɓakawa",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: Mafi kyawun Jingina, Mafi kyawun Sarrafawa",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 yana faɗaɗa jinginar matsayi da yawa, yana ƙara pool da ake tallafawa, yana inganta wakilci da faɗakarwa, kuma yana rage farashin ma'amala.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Samfur",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: Layer na Sarrafawa don Jinginar LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Yadda Avana Automate ke taimaka wa masu amfani su sarrafa jinginar LP tare da atomatik maras tsarewa don kuɗi, sake daidaitawa, kariya, da kiyayewa mai horo.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Samfur",

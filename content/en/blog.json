@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Why LP Collateral Needs Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Why Avana uses Smart Agents to monitor health, service venue specific positions, and keep liquidation coverage reliable under stress.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Developers",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "How LP Liquidation Should Work",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "How Avana liquidates LP collateral with controlled unwinds, partial intervention, fees first where possible, and venue specific paths.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Developers",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Pricing LP Collateral with Better Oracles",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "How Avana Oracle prices LP collateral using recoverable value, deterministic reconstruction, and conservative recovery haircuts.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Developers",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "How Avana Manages LP Collateral Risk",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "How Avana structures layered security for LP collateral, from architecture and oracles through health, liquidation, and operations.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Developers",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "How to Hedge an LP Position More Thoughtfully",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "How LPs can use Avana to fund buffers, directional offsets, and more disciplined hedge habits without fully exiting the pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "For LPs",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping with LP Collateral",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "How to think about yield looping with Avana LP collateral, including buffers, stress testing, exit discipline, and sustainable leverage.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "For LPs",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "What LP Collateral Makes Possible",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "What Avana LP collateral makes possible across borrowing, hedging, treasury flexibility, and more capital efficient use of productive liquidity.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "For LPs",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Borrowing Against Aerodrome LPs on Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "How Avana supports Aerodrome LP positions on Base so they can stay active while supporting borrowing through a dedicated Aave v4 spoke.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Developers",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Borrowing Against Curve LPs on Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "How Avana treats Curve LP collateral for stable and correlated pools through a dedicated Aave v4 spoke.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Developers",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Balancer LP Collateral on Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "How Avana supports Balancer weighted pool LPs as collateral on Aave v4 while the exposure stays active.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Developers",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Borrowing Against Uniswap LPs on Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "How Avana turns Uniswap LP positions into Aave v4 collateral while they stay in the pool and keep earning fees.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Developers",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Making LP Collateral Usable",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Why Avana product design cares about clear valuation, borrowing limits, and health so LP collateral is operable, not just powerful.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Product",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana and the Next Step for LPs",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Why liquidity providers should not have to choose between earning fees and accessing capital, and how Avana extends LP collateral on Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Community",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "LP Collateral for Institutions",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "How Avana LP collateral can help DAOs, treasuries, funds, and crypto native companies access capital without unwinding productive liquidity.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "For Institutions",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Building on Avana LP Infrastructure",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "A developer view of Avana LP collateral infrastructure, including monitoring, automation, liquidation services, and builder opportunities.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Developers",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Inside Avana's LP Collateral Architecture",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Inside Avana's LP collateral architecture on Aave v4, including the hub, spokes, valuation, oracle design, and liquidation logic.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Developers",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: Better Collateral, Better Control",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 expands multi position collateral, adds more supported pools, improves delegation and alerts, and lowers transaction overhead.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Product",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: A Control Layer for LP Collateral",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "How Avana Automate helps users manage LP collateral with non custodial automation for fees, rebalancing, protection, and disciplined maintenance.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Product",

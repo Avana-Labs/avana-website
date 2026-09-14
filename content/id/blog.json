@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Mengapa Jaminan LP Memerlukan Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Mengapa Avana memakai Smart Agents untuk memantau health, melayani posisi spesifik venue, dan menjaga cakupan likuidasi andal saat stres.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Pengembang",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Bagaimana Likuidasi LP Seharusnya Bekerja",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Bagaimana Avana melikuidasi jaminan LP dengan unwind terkontrol, intervensi parsial, biaya lebih dulu jika memungkinkan, dan jalur spesifik venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Pengembang",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Menilai Jaminan LP dengan Oracle yang Lebih Baik",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Bagaimana Avana Oracle menilai jaminan LP memakai nilai yang dapat dipulihkan, rekonstruksi deterministik, dan haircut pemulihan yang konservatif.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Pengembang",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Bagaimana Avana Mengelola Risiko Jaminan LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Bagaimana Avana menyusun keamanan berlapis untuk jaminan LP, dari arsitektur dan oracle hingga health, likuidasi, dan operasi.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Pengembang",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Cara Melakukan Hedge Posisi LP dengan Lebih Bijak",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Bagaimana LP dapat memakai Avana untuk mendanai buffer, offset arah, dan kebiasaan hedge yang lebih disiplin tanpa keluar penuh dari pool.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Selama LP detik",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping dengan Jaminan LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Cara memikirkan yield looping dengan jaminan LP Avana, termasuk buffer, stress test, disiplin exit, dan leverage yang berkelanjutan.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Selama LP detik",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Apa yang Dimungkinkan oleh Jaminan LP",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Apa yang dimungkinkan jaminan LP Avana untuk peminjaman, hedge, fleksibilitas treasury, dan penggunaan modal likuiditas produktif yang lebih efisien.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Selama LP detik",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Meminjam dengan LP Aerodrome di Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Bagaimana Avana mendukung posisi LP Aerodrome di Base agar tetap aktif sambil mendukung peminjaman lewat Spoke Aave v4 khusus.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Pengembang",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Meminjam dengan LP Curve di Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Bagaimana Avana memperlakukan jaminan LP Curve untuk pool stabil dan terkorelasi lewat Spoke Aave v4 khusus.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Pengembang",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Jaminan LP Balancer di Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Bagaimana Avana mendukung LP pool tertimbang Balancer sebagai jaminan di Aave v4 sambil eksposur tetap aktif.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Pengembang",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Meminjam dengan LP Uniswap di Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Bagaimana Avana mengubah posisi LP Uniswap menjadi jaminan Aave v4 sambil tetap di pool dan terus mendapatkan fee.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Pengembang",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Membuat Jaminan LP Mudah Digunakan",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Mengapa desain produk Avana peduli pada valuasi jelas, batas pinjam, dan health agar jaminan LP bisa dioperasikan, bukan hanya kuat.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Produk",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana dan Langkah Berikutnya untuk LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Mengapa penyedia likuiditas tidak harus memilih antara mendapat fee dan mengakses modal, dan bagaimana Avana memperluas jaminan LP di Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Komunitas",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Jaminan LP untuk Institusi",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Bagaimana jaminan LP Avana membantu DAO, treasury, dana, dan perusahaan kripto mengakses modal tanpa melepas likuiditas produktif.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Untuk Lembaga",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Membangun di Infrastruktur LP Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Pandangan developer tentang infrastruktur jaminan LP Avana, termasuk monitoring, otomasi, layanan likuidasi, dan peluang builder.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Pengembang",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Di Dalam Arsitektur Jaminan LP Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Di dalam arsitektur jaminan LP Avana di Aave v4, termasuk Hub, Spoke, valuasi, desain oracle, dan logika likuidasi.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Pengembang",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: Jaminan Lebih Baik, Kontrol Lebih Baik",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 memperluas jaminan multi-posisi, menambah pool yang didukung, meningkatkan delegasi dan alert, serta menurunkan overhead transaksi.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Produk",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: Lapisan Kontrol untuk Jaminan LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Bagaimana Avana Automate membantu pengguna mengelola jaminan LP dengan otomasi non-kustodial untuk fee, rebalance, proteksi, dan perawatan disiplin.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Produk",

@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Чому LP-заставі потрібні Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Чому Avana використовує Smart Agents для моніторингу здоров’я, обслуговування venue-специфічних позицій і надійного покриття ліквідації під стресом.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Розробники",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Як має працювати ліквідація LP",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Як Avana ліквідує LP-заставу: контрольований unwind, часткове втручання, комісії першими та шляхи під конкретний venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Розробники",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Оцінка LP-застави кращими оракулами",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Як Avana Oracle оцінює LP-заставу через recoverable value, детерміновану реконструкцію та консервативні haircuts.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Розробники",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Як Avana керує ризиком LP-застави",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Як Avana вибудовує багаторівневу безпеку LP-застави: від архітектури й оракулів до health, ліквідації та операцій.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Розробники",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Як акуратніше хеджувати LP-позицію",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Як LP можуть використовувати Avana для буферів, спрямованих офсетів і дисциплінованішого хеджу, не виходячи повністю з пулу.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Для LP",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield looping з LP-заставою",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Як думати про yield looping з LP-заставою Avana: буфери, стрес-тести, дисципліна виходу та стійке плече.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Для LP",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Що відкриває LP-застава",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Що дає LP-застава Avana: позики, хедж, гнучкість скарбниці та ефективніше використання капіталу.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Для LP",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Позики під Aerodrome LP на Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Як Avana підтримує позиції Aerodrome LP на Base: вони лишаються активними й забезпечують позику через виділений ринок.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Розробники",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Позики під Curve LP на Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Як Avana працює з Curve LP-заставою для стабільних і корельованих пулів через виділений Spoke на Aave v4.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Розробники",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Balancer LP-застава на Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Як Avana підтримує LP зважених пулів Balancer як заставу на Aave v4, поки експозиція лишається активною.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Розробники",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Позики під Uniswap LP на Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Як Avana перетворює позиції Uniswap LP на заставу Aave v4, поки вони лишаються в пулі й далі заробляють комісії.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Розробники",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Зробити LP-заставу зручною",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Чому продуктовий дизайн Avana робить ставку на зрозумілу оцінку, ліміти позики й health — щоб LP-застава була операбельною.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Продукт",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana і наступний крок для LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Чому постачальникам ліквідності не потрібно обирати між комісіями та доступом до капіталу — і як Avana розширює можливості LP.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Спільнота",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "LP-застава для інституцій",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Як LP-застава Avana допомагає DAO, скарбницям, фондам і crypto-native компаніям отримувати капітал, не розмотуючи позиції.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Для інституцій",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Розробка на інфраструктурі LP Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Погляд розробника на інфраструктуру LP-застави Avana: моніторинг, автоматизація, сервіси ліквідації та інтеграції.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Розробники",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Всередині архітектури LP-застави Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Архітектура LP-застави Avana на Aave v4: Hub, Spokes, оцінка, дизайн оракулів і ліквідація.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Розробники",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: краща застава, кращий контроль",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 розширює мультипозиційну заставу, додає пули, покращує делегування й алерти та знижує friction.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Продукт",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: шар контролю для LP-застави",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Як Avana Automate допомагає керувати LP-заставою через non-custodial автоматизацію комісій, ребалансу та захисту.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Продукт",

@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "چرا وثیقه LP به Smart Agents نیاز دارد",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "چرا Avana از Smart Agents برای پایش سلامت، سرویس موقعیت‌های مخصوص محل و پوشش لیکوییدیشن قابل‌اعتماد زیر فشار استفاده می‌کند.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "لیکوییدیشن LP چگونه باید کار کند",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "چگونه Avana وثیقه LP را با بازکردن کنترل‌شده، مداخله جزئی، اولویت کارمزد در صورت امکان و مسیرهای مخصوص محل لیکویید می‌کند.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "توسعه‌دهندگان",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "قیمت‌گذاری وثیقه LP با اوراکل‌های بهتر",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "چگونه Avana Oracle وثیقه LP را از طریق ارزش قابل‌بازیافت، بازسازی قطعی و تخفیف‌های محافظه‌کارانه ارزش‌گذاری می‌کند.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "توسعه‌دهندگان",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana چگونه ریسک وثیقه LP را مدیریت می‌کند",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "چگونه Avana امنیت لایه‌لایه برای وثیقه LP می‌سازد؛ از معماری و اوراکل تا سلامت، لیکوییدیشن و عملیات.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "توسعه‌دهندگان",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "چگونه موقعیت LP را هوشمندانه‌تر پوشش دهید",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "چگونه LPها می‌توانند با Avana بافر، پوشش جهت‌دار و عادت‌های منضبط بسازند بدون خروج کامل از استخر.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "برای LPثانیه",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "حلقه بازده با وثیقه LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "چگونه با وثیقه LP آوانا به yield looping فکر کنید: بافر، تست فشار، انضباط خروج و اهرم پایدار.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "برای LPثانیه",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "وثیقه LP چه ممکن می‌کند",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "وثیقه LP آوانا چه ممکن می‌کند: وام‌گیری، پوشش، انعطاف خزانه و استفاده کارآمدتر از سرمایه نقدینگی مولد.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "برای LPثانیه",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "وام‌گیری روی LPهای Aerodrome در Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "چگونه Avana موقعیت‌های LP آیرودروم روی Base را پشتیبانی می‌کند تا فعال بمانند و از طریق Spoke اختصاصی Aave v4 وام را پشتیبانی کنند.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "وام‌گیری روی LPهای Curve در Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "چگونه Avana وثیقه LP کرو را برای استخرهای پایدار و همبسته از طریق Spoke اختصاصی Aave v4 پردازش می‌کند.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "وثیقه LP بالانسر روی Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "چگونه Avana LP استخرهای وزنی بالانسر را به‌عنوان وثیقه روی Aave v4 پشتیبانی می‌کند در حالی که ریسک فعال می‌ماند.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "وام‌گیری روی LPهای Uniswap در Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "چگونه Avana موقعیت‌های LP یونی‌سوآپ را به وثیقه Aave v4 تبدیل می‌کند در حالی که در استخر می‌مانند و کارمزد می‌گیرند.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "قابل‌استفاده کردن وثیقه LP",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "چرا طراحی محصول Avana روی ارزش‌گذاری شفاف، سقف وام و سلامت تأکید دارد — تا وثیقه LP عملی باشد نه فقط قدرتمند.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "محصول",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana و گام بعدی برای LPها",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "چرا LPها نباید بین کسب کارمزد و دسترسی به سرمایه یکی را انتخاب کنند و Avana چگونه وثیقه LP را روی Aave v4 گسترش می‌دهد.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "جامعه",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "وثیقه LP برای نهادها",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "چگونه وثیقه LP آوانا می‌تواند به DAO، خزانه‌ها، صندوق‌ها و شرکت‌های کریپتو-نیتیو کمک کند بدون بازکردن نقدینگی مولد به سرمایه دسترسی پیدا کنند.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "برای مؤسسات",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "ساخت روی زیرساخت LP آوانا",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "نگاه توسعه‌دهنده به زیرساخت وثیقه LP آوانا: پایش، اتوماسیون، سرویس‌های لیکوییدیشن و فرصت‌های سازندگان.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "توسعه‌دهندگان",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "درون معماری وثیقه LP آوانا",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "درون معماری وثیقه LP آوانا روی Aave v4: Hub، Spokeها، ارزش‌گذاری، طراحی اوراکل و منطق لیکوییدیشن.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "توسعه‌دهندگان",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: وثیقه بهتر، کنترل بهتر",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 وثیقه چندموقعیتی را گسترش می‌دهد، استخرهای بیشتر اضافه می‌کند، تفویض و هشدارها را بهبود می‌دهد و کارمزد تراکنش را کاهش می‌دهد.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "محصول",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: لایه کنترل برای وثیقه LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "چگونه Avana Automate با اتوماسیون غیرامانی به مدیریت وثیقه LP برای کارمزد، ری‌بالانس، حفاظت و نگهداری منضبط کمک می‌کند.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "محصول",
