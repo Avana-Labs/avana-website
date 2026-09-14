@@ -63,7 +63,7 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                           className="h-8 w-8 object-contain"
                         />
                       ) : (
-                        <span className="text-[0.55rem] font-semibold tracking-[-0.02em] text-[#4e4e4e]">
+                        <span className="text-[0.55rem] font-semibold tracking-[-0.02em] text-type-secondary">
                           {protocol.shortName}
                         </span>
                       )}
@@ -72,12 +72,12 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                       <h3 className="truncate text-[1rem] font-medium leading-tight tracking-[-0.02em] text-[#292a26] sm:text-[1.1rem]">
                         {getDexDisplayName(protocol.name)}
                       </h3>
-                      <p className="mt-0.5 text-[0.72rem] leading-[1.25] text-[#6f706a] sm:text-[0.78rem]">
+                      <p className="mt-0.5 text-[0.72rem] leading-[1.25] text-type-secondary sm:text-[0.78rem]">
                         {protocol.purpose}
                       </p>
                     </div>
                     <ChevronRight
-                      className="h-4 w-4 shrink-0 text-[#aaa9a3] transition-transform group-hover:translate-x-0.5"
+                      className="h-4 w-4 shrink-0 text-type-tertiary transition-transform group-hover:translate-x-0.5"
                       strokeWidth={1.5}
                       aria-hidden="true"
                     />

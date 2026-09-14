@@ -93,7 +93,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
             </Link>
             <Link
               href="/developers/architecture"
-              className="inline-flex items-center gap-2 font-medium text-slate-700 transition hover:text-slate-950 hover:underline"
+              className="inline-flex items-center gap-2 font-medium text-type-secondary transition hover:text-foreground hover:underline"
             >
               Explore Borrow Spoke
               <ArrowRight className="h-4 w-4" />

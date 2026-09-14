@@ -33,7 +33,7 @@ export default async function ProductFeatureScrollSection({
         <SectionEyebrow tone={eyebrowTone}>{eyebrow}</SectionEyebrow>
         <SectionTitle>{title}</SectionTitle>
         {description ? (
-          <p className="mt-4 max-w-[38rem] text-[1.15rem] leading-[1.36] tracking-[-0.045em] text-[#6f7378] md:text-[1.35rem]">
+          <p className="mt-4 max-w-[38rem] text-[1.15rem] leading-[1.36] tracking-[-0.045em] text-type-secondary md:text-[1.35rem]">
             {description}
           </p>
         ) : null}
@@ -53,7 +53,7 @@ export default async function ProductFeatureScrollSection({
                       {item.description}
                     </FeatureCardDescription>
                   </div>
-                  <div className="shrink-0 text-sm font-medium tracking-[0.16em] text-gray-400">
+                  <div className="shrink-0 text-sm font-medium tracking-[0.16em] text-type-tertiary">
                     {String(index + 1).padStart(2, "0")}
                   </div>
                 </div>

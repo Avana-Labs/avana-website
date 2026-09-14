@@ -8,7 +8,7 @@ export function FaqToggleIcons() {
       stroke="currentColor"
       strokeLinecap="round"
       strokeWidth="1.5"
-      className="ml-auto h-6 w-6 shrink-0 text-gray-600"
+      className="ml-auto h-6 w-6 shrink-0 text-type-secondary"
       aria-hidden="true"
     >
       <path d="M5 12H19" />

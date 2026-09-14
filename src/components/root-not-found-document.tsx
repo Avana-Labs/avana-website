@@ -20,7 +20,7 @@ export function RootNotFoundDocument() {
               <h1 className="mx-auto mt-6 max-w-[620px] text-[1.05rem] font-semibold leading-7 tracking-[-0.02em] text-[#0F1518]">
                 This page isn&apos;t available.
               </h1>
-              <p className="mx-auto mt-5 max-w-[440px] text-[1rem] leading-7 text-[#414347] sm:text-[1.05rem]">
+              <p className="mx-auto mt-5 max-w-[440px] text-[1rem] leading-7 text-type-secondary sm:text-[1.05rem]">
                 The address may be wrong or the page may have moved.
               </p>
 

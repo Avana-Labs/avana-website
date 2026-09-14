@@ -89,7 +89,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Diatype</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Avana uses Diatype for product and marketing surfaces. It keeps dense protocol content readable while
                   still feeling sharp and editorial.
                 </p>
@@ -105,7 +105,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="mt-8 grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Outfit</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Outfit is a fallback specimen for contexts where Diatype is unavailable. Diatype remains the primary
                   typeface for the product experience.
                 </p>
@@ -139,7 +139,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="mb-12 grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Things to avoid</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Keep the Avana mark intact. These examples show the treatments that make the logo harder to read or
                   less recognizable.
                 </p>

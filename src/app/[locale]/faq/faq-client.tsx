@@ -206,7 +206,7 @@ export function FaqView({
             <input type="hidden" name="category" value={activeCategory} />
           ) : null}
           <div className="relative">
-            <div className="absolute start-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <div className="absolute start-4 top-1/2 -translate-y-1/2 text-type-tertiary">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -220,11 +220,11 @@ export function FaqView({
               name="q"
               defaultValue={searchTerm}
               placeholder={t("searchPlaceholder")}
-              className="w-full rounded-full border border-black/10 bg-white py-3.5 ps-12 pe-24 text-gray-800 placeholder:text-gray-400 focus:border-black/30 focus:outline-none focus:ring-2 focus:ring-black/8"
+              className="w-full rounded-full border border-black/10 bg-white py-3.5 ps-12 pe-24 text-gray-800 placeholder:text-type-tertiary focus:border-black/30 focus:outline-none focus:ring-2 focus:ring-black/8"
             />
             <button
               type="submit"
-              className="absolute end-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:border-black/20 hover:text-black"
+              className="absolute end-3 top-1/2 -translate-y-1/2 rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-type-secondary transition-colors hover:border-black/20 hover:text-black"
             >
               {t("search")}
             </button>
@@ -261,7 +261,7 @@ export function FaqView({
               </h2>
               <Link
                 href={clearHref}
-                className="text-sm font-medium text-gray-700 underline decoration-black/20 underline-offset-4 hover:text-black hover:decoration-black/50"
+                className="text-sm font-medium text-type-secondary underline decoration-black/20 underline-offset-4 hover:text-black hover:decoration-black/50"
               >
                 {t("clearSearch")}
               </Link>
@@ -269,7 +269,7 @@ export function FaqView({
 
             {searchResults.length === 0 ? (
               <div className="py-10 text-center">
-                <p className="text-gray-500">{t("noResults", { query: searchTerm })}</p>
+                <p className="text-type-secondary">{t("noResults", { query: searchTerm })}</p>
               </div>
             ) : (
               <FaqAccordionList

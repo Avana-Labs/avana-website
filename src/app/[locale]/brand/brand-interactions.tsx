@@ -115,7 +115,7 @@ export function BrandLogoShowcase() {
               />
             </div>
             <h3 className="text-xl font-semibold text-foreground">{t(variant.title)}</h3>
-            <p className="text-sm leading-relaxed text-gray-500">{t(variant.description)}</p>
+            <p className="text-sm leading-relaxed text-type-secondary">{t(variant.description)}</p>
           </button>
         ))}
       </div>
@@ -223,7 +223,7 @@ export function BrandGuidelinesGrid() {
             ) : null}
             <span className="pointer-events-none absolute inset-x-5 top-1/2 h-1 -translate-y-1/2 rotate-[-48deg] rounded-full bg-[#ff8f6f]" />
           </div>
-          <p className="text-center text-xs leading-tight text-gray-600">{t(item.text)}</p>
+          <p className="text-center text-xs leading-tight text-type-secondary">{t(item.text)}</p>
         </div>
       ))}
     </div>
@@ -285,7 +285,7 @@ export function BrandColorPalette() {
         <div key={group.title} className="grid items-start gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-3">
             <h3 className="text-xl font-semibold text-foreground">{phrase(group.title)}</h3>
-            <p className="text-sm leading-relaxed text-gray-500">{phrase(group.description)}</p>
+            <p className="text-sm leading-relaxed text-type-secondary">{phrase(group.description)}</p>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -303,14 +303,14 @@ export function BrandColorPalette() {
                   {color.hex === "#FFFFFF" ? (
                     <div className="absolute inset-0 border-r border-[#2F414B]/10" />
                   ) : null}
-                  <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-lg bg-white/90 px-2 py-1 text-xs font-medium text-gray-600 opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 rounded-lg bg-white/90 px-2 py-1 text-xs font-medium text-type-secondary opacity-0 transition-opacity group-hover:opacity-100">
                     {copiedColor === color.hex ? <Check className="h-3 w-3 text-emerald-500" /> : <Copy className="h-3 w-3" />}
                     {copiedColor === color.hex ? t("copied") : color.hex}
                   </span>
                 </button>
                 <div className="flex min-w-0 flex-1 flex-col justify-center py-3 pr-3">
                   <p className="font-semibold text-foreground">{phrase(color.name)}</p>
-                  <p className="mt-0.5 text-sm text-gray-500">{phrase(color.usage)}</p>
+                  <p className="mt-0.5 text-sm text-type-secondary">{phrase(color.usage)}</p>
                 </div>
               </div>
             ))}

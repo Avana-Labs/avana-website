@@ -44,7 +44,7 @@ export default async function PrivacyPage({ params }: LocaleParamsProps) {
           {/* Main content */}
           <div className="site-editorial-content min-w-0 flex-1 max-w-3xl [&_strong]:font-semibold [&_strong]:text-gray-900 [&_h3]:mt-10 [&_h3]:mb-4 [&_h4]:mt-6 [&_h4]:mb-3 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_li]:mb-2 [&_a]:text-blue-600 [&_a]:hover:underline">
             <p className="text-lg font-medium text-gray-900">Avana Privacy Policy</p>
-            <p><em className="text-gray-500">Last Revised: January 18, 2026</em></p>
+            <p><em className="text-type-secondary">Last Revised: January 18, 2026</em></p>
 
             <p>
               This Privacy Policy (&quot;Privacy Policy&quot;) explains how Avana (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) collects, uses and discloses information that we obtain about visitors (&quot;you&quot; and &quot;your&quot;) who visit the{" "}

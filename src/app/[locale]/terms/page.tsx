@@ -41,7 +41,7 @@ export default async function TermsPage({ params }: LocaleParamsProps) {
         <div className="flex min-w-0 flex-col gap-12 xl:flex-row xl:items-start xl:gap-24">
           {/* Main content */}
           <div className="site-editorial-content min-w-0 flex-1 max-w-3xl [&_strong]:font-semibold [&_strong]:text-gray-900 [&_h4]:mt-10 [&_h4]:mb-4 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_li]:mb-2 [&_a]:text-blue-600 [&_a]:hover:underline">
-            <p><em className="text-gray-500">Last Modified: January 18, 2026</em></p>
+            <p><em className="text-type-secondary">Last Modified: January 18, 2026</em></p>
 
             <p>
               These Terms of Service (the &quot;<strong>Terms</strong>&quot;) constitute a legally binding agreement made between you (&quot;<strong>you</strong>&quot;) and Avana (&quot;<strong>Avana,</strong>&quot; &quot;<strong>we,</strong>&quot; &quot;<strong>our</strong>&quot; or &quot;<strong>us</strong>&quot;) concerning your access to and use of the Testnet (as defined below), Avana Protocol (as defined below), the Informational Resources (as defined below) and such other products and services related to Avana (as defined below) that may be offered by Avana from time to time (collectively, the &quot;<strong>Services</strong>&quot;). By accessing or using the Services, you agree that you have read, understand and accept all of the terms and conditions contained in the Terms. If you do not agree to all of the terms and conditions of the Terms, you may not access or use the Services.
