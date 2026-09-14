@@ -28,6 +28,10 @@ const dexLinks: Record<string, string> = {
   SUSHI: "https://sushi.com",
 }
 
+function getDexDisplayName(name: string) {
+  return name.replace(/Uniswap v([234])/g, "Uniswap V$1").replace(/ Adapter$/, "")
+}
+
 export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapter[] }) {
   return (
     <section id="supported-dexes" className="site-section-gap">
@@ -47,7 +51,7 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                     href={dexLinks[protocol.shortName]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex min-h-[5rem] items-center gap-3 rounded-lg bg-[#fafafa] px-3 py-2.5 transition-colors hover:bg-[#f1f1ef] sm:gap-4 sm:px-4"
+                    className="group flex min-h-[6rem] items-center gap-3 rounded-lg bg-[#fafafa] px-3 py-2.5 transition-colors hover:bg-[#f1f1ef] sm:gap-4 sm:px-4"
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1 shadow-[0_1px_2px_rgba(0,0,0,0.04)]" aria-hidden="true">
                       {dexLogos[protocol.shortName] ? (
@@ -66,9 +70,9 @@ export function SupportedDexDirectory({ protocols }: { protocols: ProtocolAdapte
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="truncate text-[1rem] font-medium leading-tight tracking-[-0.02em] text-[#292a26] sm:text-[1.1rem]">
-                        {protocol.name.replace(/ Adapter$/, "")}
+                        {getDexDisplayName(protocol.name)}
                       </h3>
-                      <p className="mt-0.5 line-clamp-1 text-[0.85rem] leading-snug text-[#6f706a] sm:text-[0.95rem]">
+                      <p className="mt-0.5 text-[0.72rem] leading-[1.25] text-[#6f706a] sm:text-[0.78rem]">
                         {protocol.purpose}
                       </p>
                     </div>
