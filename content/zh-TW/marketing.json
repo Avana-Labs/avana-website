@@ -65,7 +65,7 @@
       "每個資金池細節，完整說明",
       "受支援借款市場的文件式預覽",
       "常見問題",
-      "Try Sandbox",
+      "試用沙盒",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "借貸協議，專注",
       "認識 Avana：",
       "我們很樂意與你交流。",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "協議團隊",
+      "營運團隊",
+      "市場風險團隊",
+      "抵押風險團隊",
+      "面向 AMM 流動性的借貸市場。",
+      "Avana 正在 Aave V4 上打造面向 AMM 流動性的借貸市場。我們的使命是讓 AMM 流動性倉位能夠在 DeFi 中作為抵押品使用。",
       "要讓 LP 倉位成為可用的抵押品，光靠智慧合約還不夠。倉位必須繼續在所屬資金池中運作，市場條件變化時需要重新評估其價值，同時市場還要有足夠的流動性來支援貸款。因此，Avana 將這項工作分給四個團隊，每個團隊負責不同的風險部分。"
     ]
   },
@@ -696,16 +696,16 @@
       "並行跟蹤每個倉位的健康度",
       "按市場追加或調整抵押",
       "Avana 插圖：組合 LP 倉位",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "合併支援的 LP 抵押品",
+      "將多個支援的 LP 倉位放入同一個借款帳戶。每個倉位都會依據經驗證的價值與風險參數計入抵押基礎。",
+      "根據總額度借款",
+      "Avana 會根據合併後的抵押基礎計算可用額度，因此你可以使用總額度借款，而不必為每個 LP 倉位建立單獨的貸款。",
+      "保留倉位級控制",
+      "每個 LP 倉位保留自己的估值與風險參數，同時為合併後的抵押基礎貢獻借款能力。",
+      "逐步增加抵押品",
+      "存入更多支援的 LP 倉位來提高借款能力，或依據你的投資組合與市場條件調整抵押品。",
+      "管理一個抵押帳戶",
+      "在一個地方查看合併抵押品價值、未償債務、可用額度與帳戶健康度，隨時掌握倉位與價格變化。",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana 以 LP 部位為抵押借款",
       "Avana 在接入 Hub 的市場放貸",
       "Avana Multiply 受管理槓桿收益",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "提供 LP 抵押品、借款、重新投入借出的資金，並在風險限額內重複這個流程。"
     ]
   },
   "ask-ai-showcase": {

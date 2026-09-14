@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Как Avana управляет риском LP",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Как Avana управляет риском LP-залога на рынках Spoke: ограниченные обновления, независимый обзор и аварийное сдерживание.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Разработчики",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Гайд по LP-залогу для начинающих",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Вводный гайд по LP-залогу на Avana: поведение LP, LTV, impermanent loss, ликвидация и консервативные привычки.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Для LP",

@@ -65,7 +65,7 @@
       "Każdy szczegół poola, jasno wyjaśniony",
       "Dokumentowy podgląd obsługiwanych rynków pożyczkowych",
       "Często zadawane pytania",
-      "Try Sandbox",
+      "Wypróbuj sandbox",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Protokół lendingu dla",
       "Przedstawiamy Avana:",
       "chętnie o tym usłyszymy.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Zespół protokołu",
+      "Zespół operacyjny",
+      "Zespół ryzyka rynkowego",
+      "Zespół ryzyka zabezpieczeń",
+      "Rynek pożyczek dla płynności AMM.",
+      "Avana buduje na Aave V4 rynek pożyczek dla płynności AMM. Naszą misją jest umożliwienie wykorzystania pozycji płynności AMM jako zabezpieczenia w DeFi.",
       "Przekształcenie pozycji LP w użyteczne zabezpieczenie wymaga czegoś więcej niż smart kontraktów. Pozycja musi pozostać aktywna w swoim poolu, jej wartość trzeba mierzyć wraz ze zmianą warunków, a rynek musi mieć wystarczającą płynność, aby obsłużyć pożyczkę. Dlatego Avana dzieli pracę między cztery zespoły, z których każdy odpowiada za inną część ryzyka."
     ]
   },
@@ -696,16 +696,16 @@
       "Śledź kondycję każdej pozycji równocześnie",
       "Dodaj lub dostosuj zabezpieczenie zgodnie z rynkiem",
       "Avana połączyć LP ilustracji pozycji",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Połącz obsługiwane zabezpieczenia LP",
+      "Połącz wiele obsługiwanych pozycji LP na jednym koncie pożyczkowym. Każda pozycja wnosi wkład do podstawy zabezpieczenia zgodnie ze zweryfikowaną wartością i parametrami ryzyka.",
+      "Pożyczaj w ramach całkowitej zdolności",
+      "Avana oblicza dostępny kredyt na podstawie połączonych zabezpieczeń, dzięki czemu możesz pożyczać w ramach łącznej zdolności bez tworzenia osobnej pożyczki dla każdej pozycji LP.",
+      "Zachowaj kontrolę nad każdą pozycją",
+      "Każda pozycja LP zachowuje własną wycenę i parametry ryzyka, jednocześnie zwiększając zdolność pożyczkową połączonych zabezpieczeń.",
+      "Dodawaj zabezpieczenia wraz ze wzrostem portfela",
+      "Wpłacaj kolejne obsługiwane pozycje LP, aby zwiększyć zdolność pożyczkową, lub dostosuj zabezpieczenia, gdy zmieniają się portfel i warunki rynkowe.",
+      "Zarządzaj jednym kontem zabezpieczeń",
+      "Monitoruj w jednym miejscu łączną wartość zabezpieczeń, niespłacony dług, dostępny kredyt i stan konta, gdy zmieniają się pozycje i ceny.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Pożyczanie pod pozycje LP",
       "Avana Udzielanie pożyczek na rynkach połączonych z Hubem",
       "Avana Multiply zysk z zarządzanej dźwigni",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Dostarcz zabezpieczenie LP, pożyczaj pod jego zastaw, ponownie dostarczaj pożyczony kapitał i powtarzaj do limitu ryzyka."
     ]
   },
   "ask-ai-showcase": {

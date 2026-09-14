@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Cách Avana Quản trị Rủi ro LP",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Cách Avana quản trị rủi ro tài sản thế chấp LP trên các thị trường Spoke với cập nhật có giới hạn, rà soát độc lập và kiểm soát khẩn cấp.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Nhà phát triển",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Hướng dẫn Cơ bản về Tài sản thế chấp LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Hướng dẫn cơ bản về tài sản thế chấp LP trên Avana: hành vi LP, LTV, impermanent loss, thanh lý và các bước đầu thận trọng.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Dành cho LP",

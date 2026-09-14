@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana가 LP 위험을 어떻게 관리하는가",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "제한된 업데이트, 독립 검토, 비상 차단으로 Spoke 시장 전반에서 Avana가 LP 담보 위험을 어떻게 관리하는지.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "개발자",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP 담보 입문 가이드",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana LP 담보 입문: LP 행동, LTV, impermanent loss, 청산, 보수적인 사용 습관.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP용",

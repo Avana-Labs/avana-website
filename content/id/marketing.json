@@ -65,7 +65,7 @@
       "Setiap detail Kolam, dijelaskan secara lengkap",
       "Pratinjau gaya dokumen dari pasar peminjaman yang didukung",
       "Pertanyaan yang sering diajukan",
-      "Try Sandbox",
+      "Coba Sandbox",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Sebuah protokol peminjaman untuk",
       "Memperkenalkan Avana:",
       "kami sangat ingin mendengar kabar dari Anda.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Tim protokol",
+      "Tim operasi",
+      "Tim risiko pasar",
+      "Tim risiko jaminan",
+      "Pasar pinjaman untuk likuiditas AMM.",
+      "Avana sedang membangun pasar pinjaman untuk likuiditas AMM di Aave V4. Misi kami adalah membuat posisi likuiditas AMM dapat digunakan sebagai jaminan di DeFi.",
       "Mengubah posisi LP menjadi jaminan yang dapat digunakan membutuhkan lebih dari sekadar smart contract. Posisi tersebut harus tetap aktif di pool-nya, nilainya harus diukur ketika kondisi berubah, dan pasar harus memiliki likuiditas yang cukup untuk mendukung pinjaman. Karena itu Avana membagi pekerjaan di antara empat tim, masing-masing bertanggung jawab atas bagian risiko yang berbeda."
     ]
   },
@@ -696,16 +696,16 @@
       "Lacak kesehatan setiap posisi bersamaan",
       "Tambahkan atau sesuaikan jaminan sesuai pasar",
       "Ilustrasi kombinasi posisi LP Avana",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Gabungkan jaminan LP yang didukung",
+      "Gabungkan beberapa posisi LP yang didukung dalam satu akun pinjaman. Setiap posisi berkontribusi pada basis jaminan sesuai nilai yang telah diverifikasi dan parameter risikonya.",
+      "Pinjam berdasarkan total kapasitas",
+      "Avana menghitung kredit yang tersedia dari basis jaminan gabungan, sehingga Anda dapat meminjam berdasarkan kapasitas agregat tanpa membuat pinjaman terpisah untuk setiap posisi LP.",
+      "Pertahankan kontrol tiap posisi",
+      "Setiap posisi LP mempertahankan valuasi dan parameter risikonya sendiri sambil menambah daya pinjam pada basis jaminan gabungan.",
+      "Tambahkan jaminan seiring pertumbuhan",
+      "Setorkan posisi LP yang didukung untuk meningkatkan daya pinjam, atau sesuaikan jaminan saat portofolio dan kondisi pasar berubah.",
+      "Kelola satu akun jaminan",
+      "Pantau nilai jaminan gabungan, utang terutang, kredit tersedia, dan kesehatan akun dari satu tempat saat posisi dan harga berubah.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Meminjam dengan jaminan posisi LP",
       "Avana Memberi pinjaman di pasar terhubung Hub",
       "Avana Multiply imbal hasil leverage terkelola",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Sediakan jaminan LP, pinjam berdasarkan jaminan itu, sediakan kembali modal yang dipinjam, dan ulangi hingga batas risiko Anda."
     ]
   },
   "ask-ai-showcase": {

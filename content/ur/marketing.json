@@ -65,7 +65,7 @@
       "ہر پول کی تفصیل، مکمل وضاحت",
       "معاون قرض مارکیٹس کا دستاویزی پیش منظر",
       "عمومی سوالات",
-      "Try Sandbox",
+      "سینڈ باکس آزمائیں",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "ایک قرض دینے کا پروٹوکول",
       "پیش ہے Avana:",
       "ہمیں آپ سے سن کر خوشی ہوگی۔",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "پروٹوکول ٹیم",
+      "آپریشنز ٹیم",
+      "مارکیٹ رسک ٹیم",
+      "کولیٹرل رسک ٹیم",
+      "AMM لیکویڈیٹی کے لیے قرض مارکیٹ۔",
+      "Avana Aave V4 پر AMM لیکویڈیٹی کے لیے قرض مارکیٹ بنا رہا ہے۔ ہمارا مقصد AMM لیکویڈیٹی پوزیشنز کو DeFi میں ضمانت کے طور پر قابل استعمال بنانا ہے۔",
       "LP پوزیشن کو قابل استعمال ضمانت میں تبدیل کرنے کے لیے صرف اسمارٹ کنٹریکٹس کافی نہیں۔ پوزیشن کو اپنے پول میں فعال رہنا چاہیے، حالات بدلنے پر اس کی قدر ناپی جانی چاہیے، اور قرض کو سہارا دینے کے لیے مارکیٹ میں کافی لیکویڈیٹی ہونی چاہیے۔ اسی لیے Avana کام کو چار ٹیموں میں تقسیم کرتا ہے، اور ہر ٹیم خطرے کے ایک مختلف حصے کی ذمہ دار ہے۔"
     ]
   },
@@ -696,16 +696,16 @@
       "ہر پوزیشن کی صحت کے ساتھ ساتھ نگرانی کریں",
       "مارکیٹ کے مطابق ضمانت شامل کریں یا ایڈجسٹ کریں",
       "Avana مجموعہ LP موقف کی تصویر کشی",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "معاونت یافتہ LP ضمانت کو یکجا کریں",
+      "متعدد معاونت یافتہ LP پوزیشنز کو ایک قرض اکاؤنٹ میں جمع کریں۔ ہر پوزیشن اپنی تصدیق شدہ قدر اور خطرے کے پیرامیٹرز کے مطابق ضمانت کی بنیاد میں حصہ ڈالتی ہے۔",
+      "کل صلاحیت کے مقابل قرض لیں",
+      "Avana مشترکہ ضمانت کی بنیاد پر دستیاب کریڈٹ کا حساب لگاتا ہے، اس لیے آپ ہر LP پوزیشن کے لیے الگ قرض بنائے بغیر مجموعی صلاحیت کے مقابل قرض لے سکتے ہیں۔",
+      "ہر پوزیشن کے کنٹرول برقرار رکھیں",
+      "ہر LP پوزیشن اپنی قدر اور خطرے کے پیرامیٹرز برقرار رکھتی ہے اور مشترکہ ضمانت کی بنیاد میں قرض لینے کی صلاحیت شامل کرتی ہے۔",
+      "بڑھتے ہوئے ضمانت شامل کریں",
+      "قرض لینے کی صلاحیت بڑھانے کے لیے مزید معاونت یافتہ LP پوزیشنز جمع کریں، یا پورٹ فولیو اور مارکیٹ کے حالات بدلنے پر ضمانت کو ایڈجسٹ کریں۔",
+      "ایک ضمانتی اکاؤنٹ سنبھالیں",
+      "پوزیشنز اور قیمتوں کے بدلنے کے ساتھ مشترکہ ضمانت کی قدر، بقایا قرض، دستیاب کریڈٹ اور اکاؤنٹ کی صحت ایک جگہ سے دیکھیں۔",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana LP پوزیشنز کے عوض قرض",
       "Avana Hub سے منسلک مارکیٹس میں قرض دہی",
       "Avana Multiply منظم لیوریج منافع",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "LP ضمانت فراہم کریں، اس کے مقابل قرض لیں، لیے گئے سرمائے کو دوبارہ فراہم کریں اور اپنی خطرے کی حد تک یہ عمل دہرائیں۔"
     ]
   },
   "ask-ai-showcase": {

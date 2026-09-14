@@ -65,7 +65,7 @@
       "Кожен пул — з повним розбором",
       "Попередній перегляд у стилі документа підтримуваних ринків позик",
       "Часті запитання",
-      "Try Sandbox",
+      "Спробувати пісочницю",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Кредитний протокол для",
       "Представляємо Avana:",
       "ми будемо раді почути вас.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Команда протоколу",
+      "Операційна команда",
+      "Команда ринкових ризиків",
+      "Команда ризиків забезпечення",
+      "Кредитний ринок для ліквідності AMM.",
+      "Avana створює на базі Aave V4 кредитний ринок для ліквідності AMM. Наша місія — зробити позиції ліквідності AMM придатними для використання як забезпечення в DeFi.",
       "Перетворення LP позиції на придатне для використання забезпечення потребує більше, ніж смартконтракти. Позиція має залишатися активною у своєму пулі, її вартість потрібно вимірювати зі зміною умов, а ринок має мати достатню ліквідність для підтримки позики. Тому Avana розподіляє роботу між чотирма командами, кожна з яких відповідає за окрему частину ризику."
     ]
   },
@@ -696,16 +696,16 @@
       "Відстежуйте стан здоров’я кожної позиції одночасно",
       "Додати або відрегулювати заставу відповідно до ринку",
       "Avana об'єднати LP ілюстрацій позицій",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Об’єднати підтримуване LP-забезпечення",
+      "Об’єднайте кілька підтримуваних LP-позицій в одному кредитному рахунку. Кожна позиція додає до бази забезпечення відповідно до підтвердженої вартості та параметрів ризику.",
+      "Позичати в межах загальної спроможності",
+      "Avana розраховує доступний кредит на основі об’єднаного забезпечення, тому можна позичати в межах загальної спроможності без окремої позики для кожної LP-позиції.",
+      "Зберегти контроль над кожною позицією",
+      "Кожна LP-позиція зберігає власну оцінку та параметри ризику, одночасно збільшуючи кредитну спроможність об’єднаного забезпечення.",
+      "Додавати забезпечення в міру зростання",
+      "Вносьте додаткові підтримувані LP-позиції, щоб збільшити кредитну спроможність, або коригуйте забезпечення зі зміною портфеля та ринкових умов.",
+      "Керувати одним рахунком забезпечення",
+      "Відстежуйте в одному місці загальну вартість забезпечення, непогашений борг, доступний кредит і стан рахунку, коли змінюються позиції та ціни.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Позика під LP-позиції",
       "Avana Кредитування на ринках, підключених до Hub",
       "Avana Multiply — дохід із керованим плечем",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Надавайте LP-забезпечення, позичайте під нього, знову надавайте позичений капітал і повторюйте до ліміту ризику."
     ]
   },
   "ask-ai-showcase": {

@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana บริหารความเสี่ยง LP อย่างไร",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana บริหารความเสี่ยงหลักประกัน LP ในตลาด Spoke อย่างไร ด้วยการอัปเดตแบบมีขอบเขต การตรวจสอบอิสระ และการควบคุมฉุกเฉิน",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "นักพัฒนา",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "คู่มือฉบับเริ่มต้นเรื่องหลักประกัน LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "คู่มือเริ่มต้นเรื่องหลักประกัน LP บน Avana ครอบคลุมพฤติกรรม LP, LTV, impermanent loss, การชำระบัญชี และก้าวแรกที่ระมัดระวัง",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "สำหรับ LP",

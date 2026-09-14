@@ -65,7 +65,7 @@
       "모든 풀 세부사항을 명확히 설명",
       "지원되는 차입 시장의 문서 스타일 미리보기",
       "자주 묻는 질문",
-      "Try Sandbox",
+      "샌드박스 체험",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "렌딩 프로토콜",
       "Avana 소개:",
       "연락 주시면 감사하겠습니다.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "프로토콜 팀",
+      "운영 팀",
+      "시장 리스크 팀",
+      "담보 리스크 팀",
+      "AMM 유동성을 위한 대출 시장.",
+      "Avana는 Aave V4에서 AMM 유동성을 위한 대출 시장을 구축하고 있습니다. 우리의 사명은 AMM 유동성 포지션을 DeFi에서 담보로 사용할 수 있게 만드는 것입니다.",
       "LP 포지션을 사용할 수 있는 담보로 만들려면 스마트 계약만으로는 충분하지 않습니다. 포지션은 풀에서 계속 활성 상태를 유지해야 하고, 조건이 바뀔 때마다 가치를 측정해야 하며, 시장에는 대출을 뒷받침할 충분한 유동성이 있어야 합니다. 그래서 Avana는 업무를 네 팀으로 나누고, 각 팀이 서로 다른 위험 영역을 담당합니다."
     ]
   },
@@ -696,16 +696,16 @@
       "각 포지션의 건강 상태를 함께 추적하세요",
       "시장에 따라 담보를 추가하거나 조정하세요",
       "Avana 위치 LP 결합 그림",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "지원되는 LP 담보 통합",
+      "지원되는 여러 LP 포지션을 하나의 대출 계정으로 모읍니다. 각 포지션은 검증된 가치와 위험 매개변수에 따라 담보 기반에 기여합니다.",
+      "전체 한도에 대해 대출",
+      "Avana는 통합 담보 기반을 바탕으로 사용 가능한 신용을 계산하므로 LP 포지션마다 별도 대출을 만들지 않고 전체 한도에 대해 대출할 수 있습니다.",
+      "포지션별 통제 유지",
+      "각 LP 포지션은 고유한 평가와 위험 매개변수를 유지하면서 통합 담보 기반에 대출 능력을 더합니다.",
+      "성장에 맞춰 담보 추가",
+      "지원되는 LP 포지션을 추가로 예치해 대출 능력을 높이거나 포트폴리오와 시장 조건의 변화에 맞춰 담보를 조정합니다.",
+      "하나의 담보 계정 관리",
+      "포지션과 가격이 변하는 동안 통합 담보 가치, 미상환 부채, 사용 가능한 신용, 계정 건전성을 한곳에서 확인합니다.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana LP 포지션 담보 대출",
       "Avana Hub 연결 마켓 예치",
       "Avana Multiply 관리형 레버리지 수익",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "LP 담보를 공급하고, 대출받고, 빌린 자본을 다시 공급하는 과정을 위험 한도까지 반복합니다."
     ]
   },
   "ask-ai-showcase": {

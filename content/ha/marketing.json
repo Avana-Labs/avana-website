@@ -65,7 +65,7 @@
       "Duk bayanin wurin wanka, an bayyana shi sosai",
       "Fuskar takarda na samfoti na kasuwannin aron da aka goyi baya",
       "Tambayoyin da ake yawan yi",
-      "Try Sandbox",
+      "Gwada Sandbox",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Wata ƙa'idar bayar da rance don",
       "Gabatar da Avana:",
       "Muna son jin daga gare ku.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Ƙungiyar yarjejeniya",
+      "Ƙungiyar gudanarwa",
+      "Ƙungiyar haɗarin kasuwa",
+      "Ƙungiyar haɗarin jingina",
+      "Kasuwar ba da lamuni don kuɗin ruwa na AMM.",
+      "Avana tana gina kasuwar ba da lamuni don kuɗin ruwa na AMM a kan Aave V4. Manufarmu ita ce mu sa matsayin kuɗin ruwa na AMM ya zama jingina da za a iya amfani da shi a DeFi.",
       "Mayar da matsayin LP zuwa jingina mai amfani yana buƙatar fiye da kwangilolin wayo. Dole ne matsayin ya ci gaba da aiki a cikin pool ɗinsa, a auna darajarsa yayin da yanayi ke canzawa, kuma kasuwa ta sami isasshen kuɗin ruwa don tallafa wa aro. Saboda haka Avana ta raba aikin tsakanin ƙungiyoyi huɗu, kowace tana da alhakin wani ɓangare na haɗarin."
     ]
   },
@@ -696,16 +696,16 @@
       "Bin lafiyar kowane matsayi tare",
       "Ƙara ko daidaita jinginar a kasuwa",
       "Hoton haɗin wuraren LP na Avana",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Haɗa jinginar LP da ake tallafawa",
+      "Haɗa matsayi LP da yawa da ake tallafawa cikin asusun aro guda. Kowane matsayi yana ba da gudummawa ga tushen jingina bisa ƙimar da aka tabbatar da ma'aunin haɗarinsa.",
+      "Aro bisa jimillar damar aro",
+      "Avana tana ƙididdige kuɗin da ake da shi bisa tushen jingina da aka haɗa, don haka za ka iya aro bisa jimillar damar ba tare da ƙirƙirar rance dabam ga kowane matsayi na LP ba.",
+      "Kare ikon kowane matsayi",
+      "Kowane matsayi na LP yana riƙe da nasa ƙima da ma'aunin haɗari yayin da yake ƙara damar aro ga tushen jingina da aka haɗa.",
+      "Ƙara jingina yayin da kake girma",
+      "Sanya ƙarin matsayi na LP da ake tallafawa don ƙara damar aro, ko daidaita jingina yayin da fayil ɗinka da yanayin kasuwa suka canza.",
+      "Sarrafa asusun jingina guda",
+      "Bibiyi jimillar ƙimar jingina, bashin da bai biya ba, kuɗin da ake da shi da lafiyar asusu daga wuri guda yayin da matsayi da farashi suka canza.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Aro kan matsayin LP",
       "Avana Ba da rance a kasuwannin da ke haɗe da Hub",
       "Avana Multiply ribar lefaris mai sarrafuwa",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Bayar da jinginar LP, aro a kansa, sake bayar da jarin da aka aro, sannan maimaita har zuwa iyakar haɗarinka."
     ]
   },
   "ask-ai-showcase": {

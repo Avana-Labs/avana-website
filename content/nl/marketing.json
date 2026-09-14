@@ -65,7 +65,7 @@
       "Elk pooldetail, duidelijk uitgelegd",
       "Documentachtige preview van ondersteunde leenmarkten",
       "Veelgestelde vragen",
-      "Try Sandbox",
+      "Sandbox proberen",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Een lendingprotocol voor",
       "Avana stelt zich voor:",
       "horen we graag van je.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Protocollteam",
+      "Operationsteam",
+      "Marktrisicoteam",
+      "Collateralrisicoteam",
+      "De leenmarkt voor AMM-liquiditeit.",
+      "Avana bouwt op Aave V4 de leenmarkt voor AMM-liquiditeit. Onze missie is om AMM-liquiditeitsposities bruikbaar te maken als onderpand in DeFi.",
       "Een LP-positie bruikbaar maken als onderpand vereist meer dan alleen smart contracts. De positie moet actief blijven in de pool, de waarde moet worden gemeten wanneer de omstandigheden veranderen en de markt moet voldoende liquiditeit hebben om een lening te ondersteunen. Daarom verdeelt Avana het werk over vier teams, die elk verantwoordelijk zijn voor een ander deel van het risico."
     ]
   },
@@ -696,16 +696,16 @@
       "Volg de gezondheid van elke positie tegelijkertijd",
       "Voeg onderpand toe of pas het aan volgens de markt",
       "Avana combineer LP posities illustratie",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Ondersteund LP-onderpand combineren",
+      "Breng meerdere ondersteunde LP-posities samen in één leenaccount. Elke positie draagt volgens de geverifieerde waarde en risicoparameters bij aan de onderpandbasis.",
+      "Lenen tegen de totale capaciteit",
+      "Avana berekent het beschikbare krediet over de gecombineerde onderpandbasis, zodat je tegen de totale capaciteit kunt lenen zonder voor elke LP-positie een aparte lening te maken.",
+      "Controles per positie behouden",
+      "Elke LP-positie behoudt zijn eigen waardering en risicoparameters en draagt tegelijk bij aan de leencapaciteit van de gecombineerde onderpandbasis.",
+      "Onderpand toevoegen naarmate je groeit",
+      "Stort extra ondersteunde LP-posities om je leencapaciteit te verhogen, of pas het onderpand aan wanneer je portefeuille en de marktomstandigheden veranderen.",
+      "Eén onderpandaccount beheren",
+      "Bekijk de gecombineerde onderpandwaarde, openstaande schuld, beschikbare kredietruimte en accountgezondheid op één plek terwijl posities en prijzen veranderen.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Lenen tegen LP-posities",
       "Avana Uitlenen op Hub-gekoppelde markten",
       "Avana Multiply beheerd hefboomrendement",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "LP-onderpand leveren, ertegen lenen, het geleende kapitaal opnieuw leveren en herhalen tot je risicolimiet."
     ]
   },
   "ask-ai-showcase": {

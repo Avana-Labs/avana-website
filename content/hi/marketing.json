@@ -65,7 +65,7 @@
       "हर पूल का विवरण, पूरी तरह से समझाया गया",
       "समर्थित उधार बाजारों का दस्तावेज़-शैली पूर्वावलोकन",
       "अक्सर पूछे जाने वाले प्रश्न",
-      "Try Sandbox",
+      "सैंडबॉक्स आज़माएं",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "के लिए एक उधार देने की प्रोटोकॉल",
       "Avana प्रस्तुत करना:",
       "हमें आपसे सुनकर खुशी होगी।",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "प्रोटोकॉल टीम",
+      "ऑपरेशंस टीम",
+      "मार्केट रिस्क टीम",
+      "कोलैटरल रिस्क टीम",
+      "AMM लिक्विडिटी के लिए ऋण बाजार।",
+      "Avana Aave V4 पर AMM लिक्विडिटी के लिए ऋण बाजार बना रहा है। हमारा मिशन AMM लिक्विडिटी पोज़िशन को DeFi में संपार्श्विक के रूप में उपयोगी बनाना है।",
       "LP स्थिति को उपयोगी संपार्श्विक में बदलने के लिए केवल स्मार्ट कॉन्ट्रैक्ट पर्याप्त नहीं हैं। स्थिति अपने पूल में सक्रिय रहनी चाहिए, परिस्थितियों के बदलने पर उसका मूल्य मापा जाना चाहिए, और ऋण को समर्थन देने के लिए बाजार में पर्याप्त तरलता होनी चाहिए। इसलिए Avana यह काम चार टीमों में बांटता है, जिनमें से प्रत्येक जोखिम के एक अलग हिस्से की जिम्मेदारी संभालती है।"
     ]
   },
@@ -696,16 +696,16 @@
       "प्रत्येक स्थिति के स्वास्थ्य को साथ में ट्रैक करें",
       "बाजार के अनुसार संपार्श्विक जोड़ें या समायोजित करें",
       "Avana कॉम्बाइन एलपी पोज़ीशन्स चित्रण",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "समर्थित LP संपार्श्विक को मिलाएं",
+      "कई समर्थित LP स्थितियों को एक उधार खाते में मिलाएं। प्रत्येक स्थिति अपने सत्यापित मूल्य और जोखिम पैरामीटर के अनुसार संपार्श्विक आधार में योगदान देती है।",
+      "कुल क्षमता के आधार पर उधार लें",
+      "Avana संयुक्त संपार्श्विक आधार पर उपलब्ध क्रेडिट की गणना करता है, इसलिए हर LP स्थिति के लिए अलग ऋण बनाए बिना कुल क्षमता के आधार पर उधार ले सकते हैं।",
+      "हर स्थिति के नियंत्रण बनाए रखें",
+      "हर LP स्थिति अपना मूल्यांकन और जोखिम पैरामीटर बनाए रखती है और संयुक्त संपार्श्विक आधार में उधार क्षमता जोड़ती है।",
+      "बढ़ने के साथ संपार्श्विक जोड़ें",
+      "उधार क्षमता बढ़ाने के लिए और समर्थित LP स्थितियां जमा करें, या पोर्टफोलियो और बाजार की स्थितियां बदलने पर संपार्श्विक समायोजित करें।",
+      "एक संपार्श्विक खाता प्रबंधित करें",
+      "स्थितियों और कीमतों में बदलाव के साथ संयुक्त संपार्श्विक मूल्य, बकाया ऋण, उपलब्ध क्रेडिट और खाते की सेहत को एक जगह देखें।",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana LP पोज़ीशन पर उधार",
       "Avana Hub से जुड़े बाज़ारों में उधार देना",
       "Avana Multiply प्रबंधित लीवरेज प्रतिफल",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "LP संपार्श्विक जमा करें, उसके आधार पर उधार लें, उधार ली गई पूंजी को फिर से जमा करें और अपनी जोखिम सीमा तक दोहराएं।"
     ]
   },
   "ask-ai-showcase": {

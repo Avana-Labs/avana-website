@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana 如何治理 LP 风险",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana 如何通过有界更新、独立审查与紧急遏制，在各 Spoke 市场治理 LP 抵押风险。",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "开发者",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP 抵押入门指南",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana 上 LP 抵押的入门指南：LP 行为、LTV、无常损失、清算与审慎起步。",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "持续LP秒",

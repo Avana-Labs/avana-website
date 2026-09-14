@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana কীভাবে LP ঝুঁকি পরিচালনা করে",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana Spoke মার্কেট জুড়ে কীভাবে LP জামানতের ঝুঁকি পরিচালনা করে — সীমিত আপডেট, স্বাধীন পর্যালোচনা এবং জরুরি নিয়ন্ত্রণসহ।",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "ডেভেলপাররা",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP জামানতের প্রাথমিক গাইড",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana-এ LP জামানতের প্রাথমিক গাইড — LP আচরণ, LTV, impermanent loss, লিকুইডেশন এবং সতর্ক প্রথম পদক্ষেপ।",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP সেকেন্ডের জন্য",

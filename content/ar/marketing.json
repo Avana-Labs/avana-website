@@ -65,7 +65,7 @@
       "تفاصيل كل مجمّع، مشروحة بالكامل",
       "معاينة بأسلوب المستندات لأسواق الاقتراض المدعومة",
       "الأسئلة الشائعة",
-      "Try Sandbox",
+      "جرّب بيئة الاختبار",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "بروتوكول إقراض لـ",
       "نقدّم Avana:",
       "يسعدنا أن نسمع منك.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "فريق البروتوكول",
+      "فريق العمليات",
+      "فريق مخاطر السوق",
+      "فريق مخاطر الضمانات",
+      "سوق الإقراض لسيولة AMM.",
+      "تبني Avana سوق الإقراض لسيولة AMM على Aave V4. مهمتنا هي جعل مراكز سيولة AMM قابلة للاستخدام كضمان في DeFi.",
       "تحويل مركز LP إلى ضمان قابل للاستخدام يتطلب أكثر من العقود الذكية. يجب أن يظل المركز نشطًا في مجمّعه، وأن تُقاس قيمته مع تغير الظروف، وأن يمتلك السوق سيولة كافية لدعم القرض. لذلك تقسم Avana العمل بين أربعة فرق، يتولى كل منها جزءًا مختلفًا من المخاطر."
     ]
   },
@@ -696,16 +696,16 @@
       "تتبّع صحة كل مركزية بالتوازي",
       "أضِف أو عدّل الضمان حسب السوق",
       "رسم Avana: دمج مراكز LP",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "اجمع ضمانات LP المدعومة",
+      "اجمع عدة مراكز LP مدعومة في حساب اقتراض واحد. يساهم كل مركز في قاعدة الضمان وفق قيمته التي تم التحقق منها ومعايير مخاطره.",
+      "اقترض مقابل القدرة الإجمالية",
+      "تحسب Avana الائتمان المتاح عبر قاعدة الضمان المجمعة، لتتمكن من الاقتراض مقابل القدرة الإجمالية دون إنشاء قرض منفصل لكل مركز LP.",
+      "حافظ على ضوابط كل مركز",
+      "يحتفظ كل مركز LP بتقييمه ومعايير مخاطره الخاصة، مع مساهمته في قدرة الاقتراض لقاعدة الضمان المجمعة.",
+      "أضف الضمان مع نموك",
+      "أودع مراكز LP مدعومة إضافية لزيادة قدرتك على الاقتراض، أو عدّل الضمان مع تغير محفظتك وظروف السوق.",
+      "أدر حساب ضمان واحدًا",
+      "راقب قيمة الضمان المجمعة والدين المستحق والائتمان المتاح وصحة الحساب من مكان واحد مع تغير المراكز والأسعار.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana الاقتراض مقابل مراكز LP",
       "Avana الإقراض في الأسواق المتصلة بـ Hub",
       "Avana Multiply عائد الرافعة المالية المُدارة",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "قدّم ضمان LP، واقترض مقابله، وأعد توفير رأس المال المقترض، وكرر ذلك حتى حد المخاطر."
     ]
   },
   "ask-ai-showcase": {

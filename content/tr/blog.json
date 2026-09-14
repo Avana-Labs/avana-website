@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana LP riskini nasıl yönetir",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana’nın Spoke piyasalarında LP teminat riskini sınırlı güncellemeler, bağımsız inceleme ve acil durdurma ile nasıl yönettiği.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Geliştiriciler",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP teminatına yeni başlayanlar için rehber",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana’da LP teminatına giriş: LP davranışı, LTV, impermanent loss, likidasyon ve muhafazakâr alışkanlıklar.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP'ler için",

@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana が LP リスクをどう統治するか",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Spoke 市場全体で、限定的な更新・独立レビュー・緊急時の封じ込めにより、Avana が LP 担保リスクをどう統治するか。",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "開発者",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP 担保の初心者ガイド",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana の LP 担保入門: LP の挙動、LTV、impermanent loss、清算、保守的な使い方。",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP向け",

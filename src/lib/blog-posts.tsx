@@ -22,7 +22,7 @@ export const blogPosts: readonly BlogPostDefinition[] = [
   {
     slug: "lp-risk-governance",
     title: "How Avana Governs LP Risk",
-    date: "July 24, 2026",
+    date: "September 24, 2026",
     description:
       "How Avana governs LP collateral risk across spoke markets with bounded updates, independent review, and emergency containment.",
     image: "/images/blog/lp-risk-governance.png",
@@ -774,7 +774,7 @@ export const blogPosts: readonly BlogPostDefinition[] = [
   {
     slug: "lp-collateral-guide",
     title: "A Beginner's Guide to LP Collateral",
-    date: "June 4, 2026",
+    date: "August 4, 2026",
     description:
       "A beginner's guide to LP collateral on Avana, covering LP behavior, LTV, impermanent loss, liquidation, and conservative first steps.",
     image: "/images/blog/beginners-guide-lp-collateral.png",

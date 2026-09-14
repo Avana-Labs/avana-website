@@ -65,7 +65,7 @@
       "Cada detalle del pool, bien explicado",
       "Vista estilo documento de los mercados de préstamo compatibles",
       "Preguntas frecuentes",
-      "Try Sandbox",
+      "Probar el sandbox",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Un protocolo de préstamo para",
       "Presentamos Avana:",
       "nos encantaría saber de ti.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Equipo de protocolo",
+      "Equipo de operaciones",
+      "Equipo de riesgo de mercado",
+      "Equipo de riesgo de colateral",
+      "El mercado de préstamos para la liquidez AMM.",
+      "Avana está construyendo el mercado de préstamos para la liquidez AMM en Aave V4. Nuestra misión es hacer que las posiciones de liquidez AMM puedan utilizarse como colateral en DeFi.",
       "Convertir una posición LP en colateral utilizable requiere más que contratos inteligentes. La posición debe mantenerse activa en su pool, su valor debe medirse cuando cambian las condiciones y el mercado debe tener suficiente liquidez para respaldar un préstamo. Por eso Avana divide el trabajo entre cuatro equipos, cada uno responsable de una parte distinta del riesgo."
     ]
   },
@@ -696,16 +696,16 @@
       "Sigue la salud de cada posición junto con",
       "Añade o ajusta colateral a medida que el mercado",
       "Ilustración Avana de combinación de posiciones LP",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Combina colateral LP compatible",
+      "Reúne varias posiciones LP compatibles en una sola cuenta de préstamo. Cada posición contribuye a la base de colateral según su valor verificado y sus parámetros de riesgo.",
+      "Pide prestado contra la capacidad total",
+      "Avana calcula el crédito disponible sobre la base de colateral combinada, para que puedas pedir prestado contra la capacidad total sin crear un préstamo separado para cada posición LP.",
+      "Conserva los controles de cada posición",
+      "Cada posición LP mantiene su propia valoración y sus parámetros de riesgo mientras aporta capacidad de préstamo a la base de colateral combinada.",
+      "Añade colateral a medida que creces",
+      "Deposita más posiciones LP compatibles para aumentar tu capacidad de préstamo o ajusta el colateral cuando cambien tu cartera y las condiciones del mercado.",
+      "Gestiona una sola cuenta de colateral",
+      "Consulta desde un solo lugar el valor del colateral combinado, la deuda pendiente, el crédito disponible y la salud de la cuenta mientras cambian las posiciones y los precios.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Pedir prestado con posiciones LP",
       "Avana Prestar en mercados conectados al Hub",
       "Avana Multiplicar rendimiento con apalancamiento gestionado",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Aporta colateral LP, pide prestado, vuelve a suministrar el capital prestado y repite hasta alcanzar tu límite de riesgo."
     ]
   },
   "ask-ai-showcase": {

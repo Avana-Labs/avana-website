@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Bagaimana Avana Mengelola Risiko LP",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Bagaimana Avana mengelola risiko jaminan LP di pasar Spoke dengan pembaruan terbatas, tinjauan independen, dan penahanan darurat.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Pengembang",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Panduan Pemula tentang Jaminan LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Panduan pemula tentang jaminan LP di Avana: perilaku LP, LTV, impermanent loss, likuidasi, dan langkah awal yang konservatif.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Selama LP detik",

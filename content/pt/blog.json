@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Como a Avana governa o risco LP",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Como a Avana governa o risco de colateral LP em mercados Spoke com atualizações limitadas, revisão independente e contenção de emergência.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Desenvolvedores",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Guia para iniciantes de colateral LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Um guia para iniciantes de colateral LP na Avana: comportamento LP, LTV, impermanent loss, liquidação e primeiros passos conservadores.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Por LPs",

@@ -65,7 +65,7 @@
       "প্রতিটি পুলের বিস্তারিত, সম্পূর্ণভাবে ব্যাখ্যা করা হয়েছে",
       "সমর্থিত ঋণ বাজারের ডকুমেন্ট-স্টাইল প্রিভিউ",
       "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
-      "Try Sandbox",
+      "স্যান্ডবক্স ব্যবহার করুন",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "একটি ঋণ প্রদানের প্রোটোকল জন্য",
       "অ্যাভানা পরিচিত করানো হচ্ছে:",
       "আমরা আপনার কথা শুনতে খুব আগ্রহী।",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "প্রোটোকল টিম",
+      "অপারেশনস টিম",
+      "মার্কেট রিস্ক টিম",
+      "কোল্যাটেরাল রিস্ক টিম",
+      "AMM লিকুইডিটির জন্য ঋণ বাজার।",
+      "Avana Aave V4-এ AMM লিকুইডিটির জন্য ঋণ বাজার তৈরি করছে। আমাদের লক্ষ্য AMM লিকুইডিটি অবস্থানকে DeFi-তে জামানত হিসেবে ব্যবহারযোগ্য করে তোলা।",
       "একটি এলপি অবস্থানকে ব্যবহারযোগ্য জামানতে পরিণত করতে স্মার্ট কন্ট্রাক্টের চেয়েও বেশি কিছু প্রয়োজন। অবস্থানটি তার পুলে সক্রিয় থাকতে হবে, পরিস্থিতি বদলালে তার মূল্য নির্ণয় করতে হবে, এবং ঋণ সমর্থনের জন্য বাজারে যথেষ্ট তারল্য থাকতে হবে। তাই অভানা কাজটি চারটি দলের মধ্যে ভাগ করে, প্রতিটি দল ঝুঁকির একটি আলাদা অংশের দায়িত্বে থাকে।"
     ]
   },
@@ -696,16 +696,16 @@
       "প্রতিটি অবস্থানের স্বাস্থ্যের পাশাপাশি ট্র্যাক করুন",
       "বাজার অনুযায়ী জামানত যোগ করুন বা সমন্বয় করুন",
       "আভানা কম্বাইন এলপি অবস্থানের চিত্রণ",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "সমর্থিত LP জামানত একত্র করুন",
+      "একটি ঋণ অ্যাকাউন্টে একাধিক সমর্থিত LP অবস্থান একত্র করুন। যাচাইকৃত মূল্য ও ঝুঁকি প্যারামিটার অনুযায়ী প্রতিটি অবস্থান জামানত ভিত্তিতে অবদান রাখে।",
+      "মোট সক্ষমতার বিপরীতে ঋণ নিন",
+      "Avana সম্মিলিত জামানত ভিত্তির ওপর উপলভ্য ক্রেডিট গণনা করে, তাই প্রতিটি LP অবস্থানের জন্য আলাদা ঋণ তৈরি না করেই মোট সক্ষমতার বিপরীতে ঋণ নিতে পারেন।",
+      "প্রতিটি অবস্থানের নিয়ন্ত্রণ বজায় রাখুন",
+      "প্রতিটি LP অবস্থান তার নিজস্ব মূল্যায়ন ও ঝুঁকি প্যারামিটার বজায় রেখে সম্মিলিত জামানত ভিত্তিতে ঋণ নেওয়ার সক্ষমতা যোগ করে।",
+      "বাড়ার সঙ্গে জামানত যোগ করুন",
+      "ঋণ নেওয়ার সক্ষমতা বাড়াতে আরও সমর্থিত LP অবস্থান জমা দিন, অথবা পোর্টফোলিও ও বাজার পরিস্থিতি বদলালে জামানত সামঞ্জস্য করুন।",
+      "একটি জামানত অ্যাকাউন্ট পরিচালনা করুন",
+      "অবস্থান ও মূল্য বদলানোর সঙ্গে সম্মিলিত জামানত মূল্য, বকেয়া ঋণ, উপলভ্য ক্রেডিট এবং অ্যাকাউন্টের স্বাস্থ্য এক জায়গা থেকে দেখুন।",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana LP পজিশনের বিপরীতে ধার",
       "Avana Hub-সংযুক্ত বাজারে ঋণদান",
       "Avana Multiply পরিচালিত লিভারেজ রিটার্ন",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "LP জামানত সরবরাহ করুন, ঋণ নিন, ধার করা মূলধন আবার সরবরাহ করুন এবং ঝুঁকি সীমা পর্যন্ত পুনরাবৃত্তি করুন।"
     ]
   },
   "ask-ai-showcase": {

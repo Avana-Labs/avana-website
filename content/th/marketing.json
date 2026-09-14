@@ -65,7 +65,7 @@
       "รายละเอียดของทุก pool อธิบายอย่างครบถ้วน",
       "ตัวอย่างเอกสารของตลาดการกู้ยืมที่รองรับ",
       "คำถามที่พบบ่อย",
-      "Try Sandbox",
+      "ลองใช้แซนด์บ็อกซ์",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "โปรโตคอลการให้ยืมสำหรับ",
       "แนะนำ Avana:",
       "เราต้องการฟังจากคุณ",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "ทีมโปรโตคอล",
+      "ทีมปฏิบัติการ",
+      "ทีมความเสี่ยงตลาด",
+      "ทีมความเสี่ยงหลักประกัน",
+      "ตลาดกู้ยืมสำหรับสภาพคล่อง AMM",
+      "Avana กำลังสร้างตลาดกู้ยืมสำหรับสภาพคล่อง AMM บน Aave V4 ภารกิจของเราคือทำให้ตำแหน่งสภาพคล่อง AMM สามารถใช้เป็นหลักประกันใน DeFi ได้",
       "การทำให้ตำแหน่ง LP กลายเป็นหลักประกันที่ใช้งานได้ต้องอาศัยมากกว่าสมาร์ตคอนแทรกต์ ตำแหน่งนั้นต้องยังทำงานอยู่ในพูลของตน ต้องวัดมูลค่าได้เมื่อเงื่อนไขเปลี่ยนแปลง และตลาดต้องมีสภาพคล่องเพียงพอที่จะรองรับเงินกู้ Avana จึงแบ่งงานออกเป็นสี่ทีม โดยแต่ละทีมรับผิดชอบความเสี่ยงคนละส่วน"
     ]
   },
@@ -696,16 +696,16 @@
       "ติดตามสุขภาพของแต่ละตำแหน่งไปพร้อมกัน",
       "เพิ่มหรือปรับหลักประกันตามตลาด",
       "ภาพประกอบตำแหน่ง LP ของ Avana combine",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "รวมหลักประกัน LP ที่รองรับ",
+      "รวมตำแหน่ง LP ที่รองรับหลายรายการไว้ในบัญชีการกู้ยืมเดียว แต่ละตำแหน่งจะมีส่วนช่วยในฐานหลักประกันตามมูลค่าที่ตรวจสอบแล้วและพารามิเตอร์ความเสี่ยง",
+      "กู้ยืมตามวงเงินรวม",
+      "Avana คำนวณเครดิตที่ใช้ได้จากฐานหลักประกันรวม ทำให้คุณกู้ยืมตามวงเงินรวมได้โดยไม่ต้องสร้างเงินกู้แยกสำหรับแต่ละตำแหน่ง LP",
+      "คงการควบคุมของแต่ละตำแหน่ง",
+      "แต่ละตำแหน่ง LP ยังคงมีการประเมินมูลค่าและพารามิเตอร์ความเสี่ยงของตนเอง พร้อมเพิ่มความสามารถในการกู้ยืมให้ฐานหลักประกันรวม",
+      "เพิ่มหลักประกันเมื่อพอร์ตเติบโต",
+      "ฝากตำแหน่ง LP ที่รองรับเพิ่มเติมเพื่อเพิ่มความสามารถในการกู้ยืม หรือปรับหลักประกันเมื่อพอร์ตและเงื่อนไขตลาดเปลี่ยนแปลง",
+      "จัดการบัญชีหลักประกันเดียว",
+      "ติดตามมูลค่าหลักประกันรวม หนี้คงค้าง เครดิตที่ใช้ได้ และสุขภาพบัญชีได้จากที่เดียวเมื่อ ตำแหน่งและราคาเปลี่ยนแปลง",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana การกู้ยืมโดยใช้ตำแหน่ง LP",
       "Avana การปล่อยกู้ในตลาดที่เชื่อมกับ Hub",
       "Avana Multiply ผลตอบแทนเลเวอเรจแบบมีการบริหาร",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "จัดหาหลักประกัน LP กู้ยืมโดยใช้หลักประกันนั้น จัดหาเงินทุนที่กู้มาอีกครั้ง และทำซ้ำจนถึงขีดจำกัดความเสี่ยง"
     ]
   },
   "ask-ai-showcase": {

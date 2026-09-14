@@ -65,7 +65,7 @@
       "Mọi chi tiết về pool, được giải thích đầy đủ",
       "Xem trước kiểu tài liệu của các thị trường cho vay được hỗ trợ",
       "Câu hỏi thường gặp",
-      "Try Sandbox",
+      "Thử Sandbox",
       "Protected at the pool level"
     ]
   },
@@ -215,12 +215,12 @@
       "Một giao thức cho vay cho",
       "Giới thiệu Avana:",
       "chúng tôi rất muốn nghe ý kiến từ bạn.",
-      "Protocol team",
-      "Operations team",
-      "Market Risk team",
-      "Collateral Risk team",
-      "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Đội ngũ giao thức",
+      "Đội ngũ vận hành",
+      "Đội ngũ rủi ro thị trường",
+      "Đội ngũ rủi ro tài sản thế chấp",
+      "Thị trường cho vay dành cho thanh khoản AMM.",
+      "Avana đang xây dựng thị trường cho vay dành cho thanh khoản AMM trên Aave V4. Sứ mệnh của chúng tôi là biến các vị thế thanh khoản AMM thành tài sản thế chấp có thể sử dụng trong DeFi.",
       "Biến một vị thế LP thành tài sản thế chấp có thể sử dụng đòi hỏi nhiều hơn các hợp đồng thông minh. Vị thế phải duy trì hoạt động trong pool của mình, giá trị phải được đo lường khi điều kiện thay đổi và thị trường phải có đủ thanh khoản để hỗ trợ một khoản vay. Vì vậy Avana chia công việc cho bốn đội, mỗi đội chịu trách nhiệm về một phần rủi ro khác nhau."
     ]
   },
@@ -696,16 +696,16 @@
       "Theo dõi sức khỏe của từng vị trí cùng nhau",
       "Thêm hoặc điều chỉnh tài sản thế chấp theo thị trường",
       "Minh họa các vị trí kết hợp LP của Avana",
-      "Combine supported LP collateral",
-      "Bring multiple supported LP positions into one borrowing account. Each position contributes to the collateral base according to its verified value and risk parameters.",
-      "Borrow against total capacity",
-      "Avana calculates available credit across the combined collateral base, so you can borrow against aggregate capacity without creating a separate loan for every LP position.",
-      "Preserve position-level controls",
-      "Each LP position keeps its own valuation and risk parameters while contributing borrowing power to the combined collateral base.",
-      "Add collateral as you grow",
-      "Deposit additional supported LP positions to increase borrowing power, or adjust collateral as your portfolio and market conditions change.",
-      "Manage one collateral account",
-      "Monitor combined collateral value, outstanding debt, available credit, and account health from one place as positions and prices change.",
+      "Gộp tài sản thế chấp LP được hỗ trợ",
+      "Gộp nhiều vị thế LP được hỗ trợ vào một tài khoản vay. Mỗi vị thế đóng góp vào cơ sở tài sản thế chấp theo giá trị đã xác minh và các tham số rủi ro của vị thế đó.",
+      "Vay theo tổng hạn mức",
+      "Avana tính tín dụng khả dụng trên cơ sở tài sản thế chấp hợp nhất, để bạn có thể vay theo tổng hạn mức mà không cần tạo khoản vay riêng cho từng vị thế LP.",
+      "Giữ kiểm soát riêng cho từng vị thế",
+      "Mỗi vị thế LP giữ nguyên định giá và tham số rủi ro riêng, đồng thời đóng góp sức vay vào cơ sở tài sản thế chấp hợp nhất.",
+      "Bổ sung tài sản thế chấp khi danh mục tăng",
+      "Nạp thêm các vị thế LP được hỗ trợ để tăng sức vay, hoặc điều chỉnh tài sản thế chấp khi danh mục và điều kiện thị trường thay đổi.",
+      "Quản lý một tài khoản tài sản thế chấp",
+      "Theo dõi giá trị tài sản thế chấp hợp nhất, dư nợ, tín dụng khả dụng và tình trạng tài khoản từ một nơi khi vị thế và giá thay đổi.",
       "Combine collateral. Unlock more credit.",
       "One borrowing account across every supported LP position."
     ]
@@ -738,7 +738,7 @@
       "Avana Vay dựa trên vị thế LP",
       "Avana Cho vay vào thị trường kết nối Hub",
       "Avana Multiply lợi suất đòn bẩy có kiểm soát",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Cung cấp tài sản thế chấp LP, vay dựa trên tài sản đó, cung cấp lại vốn đã vay và lặp lại đến giới hạn rủi ro của bạn."
     ]
   },
   "ask-ai-showcase": {
