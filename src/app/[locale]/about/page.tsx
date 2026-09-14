@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Blocks, ChartNoAxesCombined, ShieldCheck, Workflow, type LucideIcon } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import ProtocolRoadmapSection from "@/components/protocol-roadmap-section"
-import { FeatureCardDescription, FeatureCardTitle, SectionIntro, SectionLead } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle, SectionLead } from "@/components/shared"
 import { SITE_NAME } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
@@ -97,21 +97,12 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
               LP markets, and an Aave v4 Lend Spoke that supplies the capital behind those markets.
             </p>
             <p className="type-body-copy">
-              <span className="text-foreground">The end state is simple:</span> LP positions that can earn
-              in AMMs, back loans in lending markets, and carry risk controls specific to the pools they come from.
+              The end state is simple: LP positions can earn in AMMs, back loans in lending markets, and carry
+              pool-specific risk controls. Avana splits risk management across specialized contributor scopes, so no
+              single team owns every assumption behind an LP collateral market.
             </p>
             <div className="space-y-5 pt-8">
-              <SectionIntro
-                eyebrow="Separate responsibilities, fewer blind spots"
-                eyebrowTone="cyan"
-                title="Four teams cover protocol engineering, operations, market modeling, and collateral review."
-              />
-
               <div className="space-y-5">
-                <p className="type-body-copy">
-                  Risk management in Avana is split across specialized contributor scopes so no single team owns every
-                  assumption behind an LP collateral market.
-                </p>
                 <div className="grid gap-4 md:grid-cols-2 md:gap-5">
                   {riskTeams.map(({ number, title, description, icon: Icon }) => (
                     <article

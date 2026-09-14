@@ -220,7 +220,8 @@
       "Market Risk team",
       "Collateral Risk team",
       "The lending market for AMM liquidity.",
-      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi."
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Stan końcowy jest prosty: Pozycje LP, które zarabiają w AMM, wspierają pożyczki na rynkach lendingu i niosą kontrole ryzyka właściwe dla pooli, z których pochodzą. Zarządzanie ryzykiem w Avana jest podzielone na specjalistyczne zakresy contributorów, by żaden zespół nie posiadał wszystkich założeń stojących za rynkiem zabezpieczenia LP."
     ]
   },
   "brand/page": {
