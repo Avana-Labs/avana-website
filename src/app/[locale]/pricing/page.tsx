@@ -101,7 +101,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             {feeCards.map((card) => (
               <article
                 key={card.title}
-                className={`flex min-h-[35rem] flex-col rounded-xl border p-5 md:min-h-[38rem] md:p-6 ${
+                className={`flex h-full flex-col rounded-xl border p-5 md:p-6 ${
                   card.featured
                     ? "border-foreground/15 bg-[#fafafa]"
                     : "border-border/70 bg-[#fafafa] text-foreground"
@@ -114,7 +114,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                   </p>
                 </div>
 
-                <div className="mt-8 flex items-baseline gap-2 border-b border-current/10 pb-7">
+                <div className="mt-8 flex items-baseline gap-2 pb-7">
                   <span className="text-[clamp(2.35rem,3.5vw,3.35rem)] font-normal leading-none tracking-[-0.06em]">
                     {card.value}
                   </span>
