@@ -97,10 +97,10 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
               LP markets, and an Aave v4 Lend Spoke that supplies the capital behind those markets.
             </p>
             <p className="type-body-copy">
-              The goal is simple: make LP positions productive in two places at once—earning fees in AMMs while
-              backing loans in lending markets, with risk controls tailored to each pool. Avana keeps that risk visible
-              through specialized ownership across protocol engineering, operations, market modeling, and collateral
-              review.
+              Turning an LP position into usable collateral requires more than smart contracts. The position must stay
+              active in its pool, its value must be measured as conditions change, and the market must have enough
+              liquidity to support a loan. That is why Avana divides the work across four teams, each responsible for
+              a different part of the risk.
             </p>
             <div className="space-y-5 pt-8">
               <div className="space-y-5">

@@ -164,10 +164,6 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
         <SectionTitle>Borrow comes first, followed by Lend and Multiply.</SectionTitle>
       </div>
 
-      <p className="type-body-copy">
-        Track the engineering, risk, and launch milestones within each phase.
-      </p>
-
       <div className="flex flex-col gap-10">
         {roadmapPhases.map((phase, index) => {
           const statusOrder: RoadmapStatus[] = ["Released", "In Progress", "Q2", "Q3", "Q4", "Q1 2027"]
