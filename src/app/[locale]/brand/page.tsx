@@ -52,7 +52,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
             <h1 className="type-index-title text-foreground">
-              The Avana brand system
+              Brand Kit
             </h1>
             <p className="max-w-xl text-[1rem] leading-[1.55] tracking-[-0.02em] text-type-secondary md:text-[1.05rem]">
               Official Avana logos, colors, typography, and rules for using the brand clearly.
