@@ -8,36 +8,30 @@ import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 const valuationItems = [
   {
     number: "01",
-    title: "Live LP collateral",
-    description:
-      "Treat each LP position as live collateral valued like an active AMM position, not a static token.",
-  },
-  {
-    number: "02",
     title: "Pool-specific scoring",
     description:
       "Borrowing power is risk-scored with pool logic that reflects volatility, depth, and market behavior.",
   },
   {
-    number: "03",
+    number: "02",
     title: "Real AMM behaviour",
     description:
       "Collateral rules track real pool structure and exposure so credit stays tied to your live position.",
   },
   {
-    number: "04",
+    number: "03",
     title: "Shared Hub liquidity",
     description:
       "Borrowing capacity comes from shared Hub liquidity while your LP stays productive in the pool.",
   },
   {
-    number: "05",
+    number: "04",
     title: "Dual-oracle pricing",
     description:
       "Dual-oracle pricing keeps marks robust as markets move so collateral value stays credible over time.",
   },
   {
-    number: "06",
+    number: "05",
     title: "Active risk controls",
     description:
       "Health monitoring and venue-aware liquidation protect standards while your exposure keeps earning fees.",
@@ -73,7 +67,7 @@ export default async function BorrowValuationSection({ locale }: { locale: AppLo
               <Accordion
                 type="single"
                 collapsible
-                defaultValue="live-lp-collateral"
+                defaultValue="pool-specific-scoring"
                 orientation="vertical"
                 className="w-full"
               >
