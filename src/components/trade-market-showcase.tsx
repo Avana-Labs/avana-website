@@ -192,7 +192,7 @@ export default function TradeMarketShowcase() {
           <div className="flex max-w-[600px] flex-col gap-2">
             <SectionEyebrow tone="emerald">{t("Lend assets you already hold")}</SectionEyebrow>
             <SectionTitle className="max-w-none">
-              {t("Supply stablecoins, Ethereum, Bitcoin, and other assets.")}
+              {t("Supply Stablecoins, Ethereum based and other assets.")}
             </SectionTitle>
           </div>
         </div>
