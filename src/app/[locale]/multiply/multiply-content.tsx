@@ -136,7 +136,7 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["multiply/multiply-content", "leverage-glance-showcase-section", "homepage/HomepageTestimonialSection", "InlineFaqSection"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <FeaturePageHero
         title={
           <>
@@ -155,7 +155,7 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
           href="https://app.avana.cc"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-[#00a0c2]"
         >
           Try Looping
         </Link>
@@ -216,7 +216,7 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
                   key={feature.title}
                   className="flex flex-col bg-transparent"
                 >
-                  <feature.icon className="h-11 w-11 text-[#01AACF]" strokeWidth={1.5} aria-hidden="true" />
+                  <feature.icon className="h-11 w-11 text-type-accent" strokeWidth={1.5} aria-hidden="true" />
                   <FeatureCardTitle className="mt-5">{feature.title}</FeatureCardTitle>
                   <FeatureCardDescription className="mt-2 max-w-[22rem]">
                     {feature.description}
@@ -256,7 +256,7 @@ export default async function MultiplyPage({ params }: LocaleParamsProps) {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   </LocalizedMarketing>
 )
 }

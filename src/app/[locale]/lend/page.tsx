@@ -124,7 +124,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "trade-market-showcase", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <FeaturePageHero
         title="Earn interest on your assets"
         description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
@@ -137,7 +137,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
           href="https://app.avana.cc"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#00a0c2]"
+          className="inline-flex items-center justify-center rounded-full bg-[#01AACF] px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-[#00a0c2]"
         >
           Try Lending
         </Link>
@@ -227,7 +227,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
         </div>
       </div>
       </div>
-    </main>
+    </div>
   </LocalizedMarketing>
 )
 }

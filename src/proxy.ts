@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { defaultLocale, localeCodes } from "@/i18n/locales"
-import { getMarkdownForPath } from "@/lib/api/markdown"
+import { acceptsMarkdown, getMarkdownForPath } from "@/lib/api/markdown"
 
 const localeSet = new Set<string>(localeCodes)
 const internalRewriteHeader = "x-avana-locale-rewrite"
@@ -25,7 +25,7 @@ export default function proxy(request: NextRequest) {
   // Generated inline (not rewritten) so unknown paths keep an honest 404 status —
   // a middleware rewrite would force the response back to 200.
   const accept = request.headers.get("accept") ?? ""
-  if (accept.includes("text/markdown")) {
+  if (acceptsMarkdown(accept)) {
     const { status, body } = getMarkdownForPath(pathname)
     return new NextResponse(body, {
       status,
@@ -67,5 +67,5 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
+  matcher: "/((?!api|trpc|_next|_vercel|og(?:/|$)|.*\\..*).*)",
 }
