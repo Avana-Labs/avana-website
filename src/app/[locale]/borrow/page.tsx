@@ -209,9 +209,11 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div id="liquidity-pools" className="flex flex-col gap-6">
-              <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="blue">Supported borrowing markets</SectionEyebrow>
-                <SectionTitle>See how each pool becomes borrowable</SectionTitle>
+              <div className="flex max-w-none flex-col gap-2">
+                <SectionEyebrow tone="blue">Everything in one interface</SectionEyebrow>
+                <SectionTitle className="lg:whitespace-nowrap">
+                  Discover markets and manage risk across your portfolio.
+                </SectionTitle>
               </div>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
                 <Image

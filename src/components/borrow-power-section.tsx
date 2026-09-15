@@ -1,4 +1,4 @@
-import { BorrowingLimitMock } from "@/components/borrowing-limit-mock"
+import Image from "next/image"
 import { FaqToggleIcons } from "@/components/faq-toggle-icons"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -49,7 +49,17 @@ export default async function BorrowPowerSection({ locale }: { locale: AppLocale
 
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
         <div className="flex items-center justify-center">
-          <BorrowingLimitMock />
+          <div className="w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[28rem]">
+            <Image
+              src="/images/avana-tokens-rewards-v2.jpg"
+              alt=""
+              aria-hidden="true"
+              width={900}
+              height={900}
+              className="h-auto w-full rounded-[1.35rem]"
+              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
+            />
+          </div>
         </div>
 
         <div className="min-w-0">
