@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react"
+import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react"
 import { createPortal } from "react-dom"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
@@ -10,6 +10,12 @@ import { siteRoutes } from "@/lib/site"
 interface HeaderMobileMenuProps {
   open: boolean
   onClose: () => void
+}
+
+function focusMenuTarget(menu: HTMLElement | null) {
+  if (!menu) return
+  const firstLink = menu.querySelector<HTMLElement>("a[href], button:not([disabled])")
+  ;(firstLink ?? menu).focus()
 }
 
 export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProps) {
@@ -53,14 +59,15 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
 
   const isVisible = open && isShown
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (open) {
       previousFocusRef.current ??= document.activeElement instanceof HTMLElement ? document.activeElement : null
       if (!isShown) return
 
-      const firstLink = menuRef.current?.querySelector<HTMLElement>("a")
-      firstLink?.focus()
-      return
+      // Move focus before paint so a11y gates don't race the open animation.
+      focusMenuTarget(menuRef.current)
+      const frame = window.requestAnimationFrame(() => focusMenuTarget(menuRef.current))
+      return () => window.cancelAnimationFrame(frame)
     }
 
     previousFocusRef.current?.focus()
@@ -93,6 +100,7 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
   return createPortal(
     <div
       ref={menuRef}
+      tabIndex={-1}
       className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-background transition-opacity duration-300 ease-out md:top-[54px] lg:hidden ${
         isVisible ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
       }`}

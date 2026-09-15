@@ -32,10 +32,14 @@ test("mobile menu moves focus inside and Escape restores the trigger", async () 
     const trigger = 'button[aria-controls="mobile-site-nav"]';
     await page.click(trigger);
     await page.waitForSelector('[role="dialog"][aria-hidden="false"], dialog[open]', { visible: true });
-    assert.ok(await page.evaluate(() => document.activeElement?.closest('[role="dialog"],dialog')), "Focus stayed outside the modal");
+    await page.waitForFunction(() => Boolean(document.activeElement?.closest('[role="dialog"],dialog')));
     for (let i = 0; i < 16; i++) {
       await page.keyboard.press("Tab");
-      assert.ok(await page.evaluate(() => document.activeElement?.closest('[role="dialog"],dialog')), "Tab escaped the modal");
+      assert.equal(
+        await page.evaluate(() => Boolean(document.activeElement?.closest('[role="dialog"],dialog'))),
+        true,
+        "Tab escaped the modal",
+      );
     }
     await page.keyboard.press("Escape");
     await page.waitForFunction(sel => document.querySelector(sel)?.getAttribute("aria-expanded") === "false", {}, trigger);
