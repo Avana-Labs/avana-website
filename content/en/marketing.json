@@ -418,7 +418,16 @@
       "Ways teams use LP collateral without giving up liquidity or fee income.",
       "Powered by Aave v4.",
       "Engineered for resilience by Avana.",
-      "Avana coin illustration"
+      "Avana coin illustration",
+      "Low risk",
+      "Watch",
+      "Elevated",
+      "Deep",
+      "Medium",
+      "Shallow",
+      "Low",
+      "Med",
+      "High"
     ]
   },
   "webapp-hero": {
@@ -735,7 +744,10 @@
       "Avana Borrow against LP positions",
       "Avana Lend into Hub-connected markets",
       "Avana Multiply managed leverage yield",
-      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit."
+      "Supply LP collateral, borrow against it, resupply the borrowed capital, and repeat until your risk limit.",
+      "LP collateral · earning fees",
+      "Borrow against your LP",
+      "Borrow used"
     ]
   },
   "ask-ai-showcase": {
@@ -761,13 +773,59 @@
       "Avana Express multi-step automated execution workflow",
       "Avana Borrow rate monitoring and conditional loan parameters",
       "Avana 24/7 position monitoring and automated risk guards",
-      "Avana Lend yield discovery and pool comparison interface"
+      "Avana Lend yield discovery and pool comparison interface",
+      "Simulate a yield loop",
+      "Automate a borrow guard",
+      "Find the best yields",
+      "Ask anything about your portfolio"
     ]
   },
   "supported-dex-directory": {
     "strings": [
       "Supported AMMs",
-      "Every supported DEX Liquidity protocols"
+      "Every supported DEX Liquidity protocols",
+      "Facilitates liquidity migration for Frax Ether (frxETH), a liquid staking derivative for Ethereum.",
+      "Handles mETH, a liquid staking token from Meta Pool or similar protocols.",
+      "Supports liquidity migration for Uniswap V2 pools.",
+      "Enables concentrated liquidity management for Uniswap V3 pools.",
+      "Facilitates liquidity migration for Curve pools, known for stablecoin and pegged asset trading.",
+      "Supports Aerodrome, a fork of Velodrome optimized for Base chain.",
+      "Handles liquidity migration for Balancer pools, which support weighted and stable pools.",
+      "Facilitates liquidity migration for Pendle, a protocol for tokenized yield and fixed-rate assets.",
+      "Supports CoW Swap, an intent-based DEX using batch auctions for MEV-protected trades.",
+      "Supports Uniswap V4, which introduces hooks and custom pool logic.",
+      "Handles eETH, a liquid staking token from Ether.fi.",
+      "Facilitates liquidity migration for USDe, a delta-neutral stablecoin.",
+      "Supports stETH, a liquid staking token from Lido.",
+      "Facilitates liquidity migration for AAVE V3 lending pools.",
+      "Handles rETH, a liquid staking token from Rocket Pool.",
+      "Supports Kelp DAO's restaking mechanisms.",
+      "Facilitates liquidity migration for MakerDAO's DAI and collateral pools.",
+      "Handles ezETH, a liquid restaking token from Renzo.",
+      "Facilitates peer-to-peer lending on Morpho Blue.",
+      "Supports liquidity migration for Compound V2 lending pools.",
+      "Facilitates liquidity migration for Yearn Vaults.",
+      "Supports Fluid Lending's dynamic interest rate model.",
+      "Handles sETH, a liquid restaking token from Swell.",
+      "Supports pxETH, a liquid staking token from Dinero.",
+      "Facilitates liquidity migration for RSV, a decentralized stablecoin.",
+      "Supports CVX and CRV rewards from Convex.",
+      "Facilitates liquidity migration for GMX's GLV Vault.",
+      "Supports GMX's liquidity pools.",
+      "Facilitates interaction with the Spark Protocol, a fork of Aave.",
+      "Supports the Venus Protocol on BNB Chain.",
+      "Enables interaction with the Euler Finance lending protocol.",
+      "Supports the Moonwell lending and borrowing protocol on Moonbeam and Moonriver.",
+      "Facilitates interaction with the Sumer.money yield aggregation platform.",
+      "Supports the Gearbox Protocol for leveraged farming and trading.",
+      "Enables interaction with the Flux Finance lending protocol.",
+      "Supports the SushiSwap DEX and related features.",
+      "Supports Aura Finance, a veBAL maximizer.",
+      "Enables interaction with Balancer V2, a flexible AMM.",
+      "Supports the Elixir Protocol, focused on liquidity for order book exchanges.",
+      "Supports the Symbiotic restaking protocol.",
+      "Facilitates basic trading strategies on DeSyn.",
+      "Supports Ondo Finance's tokenized real-world assets."
     ]
   }
 }

@@ -1,17 +1,22 @@
 import Image from "next/image"
 import { getTokenIconSrc } from "@/lib/token-icons"
+import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+import type { AppLocale } from "@/i18n/locales"
 
 /**
  * BorrowAgainstLP — one compact, static card for "Borrow against LP positions
  * while your liquidity stays active in the underlying AMM." The GHO/AAVE LP
  * pair is the collateral (still earning fees) and a GHO borrow is drawn
  * against it. Fills the media area so there is no dead space.
+ *
+ * Localizes its own tree: as a nested component, its text leaves are not
+ * reachable by a parent section's withMarketingI18n pass.
  */
-export function BorrowAgainstLP() {
+export function BorrowAgainstLP({ locale }: { locale: AppLocale }) {
   const gho = getTokenIconSrc("GHO")
   const aave = getTokenIconSrc("AAVE")
 
-  return (
+  return withMarketingI18n(locale, ["avana-products-section"], (
     <div className="bal-card" aria-hidden="true">
       <div className="bal-head">
         <span className="bal-pair">
@@ -98,7 +103,7 @@ export function BorrowAgainstLP() {
         }
       `}</style>
     </div>
-  )
+  ))
 }
 
 export default BorrowAgainstLP
