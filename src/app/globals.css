@@ -31,7 +31,7 @@
   --color-ring: var(--ring);
   --color-type-secondary: var(--type-color-secondary);
   --color-type-tertiary: var(--type-color-tertiary);
-  --color-type-accent: var(--avana-cyan-ink);
+  --color-type-accent: var(--avana-cyan);
   --color-success: #00754a;
   --font-sans: var(--font-primary-stack);
   --font-serif: var(--font-primary-stack);
@@ -66,7 +66,6 @@
   --avana-ink: #0F1518;
   --avana-charcoal: #2F414B;
   --avana-cyan: #01AACF;
-  --avana-cyan-ink: #00758F;
   --avana-taupe: #BC846F;
   --avana-rust: #9E5537;
   --font-primary-stack: var(--font-diatype), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

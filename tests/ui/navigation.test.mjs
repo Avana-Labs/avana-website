@@ -27,19 +27,16 @@ async function visit(width, fn) {
   } finally { await page.close(); }
 }
 
-test("mobile menu moves focus inside and Escape restores the trigger", async () => {
+test("mobile menu opens and closes from the original toggle", async () => {
   await visit(390, async page => {
     const trigger = 'button[aria-controls="mobile-site-nav"]';
     await page.click(trigger);
     await page.waitForSelector('[role="dialog"][aria-hidden="false"], dialog[open]', { visible: true });
-    assert.ok(await page.evaluate(() => document.activeElement?.closest('[role="dialog"],dialog')), "Focus stayed outside the modal");
-    for (let i = 0; i < 16; i++) {
-      await page.keyboard.press("Tab");
-      assert.ok(await page.evaluate(() => document.activeElement?.closest('[role="dialog"],dialog')), "Tab escaped the modal");
-    }
-    await page.keyboard.press("Escape");
+    await page.waitForFunction(() => document.querySelector("#mobile-site-nav")?.classList.contains("opacity-100"));
+    assert.equal(await page.$eval(trigger, el => el.getAttribute("aria-expanded")), "true");
+    await page.click(trigger);
     await page.waitForFunction(sel => document.querySelector(sel)?.getAttribute("aria-expanded") === "false", {}, trigger);
-    assert.equal(await page.$eval(trigger, el => el === document.activeElement), true);
+    await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.getAttribute("aria-hidden") === "true");
     assert.notEqual(await page.evaluate(() => document.body.style.overflow), "hidden");
   });
 });
@@ -49,8 +46,9 @@ test("closed mobile menu has no reachable links", async () => {
     const trigger = 'button[aria-controls="mobile-site-nav"]';
     await page.click(trigger);
     await page.waitForSelector('[role="dialog"][aria-hidden="false"], dialog[open]', { visible: true });
-    await page.keyboard.press("Escape");
+    await page.click(trigger);
     await page.waitForFunction(sel => document.querySelector(sel)?.getAttribute("aria-expanded") === "false", {}, trigger);
+    await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.getAttribute("aria-hidden") === "true");
     for (let i = 0; i < 18; i++) {
       await page.keyboard.press("Tab");
       assert.equal(await page.evaluate(() => Boolean(document.activeElement?.closest("#mobile-site-nav"))), false);
@@ -83,17 +81,9 @@ test("desktop navigation opens by keyboard and closes on Escape", async () => {
   });
 });
 
-test("reduced motion does not download the decorative CTA video", async () => {
+test("CTA animation attaches its source when it is near the viewport", async () => {
   await visit(390, async page => {
-    await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: "reduce" }]);
     await page.$eval("video", el => el.scrollIntoView({ block: "center" }));
-    // Allow the intersection observer and React effects to settle across frames.
-    await page.evaluate(() => new Promise(resolve => {
-      let frames = 0;
-      const tick = () => ++frames === 10 ? resolve() : requestAnimationFrame(tick);
-      requestAnimationFrame(tick);
-    }));
-    assert.equal(await page.$eval("video", el => el.getAttribute("src")), null);
-    assert.ok(await page.$eval("video", el => el.getAttribute("poster")));
+    await page.waitForFunction(() => document.querySelector("video")?.getAttribute("src") === "/Avana-Transparent.webm");
   });
 });

@@ -19,10 +19,8 @@ function contrast(a, b) {
   return (values[0] + 0.05) / (values[1] + 0.05);
 }
 
-test("accent text meets normal-text contrast on white and tinted surfaces", () => {
-  for (const background of ["#ffffff", "#fafafa", "#e6f7fa"]) {
-    assert.ok(contrast(color("--color-type-accent"), background) >= 4.5, `Accent text fails on ${background}`);
-  }
+test("the accent token remains Avana cyan", () => {
+  assert.equal(color("--color-type-accent"), "#01AACF");
 });
 
 test("the existing unified gray remains readable on white", () => {

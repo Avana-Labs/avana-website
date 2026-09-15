@@ -4,9 +4,10 @@ import { readFile } from "node:fs/promises";
 
 const source = await readFile("src/components/cta-video.tsx", "utf8");
 
-test("CTA video defers transfer until visible and playable", () => {
+test("CTA video restores its preloaded-near-CTA animation behavior", () => {
   assert.match(source, /preload="none"/);
-  assert.match(source, /if \(isActive && !saveData\)/);
-  assert.match(source, /poster="\/images\/avana-wordmark\.webp"/);
-  assert.doesNotMatch(source, /src="\/Avana-Transparent\.webm"/);
+  assert.match(source, /new IntersectionObserver/);
+  assert.match(source, /rootMargin: "1000px 0px"/);
+  assert.match(source, /src=\{active \? "\/Avana-Transparent\.webm" : undefined\}/);
+  assert.doesNotMatch(source, /poster=/);
 });

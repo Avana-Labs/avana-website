@@ -1,28 +1,36 @@
 "use client"
 
-import { useEffect } from "react"
-import { useSectionActivity } from "@/components/ui/use-section-activity"
+import { useEffect, useRef, useState } from "react"
 
 /**
  * The CTA logo animation sits far below the fold. This island keeps the large
- * video from loading on initial page open. The poster works without JavaScript;
- * playback follows visibility and the user's reduced-motion preference.
+ * video from loading on initial page open: the source is only attached (and
+ * playback started) once the viewer scrolls within range of the FAQ/CTA.
  */
 export function CtaVideo() {
-  const { ref, isActive } = useSectionActivity<HTMLVideoElement>("0px")
+  const ref = useRef<HTMLVideoElement>(null)
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     const element = ref.current
     if (!element) return
-    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData
-    if (isActive && !saveData) {
-      if (!element.getAttribute("src")) element.src = "/Avana-Transparent.webm"
-      void element.play().catch(() => {})
-    } else {
-      element.pause()
-    }
-    return () => element.pause()
-  }, [isActive, ref])
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setActive(true)
+          observer.disconnect()
+        }
+      },
+      // Start fetching a bit before it enters view so it is ready by the CTA.
+      { rootMargin: "1000px 0px" },
+    )
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (active) ref.current?.play().catch(() => {})
+  }, [active])
 
   return (
     <video
@@ -39,7 +47,7 @@ export function CtaVideo() {
       playsInline
       preload="none"
       aria-hidden="true"
-      poster="/images/avana-wordmark.webp"
+      src={active ? "/Avana-Transparent.webm" : undefined}
     />
   )
 }
