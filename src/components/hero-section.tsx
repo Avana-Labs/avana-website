@@ -241,19 +241,19 @@ function HeroSectionBody(locale: AppLocale) {
           <PerformanceDiv>
             <MarketingLeadHeader
               className="mb-6 sm:mb-8"
-              title="Increase Your Yield with Built-In Risk Controls"
-              subtitle="Multiply Markets to loop capital, tune pool risk, and manage position health."
+              title="Supply capital to LP-backed borrowers"
+              subtitle="Earn interest as demand grows across active pools."
             />
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 items-stretch">
-              {/* Card 01 — Loop LP capital */}
+              {/* Card 01 — Supply into active markets */}
               <div className="h-full">
                 <div className="card flex h-full grow-1 flex-col">
                   <div className="type-base max-w-prose flex grow flex-col">
                     <div>
-                      <h2>Loop LP capital</h2>
+                      <h2>Supply into active markets</h2>
                       <div className="text-pretty">
-                        Use LP-backed credit for managed leverage, keeping your LP position.
+                        Place capital where LP-backed borrowers are drawing credit and earning yield.
                       </div>
                     </div>
                   </div>
@@ -308,18 +308,18 @@ function HeroSectionBody(locale: AppLocale) {
                               </div>
                             </div>
 
-                            {/* Leverage chip (bottom-left) */}
+                            {/* Utilization chip (bottom-left) */}
                             <div
                               className="absolute rounded-lg border border-border/70 bg-card/95 px-2 py-1"
                               style={{ left: "0%", top: "76%", width: "27%" }}
                             >
-                              <span className="block text-[7px] font-medium uppercase text-muted-foreground">Leverage</span>
+                              <span className="block text-[7px] font-medium uppercase text-muted-foreground">Utilization</span>
                               <div className="h-3.5 overflow-hidden">
                                 <div className="ce-amt">
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">1.8×</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">2.4×</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">3.1×</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">1.8×</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">42%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">58%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">71%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-foreground">42%</span>
                                 </div>
                               </div>
                             </div>
@@ -347,12 +347,12 @@ function HeroSectionBody(locale: AppLocale) {
                               </div>
                             </div>
 
-                            {/* Borrow card */}
+                            {/* Borrower demand card */}
                             <div
                               className="absolute rounded-2xl bg-card px-3 py-2.5 ring-1 ring-[#01AACF]/30"
                               style={{ left: "28%", top: "57%", width: "70%", height: "33%" }}
                             >
-                              <span className="block text-[10px] font-medium text-muted-foreground">Borrow</span>
+                              <span className="block text-[10px] font-medium text-muted-foreground">Borrowed</span>
                               <div className="mt-1 flex items-center justify-between">
                                 <div className="flex items-center gap-1.5">
                                   <TokenLogo symbol="USDC" className="h-5 w-5" />
@@ -377,14 +377,14 @@ function HeroSectionBody(locale: AppLocale) {
                 </div>
               </div>
 
-              {/* Card 02 — Risk tuned to pools */}
+              {/* Card 02 — Compare utilization by pool */}
               <div className="h-full">
                 <div className="card flex h-full grow-1 flex-col">
                   <div className="type-base max-w-prose flex grow flex-col">
                     <div>
-                      <h2>Risk tuned to pools</h2>
+                      <h2>Compare utilization by pool</h2>
                       <div className="text-pretty">
-                        Continuous risk scoring tracks pool volatility and health quality.
+                        Review depth, volatility, and oracle quality before choosing where to supply.
                       </div>
                     </div>
                   </div>
@@ -487,7 +487,7 @@ function HeroSectionBody(locale: AppLocale) {
                                       </div>
                                       <div className="mt-4 flex items-center gap-2 text-[11px] font-medium text-emerald-600">
                                         <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                                        Borrowing enabled
+                                        Supply available
                                       </div>
                                     </div>
                                   </div>
@@ -502,14 +502,14 @@ function HeroSectionBody(locale: AppLocale) {
                 </div>
               </div>
 
-              {/* Card 03 — Minimal volatility risk */}
+              {/* Card 03 — Set a risk-aware range */}
               <div className="h-full">
                 <div className="card flex h-full grow-1 flex-col">
                   <div className="type-base max-w-prose flex grow flex-col">
                     <div>
-                      <h2>Minimal volatility risk</h2>
+                      <h2>Set a risk-aware range</h2>
                       <div className="text-pretty">
-                        Transparent risk parameters and predictable liquidation behavior for peg-aligned pools.
+                        Use pool volatility and liquidity buffers to decide how much capital to allocate.
                       </div>
                     </div>
                   </div>
@@ -567,14 +567,14 @@ function HeroSectionBody(locale: AppLocale) {
                 </div>
               </div>
 
-              {/* Card 04 — Cleaner position monitoring */}
+              {/* Card 04 — Monitor supplied liquidity */}
               <div className="h-full">
                 <div className="card flex h-full grow-1 flex-col">
                   <div className="type-base max-w-prose flex grow flex-col">
                     <div>
-                      <h2>Cleaner position monitoring</h2>
+                      <h2>Monitor supplied liquidity</h2>
                       <div className="text-pretty">
-                        Track health, usage, and pool-specific limits with a clearer LP-first borrowing workflow.
+                        Track utilization, available liquidity, and pool limits as your position earns interest.
                       </div>
                     </div>
                   </div>
@@ -606,7 +606,7 @@ function HeroSectionBody(locale: AppLocale) {
                               </div>
                               <div className="mt-3 flex items-end justify-between gap-2">
                                 <div>
-                                  <span className="block text-[9px] font-medium uppercase tracking-[0.08em] text-muted-foreground">Health</span>
+                                  <span className="block text-[9px] font-medium uppercase tracking-[0.08em] text-muted-foreground">Utilization</span>
                                   <div className="mt-1 h-[2.2rem] overflow-hidden">
                                     <div className="ce-amt">
                                       <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-emerald-500">1.82</p>
@@ -643,7 +643,7 @@ function HeroSectionBody(locale: AppLocale) {
                                 <div className="ce-health-bar h-full w-[45%] rounded-full bg-emerald-500" />
                               </div>
                               <div className="mt-2.5 flex items-center justify-between">
-                                <span className="text-[9px] text-muted-foreground">Borrow cap</span>
+                                <span className="text-[9px] text-muted-foreground">Available liquidity</span>
                                 <span className="text-[10px] font-semibold text-foreground">$2.4M</span>
                               </div>
                             </div>
