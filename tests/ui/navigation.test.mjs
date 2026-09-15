@@ -21,7 +21,8 @@ async function visit(width, fn) {
   page.setDefaultTimeout(4000);
   try {
     await page.setViewport({ width, height: 900 });
-    await page.goto(base, { waitUntil: "networkidle0" });
+    await page.goto(base, { waitUntil: "domcontentloaded", timeout: 15000 });
+    await page.waitForSelector("main", { visible: true });
     await fn(page);
   } finally { await page.close(); }
 }

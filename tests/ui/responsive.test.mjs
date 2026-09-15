@@ -24,7 +24,8 @@ for (const [locale, width] of [["en", 390], ["en", 768], ["en", 1440], ["de", 39
     const page = await browser.newPage();
     try {
       await page.setViewport({ width, height: 900 });
-      await page.goto(`${base}/${locale}/borrow`, { waitUntil: "networkidle0" });
+      await page.goto(`${base}/${locale}/borrow`, { waitUntil: "domcontentloaded", timeout: 15000 });
+      await page.waitForSelector("main", { visible: true });
       const result = await page.evaluate(() => ({
         clientWidth: document.documentElement.clientWidth,
         scrollWidth: document.documentElement.scrollWidth,

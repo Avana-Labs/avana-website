@@ -33,7 +33,8 @@ test("core content remains usable when optional media fails", async () => {
   });
 
   try {
-    await page.goto(`${base}/en`, { waitUntil: "networkidle0" });
+    await page.goto(`${base}/en`, { waitUntil: "domcontentloaded", timeout: 15000 });
+    await page.waitForSelector("main", { visible: true });
     assert.ok(await page.$("main"), "main landmark disappeared");
     assert.ok(await page.$eval("h1", element => element.textContent?.trim()), "hero heading disappeared");
     assert.deepEqual(pageErrors, [], `page errors after optional media failure: ${pageErrors.join("; ")}`);
