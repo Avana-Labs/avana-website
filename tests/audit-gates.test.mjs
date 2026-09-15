@@ -5,11 +5,16 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
+const sample = () => ({
+  performance: 99, fcp: 1500, lcp: 1700, tbt: 50, cls: 0,
+  jsTransferBytes: 190000, domSize: 700,
+});
+
 const valid = () => ({
   revision: "4ac86b6", profile: "mobile", throttlingMethod: "devtools", runs: 3,
+  environment: { config: { formFactor: "mobile" } },
   expectedRoutes: ["/"],
-  routes: [{ route: "/", runs: 3, performance: 99, fcp: 1500, lcp: 1700,
-    tbt: 50, cls: 0, jsTransferBytes: 190000, domSize: 700 }],
+  routes: [{ route: "/", runs: 3, ...sample(), samples: [sample(), sample(), sample()] }],
 });
 
 async function check(summary) {
@@ -35,6 +40,10 @@ for (const [name, corrupt] of [
   ["incomplete route coverage", s => { s.expectedRoutes.push("/borrow"); }],
   ["duplicate routes", s => { s.routes.push({ ...s.routes[0] }); }],
   ["insufficient samples", s => { s.routes[0].runs = 1; }],
+  ["missing raw samples", s => { delete s.routes[0].samples; }],
+  ["empty raw samples", s => { s.routes[0].samples = []; }],
+  ["failed raw run", s => { s.routes[0].samples[1].runtimeError = { code: "NO_FCP" }; }],
+  ["mismatched environment profile", s => { s.environment.config.formFactor = "desktop"; }],
   ["actual budget failure", s => { s.routes[0].lcp = 9000; }],
 ]) {
   test(`rejects ${name}`, async () => {

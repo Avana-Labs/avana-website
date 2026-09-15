@@ -5,6 +5,7 @@ import path from "node:path";
 import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
 import desktopConfig from "lighthouse/core/config/desktop-config.js";
+import { reportMetrics } from "./lib/lighthouse-metrics.mjs";
 
 const PORT = Number(process.env.LIGHTHOUSE_PORT ?? 3001);
 const HOSTNAME = process.env.LIGHTHOUSE_HOSTNAME ?? "127.0.0.1";
@@ -42,38 +43,6 @@ function median(values) {
   return sorted.length % 2 === 0
     ? (sorted[middle - 1] + sorted[middle]) / 2
     : sorted[middle];
-}
-
-function metric(report, auditId) {
-  const value = report.audits[auditId]?.numericValue;
-  if (!Number.isFinite(value)) throw new Error(`Missing metric ${auditId}`);
-  return value;
-}
-
-function networkBytes(report, resourceType) {
-  const requests = report.audits["network-requests"]?.details?.items ?? [];
-
-  return requests
-    .filter((request) => !resourceType || request.resourceType === resourceType)
-    .reduce((total, request) => total + (request.transferSize ?? 0), 0);
-}
-
-function reportMetrics(report) {
-  return {
-    performance: Math.round((report.categories.performance?.score ?? 0) * 100),
-    accessibility: Math.round((report.categories.accessibility?.score ?? 0) * 100),
-    bestPractices: Math.round((report.categories["best-practices"]?.score ?? 0) * 100),
-    seo: Math.round((report.categories.seo?.score ?? 0) * 100),
-    fcp: metric(report, "first-contentful-paint"),
-    lcp: metric(report, "largest-contentful-paint"),
-    tbt: metric(report, "total-blocking-time"),
-    cls: metric(report, "cumulative-layout-shift"),
-    mainThread: metric(report, "mainthread-work-breakdown"),
-    domSize: metric(report, "dom-size"),
-    transferBytes: networkBytes(report),
-    jsTransferBytes: networkBytes(report, "Script"),
-    imageTransferBytes: networkBytes(report, "Image"),
-  };
 }
 
 function medianMetrics(results) {
