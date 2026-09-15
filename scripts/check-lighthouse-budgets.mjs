@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { validateEvidence } from "./lib/audit-evidence.mjs";
 
 const OUTPUT_DIR = path.resolve(process.env.LIGHTHOUSE_OUTPUT_DIR ?? ".lighthouse");
 
@@ -58,21 +59,10 @@ const PERFORMANCE_BUDGETS = {
 };
 
 const summary = JSON.parse(await readFile(path.join(OUTPUT_DIR, "summary.json"), "utf8"));
-
-// A summary produced by simulated throttling cannot be judged against these
-// thresholds. Fail loudly rather than reporting a meaningless pass.
-if (summary.throttlingMethod && summary.throttlingMethod !== "devtools") {
-  console.error(
-    `Refusing to check budgets: summary.json was produced with "${summary.throttlingMethod}" throttling, ` +
-      `but these thresholds are calibrated for "devtools". Re-run \`npm run lighthouse:audit\`.`,
-  );
+const evidenceErrors = validateEvidence(summary);
+if (evidenceErrors.length) {
+  console.error(`Invalid Lighthouse evidence:\n${evidenceErrors.join("\n")}`);
   process.exit(1);
-}
-
-if (!summary.throttlingMethod) {
-  console.warn(
-    "Warning: summary.json predates throttling-method recording. Re-run the audit to confirm it used applied throttling.",
-  );
 }
 
 const failures = [];
