@@ -44,7 +44,7 @@ export function FeaturePageHero({
             <Image
               alt={imageAlt}
               src={brandAssetPath(imageSrc)}
-              sizes="100vw"
+              sizes="(min-width: 1280px) 420px, (min-width: 640px) 50vw, 100vw"
               className="mx-auto"
               width={imageWidth}
               height={imageHeight}
