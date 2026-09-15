@@ -1,4 +1,5 @@
 import Image from "next/image"
+import dynamic from "next/dynamic"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { LazySection } from "@/components/ui/lazy-section"
 import type { LucideIcon } from "lucide-react"
@@ -16,7 +17,6 @@ import {
   TrendingUp,
   Zap,
 } from "lucide-react"
-import HomepageFaqSection from "@/components/homepage/HomepageFaqSection"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
 import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { AskAiShowcase } from "@/components/ask-ai-showcase"
@@ -26,6 +26,10 @@ import { TokenLogo } from "@/components/token-logo"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 import { FaqToggleIcons } from "@/components/faq-toggle-icons"
+
+const HomepageFaqSection = dynamic(() => import("@/components/homepage/HomepageFaqSection"), {
+  loading: () => <div className="min-h-[24rem]" aria-hidden="true" />,
+})
 
 function repeatItems<T>(items: T[], count: number, offset: number) {
   if (items.length === 0) return []
@@ -300,10 +304,10 @@ function HeroSectionBody(locale: AppLocale) {
                               <span className="block text-[7px] font-medium uppercase text-muted-foreground">Net APY</span>
                               <div className="h-3.5 overflow-hidden">
                                 <div className="ce-amt">
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">9.2%</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">13.5%</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">18.1%</span>
-                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-[#01AACF]">9.2%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-type-accent">9.2%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-type-accent">13.5%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-type-accent">18.1%</span>
+                                  <span className="flex h-3.5 items-center text-[11px] font-semibold text-type-accent">9.2%</span>
                                 </div>
                               </div>
                             </div>
@@ -485,7 +489,7 @@ function HeroSectionBody(locale: AppLocale) {
                                           </div>
                                         ))}
                                       </div>
-                                      <div className="mt-4 flex items-center gap-2 text-[11px] font-medium text-emerald-600">
+                                      <div className="mt-4 flex items-center gap-2 text-[11px] font-medium text-success">
                                         <div className="h-2 w-2 rounded-full bg-emerald-500" />
                                         Supply available
                                       </div>
@@ -609,10 +613,10 @@ function HeroSectionBody(locale: AppLocale) {
                                   <span className="block text-[9px] font-medium uppercase tracking-[0.08em] text-muted-foreground">Utilization</span>
                                   <div className="mt-1 h-[2.2rem] overflow-hidden">
                                     <div className="ce-amt">
-                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-emerald-500">1.82</p>
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-success">1.82</p>
                                       <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-amber-500">1.34</p>
                                       <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-red-500">1.06</p>
-                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-emerald-500">1.82</p>
+                                      <p className="flex h-[2.2rem] items-center text-[2.2rem] font-semibold leading-none tracking-[-0.05em] text-success">1.82</p>
                                     </div>
                                   </div>
                                 </div>
