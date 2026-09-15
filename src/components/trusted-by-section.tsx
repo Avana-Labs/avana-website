@@ -1,62 +1,21 @@
+import Image from "next/image"
+
 interface LogoProps {
   className?: string
 }
 
-function BackpackLogo({ className }: LogoProps) {
-  return (
-    <svg width="116" height="37" viewBox="0 0 116 37" className={className} aria-hidden="true">
-      <use href="/images/partners/backpack.svg#logo" />
-    </svg>
-  )
-}
+function BrandWordmark({ src, width, height, size = "default", className }: LogoProps & { src: string; width: number; height: number; size?: "default" | "large" | "small" }) {
+  const sizing = size === "large" ? "!h-6 max-w-[112px]" : size === "small" ? "!h-4 max-w-[88px]" : "!h-5 max-w-[96px]"
 
-function PhantomLogo({ className }: LogoProps) {
-  return (
-    <svg width="111" height="37" viewBox="0 0 111 37" className={className} aria-hidden="true">
-      <use href="/images/partners/phantom.svg#logo" />
-    </svg>
-  )
-}
-
-function JupiterLogo({ className }: LogoProps) {
-  return (
-    <svg width="104" height="37" viewBox="0 0 104 37" className={className} aria-hidden="true">
-      <use href="/images/partners/jupiter.svg#logo" />
-    </svg>
-  )
-}
-
-function SolflareLogo({ className }: LogoProps) {
-  return (
-    <svg width="100" height="37" viewBox="0 0 100 37" className={className} aria-hidden="true">
-      <use href="/images/partners/solflare.svg#logo" />
-    </svg>
-  )
-}
-
-function DriftLogo({ className }: LogoProps) {
-  return (
-    <svg width="83" height="37" viewBox="0 0 83 37" className={className} aria-hidden="true">
-      <use href="/images/partners/drift.svg#logo" />
-    </svg>
-  )
-}
-
-function BonkLogo({ className }: LogoProps) {
-  return (
-    <svg width="105" height="37" viewBox="0 0 105 37" className={className} aria-hidden="true">
-      <use href="/images/partners/bonk.svg#logo" />
-    </svg>
-  )
+  return <Image src={src} alt="" width={width} height={height} className={`${className} ${sizing} object-contain`} aria-hidden="true" />
 }
 
 export const TRUSTED_LOGOS = [
-  { name: "Backpack", href: "https://backpack.app", Logo: BackpackLogo },
-  { name: "Phantom", href: "https://phantom.com", Logo: PhantomLogo },
-  { name: "Jupiter", href: "https://jup.ag", Logo: JupiterLogo },
-  { name: "Solflare", href: "https://solflare.com", Logo: SolflareLogo },
-  { name: "Drift", href: "https://www.drift.trade", Logo: DriftLogo },
-  { name: "Bonk", href: "https://bonkcoin.com", Logo: BonkLogo },
+  { name: "Kraken", href: "https://www.kraken.com", Logo: (props: LogoProps) => <BrandWordmark {...props} src="/images/partners/kraken.svg" width={650} height={155} /> },
+  { name: "Aave", href: "https://aave.com", Logo: (props: LogoProps) => <BrandWordmark {...props} size="small" src="/images/partners/aave.svg" width={833} height={139} /> },
+  { name: "Balancer", href: "https://balancer.fi", Logo: (props: LogoProps) => <BrandWordmark {...props} src="/images/partners/balancer.svg" width={1001} height={185} /> },
+  { name: "Avalanche", href: "https://www.avax.network", Logo: (props: LogoProps) => <BrandWordmark {...props} size="large" src="/images/partners/avalanche.svg" width={2500} height={472} /> },
+  { name: "Uniswap", href: "https://uniswap.org", Logo: (props: LogoProps) => <BrandWordmark {...props} size="large" src="/images/partners/uniswap.svg" width={961} height={240} /> },
 ] as const
 
 interface TrustedBySectionProps {
@@ -84,7 +43,7 @@ export function TrustedBySection({
               aria-label={name}
               className="inline-flex items-center justify-center text-type-secondary transition-colors duration-200 hover:text-foreground"
             >
-              <Logo className="h-7 w-auto shrink-0 fill-current opacity-75 transition-opacity duration-200 hover:opacity-100" />
+              <Logo className="h-7 w-auto max-w-[112px] shrink-0 object-contain fill-current opacity-75 transition-opacity duration-200 hover:opacity-100" />
             </a>
           ))}
         </div>
@@ -114,7 +73,7 @@ export function TrustedBySection({
                     aria-hidden={copyIndex === 1 ? true : undefined}
                     className="inline-flex items-center justify-center text-type-secondary transition-colors duration-200 hover:text-foreground"
                   >
-                    <Logo className="h-7 w-auto shrink-0 fill-current opacity-75" />
+                    <Logo className="h-7 w-auto max-w-[112px] shrink-0 object-contain fill-current opacity-75" />
                   </a>
                 ))}
               </div>
