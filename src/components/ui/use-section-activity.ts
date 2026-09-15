@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react"
 
 export function useSectionActivity<T extends HTMLElement>(rootMargin = "200px") {
   const ref = useRef<T>(null)
-  const [isActive, setIsActive] = useState(true)
+  const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
     const element = ref.current
-    if (!element) return
+    if (!element || !("IntersectionObserver" in window)) return
 
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
-    let isIntersecting = true
+    let isIntersecting = false
 
     const updateActivity = () => {
       setIsActive(
