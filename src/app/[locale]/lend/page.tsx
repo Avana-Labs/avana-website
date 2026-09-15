@@ -69,15 +69,15 @@ const keyFeatureCards = [
   },
   {
     icon: LockKeyhole,
-    title: "Earn on flexible terms",
+    title: "No fixed lock-up",
     description:
-      "Supply when it suits you, earn continuously, and withdraw principal plus yield with no lock-up.",
+      "Your deposit has no fixed term, so you choose how long to keep capital supplied.",
   },
   {
     icon: MoveRight,
-    title: "Easy money movement",
+    title: "Plan around available liquidity",
     description:
-      "Access and move capital whenever liquidity is available, all from one simple online interface.",
+      "At high utilization, withdrawals may need to wait for borrower repayments or new supply.",
   },
   {
     icon: TrendingUp,
@@ -124,7 +124,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["lend/page", "invest-apy-section", "invest-growth-calculator-section", "platform-tools-showcase-section", "trade-market-showcase", "InlineFaqSection", "homepage/HomepageNewsroomSection"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <FeaturePageHero
         title="Earn interest on your assets"
         description="Supply single assets and earn yields where LP collateral creates real borrow utilization."
@@ -152,7 +152,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
       <section className="border-t border-border/80 bg-white site-section-gap">
         <div className="site-content-shell">
           <div className="flex flex-col gap-3">
-            <SectionIntro eyebrow="How it works" eyebrowTone="emerald" title="Lending in three steps" />
+            <SectionIntro eyebrow="Start earning in three steps" eyebrowTone="emerald" title="Choose a market, supply an asset, and collect interest." />
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3">
@@ -176,7 +176,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
               <span className="type-step-index">3</span>
               <FeatureCardTitle className="mt-6">Earn and withdraw</FeatureCardTitle>
               <FeatureCardDescription className="mt-3">
-                Interest accrues continuously, and you can withdraw principal plus yield anytime with no lock-up period.
+                Interest accrues continuously. Withdraw principal and interest when the market has sufficient liquidity.
               </FeatureCardDescription>
             </div>
           </div>
@@ -191,9 +191,9 @@ export default async function LendPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mb-8 max-w-[600px] space-y-3 md:mb-10">
             <SectionIntro
-              eyebrow="Why supply"
+              eyebrow="Keep control of your capital"
               eyebrowTone="emerald"
-              title="Clear rates, flexible capital, one place to manage it"
+              title="Add to your deposits or withdraw when market liquidity allows."
             />
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -227,7 +227,7 @@ export default async function LendPage({ params }: LocaleParamsProps) {
         </div>
       </div>
       </div>
-    </main>
+    </div>
   </LocalizedMarketing>
 )
 }

@@ -1,9 +1,11 @@
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { once } from "node:events";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
+import desktopConfig from "lighthouse/core/config/desktop-config.js";
+import { reportMetrics } from "./lib/lighthouse-metrics.mjs";
 
 const PORT = Number(process.env.LIGHTHOUSE_PORT ?? 3001);
 const HOSTNAME = process.env.LIGHTHOUSE_HOSTNAME ?? "127.0.0.1";
@@ -15,6 +17,10 @@ const ROUTES_MANIFEST = path.join(process.cwd(), ".next", "routes-manifest.json"
 const EXCLUDED_ROUTES = new Set(["/_global-error", "/_not-found", "/favicon.ico", "/robots.txt", "/sitemap.xml", "/og"]);
 const REQUESTED_ROUTES = process.env.LIGHTHOUSE_ROUTES?.split(",").map((route) => route.trim()).filter(Boolean);
 const RUNS = Math.max(1, Number(process.env.LIGHTHOUSE_RUNS ?? 3));
+if (!Number.isInteger(RUNS) || RUNS > 10) throw new Error("Lighthouse runs must be an integer from 1 to 10");
+const PROFILE = process.env.LIGHTHOUSE_PROFILE ?? "mobile";
+if (!["mobile", "desktop"].includes(PROFILE)) throw new Error("Invalid Lighthouse profile");
+const REVISION = process.env.LIGHTHOUSE_BUILD_REVISION ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 /**
  * Measure paints and main-thread blocking, don't model them.
  *
@@ -37,36 +43,6 @@ function median(values) {
   return sorted.length % 2 === 0
     ? (sorted[middle - 1] + sorted[middle]) / 2
     : sorted[middle];
-}
-
-function metric(report, auditId) {
-  return report.audits[auditId]?.numericValue ?? 0;
-}
-
-function networkBytes(report, resourceType) {
-  const requests = report.audits["network-requests"]?.details?.items ?? [];
-
-  return requests
-    .filter((request) => !resourceType || request.resourceType === resourceType)
-    .reduce((total, request) => total + (request.transferSize ?? 0), 0);
-}
-
-function reportMetrics(report) {
-  return {
-    performance: Math.round((report.categories.performance?.score ?? 0) * 100),
-    accessibility: Math.round((report.categories.accessibility?.score ?? 0) * 100),
-    bestPractices: Math.round((report.categories["best-practices"]?.score ?? 0) * 100),
-    seo: Math.round((report.categories.seo?.score ?? 0) * 100),
-    fcp: metric(report, "first-contentful-paint"),
-    lcp: metric(report, "largest-contentful-paint"),
-    tbt: metric(report, "total-blocking-time"),
-    cls: metric(report, "cumulative-layout-shift"),
-    mainThread: metric(report, "mainthread-work-breakdown"),
-    domSize: metric(report, "dom-size"),
-    transferBytes: networkBytes(report),
-    jsTransferBytes: networkBytes(report, "Script"),
-    imageTransferBytes: networkBytes(report, "Image"),
-  };
 }
 
 function medianMetrics(results) {
@@ -106,6 +82,7 @@ function isAuditableRoute(route, redirectSources) {
   if (route.startsWith("/_") || EXCLUDED_ROUTES.has(route)) {
     return false;
   }
+  if (route === "/api" || route.startsWith("/api/")) return false;
 
   if (route.endsWith(".txt") || route.endsWith(".xml") || route.endsWith(".ico")) {
     return false;
@@ -187,16 +164,21 @@ async function stopServer(serverProcess) {
 }
 
 async function main() {
-  await rm(OUTPUT_DIR, { recursive: true, force: true });
   await mkdir(OUTPUT_DIR, { recursive: true });
+  // Never overwrite a completed baseline, or recursively delete a caller's path.
+  try { await readFile(path.join(OUTPUT_DIR, "summary.json")); throw new Error("Output already contains a completed audit; choose a new LIGHTHOUSE_OUTPUT_DIR"); }
+  catch (error) { if (error.code !== "ENOENT") throw error; }
   if (process.env.LIGHTHOUSE_SKIP_BUILD !== "1") {
     await runCommand("npm", ["run", "build"]);
   }
   const discoveredRoutes = await getRoutesToAudit();
+  const buildId = (await readFile(".next/BUILD_ID", "utf8")).trim();
   const routes = REQUESTED_ROUTES ?? discoveredRoutes;
+  if (!routes.length || new Set(routes).size !== routes.length) throw new Error("Routes must be nonempty and unique");
 
   for (const route of routes) {
-    if (!discoveredRoutes.includes(route)) {
+    const canonical = route.replace(/^\/(?:ar|bn|de|es|fa|fr|ha|he|hi|id|it|ja|ko|nl|pl|pt|ru|sw|th|tr|uk|ur|vi|zh-CN|zh-TW)(?=\/|$)/, "") || "/";
+    if (!discoveredRoutes.includes(canonical)) {
       throw new Error(`Requested Lighthouse route is not auditable: ${route}`);
     }
   }
@@ -209,16 +191,21 @@ async function main() {
 
   serverProcess.stdout.on("data", (chunk) => process.stdout.write(chunk));
   serverProcess.stderr.on("data", (chunk) => process.stderr.write(chunk));
+  let chrome;
+  const interrupt = () => { serverProcess.kill("SIGTERM"); void chrome?.kill().finally(() => process.exit(130)); if (!chrome) process.exit(130); };
+  process.once("SIGINT", interrupt);
+  process.once("SIGTERM", interrupt);
 
   try {
     await waitForServer(BASE_URL);
 
-    const chrome = await launch({
+    chrome = await launch({
       chromeFlags: ["--headless", "--no-sandbox", "--disable-dev-shm-usage"],
     });
 
     try {
       const summary = [];
+      let environment;
       console.log(`Auditing ${routes.length} routes with ${RUNS} run${RUNS === 1 ? "" : "s"} each (${THROTTLING_METHOD} throttling)...`);
 
       for (const [index, route] of routes.entries()) {
@@ -236,11 +223,19 @@ async function main() {
               logLevel: "error",
               throttlingMethod: THROTTLING_METHOD,
             },
+            PROFILE === "desktop" ? desktopConfig : undefined,
           );
 
           if (!runnerResult) {
             throw new Error(`Lighthouse did not return a result for ${url}`);
           }
+          if (runnerResult.lhr.runtimeError) throw new Error(runnerResult.lhr.runtimeError.message);
+          environment ??= {
+            lighthouseVersion: runnerResult.lhr.lighthouseVersion,
+            userAgent: runnerResult.lhr.userAgent,
+            host: runnerResult.lhr.environment,
+            config: runnerResult.lhr.configSettings,
+          };
 
           const outputBase = path.join(OUTPUT_DIR, `${routeSlug(route)}.run-${run}`);
           const reports = Array.isArray(runnerResult.report) ? runnerResult.report : [runnerResult.report];
@@ -253,7 +248,7 @@ async function main() {
           routeResults.push(reportMetrics(runnerResult.lhr));
         }
 
-        const routeSummary = { route, runs: RUNS, ...medianMetrics(routeResults) };
+        const routeSummary = { route, runs: RUNS, ...medianMetrics(routeResults), samples: routeResults };
 
         summary.push(routeSummary);
         console.log(
@@ -266,7 +261,7 @@ async function main() {
       console.table(summary);
       await writeFile(
         path.join(OUTPUT_DIR, "summary.json"),
-        JSON.stringify({ generatedAt: new Date().toISOString(), runs: RUNS, throttlingMethod: THROTTLING_METHOD, routes: summary }, null, 2),
+        JSON.stringify({ generatedAt: new Date().toISOString(), revision: REVISION, buildId, profile: PROFILE, node: process.version, environment, runs: RUNS, throttlingMethod: THROTTLING_METHOD, expectedRoutes: routes, routes: summary }, null, 2),
         "utf8",
       );
       console.log(`Saved Lighthouse reports to ${OUTPUT_DIR}`);
@@ -275,6 +270,8 @@ async function main() {
     }
   } finally {
     await stopServer(serverProcess);
+    process.removeListener("SIGINT", interrupt);
+    process.removeListener("SIGTERM", interrupt);
   }
 }
 

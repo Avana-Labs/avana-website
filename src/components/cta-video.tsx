@@ -35,6 +35,11 @@ export function CtaVideo() {
   return (
     <video
       ref={ref}
+      onError={event => {
+        event.currentTarget.pause()
+        event.currentTarget.removeAttribute("src")
+        event.currentTarget.load()
+      }}
       className="mx-auto mb-4"
       style={{ width: "28rem", maxWidth: "100%", aspectRatio: "16 / 9" }}
       muted

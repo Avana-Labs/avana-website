@@ -289,7 +289,7 @@ export function LlmExportMenu({ className }: LlmExportMenuProps) {
 
   return (
     <div ref={containerRef} className={className}>
-      <div ref={menuRef} className="relative self-start" data-export-skip>
+      <div ref={menuRef} className="relative w-fit max-w-full self-start" data-export-skip>
         <button
           type="button"
           onClick={() => setIsOpen((previous) => !previous)}
@@ -306,7 +306,7 @@ export function LlmExportMenu({ className }: LlmExportMenuProps) {
         {isOpen && (
           <div
             role="menu"
-            className="absolute right-0 z-20 mt-2 w-[min(16.5rem,calc(100vw-1rem))] overflow-hidden rounded-[15px] border border-border bg-popover shadow-[0_8px_18px_rgba(15,23,42,0.05)] sm:w-[16.5rem]"
+            className="absolute left-0 right-auto z-20 mt-2 w-[min(16.5rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden rounded-[15px] border border-border bg-popover shadow-[0_8px_18px_rgba(15,23,42,0.05)] sm:left-auto sm:right-0 sm:w-[16.5rem] sm:max-w-none"
           >
             <div className="p-[2px]">
               <button

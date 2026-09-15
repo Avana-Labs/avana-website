@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana LP riskini nasıl yönetir",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana’nın Spoke piyasalarında LP teminat riskini sınırlı güncellemeler, bağımsız inceleme ve acil durdurma ile nasıl yönettiği.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Geliştiriciler",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "LP teminatının neden Smart Agents’a ihtiyacı var",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Avana’nın sağlığı izlemek, venue’ye özgü pozisyonları yönetmek ve stres altında likidasyon kapsamını güvenilir tutmak için neden Smart Agents kullandığı.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "LP likidasyonu nasıl olmalı",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Avana’nın LP teminatını kontrollü unwind, kısmi müdahale, mümkünse ücretler önce ve venue’ye özgü yollarla nasıl likide ettiği.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Geliştiriciler",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Daha iyi oracle’larla LP teminatını fiyatlamak",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Avana Oracle’ın recoverable value, deterministik yeniden kurulum ve muhafazakâr recovery haircut’larıyla LP teminatını nasıl fiyatladığı.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Geliştiriciler",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana LP teminat riskini nasıl yönetir",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Avana’nın mimari ve oracle’lardan health, likidasyon ve operasyonlara kadar LP teminatı için katmanlı güvenliği nasıl kurduğu.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Geliştiriciler",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "LP pozisyonunu daha dikkatli hedge etmek",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "LP’lerin havuzdan tamamen çıkmadan Avana ile buffer, yönlü offset ve daha disiplinli hedge alışkanlıklarını nasıl finanse edebileceği.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "LP'ler için",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "LP teminatıyla yield looping",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Avana LP teminatıyla yield looping’e nasıl bakmalı: buffer’lar, stres testleri, çıkış disiplini ve sürdürülebilir kaldıraç.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "LP'ler için",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "LP teminatının açtığı olanaklar",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Avana LP teminatının borçlanma, hedge, hazine esnekliği ve daha sermaye verimli kullanımda neleri mümkün kıldığı.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "LP'ler için",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Aave v4’te Aerodrome LP’lere karşı borçlanma",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Avana’nın Base’deki Aerodrome LP pozisyonlarını aktif tutarak özel bir piyasa üzerinden borçlanmayı nasıl desteklediği.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Aave v4’te Curve LP’lere karşı borçlanma",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Avana’nın stabil ve korele havuzlar için Curve LP teminatını Aave v4’te özel bir Spoke üzerinden nasıl ele aldığı.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Aave v4’te Balancer LP teminatı",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Avana’nın Balancer weighted pool LP’lerini ekspozisyon aktif kalırken Aave v4 teminatı olarak nasıl desteklediği.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Aave v4’te Uniswap LP’lere karşı borçlanma",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Avana’nın Uniswap LP pozisyonlarını havuzda ücret kazanmaya devam ederken Aave v4 teminatına nasıl dönüştürdüğü.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP teminatını kullanılabilir kılmak",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Avana ürün tasarımının net değerleme, borçlanma limitleri ve health’e neden önem verdiği — LP teminatını yalnızca teoride değil, işler hale getirmek için.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Ürün",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana ve LP’ler için sonraki adım",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Likidite sağlayıcıların ücret kazanmak ile sermayeye erişmek arasında seçim yapmak zorunda kalmaması ve Avana’nın LP kullanımını nasıl genişlettiği.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Topluluk",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Kurumlar için LP teminatı",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Avana LP teminatının DAO’lar, hazineler, fonlar ve crypto-native şirketlerin pozisyonları bozmadan sermayeye erişmesine nasıl yardımcı olabileceği.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Kurumlar için",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Avana LP altyapısı üzerine inşa etmek",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "İzleme, otomasyon, likidasyon servisleri ve entegrasyonlar dahil Avana LP teminat altyapısına geliştirici bakışı.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Geliştiriciler",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Avana’nın LP teminat mimarisinin içi",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Aave v4 üzerinde Avana LP teminat mimarisi: Hub, Spokes, değerleme, oracle tasarımı ve likidasyon.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Geliştiriciler",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: daha iyi teminat, daha iyi kontrol",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 çoklu pozisyon teminatını genişletir, daha fazla desteklenen havuz ekler, delegasyon ve uyarıları iyileştirir ve friction’ı düşürür.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Ürün",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: LP teminatı için kontrol katmanı",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Avana Automate’in ücretler, rebalancing ve koruma için non-custodial otomasyonla LP teminatını yönetmeye nasıl yardımcı olduğu.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Ürün",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP teminatına yeni başlayanlar için rehber",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana’da LP teminatına giriş: LP davranışı, LTV, impermanent loss, likidasyon ve muhafazakâr alışkanlıklar.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP'ler için",

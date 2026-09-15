@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana কীভাবে LP ঝুঁকি পরিচালনা করে",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana Spoke মার্কেট জুড়ে কীভাবে LP জামানতের ঝুঁকি পরিচালনা করে — সীমিত আপডেট, স্বাধীন পর্যালোচনা এবং জরুরি নিয়ন্ত্রণসহ।",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "ডেভেলপাররা",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "LP জামানতের জন্য Smart Agents কেন দরকার",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Avana কেন Smart Agents ব্যবহার করে health মনিটর করতে, venue-নির্দিষ্ট পজিশন সার্ভিস করতে এবং চাপে লিকুইডেশন কভারেজ নির্ভরযোগ্য রাখতে।",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "LP লিকুইডেশন কীভাবে কাজ করা উচিত",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Avana নিয়ন্ত্রিত unwind, আংশিক হস্তক্ষেপ, সম্ভব হলে আগে ফি, এবং venue-নির্দিষ্ট পথ দিয়ে কীভাবে LP জামানত লিকুইডেট করে।",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "ডেভেলপাররা",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "ভালো Oracle দিয়ে LP জামানতের মূল্য নির্ধারণ",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Avana Oracle পুনরুদ্ধারযোগ্য মূল্য, নির্ধারিত পুনর্গঠন এবং রক্ষণশীল recovery haircut দিয়ে কীভাবে LP জামানতের মূল্য নির্ধারণ করে।",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "ডেভেলপাররা",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana কীভাবে LP জামানতের ঝুঁকি পরিচালনা করে",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Avana আর্কিটেকচার ও oracle থেকে health, লিকুইডেশন এবং অপারেশন পর্যন্ত LP জামানতের জন্য স্তরযুক্ত নিরাপত্তা কীভাবে গঠন করে।",
       "image": "/images/blog/security-deep-dive.png",
       "category": "ডেভেলপাররা",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "LP পজিশন আরও বিচক্ষণতার সঙ্গে হেজ করবেন যেভাবে",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "LP কীভাবে Avana ব্যবহার করে বাফার, দিকনির্দেশক অফসেট এবং আরও শৃঙ্খলিত হেজ অভ্যাস তহবিল করতে পারে — pool পুরোপুরি না ছেড়ে।",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "LP সেকেন্ডের জন্য",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "LP জামানত দিয়ে Yield Looping",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Avana LP জামানত দিয়ে yield looping নিয়ে কীভাবে ভাববেন — বাফার, স্ট্রেস টেস্ট, এক্সিট শৃঙ্খলা এবং টেকসই লেভারেজসহ।",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "LP সেকেন্ডের জন্য",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "LP জামানত যা সম্ভব করে",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Avana LP জামানত ঋণ, হেজিং, ট্রেজারি নমনীয়তা এবং উৎপাদনশীল লিকুইডিটির আরও দক্ষ ব্যবহারে যা সম্ভব করে।",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "LP সেকেন্ডের জন্য",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Aave v4-এ Aerodrome LP-এর বিপরীতে ঋণ",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Avana Base-এ Aerodrome LP পজিশন কীভাবে সাপোর্ট করে যাতে সেগুলো সক্রিয় থাকে এবং নির্দিষ্ট Aave v4 Spoke দিয়ে ঋণ সমর্থন করে।",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Aave v4-এ Curve LP-এর বিপরীতে ঋণ",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Avana স্থিতিশীল ও সহসম্পর্কিত pool-এর জন্য Curve LP জামানতকে নির্দিষ্ট Aave v4 Spoke দিয়ে কীভাবে দেখে।",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Aave v4-এ Balancer LP জামানত",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Avana Balancer weighted pool LP-কে Aave v4-এ জামানত হিসেবে কীভাবে সাপোর্ট করে, যখন এক্সপোজার সক্রিয় থাকে।",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Aave v4-এ Uniswap LP-এর বিপরীতে ঋণ",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Avana Uniswap LP পজিশনকে Aave v4 জামানতে কীভাবে রূপান্তর করে, যখন সেগুলো pool-এ থেকে ফি আয় করতে থাকে।",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP জামানতকে ব্যবহারযোগ্য করা",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Avana-এর প্রোডাক্ট ডিজাইন স্পষ্ট মূল্যায়ন, ঋণসীমা এবং health-কে কেন গুরুত্ব দেয় — যাতে LP জামানত শুধু শক্তিশালী নয়, পরিচালনাযোগ্য হয়।",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "পণ্য",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana এবং LP-দের জন্য পরবর্তী ধাপ",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "লিকুইডিটি প্রোভাইডারদের ফি আয় ও মূলধন অ্যাক্সেসের মধ্যে বেছে নিতে হয় না কেন, এবং Avana Aave v4-এ LP জামানত কীভাবে এগিয়ে নেয়।",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "কমিউনিটি",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "প্রতিষ্ঠানের জন্য LP জামানত",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Avana LP জামানত DAO, ট্রেজারি, ফান্ড এবং ক্রিপ্টো কোম্পানিকে উৎপাদনশীল লিকুইডিটি না খুলে মূলধন পেতে কীভাবে সাহায্য করতে পারে।",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "প্রতিষ্ঠানের জন্য",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Avana LP অবকাঠামোতে নির্মাণ",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Avana LP জামানত অবকাঠামোর ডেভেলপার দৃষ্টিভঙ্গি — মনিটরিং, অটোমেশন, লিকুইডেশন সার্ভিস এবং বিল্ডার সুযোগ।",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "ডেভেলপাররা",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Avana-এর LP জামানত আর্কিটেকচারের ভিতরে",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Aave v4-এ Avana-এর LP জামানত আর্কিটেকচার — Hub, Spoke, মূল্যায়ন, oracle ডিজাইন এবং লিকুইডেশন লজিক।",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "ডেভেলপাররা",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: ভালো জামানত, ভালো নিয়ন্ত্রণ",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 মাল্টি-পজিশন জামানত বাড়ায়, আরও সাপোর্টেড pool যোগ করে, ডেলিগেশন ও অ্যালার্ট উন্নত করে এবং লেনদেনের ওভারহেড কমায়।",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "পণ্য",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: LP জামানতের জন্য নিয়ন্ত্রণ স্তর",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Avana Automate ব্যবহারকারীদের ফি, রিব্যালেন্সিং, সুরক্ষা এবং শৃঙ্খলিত রক্ষণাবেক্ষণের জন্য নন-কাস্টোডিয়াল অটোমেশন দিয়ে LP জামানত পরিচালনায় কীভাবে সাহায্য করে।",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "পণ্য",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP জামানতের প্রাথমিক গাইড",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana-এ LP জামানতের প্রাথমিক গাইড — LP আচরণ, LTV, impermanent loss, লিকুইডেশন এবং সতর্ক প্রথম পদক্ষেপ।",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP সেকেন্ডের জন্য",

@@ -1,25 +1,22 @@
 import { localeCodes } from "@/i18n/locales"
+import { publicPagePaths } from "@/lib/public-routes"
 import { SITE_NAME, SITE_URL, SUPPORT_EMAIL } from "@/lib/site"
-
-/** Top-level routes that resolve to a real page (mirrors src/app/[locale]/*). */
-const KNOWN_TOP_SEGMENTS = new Set([
-  "about",
-  "borrow",
-  "lend",
-  "multiply",
-  "developers",
-  "newsroom",
-  "faq",
-  "brand",
-  "privacy",
-  "terms",
-])
 
 const localeSet = new Set<string>(localeCodes)
 
 export interface MarkdownResult {
   status: number
   body: string
+}
+
+export function acceptsMarkdown(accept: string): boolean {
+  return accept.split(",").some((entry) => {
+    const [mediaType, ...parameters] = entry.split(";")
+    if (mediaType.trim().toLowerCase() !== "text/markdown") return false
+
+    const quality = parameters.find((parameter) => parameter.trim().toLowerCase().startsWith("q="))
+    return quality ? Number(quality.trim().slice(2)) > 0 : true
+  })
 }
 
 /** Strip a leading /{locale} segment and any trailing slash; lower-case the result. */
@@ -133,10 +130,10 @@ export function getMarkdownForPath(pathname: string): MarkdownResult {
     return { status: 200, body: CURATED[path] }
   }
 
-  const segment = path.split("/")[1] ?? ""
-  if (!KNOWN_TOP_SEGMENTS.has(segment)) {
+  if (!publicPagePaths.has(path)) {
     return { status: 404, body: notFoundMarkdown(path) }
   }
 
+  const segment = path.split("/")[1] ?? ""
   return { status: 200, body: genericMarkdown(segment, path) }
 }

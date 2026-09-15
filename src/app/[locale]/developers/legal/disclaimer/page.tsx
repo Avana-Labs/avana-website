@@ -27,7 +27,7 @@ const sections = [
   { id: "related-policies", title: "Related policies" },
 ]
 
-const policyLink = "text-[#01AACF] hover:underline"
+const policyLink = "text-type-accent hover:underline"
 
 export default async function LegalDisclaimerPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)

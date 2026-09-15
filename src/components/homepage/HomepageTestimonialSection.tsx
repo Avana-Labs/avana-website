@@ -100,37 +100,34 @@ export default function HomepageTestimonialSection() {
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-2/5 lg:border-r border-gray-200 lg:pr-8">
           {featureHighlights.map((entry, index) => (
-            <div
+            <button
               key={entry.label}
+              type="button"
               onClick={() => handleFeatureChange(index)}
-              onKeyDown={(event) => event.key === "Enter" && handleFeatureChange(index)}
-              className="cursor-pointer py-4 border-b border-gray-100 last:border-b-0"
-              role="button"
-              tabIndex={0}
-              aria-label={t(`View ${entry.label}`)}
+              className="w-full cursor-pointer border-b border-gray-100 py-4 text-start last:border-b-0"
               aria-pressed={currentFeature === index}
             >
-              <div className="flex justify-between items-center gap-6">
+              <span className="flex justify-between items-center gap-6">
                 <span className={`text-base transition-colors duration-300 ${currentFeature === index ? "text-foreground" : "text-type-tertiary"}`}>
                   {t(entry.label)}
                 </span>
-                <span className={`type-meta-label transition-colors duration-300 ${currentFeature === index ? "text-type-secondary" : "text-type-tertiary"}`}>
+                <span aria-hidden="true" className={`type-meta-label transition-colors duration-300 ${currentFeature === index ? "text-type-secondary" : "text-type-tertiary"}`}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
-              </div>
-              <div className="h-0.5 mt-3 w-full bg-gray-200 overflow-hidden">
+              </span>
+              <span className="mt-3 block h-0.5 w-full overflow-hidden bg-gray-200">
                 {currentFeature === index ? (
-                  <div
+                  <span
                     key={`progress-${currentFeature}`}
-                    className="h-full bg-gray-900"
+                    className="block h-full bg-gray-900"
                     style={{
                       animation: `feature-highlight-progress ${FEATURE_DURATION}ms linear forwards`,
                       transformOrigin: "left center",
                     }}
                   />
                 ) : null}
-              </div>
-            </div>
+              </span>
+            </button>
           ))}
         </div>
 

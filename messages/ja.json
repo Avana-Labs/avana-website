@@ -14,6 +14,7 @@
       "themeToggle": "テーマ設定"
     },
     "nav": {
+      "pricing": "料金",
       "products": "製品",
       "resources": "リソース",
       "developers": "開発者",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "料金",
+      "description": "Avana の借入、貸付、LP を担保とする戦略の料金をわかりやすく紹介します。"
+    },
     "siteTitle": "Avana - Aave v4でLPポジションに対して借り入れ",
     "siteDescription": "あなたのLPトークンから流動性を解放しましょう。Uniswap、Curve、Balancerのポジションに対して最大80%まで借り入れが可能で、Aave v4での取引手数料の獲得も継続できます。",
     "ogDescription": "取引手数料を稼ぎ続けながら、LP トークンから流動性を解放しましょう。",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "ブランドキット",
       "subtitle": "パートナーフェーシングの表面用のマーク、色、および指示"
+    }
+  },
+  "pricing": {
+    "title": "料金",
+    "subtitleLine1": "金利と収益は市場、",
+    "subtitleLine2": "ポジション、選択したルートによって変わります。",
+    "interfaceRate": "インターフェース手数料 — 15 bps（0.15%）",
+    "includes": "含まれるもの：",
+    "borrow": {
+      "title": "借入",
+      "subtitle": "LP担保クレジット向け",
+      "value": "変動",
+      "unit": "金利",
+      "description": "借入コストは選択したAave v4市場に従います。",
+      "items": {
+        "one": "市場が設定する金利",
+        "two": "未返済債務にのみ発生",
+        "three": "確認前に表示"
+      }
+    },
+    "lend": {
+      "title": "貸出",
+      "subtitle": "Hubに資本を供給",
+      "value": "市場",
+      "unit": "APY",
+      "description": "AvanaのLend Spokeを通じ、LP担保の借入需要から収益を得ます。",
+      "items": {
+        "one": "利回りは利用率で変動",
+        "two": "対応する貸出市場に供給",
+        "three": "現在のAPYをインターフェースに表示"
+      }
+    },
+    "multiply": {
+      "title": "マルチプライ",
+      "subtitle": "管理されたLPエクスポージャー向け",
+      "value": "変動",
+      "unit": "戦略レート",
+      "description": "対応するAMMポジションを担保に、管理された戦略でLPエクスポージャーを増やします。",
+      "items": {
+        "one": "対応するLPポジションを担保として使用",
+        "two": "エクスポージャーは原資産プールに連動",
+        "three": "レバレッジと解消のコントロールを表示"
+      }
+    },
+    "faq": {
+      "title": "よくある質問",
+      "items": {
+        "interfaceFee": {
+          "question": "Avanaのインターフェース利用料はいくらですか？",
+          "answer": "公式インターフェース手数料は、適用される場合15 bps（0.15%）です。署名前に表示され、ガス、スワップ手数料、Aave利息、清算コストとは別です。"
+        },
+        "borrowRate": {
+          "question": "借入金利は固定ですか？",
+          "answer": "いいえ。選択したAave v4市場が金利を設定し、利用率や市場パラメータで変動します。現在の金利は借入前に表示されます。"
+        },
+        "lendingApy": {
+          "question": "Lend APYはどのように決まりますか？",
+          "answer": "収益は市場利用率とLP担保借入需要によって決まります。現在のAPYは供給前に表示されます。"
+        },
+        "separateCosts": {
+          "question": "Avanaの手数料とは別にかかる費用は？",
+          "answer": "ネットワークガス、DEXスワップ手数料、Aave市場の利息、清算実行コストはインターフェース手数料とは別です。署名前に取引詳細を確認してください。"
+        },
+        "feeChanges": {
+          "question": "手数料や金利は変わりますか？",
+          "answer": "はい。市場金利は利用率とリスクパラメータで変動し、インターフェース方針も変更される場合があります。署名前に表示額を確認してください。"
+        }
+      }
     }
   },
   "faq": {

@@ -14,6 +14,7 @@
       "themeToggle": "Themavoorkeur"
     },
     "nav": {
+      "pricing": "Prijzen",
       "products": "Producten",
       "resources": "Hulpbronnen",
       "developers": "Ontwikkelaars",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Prijzen",
+      "description": "Duidelijke tarieven voor lenen, uitlenen en strategieën met LP als onderpand op Avana."
+    },
     "siteTitle": "Avana - Lenen tegen LP posities op Aave v4",
     "siteDescription": "Ontgrendel liquiditeit van uw LP tokens. Leen tot 80% tegen Uniswap, Curve en Balancer posities terwijl u doorgaat met het verdienen van handelskosten op Aave v4.",
     "ogDescription": "Ontgrendel liquiditeit van je LP tokens terwijl je doorgaat met het verdienen van handelskosten.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Merkit",
       "subtitle": "Markeringen, kleuren en richtlijnen voor partnersgerichte oppervlakken"
+    }
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "subtitleLine1": "Tarieven en rendement hangen af van de markt,",
+    "subtitleLine2": "positie en route die je gebruikt.",
+    "interfaceRate": "Voorafgaande interfacekosten — 15 bps (0,15%)",
+    "includes": "Inclusief:",
+    "borrow": {
+      "title": "Lenen",
+      "subtitle": "Voor LP-gedekt krediet",
+      "value": "Variabel",
+      "unit": "rente",
+      "description": "Leenkosten volgen de gekozen Aave v4-markt.",
+      "items": {
+        "one": "Door de markt bepaalde rente",
+        "two": "Loopt alleen op uitstaande schuld",
+        "three": "Wordt vóór bevestiging getoond"
+      }
+    },
+    "lend": {
+      "title": "Uitlenen",
+      "subtitle": "Kapitaal in de Hub storten",
+      "value": "Markt",
+      "unit": "APY",
+      "description": "Verdien aan LP-gedekte vraag via Avana's Lend Spoke.",
+      "items": {
+        "one": "Rendement verandert met gebruik",
+        "two": "Stort in ondersteunde leenmarkten",
+        "three": "Live APY wordt in de interface getoond"
+      }
+    },
+    "multiply": {
+      "title": "Vermenigvuldigen",
+      "subtitle": "Voor beheerde LP-blootstelling",
+      "value": "Variabel",
+      "unit": "strategietarief",
+      "description": "Vergroot LP-blootstelling met beheerde strategieën op ondersteunde AMM-posities.",
+      "items": {
+        "one": "Gebruik ondersteunde LP-posities als onderpand",
+        "two": "Blootstelling blijft gekoppeld aan de onderliggende pool",
+        "three": "Hefboom- en sluitingsopties blijven zichtbaar"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "items": {
+        "interfaceFee": {
+          "question": "Wat rekent Avana voor het gebruik van de interface?",
+          "answer": "De officiële interfacekosten zijn 15 bps (0,15%) wanneer van toepassing. Ze worden vóór ondertekening getoond en staan los van gas, swapkosten, Aave-rente en liquidatiekosten."
+        },
+        "borrowRate": {
+          "question": "Is de leenrente vast?",
+          "answer": "Nee. De gekozen Aave v4-markt bepaalt de rente. Die kan veranderen door gebruik en marktparameters. De huidige rente wordt vóór het lenen getoond."
+        },
+        "lendingApy": {
+          "question": "Hoe wordt lending-APY bepaald?",
+          "answer": "Rendement wordt door de markt bepaald en hangt af van gebruik en LP-gedekte vraag van leners. Live APY wordt vóór storting getoond."
+        },
+        "separateCosts": {
+          "question": "Welke kosten staan los van Avana-kosten?",
+          "answer": "Netwerkgas, DEX-swapkosten, Aave-marktrente en uitvoeringskosten voor liquidatie staan los van de officiële interfacekosten. Controleer de transactiedetails vóór ondertekening."
+        },
+        "feeChanges": {
+          "question": "Kunnen kosten en tarieven veranderen?",
+          "answer": "Ja. Markttarieven bewegen mee met gebruik en risicoparameters, en het interfacebeleid kan veranderen. Controleer vóór ondertekening altijd het actuele bedrag."
+        }
+      }
     }
   },
   "faq": {

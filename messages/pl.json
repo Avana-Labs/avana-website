@@ -14,6 +14,7 @@
       "themeToggle": "Preferencje motywu"
     },
     "nav": {
+      "pricing": "Cennik",
       "products": "Produkty",
       "resources": "Zasoby",
       "developers": "Deweloperzy",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Cennik",
+      "description": "Przejrzyste opłaty za pożyczanie, udzielanie pożyczek i strategie zabezpieczone LP w Avana."
+    },
     "siteTitle": "Avana - Pożycz pod LP pozycje na Aave v4",
     "siteDescription": "Odblokuj płynność ze swoich LP tokenów. Pożycz do 80% wartości w oparciu o pozycje Uniswap, Curve i Balancer, jednocześnie nadal zarabiając opłaty transakcyjne na Aave v4.",
     "ogDescription": "Odblokuj płynność ze swoich LP tokenów, jednocześnie nadal zarabiając na opłatach transakcyjnych.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Zestaw marki",
       "subtitle": "Oznaczenia, kolory i wskazówki dla powierzchni skierowanych do partnera"
+    }
+  },
+  "pricing": {
+    "title": "Cennik",
+    "subtitleLine1": "Stawki i zwroty zależą od rynku,",
+    "subtitleLine2": "pozycji i wybranej ścieżki.",
+    "interfaceRate": "Opłata za interfejs z góry — 15 pb (0,15%)",
+    "includes": "Obejmuje:",
+    "borrow": {
+      "title": "Pożyczanie",
+      "subtitle": "Dla kredytu zabezpieczonego LP",
+      "value": "Zmienna",
+      "unit": "odsetki",
+      "description": "Koszt pożyczki zależy od wybranego rynku Aave v4.",
+      "items": {
+        "one": "Stopa ustalana przez rynek",
+        "two": "Naliczana tylko od niespłaconego długu",
+        "three": "Widoczna przed potwierdzeniem"
+      }
+    },
+    "lend": {
+      "title": "Lending",
+      "subtitle": "Dostarczaj kapitał do Hub",
+      "value": "Rynkowa",
+      "unit": "APY",
+      "description": "Zarabiaj na popycie zabezpieczonym LP przez Lend Spoke Avana.",
+      "items": {
+        "one": "Zwrot zmienia się wraz z wykorzystaniem",
+        "two": "Wpłacaj środki na obsługiwane rynki pożyczkowe",
+        "three": "Bieżące APY jest widoczne w interfejsie"
+      }
+    },
+    "multiply": {
+      "title": "Multiply",
+      "subtitle": "Dla zarządzanej ekspozycji na LP",
+      "value": "Zmienna",
+      "unit": "stopa strategii",
+      "description": "Zwiększaj ekspozycję na LP dzięki zarządzanym strategiom opartym na obsługiwanych pozycjach AMM.",
+      "items": {
+        "one": "Używaj obsługiwanych pozycji LP jako zabezpieczenia",
+        "two": "Ekspozycja pozostaje powiązana z bazową pulą",
+        "three": "Kontrole dźwigni i zamknięcia są widoczne"
+      }
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": {
+        "interfaceFee": {
+          "question": "Ile Avana pobiera za korzystanie z interfejsu?",
+          "answer": "Oficjalna opłata za interfejs wynosi 15 pb (0,15%), jeśli ma zastosowanie. Jest widoczna przed podpisaniem i nie obejmuje gazu, opłat za swapy, odsetek Aave ani kosztów likwidacji."
+        },
+        "borrowRate": {
+          "question": "Czy odsetki od pożyczki są stałe?",
+          "answer": "Nie. Ustala je wybrany rynek Aave v4 i mogą zmieniać się wraz z wykorzystaniem oraz parametrami rynku. Bieżąca stawka jest widoczna przed pożyczką."
+        },
+        "lendingApy": {
+          "question": "Jak ustalane jest APY dla lendingu?",
+          "answer": "Zwroty zależą od rynku, wykorzystania i popytu pożyczkobiorców zabezpieczonych LP. Bieżące APY jest widoczne przed wpłatą."
+        },
+        "separateCosts": {
+          "question": "Które koszty są niezależne od opłat Avana?",
+          "answer": "Gaz sieciowy, opłaty za swapy DEX, odsetki rynku Aave i koszty wykonania likwidacji są niezależne od oficjalnej opłaty za interfejs. Przed podpisaniem sprawdź szczegóły transakcji."
+        },
+        "feeChanges": {
+          "question": "Czy opłaty i stawki mogą się zmieniać?",
+          "answer": "Tak. Stawki rynkowe zmieniają się wraz z wykorzystaniem i parametrami ryzyka, a polityka interfejsu może ulec zmianie. Przed podpisaniem zawsze sprawdź bieżącą kwotę."
+        }
+      }
     }
   },
   "faq": {

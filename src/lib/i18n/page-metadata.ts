@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 import type { AppLocale } from "@/i18n/locales"
-import { languageAlternates } from "@/lib/i18n/path"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
 import { buildOgImagePath } from "@/lib/site"
 
 type MetaKey =
@@ -43,13 +43,13 @@ export async function createPageMetadata(
     title: options?.titleTemplate === null ? { absolute: title } : title,
     description,
     alternates: {
-      canonical: path,
+      canonical: absoluteLocaleUrl(locale, path),
       languages: languageAlternates(path),
     },
     openGraph: {
       title,
       description,
-      url: path,
+      url: absoluteLocaleUrl(locale, path),
       images: [ogImage],
     },
     twitter: {

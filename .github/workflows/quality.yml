@@ -1,0 +1,77 @@
+name: quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks and production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit production dependencies
+        run: npm run audit:production
+
+      - name: Run static regression gates
+        run: npm run test:static
+
+      - name: Build production output
+        run: npm run build
+
+      - name: Validate generated pages
+        run: npm run check:built
+
+  browser:
+    name: Browser navigation and resilience checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: static
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production output
+        run: npm run build
+
+      - name: Start production server
+        run: |
+          nohup npm run start -- -p 3000 > /tmp/avana-next.log 2>&1 &
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:3000/en > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/avana-next.log
+          exit 1
+
+      - name: Run browser regression gates
+        env:
+          AUDIT_BASE_URL: http://127.0.0.1:3000
+        run: npm run test:browser

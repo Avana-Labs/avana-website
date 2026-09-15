@@ -72,11 +72,11 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
           </div>
           <p className="mt-4 type-doc-body">
             See{" "}
-            <Link href="/developers/integrations/price-oracles" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
             </Link>{" "}
             and{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>
             .

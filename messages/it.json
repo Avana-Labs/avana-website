@@ -14,6 +14,7 @@
       "themeToggle": "Preferenza tema"
     },
     "nav": {
+      "pricing": "Prezzi",
       "products": "Prodotti",
       "resources": "Risorse",
       "developers": "Sviluppatori",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Prezzi",
+      "description": "Prezzi chiari per prestiti, depositi e strategie garantite da LP su Avana."
+    },
     "siteTitle": "Avana - Prendere in prestito contro LP posizioni su Aave v4",
     "siteDescription": "Sblocca liquidità dai tuoi LP token. Prendi in prestito fino all'80% contro le posizioni Uniswap, Curve e Balancer continuando a guadagnare commissioni di trading su Aave v4.",
     "ogDescription": "Sblocca liquidità dai tuoi LP token continuando a guadagnare commissioni di trading.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Kit del marchio",
       "subtitle": "Segni, colori e indicazioni per le superfici rivolte ai partner"
+    }
+  },
+  "pricing": {
+    "title": "Prezzi",
+    "subtitleLine1": "Tassi e rendimenti dipendono dal mercato,",
+    "subtitleLine2": "dalla posizione e dal percorso scelto.",
+    "interfaceRate": "Commissione di interfaccia — 15 pb (0,15%)",
+    "includes": "Include:",
+    "borrow": {
+      "title": "Prendere in prestito",
+      "subtitle": "Per credito garantito da LP",
+      "value": "Variabile",
+      "unit": "interesse",
+      "description": "I costi del prestito seguono il mercato Aave v4 selezionato.",
+      "items": {
+        "one": "Tasso stabilito dal mercato",
+        "two": "Matura solo sul debito residuo",
+        "three": "Mostrato prima della conferma"
+      }
+    },
+    "lend": {
+      "title": "Prestare",
+      "subtitle": "Fornisci capitale all’Hub",
+      "value": "Mercato",
+      "unit": "APY",
+      "description": "Guadagna dalla domanda di prestiti garantiti da LP tramite il Lend Spoke di Avana.",
+      "items": {
+        "one": "Il rendimento varia con l’utilizzo",
+        "two": "Fornitura nei mercati supportati",
+        "three": "APY corrente mostrato nell’interfaccia"
+      }
+    },
+    "multiply": {
+      "title": "Moltiplicare",
+      "subtitle": "Per esposizione LP gestita",
+      "value": "Variabile",
+      "unit": "tasso della strategia",
+      "description": "Amplifica l’esposizione LP con strategie gestite garantite da posizioni AMM supportate.",
+      "items": {
+        "one": "Usa posizioni LP supportate come garanzia",
+        "two": "L’esposizione resta legata al pool sottostante",
+        "three": "I controlli di leva e chiusura restano visibili"
+      }
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "items": {
+        "interfaceFee": {
+          "question": "Quanto costa usare l’interfaccia Avana?",
+          "answer": "La commissione ufficiale dell’interfaccia è di 15 pb (0,15%) quando applicabile. Viene mostrata prima della firma ed è separata da gas, commissioni di swap, interessi Aave e costi di liquidazione."
+        },
+        "borrowRate": {
+          "question": "Gli interessi sul prestito sono fissi?",
+          "answer": "No. Sono stabiliti dal mercato Aave v4 selezionato e possono cambiare con l’utilizzo e i parametri di mercato. Il tasso corrente viene mostrato prima del prestito."
+        },
+        "lendingApy": {
+          "question": "Come viene determinato l’APY del lending?",
+          "answer": "Il rendimento dipende dall’utilizzo del mercato e dalla domanda di prestiti garantiti da LP. L’APY corrente viene mostrato prima della fornitura."
+        },
+        "separateCosts": {
+          "question": "Quali costi sono separati dalle commissioni Avana?",
+          "answer": "Gas di rete, commissioni di swap DEX, interessi del mercato Aave e costi di esecuzione della liquidazione sono separati dalla commissione di interfaccia. Controlla i dettagli prima di firmare."
+        },
+        "feeChanges": {
+          "question": "Le commissioni e i tassi possono cambiare?",
+          "answer": "Sì. I tassi di mercato cambiano con l’utilizzo e i parametri di rischio, e la politica dell’interfaccia può cambiare. Verifica sempre l’importo corrente prima di firmare."
+        }
+      }
     }
   },
   "faq": {

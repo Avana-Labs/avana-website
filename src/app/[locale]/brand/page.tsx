@@ -8,10 +8,10 @@ import { SectionEyebrow, SectionTitle } from "@/components/shared"
 const BRAND_KIT_URL = "/avana-brand-kit.zip"
 
 const brandSections = {
-  logo: { eyebrow: "Primary mark", title: "Logo" },
-  typography: { eyebrow: "Voice & rhythm", title: "Typography" },
-  color: { eyebrow: "Palette system", title: "Color" },
-  guidelines: { eyebrow: "Use it well", title: "Logo Guidelines" },
+  logo: { eyebrow: "Choose a mark for your layout", title: "Use the full wordmark or standalone icon in an approved colorway." },
+  typography: { eyebrow: "Set the tone with type", title: "Diatype is primary; use Outfit where Diatype is unavailable." },
+  color: { eyebrow: "Build with the core palette", title: "Pair white and ink with Avana cyan for emphasis." },
+  guidelines: { eyebrow: "Keep the logo intact", title: "Give it clear space and avoid stretching, recoloring, or adding effects." },
 } as const
 
 const faqItems: InlineFaqItem[] = [
@@ -52,10 +52,10 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
         <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
             <h1 className="type-index-title text-foreground">
-              Brand
+              Brand Kit
             </h1>
             <p className="max-w-xl text-[1rem] leading-[1.55] tracking-[-0.02em] text-type-secondary md:text-[1.05rem]">
-              Official Avana logos, colors, typography, and rules for using the brand clearly.
+              Official Avana logos, colors and typography.
             </p>
             <a
               href={BRAND_KIT_URL}
@@ -69,7 +69,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <main className="flex-1 bg-background">
+      <div className="flex-1 bg-background">
         <div className="site-content-shell">
           <section className="site-section-gap">
             <div className="mb-8 space-y-3 md:mb-12">
@@ -89,7 +89,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Diatype</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Avana uses Diatype for product and marketing surfaces. It keeps dense protocol content readable while
                   still feeling sharp and editorial.
                 </p>
@@ -105,7 +105,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="mt-8 grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Outfit</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Outfit is a fallback specimen for contexts where Diatype is unavailable. Diatype remains the primary
                   typeface for the product experience.
                 </p>
@@ -139,7 +139,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <div className="mb-12 grid items-start gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-3">
                 <h3 className="text-xl font-semibold text-foreground">Things to avoid</h3>
-                <p className="text-sm leading-relaxed text-gray-500">
+                <p className="text-sm leading-relaxed text-type-secondary">
                   Keep the Avana mark intact. These examples show the treatments that make the logo harder to read or
                   less recognizable.
                 </p>
@@ -153,7 +153,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <InlineFaqSection items={faqItems} withTopBorder={false} />
           </div>
         </div>
-      </main>
+      </div>
     </div>
   </LocalizedMarketing>
 )

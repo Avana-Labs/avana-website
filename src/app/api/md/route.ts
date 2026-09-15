@@ -1,4 +1,5 @@
 import { getMarkdownForPath } from "@/lib/api/markdown"
+import { clientKey, rateLimit, tooManyRequests, RATE_LIMITS } from "@/lib/api/rate-limit"
 
 export const dynamic = "force-dynamic"
 
@@ -8,6 +9,9 @@ export const dynamic = "force-dynamic"
  * Not linked in navigation; agents reach it transparently via content negotiation.
  */
 export function GET(request: Request) {
+  const limit = rateLimit(clientKey(request), RATE_LIMITS.markdown)
+  if (!limit.ok) return tooManyRequests(limit)
+
   const url = new URL(request.url)
   const path = url.searchParams.get("path") || "/"
   const { status, body } = getMarkdownForPath(path)

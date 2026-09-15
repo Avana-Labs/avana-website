@@ -40,7 +40,7 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
             Avana&apos;s LP valuation, collateral factors, pool-level risk treatment, and
             recoverable-value assumptions.</>{" "}<>If health falls below the liquidation boundary, the position becomes eligible for
             liquidation. See the{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>{" "}
             for what happens next.</>{" "}<>{"Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after collateral factors and risk discounts. Each position contributes based on its own pool, range, liquidity, and risk settings."}</>
@@ -100,7 +100,7 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           </ul>
           <p className="mt-4 type-doc-body">
             See{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>{" "}
             for how adjusted collateral value is calculated.

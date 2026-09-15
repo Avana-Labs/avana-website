@@ -57,7 +57,7 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
           </div>
           <p className="mt-4 type-doc-body">
             See{" "}
-            <Link href="/developers/architecture/health-factor" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/health-factor" className="text-type-accent hover:underline">
               Health Factor
             </Link>{" "}
             for how health is calculated.
@@ -93,11 +93,11 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
           </ul>
           <p className="mt-4 type-doc-body">
             See{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>{" "}
             and{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>{" "}
             when making changes to a live loan.

@@ -66,11 +66,11 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
             <>Avana accepts LP collateral only from reviewed and approved pools. Approval applies to individual pools, so an integration with a DEX does not automatically enable all of its LP positions. The review establishes whether Avana can value the position, hold it as collateral, and recover value through liquidation.</>{" "}<>Pool approval works alongside{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>{" "}
             and{" "}
-            <Link href="/developers/safety" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/safety" className="text-type-accent hover:underline">
               Risk Framework
             </Link>
             . The allowlist decides whether a pool may enter the system; collateral factors decide how

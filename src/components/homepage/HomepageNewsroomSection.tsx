@@ -64,7 +64,7 @@ export default async function HomepageNewsroomSection({
               showDividers ? "border-b border-gray-200" : ""
             }`}
           >
-            <p className="type-meta-label">{formatContentDate(post.date, locale)}</p>
+            <p className="type-meta-label">{formatContentDate(post.date, locale, true)}</p>
 
             <div className="space-y-2">
               <FeatureCardTitle className="max-w-[22rem]">{post.title}</FeatureCardTitle>

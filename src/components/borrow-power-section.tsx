@@ -42,19 +42,21 @@ export default async function BorrowPowerSection({ locale }: { locale: AppLocale
   return withMarketingI18n(locale, ["borrow-power-section"], (
     <section className="bg-white">
       <MarketingLeadHeader
-        title="Combine collateral. Unlock more credit."
-        subtitle="One borrowing account across every supported LP position."
+        className="max-w-none [&_.type-md-lg]:text-wrap!"
+        title="Combine LPs to increase borrowing capacity"
+        subtitle="Each position contributes collateral while retaining its own risk controls."
       />
 
       <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
         <div className="flex items-center justify-center">
           <div className="w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-[28rem]">
             <Image
-              src="/images/avana-combine-coins.png"
-              alt="Avana combine LP positions illustration"
-              width={1024}
-              height={1024}
-              className="h-auto w-full"
+              src="/images/avana-tokens-rewards-v2.jpg"
+              alt=""
+              aria-hidden="true"
+              width={900}
+              height={900}
+              className="h-auto w-full rounded-[1.35rem]"
               sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
             />
           </div>

@@ -41,7 +41,7 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
           <p className="type-doc-body">
             Avana uses the Umbrella model for deficit protection in its Aave v4 lending
             architecture. It follows the principle of{" "}
-            <a href="https://aave.com/docs/aave-v3/umbrella" className="text-[#01AACF] hover:underline">
+            <a href="https://aave.com/docs/aave-v3/umbrella" className="text-type-accent hover:underline">
               Aave Umbrella
             </a>: a defined first-loss layer sits ahead of staked capital that can be slashed
             to cover protocol bad debt. In Avana, that model is applied to LP-backed borrowing
@@ -181,10 +181,10 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
             reimburse ordinary trading losses, impermanent loss, or every failure of an
             external protocol. Coverage is bounded by the approved market scope and capital
             actually available; it does not increase borrowing capacity or remove liquidation
-            risk. The <Link href="/developers/safety" className="text-[#01AACF] hover:underline">
+            risk. The <Link href="/developers/safety" className="text-type-accent hover:underline">
               Risk Framework
             </Link>{" "}
-            and <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            and <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>{" "}
             describe the controls and recovery process that operate before deficit coverage.

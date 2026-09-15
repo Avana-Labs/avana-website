@@ -86,8 +86,8 @@ export default function InvestApySection() {
   const activeStage = APY_STAGES[activeStageIndex]
   const heatmap = buildHeatmap(activeStageIndex)
   const touchStartX = useRef<number | null>(null)
-  const eyebrow = useLocalizedPhrase("Avana APY")
-  const sectionTitle = useLocalizedPhrase("Same Idle Cash with Higher APY Returns")
+  const eyebrow = useLocalizedPhrase("Understand what drives your rate")
+  const sectionTitle = useLocalizedPhrase("See how Hub utilization, Spoke premiums, and pool risk contribute to APY.")
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = event.touches[0]?.clientX ?? null

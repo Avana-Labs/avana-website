@@ -32,6 +32,7 @@
   --color-type-secondary: var(--type-color-secondary);
   --color-type-tertiary: var(--type-color-tertiary);
   --color-type-accent: var(--avana-cyan);
+  --color-success: #00754a;
   --font-sans: var(--font-primary-stack);
   --font-serif: var(--font-primary-stack);
   --font-mono: var(--font-primary-stack);
@@ -80,7 +81,7 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: var(--avana-ink);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: var(--avana-charcoal);
+  --muted-foreground: var(--type-color-secondary);
   --accent: oklch(0.97 0 0);
   --accent-foreground: var(--avana-ink);
   --destructive: oklch(0.577 0.245 27.325);
@@ -129,8 +130,8 @@
   --type-weight-ui: 400;
   --type-weight-emphasis: 400;
   --type-weight-display: 400;
-  --type-color-secondary: color-mix(in oklab, var(--foreground) 68%, transparent);
-  --type-color-tertiary: color-mix(in oklab, var(--foreground) 52%, transparent);
+  --type-color-secondary: #73726c;
+  --type-color-tertiary: #73726c;
   --type-color-accent: var(--avana-cyan);
   --header-surface: rgba(255, 255, 255, 0.94);
   --surface-muted: #eef3f5;
@@ -266,7 +267,7 @@
   padding-left: 0.75rem;
   font-size: var(--type-doc-body-size);
   line-height: 1.625;
-  color: #6b7280;
+  color: var(--type-color-secondary);
 }
 
 .type-doc-callout-warning {
@@ -348,7 +349,7 @@
 }
 
 .type-doc-table td {
-  color: #6b7280;
+  color: var(--type-color-secondary);
 }
 
 .type-doc-panel {
@@ -490,6 +491,11 @@
   line-height: 1.4;
   letter-spacing: var(--type-tracking-label);
   color: var(--type-color-tertiary);
+}
+
+main p a {
+  text-decoration-line: underline;
+  text-underline-offset: 0.16em;
 }
 
 .type-eyebrow {
@@ -853,7 +859,7 @@
 }
 
 .site-article-content h2,
-.site-editorial-content h3 {
+.site-editorial-content h2 {
   font-size: var(--type-section-title-size);
   font-weight: var(--type-weight-emphasis);
   line-height: 1.25;
@@ -878,6 +884,7 @@
 
 .developer-content[data-developer-doc-shell] section h3,
 .site-article-content h3,
+.site-editorial-content h3,
 .site-editorial-content h4 {
   font-size: 0.9375rem;
   font-weight: var(--type-weight-emphasis);
@@ -885,12 +892,17 @@
   color: var(--foreground);
 }
 
+.site-editorial-content.site-terms-content h2 {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
 .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section :is(p, li, td, dd),
 .site-article-content :is(p, li, td),
 .site-editorial-content :is(p, li, td) {
   font-size: var(--type-doc-body-size);
   line-height: 1.625;
-  color: #6b7280;
+  color: var(--type-color-secondary);
 }
 
 .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section :is(p, li, td, dd) {
@@ -996,7 +1008,7 @@
   }
 
   .site-article-content h2,
-  .site-editorial-content h3 {
+  .site-editorial-content h2 {
     font-size: var(--type-section-title-size);
   }
 
@@ -1289,7 +1301,7 @@ body:not(:has([data-developer-doc-shell])) #main-content :is(.site-content-shell
 
 /* Marketing lead header (Avana products, Borrow Markets, etc.) */
 .marketing-lead-header {
-  --sd-text-sec: #73726c;
+  --sd-text-sec: var(--type-color-secondary);
 }
 
 .marketing-lead-header .type-md-lg {
@@ -1315,7 +1327,7 @@ body:not(:has([data-developer-doc-shell])) #main-content :is(.site-content-shell
   /* Neutral light-gray outer card surface. */
   --sd-card-bg: #fafafa;
   --sd-card-border: rgba(38, 37, 30, 0.08);
-  --sd-text-sec: #73726c;
+  --sd-text-sec: var(--type-color-secondary);
   --sd-radius: 4px;
 }
 
@@ -1412,7 +1424,7 @@ body:not(:has([data-developer-doc-shell])) #main-content :is(.site-content-shell
 #avana-hubs .feature-card-description {
   font-size: 0.875rem;
   line-height: 1.45;
-  color: #73726c;
+  color: var(--type-color-secondary);
 }
 
 /* Developer documentation tables and code */
@@ -1461,7 +1473,10 @@ body:has([data-developer-doc-shell]) footer.site-content-shell {
   height: 300px;
   flex: 1;
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+.ask-transcript::-webkit-scrollbar {
+  display: none;
 }
 .ask-welcome {
   height: 100%;

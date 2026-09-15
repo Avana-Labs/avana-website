@@ -80,7 +80,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
   ] as const
 
   return (
-    <main className="bg-background">
+    <div className="bg-background">
       <section className="pb-16 pt-16 md:pb-24 md:pt-20 lg:pt-24">
         <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -101,10 +101,10 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             {feeCards.map((card) => (
               <article
                 key={card.title}
-                className={`flex min-h-[35rem] flex-col rounded-xl border p-5 md:min-h-[38rem] md:p-6 ${
+                className={`flex h-full flex-col rounded-xl p-5 shadow-none md:p-6 ${
                   card.featured
-                    ? "border-foreground/15 bg-[#fafafa]"
-                    : "border-border/70 bg-[#fafafa] text-foreground"
+                    ? "bg-[#fafafa]"
+                    : "bg-[#fafafa] text-foreground"
                 }`}
               >
                 <div>
@@ -148,7 +148,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             ))}
           </div>
 
-          <section className="mt-16 border-t border-border/80 pt-16 md:mt-24 md:pt-24">
+          <section className="mt-16 pt-16 md:mt-24 md:pt-24">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] md:gap-6 lg:grid-cols-[minmax(0,25rem)_minmax(0,1fr)] lg:gap-8">
               <div className="space-y-3 md:max-w-[25rem] md:pt-2">
                 <SectionTitle variant="lead" className="max-w-none">
@@ -174,6 +174,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
           </section>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

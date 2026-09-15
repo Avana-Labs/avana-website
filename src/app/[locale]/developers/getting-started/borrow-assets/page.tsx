@@ -67,7 +67,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
           <p className="mt-4 type-doc-body">
             If health falls below the liquidation boundary, the position becomes eligible for
             liquidation. See{" "}
-            <Link href="/developers/architecture/health-factor" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/health-factor" className="text-type-accent hover:underline">
               Health Factor
             </Link>{" "}
             for the full model.
@@ -105,11 +105,11 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
             <>Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after
             collateral factors and risk discounts. Each position contributes based on its own pool,
             range, liquidity, and risk settings.</>{" "}<>As debt approaches borrowing capacity, less capacity remains to absorb price changes or interest accrual. See{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>{" "}
             and{" "}
-            <Link href="/developers/architecture/health-factor" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/health-factor" className="text-type-accent hover:underline">
               Health Factor
             </Link>{" "}
             when sizing a borrow.</>

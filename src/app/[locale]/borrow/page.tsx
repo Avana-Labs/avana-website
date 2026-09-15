@@ -3,7 +3,7 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import { Link } from "@/i18n/navigation"
 import { LocalizedMarketing } from "@/components/localized-marketing"
-import { Activity, ArrowRight, BadgeDollarSign, Compass, Layers, LineChart, ShieldCheck } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { InlineFaqSection, type InlineFaqItem } from "@/components/InlineFaqSection"
 import { FeatureCardDescription, FeatureCardTitle, SandboxNotice, SectionEyebrow, SectionTitle } from "@/components/shared"
 import { PerformanceSection } from "@/components/ui/performance-section"
@@ -12,11 +12,11 @@ import { protocols } from "@/data/protocols"
 import { FeaturePageHero } from "@/components/feature-page-hero"
 import { AvanaHubWave } from "@/components/avana-hub-wave"
 import HomepageNewsroomSection from "@/components/homepage/HomepageNewsroomSection"
-import { MarketingLeadHeader } from "@/components/marketing-lead-header"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
 import { SupportedDexDirectory } from "@/components/supported-dex-directory"
 
 const BorrowPowerSection = dynamic(() => import("@/components/borrow-power-section"))
+const BorrowValuationSection = dynamic(() => import("@/components/borrow-valuation-section"))
 const PositionSafetyCardsSection = dynamic(() => import("@/components/position-safety-cards-section"))
 
 const openSpokeFaqItems: InlineFaqItem[] = [
@@ -58,45 +58,6 @@ const openSpokeFaqItems: InlineFaqItem[] = [
   },
 ]
 
-const borrowPartnerFeatures = [
-  {
-    title: "Live LP collateral",
-    description:
-      "Treat each LP position as live collateral valued like an active AMM position, not a static token.",
-    icon: Layers,
-  },
-  {
-    title: "Pool-specific scoring",
-    description:
-      "Borrowing power is risk-scored with pool logic that reflects volatility, depth, and market behavior.",
-    icon: Compass,
-  },
-  {
-    title: "Real AMM behaviour",
-    description:
-      "Collateral rules track real pool structure and exposure so credit stays tied to your live position.",
-    icon: Activity,
-  },
-  {
-    title: "Shared Hub liquidity",
-    description:
-      "Borrowing capacity comes from shared Hub liquidity while your LP stays productive in the pool.",
-    icon: BadgeDollarSign,
-  },
-  {
-    title: "Dual-oracle pricing",
-    description:
-      "Dual-oracle pricing keeps marks robust as markets move so collateral value stays credible over time.",
-    icon: LineChart,
-  },
-  {
-    title: "Active risk controls",
-    description:
-      "Health monitoring and venue-aware liquidation protect standards while your exposure keeps earning fees.",
-    icon: ShieldCheck,
-  },
-] as const
-
 const lpHubMarkets = [
   {
     title: "Stable LP Hub",
@@ -133,7 +94,7 @@ function BorrowMarketCard({
 }) {
   return (
     <div className="flex h-full flex-col feature-card rounded-2xl p-6 md:p-8">
-      <span className="text-4xl text-[#01AACF] md:text-5xl">{number}</span>
+      <span className="text-4xl text-type-accent md:text-5xl">{number}</span>
       <FeatureCardTitle className="mt-6">{title}</FeatureCardTitle>
       <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
     </div>
@@ -149,7 +110,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <FeaturePageHero
         title={
           <>
@@ -180,25 +141,25 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="violet">How it works</SectionEyebrow>
-                <SectionTitle>Borrowing in three steps</SectionTitle>
+                <SectionEyebrow tone="violet">How borrowing works</SectionEyebrow>
+                <SectionTitle>Turn active liquidity into borrowing power</SectionTitle>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <BorrowMarketCard
                   number="1"
-                  title="Deposit LP"
+                  title="Deposit your LP as collateral"
                   description="Choose a supported LP position and deposit it as collateral while your liquidity stays active."
                 />
 
                 <BorrowMarketCard
                   number="2"
-                  title="Draw liquidity"
+                  title="Borrow against its risk-adjusted value"
                   description="Borrow against the risk-adjusted value of the position and receive funds straight in your wallet."
                 />
 
                 <BorrowMarketCard
                   number="3"
-                  title="Manage health"
+                  title="Manage debt before risk rises"
                   description="Repay, add collateral, or reduce debt before the position drifts toward the liquidation threshold."
                 />
               </div>
@@ -212,9 +173,9 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
-                <SectionEyebrow tone="blue">Avana Hubs Strategy</SectionEyebrow>
-                <SectionTitle className="mt-2 max-w-none lg:whitespace-nowrap">
-                  Choose the market type for your collateral
+                <SectionEyebrow tone="blue">Find the Hub for your collateral</SectionEyebrow>
+                <SectionTitle className="mt-2 max-w-none">
+                  Stable, correlated, and volatile LPs belong to different markets.
                 </SectionTitle>
               </div>
             </div>
@@ -240,39 +201,18 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </section>
 
-      <section className="bg-white site-section-gap">
-        <div className="site-content-shell">
-          <div className="mx-auto w-full max-w-[76rem]">
-            <MarketingLeadHeader
-              title="Borrow with Confidence"
-              subtitle="Protected at the pool level"
-            />
+      <BorrowValuationSection locale={locale} />
 
-            <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 md:mt-16 md:gap-x-16 md:gap-y-14 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
-              {borrowPartnerFeatures.map((feature) => (
-                <article key={feature.title} className="flex flex-col bg-transparent">
-                  <feature.icon className="h-10 w-10 text-[#01AACF] sm:h-11 sm:w-11" strokeWidth={1.5} aria-hidden="true" />
-                  <FeatureCardTitle className="mt-4 sm:mt-5">{feature.title}</FeatureCardTitle>
-                  <FeatureCardDescription className="mt-2 max-w-[22rem]">
-                    {feature.description}
-                  </FeatureCardDescription>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SupportedDexDirectory protocols={supportedDexes} />
+      <SupportedDexDirectory locale={locale} protocols={supportedDexes} />
 
       <PerformanceSection className="site-section-gap">
         <div className="site-content-shell">
           <div className="mx-auto w-full max-w-[76rem] flex flex-col site-section-stack">
             <div id="liquidity-pools" className="flex flex-col gap-6">
-              <div className="flex max-w-[600px] flex-col gap-2">
-                <SectionEyebrow tone="blue">Liquidity pools</SectionEyebrow>
-                <SectionTitle className="md:whitespace-nowrap">
-                  Every Pool details, fully explained
+              <div className="flex max-w-none flex-col gap-2">
+                <SectionEyebrow tone="blue">Everything in one interface</SectionEyebrow>
+                <SectionTitle className={locale === "en" ? "lg:whitespace-nowrap" : "lg:break-words"}>
+                  Discover markets and manage risk across your portfolio.
                 </SectionTitle>
               </div>
               <div className="relative aspect-[1672/941] w-full overflow-hidden rounded-[1.35rem] sm:aspect-[2/1] md:rounded-[1.6rem]">
@@ -308,7 +248,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </div>
       </div>
-    </main>
+    </div>
   </LocalizedMarketing>
 )
 }

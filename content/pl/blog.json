@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Jak Avana zarządza ryzykiem LP",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Jak Avana zarządza ryzykiem zabezpieczenia LP na rynkach Spoke — z ograniczonymi aktualizacjami, niezależnym przeglądem i containmentem awaryjnym.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Deweloperzy",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Dlaczego zabezpieczenie LP potrzebuje Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Dlaczego Avana używa Smart Agents do monitorowania zdrowia, obsługi pozycji właściwych dla venue i utrzymania niezawodnego pokrycia likwidacji pod stresem.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Deweloperzy",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Jak powinna działać likwidacja LP",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Jak Avana likwiduje zabezpieczenie LP kontrolowanymi unwindami, częściową interwencją, opłatami najpierw tam gdzie to możliwe oraz ścieżkami właściwymi dla venue.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Deweloperzy",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "Wycena zabezpieczenia LP lepszymi oracle’ami",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Jak Avana Oracle wycenia zabezpieczenie LP przez recoverable value, deterministyczną rekonstrukcję i konserwatywne haircuty odzysku.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Deweloperzy",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Jak Avana zarządza ryzykiem zabezpieczenia LP",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Jak Avana buduje warstwowe bezpieczeństwo dla zabezpieczenia LP — od architektury i oracle’i przez zdrowie, likwidację i operations.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Deweloperzy",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Jak ostrożniej hedżować pozycję LP",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Jak LP mogą używać Avana do finansowania buforów, offsetów kierunkowych i bardziej zdyscyplinowanych hedge’y — bez pełnego wychodzenia z poola.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Dla LP",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield looping z zabezpieczeniem LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Jak myśleć o yield loopingu z zabezpieczeniem LP Avana — w tym bufory, stress testy, dyscyplina wyjścia i zrównoważona dźwignia.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Dla LP",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Co umożliwia zabezpieczenie LP",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Co zabezpieczenie LP Avana umożliwia w pożyczaniu, hedgingu, elastyczności treasury i bardziej kapitałowo efektywnym użyciu produktywnej płynności.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Dla LP",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Pożyczanie pod LP Aerodrome na Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Jak Avana obsługuje pozycje LP Aerodrome na Base, by pozostały aktywne i wspierały pożyczanie przez dedykowany Spoke Aave v4.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Deweloperzy",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Pożyczanie pod LP Curve na Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Jak Avana traktuje zabezpieczenie LP Curve dla stabilnych i skorelowanych pooli przez dedykowany Spoke Aave v4.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Deweloperzy",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Zabezpieczenie LP Balancer na Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Jak Avana obsługuje LP-y ważonych pooli Balancer jako zabezpieczenie na Aave v4, gdy ekspozycja pozostaje aktywna.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Deweloperzy",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Pożyczanie pod LP Uniswap na Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Jak Avana zamienia pozycje LP Uniswap w zabezpieczenie Aave v4, podczas gdy pozostają w poolu i nadal zarabiają opłaty.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Deweloperzy",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "Jak uczynić zabezpieczenie LP użytecznym",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Dlaczego design produktu Avana dba o jasną wycenę, limity pożyczek i zdrowie — by zabezpieczenie LP było operacyjne, a nie tylko potężne.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Produkt",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana i kolejny krok dla LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Dlaczego dostawcy płynności nie muszą wybierać między zarabianiem opłat a dostępem do kapitału — i jak Avana rozszerza zabezpieczenie LP na Aave v4.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Społeczność",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "Zabezpieczenie LP dla instytucji",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Jak zabezpieczenie LP Avana może pomóc DAO, treasury, funduszom i firmom crypto-native uzyskać kapitał bez odwijania produktywnej płynności.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Dla instytucji",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Budowanie na infrastrukturze LP Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Widok deweloperski infrastruktury zabezpieczenia LP Avana — monitoring, automatyzacja, serwisy likwidacji i szanse dla builderów.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Deweloperzy",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Wewnątrz architektury zabezpieczenia LP Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Wewnątrz architektury zabezpieczenia LP Avana na Aave v4 — Hub, Spokes, wycena, projekt oracle i logika likwidacji.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Deweloperzy",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: lepsze zabezpieczenie, lepsza kontrola",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 rozszerza zabezpieczenie multi-position, dodaje więcej obsługiwanych pooli, poprawia delegację i alerty oraz obniża overhead transakcji.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Produkt",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: warstwa kontroli dla zabezpieczenia LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Jak Avana Automate pomaga zarządzać zabezpieczeniem LP przez non-custodial automation opłat, rebalancingu, ochrony i zdyscyplinowanej konserwacji.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Produkt",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Przewodnik dla początkujących po zabezpieczeniu LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Przewodnik dla początkujących po zabezpieczeniu LP w Avana — zachowanie LP, LTV, impermanent loss, likwidacja i konserwatywne pierwsze kroki.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Dla LP",

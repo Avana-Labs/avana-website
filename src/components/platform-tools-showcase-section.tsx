@@ -12,9 +12,9 @@ export default async function PlatformToolsShowcaseSection({ locale }: { locale:
       className="w-full bg-inherit"
     >
       <div className="mb-6 flex max-w-[600px] flex-col gap-2 sm:mb-8 md:max-w-none">
-        <SectionEyebrow tone="emerald">Lending tools</SectionEyebrow>
+        <SectionEyebrow tone="emerald">Follow your deposits after supplying</SectionEyebrow>
         <SectionTitle>
-          Supply once. We’ll handle the complexity
+          Review balances, accrued interest, and available liquidity.
         </SectionTitle>
       </div>
 

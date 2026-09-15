@@ -14,6 +14,7 @@
       "themeToggle": "Design-Einstellung"
     },
     "nav": {
+      "pricing": "Preise",
       "products": "Produkte",
       "resources": "Ressourcen",
       "developers": "Entwickler",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Preise",
+      "description": "Transparente Preise für Kredite, Einlagen und LP-besicherte Strategien auf Avana."
+    },
     "siteTitle": "Avana - Gegen LP Positionen auf Aave v4 leihen",
     "siteDescription": "Entsperren Sie Liquidität aus Ihren LP Token. Leihen Sie sich bis zu 80 % gegen Uniswap, Curve und Balancer Positionen, während Sie weiterhin Handelsgebühren auf Aave v4 verdienen.",
     "ogDescription": "Schalten Sie Liquidität aus Ihren LP Token frei, während Sie weiterhin Handelsgebühren verdienen.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Markenkit",
       "subtitle": "Markierungen, Farben und Hinweise für partnergerichtete Oberflächen"
+    }
+  },
+  "pricing": {
+    "title": "Preise",
+    "subtitleLine1": "Zinsen und Renditen hängen vom Markt,",
+    "subtitleLine2": "der Position und dem gewählten Ablauf ab.",
+    "interfaceRate": "Schnittstellengebühr — 15 Basispunkte (0,15 %)",
+    "includes": "Enthalten:",
+    "borrow": {
+      "title": "Leihen",
+      "subtitle": "Für LP-besicherte Kredite",
+      "value": "Variabel",
+      "unit": "Zins",
+      "description": "Die Kreditkosten folgen dem ausgewählten Aave-v4-Markt.",
+      "items": {
+        "one": "Vom Markt festgelegter Zinssatz",
+        "two": "Fällt nur auf ausstehende Schulden an",
+        "three": "Vor der Bestätigung angezeigt"
+      }
+    },
+    "lend": {
+      "title": "Anlegen",
+      "subtitle": "Kapital in den Hub einzahlen",
+      "value": "Markt",
+      "unit": "APY",
+      "description": "Verdiene an der Nachfrage von LP-besicherten Kreditnehmern über Avanas Lend Spoke.",
+      "items": {
+        "one": "Rendite variiert mit der Auslastung",
+        "two": "Einzahlung in unterstützte Kreditmärkte",
+        "three": "Live-APY in der Oberfläche angezeigt"
+      }
+    },
+    "multiply": {
+      "title": "Multiplizieren",
+      "subtitle": "Für verwaltete LP-Exposure",
+      "value": "Variabel",
+      "unit": "Strategierate",
+      "description": "Verstärke deine LP-Exposure mit verwalteten Strategien, die durch unterstützte AMM-Positionen besichert sind.",
+      "items": {
+        "one": "Unterstützte LP-Positionen als Sicherheit verwenden",
+        "two": "Exposure bleibt an den zugrunde liegenden Pool gebunden",
+        "three": "Hebel- und Auflösungssteuerung bleibt sichtbar"
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": {
+        "interfaceFee": {
+          "question": "Welche Gebühren berechnet Avana für die Nutzung der Oberfläche?",
+          "answer": "Die offizielle Schnittstellengebühr beträgt 15 Basispunkte (0,15 %), sofern sie anfällt. Sie wird vor der Signatur angezeigt und ist getrennt von Gas, Swap-Gebühren, Aave-Zinsen und Liquidationskosten."
+        },
+        "borrowRate": {
+          "question": "Sind die Kreditzinsen fest?",
+          "answer": "Nein. Die Kreditzinsen werden vom ausgewählten Aave-v4-Markt festgelegt und können sich mit Auslastung und Marktparametern ändern. Der aktuelle Satz wird vor dem Leihen angezeigt."
+        },
+        "lendingApy": {
+          "question": "Wie wird der Lending-APY bestimmt?",
+          "answer": "Die Rendite hängt von der Marktauslastung und der Nachfrage von LP-besicherten Kreditnehmern ab. Der aktuelle APY wird vor der Einzahlung angezeigt."
+        },
+        "separateCosts": {
+          "question": "Welche Kosten sind von den Avana-Gebühren getrennt?",
+          "answer": "Netzwerk-Gas, DEX-Swap-Gebühren, Aave-Marktzinsen und Liquidationsausführungskosten sind von der Schnittstellengebühr getrennt. Prüfe die Transaktionsdetails vor der Signatur."
+        },
+        "feeChanges": {
+          "question": "Können sich Gebühren und Zinssätze ändern?",
+          "answer": "Ja. Marktzinsen ändern sich mit Auslastung und Risikoparametern, und die Schnittstellenrichtlinie kann sich ändern. Prüfe vor der Signatur immer den aktuellen Betrag."
+        }
+      }
     }
   },
   "faq": {

@@ -50,10 +50,10 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
               external tools. Aave&apos;s server exposes v3 and v4 market information, including
               reserves, rates, available liquidity, and protocol structure. This gives Ask AI
               Aave-specific context for questions that also involve Avana markets or positions.
-              See <a href="https://aave.com/agents" className="text-[#01AACF] hover:underline">
+              See <a href="https://aave.com/agents" className="text-type-accent hover:underline">
                 Aave for Agents
               </a>{" "}
-              and the <a href="https://aave.com/docs/mcp" className="text-[#01AACF] hover:underline">
+              and the <a href="https://aave.com/docs/mcp" className="text-type-accent hover:underline">
                 Aave MCP documentation
               </a>{" "}
               for the upstream service and its interfaces.

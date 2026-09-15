@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { useEffect, useRef } from "react"
 import type { DesktopMenuId } from "@/components/header-nav-data"
 import { Link } from "@/i18n/navigation"
 import { siteRoutes } from "@/lib/site"
@@ -32,6 +33,7 @@ interface HeaderDesktopMenuPanelProps {
   onClose: () => void
   onExited: () => void
   animationCycle: number
+  focusOnOpen: boolean
 }
 
 export default function HeaderDesktopMenuPanel({
@@ -41,8 +43,13 @@ export default function HeaderDesktopMenuPanel({
   onClose,
   onExited,
   animationCycle,
+  focusOnOpen,
 }: HeaderDesktopMenuPanelProps) {
   const t = useTranslations("common")
+  const panelRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (isOpen && focusOnOpen) panelRef.current?.querySelector<HTMLElement>("a")?.focus()
+  }, [isOpen, focusOnOpen, menuId, animationCycle])
 
   const desktopMenus: readonly DesktopMenuGroup[] = [
     {
@@ -134,6 +141,8 @@ export default function HeaderDesktopMenuPanel({
   return (
     <div
       id={`desktop-menu-${menu.id}`}
+      ref={panelRef}
+      inert={!isOpen}
       onMouseEnter={onOpen}
       onMouseLeave={onClose}
       onTransitionEnd={(event) => {

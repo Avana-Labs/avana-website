@@ -72,13 +72,6 @@ function getRoadmapStatusLabel(status: RoadmapStatus) {
   return `Target ${status} 2026`
 }
 
-function getRoadmapGroupOpacity(status: RoadmapStatus) {
-  if (status === "Released" || status === "In Progress") return ""
-  if (status === "Q2") return "opacity-95"
-  if (status === "Q3") return "opacity-85"
-  return "opacity-75"
-}
-
 function getRoadmapDisplayLabel(label: string) {
   const shortLabels: Record<string, string> = {
     "Borrow pricing engine": "Pricing engine",
@@ -160,14 +153,9 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
   return withMarketingI18n(locale, ['protocol-roadmap-section'], (
     <section className="space-y-8" id="roadmap">
       <div className="space-y-3">
-        <SectionEyebrow tone="cyan">What comes next</SectionEyebrow>
-        <SectionTitle>Roadmap</SectionTitle>
+        <SectionEyebrow tone="cyan">Roadmap</SectionEyebrow>
+        <SectionTitle>Borrow comes first, followed by Lend and Multiply.</SectionTitle>
       </div>
-
-      <p className="type-body-copy">
-        Avana develops in three phases. Each phase builds on the one before it: Borrow Markets,
-        Lend Markets, then Multiply Markets.
-      </p>
 
       <div className="flex flex-col gap-10">
         {roadmapPhases.map((phase, index) => {
@@ -190,7 +178,7 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
 
               <div className="space-y-3">
                 {groupedMilestones.map((group) => (
-                  <div key={`${phase.title}-${group.status}`} className={`space-y-2 ${getRoadmapGroupOpacity(group.status)}`}>
+                  <div key={`${phase.title}-${group.status}`} className="space-y-2">
                     <p className={`type-meta-label ${getRoadmapStatusClass()}`}>
                       {getRoadmapStatusLabel(group.status)}
                     </p>

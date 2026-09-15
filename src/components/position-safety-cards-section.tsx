@@ -41,7 +41,7 @@ function LiquidationCard({
 }) {
   return (
     <article className="flex flex-col feature-card rounded-[1.75rem] p-5 md:p-6">
-      <div className="flex h-8 w-8 items-center justify-center text-[#01AACF]">
+      <div className="flex h-8 w-8 items-center justify-center text-type-accent">
         <Icon className="h-8 w-8" strokeWidth={1.85} />
       </div>
 
@@ -56,9 +56,9 @@ export default async function PositionSafetyCardsSection({ locale }: { locale: A
     <section>
       <div className="space-y-3 text-left">
         <SectionIntro
-          eyebrow="Liquidations"
+          eyebrow="Know what happens if your loan becomes unsafe"
           eyebrowTone="violet"
-          title="Built so you don’t just lose the position"
+          title="Partial liquidation aims to restore health, with any surplus collateral returned to you."
         />
       </div>
 
@@ -77,7 +77,7 @@ export default async function PositionSafetyCardsSection({ locale }: { locale: A
         Read more about how settlement works in{" "}
         <Link
           href="/developers/liquidation"
-          className="text-type-accent transition-colors hover:text-[#0097b8]"
+          className="text-type-accent transition-colors hover:text-type-accent"
         >
           Liquidation Design
         </Link>

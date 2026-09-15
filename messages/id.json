@@ -14,6 +14,7 @@
       "themeToggle": "Preferensi tema"
     },
     "nav": {
+      "pricing": "Harga",
       "products": "Produk",
       "resources": "Sumber Daya",
       "developers": "Pengembang",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Harga",
+      "description": "Biaya yang jelas untuk meminjam, memberi pinjaman, dan strategi dengan jaminan LP di Avana."
+    },
     "siteTitle": "Avana - Meminjam Melawan LP Posisi pada Aave v4",
     "siteDescription": "Buka likuiditas dari LP token Anda. Pinjam hingga 80% terhadap posisi Uniswap, Curve, dan Balancer sambil terus memperoleh biaya perdagangan pada Aave v4.",
     "ogDescription": "Buka likuiditas dari LP token Anda sambil terus mendapatkan biaya perdagangan.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Perangkat merek",
       "subtitle": "Tanda, warna, dan panduan untuk permukaan yang menghadap ke mitra"
+    }
+  },
+  "pricing": {
+    "title": "Harga",
+    "subtitleLine1": "Suku bunga dan imbal hasil bergantung pada pasar,",
+    "subtitleLine2": "posisi, dan rute yang Anda pilih.",
+    "interfaceRate": "Biaya antarmuka — 15 bps (0,15%)",
+    "includes": "Termasuk:",
+    "borrow": {
+      "title": "Meminjam",
+      "subtitle": "Untuk kredit berbasis LP",
+      "value": "Variabel",
+      "unit": "bunga",
+      "description": "Biaya pinjaman mengikuti pasar Aave v4 yang dipilih.",
+      "items": {
+        "one": "Suku bunga ditetapkan pasar",
+        "two": "Hanya berlaku pada utang terutang",
+        "three": "Ditampilkan sebelum konfirmasi"
+      }
+    },
+    "lend": {
+      "title": "Menyediakan dana",
+      "subtitle": "Pasok modal ke Hub",
+      "value": "Pasar",
+      "unit": "APY",
+      "description": "Dapatkan imbal hasil dari permintaan peminjam berbasis LP melalui Lend Spoke Avana.",
+      "items": {
+        "one": "Imbal hasil berubah sesuai utilisasi",
+        "two": "Pasok ke pasar pinjaman yang didukung",
+        "three": "APY langsung ditampilkan di antarmuka"
+      }
+    },
+    "multiply": {
+      "title": "Menggandakan",
+      "subtitle": "Untuk eksposur LP terkelola",
+      "value": "Variabel",
+      "unit": "suku bunga strategi",
+      "description": "Tingkatkan eksposur LP dengan strategi terkelola yang dijamin posisi AMM yang didukung.",
+      "items": {
+        "one": "Gunakan posisi LP yang didukung sebagai jaminan",
+        "two": "Eksposur tetap terkait dengan pool dasar",
+        "three": "Kontrol leverage dan penutupan tetap terlihat"
+      }
+    },
+    "faq": {
+      "title": "Pertanyaan umum",
+      "items": {
+        "interfaceFee": {
+          "question": "Berapa biaya penggunaan antarmuka Avana?",
+          "answer": "Biaya antarmuka resmi adalah 15 bps (0,15%) jika berlaku. Biaya ini ditampilkan sebelum tanda tangan dan terpisah dari gas, biaya swap, bunga Aave, dan biaya likuidasi."
+        },
+        "borrowRate": {
+          "question": "Apakah bunga pinjaman tetap?",
+          "answer": "Tidak. Bunga ditetapkan oleh pasar Aave v4 yang dipilih dan dapat berubah mengikuti utilisasi serta parameter pasar. Suku bunga saat ini ditampilkan sebelum meminjam."
+        },
+        "lendingApy": {
+          "question": "Bagaimana APY lending ditentukan?",
+          "answer": "Imbal hasil bergantung pada utilisasi pasar dan permintaan peminjam berbasis LP. APY langsung ditampilkan sebelum Anda memasok dana."
+        },
+        "separateCosts": {
+          "question": "Biaya apa yang terpisah dari biaya Avana?",
+          "answer": "Gas jaringan, biaya swap DEX, bunga pasar Aave, dan biaya eksekusi likuidasi terpisah dari biaya antarmuka. Periksa detail transaksi sebelum menandatangani."
+        },
+        "feeChanges": {
+          "question": "Bisakah biaya dan suku bunga berubah?",
+          "answer": "Ya. Suku bunga pasar berubah mengikuti utilisasi dan parameter risiko, dan kebijakan antarmuka dapat berubah. Selalu periksa jumlah terbaru sebelum menandatangani."
+        }
+      }
     }
   },
   "faq": {

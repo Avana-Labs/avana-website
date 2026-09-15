@@ -14,6 +14,7 @@
       "themeToggle": "Tùy chọn giao diện"
     },
     "nav": {
+      "pricing": "Định giá",
       "products": "Sản phẩm",
       "resources": "Tài nguyên",
       "developers": "Nhà phát triển",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Định giá",
+      "description": "Biểu phí rõ ràng cho hoạt động vay, cho vay và các chiến lược được bảo đảm bằng LP trên Avana."
+    },
     "siteTitle": "Avana - Vay Dựa Trên LP Vị Trí trên Aave v4",
     "siteDescription": "Mở khóa thanh khoản từ LP token của bạn. Vay lên đến 80% dựa trên các vị trí Uniswap, Curve và Balancer trong khi vẫn tiếp tục kiếm phí giao dịch trên Aave v4.",
     "ogDescription": "Giải phóng tính thanh khoản từ LP token của bạn trong khi tiếp tục kiếm phí giao dịch.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Bộ nhận diện thương hiệu",
       "subtitle": "Dấu hiệu, màu sắc và hướng dẫn cho các bề mặt hướng về đối tác"
+    }
+  },
+  "pricing": {
+    "title": "Định giá",
+    "subtitleLine1": "Lãi suất và lợi nhuận phụ thuộc vào thị trường,",
+    "subtitleLine2": "vị thế và tuyến giao dịch bạn chọn.",
+    "interfaceRate": "Phí giao diện trả trước — 15 bps (0,15%)",
+    "includes": "Bao gồm:",
+    "borrow": {
+      "title": "Vay",
+      "subtitle": "Cho tín dụng có LP bảo chứng",
+      "value": "Biến động",
+      "unit": "lãi suất",
+      "description": "Chi phí vay theo thị trường Aave v4 bạn chọn.",
+      "items": {
+        "one": "Lãi suất do thị trường quyết định",
+        "two": "Chỉ tích lũy trên khoản nợ còn lại",
+        "three": "Hiển thị trước khi xác nhận"
+      }
+    },
+    "lend": {
+      "title": "Cho vay",
+      "subtitle": "Cung cấp vốn vào Hub",
+      "value": "Theo thị trường",
+      "unit": "APY",
+      "description": "Kiếm lợi nhuận từ nhu cầu có LP bảo chứng qua Lend Spoke của Avana.",
+      "items": {
+        "one": "Lợi suất thay đổi theo mức sử dụng",
+        "two": "Cung cấp vốn vào các thị trường được hỗ trợ",
+        "three": "APY hiện tại hiển thị trong giao diện"
+      }
+    },
+    "multiply": {
+      "title": "Nhân",
+      "subtitle": "Cho mức tiếp xúc LP được quản lý",
+      "value": "Biến động",
+      "unit": "lãi suất chiến lược",
+      "description": "Tăng mức tiếp xúc LP với các chiến lược được quản lý dựa trên vị thế AMM được hỗ trợ.",
+      "items": {
+        "one": "Dùng vị thế LP được hỗ trợ làm tài sản thế chấp",
+        "two": "Mức tiếp xúc vẫn gắn với pool cơ sở",
+        "three": "Kiểm soát đòn bẩy và đóng vị thế luôn rõ ràng"
+      }
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "items": {
+        "interfaceFee": {
+          "question": "Avana tính phí gì khi sử dụng giao diện?",
+          "answer": "Phí giao diện chính thức là 15 bps (0,15%) khi áp dụng. Phí được hiển thị trước khi ký và tách biệt với gas, phí swap, lãi suất Aave và chi phí thanh lý."
+        },
+        "borrowRate": {
+          "question": "Lãi suất vay có cố định không?",
+          "answer": "Không. Lãi suất do thị trường Aave v4 đã chọn quyết định và có thể thay đổi theo mức sử dụng và tham số thị trường. Lãi suất hiện tại hiển thị trước khi vay."
+        },
+        "lendingApy": {
+          "question": "APY cho vay được xác định thế nào?",
+          "answer": "Lợi nhuận phụ thuộc vào thị trường, mức sử dụng và nhu cầu từ người vay có LP bảo chứng. APY hiện tại hiển thị trước khi cung cấp vốn."
+        },
+        "separateCosts": {
+          "question": "Chi phí nào tách biệt với phí Avana?",
+          "answer": "Gas mạng, phí swap DEX, lãi suất thị trường Aave và chi phí thực hiện thanh lý tách biệt với phí giao diện chính thức. Hãy xem chi tiết giao dịch trước khi ký."
+        },
+        "feeChanges": {
+          "question": "Phí và lãi suất có thể thay đổi không?",
+          "answer": "Có. Lãi suất thị trường thay đổi theo mức sử dụng và tham số rủi ro, còn chính sách giao diện cũng có thể thay đổi. Luôn kiểm tra số tiền hiện tại trước khi ký."
+        }
+      }
     }
   },
   "faq": {

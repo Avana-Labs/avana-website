@@ -14,6 +14,7 @@
       "themeToggle": "Zaɓin jigo"
     },
     "nav": {
+      "pricing": "Farashi",
       "products": "Kayayyaki",
       "resources": "Albarkatu",
       "developers": "Masu haɓakawa",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Farashi",
+      "description": "Bayyanannun kuɗaɗe na karɓar rance, bayar da rance da dabarun da LP ke zama jingina a Avana."
+    },
     "siteTitle": "Avana - Ara Bisa Ga Matsayi LP Akan Aave v4",
     "siteDescription": "Buɗe ruwa daga cikin LP alamomin ku. Ara har zuwa 80% akan Uniswap, Curve, da Balancer matsayi yayin da kuke ci gaba da samun kuɗin ciniki akan Aave v4.",
     "ogDescription": "Buɗe ƙarar kuɗi daga cikin tikiti ɗinku LP yayin da kuke ci gaba da samun kuɗin ciniki.",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "Kayan tambari",
       "subtitle": "Alamomi, launuka, da jagora don saman da ke fuskantar abokin tarayya"
+    }
+  },
+  "pricing": {
+    "title": "Farashi",
+    "subtitleLine1": "Ƙimomi da riba sun dogara da kasuwa,",
+    "subtitleLine2": "matsayi da hanyar da ka zaɓa.",
+    "interfaceRate": "Kudin amfani da manhaja a gaba — 15 bps (0.15%)",
+    "includes": "Ya haɗa da:",
+    "borrow": {
+      "title": "Bashi",
+      "subtitle": "Don bashi mai goyon bayan LP",
+      "value": "Mai canzawa",
+      "unit": "riba",
+      "description": "Kudin bashi yana bin kasuwar Aave v4 da aka zaɓa.",
+      "items": {
+        "one": "Ribar da kasuwa ta saita",
+        "two": "Yana taruwa ne kan bashin da bai biya ba",
+        "three": "Ana nuna shi kafin tabbatarwa"
+      }
+    },
+    "lend": {
+      "title": "Ba da bashi",
+      "subtitle": "Samar da jari ga Hub",
+      "value": "Na kasuwa",
+      "unit": "APY",
+      "description": "Sami riba daga buƙatar da LP ke tallafawa ta Lend Spoke na Avana.",
+      "items": {
+        "one": "Riba tana canzawa da amfani",
+        "two": "Samar da jari a kasuwannin da ake tallafawa",
+        "three": "Ana nuna APY na yanzu a manhaja"
+      }
+    },
+    "multiply": {
+      "title": "Ninka",
+      "subtitle": "Don fallasa LP da ake sarrafawa",
+      "value": "Mai canzawa",
+      "unit": "ƙimar dabaru",
+      "description": "Ƙara fallasar LP da dabarun da ake sarrafawa bisa matsayin AMM da ake tallafawa.",
+      "items": {
+        "one": "Yi amfani da matsayin LP da ake tallafawa a matsayin jingina",
+        "two": "Fallasa tana nan da alaƙa da pool na asali",
+        "three": "Ikon leverage da rufe matsayi ya kasance a bayyane"
+      }
+    },
+    "faq": {
+      "title": "Tambayoyin da ake yawan yi",
+      "items": {
+        "interfaceFee": {
+          "question": "Me Avana ke caji don amfani da manhaja?",
+          "answer": "Kudin manhajar hukuma 15 bps (0.15%) ne idan ya dace. Ana nuna shi kafin sa hannu kuma ya bambanta da gas, kudin swap, ribar Aave da kudin liquidation."
+        },
+        "borrowRate": {
+          "question": "Shin ribar bashi tabbatacciya ce?",
+          "answer": "A'a. Kasuwar Aave v4 da aka zaɓa ce ke saita ta kuma tana iya canzawa da amfani da sigogin kasuwa. Ana nuna ƙimar yanzu kafin karɓar bashi."
+        },
+        "lendingApy": {
+          "question": "Ta yaya ake ƙayyade APY na ba da bashi?",
+          "answer": "Riba ta dogara da kasuwa, amfani da buƙatar masu karɓar bashi da LP ke tallafawa. Ana nuna APY na yanzu kafin samar da jari."
+        },
+        "separateCosts": {
+          "question": "Wane kuɗi ne ya bambanta da kudin Avana?",
+          "answer": "Gas na hanyar sadarwa, kudin DEX swap, ribar kasuwar Aave da kudin aiwatar da liquidation sun bambanta da kudin manhajar hukuma. Duba bayanan ciniki kafin sa hannu."
+        },
+        "feeChanges": {
+          "question": "Shin kudade da ƙimomi na iya canzawa?",
+          "answer": "Eh. Ƙimomin kasuwa suna canzawa da amfani da sigogin haɗari, kuma manufofin manhaja na iya canzawa. Koyaushe tabbatar da adadin da aka nuna kafin sa hannu."
+        }
+      }
     }
   },
   "faq": {

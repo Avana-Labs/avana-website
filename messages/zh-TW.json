@@ -14,6 +14,7 @@
       "themeToggle": "主題偏好"
     },
     "nav": {
+      "pricing": "定價",
       "products": "產品",
       "resources": "資源",
       "developers": "開發者",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "定價",
+      "description": "清楚了解 Avana 上借貸及 LP 抵押策略的費用。"
+    },
     "siteTitle": "Avana - 在 Aave v4 上借貸 LP 個頭寸",
     "siteDescription": "從您的LP代幣中釋放流動性。對Uniswap、Curve和Balancer頭寸借款最高可達80%，同時繼續在Aave v4上賺取交易費用。",
     "ogDescription": "在繼續賺取交易費用的同時，從您的LP個代幣中釋放流動性。",
@@ -300,6 +305,74 @@
     "brand": {
       "title": "品牌套件",
       "subtitle": "面向合作伙伴的表面的標記、顏色和指引"
+    }
+  },
+  "pricing": {
+    "title": "定價",
+    "subtitleLine1": "費率與收益取決於市場、",
+    "subtitleLine2": "部位以及你選擇的操作路徑。",
+    "interfaceRate": "介面手續費 — 15 個基點（0.15%）",
+    "includes": "包含：",
+    "borrow": {
+      "title": "借款",
+      "subtitle": "用於 LP 抵押信貸",
+      "value": "浮動",
+      "unit": "利息",
+      "description": "借款成本取決於所選的 Aave v4 市場。",
+      "items": {
+        "one": "市場設定的利率",
+        "two": "僅對未償還債務計息",
+        "three": "確認前顯示"
+      }
+    },
+    "lend": {
+      "title": "借貸",
+      "subtitle": "向 Hub 提供資金",
+      "value": "市場",
+      "unit": "APY",
+      "description": "透過 Avana 的 Lend Spoke，從 LP 支援的借款需求中獲得收益。",
+      "items": {
+        "one": "收益率隨利用率變化",
+        "two": "存入支援的借貸市場",
+        "three": "介面顯示即時 APY"
+      }
+    },
+    "multiply": {
+      "title": "放大",
+      "subtitle": "用於管理 LP 敞口",
+      "value": "浮動",
+      "unit": "策略費率",
+      "description": "透過支援的 AMM 部位和管理型策略放大 LP 敞口。",
+      "items": {
+        "one": "使用支援的 LP 部位作為抵押",
+        "two": "敞口始終與底層池相關",
+        "three": "槓桿和退出控制保持可見"
+      }
+    },
+    "faq": {
+      "title": "常見問題",
+      "items": {
+        "interfaceFee": {
+          "question": "使用 Avana 介面會收取什麼費用？",
+          "answer": "適用時，官方介面手續費為 15 個基點（0.15%）。該費用會在簽名前顯示，並與 Gas、兌換手續費、Aave 利息和清算成本分開。"
+        },
+        "borrowRate": {
+          "question": "借款利息是固定的嗎？",
+          "answer": "不是。借款利息由所選的 Aave v4 市場設定，會隨利用率和市場參數變化。當前費率會在借款前顯示。"
+        },
+        "lendingApy": {
+          "question": "借貸 APY 如何決定？",
+          "answer": "收益取決於市場利用率和 LP 支援的借款需求。即時 APY 會在存入前顯示。"
+        },
+        "separateCosts": {
+          "question": "哪些費用不包含在 Avana 手續費中？",
+          "answer": "網路 Gas、DEX 兌換手續費、Aave 市場利息以及清算執行成本均與介面手續費分開。請在簽名前查看交易詳情。"
+        },
+        "feeChanges": {
+          "question": "費用和費率會變化嗎？",
+          "answer": "會。市場費率會隨利用率和風險參數變化，介面政策也可能調整。簽名前請確認當前路徑顯示的金額。"
+        }
+      }
     }
   },
   "faq": {

@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Hoe Avana LP-risico bestuurt",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Hoe Avana LP-collateralrisico over Spoke-markten bestuurt met begrensde updates, onafhankelijke review en noodcontainment.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "Ontwikkelaars",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "Waarom LP-collateral Smart Agents nodig heeft",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "Waarom Avana Smart Agents gebruikt om health te monitoren, venue-specifieke posities te bedienen en liquidatiedekking onder stress betrouwbaar te houden.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "Hoe LP-liquidatie zou moeten werken",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Hoe Avana LP-collateral liquideert met gecontroleerde unwinds, gedeeltelijke interventie, fees eerst waar mogelijk, en venue-specifieke paden.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "Ontwikkelaars",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "LP-collateral prijzen met betere oracles",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Hoe Avana Oracle LP-collateral prijst via recoverable value, deterministische reconstructie en conservatieve recovery-haircuts.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "Ontwikkelaars",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Hoe Avana LP-collateralrisico beheert",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Hoe Avana gelaagde security voor LP-collateral structureert — van architectuur en oracles via health, liquidatie en operations.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "Ontwikkelaars",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "Een LP-positie doordachter hedgen",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "Hoe LPs Avana kunnen gebruiken om buffers, directionele offsets en gedisciplineerdere hedge-habits te financieren zonder de pool volledig te verlaten.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "Voor LPs",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield-looping met LP-collateral",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "Hoe je over yield-looping met Avana LP-collateral nadenkt — inclusief buffers, stresstests, exitdiscipline en duurzame leverage.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "Voor LPs",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "Wat LP-collateral mogelijk maakt",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "Wat Avana LP-collateral mogelijk maakt voor lenen, hedgen, treasury-flexibiliteit en kapitaalefficiënter gebruik van productieve liquiditeit.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "Voor LPs",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Lenen tegen Aerodrome-LPs op Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Hoe Avana Aerodrome-LP-posities op Base ondersteunt zodat ze actief blijven terwijl ze lenen via een dedicated Aave v4 Spoke ondersteunen.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Lenen tegen Curve-LPs op Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Hoe Avana Curve-LP-collateral behandelt voor stabiele en gecorreleerde pools via een dedicated Aave v4 Spoke.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Balancer-LP-collateral op Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Hoe Avana Balancer weighted-pool-LPs als collateral op Aave v4 ondersteunt terwijl de exposure actief blijft.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Lenen tegen Uniswap-LPs op Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Hoe Avana Uniswap-LP-posities omzet in Aave v4-collateral terwijl ze in de pool blijven en fees blijven verdienen.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP-collateral bruikbaar maken",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "Waarom Avana-productdesign heldere waardering, leenlimieten en health belangrijk vindt — zodat LP-collateral operable is, niet alleen krachtig.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "Product",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana en de volgende stap voor LPs",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "Waarom liquiditeitsaanbieders niet hoeven te kiezen tussen fees verdienen en kapitaaltoegang — en hoe Avana LP-collateral op Aave v4 uitbreidt.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "Gemeenschap",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "LP-collateral voor institutions",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "Hoe Avana LP-collateral DAOs, treasuries, funds en crypto-native companies kan helpen kapitaal te benaderen zonder productieve liquiditeit te unwinden.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "Voor instellingen",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Bouwen op Avana LP-infrastructuur",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "Een developer-view op Avana LP-collateralinfrastructuur — inclusief monitoring, automation, liquidatieservices en builder-kansen.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "Ontwikkelaars",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Binnenin Avana’s LP-collateralarchitectuur",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Binnenin Avana’s LP-collateralarchitectuur op Aave v4 — inclusief Hub, Spokes, waardering, oracle-design en liquidatielogica.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "Ontwikkelaars",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: beter collateral, betere controle",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 breidt multi-position-collateral uit, voegt meer ondersteunde pools toe, verbetert delegation en alerts, en verlaagt transaction overhead.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "Product",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: een control layer voor LP-collateral",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Hoe Avana Automate helpt LP-collateral te beheren met non-custodial automation voor fees, rebalancing, protection en gedisciplineerd onderhoud.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "Product",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "Een beginnersgids voor LP-collateral",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Een beginnersgids voor LP-collateral op Avana — LP-gedrag, LTV, impermanent loss, liquidatie en conservatieve eerste stappen.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "Voor LPs",

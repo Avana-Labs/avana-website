@@ -44,11 +44,11 @@ export default async function RouterContractPage({ params }: LocaleParamsProps) 
           <p className="mb-4 type-doc-body">
             <>The router coordinates deposits, withdrawals, fee claims, and liquidation steps through DEX-specific adapters. Each caller can use this shared execution layer instead of assembling the underlying DEX calls independently.</>{" "}<>The router does not decide risk. Collateral factors, health checks, and liquidation
             eligibility remain in the Borrow Spoke, Hub, oracle stack, and risk framework. See{" "}
-            <Link href="/developers/architecture" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture" className="text-type-accent hover:underline">
               Borrow Spoke
             </Link>{" "}
             and{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>
             .</>

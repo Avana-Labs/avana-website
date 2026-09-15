@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Blocks, ChartNoAxesCombined, ShieldCheck, Workflow, type LucideIcon } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import ProtocolRoadmapSection from "@/components/protocol-roadmap-section"
-import { FeatureCardDescription, FeatureCardTitle, SectionIntro, SectionLead } from "@/components/shared"
+import { FeatureCardDescription, FeatureCardTitle, SectionLead } from "@/components/shared"
 import { SITE_NAME } from "@/lib/site"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
@@ -54,7 +54,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["about/page", "protocol-roadmap-section"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <section className="pb-16 pt-24 lg:pb-24 lg:pt-40">
         <div className="site-content-shell">
           <div className="mx-auto text-center">
@@ -97,21 +97,13 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
               LP markets, and an Aave v4 Lend Spoke that supplies the capital behind those markets.
             </p>
             <p className="type-body-copy">
-              <span className="text-foreground">The end state is simple:</span> LP positions that can earn
-              in AMMs, back loans in lending markets, and carry risk controls specific to the pools they come from.
+              Turning an LP position into usable collateral requires more than smart contracts. The position must stay
+              active in its pool, its value must be measured as conditions change, and the market must have enough
+              liquidity to support a loan. That is why Avana divides the work across four teams, each responsible for
+              a different part of the risk.
             </p>
             <div className="space-y-5 pt-8">
-              <SectionIntro
-                eyebrow="Protocol Operations"
-                eyebrowTone="cyan"
-                title="Risk Management"
-              />
-
               <div className="space-y-5">
-                <p className="type-body-copy">
-                  Risk management in Avana is split across specialized contributor scopes so no single team owns every
-                  assumption behind an LP collateral market.
-                </p>
                 <div className="grid gap-4 md:grid-cols-2 md:gap-5">
                   {riskTeams.map(({ number, title, description, icon: Icon }) => (
                     <article
@@ -119,7 +111,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
                       className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 md:min-h-[17rem] md:p-6"
                     >
                       <Icon className="size-7 text-type-accent" strokeWidth={1.8} aria-hidden="true" />
-                      <FeatureCardTitle className="mt-7">
+                      <FeatureCardTitle as="h2" className="mt-7">
                         {number}. {title}
                       </FeatureCardTitle>
                       <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
@@ -148,7 +140,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
     </LocalizedMarketing>
 )
 }

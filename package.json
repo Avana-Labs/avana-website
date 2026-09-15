@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:static": "npm test && npm run lint && npm run check:i18n && npm run check:docs-i18n",
+    "test:browser": "node --test tests/http/*.test.mjs tests/ui/*.test.mjs",
+    "audit:production": "npm audit --omit=dev --audit-level=high",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
+    "check:built": "node scripts/check-built-seo.mjs && node scripts/check-built-seo.mjs --semantics",
     "start": "next start",
     "lighthouse:audit": "node scripts/run-lighthouse.mjs",
     "lighthouse:check": "node scripts/check-lighthouse-budgets.mjs",
     "check:agents": "node scripts/check-agent-readiness.mjs",
-    "check:i18n": "node scripts/check-marketing-i18n.mjs",
+    "check:i18n": "node scripts/check-marketing-i18n.mjs && node scripts/check-messages-i18n.mjs",
     "check:docs-i18n": "node scripts/extract-content.mjs --check-docs && python3 scripts/validate-docs-i18n.py",
     "lint": "eslint"
   },
@@ -34,12 +39,15 @@
     "chrome-launcher": "^1.2.1",
     "eslint": "^9",
     "eslint-config-next": "^16.2.6",
-    "lighthouse": "^12.8.2",
+    "lighthouse": "^13.4.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5"
   },
   "overrides": {
-    "basic-ftp": "5.2.1",
+    "@puppeteer/browsers": "3.2.1",
+    "@sentry/node": "10.67.0",
+    "@opentelemetry/sdk-trace-base": "2.8.0",
+    "basic-ftp": "5.3.1",
     "lodash-es": "4.18.1",
     "vite": "7.3.2"
   }

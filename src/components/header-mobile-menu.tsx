@@ -1,9 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react"
 import { createPortal } from "react-dom"
 import { useTranslations } from "next-intl"
-import { HeaderHelpCenterMobileRow } from "@/components/header-help-center-button"
 import { Link } from "@/i18n/navigation"
 // import { AAVE_ARFC_LABEL, siteRoutes } from "@/lib/site"
 import { siteRoutes } from "@/lib/site"
@@ -13,8 +12,16 @@ interface HeaderMobileMenuProps {
   onClose: () => void
 }
 
+function focusMenuTarget(menu: HTMLElement | null) {
+  if (!menu) return
+  const firstLink = menu.querySelector<HTMLElement>("a[href], button:not([disabled])")
+  ;(firstLink ?? menu).focus()
+}
+
 export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProps) {
   const t = useTranslations("common")
+  const menuRef = useRef<HTMLDivElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
   const [isShown, setIsShown] = useState(false)
 
   const mobileLinks = [
@@ -52,8 +59,48 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
 
   const isVisible = open && isShown
 
+  useLayoutEffect(() => {
+    if (open) {
+      previousFocusRef.current ??= document.activeElement instanceof HTMLElement ? document.activeElement : null
+      if (!isShown) return
+
+      // Move focus before paint so a11y gates don't race the open animation.
+      focusMenuTarget(menuRef.current)
+      const frame = window.requestAnimationFrame(() => focusMenuTarget(menuRef.current))
+      return () => window.cancelAnimationFrame(frame)
+    }
+
+    previousFocusRef.current?.focus()
+    previousFocusRef.current = null
+  }, [isShown, open])
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") {
+      event.preventDefault()
+      onClose()
+      return
+    }
+
+    if (event.key !== "Tab") return
+
+    const focusable = menuRef.current?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])")
+    if (!focusable?.length) return
+
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    }
+  }
+
   return createPortal(
     <div
+      ref={menuRef}
+      tabIndex={-1}
       className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-background transition-opacity duration-300 ease-out md:top-[54px] lg:hidden ${
         isVisible ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
       }`}
@@ -61,6 +108,8 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
       aria-modal="true"
       aria-label={t("a11y.mobileMenu")}
       aria-hidden={!isVisible}
+      inert={!isVisible}
+      onKeyDown={handleKeyDown}
     >
       <nav
         id="mobile-site-nav"
@@ -113,15 +162,6 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
             )
           })}
         </ol>
-
-        <div
-          className={`transition-all duration-300 ease-out ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
-          style={{ transitionDelay: `${120 + mobileLinks.length * 35}ms` }}
-        >
-          <HeaderHelpCenterMobileRow onNavigate={onClose} />
-        </div>
       </nav>
     </div>,
     document.body,

@@ -88,9 +88,9 @@ export default function InvestGrowthCalculatorSection() {
     <section>
       <div className="space-y-6 lg:space-y-10">
         <div className="space-y-3">
-          <SectionEyebrow tone="emerald">{t("Growth Calculator")}</SectionEyebrow>
+          <SectionEyebrow tone="emerald">{t("See what time adds to your deposit")}</SectionEyebrow>
           <SectionTitle className="max-w-none">
-            {t("See your cash grow")}
+            {t("Adjust the amount and duration to explore an illustrative return.")}
           </SectionTitle>
         </div>
 
@@ -100,7 +100,7 @@ export default function InvestGrowthCalculatorSection() {
               <p className="text-sm font-semibold tracking-[-0.03em] text-type-tertiary">
                 {t("Avana APY")}
               </p>
-              <div className="inline-flex items-center rounded-full bg-[#01AACF]/10 px-4 py-2 text-[#01AACF] ring-1 ring-[#01AACF]/25">
+              <div className="inline-flex items-center rounded-full bg-[#01AACF]/10 px-4 py-2 text-type-accent ring-1 ring-[#01AACF]/25">
                 <span className="text-[1.15rem] font-semibold tracking-[-0.04em] md:text-[1.35rem]">
                   12.0%
                 </span>
@@ -163,10 +163,10 @@ export default function InvestGrowthCalculatorSection() {
               <div className="sm:hidden">
                 <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
                   <div className="space-y-1">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#01AACF]/80">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-type-accent">
                       {t("Projected Value")}
                     </p>
-                    <p className="text-[2.35rem] whitespace-nowrap leading-[0.9] tracking-[-0.08em] text-[#01AACF]">
+                    <p className="text-[2.35rem] whitespace-nowrap leading-[0.9] tracking-[-0.08em] text-type-accent">
                       {projectedValueDisplay}
                     </p>
                   </div>
@@ -182,10 +182,10 @@ export default function InvestGrowthCalculatorSection() {
               </div>
 
               <div className="hidden space-y-4 sm:block">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#01AACF]/80">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-type-accent">
                   {t("Projected Value")}
                 </p>
-                <p className={`${projectedValueSize} max-w-full whitespace-nowrap leading-[0.88] tracking-[-0.09em] text-[#01AACF]`}>
+                <p className={`${projectedValueSize} max-w-full whitespace-nowrap leading-[0.88] tracking-[-0.09em] text-type-accent`}>
                   {projectedValueDisplay}
                 </p>
                 <div className="flex flex-wrap items-center gap-3">

@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana บริหารความเสี่ยง LP อย่างไร",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Avana บริหารความเสี่ยงหลักประกัน LP ในตลาด Spoke อย่างไร ด้วยการอัปเดตแบบมีขอบเขต การตรวจสอบอิสระ และการควบคุมฉุกเฉิน",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "นักพัฒนา",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "ทำไมหลักประกัน LP ถึงต้องการ Smart Agents",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "ทำไม Avana ใช้ Smart Agents เพื่อติดตาม health ดูแลโพซิชันเฉพาะ venue และรักษาความครอบคลุมการชำระบัญชีให้เชื่อถือได้เมื่อตลาดตึงเครียด",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "การชำระบัญชี LP ควรทำงานอย่างไร",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "Avana ชำระบัญชีหลักประกัน LP อย่างไร ด้วยการ unwind แบบควบคุม การแทรกแซงบางส่วน ให้ค่าธรรมเนียมมาก่อนเมื่อทำได้ และเส้นทางเฉพาะ venue",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "นักพัฒนา",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "กำหนดราคาหลักประกัน LP ด้วย Oracle ที่ดีขึ้น",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "Avana Oracle กำหนดราคาหลักประกัน LP อย่างไร โดยใช้มูลค่าที่กู้คืนได้ การสร้างใหม่แบบกำหนดได้ และ haircut การกู้คืนที่ระมัดระวัง",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "นักพัฒนา",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana จัดการความเสี่ยงหลักประกัน LP อย่างไร",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "Avana จัดโครงสร้างความปลอดภัยหลายชั้นสำหรับหลักประกัน LP อย่างไร ตั้งแต่สถาปัตยกรรมและ oracle ไปจนถึง health การชำระบัญชี และการดำเนินงาน",
       "image": "/images/blog/security-deep-dive.png",
       "category": "นักพัฒนา",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "วิธีเฮดจ์โพซิชัน LP อย่างมีวินัยมากขึ้น",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "LP สามารถใช้ Avana เพื่อระดมทุน buffer การชดเชยทิศทาง และนิสัยการเฮดจ์ที่มีวินัยมากขึ้นโดยไม่ต้องออกจาก pool ทั้งหมดได้อย่างไร",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "สำหรับ LP",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "Yield Looping ด้วยหลักประกัน LP",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "วิธีคิดเกี่ยวกับ yield looping ด้วยหลักประกัน LP ของ Avana รวมถึง buffer การทดสอบความเครียด วินัยในการออก และการใช้เลเวอเรจที่ยั่งยืน",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "สำหรับ LP",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "หลักประกัน LP ทำให้เกิดอะไรได้บ้าง",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "หลักประกัน LP ของ Avana เปิดโอกาสอะไรบ้างในการกู้ การเฮดจ์ ความยืดหยุ่นของ treasury และการใช้ทุนสภาพคล่องอย่างมีประสิทธิภาพมากขึ้น",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "สำหรับ LP",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "กู้ด้วย LP Aerodrome บน Aave v4",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Avana รองรับโพซิชัน LP Aerodrome บน Base อย่างไร ให้ยังทำงานอยู่ได้ขณะรองรับการกู้ผ่าน Spoke Aave v4 เฉพาะทาง",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "กู้ด้วย LP Curve บน Aave v4",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "Avana จัดการหลักประกัน LP Curve สำหรับ pool เสถียรและสหสัมพันธ์อย่างไร ผ่าน Spoke Aave v4 เฉพาะทาง",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "หลักประกัน LP Balancer บน Aave v4",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "Avana รองรับ LP ของ weighted pool ของ Balancer เป็นหลักประกันบน Aave v4 อย่างไร ขณะที่การเปิดรับความเสี่ยงยังคงทำงานอยู่",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "กู้ด้วย LP Uniswap บน Aave v4",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "Avana เปลี่ยนโพซิชัน LP Uniswap เป็นหลักประกัน Aave v4 อย่างไร ขณะที่ยังอยู่ใน pool และยังรับค่าธรรมเนียมต่อไป",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "ทำให้หลักประกัน LP ใช้งานได้จริง",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "ทำไมการออกแบบผลิตภัณฑ์ของ Avana จึงให้ความสำคัญกับการประเมินมูลค่าที่ชัดเจน วงเงินกู้ และ health เพื่อให้หลักประกัน LP ใช้งานได้ ไม่ใช่แค่ทรงพลัง",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "ผลิตภัณฑ์",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana และก้าวต่อไปสำหรับ LP",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "ทำไมผู้ให้สภาพคล่องไม่ต้องเลือกระหว่างการรับค่าธรรมเนียมกับการเข้าถึงทุน และ Avana ขยายหลักประกัน LP บน Aave v4 อย่างไร",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "ชุมชน",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "หลักประกัน LP สำหรับสถาบัน",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "หลักประกัน LP ของ Avana ช่วย DAO treasury กองทุน และบริษัทคริปโตเข้าถึงทุนโดยไม่ต้องถอนสภาพคล่องที่ยังสร้างรายได้อย่างไร",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "สำหรับสถาบัน",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "สร้างบนโครงสร้างพื้นฐาน LP ของ Avana",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "มุมมองนักพัฒนาต่อโครงสร้างหลักประกัน LP ของ Avana รวมถึงการมอนิเตอร์ ระบบอัตโนมัติ บริการชำระบัญชี และโอกาสสำหรับ builder",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "นักพัฒนา",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "ภายในสถาปัตยกรรมหลักประกัน LP ของ Avana",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "ภายในสถาปัตยกรรมหลักประกัน LP ของ Avana บน Aave v4 รวมถึง Hub Spoke การประเมินมูลค่า การออกแบบ oracle และตรรกะการชำระบัญชี",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "นักพัฒนา",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: หลักประกันที่ดีขึ้น การควบคุมที่ดีขึ้น",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 ขยายหลักประกันหลายโพซิชัน เพิ่ม pool ที่รองรับ ปรับปรุงการมอบอำนาจและการแจ้งเตือน และลดค่าใช้จ่ายธุรกรรม",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "ผลิตภัณฑ์",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: ชั้นควบคุมสำหรับหลักประกัน LP",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "Avana Automate ช่วยผู้ใช้จัดการหลักประกัน LP ด้วยระบบอัตโนมัติแบบไม่คุมครอง สำหรับค่าธรรมเนียม การรีบาลานซ์ การป้องกัน และการดูแลที่มีวินัยอย่างไร",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "ผลิตภัณฑ์",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "คู่มือฉบับเริ่มต้นเรื่องหลักประกัน LP",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "คู่มือเริ่มต้นเรื่องหลักประกัน LP บน Avana ครอบคลุมพฤติกรรม LP, LTV, impermanent loss, การชำระบัญชี และก้าวแรกที่ระมัดระวัง",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "สำหรับ LP",

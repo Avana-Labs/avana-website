@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana が LP リスクをどう統治するか",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "Spoke 市場全体で、限定的な更新・独立レビュー・緊急時の封じ込めにより、Avana が LP 担保リスクをどう統治するか。",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "開発者",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "LP 担保に Smart Agents が必要な理由",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "ヘルス監視、venue 固有ポジションの運用、ストレス下でも信頼できる清算カバレッジのために Avana が Smart Agents を使う理由。",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "開発者",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "LP 清算のあるべき姿",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "制御された unwind、部分介入、可能な限り手数料優先、venue 固有パスで Avana が LP 担保を清算する方法。",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "開発者",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "より良いオラクルで LP 担保を価格付けする",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "recoverable value、決定的な再構成、保守的な recovery haircut で Avana Oracle が LP 担保を価格付けする方法。",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "開発者",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana が LP 担保リスクをどう管理するか",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "アーキテクチャとオラクルからヘルス、清算、オペレーションまで、Avana が LP 担保の多層セキュリティをどう構築するか。",
       "image": "/images/blog/security-deep-dive.png",
       "category": "開発者",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "LP ポジションをより慎重にヘッジする",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "プールを完全に抜けずに、バッファや方向性オフセット、より規律あるヘッジ習慣を Avana でどう資金調達できるか。",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "LP向け",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "LP 担保での yield looping",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "バッファ、ストレステスト、退出規律、持続可能なレバレッジを含めた、Avana LP 担保での yield looping の考え方。",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "LP向け",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "LP 担保が可能にすること",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "借り入れ、ヘッジ、トレジャリーの柔軟性、より資本効率の高い利用まで、Avana LP 担保が可能にすること。",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "LP向け",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Aave v4 で Aerodrome LP を担保に借りる",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Base 上の Aerodrome LP をアクティブに保ちつつ、専用市場経由で借り入れを支える Avana の仕組み。",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "開発者",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Aave v4 で Curve LP を担保に借りる",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "安定・相関プール向けに、専用 Aave v4 Spoke で Curve LP 担保をどう扱うか。",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "開発者",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Aave v4 上の Balancer LP 担保",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "エクスポージャーをアクティブに保ちながら、Balancer 加重プール LP を Aave v4 担保としてどうサポートするか。",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "開発者",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Aave v4 で Uniswap LP を担保に借りる",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "プールに留まり手数料を稼ぎ続けながら、Uniswap LP を Aave v4 担保へ変える Avana の仕組み。",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "開発者",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP 担保を使えるものにする",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "明確な評価、借入上限、ヘルスを重視する Avana のプロダクト設計 — LP 担保を理論ではなく運用可能にするために。",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "プロダクト",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana と LP の次の一歩",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "手数料獲得と資本アクセスの二者択一をなくし、Avana が LP の使い方をどう広げるか。",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "コミュニティ",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "機関向け LP 担保",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "DAO、トレジャリー、ファンド、crypto-native 企業がポジションを崩さず資本にアクセスするために Avana LP 担保がどう役立つか。",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "機関投資家向け",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Avana LP インフラの上に作る",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "監視、自動化、清算サービス、連携を含む Avana LP 担保インフラの開発者向け視点。",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "開発者",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Avana LP 担保アーキテクチャの内側",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Aave v4 上の Avana LP 担保アーキテクチャ: Hub、Spokes、評価、オラクル設計、清算。",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "開発者",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: より良い担保、より良いコントロール",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1 は複数ポジション担保を拡張し、対応プールを増やし、委任とアラートを改善し、摩擦を下げます。",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "プロダクト",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: LP 担保のコントロールレイヤー",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "手数料、リバランス、保護のためのノンカストディアル自動化で、Avana Automate が LP 担保管理をどう支援するか。",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "プロダクト",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP 担保の初心者ガイド",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana の LP 担保入門: LP の挙動、LTV、impermanent loss、清算、保守的な使い方。",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP向け",

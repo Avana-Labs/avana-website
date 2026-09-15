@@ -45,7 +45,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
             <>These examples show how liquidation plays out across common LP formats under the{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>
             .</>{" "}<>Each scenario uses the protocol&apos;s collateral valuation, repays debt through the Hub, and resolves the LP through its supported settlement route. Execution costs and the liquidator reward are deducted before any residual value is distributed.</>

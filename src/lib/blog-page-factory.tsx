@@ -7,6 +7,8 @@ import BlogPostLayout from "@/components/blog-post-layout"
 import { loadBlogContent } from "@/lib/content-i18n/load-content"
 import { buildOgImagePath, SITE_NAME } from "@/lib/site"
 import { blogPosts, blogPostsBySlug, type BlogPostDefinition, type BlogSection } from "@/lib/blog-posts"
+import { defaultLocale, type AppLocale } from "@/i18n/locales"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
 
 const sectionTones = ["amber", "violet", "cyan", "emerald", "rose", "slate", "blue"] as const
 
@@ -20,19 +22,21 @@ export function getBlogPost(slug: string): BlogPostDefinition {
   return post
 }
 
-export function buildBlogMetadata(post: BlogPostDefinition): Metadata {
+export function buildBlogMetadata(post: BlogPostDefinition, locale: AppLocale = defaultLocale): Metadata {
   const title = `${post.title} | ${SITE_NAME} Newsroom`
   const canonicalPath = `/newsroom/${post.slug}`
 
   return {
-    title,
+    title: { absolute: title },
     description: post.description,
     alternates: {
-      canonical: canonicalPath,
+      canonical: absoluteLocaleUrl(locale, canonicalPath),
+      languages: languageAlternates(canonicalPath),
     },
     openGraph: {
       title,
-      url: canonicalPath,
+      type: "article",
+      url: absoluteLocaleUrl(locale, canonicalPath),
       description: post.description,
       images: [
         buildOgImagePath({
@@ -347,7 +351,7 @@ export function createBlogPage(slug: string) {
       localizedPosts.find((entry) => entry.slug === slug) ??
       (fallbackIndex >= 0 ? localizedPosts[fallbackIndex] : undefined) ??
       enPost
-    return buildBlogMetadata(post as BlogPostDefinition)
+    return buildBlogMetadata(post as BlogPostDefinition, locale)
   }
 
   async function Page({ params }: LocaleParamsProps) {

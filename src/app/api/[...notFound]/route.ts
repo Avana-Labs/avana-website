@@ -1,4 +1,5 @@
 import { jsonError } from "@/lib/api/response"
+import { clientKey, rateLimit, tooManyRequests, RATE_LIMITS } from "@/lib/api/rate-limit"
 
 export const dynamic = "force-dynamic"
 
@@ -6,7 +7,10 @@ export const dynamic = "force-dynamic"
  * Fallback for any unknown /api/* path. Returns a structured JSON 404 instead
  * of an HTML shell so agents can parse the failure and recover.
  */
-async function handler(_request: Request, { params }: { params: Promise<{ notFound: string[] }> }) {
+async function handler(request: Request, { params }: { params: Promise<{ notFound: string[] }> }) {
+  const limited = rateLimit(clientKey(request), RATE_LIMITS.apiNotFound)
+  if (!limited.ok) return tooManyRequests(limited)
+
   const { notFound } = await params
   const path = `/api/${(notFound ?? []).join("/")}`
   return jsonError(

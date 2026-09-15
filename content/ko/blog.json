@@ -3,7 +3,7 @@
     {
       "slug": "lp-risk-governance",
       "title": "Avana가 LP 위험을 어떻게 관리하는가",
-      "date": "July 24, 2026",
+      "date": "September 24, 2026",
       "description": "제한된 업데이트, 독립 검토, 비상 차단으로 Spoke 시장 전반에서 Avana가 LP 담보 위험을 어떻게 관리하는지.",
       "image": "/images/blog/lp-risk-governance.png",
       "category": "개발자",
@@ -44,7 +44,7 @@
     {
       "slug": "why-lp-collateral-needs-smart-agents",
       "title": "LP 담보에 Smart Agents가 필요한 이유",
-      "date": "July 22, 2026",
+      "date": "September 21, 2026",
       "description": "헬스 모니터링, venue별 포지션 운용, 스트레스 상황에서도 신뢰할 수 있는 청산 커버리지를 위해 Avana가 Smart Agents를 쓰는 이유.",
       "image": "/images/blog/smart-agents-lp-collateral.png",
       "category": "개발자",
@@ -79,7 +79,7 @@
     {
       "slug": "how-lp-liquidation-should-work",
       "title": "LP 청산은 어떻게 작동해야 하는가",
-      "date": "July 20, 2026",
+      "date": "September 18, 2026",
       "description": "통제된 unwind, 부분 개입, 가능하면 수수료 우선, venue별 경로로 Avana가 LP 담보를 청산하는 방식.",
       "image": "/images/blog/lp-liquidation-workflow.png",
       "category": "개발자",
@@ -120,7 +120,7 @@
     {
       "slug": "pricing-lp-collateral-oracle-problem",
       "title": "더 나은 오라클로 LP 담보 가격 산정",
-      "date": "July 17, 2026",
+      "date": "September 16, 2026",
       "description": "recoverable value, 결정적 재구성, 보수적 recovery haircut으로 Avana Oracle이 LP 담보를 가격 산정하는 방법.",
       "image": "/images/blog/lp-collateral-oracle-problem.png",
       "category": "개발자",
@@ -161,7 +161,7 @@
     {
       "slug": "security-deep-dive",
       "title": "Avana가 LP 담보 위험을 관리하는 방식",
-      "date": "July 15, 2026",
+      "date": "September 13, 2026",
       "description": "아키텍처와 오라클부터 헬스, 청산, 운영까지 Avana가 LP 담보의 다층 보안을 어떻게 구성하는지.",
       "image": "/images/blog/security-deep-dive.png",
       "category": "개발자",
@@ -203,7 +203,7 @@
     {
       "slug": "hedge-lp-position",
       "title": "LP 포지션을 더 신중하게 헤지하기",
-      "date": "July 13, 2026",
+      "date": "September 10, 2026",
       "description": "풀을 완전히 빠져나오지 않고 버퍼, 방향성 오프셋, 더 규율 있는 헤지 습관을 Avana로 어떻게 마련하는지.",
       "image": "/images/blog/hedge-lp-position.png",
       "category": "LP용",
@@ -244,7 +244,7 @@
     {
       "slug": "yield-looping-playbook",
       "title": "LP 담보로 yield looping 하기",
-      "date": "July 10, 2026",
+      "date": "September 8, 2026",
       "description": "버퍼, 스트레스 테스트, 종료 규율, 지속 가능한 레버리지를 포함한 Avana LP 담보 yield looping 사고방식.",
       "image": "/images/blog/yield-looping-playbook.png",
       "category": "LP용",
@@ -285,7 +285,7 @@
     {
       "slug": "unleashing-lp-tokens",
       "title": "LP 담보가 가능하게 하는 것들",
-      "date": "July 8, 2026",
+      "date": "September 5, 2026",
       "description": "대출, 헤지, 트레저리 유연성, 더 자본 효율적인 활용까지 Avana LP 담보가 열어 주는 가능성.",
       "image": "/images/blog/unleashing-lp-tokens.png",
       "category": "LP용",
@@ -326,7 +326,7 @@
     {
       "slug": "aerodrome-lp-collateral-aave-v4",
       "title": "Aave v4에서 Aerodrome LP 담보 대출",
-      "date": "July 6, 2026",
+      "date": "September 3, 2026",
       "description": "Base의 Aerodrome LP를 활성 상태로 유지하면서 전용 시장을 통해 대출을 지원하는 Avana의 방식.",
       "image": "/images/blog/aerodrome-lp-collateral.png",
       "category": "개발자",
@@ -367,7 +367,7 @@
     {
       "slug": "curve-lp-collateral-aave-v4",
       "title": "Aave v4에서 Curve LP 담보 대출",
-      "date": "July 3, 2026",
+      "date": "August 31, 2026",
       "description": "안정·상관 풀을 위해 전용 Aave v4 Spoke로 Curve LP 담보를 다루는 방식.",
       "image": "/images/blog/curve-lp-collateral.png",
       "category": "개발자",
@@ -408,7 +408,7 @@
     {
       "slug": "balancer-lp-collateral-aave-v4",
       "title": "Aave v4의 Balancer LP 담보",
-      "date": "July 1, 2026",
+      "date": "August 28, 2026",
       "description": "익스포저를 활성 상태로 유지하면서 Balancer 가중 풀 LP를 Aave v4 담보로 지원하는 방법.",
       "image": "/images/blog/balancer-lp-collateral.png",
       "category": "개발자",
@@ -443,7 +443,7 @@
     {
       "slug": "smart-contract-architecture",
       "title": "Aave v4에서 Uniswap LP 담보 대출",
-      "date": "June 28, 2026",
+      "date": "August 25, 2026",
       "description": "풀에 남아 수수료를 계속 받으면서 Uniswap LP를 Aave v4 담보로 바꾸는 Avana의 방식.",
       "image": "/images/blog/uniswap-lp-collateral.png",
       "category": "개발자",
@@ -478,7 +478,7 @@
     {
       "slug": "defi-ux-challenges",
       "title": "LP 담보를 실제로 쓸 수 있게 만들기",
-      "date": "June 25, 2026",
+      "date": "August 23, 2026",
       "description": "명확한 평가, 대출 한도, 헬스를 중시하는 Avana 제품 설계 — LP 담보를 이론이 아니라 운용 가능하게.",
       "image": "/images/blog/making-lp-collateral-usable.png",
       "category": "제품",
@@ -513,7 +513,7 @@
     {
       "slug": "avana-lp-collateral",
       "title": "Avana와 LP의 다음 단계",
-      "date": "June 23, 2026",
+      "date": "August 20, 2026",
       "description": "수수료 수익과 자본 접근 중 하나를 고를 필요가 없는 이유, 그리고 Avana가 LP 활용을 어떻게 확장하는지.",
       "image": "/images/blog/avana-next-step-liquidity-providers.png",
       "category": "커뮤니티",
@@ -548,7 +548,7 @@
     {
       "slug": "institutional-use-cases",
       "title": "기관을 위한 LP 담보",
-      "date": "June 20, 2026",
+      "date": "August 17, 2026",
       "description": "DAO, 트레저리, 펀드, crypto-native 기업이 포지션을 풀지 않고 자본에 접근하도록 Avana LP 담보가 돕는 방법.",
       "image": "/images/blog/lp-collateral-for-institutions.png",
       "category": "기관용",
@@ -590,7 +590,7 @@
     {
       "slug": "integration-guide",
       "title": "Avana LP 인프라 위에 구축하기",
-      "date": "June 17, 2026",
+      "date": "August 14, 2026",
       "description": "모니터링, 자동화, 청산 서비스, 연동을 포함한 Avana LP 담보 인프라에 대한 개발자 관점.",
       "image": "/images/blog/developer-view-lp-collateral.png",
       "category": "개발자",
@@ -625,7 +625,7 @@
     {
       "slug": "aave-v4-avana-spoke",
       "title": "Avana LP 담보 아키텍처 내부",
-      "date": "June 14, 2026",
+      "date": "August 11, 2026",
       "description": "Aave v4 위 Avana LP 담보 아키텍처: Hub, Spokes, 평가, 오라클 설계, 청산.",
       "image": "/images/blog/inside-avana-architecture.png",
       "category": "개발자",
@@ -660,7 +660,7 @@
     {
       "slug": "v1-1-release",
       "title": "Avana v1.1: 더 나은 담보, 더 나은 통제",
-      "date": "June 11, 2026",
+      "date": "August 8, 2026",
       "description": "Avana v1.1은 다중 포지션 담보를 확장하고, 지원 풀을 늘리며, 위임과 알림을 개선하고 friction을 낮춥니다.",
       "image": "/images/blog/avana-v1-1-better-control.png",
       "category": "제품",
@@ -695,7 +695,7 @@
     {
       "slug": "introducing-automate",
       "title": "Automate: LP 담보를 위한 컨트롤 레이어",
-      "date": "June 8, 2026",
+      "date": "August 6, 2026",
       "description": "수수료, 리밸런싱, 보호를 위한 논커스터디얼 자동화로 Avana Automate가 LP 담보 관리를 돕는 방식.",
       "image": "/images/blog/automate-control-layer-lp-collateral.png",
       "category": "제품",
@@ -736,7 +736,7 @@
     {
       "slug": "lp-collateral-guide",
       "title": "LP 담보 입문 가이드",
-      "date": "June 4, 2026",
+      "date": "August 4, 2026",
       "description": "Avana LP 담보 입문: LP 행동, LTV, impermanent loss, 청산, 보수적인 사용 습관.",
       "image": "/images/blog/beginners-guide-lp-collateral.png",
       "category": "LP용",

@@ -9,8 +9,8 @@ import { TryAvanaCtaSection } from "@/components/try-avana-cta-section"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Link } from "@/i18n/navigation"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
-import { languageAlternates } from "@/lib/i18n/path"
-import { buildOgImagePath, SITE_NAME, SITE_URL, siteRoutes } from "@/lib/site"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
+import { buildOgImagePath, SITE_NAME, siteRoutes } from "@/lib/site"
 
 export const dynamic = "force-static"
 
@@ -30,14 +30,14 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
       "AMM collateral",
     ],
     alternates: {
-      canonical: siteRoutes.home,
+      canonical: absoluteLocaleUrl(locale, siteRoutes.home),
       languages: languageAlternates(siteRoutes.home),
     },
     openGraph: {
       type: "website",
       title: `${SITE_NAME} - ${t("home.title")}`,
       description: t("ogDescription"),
-      url: SITE_URL,
+      url: absoluteLocaleUrl(locale, siteRoutes.home),
       images: [
         {
           url: buildOgImagePath({

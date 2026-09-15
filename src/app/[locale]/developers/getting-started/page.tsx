@@ -65,7 +65,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
               <p className="type-doc-body">
                 Open the Avana interface and select an LP market that is live on your deployment.
                 Only approved pools can be deposited. See{" "}
-                <Link href="/developers/integrations/allowed-pools" className="text-[#01AACF] hover:underline">
+                <Link href="/developers/integrations/allowed-pools" className="text-type-accent hover:underline">
                   Allowed LP Pools
                 </Link>{" "}
                 for how pool support is defined.
@@ -90,7 +90,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
               <p className="type-doc-body">
                 Once the deposit clears, your borrowing capacity updates in the interface. You can
                 move on to{" "}
-                <Link href="/developers/getting-started/borrow-assets" className="text-[#01AACF] hover:underline">
+                <Link href="/developers/getting-started/borrow-assets" className="text-type-accent hover:underline">
                   Borrow Assets
                 </Link>{" "}
                 when you want to draw liquidity from the Hub.
@@ -145,7 +145,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
             <li>You can deposit more approved positions in the same market to add capacity</li>
             <li>
               Next step:{" "}
-              <Link href="/developers/getting-started/borrow-assets" className="text-[#01AACF] hover:underline">
+              <Link href="/developers/getting-started/borrow-assets" className="text-type-accent hover:underline">
                 Borrow Assets
               </Link>
             </li>

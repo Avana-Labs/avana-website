@@ -20,64 +20,64 @@ const bookCoverThemes = [
     coverColor: "#0F1518",
     spineColor: "#01AACF",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#BC846F",
     text: "text-white",
-    muted: "text-white/56",
-    number: "text-white/52",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#9E5537]",
     coverColor: "#9E5537",
     spineColor: "#0F1518",
     text: "text-white",
-    muted: "text-white/58",
-    number: "text-white/46",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#01AACF]",
     coverColor: "#01AACF",
     spineColor: "#2F414B",
     text: "text-[#0F1518]",
-    muted: "text-[#0F1518]/58",
-    number: "text-[#0F1518]/42",
+    muted: "text-foreground",
+    number: "text-foreground",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#01AACF",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#BC846F]",
     coverColor: "#BC846F",
     spineColor: "#0F1518",
     text: "text-[#0F1518]",
-    muted: "text-[#0F1518]/58",
-    number: "text-[#0F1518]/42",
+    muted: "text-foreground",
+    number: "text-foreground",
   },
   {
     cover: "bg-[#0F1518]",
     coverColor: "#0F1518",
     spineColor: "#9E5537",
     text: "text-white",
-    muted: "text-white/56",
-    number: "text-white/52",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#BC846F",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
 ] as const
 
@@ -240,7 +240,7 @@ export function BlogIndex({
                         {post.title}
                       </h2>
                       <span className={`relative z-10 mt-4 text-xs font-medium ${theme.muted}`}>
-                        {formatContentDate(post.date, locale)}
+                        {formatContentDate(post.date, locale, true)}
                       </span>
                     </div>
                   </div>

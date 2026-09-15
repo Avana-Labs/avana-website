@@ -60,9 +60,9 @@ const securityHeaders = [
     value: 'nosniff'
   },
   {
-    // Enables browser XSS filtering
+    // Legacy header is disabled; modern browsers rely on CSP and output encoding.
     key: 'X-XSS-Protection',
-    value: '1; mode=block'
+    value: '0'
   },
   {
     // Controls referrer information sent with requests
@@ -97,10 +97,10 @@ const securityHeaders = [
       "default-src 'self'",
       `script-src ${scriptSrc.join(" ")}`,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https: blob:",
-      "font-src 'self' data: https://fonts.gstatic.com",
-      "connect-src 'self' https:",
-      "media-src 'self' https://cdn-front.freepik.com",
+      "img-src 'self' data: blob: https://coin-logos.simplr.sh https://images.unsplash.com https://cdn-front.freepik.com https://studio.uxpincdn.com https://www.muravie.com",
+      "font-src 'self' data:",
+      "connect-src 'self'",
+      "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -177,6 +177,24 @@ const nextConfig: NextConfig = {
           { key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=3600' },
           { key: 'Vary', value: 'Accept-Encoding' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
+        ],
+      },
+      {
+        source: '/og',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400' },
+        ],
+      },
+      {
+        source: '/sitemap.xml',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=3600' },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=3600, s-maxage=3600' },
         ],
       },
       {
