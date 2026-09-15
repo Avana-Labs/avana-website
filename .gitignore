@@ -48,3 +48,6 @@ next-env.d.ts
 
 # i18n translation cache
 content/.cache/
+
+# production hardening audit doc
+docs/production-hardening.md
