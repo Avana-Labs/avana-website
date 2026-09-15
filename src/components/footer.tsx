@@ -5,7 +5,7 @@ import { getImageProps } from "next/image"
 import { getLocale, getTranslations } from "next-intl/server"
 import Link from "next/link"
 import { withLocale } from "@/lib/i18n/path"
-import { HEADER_WORDMARK_PATH, SITE_NAME, siteRoutes } from "@/lib/site"
+import { HEADER_WORDMARK_PATH, SITE_NAME, SOCIAL_URLS, siteRoutes } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 interface FooterLink {
@@ -54,14 +54,14 @@ export default async function Footer(): Promise<React.JSX.Element> {
 
   const socialLinks: readonly SocialLink[] = [
     {
-      href: "https://twitter.com/avana_labs",
+      href: SOCIAL_URLS.twitter,
       label: t("footer.socialAria", { network: t("footer.twitter") }),
       name: t("footer.twitter"),
       icon: socialIcons.twitter,
       className: "bg-[#01AACF] text-white hover:bg-[#00a0c2]",
     },
     {
-      href: "https://github.com/Avana-Labs",
+      href: SOCIAL_URLS.github,
       label: t("footer.socialAria", { network: t("footer.github") }),
       name: t("footer.github"),
       icon: socialIcons.github,

@@ -1,4 +1,4 @@
-import { LOGO_PATH, SITE_NAME, SITE_URL, SUPPORT_EMAIL, siteRoutes } from "./site"
+import { LOGO_PATH, SITE_NAME, SITE_URL, SOCIAL_URLS, SUPPORT_EMAIL, siteRoutes } from "./site"
 
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -7,15 +7,7 @@ export const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}${LOGO_PATH}`,
   description: "DeFi protocol enabling borrowing against LP positions on Aave v4",
-  sameAs: [
-    "https://twitter.com/dexmini",
-    "https://github.com/aave",
-    "https://t.me/dexmini",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "US",
-  },
+  sameAs: Object.values(SOCIAL_URLS),
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
@@ -29,11 +21,6 @@ export const websiteSchema = {
   "@type": "WebSite",
   name: SITE_NAME,
   url: SITE_URL,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${SITE_URL}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
 }
 
 export function serializeJsonLd(data: unknown) {

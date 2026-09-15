@@ -3,7 +3,11 @@ export const SITE_URL = "https://avana.cc"
 export const SUPPORT_EMAIL = "support@avana.cc"
 export const LOGO_PATH = "/Avana%20Logo.png"
 export const HEADER_WORDMARK_PATH = "/images/avana-wordmark.webp"
-export const SOCIAL_HANDLE = "@dexmini"
+export const SOCIAL_HANDLE = "@avana_labs"
+export const SOCIAL_URLS = {
+  twitter: "https://twitter.com/avana_labs",
+  github: "https://github.com/Avana-Labs",
+} as const
 export const AAVE_ARFC_LABEL = "Aave ARFC"
 export const DEFAULT_OG_SUBTITLE = "Borrow Against LP Positions on Aave v4"
 export const DEFAULT_SITE_DESCRIPTION =

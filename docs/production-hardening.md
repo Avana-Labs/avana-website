@@ -47,6 +47,14 @@ entries and a blank Persian label. Those entries are now translated; five
 corrupted renderings of the proper name `Aave ARFC` are normalized. Runtime
 fallback behavior is unchanged.
 
+### Brand metadata
+
+Two new regression tests reproduced stale `@dexmini` attribution and a schema
+search action pointing at nonexistent `/search`. Metadata now shares Avana's
+existing footer identities; Aave's GitHub is no longer claimed as Avana's own.
+Removed the unsupported country-only address and nonexistent search action.
+JSON-LD escaping remains intact and tested. Three schema tests pass.
+
 ## Release status
 
 Audit and implementation are in progress. No production-readiness claim yet.
