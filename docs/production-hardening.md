@@ -1,6 +1,7 @@
 # Production hardening
 
-Starting application revision: `4ac86b6` (`codex/quick-fix-dex-cards`).
+Audit baseline revision: `4ac86b6` (`codex/quick-fix-dex-cards`).
+The current branch contains the follow-up fixes described below.
 
 ## Commit policy
 
@@ -9,26 +10,27 @@ regression test, preserve unrelated behavior, and pass relevant existing checks.
 Do not commit speculative rewrites or relax budgets to obtain a pass. Tooling
 improvements count only when tests demonstrate a previously undetected failure.
 
-## Starting checks
+## Current checks
 
-- Production build: passed, 1,738 generated pages.
-- ESLint, marketing/pricing i18n, docs extraction and docs i18n: passed.
-- No automated regression test command existed.
-- Fresh npm audit: 29 findings (11 high, 17 moderate, 1 low), pending separation
-  of production dependencies from development tools and remediation validation.
-- Performance baselines: three runs per representative route, applied DevTools
-  throttling, production build. Raw reports remain under ignored `.lighthouse/`.
-  Local runs do not establish deployed/CDN behavior or field INP.
+- Production build: passed, 1,739 generated pages.
+- `npm test`: passed, 52 tests. ESLint, marketing/UI i18n, docs extraction and
+  docs i18n also pass.
+- `npm audit --omit=dev --audit-level=high`: 0 vulnerabilities.
+- Built SEO and semantics checks: 1,664 rendered pages, 0 failures each.
+- Lighthouse comparison evidence exists for the earlier revisions, but a
+  complete after-run for the current revision has not been captured. Local
+  runs do not establish deployed/CDN behavior or field INP.
 
 ## Verified changes
 
-### Audit evidence validation
+### Audit evidence and Lighthouse metric validation
 
-Eight new negative fixtures passed incorrectly before the fix. All now fail:
-empty reports, missing/null LCP, missing profile or throttling provenance,
-incomplete route coverage, duplicate routes, and insufficient samples. Valid
-evidence still passes; a real budget breach still fails. Ten regression tests
-pass. Existing performance budgets are unchanged.
+The validator previously accepted missing raw samples, empty samples, failed raw
+runs, and a report whose environment profile did not match its declared profile.
+Those fixtures now fail; complete three-run evidence still passes. The runner
+also accepts Lighthouse 13's `dom-size-insight` replacement for the removed
+`dom-size` audit and retains support for the older audit shape. Existing
+performance budgets are unchanged.
 
 The runner now supports desktop/mobile profiles, excludes API routes, preserves
 completed evidence, records revision/environment/raw metric samples, and rejects
@@ -69,21 +71,28 @@ semantics have 0 failures.
 
 ### Keyboard access, semantics, contrast, and motion
 
-The mobile navigation uses a native modal dialog with focus restoration; desktop
-navigation and the locale menu now support keyboard open, arrow navigation,
-Escape, and focus return. FAQ accordion questions use the correct heading level,
-and Privacy Policy subsections no longer skip from `h2` to `h4`. Nested page
-wrappers no longer create duplicate main landmarks. The accent text token was
-darkened to pass normal-text contrast while the existing shared gray token was
-kept consistent. Decorative section activity starts paused until observed and
-CTA video does not load for reduced-motion users or data-saver connections.
+The restored mobile overlay keeps the original two-bar toggle and visual
+treatment while moving focus into the open menu, trapping Tab, and returning
+focus to the toggle on Escape. Desktop navigation and the locale menu support
+keyboard open, arrow navigation, Escape, and focus return. FAQ accordion
+questions use the correct heading level, Privacy Policy subsections no longer
+skip from `h2` to `h4`, and nested page wrappers no longer create duplicate main
+landmarks. Avana cyan remains `#01AACF`; cyan controls use white text. The CTA
+video behavior is restored to its prior near-viewport loading behavior.
 
 Source-level regression coverage now includes contrast, animation lifecycle,
 navigation metadata identity, Markdown routing, and JSON-LD escaping. The
-available browser run passed 8/9 checks before the final modal-focus correction;
-the final rerun was blocked by the execution environment's localhost/Chrome
-port restrictions, so browser behavior remains an explicit follow-up rather
-than a claimed green result.
+browser suite now includes the focus assertion that previously failed in CI.
+The local rerun remains blocked by the execution environment's Chrome port
+restriction (`listen EPERM`), so runtime browser behavior remains an explicit
+CI verification rather than a claimed local green result.
+
+### Font delivery
+
+The global Diatype face remains the only initial font preload. The route-specific
+legal italic face is now loaded on demand instead of being preloaded on every
+legal page. The built `/en/terms` and `/en/privacy` pages emit one font preload
+instead of two; font-display and the selected typefaces are unchanged.
 
 ### Machine-readable route handling
 
@@ -95,25 +104,20 @@ shared by sitemap generation and Markdown handling to prevent drift.
 
 ## Release status
 
-Audit and implementation are in progress. No production-readiness claim yet.
+The static, build, dependency, evidence-validation, and built-page gates are
+green. This is not a production-readiness claim yet because final Lighthouse
+after-runs, browser CI, and deployment-level checks remain open.
 
 ## Remaining blockers and limits
 
-- `npm audit` still reports 29 development-tool findings (11 high, 17
-  moderate, 1 low); `npm audit --omit=dev` remains clean. The findings are in
-  Lighthouse/Chrome test tooling and transitive packages and need a separate
-  compatibility-tested dependency commit.
-- CI now gates the production dependency surface explicitly with
-  `npm run audit:production`. The development-only Lighthouse chain remains a
-  separate compatibility item; the audit is not hidden by forcing a major
-  Lighthouse downgrade.
-- Local Lighthouse evidence is useful for regression comparison but does not
-  establish deployed CDN behavior, field INP, or production traffic. The
-  original mobile baseline still exceeds existing TBT budgets on Borrow, Lend,
-  About, and FAQ, and the home DOM budget; budgets were not loosened.
+- A final current-revision Lighthouse after-run is still required. Run the
+  production build and three applied-DevTools-throttled samples per route in a
+  permitted CI environment, then run `npm run lighthouse:check` against that
+  output. Do not reuse the incomplete comparison as release evidence.
 - Browser HTTP/UI tests require a permitted localhost listener and Chrome
   debugging port. They must be rerun in CI or an approved local environment
-  before release sign-off.
+  before release sign-off; the local environment currently fails Chrome's
+  random-port bind with `EPERM`.
 - The deployed Vercel headers, analytics behavior, external asset policy, and
   actual production environment variables still require deployment-level
   verification.
