@@ -10,7 +10,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { getLocaleDefinition, getLocaleDir } from "@/i18n/locales"
 import { routing } from "@/i18n/routing"
-import { languageAlternates } from "@/lib/i18n/path"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
 import {
   buildOgImagePath,
   SITE_NAME,
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: localeDef.ogLocale,
-      url: SITE_URL,
+      url: absoluteLocaleUrl(locale, "/"),
       siteName: SITE_NAME,
       title,
       description: t("ogDescription"),
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: "/",
+      canonical: absoluteLocaleUrl(locale, "/"),
       languages: languageAlternates("/"),
     },
   }
@@ -160,7 +160,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           </a>
           <div className="flex min-h-screen min-w-0 flex-col">
             <Header />
-            <main id="main-content" className="min-w-0 flex-1 overflow-x-clip">
+            <main id="main-content" tabIndex={-1} className="min-w-0 flex-1 overflow-x-clip outline-none">
               {children}
             </main>
             <Footer />

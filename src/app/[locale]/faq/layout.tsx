@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { getTranslations } from "next-intl/server"
 import { buildFaqSchema } from "@/app/[locale]/faq/faq-content"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
-import { languageAlternates } from "@/lib/i18n/path"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
 import { buildOgImagePath, siteRoutes } from "@/lib/site"
 import { serializeJsonLd } from "@/lib/structured-data"
 
@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
     title: t("faq.title"),
     description: t("faq.description"),
     alternates: {
-      canonical: siteRoutes.faq,
+      canonical: absoluteLocaleUrl(locale, siteRoutes.faq),
       languages: languageAlternates(siteRoutes.faq),
     },
     openGraph: {
       title: t("faq.title"),
-      url: siteRoutes.faq,
+      url: absoluteLocaleUrl(locale, siteRoutes.faq),
       description: t("faq.description"),
       images: [
         buildOgImagePath({
