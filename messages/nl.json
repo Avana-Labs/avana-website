@@ -14,6 +14,7 @@
       "themeToggle": "Themavoorkeur"
     },
     "nav": {
+      "pricing": "Prijzen",
       "products": "Producten",
       "resources": "Hulpbronnen",
       "developers": "Ontwikkelaars",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Prijzen",
+      "description": "Duidelijke tarieven voor lenen, uitlenen en strategieën met LP als onderpand op Avana."
+    },
     "siteTitle": "Avana - Lenen tegen LP posities op Aave v4",
     "siteDescription": "Ontgrendel liquiditeit van uw LP tokens. Leen tot 80% tegen Uniswap, Curve en Balancer posities terwijl u doorgaat met het verdienen van handelskosten op Aave v4.",
     "ogDescription": "Ontgrendel liquiditeit van je LP tokens terwijl je doorgaat met het verdienen van handelskosten.",

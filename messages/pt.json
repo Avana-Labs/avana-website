@@ -14,6 +14,7 @@
       "themeToggle": "Preferência de tema"
     },
     "nav": {
+      "pricing": "Preços",
       "products": "Produtos",
       "resources": "Recursos",
       "developers": "Desenvolvedores",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Preços",
+      "description": "Preços claros para empréstimos, depósitos e estratégias garantidas por LP na Avana."
+    },
     "siteTitle": "Avana - Emprestar contra LP posições em Aave v4",
     "siteDescription": "Desbloqueie liquidez dos seus LP tokens. Pegue emprestado até 80% contra Uniswap, Curve e Balancer posições enquanto continua a ganhar taxas de negociação em Aave v4.",
     "ogDescription": "Libere liquidez dos seus LP tokens enquanto continua a ganhar taxas de negociação.",

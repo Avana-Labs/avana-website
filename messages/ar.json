@@ -14,6 +14,7 @@
       "themeToggle": "تفضيل المظهر"
     },
     "nav": {
+      "pricing": "الأسعار",
       "products": "المنتجات",
       "resources": "الموارد",
       "developers": "المطورون",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "الأسعار",
+      "description": "رسوم واضحة للاقتراض والإقراض والاستراتيجيات المدعومة بمراكز LP على Avana."
+    },
     "siteTitle": "Avana - الاقتراض مقابل LP مواقع على Aave v4",
     "siteDescription": "افتح السيولة من رموزك LP. اقترض حتى 80٪ مقابل Uniswap وCurve وBalancer بينما تستمر في كسب رسوم التداول على Aave v4.",
     "ogDescription": "افتح السيولة من LP رمزًا خاصًا بك مع الاستمرار في كسب رسوم التداول.",

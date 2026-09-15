@@ -14,6 +14,7 @@
       "themeToggle": "Tema tercihi"
     },
     "nav": {
+      "pricing": "Fiyatlandırma",
       "products": "Ürünler",
       "resources": "Kaynaklar",
       "developers": "Geliştiriciler",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Fiyatlandırma",
+      "description": "Avana üzerinde borç alma, borç verme ve LP teminatlı stratejiler için şeffaf ücretler."
+    },
     "siteTitle": "Avana - Aave v4 üzerinde LP Pozisyona Karşı Ödünç Al",
     "siteDescription": "LP tokenlerinizden likiditeyi açın. Uniswap, Curve ve Balancer pozisyonlarına karşı %80'e kadar borç alın ve Aave v4 üzerinden ticaret ücretleri kazanmaya devam edin.",
     "ogDescription": "Ticaret ücretleri kazanmaya devam ederken LP jetonunuzdan likidite açın.",

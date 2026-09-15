@@ -14,11 +14,12 @@
       "themeToggle": "ترجیح پوسته"
     },
     "nav": {
+      "pricing": "قیمت‌گذاری",
       "products": "محصولات",
       "resources": "منابع",
       "developers": "توسعه‌دهندگان",
       "helpCenter": "مرکز راهنما",
-      "aaveArfc": " ",
+      "aaveArfc": "Aave ARFC",
       "borrow": "قرض گرفتن",
       "lend": "قرض دادن",
       "multiply": "ضرب کردن",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "قیمت‌گذاری",
+      "description": "کارمزدهای شفاف برای وام گرفتن، وام دادن و راهبردهای دارای وثیقه LP در Avana."
+    },
     "siteTitle": "Avana - وام گرفتن با تضمین LP موقعیت در Aave v4",
     "siteDescription": "از LP توکن‌های خود نقدینگی بدست آورید. تا ۸۰٪ وام بگیرید در مقابل موقعیت‌های Uniswap، Curve و Balancer در حالی که همچنان از Aave v4 کارمزد معامله دریافت می‌کنید.",
     "ogDescription": "با ادامه کسب کارمزدهای معاملاتی، نقدینگی توکن‌های LP خود را آزاد کنید.",

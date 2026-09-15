@@ -14,11 +14,12 @@
       "themeToggle": "थीम वरीयता"
     },
     "nav": {
+      "pricing": "मूल्य निर्धारण",
       "products": "उत्पाद",
       "resources": "संसाधन",
       "developers": "डेवलपर्स",
       "helpCenter": "सहायता केंद्र",
-      "aaveArfc": "7.",
+      "aaveArfc": "Aave ARFC",
       "borrow": "उधार लेना",
       "lend": "उधार देना",
       "multiply": "गुणा करें",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "मूल्य निर्धारण",
+      "description": "Avana पर उधार लेने, उधार देने और LP समर्थित रणनीतियों के लिए स्पष्ट शुल्क।"
+    },
     "siteTitle": "Avana - Aave v4 पर LP पोजीशन के खिलाफ उधार",
     "siteDescription": "अपने LP टोकन से तरलता अनलॉक करें। Uniswap, Curve, और Balancer पोज़िशन के खिलाफ 80% तक उधार लें जबकि Aave v4 पर ट्रेडिंग शुल्क कमाना जारी रखें।",
     "ogDescription": "अपनी LP टोकनों से तरलता का लाभ उठाएँ जबकि ट्रेडिंग शुल्क कमाना जारी रखें।",

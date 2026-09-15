@@ -14,6 +14,7 @@
       "themeToggle": "Tùy chọn giao diện"
     },
     "nav": {
+      "pricing": "Định giá",
       "products": "Sản phẩm",
       "resources": "Tài nguyên",
       "developers": "Nhà phát triển",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Định giá",
+      "description": "Biểu phí rõ ràng cho hoạt động vay, cho vay và các chiến lược được bảo đảm bằng LP trên Avana."
+    },
     "siteTitle": "Avana - Vay Dựa Trên LP Vị Trí trên Aave v4",
     "siteDescription": "Mở khóa thanh khoản từ LP token của bạn. Vay lên đến 80% dựa trên các vị trí Uniswap, Curve và Balancer trong khi vẫn tiếp tục kiếm phí giao dịch trên Aave v4.",
     "ogDescription": "Giải phóng tính thanh khoản từ LP token của bạn trong khi tiếp tục kiếm phí giao dịch.",

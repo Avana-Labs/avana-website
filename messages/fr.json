@@ -14,11 +14,12 @@
       "themeToggle": "Préférence de thème"
     },
     "nav": {
+      "pricing": "Tarification",
       "products": "Produits",
       "resources": "Ressources",
       "developers": "Développeurs",
       "helpCenter": "Centre d'aide",
-      "aaveArfc": "Fl 13 Fl Fl 15 Fl",
+      "aaveArfc": "Aave ARFC",
       "borrow": "Emprunter",
       "lend": "Prêter",
       "multiply": "Multiplier",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Tarification",
+      "description": "Une tarification claire pour emprunter, prêter et utiliser des stratégies garanties par des LP sur Avana."
+    },
     "siteTitle": "Avana - Emprunter contre LP positions sur Aave v4",
     "siteDescription": "Débloquez la liquidité de vos LP jetons. Empruntez jusqu'à 80 % contre les positions Uniswap, Curve et Balancer tout en continuant à gagner des frais de trading sur Aave v4.",
     "ogDescription": "Débloquez la liquidité de vos LP jetons tout en continuant à percevoir des frais de trading.",

@@ -14,6 +14,7 @@
       "themeToggle": "主题偏好"
     },
     "nav": {
+      "pricing": "定价",
       "products": "产品",
       "resources": "资源",
       "developers": "开发者",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "定价",
+      "description": "清晰了解 Avana 上借贷及 LP 抵押策略的费用。"
+    },
     "siteTitle": "Avana - 在 Aave v4 上借贷 LP 个头寸",
     "siteDescription": "从您的LP代币中释放流动性。对Uniswap、Curve和Balancer头寸借款最高可达80%，同时继续在Aave v4上赚取交易费用。",
     "ogDescription": "在继续赚取交易费用的同时，从您的LP个代币中释放流动性。",

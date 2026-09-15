@@ -14,11 +14,12 @@
       "themeToggle": "থিম পছন্দ"
     },
     "nav": {
+      "pricing": "মূল্য নির্ধারণ",
       "products": "পণ্য",
       "resources": "সংসাধন",
       "developers": "ডেভেলপাররা",
       "helpCenter": "সাহায়্য কেন্দ্র",
-      "aaveArfc": "13ARFC",
+      "aaveArfc": "Aave ARFC",
       "borrow": "ঋণ নেওয়া",
       "lend": "ঋণ দেওয়া",
       "multiply": "গুণ করা",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "মূল্য নির্ধারণ",
+      "description": "Avana-তে ঋণ নেওয়া, ঋণ দেওয়া এবং LP সমর্থিত কৌশলের জন্য স্পষ্ট মূল্য নির্ধারণ।"
+    },
     "siteTitle": "Avana - Aave v4 এর উপর LP অবস্থানের বিরুদ্ধে ধার নিন",
     "siteDescription": "আপনার LP টোকেন থেকে তরলতা আনলক করুন। Uniswap, Curve, এবং Balancer পজিশনের বিপরীতে ৮০% পর্যন্ত ঋণ নিন যখন Aave v4-এ ট্রেডিং ফি উপার্জন করা চালিয়ে যান।",
     "ogDescription": "আপনার LP টোকেন থেকে তরলতা লক মুক্ত করুন যখন ট্রেডিং ফি উপার্জন করা চালিয়ে যান।",

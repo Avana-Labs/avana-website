@@ -14,6 +14,7 @@
       "themeToggle": "テーマ設定"
     },
     "nav": {
+      "pricing": "料金",
       "products": "製品",
       "resources": "リソース",
       "developers": "開発者",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "料金",
+      "description": "Avana の借入、貸付、LP を担保とする戦略の料金をわかりやすく紹介します。"
+    },
     "siteTitle": "Avana - Aave v4でLPポジションに対して借り入れ",
     "siteDescription": "あなたのLPトークンから流動性を解放しましょう。Uniswap、Curve、Balancerのポジションに対して最大80%まで借り入れが可能で、Aave v4での取引手数料の獲得も継続できます。",
     "ogDescription": "取引手数料を稼ぎ続けながら、LP トークンから流動性を解放しましょう。",

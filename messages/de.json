@@ -14,6 +14,7 @@
       "themeToggle": "Design-Einstellung"
     },
     "nav": {
+      "pricing": "Preise",
       "products": "Produkte",
       "resources": "Ressourcen",
       "developers": "Entwickler",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Preise",
+      "description": "Transparente Preise für Kredite, Einlagen und LP-besicherte Strategien auf Avana."
+    },
     "siteTitle": "Avana - Gegen LP Positionen auf Aave v4 leihen",
     "siteDescription": "Entsperren Sie Liquidität aus Ihren LP Token. Leihen Sie sich bis zu 80 % gegen Uniswap, Curve und Balancer Positionen, während Sie weiterhin Handelsgebühren auf Aave v4 verdienen.",
     "ogDescription": "Schalten Sie Liquidität aus Ihren LP Token frei, während Sie weiterhin Handelsgebühren verdienen.",

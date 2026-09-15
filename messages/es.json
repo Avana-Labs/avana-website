@@ -14,6 +14,7 @@
       "themeToggle": "Preferencia de tema"
     },
     "nav": {
+      "pricing": "Precios",
       "products": "Productos",
       "resources": "Recursos",
       "developers": "Desarrolladores",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Precios",
+      "description": "Precios claros para préstamos, depósitos y estrategias respaldadas por LP en Avana."
+    },
     "siteTitle": "Avana - Pedir prestado contra LP posiciones en Aave v4",
     "siteDescription": "Desbloquea liquidez de tus LP tokens. Pide prestado hasta el 80% contra Uniswap, Curve y Balancer posiciones mientras continúas ganando comisiones de trading en Aave v4.",
     "ogDescription": "Desbloquea liquidez de tus LP tokens mientras continúas ganando comisiones de trading.",

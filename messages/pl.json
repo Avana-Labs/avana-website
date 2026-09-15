@@ -14,6 +14,7 @@
       "themeToggle": "Preferencje motywu"
     },
     "nav": {
+      "pricing": "Cennik",
       "products": "Produkty",
       "resources": "Zasoby",
       "developers": "Deweloperzy",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Cennik",
+      "description": "Przejrzyste opłaty za pożyczanie, udzielanie pożyczek i strategie zabezpieczone LP w Avana."
+    },
     "siteTitle": "Avana - Pożycz pod LP pozycje na Aave v4",
     "siteDescription": "Odblokuj płynność ze swoich LP tokenów. Pożycz do 80% wartości w oparciu o pozycje Uniswap, Curve i Balancer, jednocześnie nadal zarabiając opłaty transakcyjne na Aave v4.",
     "ogDescription": "Odblokuj płynność ze swoich LP tokenów, jednocześnie nadal zarabiając na opłatach transakcyjnych.",

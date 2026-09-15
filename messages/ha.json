@@ -14,6 +14,7 @@
       "themeToggle": "Zaɓin jigo"
     },
     "nav": {
+      "pricing": "Farashi",
       "products": "Kayayyaki",
       "resources": "Albarkatu",
       "developers": "Masu haɓakawa",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "Farashi",
+      "description": "Bayyanannun kuɗaɗe na karɓar rance, bayar da rance da dabarun da LP ke zama jingina a Avana."
+    },
     "siteTitle": "Avana - Ara Bisa Ga Matsayi LP Akan Aave v4",
     "siteDescription": "Buɗe ruwa daga cikin LP alamomin ku. Ara har zuwa 80% akan Uniswap, Curve, da Balancer matsayi yayin da kuke ci gaba da samun kuɗin ciniki akan Aave v4.",
     "ogDescription": "Buɗe ƙarar kuɗi daga cikin tikiti ɗinku LP yayin da kuke ci gaba da samun kuɗin ciniki.",

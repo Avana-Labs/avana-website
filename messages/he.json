@@ -14,11 +14,12 @@
       "themeToggle": "העדפת ערכת נושא"
     },
     "nav": {
+      "pricing": "תמחור",
       "products": "מוצרים",
       "resources": "משאבים",
       "developers": "מפתחים",
       "helpCenter": "מרכז העזרה",
-      "aaveArfc": "8 28/1",
+      "aaveArfc": "Aave ARFC",
       "borrow": "להשאיל",
       "lend": "להלוות",
       "multiply": "להכפיל",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "תמחור",
+      "description": "עמלות ברורות להלוואות, להפקדות ולאסטרטגיות המגובות ב־LP ב־Avana."
+    },
     "siteTitle": "Avana - לשאול כנגד LP פוזיציות על Aave v4",
     "siteDescription": "שחרר נזילות מהטוקנים שלך LP. השאל עד 80% כנגד Uniswap, Curve, ו-Balancer תוך כדי המשך להרוויח עמלות מסחר על Aave v4.",
     "ogDescription": "שחרר נזילות מהLP הטוקנים שלך תוך כדי המשך להרוויח עמלות מסחר.",

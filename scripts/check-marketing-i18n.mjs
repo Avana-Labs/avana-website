@@ -1,5 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { localeCodes } from "../src/i18n/locales.ts";
 
 /**
  * Marketing copy is localized by a phrase map: components render English, and
@@ -54,21 +55,6 @@ async function loadCatalog(locale) {
   return JSON.parse(await readFile(path.join(CONTENT_DIR, locale, "marketing.json"), "utf8"));
 }
 
-const locales = (await readdir(CONTENT_DIR, { withFileTypes: true }))
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name)
-  .filter(async (name) => name);
-
-const withCatalog = [];
-for (const locale of locales) {
-  try {
-    await readFile(path.join(CONTENT_DIR, locale, "marketing.json"));
-    withCatalog.push(locale);
-  } catch {
-    // Directory carries no marketing catalog (e.g. shared helpers) -- not a locale.
-  }
-}
-
 const english = await loadCatalog(DEFAULT_LOCALE);
 const groups = await requestedGroups();
 const failures = [];
@@ -87,9 +73,28 @@ for (const group of Object.keys(english)) {
   }
 }
 
-for (const locale of withCatalog) {
-  if (locale === DEFAULT_LOCALE) continue;
-  const catalog = await loadCatalog(locale);
+for (const locale of localeCodes) {
+  let catalog;
+  try {
+    catalog = locale === DEFAULT_LOCALE ? english : await loadCatalog(locale);
+  } catch (error) {
+    failures.push(`${locale}: missing or unreadable marketing catalog (${error.code ?? error.message})`);
+    continue;
+  }
+
+  for (const group of Object.keys(catalog)) {
+    if (!(group in english)) failures.push(`${locale}: stale marketing group "${group}"`);
+    const strings = catalog[group]?.strings;
+    if (!Array.isArray(strings)) {
+      failures.push(`${locale}: group "${group}" must contain a strings array`);
+      continue;
+    }
+    strings.forEach((value, index) => {
+      if (typeof value !== "string" || !value.trim()) {
+        failures.push(`${locale}: group "${group}" string ${index} must be nonempty text`);
+      }
+    });
+  }
 
   for (const [group, sourceFile] of groups) {
     if (!(group in english)) continue; // already reported above
@@ -97,8 +102,8 @@ for (const locale of withCatalog) {
       failures.push(`${locale}: missing group "${group}" (requested by ${sourceFile}) -- renders English`);
       continue;
     }
-    const expected = english[group].strings.length;
-    const actual = catalog[group].strings.length;
+    const expected = english[group]?.strings?.length;
+    const actual = catalog[group]?.strings?.length;
     if (actual !== expected) {
       failures.push(`${locale}: group "${group}" has ${actual} strings, expected ${expected} -- index pairing would mistranslate`);
     }
@@ -111,4 +116,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Marketing i18n OK: ${groups.size} groups x ${withCatalog.length} locales, all present and index-aligned.`);
+console.log(`Marketing i18n OK: ${groups.size} groups x ${localeCodes.length} locales, all present, nonempty and index-aligned.`);

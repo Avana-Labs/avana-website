@@ -36,6 +36,17 @@ missing metrics/runtime failures. One-run diagnostics are allowed, but cannot
 satisfy the three-run release gate. This improves measurement integrity, not
 application performance.
 
+### Locale validation
+
+Nine negative fixtures exposed false passes in the marketing and UI-message
+validators. Checks now enumerate the 26 supported locales from the routing
+registry, reject missing files, null/blank/non-text entries and stale marketing
+groups, and cover every UI namespace (not only Pricing). Thirteen locale fixture
+tests pass. The expanded check exposed 75 missing Pricing navigation/metadata
+entries and a blank Persian label. Those entries are now translated; five
+corrupted renderings of the proper name `Aave ARFC` are normalized. Runtime
+fallback behavior is unchanged.
+
 ## Release status
 
 Audit and implementation are in progress. No production-readiness claim yet.

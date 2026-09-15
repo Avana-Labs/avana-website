@@ -14,6 +14,7 @@
       "themeToggle": "테마 설정"
     },
     "nav": {
+      "pricing": "수수료",
       "products": "제품",
       "resources": "자원",
       "developers": "개발자",
@@ -179,6 +180,10 @@
     }
   },
   "meta": {
+    "pricing": {
+      "title": "수수료",
+      "description": "Avana의 대출, 자산 공급 및 LP 담보 전략에 대한 명확한 수수료 안내."
+    },
     "siteTitle": "Avana - Aave v4에서 LP 포지션을 담보로 빌리기",
     "siteDescription": "LP 토큰에서 유동성을 잠금 해제하세요. Uniswap, Curve, Balancer 포지션에 대해 최대 80%까지 대출을 받으면서 Aave v4에서 거래 수수료를 계속해서 벌 수 있습니다.",
     "ogDescription": "거래 수수료를 계속 벌면서 LP 토큰에서 유동성을 해제하세요.",
