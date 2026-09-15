@@ -19,7 +19,7 @@ const RUNS = Math.max(1, Number(process.env.LIGHTHOUSE_RUNS ?? 3));
 if (!Number.isInteger(RUNS) || RUNS > 10) throw new Error("Lighthouse runs must be an integer from 1 to 10");
 const PROFILE = process.env.LIGHTHOUSE_PROFILE ?? "mobile";
 if (!["mobile", "desktop"].includes(PROFILE)) throw new Error("Invalid Lighthouse profile");
-const REVISION = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+const REVISION = process.env.LIGHTHOUSE_BUILD_REVISION ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 /**
  * Measure paints and main-thread blocking, don't model them.
  *
@@ -203,6 +203,7 @@ async function main() {
     await runCommand("npm", ["run", "build"]);
   }
   const discoveredRoutes = await getRoutesToAudit();
+  const buildId = (await readFile(".next/BUILD_ID", "utf8")).trim();
   const routes = REQUESTED_ROUTES ?? discoveredRoutes;
   if (!routes.length || new Set(routes).size !== routes.length) throw new Error("Routes must be nonempty and unique");
 
@@ -291,7 +292,7 @@ async function main() {
       console.table(summary);
       await writeFile(
         path.join(OUTPUT_DIR, "summary.json"),
-        JSON.stringify({ generatedAt: new Date().toISOString(), revision: REVISION, profile: PROFILE, node: process.version, environment, runs: RUNS, throttlingMethod: THROTTLING_METHOD, expectedRoutes: routes, routes: summary }, null, 2),
+        JSON.stringify({ generatedAt: new Date().toISOString(), revision: REVISION, buildId, profile: PROFILE, node: process.version, environment, runs: RUNS, throttlingMethod: THROTTLING_METHOD, expectedRoutes: routes, routes: summary }, null, 2),
         "utf8",
       );
       console.log(`Saved Lighthouse reports to ${OUTPUT_DIR}`);
