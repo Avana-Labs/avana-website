@@ -42,11 +42,11 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
           </p>
           <p className="mt-4 type-doc-body">
             For the operator-facing sequence, see{" "}
-            <Link href="/developers/liquidation/liquidators" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation/liquidators" className="text-type-accent hover:underline">
               Liquidators
             </Link>
             . For the execution sequence, see{" "}
-            <Link href="/developers/liquidation/flow" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation/flow" className="text-type-accent hover:underline">
               Liquidation Flow
             </Link>
             .

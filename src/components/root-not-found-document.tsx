@@ -13,7 +13,7 @@ export function RootNotFoundDocument() {
         <div className="flex min-h-screen items-center bg-white px-6 py-16 text-[#0F1518] sm:px-8 sm:py-20">
           <section className="mx-auto w-full max-w-[760px]">
             <div className="py-14 text-center sm:py-18">
-              <p className="mt-5 text-[4.5rem] font-semibold leading-none tracking-[-0.04em] text-[#01AACF] sm:text-[5.75rem]">
+              <p className="mt-5 text-[4.5rem] font-semibold leading-none tracking-[-0.04em] text-type-accent sm:text-[5.75rem]">
                 404
               </p>
 
@@ -28,7 +28,7 @@ export function RootNotFoundDocument() {
                 <Link
                   prefetch={false}
                   href={siteRoutes.home}
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-[#01AACF] px-5 text-sm font-medium text-white transition hover:bg-[#00a0c2]"
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-[#01AACF] px-5 text-sm font-medium text-foreground transition hover:bg-[#00a0c2]"
                 >
                   Go to homepage
                 </Link>
@@ -37,7 +37,7 @@ export function RootNotFoundDocument() {
                   <Link
                     prefetch={false}
                     href={siteRoutes.faq}
-                    className="text-sm font-medium text-[#01AACF] underline underline-offset-4 transition hover:text-[#008fb0]"
+                    className="text-sm font-medium text-type-accent underline underline-offset-4 transition hover:text-[#008fb0]"
                   >
                     FAQ
                   </Link>

@@ -14,7 +14,7 @@ export default async function FaqPage({ params }: LocaleParamsProps) {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <main className="flex-1 py-10 lg:py-14">
+      <div className="flex-1 py-10 lg:py-14">
         <div className="site-content-shell">
           <Suspense
             fallback={
@@ -24,7 +24,7 @@ export default async function FaqPage({ params }: LocaleParamsProps) {
             <FaqFromSearchParams categories={categories} />
           </Suspense>
         </div>
-      </main>
+      </div>
     </div>
   )
 }

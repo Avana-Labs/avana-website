@@ -58,11 +58,11 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
             Curve, and Aerodrome as markets are launched. Support is approved pool by approved pool,
             not automatically granted to every pool on a DEX.</>{" "}<>Each supported market needs reliable asset pricing, enough liquidity depth, a defined
             unwind route, market caps, and collateral settings that match the pool type. See{" "}
-            <Link href="/developers/integrations/allowed-pools" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/allowed-pools" className="text-type-accent hover:underline">
               Allowed LP Pools
             </Link>{" "}
             and{" "}
-            <Link href="/developers/integrations/price-oracles" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
             </Link>{" "}
             for admission and valuation details.</>
@@ -74,7 +74,7 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
           <p className="mb-4 type-doc-body">
             <>AppKit lets DEXs, wallets, and portfolio apps embed Avana credit inside their existing
             user flows instead of sending users to a separate lending app.</>{" "}<>See the{" "}
-            <Link href="/developers/integrations/appkit" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/appkit" className="text-type-accent hover:underline">
               AppKit guide
             </Link>{" "}
             for partner controls, handoff patterns, and launch notes.</>

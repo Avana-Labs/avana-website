@@ -80,7 +80,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
   ] as const
 
   return (
-    <main className="bg-background">
+    <div className="bg-background">
       <section className="pb-16 pt-16 md:pb-24 md:pt-20 lg:pt-24">
         <div className="site-content-shell">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -92,7 +92,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
               <br className="sm:hidden" />{" "}
               <span>{t("subtitleLine2")}</span>
             </p>
-            <div className="mt-8 inline-flex h-[43px] items-center rounded-full bg-[#01AACF] px-[1.35rem] text-base font-medium leading-none tracking-[-0.015em] text-white transition-colors hover:bg-[#00a0c2]">
+            <div className="mt-8 inline-flex h-[43px] items-center rounded-full bg-[#01AACF] px-[1.35rem] text-base font-medium leading-none tracking-[-0.015em] text-foreground transition-colors hover:bg-[#00a0c2]">
               {t("interfaceRate")}
             </div>
           </div>
@@ -174,6 +174,6 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
           </section>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

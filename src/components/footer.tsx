@@ -58,7 +58,7 @@ export default async function Footer(): Promise<React.JSX.Element> {
       label: t("footer.socialAria", { network: t("footer.twitter") }),
       name: t("footer.twitter"),
       icon: socialIcons.twitter,
-      className: "bg-[#01AACF] text-white hover:bg-[#00a0c2]",
+      className: "bg-[#01AACF] text-foreground hover:bg-[#00a0c2]",
     },
     {
       href: SOCIAL_URLS.github,

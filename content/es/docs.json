@@ -1408,7 +1408,7 @@
       "Responsabilidad e indemnización",
       "Disputas y ley aplicable",
       "Políticas relacionadas",
-      "text-[#01AACF] hover:underline",
+      "text-type-accent hover:underline",
       "Los términos que se aplican cuando lees la documentación, usas la interfaz de Avana o construyes una integración de protocolo.",
       "Esta página explica las disposiciones de Avana",
       "Términos del servicio",

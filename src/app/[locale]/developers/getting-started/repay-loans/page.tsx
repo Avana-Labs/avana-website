@@ -71,7 +71,7 @@ export default async function RepayLoansPage({ params }: LocaleParamsProps) {
           <p className="mb-4 type-doc-body">
             <>A partial repayment reduces debt without closing the loan. It increases the collateral buffer and can allow a later withdrawal or fee claim to pass the account&apos;s health checks.</>{" "}<>Full repayment clears all debt for that borrow. At that point, collateral restrictions
             tied to the loan are released and you can withdraw your LP through{" "}
-            <Link href="/developers/getting-started/withdraw-collateral" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/getting-started/withdraw-collateral" className="text-type-accent hover:underline">
               Withdraw Collateral
             </Link>
             .</>{" "}<>Interest keeps accruing on open debt until you repay. The amount shown in the interface
@@ -83,7 +83,7 @@ export default async function RepayLoansPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">When Repayment Is Urgent</h2>
           <p className="mb-4 type-doc-body">
             <>Repayment directly reduces the debt used in the health-factor calculation. Near the liquidation threshold, this can increase the account&apos;s buffer without relying on a recovery in collateral prices.</>{" "}<>Once health crosses the liquidation boundary, see the{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>{" "}
             for what happens next.</>

@@ -92,15 +92,15 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
           <h2 className="mb-4 type-doc-section-title">Related Docs</h2>
           <p className="mb-4 type-doc-body">
             Liquidation policy lives on the{" "}
-            <Link href="/developers/liquidation" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
             </Link>{" "}
             page. This flow assumes the recoverable value model in{" "}
-            <Link href="/developers/integrations/price-oracles" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
             </Link>{" "}
             and position-level aggregation in{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>
             .
@@ -113,7 +113,7 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
             {runtimeSteps.map((step, index) => (
               <div key={step.title}>
                 <div className="mb-2 flex items-center gap-3">
-                  <span className="font-semibold text-[#01AACF]">{index + 1}.</span>
+                  <span className="font-semibold text-type-accent">{index + 1}.</span>
                   <h3 className="type-doc-subsection-title">{step.title}</h3>
                 </div>
                 <p className="type-doc-body">{step.body}</p>

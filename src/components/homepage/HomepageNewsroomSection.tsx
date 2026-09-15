@@ -78,7 +78,7 @@ export default async function HomepageNewsroomSection({
             <div className="md:justify-self-end">
               <Link
                 href={post.href}
-                className="group inline-flex h-10 items-center justify-center rounded-full border border-foreground/80 bg-white px-5 text-[0.98rem] tracking-[-0.02em] text-foreground transition-[background-color,border-color,color] duration-200 ease-out hover:border-[#01AACF] hover:bg-[#01AACF] hover:text-white"
+                className="group inline-flex h-10 items-center justify-center rounded-full border border-foreground/80 bg-white px-5 text-[0.98rem] tracking-[-0.02em] text-foreground transition-[background-color,border-color,color] duration-200 ease-out hover:border-[#01AACF] hover:bg-[#01AACF] hover:text-foreground"
               >
                 <span className="inline-flex items-center gap-2.5">
                   <span>{readCta}</span>

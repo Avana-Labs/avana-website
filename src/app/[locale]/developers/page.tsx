@@ -86,7 +86,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <Link
               href="/developers/introduction/key-concepts"
-              className="inline-flex items-center gap-2 font-medium text-[#01AACF] transition hover:opacity-80 hover:underline"
+              className="inline-flex items-center gap-2 font-medium text-type-accent transition hover:opacity-80 hover:underline"
             >
               Start with Key Concepts
               <ArrowRight className="h-4 w-4" />

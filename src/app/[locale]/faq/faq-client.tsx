@@ -111,11 +111,11 @@ function FaqAccordionList({
     <Accordion type="single" collapsible orientation="vertical" className="w-full">
       {items.map((faq) => (
         <AccordionItem key={faq.id} value={faq.id} className="border-b border-gray-200 py-6 last:border-b-0">
-          <AccordionTrigger className="type-accordion-question group gap-4 p-0 text-start text-foreground hover:underline [&>svg.size-4]:hidden">
+          <AccordionTrigger headingLevel={2} className="type-accordion-question group gap-4 p-0 text-start text-foreground hover:underline [&>svg.size-4]:hidden">
             <div className="flex flex-col text-start">
               <span>{faq.q}</span>
               {showCategory && faq.category ? (
-                <span className="mt-2 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-[#01AACF]">
+                <span className="mt-2 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-type-accent">
                   {categoryLabel(faq.category)}
                 </span>
               ) : null}
@@ -156,13 +156,13 @@ function FaqCategoryCard({
         active ? "border-t-[#01AACF]" : "border-t-[#01AACF]/30"
       }`}
     >
-      <Icon className="h-6 w-6 text-[#01AACF]" strokeWidth={1.8} />
+      <Icon className="h-6 w-6 text-type-accent" strokeWidth={1.8} />
 
-      <h3 className="mt-5 text-[0.95rem] font-semibold leading-[1.2] tracking-[-0.04em] text-[#01AACF]">
+      <span className="mt-5 block text-[0.95rem] font-semibold leading-[1.2] tracking-[-0.04em] text-type-accent">
         {category.name}
-      </h3>
+      </span>
 
-      <div className="mt-auto pt-5 text-[0.8rem] font-medium tracking-[-0.02em] text-[#01AACF]">
+      <div className="mt-auto pt-5 text-[0.8rem] font-medium tracking-[-0.02em] text-type-accent">
         {articlesLabel}
       </div>
     </Link>
@@ -218,6 +218,7 @@ export function FaqView({
             <input
               type="text"
               name="q"
+              aria-label={t("searchPlaceholder")}
               defaultValue={searchTerm}
               placeholder={t("searchPlaceholder")}
               className="w-full rounded-full border border-black/10 bg-white py-3.5 ps-12 pe-24 text-gray-800 placeholder:text-type-tertiary focus:border-black/30 focus:outline-none focus:ring-2 focus:ring-black/8"
@@ -296,7 +297,7 @@ export function FaqView({
             {categories.map((category) => (
               <section key={category.id} id={category.id} className="scroll-mt-32 py-12 first:pt-0">
                 <div className="mb-6">
-                  <h2 className="text-[1.7rem] font-semibold leading-[1.15] tracking-[-0.04em] text-[#01AACF]">
+                  <h2 className="text-[1.7rem] font-semibold leading-[1.15] tracking-[-0.04em] text-type-accent">
                     {category.name}
                   </h2>
                 </div>

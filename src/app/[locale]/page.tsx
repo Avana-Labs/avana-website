@@ -9,8 +9,8 @@ import { TryAvanaCtaSection } from "@/components/try-avana-cta-section"
 import { LocalizedMarketing } from "@/components/localized-marketing"
 import { Link } from "@/i18n/navigation"
 import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-params"
-import { languageAlternates } from "@/lib/i18n/path"
-import { buildOgImagePath, SITE_NAME, SITE_URL, siteRoutes } from "@/lib/site"
+import { absoluteLocaleUrl, languageAlternates } from "@/lib/i18n/path"
+import { buildOgImagePath, SITE_NAME, siteRoutes } from "@/lib/site"
 
 export const dynamic = "force-static"
 
@@ -30,14 +30,14 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
       "AMM collateral",
     ],
     alternates: {
-      canonical: siteRoutes.home,
+      canonical: absoluteLocaleUrl(locale, siteRoutes.home),
       languages: languageAlternates(siteRoutes.home),
     },
     openGraph: {
       type: "website",
       title: `${SITE_NAME} - ${t("home.title")}`,
       description: t("ogDescription"),
-      url: SITE_URL,
+      url: absoluteLocaleUrl(locale, siteRoutes.home),
       images: [
         {
           url: buildOgImagePath({
@@ -82,7 +82,7 @@ export default async function Home({ params }: LocaleParamsProps) {
                 href="https://governance.aave.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-[#01AACF] px-[1.35rem] text-base leading-none text-white transition-colors hover:bg-[#00a0c2]"
+                className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-[#01AACF] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-[#00a0c2]"
               >
                 {t("hero.primaryCta")}
                 <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />

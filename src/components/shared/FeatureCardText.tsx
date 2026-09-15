@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 interface FeatureCardTitleProps {
   children: React.ReactNode
   className?: string
-  as?: "h3" | "h4" | "p"
+  as?: "h2" | "h3" | "h4" | "p"
 }
 
 export function FeatureCardTitle({

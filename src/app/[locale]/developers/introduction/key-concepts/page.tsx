@@ -70,7 +70,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             pool-level risk treatment, and then applies the market&apos;s collateral factor.</>{" "}<>The Borrow Spoke reports that capacity to the Hub for enforcement. When a user has
             multiple approved positions in the same market, Avana aggregates their capacity while
             still valuing each position under its own pool, range, liquidity, and risk assumptions.</></>{" "}<>See{" "}
-            <Link href="/developers/architecture/collateral-factors" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>{" "}
             for how each market sets collateral factors, liquidation thresholds, and liquidation
@@ -98,11 +98,11 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             <>LP positions may keep accruing trading fees while they are used as collateral. Avana
             can recognize those fees in valuation and, subject to health checks, let users claim
             them without fully exiting the principal LP position.</>{" "}<><strong>Related docs:</strong>{" "}
-            <Link href="/developers/integrations/price-oracles" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
             </Link>{" "}
             and{" "}
-            <Link href="/developers/getting-started/claim-lp-fees" className="text-[#01AACF] hover:underline">
+            <Link href="/developers/getting-started/claim-lp-fees" className="text-type-accent hover:underline">
               Claim LP Fees
             </Link>
             .</>

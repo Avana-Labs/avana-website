@@ -26,7 +26,7 @@ export function TryAvanaCtaSection({
               href="https://governance.aave.com/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-[#01AACF] px-[1.35rem] text-base leading-none text-white transition-colors hover:bg-[#00a0c2]"
+              className="inline-flex h-[43px] items-center gap-1.5 rounded-full bg-[#01AACF] px-[1.35rem] text-base leading-none text-foreground transition-colors hover:bg-[#00a0c2]"
             >
               {primaryCta}
               <ArrowRight className="h-4 w-4 stroke-[1.75] rtl:rotate-180" aria-hidden />

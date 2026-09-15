@@ -72,13 +72,6 @@ function getRoadmapStatusLabel(status: RoadmapStatus) {
   return `Target ${status} 2026`
 }
 
-function getRoadmapGroupOpacity(status: RoadmapStatus) {
-  if (status === "Released" || status === "In Progress") return ""
-  if (status === "Q2") return "opacity-95"
-  if (status === "Q3") return "opacity-85"
-  return "opacity-75"
-}
-
 function getRoadmapDisplayLabel(label: string) {
   const shortLabels: Record<string, string> = {
     "Borrow pricing engine": "Pricing engine",
@@ -185,7 +178,7 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
 
               <div className="space-y-3">
                 {groupedMilestones.map((group) => (
-                  <div key={`${phase.title}-${group.status}`} className={`space-y-2 ${getRoadmapGroupOpacity(group.status)}`}>
+                  <div key={`${phase.title}-${group.status}`} className="space-y-2">
                     <p className={`type-meta-label ${getRoadmapStatusClass()}`}>
                       {getRoadmapStatusLabel(group.status)}
                     </p>

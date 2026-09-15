@@ -81,7 +81,7 @@ export default async function WithdrawCollateralPage({ params }: LocaleParamsPro
             <li>You can keep it in the pool, adjust the range on the DEX, or exit liquidity entirely</li>
             <li>
               You can deposit it again later through{" "}
-              <Link href="/developers/getting-started" className="text-[#01AACF] hover:underline">
+              <Link href="/developers/getting-started" className="text-type-accent hover:underline">
                 Deposit LP
               </Link>{" "}
               if the pool is still approved

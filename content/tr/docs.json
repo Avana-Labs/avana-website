@@ -1408,7 +1408,7 @@
       "Sorumluluk ve tazminat",
       "Uyuşmazlıklar ve yürürlükteki hukuk",
       "İlgili politikalar",
-      "text-[#01AACF] hover:underline",
+      "text-type-accent hover:underline",
       "Belgelere göz atarken, Avana arayüzünü kullanırken veya bir protokol entegrasyonu oluştururken geçerli olan şartlar.",
       "Bu sayfa Avana'nin hükümlerini açıklar",
       "Hizmet koşulları",

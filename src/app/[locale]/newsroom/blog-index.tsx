@@ -20,64 +20,64 @@ const bookCoverThemes = [
     coverColor: "#0F1518",
     spineColor: "#01AACF",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#BC846F",
     text: "text-white",
-    muted: "text-white/56",
-    number: "text-white/52",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#9E5537]",
     coverColor: "#9E5537",
     spineColor: "#0F1518",
     text: "text-white",
-    muted: "text-white/58",
-    number: "text-white/46",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#01AACF]",
     coverColor: "#01AACF",
     spineColor: "#2F414B",
     text: "text-[#0F1518]",
-    muted: "text-[#0F1518]/58",
-    number: "text-[#0F1518]/42",
+    muted: "text-foreground",
+    number: "text-foreground",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#01AACF",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#BC846F]",
     coverColor: "#BC846F",
     spineColor: "#0F1518",
     text: "text-[#0F1518]",
-    muted: "text-[#0F1518]/58",
-    number: "text-[#0F1518]/42",
+    muted: "text-foreground",
+    number: "text-foreground",
   },
   {
     cover: "bg-[#0F1518]",
     coverColor: "#0F1518",
     spineColor: "#9E5537",
     text: "text-white",
-    muted: "text-white/56",
-    number: "text-white/52",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
   {
     cover: "bg-[#2F414B]",
     coverColor: "#2F414B",
     spineColor: "#BC846F",
     text: "text-white",
-    muted: "text-white/54",
-    number: "text-white/48",
+    muted: "text-white/90",
+    number: "text-white/90",
   },
 ] as const
 
@@ -196,7 +196,7 @@ export function BlogIndex({
                     aria-current={active ? "page" : undefined}
                     className={`inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 text-xs font-semibold transition-colors ${
                       active
-                        ? "bg-[#01AACF] text-white hover:bg-[#00a0c2]"
+                        ? "bg-[#01AACF] text-foreground hover:bg-[#00a0c2]"
                         : "border border-gray-300 bg-white text-gray-900 hover:bg-gray-100"
                     }`}
                   >

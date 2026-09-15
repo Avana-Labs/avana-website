@@ -37,11 +37,11 @@ export function PageNavigation() {
             href={prevPage.href}
             className="group max-w-[50%] flex-1 rounded-lg border border-gray-200 p-4 transition-colors hover:border-cyan-200 hover:bg-cyan-50/40"
           >
-            <div className="type-supporting mb-1 flex items-center gap-1 text-[#01AACF] transition-colors group-hover:text-[#008fb0]">
+            <div className="type-supporting mb-1 flex items-center gap-1 text-type-accent transition-colors group-hover:text-[#008fb0]">
               <ChevronLeft className="h-4 w-4 rtl:rotate-180" />
               <span>{t("docs.previous")}</span>
             </div>
-            <div className="type-body-copy font-medium text-[#0F1518] transition-colors group-hover:text-[#01AACF]">
+            <div className="type-body-copy font-medium text-[#0F1518] transition-colors group-hover:text-type-accent">
               {t(prevPage.labelKey)}
             </div>
           </Link>
@@ -54,11 +54,11 @@ export function PageNavigation() {
             href={nextPage.href}
             className="group max-w-[50%] flex-1 rounded-lg border border-gray-200 p-4 text-end transition-colors hover:border-cyan-200 hover:bg-cyan-50/40"
           >
-            <div className="type-supporting mb-1 flex items-center justify-end gap-1 text-[#01AACF] transition-colors group-hover:text-[#008fb0]">
+            <div className="type-supporting mb-1 flex items-center justify-end gap-1 text-type-accent transition-colors group-hover:text-[#008fb0]">
               <span>{t("docs.next")}</span>
               <ChevronRight className="h-4 w-4 rtl:rotate-180" />
             </div>
-            <div className="type-body-copy font-medium text-[#0F1518] transition-colors group-hover:text-[#01AACF]">
+            <div className="type-body-copy font-medium text-[#0F1518] transition-colors group-hover:text-type-accent">
               {t(nextPage.labelKey)}
             </div>
           </Link>

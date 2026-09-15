@@ -54,7 +54,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["about/page", "protocol-roadmap-section"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <section className="pb-16 pt-24 lg:pb-24 lg:pt-40">
         <div className="site-content-shell">
           <div className="mx-auto text-center">
@@ -111,7 +111,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
                       className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 md:min-h-[17rem] md:p-6"
                     >
                       <Icon className="size-7 text-type-accent" strokeWidth={1.8} aria-hidden="true" />
-                      <FeatureCardTitle className="mt-7">
+                      <FeatureCardTitle as="h2" className="mt-7">
                         {number}. {title}
                       </FeatureCardTitle>
                       <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
@@ -140,7 +140,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
     </LocalizedMarketing>
 )
 }
