@@ -7,7 +7,6 @@ import {
   ArrowLeftRight,
   BriefcaseBusiness,
   Building2,
-  ChevronDown,
   Globe2,
   HandCoins,
   Landmark,
@@ -338,7 +337,6 @@ function HeroSectionBody(locale: AppLocale) {
                                 <div className="flex items-center gap-1.5">
                                   <TokenLogo symbol="wstETH" className="h-5 w-5" />
                                   <span className="text-[13px] font-semibold text-foreground">wstETH</span>
-                                  <ChevronDown className="h-3 w-3 text-muted-foreground" />
                                 </div>
                                 <div className="h-5 overflow-hidden">
                                   <div className="ce-amt">
@@ -361,7 +359,6 @@ function HeroSectionBody(locale: AppLocale) {
                                 <div className="flex items-center gap-1.5">
                                   <TokenLogo symbol="USDC" className="h-5 w-5" />
                                   <span className="text-[13px] font-semibold text-foreground">USDC</span>
-                                  <ChevronDown className="h-3 w-3 text-muted-foreground" />
                                 </div>
                                 <div className="h-5 overflow-hidden">
                                   <div className="ce-amt">

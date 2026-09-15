@@ -102,6 +102,18 @@ export function localizeTree(node: ReactNode, map: Record<string, string>): Reac
         prop === "aria-label" || prop === "title" || prop === "alt"
           ? lookupComposed(map, value)
           : lookup(map, value)
+    } else if (
+      (prop === "title" ||
+        prop === "description" ||
+        prop === "subtitle" ||
+        prop === "label" ||
+        prop === "summary" ||
+        prop === "pageSummary") &&
+      (Array.isArray(value) || isValidElement(value))
+    ) {
+      // Content props can also be JSX (e.g. a multi-line hero title); recurse
+      // so their text leaves are swapped like children are.
+      nextProps[prop] = localizeTree(value, map)
     }
   }
 

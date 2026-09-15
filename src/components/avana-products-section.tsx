@@ -46,7 +46,7 @@ export async function AvanaProductsSection({ locale }: { locale: AppLocale }) {
                     style={{ backgroundColor: "#fff" }}
                   />
                   <div className="z-20 col-span-full row-span-full h-full min-h-0 p-3 sm:p-4">
-                    <BorrowAgainstLP />
+                    <BorrowAgainstLP locale={locale} />
                   </div>
                 </div>
               </figure>
