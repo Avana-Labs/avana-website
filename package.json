@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "test": "node --test tests/*.test.mjs",
+    "test:static": "npm test && npm run lint && npm run check:i18n && npm run check:docs-i18n",
+    "test:browser": "node --test tests/http/*.test.mjs tests/ui/*.test.mjs",
+    "audit:production": "npm audit --omit=dev --audit-level=high",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
+    "check:built": "node scripts/check-built-seo.mjs && node scripts/check-built-seo.mjs --semantics",
     "start": "next start",
     "lighthouse:audit": "node scripts/run-lighthouse.mjs",
     "lighthouse:check": "node scripts/check-lighthouse-budgets.mjs",
@@ -35,7 +39,7 @@
     "chrome-launcher": "^1.2.1",
     "eslint": "^9",
     "eslint-config-next": "^16.2.6",
-    "lighthouse": "^12.8.2",
+    "lighthouse": "^12.6.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5"
   },
