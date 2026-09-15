@@ -25,7 +25,7 @@ export default async function NotFound() {
             <Link
               prefetch={false}
               href={withLocale(locale, siteRoutes.home)}
-              className="inline-flex h-11 items-center justify-center rounded-full bg-[#01AACF] px-5 text-sm font-medium text-foreground transition hover:bg-[#00a0c2]"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-[#01AACF] px-5 text-sm font-medium text-white transition hover:bg-[#00a0c2]"
             >
               {t("notFound.home")}
             </Link>

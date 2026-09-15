@@ -60,7 +60,7 @@ export default async function BrandPage({ params }: LocaleParamsProps) {
             <a
               href={BRAND_KIT_URL}
               download
-              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full border border-foreground/80 bg-background px-5 text-[0.98rem] font-semibold tracking-[-0.02em] text-foreground transition-[background-color,border-color,color] duration-200 ease-out hover:border-[#01AACF] hover:bg-[#01AACF] hover:text-foreground"
+              className="group inline-flex h-10 items-center justify-center gap-2 rounded-full border border-foreground/80 bg-background px-5 text-[0.98rem] font-semibold tracking-[-0.02em] text-foreground transition-[background-color,border-color,color] duration-200 ease-out hover:border-[#01AACF] hover:bg-[#01AACF] hover:text-white"
             >
               <span>Download Kit</span>
               <Download className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-y-0.5" />

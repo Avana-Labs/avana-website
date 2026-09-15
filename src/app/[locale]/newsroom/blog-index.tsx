@@ -196,7 +196,7 @@ export function BlogIndex({
                     aria-current={active ? "page" : undefined}
                     className={`inline-flex shrink-0 items-center justify-center rounded-full px-4 py-2 text-xs font-semibold transition-colors ${
                       active
-                        ? "bg-[#01AACF] text-foreground hover:bg-[#00a0c2]"
+                        ? "bg-[#01AACF] text-white hover:bg-[#00a0c2]"
                         : "border border-gray-300 bg-white text-gray-900 hover:bg-gray-100"
                     }`}
                   >

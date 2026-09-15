@@ -26,3 +26,26 @@ test("the accent token remains Avana cyan", () => {
 test("the existing unified gray remains readable on white", () => {
   assert.ok(contrast(color("--type-color-secondary"), "#ffffff") >= 4.5);
 });
+
+test("Avana cyan controls keep white text", () => {
+  const files = [
+    "src/app/[locale]/brand/page.tsx",
+    "src/app/[locale]/lend/page.tsx",
+    "src/app/[locale]/multiply/multiply-content.tsx",
+    "src/app/[locale]/newsroom/blog-index.tsx",
+    "src/app/[locale]/not-found.tsx",
+    "src/app/[locale]/page.tsx",
+    "src/app/[locale]/pricing/page.tsx",
+    "src/components/footer.tsx",
+    "src/components/homepage/HomepageNewsroomSection.tsx",
+    "src/components/root-not-found-document.tsx",
+    "src/components/shared/SandboxNotice.tsx",
+    "src/components/try-avana-cta-section.tsx",
+  ];
+
+  for (const file of files) {
+    const source = readFileSync(file, "utf8");
+    assert.doesNotMatch(source, /bg-\[#01AACF\][^"`\n]*text-foreground/);
+    assert.doesNotMatch(source, /hover:bg-\[#01AACF\][^"`\n]*hover:text-foreground/);
+  }
+});
