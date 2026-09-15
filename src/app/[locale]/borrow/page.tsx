@@ -94,7 +94,7 @@ function BorrowMarketCard({
 }) {
   return (
     <div className="flex h-full flex-col feature-card rounded-2xl p-6 md:p-8">
-      <span className="text-4xl text-[#01AACF] md:text-5xl">{number}</span>
+      <span className="text-4xl text-type-accent md:text-5xl">{number}</span>
       <FeatureCardTitle className="mt-6">{title}</FeatureCardTitle>
       <FeatureCardDescription className="mt-3">{description}</FeatureCardDescription>
     </div>
@@ -110,7 +110,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
   const locale = await resolveLocaleParam(params)
   return (
     <LocalizedMarketing locale={locale} keys={["borrow/page", "borrow-power-section", "position-safety-cards-section", "homepage/HomepageNewsroomSection", "InlineFaqSection"]}>
-    <main className="bg-white">
+    <div className="bg-white">
       <FeaturePageHero
         title={
           <>
@@ -211,7 +211,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
             <div id="liquidity-pools" className="flex flex-col gap-6">
               <div className="flex max-w-none flex-col gap-2">
                 <SectionEyebrow tone="blue">Everything in one interface</SectionEyebrow>
-                <SectionTitle className="lg:whitespace-nowrap">
+                <SectionTitle className={locale === "en" ? "lg:whitespace-nowrap" : "lg:break-words"}>
                   Discover markets and manage risk across your portfolio.
                 </SectionTitle>
               </div>
@@ -248,7 +248,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
         </div>
       </div>
       </div>
-    </main>
+    </div>
   </LocalizedMarketing>
 )
 }
