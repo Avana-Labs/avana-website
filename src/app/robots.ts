@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site"
  * 
  * Rules:
  * - Allow all public pages to be crawled
- * - Disallow API routes and internal Next.js routes
+ * - Disallow API routes while allowing assets needed to render public pages
  * - Block AI training bots (GPTBot, CCBot)
  * - Reference the sitemap for efficient crawling
  * 
@@ -31,9 +31,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
         disallow: [
           '/api/',           // API routes (except the allowlisted read endpoints above)
-          '/_next/',         // Next.js internal routes
           '/private/',       // Private routes (if any)
-          '/*.json$',        // JSON files (except the allowlisted spec above)
         ],
       },
       {
