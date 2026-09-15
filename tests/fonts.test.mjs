@@ -14,7 +14,7 @@ test("global font loading uses one variable face and suppresses synthetic styles
   assert.match(globalCss, /font-synthesis-style: none/);
 });
 
-test("secondary font faces do not preload on unrelated routes", () => {
+test("secondary font faces do not add a preload to legal or unrelated routes", () => {
   assert.match(brandFont, /preload: false/);
-  assert.match(legalFont, /preload: true/);
+  assert.match(legalFont, /preload: false/);
 });
