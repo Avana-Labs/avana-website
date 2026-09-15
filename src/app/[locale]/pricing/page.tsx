@@ -101,7 +101,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
             {feeCards.map((card) => (
               <article
                 key={card.title}
-                className={`flex h-fit self-start flex-col rounded-xl p-5 shadow-none ${
+                className={`flex h-full flex-col rounded-xl p-5 shadow-none md:p-6 ${
                   card.featured
                     ? "bg-[#fafafa]"
                     : "bg-[#fafafa] text-foreground"
@@ -114,7 +114,7 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-baseline gap-2 border-b border-current/10 pb-5">
+                <div className="mt-8 flex items-baseline gap-2 border-b border-current/10 pb-7">
                   <span className="text-[clamp(2.35rem,3.5vw,3.35rem)] font-normal leading-none tracking-[-0.06em]">
                     {card.value}
                   </span>
@@ -123,16 +123,16 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
                   </span>
                 </div>
 
-                <div className="mt-5">
+                <div className="mt-7">
                   <p className="text-[0.95rem] leading-6 text-type-secondary">
                     {card.description}
                   </p>
-                  <p className="mt-5 text-sm font-medium text-type-tertiary">
+                  <p className="mt-8 text-sm font-medium text-type-tertiary">
                     {t("includes")}
                   </p>
-                  <ul className="mt-3 space-y-2.5">
+                  <ul className="mt-4 space-y-3">
                     {card.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[0.98rem] leading-5.5">
+                      <li key={item} className="flex items-start gap-2.5 text-[0.98rem] leading-6">
                         <Check
                           className="mt-1 h-4 w-4 shrink-0 text-foreground"
                           strokeWidth={2}
