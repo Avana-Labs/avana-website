@@ -47,6 +47,13 @@ export default function HeaderMobileNavigation() {
     }
   }, [mobileMenuOpen])
 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)")
+    const closeOnDesktop = () => { if (desktop.matches) setMobileMenuOpen(false) }
+    desktop.addEventListener("change", closeOnDesktop)
+    return () => desktop.removeEventListener("change", closeOnDesktop)
+  }, [])
+
   return (
     <div className="ms-auto flex items-center gap-2 lg:hidden" data-framer-name="Navigation Mobile">
       <HeaderLanguageDropdown variant="mobile" />

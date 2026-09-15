@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { useTranslations } from "next-intl"
 import { HeaderHelpCenterMobileRow } from "@/components/header-help-center-button"
@@ -16,6 +16,20 @@ interface HeaderMobileMenuProps {
 export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProps) {
   const t = useTranslations("common")
   const [isShown, setIsShown] = useState(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!open || !dialog) return
+    const previousFocus = document.activeElement as HTMLElement | null
+    dialog.showModal()
+    closeButtonRef.current?.focus()
+    return () => {
+      dialog.close()
+      previousFocus?.focus()
+    }
+  }, [open])
 
   const mobileLinks = [
     { href: siteRoutes.borrow, label: t("nav.borrow") },
@@ -53,15 +67,26 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
   const isVisible = open && isShown
 
   return createPortal(
-    <div
-      className={`fixed inset-x-0 bottom-0 top-16 z-40 bg-background transition-opacity duration-300 ease-out md:top-[54px] lg:hidden ${
+    <dialog
+      ref={dialogRef}
+      className={`fixed inset-x-0 bottom-0 top-16 m-0 h-[calc(100dvh-4rem)] max-h-none w-full max-w-none overflow-visible border-0 bg-background p-0 text-foreground transition-opacity duration-300 ease-out backdrop:bg-transparent md:top-[54px] md:h-[calc(100dvh-54px)] lg:hidden ${
         isVisible ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
       }`}
-      role="dialog"
-      aria-modal="true"
-      aria-label={t("a11y.mobileMenu")}
-      aria-hidden={!isVisible}
+      aria-labelledby="mobile-menu-title"
+      onCancel={event => { event.preventDefault(); onClose() }}
     >
+      <h2 id="mobile-menu-title" className="sr-only">{t("a11y.mobileMenu")}</h2>
+      <button
+        type="button"
+        ref={closeButtonRef}
+        aria-label={t("a11y.closeMenu")}
+        onClick={onClose}
+        className="absolute -top-[54px] end-4 inline-flex size-11 items-center justify-center bg-background text-type-accent sm:end-6 md:-top-[49px]"
+      >
+        <svg viewBox="0 0 24 24" className="size-6" aria-hidden="true">
+          <path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        </svg>
+      </button>
       <nav
         id="mobile-site-nav"
         aria-label={t("a11y.mobileNav")}
@@ -123,7 +148,7 @@ export default function HeaderMobileMenu({ open, onClose }: HeaderMobileMenuProp
           <HeaderHelpCenterMobileRow onNavigate={onClose} />
         </div>
       </nav>
-    </div>,
+    </dialog>,
     document.body,
   )
 }

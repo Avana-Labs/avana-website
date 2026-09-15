@@ -18,6 +18,9 @@ export default function HeaderLanguageDropdown({
   const [isPending, startTransition] = useTransition()
   const [isOpen, setIsOpen] = useState(false)
   const closeTimeoutRef = useRef<number | null>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const focusOnOpen = useRef(false)
   const isMobile = variant === "mobile"
 
   const selected = locales.find((entry) => entry.code === locale) ?? locales[0]
@@ -44,6 +47,19 @@ export default function HeaderLanguageDropdown({
 
   useEffect(() => () => clearCloseTimeout(), [])
 
+  useEffect(() => {
+    if (!isOpen) return
+    if (focusOnOpen.current) {
+      rootRef.current?.querySelector<HTMLElement>('[role="menuitem"]')?.focus()
+      focusOnOpen.current = false
+    }
+    const outside = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setIsOpen(false)
+    }
+    document.addEventListener("pointerdown", outside)
+    return () => document.removeEventListener("pointerdown", outside)
+  }, [isOpen])
+
   const selectLocale = (nextLocale: AppLocale) => {
     setIsOpen(false)
     if (nextLocale === locale) return
@@ -55,7 +71,31 @@ export default function HeaderLanguageDropdown({
 
   return (
     <div
+      ref={rootRef}
       className="relative"
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsOpen(false)
+      }}
+      onKeyDown={event => {
+        if (event.key === "Escape") {
+          event.preventDefault()
+          setIsOpen(false)
+          triggerRef.current?.focus()
+          return
+        }
+        if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return
+        event.preventDefault()
+        clearCloseTimeout()
+        if (!isOpen) {
+          focusOnOpen.current = true
+          setIsOpen(true)
+          return
+        }
+        const items = [...(rootRef.current?.querySelectorAll<HTMLElement>('[role="menuitem"]') ?? [])]
+        const index = items.indexOf(document.activeElement as HTMLElement)
+        const next = event.key === "Home" ? 0 : event.key === "End" ? items.length - 1 : (index + (event.key === "ArrowUp" ? -1 : 1) + items.length) % items.length
+        items[next]?.focus()
+      }}
       onMouseEnter={() => {
         if (!isMobile) openMenu()
       }}
@@ -64,10 +104,11 @@ export default function HeaderLanguageDropdown({
       }}
     >
       <button
+        ref={triggerRef}
         type="button"
         aria-haspopup="menu"
         aria-expanded={isOpen}
-        onClick={() => setIsOpen((current) => !current)}
+        onClick={() => { focusOnOpen.current = true; setIsOpen((current) => !current) }}
         aria-label={t("a11y.language", { language: selected.label })}
         disabled={isPending}
         className={`site-header-nav-link group relative inline-flex items-center justify-center px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${
@@ -93,7 +134,7 @@ export default function HeaderLanguageDropdown({
         <div role="menu" className={`absolute z-50 pt-2 ${isMobile ? "end-[-3.25rem]" : "end-0"}`}>
           <div
             className={`max-h-[28rem] overflow-y-auto rounded-[16px] border border-border bg-popover py-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)] ${
-              isMobile ? "w-[20rem]" : "w-[23rem]"
+              isMobile ? "w-[min(20rem,calc(100vw-2rem))]" : "w-[23rem]"
             }`}
           >
             {locales.map((language) => {
@@ -104,6 +145,7 @@ export default function HeaderLanguageDropdown({
                   key={language.code}
                   type="button"
                   role="menuitem"
+                  tabIndex={-1}
                   onClick={() => selectLocale(language.code)}
                   className={`flex h-12 w-full items-center justify-between gap-4 px-5 text-start text-[1rem] font-medium tracking-[-0.03em] transition-colors duration-150 ease-out hover:bg-foreground/5 ${
                     isSelected ? "bg-foreground/[0.04] text-type-accent" : "text-foreground/80"

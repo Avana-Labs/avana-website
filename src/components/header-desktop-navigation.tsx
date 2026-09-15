@@ -30,6 +30,8 @@ export default function HeaderDesktopNavigation() {
   const [desktopMenuRendered, setDesktopMenuRendered] = useState<DesktopMenuId | null>(null)
   const [desktopMenuAnimationCycle, setDesktopMenuAnimationCycle] = useState(0)
   const desktopCloseTimeoutRef = useRef<number | null>(null)
+  const navigationRef = useRef<HTMLElement>(null)
+  const [focusPanel, setFocusPanel] = useState(false)
 
   const clearDesktopCloseTimeout = () => {
     if (desktopCloseTimeoutRef.current !== null) {
@@ -61,6 +63,31 @@ export default function HeaderDesktopNavigation() {
 
   useEffect(() => () => clearDesktopCloseTimeout(), [])
 
+  useEffect(() => {
+    if (!desktopMenuOpen) return
+    const panelId = `desktop-menu-${desktopMenuOpen}`
+    const isInside = (target: EventTarget | null) => target instanceof Node && (
+      navigationRef.current?.contains(target) || document.getElementById(panelId)?.contains(target)
+    )
+    const dismissOutside = (event: Event) => {
+      if (!isInside(event.target)) setDesktopMenuOpen(null)
+    }
+    const escape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return
+      event.preventDefault()
+      setDesktopMenuOpen(null)
+      navigationRef.current?.querySelector<HTMLElement>(`[aria-controls="${panelId}"]`)?.focus()
+    }
+    document.addEventListener("keydown", escape)
+    document.addEventListener("pointerdown", dismissOutside)
+    document.addEventListener("focusin", dismissOutside)
+    return () => {
+      document.removeEventListener("keydown", escape)
+      document.removeEventListener("pointerdown", dismissOutside)
+      document.removeEventListener("focusin", dismissOutside)
+    }
+  }, [desktopMenuOpen])
+
   const menuLabels: Record<DesktopMenuId, string> = {
     products: t("nav.products"),
     resources: t("nav.resources"),
@@ -70,6 +97,7 @@ export default function HeaderDesktopNavigation() {
   return (
     <>
       <nav
+        ref={navigationRef}
         aria-label={t("a11y.primaryNav")}
         className="hidden min-w-0 items-center lg:flex lg:justify-self-center lg:gap-7 xl:gap-8"
         onMouseEnter={warmDesktopMenuPanel}
@@ -87,9 +115,15 @@ export default function HeaderDesktopNavigation() {
               aria-haspopup="true"
               aria-expanded={isOpen}
               aria-controls={`desktop-menu-${menu.id}`}
-              onMouseEnter={() => openDesktopMenu(menu.id)}
-              onFocus={() => openDesktopMenu(menu.id)}
-              onClick={() => openDesktopMenu(menu.id)}
+              onMouseEnter={() => { setFocusPanel(false); openDesktopMenu(menu.id) }}
+              onFocus={warmDesktopMenuPanel}
+              onClick={() => { setFocusPanel(true); openDesktopMenu(menu.id) }}
+              onKeyDown={event => {
+                if (event.key !== "ArrowDown") return
+                event.preventDefault()
+                setFocusPanel(true)
+                openDesktopMenu(menu.id)
+              }}
               className={`site-header-nav-link group relative inline-flex items-center px-0 py-1 font-medium tracking-[-0.02em] transition-[color,opacity] duration-200 ease-out ${isHighlighted ? "text-type-accent" : "text-foreground hover:text-type-accent"}`}
             >
               <span>{menuLabels[menu.id]}</span>
@@ -141,6 +175,7 @@ export default function HeaderDesktopNavigation() {
           onClose={scheduleDesktopMenuClose}
           onExited={() => setDesktopMenuRendered(null)}
           animationCycle={desktopMenuAnimationCycle}
+          focusOnOpen={focusPanel}
         />
       ) : null}
     </>
