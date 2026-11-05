@@ -22,6 +22,7 @@ const ATTRS = new Set([
   "eyebrow",
   "subtitle",
   "summary",
+  "pageSummary",
   "question",
   "answer",
   "name",

@@ -34,15 +34,15 @@ const integrationPoints = [
   {
     title: "Partner economics",
     body:
-      "Partner arrangements may include referral, routing, or integration revenue. These arrangements do not transfer lending, risk assessment, or settlement responsibilities from Avana to the partner application.",
+      "Partner arrangements can include referral or integration revenue. They do not change borrowing terms on Aave V4, risk parameters, or settlement rules. Avana does not depend on commercial agreements with AMMs.",
   },
 ]
 
 const implementationNotes = [
   "Associate the borrowing entry point with the LP position or portfolio view that supplies its context.",
   "Pass the relevant wallet and market context into the borrowing flow.",
-  "Use Avana's collateral valuation and liquidation rules rather than duplicating their calculations in the partner interface.",
-  "Define which users can access the entry point and how the interface explains the transition to Avana.",
+  "Use LPOracle values and Aave V4 health factors rather than duplicating their calculations in the partner interface.",
+  "Define which users can access the entry point and how the interface explains the transition to Avana. During the pilot, only allowlisted depositors can pledge positions.",
 ]
 
 const partnerControls = [
@@ -59,13 +59,13 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="AppKit"
-          description="How partners embed Avana LP-backed credit while Avana keeps responsibility for borrowing, risk, and settlement."
+          description="How partners link users into Avana's GHO borrowing flow. Borrowing, risk and settlement rules stay in the contracts."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>AppKit connects DEXs, wallets, and portfolio applications to Avana&apos;s LP-backed borrowing flow. The partner application selects where the entry point appears and passes the user&apos;s wallet and market context. Avana handles the loan operations, collateral checks, and settlement.</>{" "}<>{"An adapter provides execution support for an LP format. Collateral admission also requires compatible valuation and liquidation support, so deploying an adapter alone does not enable a pool for borrowing."}</>
+            <>AppKit connects DEXs, wallets, and portfolio applications to Avana&apos;s LP-backed GHO borrowing flow. The partner application selects where the entry point appears and passes the user&apos;s wallet and market context. Borrowing itself runs through the Aave Adapter and the Avana Borrow Spoke on Aave V4. Avana&apos;s contracts handle collateral checks and settlement.</>{" "}<>{"AppKit is a frontend integration. It does not change which pools are approved or how positions are valued or liquidated. Users can also call the contracts directly, without AppKit or Avana's frontend."}</>
           </p>
         </section>
 
@@ -84,7 +84,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="partner-controls" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Partner Controls</h2>
           <p className="mb-4 type-doc-body">
-            Partners control the presentation of the borrowing entry point and its surrounding guidance. Those choices affect how users reach the flow; collateral eligibility and transaction checks remain part of Avana.
+            Partners control the presentation of the borrowing entry point and its surrounding guidance. Those choices affect how users reach the flow. Collateral eligibility and transaction checks stay in Avana&apos;s contracts and Aave V4.
           </p>
           <ul className="space-y-3 type-doc-body">
             {partnerControls.map((item) => (
@@ -112,7 +112,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="launch-notes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Launch Notes</h2>
           <p className="mb-4 type-doc-body">
-            <>Before enabling the integration, verify the complete path from the partner&apos;s position view to Avana&apos;s borrowing flow. The interface needs to make the selected account, market, and transition to Avana clear.</>{" "}<>Include hidden entry points, direct links, and missing wallet, market, or collateral context in that review. These cases affect whether the flow opens with the information needed to evaluate a borrow.</>
+            <>Before enabling the integration, verify the complete path from the partner&apos;s position view to Avana&apos;s borrowing flow. The interface must make the selected account, the market, and the transition to Avana clear.</>{" "}<>Include hidden entry points, direct links, and missing wallet, market, or collateral context in that review. These cases affect whether the flow opens with the information needed to evaluate a borrow.</>
           </p>
         </section>
       </div>

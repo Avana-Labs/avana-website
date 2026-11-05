@@ -123,11 +123,11 @@
         "keyConcepts": "Key Concepts",
         "glossary": "Glossary",
         "depositLp": "Deposit LP",
-        "borrowAssets": "Borrow Assets",
+        "borrowAssets": "Borrow GHO",
         "manageLoans": "Manage Loans",
         "repayLoans": "Repay Loans",
         "withdrawCollateral": "Withdraw Collateral",
-        "claimLpFees": "Claim LP Fees",
+        "claimLpFees": "LP Fees",
         "borrowSpoke": "Borrow Spoke",
         "lendSpoke": "Lend Spoke",
         "collateralFactors": "Collateral Factors",
@@ -145,12 +145,12 @@
         "integrationsOverview": "Integrations Overview",
         "appkit": "AppKit",
         "allowedPools": "Allowed LP Pools",
-        "routerAdapters": "Router & Adapters",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Price Oracles",
         "riskFramework": "Risk Framework",
         "contractsSecurity": "Contracts & Security",
         "bugBounty": "Bug Bounty",
-        "insuranceFunds": "Insurance Funds",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Security Disclosures",
         "legalDisclaimer": "Legal Disclaimer"
       }
@@ -195,7 +195,7 @@
     },
     "about": {
       "title": "About",
-      "description": "Meet Avana, a dedicated LP-as-collateral protocol built on Aave v4 with specialized Spokes, a shared Hub, and a Lend Spoke designed for AMM liquidity markets."
+      "description": "Avana Labs builds LP collateral for Aave V4. The LP Vault, valuation contracts, and settlement contracts connect Uniswap positions to the Avana Hub."
     },
     "borrow": {
       "title": "Borrow",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "About Avana",
-      "subtitle": "LP-as-collateral protocol built on Aave v4"
+      "subtitle": "LP collateral integration for Aave V4"
     },
     "brand": {
       "title": "Brand kit",

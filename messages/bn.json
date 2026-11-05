@@ -110,11 +110,11 @@
         "keyConcepts": "মূল ধারণা",
         "glossary": "শব্দকোষ",
         "depositLp": "ডিপোজিট LP",
-        "borrowAssets": "সম্পদ ধার করা",
+        "borrowAssets": "ঋণগ্রহণ করুন GHO",
         "manageLoans": "ঋণ পরিচালনা করুন",
         "repayLoans": "ঋণ পরিশোধ করুন",
         "withdrawCollateral": "জামিন ফিরে নিন",
-        "claimLpFees": "দাবি  ফি",
+        "claimLpFees": "এলপি ফি",
         "borrowSpoke": "ধার করা স্পোক",
         "lendSpoke": "লেন্ড স্পোক",
         "collateralFactors": "জামিন সংক্রান্ত ফ্যাক্টরসমূহ",
@@ -128,12 +128,12 @@
         "integrationsOverview": "ইন্টিগ্রেশনস ওভারভিউ",
         "appkit": "AppKit",
         "allowedPools": "অনুমোদিত LP পুল",
-        "routerAdapters": "রাউটার ও অ্যাডাপ্টার",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "মূল্য ওরাকল",
         "riskFramework": "ঝুঁকি কাঠামো",
         "contractsSecurity": "চুক্তি ও নিরাপত্তা",
         "bugBounty": "বাগ বাউন্টি",
-        "insuranceFunds": "বিমা তহবিল",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "সিকিউরিটি প্রকাশ",
         "legalDisclaimer": "আইনগত অস্বীকার",
         "aiIntroduction": "AI পরিচিতি",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "সম্পর্কে",
-      "description": "পরিচয় করান Avana-এর সাথে, একটি নিবেদিত LP-যার নিরাপত্তা হিসেবে প্রোটোকল যা Aave v4-এর উপর তৈরি, বিশেষায়িত স্পোকস, একটি শেয়ার্ড হাব, এবং AMM লিকুইডিটি মার্কেটের জন্য ডিজাইন করা লেন্ড স্পোক সহ।"
+      "description": "Avana Labs, Aave V4-এর জন্য LP কোল্যাটারাল তৈরি করে। LP Vault, মূল্যায়ন কন্ট্র্যাক্ট ও সেটেলমেন্ট কন্ট্র্যাক্ট Uniswap পজিশনকে Avana Hub-এর সঙ্গে যুক্ত করে।"
     },
     "borrow": {
       "title": "ঋণ নেওয়া",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "প্রায় Avana",
-      "subtitle": "LP-কর্জের নিরাপত্তা হিসেবে প্রোটোকল যা Aave v4 এর উপর নির্মিত"
+      "subtitle": "Aave V4 এর জন্য এলপি জামানত ইন্টিগ্রেশন"
     },
     "brand": {
       "title": "ব্র্যান্ড কিট",

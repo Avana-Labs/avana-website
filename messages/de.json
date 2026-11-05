@@ -110,11 +110,11 @@
         "keyConcepts": "Schlüsselkonzepte",
         "glossary": "Glossar",
         "depositLp": "Einzahlung LP",
-        "borrowAssets": "Vermögenswerte leihen",
+        "borrowAssets": "Ausleihen GHO",
         "manageLoans": "Kredite verwalten",
         "repayLoans": "Darlehen zurückzahlen",
         "withdrawCollateral": "Sicherheiten abheben",
-        "claimLpFees": "Anspruch LP Gebühren",
+        "claimLpFees": "LP-Gebühren",
         "borrowSpoke": "Borrow-Spoke",
         "lendSpoke": "Lend-Spoke",
         "collateralFactors": "Kollateralfaktoren",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Integrationsübersicht",
         "appkit": "AppKit",
         "allowedPools": "Erlaubte LP Pools",
-        "routerAdapters": "Router & Adapter",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Preisorakel",
         "riskFramework": "Risikorahmen",
         "contractsSecurity": "Verträge & Sicherheit",
         "bugBounty": "Fehlerprämie",
-        "insuranceFunds": "Versicherungsfonds",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Sicherheitsbekanntmachungen",
         "legalDisclaimer": "Rechtlicher Hinweis",
         "aiIntroduction": "KI-Einführung",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Über",
-      "description": "Treffen Sie Avana, ein dediziertes LP-als-Sicherheit-Protokoll, das auf Aave v4 mit spezialisierten Spokes, einem gemeinsamen Hub und einem Lend-Spoke entwickelt wurde, der für AMM-Liquiditätsmärkte konzipiert ist."
+      "description": "Avana Labs entwickelt LP-Sicherheiten für Aave V4. Der LP Vault, die Bewertungsverträge und die Abwicklungsverträge verbinden Uniswap-Positionen mit dem Avana Hub."
     },
     "borrow": {
       "title": "Leihen",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Ungefähr Avana",
-      "subtitle": "LP-als-gesichertes Protokoll aufgebaut auf Aave v4"
+      "subtitle": "LP-Sicherheitenintegration für Aave V4"
     },
     "brand": {
       "title": "Markenkit",

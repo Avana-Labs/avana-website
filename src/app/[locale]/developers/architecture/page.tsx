@@ -9,18 +9,18 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'architecture', {
     title: "Protocol Architecture - Borrow Spoke",
-    description: "How the Borrow Spoke accepts LP collateral, values positions, and borrows from Hub liquidity.",
+    description: "How an Avana Borrow Spoke holds vault tokens as collateral and lends GHO from the Avana Hub.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
-  { id: "user-experience", title: "User Experience" },
+  { id: "user-experience", title: "Borrow Flow" },
   { id: "example-flow", title: "Example Flow" },
   { id: "three-tier-architecture", title: "Three-Tier Architecture" },
   { id: "data-flow", title: "Data Flow" },
-  { id: "spoke-responsibilities", title: "Spoke Responsibilities" },
-  { id: "hub-role", title: "Aave v4 Hub Role" },
+  { id: "spoke-responsibilities", title: "Component Responsibilities" },
+  { id: "hub-role", title: "Avana Hub Role" },
 ]
 
 export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
@@ -30,73 +30,73 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Borrow Spoke"
-          description="The isolated LP-collateral market where users deposit positions, borrow assets, and manage loan health."
+          description="A standard Aave V4 Spoke, owned by the Aave DAO, where vault tokens back GHO borrowing for one market category."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>A Borrow Spoke is an isolated LP-collateral market. It decides which pools are supported,
-            how each LP position is valued, what collateral factors apply, which assets can be
-            borrowed, and how liquidation works for that market.</>{" "}<>Borrow Spokes separate collateral markets whose positions require different risk treatment. Stablecoin LPs, correlated ETH and staked-ETH LPs, and volatile governance-token LPs can have different collateral factors, exposure caps, and liquidation routes.</>
+            <>An Avana Borrow Spoke is a standard, unmodified Aave V4 Spoke owned by the Aave DAO.
+            It holds the vault-token reserves for one market category. It applies each reserve&apos;s
+            Collateral Factor, Collateral Risk and liquidation parameters. Borrow Spokes lend GHO.</>{" "}<>Avana has three market categories, each with its own Borrow Spoke, parameters and caps. Stable LP pairs two stablecoins (candidate USDC/USDT). Correlated LP pairs assets that move together (candidate wstETH/WETH). Blue-chip/stable LP pairs a major asset with a stablecoin (candidate WETH/USDC). Candidates are still being assessed.</>
           </p>
         </section>
 
         <section id="user-experience" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrow Flow</h2>
           <p className="mb-4 type-doc-body">
-            A Borrow Spoke manages the account lifecycle: accepting LP collateral, calculating borrowing capacity, recording borrows and repayments, and permitting eligible fee claims. DEX-specific handling allows this lifecycle to apply across different LP formats.
+            Borrowers do not call the Borrow Spoke directly. The AaveAdapter is the borrower&apos;s entry point to Avana. It coordinates each Pledge with the LP Vault and Collateralization Module. It then mints vault tokens and supplies them through the borrower&apos;s Position Proxy as collateral. Borrowing, repayment and withdrawal also go through the AaveAdapter. Avana-specific logic stays in Avana&apos;s contracts, and the Spoke runs standard Aave V4 accounting.
           </p>
         </section>
 
         <section id="example-flow" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Example Flow</h2>
           <div className="doc-prose">
-            <p className="type-doc-body"><>The user deposits an approved LP position. The liquidity stays in the pool, but the
-                spoke records it as collateral and starts tracking value and health.</>{" "}<>The spoke reconstructs the position, prices the underlying exposure, applies
-                collateral factors, and shows the resulting borrowing capacity.</>{" "}<>Once the checks pass, the Borrow Spoke draws the requested asset from Hub liquidity. The confirmed borrow updates debt and account health within that spoke.</>{" "}<>Additional approved LP positions can be deposited later. Each position is valued on
-                its own before contributing to aggregate capacity.</></p>
+            <p className="type-doc-body"><>A depositor pledges a $100,000 full-range WETH/USDC position. The liquidity stays in
+                the pool. The Collateralization Module mints one vault-token base unit per unit of the position&apos;s liquidity, valued at $100,000 in total by the LPOracle.</>{" "}<>With a lower underlying Collateral Factor of 70% and a pool risk factor of 50%, the
+                reserve&apos;s Collateral Factor is 35%. This gives a borrowing capacity of 35,000 GHO. The interface limits opening borrows to a health factor of 1.10, about 31,800 GHO.</>{" "}<>The borrower draws 25,000 GHO from the Avana Hub, for an initial health factor of 1.40. These numbers are illustrative, not market parameters.</>{" "}<>The borrower can pledge additional approved positions later. Each market has its own vault
+                token. Capacity also depends on exposure caps, available GHO liquidity and oracle checks.</></p>
           </div>
         </section>
 
         <section id="three-tier-architecture" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Three-Tier Architecture</h2>
-          <p className="type-doc-body">{"The architecture separates shared lending accounts from LP-specific collateral management. The Hub manages reserves and debt, while each Borrow Spoke determines borrowing capacity and liquidation handling for its supported LP markets. The Lend Spoke routes supplier deposits into the Hub, so supplying capital does not require managing an LP position."}</p>
+          <p className="type-doc-body">{"Avana has three layers. The Avana Hub holds the GHO credit line, and the Avana Borrow Spokes hold vault-token reserves. The Aave DAO owns both. Avana's own contracts (LP Vault, AaveAdapter, LPOracle, RiskModule, CollateralizationModule, LPVaultSwap, AMMSettlementAdapters and AvanaConfig) handle custody, valuation and settlement outside Aave V4. Avana does not fork, copy or modify Aave V4 code."}</p>
         </section>
 
         <section id="data-flow" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Data Flow</h2>
           <ol className="mb-6 list-decimal list-inside space-y-4">
             <li className="type-doc-body">
-              <strong className="text-gray-900">Collateral enters the spoke</strong> — the LP
-              position is recorded and tracked for valuation and health.
+              <strong className="text-gray-900">Collateral enters the spoke</strong> — the AaveAdapter
+              mints vault tokens for the pledged liquidity and supplies them through the borrower&apos;s Position Proxy.
             </li>
             <li className="type-doc-body">
-              <strong className="text-gray-900">Borrow draws Hub liquidity</strong> — once capacity
-              checks pass, the spoke requests assets from the Hub.
+              <strong className="text-gray-900">Borrow draws Avana Hub liquidity</strong> — once Collateral Factor,
+              cap and oracle checks pass, the Spoke draws GHO from the Avana Hub within its draw cap.
             </li>
             <li className="type-doc-body">
-              <strong className="text-gray-900">Debt accrues as debt shares</strong> — interest
-              compounds through the configured rate model while the spoke keeps account state in sync.
+              <strong className="text-gray-900">Debt accrues at the borrowing rate</strong> — BorrowingRate = BaseRate × (1 + UserRiskPremium).
+              Aave V4 updates the premium on borrow, withdrawal, collateral change and on request.
             </li>
             <li className="type-doc-body">
-              <strong className="text-gray-900">Liquidation if required</strong> — accounts below the liquidation threshold enter the configured collateral recovery process.
+              <strong className="text-gray-900">Liquidation if required</strong> — when the health factor falls below 1, an approved keeper calls LPVaultSwap, which settles the position under the market&apos;s settlement mode.
             </li>
           </ol>
 
           <div>
-            <h3 className="mb-2 type-doc-subsection-title">Hub interaction</h3>
+            <h3 className="mb-2 type-doc-subsection-title">Avana Hub interaction</h3>
             <ul className="space-y-1 type-doc-body">
-              <li>• <strong>Borrow:</strong> spoke draws from the Hub when a user opens or extends debt</li>
-              <li>• <strong>Repay:</strong> spoke restores debt to the Hub when a user repays</li>
-              <li>• <strong>Health check:</strong> Hub reads spoke collateral data via <code className="type-doc-inline-code">getCollateralData</code></li>
-              <li>• <strong>Liquidation:</strong> Hub can call <code className="type-doc-inline-code">handleLiquidation</code> when risk thresholds are breached</li>
+              <li>• <strong>Borrow:</strong> the Spoke draws GHO from the Avana Hub, limited by the Hub&apos;s draw cap for that Spoke</li>
+              <li>• <strong>Repay:</strong> repaid GHO returns to the Avana Hub. Borrowers can repay through the AaveAdapter or call the contracts directly</li>
+              <li>• <strong>Health check:</strong> the Spoke values vault tokens at <code className="type-doc-inline-code">LPOracle</code> prices and applies each reserve&apos;s Collateral Factor</li>
+              <li>• <strong>Liquidation:</strong> <code className="type-doc-inline-code">LPVaultSwap</code> calls the Spoke&apos;s standard Aave V4 liquidation using a GHO flash loan. LPVaultSwap is not a spoke and cannot draw from the Avana Hub</li>
             </ul>
           </div>
         </section>
 
         <section id="spoke-responsibilities" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Spoke Responsibilities</h2>
+          <h2 className="mb-4 type-doc-section-title">Component Responsibilities</h2>
           <div className="mb-6 overflow-x-auto">
             <table className="w-full overflow-hidden rounded-lg border border-gray-200 text-sm">
               <thead className="bg-gray-50">
@@ -107,17 +107,19 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
-                  <td className="px-4 py-2 font-medium text-gray-900">Borrow Spoke</td>
+                  <td className="px-4 py-2 font-medium text-gray-900">Avana Borrow Spoke</td>
                   <td className="px-4 py-2">
-                    Tracks LP positions, aggregate collateral value, and debt for each AMM family.
-                    Exposes <code className="type-doc-inline-code">getUserAggregate(user)</code> for frontends and liquidators.
+                    Holds collateral-only vault-token reserves for one market category. Lends GHO under
+                    each reserve&apos;s Collateral Factor, Collateral Risk and liquidation parameters.
+                    Read-only views come from <code className="type-doc-inline-code">AaveAdapterLens</code> and LiquidationPreview.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 font-medium text-gray-900">LiquidationAdapter</td>
+                  <td className="px-4 py-2 font-medium text-gray-900">LPVaultSwap</td>
                   <td className="px-4 py-2">
-                    Runs penalty accrual, soft unwind, and hard liquidation for LP formats that need
-                    specialized handling.
+                    Executes liquidations with a flash loan through each market&apos;s approved settlement
+                    route. Draws from the FirstLossReserve when needed and pays keepers, Avana and borrowers.
+                    Only approved keepers can call it.
                   </td>
                 </tr>
               </tbody>
@@ -126,24 +128,22 @@ export default async function BorrowSpokePage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="hub-role" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Aave v4 Hub Role</h2>
+          <h2 className="mb-4 type-doc-section-title">Avana Hub Role</h2>
           <p className="mb-4 type-doc-body">
-            The Borrow Spoke does not hold lender reserves. The Hub provides pooled liquidity,
-            reserve accounting, and the balance-sheet side of borrowing while the spoke handles
-            LP-specific risk.
+            The Borrow Spoke does not hold lender reserves. The Avana Hub, a standard Aave V4 Hub
+            owned by the Aave DAO, holds the GHO liquidity and debt accounting. The Spoke
+            applies vault-token risk parameters.
           </p>
           <div className="doc-prose">
-            <p className="type-doc-body"><>Assets such as USDC, DAI, and ETH enter through the Lend Spoke and Hub. The Borrow
-                Spoke decides how much of that liquidity an LP-backed account may access.</>{" "}<>Each Borrow Spoke has a credit line that limits how much Hub liquidity it can draw,
-                keeping LP underwriting isolated while sharing capital efficiency.</>{" "}<>Collateral in multiple Borrow Spokes is evaluated separately. Surplus in one market
-                does not automatically cover a deficit in another.</></p>
+            <p className="type-doc-body"><>A capped GHO credit line allocated through the GHO Reserve funds the Avana Hub. Each increase is subject to conditions and governance approval.</>{" "}<>Hub add and draw caps limit how much each Borrow Spoke can draw. Only approved
+                Borrow Spokes have GHO draw capacity.</>{" "}<>Each market category has its own Borrow Spoke, parameters and caps. The Avana Lend Spoke lets lenders supply assets directly to the Avana Hub.</></p>
           </div>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How the Borrow Spoke accepts LP collateral, calculates capacity, and coordinates with the Hub."
+        pageSummary="How an Avana Borrow Spoke holds vault-token collateral, lends GHO, and works with the Avana Hub and LPVaultSwap."
         sectionColor="violet"
       />
     </div>

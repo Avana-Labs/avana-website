@@ -34,7 +34,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Define the request</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              A request establishes the asset, network, amount, and position being considered. It also distinguishes an explanation or simulation from a request to prepare an action. Missing or ambiguous details need to be resolved before the request can be used in an execution flow.
+              A request sets the asset, network, amount, and position under consideration. It also states whether the user wants an explanation or simulation, or wants an action prepared. Missing or ambiguous details must be resolved before the request can be used in an execution flow.
             </p>
           </div>
         </section>
@@ -43,12 +43,12 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Review the analysis</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              The request determines which context is needed: Avana&apos;s RAG supplies protocol
-              explanations, Aave MCP provides relevant Aave market information, and Avana&apos;s
-              product logic handles position calculations. Market rates change, quotes expire,
-              and balances differ across networks. The selected account, source timestamps,
-              missing inputs, and scenario assumptions therefore affect how the result can be
-              interpreted, especially when comparing a simulation with a live position.
+              The request determines which context is needed. Avana&apos;s RAG supplies protocol
+              explanations. Aave MCP provides relevant Aave market information. Avana&apos;s product
+              logic handles position calculations. Market rates change, quotes expire, and
+              balances differ across networks. The selected account, source timestamps, missing
+              inputs, and scenario assumptions therefore affect how to read the result. This
+              matters most when you compare a simulation with a live position.
             </p>
           </div>
         </section>
@@ -57,7 +57,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Approve and verify</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              A supported transaction moves through preparation, submission, and confirmation. The product flow provides the transaction review and any required wallet approval. After confirmation, the updated balances and debt show the effect on the position.
+              A supported transaction goes through three stages: preparation, submission, and confirmation. The product flow provides the transaction review and any required wallet approval. After confirmation, the updated balances and debt show the effect on the position. The sandbox at app.avana.cc shows simulated results and makes no onchain transactions.
             </p>
           </div>
         </section>

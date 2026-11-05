@@ -110,11 +110,11 @@
         "keyConcepts": "Concepts clés",
         "glossary": "Glossaire",
         "depositLp": "Dépôt LP",
-        "borrowAssets": "Emprunter des actifs",
+        "borrowAssets": "Emprunter GHO",
         "manageLoans": "Gérer les prêts",
         "repayLoans": "Rembourser les prêts",
         "withdrawCollateral": "Retirer la garantie",
-        "claimLpFees": "Frais de réclamation LP",
+        "claimLpFees": "Frais de LP",
         "borrowSpoke": "Spoke d'emprunt",
         "lendSpoke": "Spoke de prêt",
         "collateralFactors": "Facteurs de garantie",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Aperçu des intégrations",
         "appkit": "AppKit",
         "allowedPools": "Pools LP autorisés",
-        "routerAdapters": "Routeur et adaptateurs",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Oracles de prix",
         "riskFramework": "Cadre de risque",
         "contractsSecurity": "Contrats et sécurité",
         "bugBounty": "Prime aux bugs",
-        "insuranceFunds": "Fonds d'assurance",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Divulgations de sécurité",
         "legalDisclaimer": "Avertissement légal",
         "aiIntroduction": "Introduction à l'IA",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "À propos",
-      "description": "Découvrez Avana, un protocole dédié à LP en tant que garantie construit sur Aave v4 avec des Spokes spécialisés, un Hub partagé et un Lend Spoke conçu pour les marchés de liquidité AMM."
+      "description": "Avana Labs développe la garantie LP pour Aave V4. Le LP Vault, les contrats de valorisation et les contrats de règlement relient les positions Uniswap à l'Avana Hub."
     },
     "borrow": {
       "title": "Emprunter",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Environ Avana",
-      "subtitle": "LP-comme protocole de garantie construit sur Aave v4"
+      "subtitle": "Intégration de garanties LP pour Aave V4"
     },
     "brand": {
       "title": "Kit de marque",

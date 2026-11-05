@@ -110,11 +110,11 @@
         "keyConcepts": "Ключевые концепции",
         "glossary": "Глоссарий",
         "depositLp": "Депозит LP",
-        "borrowAssets": "Занимать активы",
+        "borrowAssets": "Занять GHO",
         "manageLoans": "Управление кредитами",
         "repayLoans": "Погасить кредиты",
         "withdrawCollateral": "Вывести залог",
-        "claimLpFees": "Иск LP Пошлины",
+        "claimLpFees": "Комиссии LP",
         "borrowSpoke": "Взять Spoke в долг",
         "lendSpoke": "Осевая спица",
         "collateralFactors": "Залоговые факторы",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Обзор интеграций",
         "appkit": "AppKit",
         "allowedPools": "Разрешенные LP пулы",
-        "routerAdapters": "Маршрутизатор и адаптеры",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Ценовые оракулы",
         "riskFramework": "Рамки риска",
         "contractsSecurity": "Контракты и безопасность",
         "bugBounty": "Награда за баг",
-        "insuranceFunds": "Страховые фонды",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Раскрытие информации о безопасности",
         "legalDisclaimer": "Юридический отказ от ответственности",
         "aiIntroduction": "Введение в ИИ",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "О",
-      "description": "Познакомьтесь с Avana, преданным протоколом LP в качестве залога, построенным на Aave v4 с специализированными Spokes, общим Hub и Lend Spoke, предназначенным для рынков ликвидности AMM."
+      "description": "Avana Labs создаёт LP-залог для Aave V4. LP Vault, контракты оценки и контракты урегулирования связывают позиции Uniswap с Avana Hub."
     },
     "borrow": {
       "title": "Занимать",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Около Avana",
-      "subtitle": "LP — протокол обеспечения, построенный на Aave v4"
+      "subtitle": "Интеграция залога LP для Aave V4"
     },
     "brand": {
       "title": "Набор бренда",

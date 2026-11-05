@@ -9,24 +9,24 @@ import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-pa
 export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'integrations/router-contract', {
-    title: "Router Contract",
-    description: "How the Avana router coordinates DEX-specific deposit, withdraw, fee, and liquidation actions.",
+    title: "Aave Adapter",
+    description: "How the Aave Adapter, Avana's borrower entry point, handles deposits, borrowing, repayment and withdrawal through each borrower's Position Proxy.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
   { id: "role-in-system", title: "Role in System" },
-  { id: "adapter-model", title: "Adapter Model" },
+  { id: "adapter-model", title: "Price Gates and Withdrawals" },
   { id: "supported-operations", title: "Supported Operations" },
-  { id: "deployment-status", title: "Deployment Status" },
+  { id: "deployment-status", title: "Upgrades and Access" },
 ]
 
 const supportedOperations = [
-  "Bundle DEX-specific deposit, withdraw, and fee-collection calls into one interface layer",
-  "Coordinate unwind or routing steps needed for liquidation execution",
-  "Support controlled position updates such as range changes when a DEX adapter exists",
-  "Expose a consistent integration surface without deciding collateral factors or health checks",
+  "Pledge: moves a Uniswap v2 LP token or Uniswap v3 position into the custody of the LP Vault. The Adapter mints vault tokens 1:1 through the Collateralization Module. It supplies them through the borrower's Position Proxy and enables them as collateral.",
+  "Borrow: borrows GHO from the Avana Hub through the Borrow Spoke. The TWAP and stale-price gates apply.",
+  "Repay: available at any time unless the Adapter is paused.",
+  "Withdraw: allowed only if the account stays healthy. The Adapter burns the matching vault tokens, and the LP Vault releases the LP tokens or NFT with uncollected fees.",
 ]
 
 export default async function RouterContractPage({ params }: LocaleParamsProps) {
@@ -35,37 +35,35 @@ export default async function RouterContractPage({ params }: LocaleParamsProps) 
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
-          title="Router Contract"
-          description="Execution layer for DEX-specific actions, adapter calls, and liquidation routing."
+          title="Aave Adapter"
+          description="The borrower entry point for deposits, borrowing, repayment and withdrawal, acting through each borrower's Position Proxy."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>The router coordinates deposits, withdrawals, fee claims, and liquidation steps through DEX-specific adapters. Each caller can use this shared execution layer instead of assembling the underlying DEX calls independently.</>{" "}<>The router does not decide risk. Collateral factors, health checks, and liquidation
-            eligibility remain in the Borrow Spoke, Hub, oracle stack, and risk framework. See{" "}
+            <>The Aave Adapter is the borrower&apos;s entry point to Avana. It coordinates deposits with the LP Vault and the Collateralization Module. When a position is pledged, the Adapter mints vault tokens and supplies them through the borrower&apos;s Position Proxy as collateral. Borrowing, repayment and withdrawal also go through the Adapter.</>{" "}<>The Aave Adapter does not set risk parameters or collateral values. Collateral Factors, health checks and liquidation
+            eligibility come from the Borrow Spoke, LPOracle and governance-approved parameters. Related pages:{" "}
             <Link href="/developers/architecture" className="text-type-accent hover:underline">
               Borrow Spoke
-            </Link>{" "}
-            and{" "}
+            </Link>,{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
-            </Link>
-            .</>
+            </Link>.</>
           </p>
         </section>
 
         <section id="role-in-system" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Role in System</h2>
           <p className="mb-4 type-doc-body">
-            DEXs expose different methods for entering a position, removing liquidity, and collecting fees. The router connects Avana&apos;s transaction flows to those methods through a common integration layer.
+            A dedicated Position Proxy holds each borrower&apos;s Aave position. Every borrower action (deposit, borrow, repay, withdraw) therefore passes through the Aave Adapter and Avana&apos;s controls. Partial-settlement liquidations do not go through the Aave Adapter. In partial settlement, LPVaultSwap calls the Borrow Spoke directly. In full-position settlement, the Aave Adapter withdraws and burns all vault tokens for the position so the LP Vault can release it.
           </p>
         </section>
 
         <section id="adapter-model" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Adapter Model</h2>
+          <h2 className="mb-4 type-doc-section-title">Price Gates and Withdrawals</h2>
           <p className="mb-4 type-doc-body">
-            <>Each supported DEX family has an adapter for operations such as fee collection and liquidity removal. The adapter implements the calls required by that LP format, keeping DEX-specific execution separate from the rest of the transaction flow.</>{" "}<>An adapter provides execution support for an LP format. Collateral admission also requires compatible valuation and liquidation support, so deploying an adapter alone does not enable a pool for borrowing.</>
+            <>The Aave Adapter enforces the TWAP and stale-price gates. If the pool TWAP is outside tolerance, it blocks new borrowing and risk-increasing withdrawals. If the Chainlink feed is stale or invalid, it blocks new borrowing and voluntary withdrawals. Repayment continues in both cases.</>{" "}<>A withdrawal is allowed only if the account stays healthy afterward. The Aave Adapter then burns the matching vault tokens. The LP Vault releases the LP tokens or NFT together with any uncollected fees.</>
           </p>
         </section>
 
@@ -79,21 +77,21 @@ export default async function RouterContractPage({ params }: LocaleParamsProps) 
         </section>
 
         <section id="deployment-status" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Deployment Status</h2>
+          <h2 className="mb-4 type-doc-section-title">Upgrades and Access</h2>
           <p className="mb-4 type-doc-body">
-            Router addresses, adapter registries, and enabled networks are deployment-specific.
-            Verify chain-specific addresses from the published contract registry or release notes.
+            The Aave Adapter is upgradeable, behind a timelock that Avana Labs cannot bypass.
+            Contract addresses are published after deployment is approved.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Confirm the DEX adapter you rely on is enabled on the target deployment</li>
-            <li>Router support does not mean a pool is admitted for collateral</li>
+            <li>Borrowers can call the contracts directly, without Avana&apos;s frontend. They keep the ability to repay and make permitted withdrawals.</li>
+            <li>Only positions that pass the Risk Module&apos;s pool and limit checks can be deposited. The Aave Adapter does not decide which pools are approved.</li>
           </ul>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How the router coordinates DEX-specific actions and liquidation routing."
+        pageSummary="How the Aave Adapter handles borrower actions through each borrower's Position Proxy."
         sectionColor="cyan"
       />
     </div>

@@ -9,8 +9,8 @@ import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-pa
 export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/borrow-assets', {
-    title: "Borrow Assets",
-    description: "How to borrow against deposited LP collateral on Avana.",
+    title: "Borrow GHO",
+    description: "How to borrow GHO from the Avana Hub against pledged LP collateral on Avana.",
   })
 }
 
@@ -29,48 +29,47 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
-          title="Borrow Assets"
-          description="Borrow stablecoins, ETH, or other enabled assets against the LP collateral you have already deposited."
+          title="Borrow GHO"
+          description="Borrow GHO from the Avana Hub against the LP collateral you have pledged. Borrow Spokes lend GHO."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>After deposit and valuation, a borrower can request an asset and amount within the account&apos;s available capacity. The Borrow Spoke checks the request and draws the asset from the Hub; the confirmed transaction sends the borrowed tokens to the borrower&apos;s wallet.</>{" "}<>Interest increases outstanding debt over time, so health factor can decline even when the collateral position is unchanged. Unused borrowing capacity provides a buffer against that debt growth and changes in collateral value.</>{" "}<>{"Avana values each LP position separately before aggregating borrowing capacity within a Borrow Spoke. Similar-looking positions can contribute different amounts because their pools, recoverable values, and collateral factors differ."}</>
+            <>Once the vault tokens are supplied and enabled as collateral, a borrower can borrow GHO up to the account&apos;s available capacity. The GHO comes from the Avana Hub through the market&apos;s Avana Borrow Spoke. The request passes through the AaveAdapter and the borrower&apos;s Position Proxy. The borrowed GHO goes to the borrower&apos;s wallet.</>{" "}<>Interest increases outstanding debt over time. The health factor can therefore fall even when collateral value does not change. Unused borrowing capacity is a buffer against debt growth and against changes in collateral value.</>{" "}<>{"Each market has its own vault token, Borrow Spoke, Collateral Factor, and caps. Positions of the same size in different pools can therefore support different amounts of GHO."}</>
           </p>
         </section>
 
         <section id="borrow-checks" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrow Checks</h2>
           <div className="doc-prose">
-            <p className="type-doc-body"><>The Borrow Spoke checks that the account still holds the deposited positions and that their pools remain approved for collateral use.</>{" "}<>The borrow amount must fit within your remaining borrowing capacity in that Borrow
-                Spoke.</>{" "}<>The Hub must have enough of the requested asset available, and protocol caps must
-                allow the borrow.</>{" "}<>Your account must stay above the liquidation threshold after the new debt is added.</></p>
+            <p className="type-doc-body"><>The AaveAdapter checks the price feeds first. New borrowing is blocked when the pool&apos;s TWAP is outside the allowed tolerance from the Chainlink price, or when the Chainlink feed is stale or invalid.</>{" "}<>The borrow amount must fit within your remaining borrowing capacity: position value multiplied by the reserve&apos;s Collateral Factor, less existing debt.</>{" "}<>The Avana Hub must have GHO available under its credit line. Hub draw caps and Spoke caps must
+                also allow the borrow.</>{" "}<>Your account must stay healthy after the new debt is added. In an illustrative example, the interface limits a new borrow to an opening health factor of 1.10.</></p>
           </div>
         </section>
 
         <section id="health-check" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Health Check</h2>
           <p className="mb-4 type-doc-body">
-            Before a borrow is approved, Avana checks that your account stays healthy after the new
-            debt. Health factor is adjusted collateral value divided by outstanding debt. The
-            adjusted collateral value already includes LP valuation, collateral factors, and
-            recoverable-value discounts.
+            The health factor compares collateral value, after the reserve&apos;s Collateral Factor
+            is applied, with outstanding GHO debt. LPOracle reports the value of the liquidity
+            behind each vault token with no haircut. The Collateral Factor sets how much of that
+            value can support debt.
           </p>
 
           <div className="type-doc-code-block">
             <code className="type-doc-body text-gray-900">
-              healthFactor = adjustedCollateralValue / outstandingDebt
+              healthFactor = (lpPositionValue × lpCollateralFactor) / outstandingDebt
             </code>
           </div>
 
           <p className="mt-4 type-doc-body">
-            If health falls below the liquidation boundary, the position becomes eligible for
-            liquidation. See{" "}
+            For example, a $100,000 full-range WETH/USDC position with a 35% Collateral Factor
+            and 25,000 GHO borrowed has a health factor of 1.40. Below 1.00, the position is
+            eligible for liquidation. For the full model, see{" "}
             <Link href="/developers/architecture/health-factor" className="text-type-accent hover:underline">
               Health Factor
-            </Link>{" "}
-            for the full model.
+            </Link>.
           </p>
         </section>
 
@@ -78,13 +77,14 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Internal Accounting</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <><strong className="text-gray-900">Debt shares:</strong> new debt is recorded through a
-              debt-share model so interest can accrue over time without rewriting the full account
-              balance on every block.</>{" "}<><strong className="text-gray-900">Hub draw:</strong> the Borrow Spoke requests the
-              asset from the Hub only after the spoke finishes the collateral, capacity, and health
-              checks.</>{" "}<><strong className="text-gray-900">State update:</strong> the user receives the borrowed
-              asset, and the spoke records the resulting debt state so future health checks,
-              repayments, and liquidation logic all reference the same updated account.</>
+            <><strong className="text-gray-900">Position Proxy:</strong> a dedicated Position
+              Proxy holds each borrower&apos;s Aave position, so deposits, borrows, repayments,
+              and withdrawals all pass through Avana&apos;s controls.</>{" "}<><strong className="text-gray-900">Hub draw:</strong> the Borrow Spoke draws GHO
+              from the Avana Hub. The Hub holds a capped GHO credit line allocated through the GHO
+              Reserve. Only approved Borrow Spokes have GHO draw capacity.</>{" "}<><strong className="text-gray-900">Interest rate:</strong> BorrowingRate = BaseRate
+              × (1 + UserRiskPremium). For example, a 4.5% base rate with a 50% risk premium gives
+              6.75%. With several collateral positions, the premium is a weighted average. Aave V4
+              updates it on borrow, withdrawal, collateral change, and on request.</>
           </p>
           </div>
         </section>
@@ -92,34 +92,34 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
         <section id="borrowable-assets" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrowable Assets</h2>
           <p className="mb-4 type-doc-body">
-            Borrowable assets are configured for each deployment and market. They can include major stablecoins, GHO, ETH, BTC, and other supported assets. Approval of an LP pool establishes collateral eligibility; it does not make every debt asset available to that market.
+            Borrow Spokes lend GHO. It comes from the Avana Hub, which is funded by a capped GHO credit line. Each increase to the credit line is subject to conditions and governance approval.
           </p>
           <p className="type-doc-body">
-            Check the Avana interface on your target deployment for the live borrow list.
+            Assets other than GHO are borrowed through the Avana Lend Spoke, which Aave governance approves separately.
           </p>
         </section>
 
         <section id="borrowing-power" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Borrowing Power</h2>
           <p className="mb-4 type-doc-body">
-            <>Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after
-            collateral factors and risk discounts. Each position contributes based on its own pool,
-            range, liquidity, and risk settings.</>{" "}<>As debt approaches borrowing capacity, less capacity remains to absorb price changes or interest accrual. See{" "}
+            <>Borrowing capacity is position value multiplied by the reserve&apos;s Collateral
+            Factor, where LPCollateralFactor = min(Token0CF, Token1CF) × PoolRiskFactor. For
+            example, if the lower of the two underlying factors is 70% and the pool risk factor is
+            50%, the Collateral Factor is 35%. A $100,000 position then supports up to 35,000 GHO.
+            Each market&apos;s parameters are set by governance.</>{" "}<>Capacity also depends on existing debt, exposure caps, available GHO liquidity, and oracle checks. As debt approaches capacity, less room remains for price changes or interest. Before sizing a borrow, read these pages:{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
-            </Link>{" "}
-            and{" "}
+            </Link>,{" "}
             <Link href="/developers/architecture/health-factor" className="text-type-accent hover:underline">
               Health Factor
-            </Link>{" "}
-            when sizing a borrow.</>
+            </Link>.</>
           </p>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to borrow against deposited LP collateral on Avana."
+        pageSummary="How to borrow GHO against pledged LP collateral on Avana."
         sectionColor="emerald"
       />
     </div>

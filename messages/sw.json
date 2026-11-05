@@ -110,11 +110,11 @@
         "keyConcepts": "Dhana Muhimu",
         "glossary": "Kamusi ya Maneno",
         "depositLp": "Amana LP",
-        "borrowAssets": "Kopa Mali",
+        "borrowAssets": "Kopa GHO",
         "manageLoans": "Dhibiti Mikopo",
         "repayLoans": "Lipa Mikopo",
         "withdrawCollateral": "Toa Dhamana",
-        "claimLpFees": "Kidai LP Ada",
+        "claimLpFees": "Ada za LP",
         "borrowSpoke": "Kopa Ncha ya Gurudumu",
         "lendSpoke": "Mkopo wa Spoke",
         "collateralFactors": "Vigezo vya Dhamana",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Muhtasari wa Ulinganisho",
         "appkit": "AppKit",
         "allowedPools": "Maziwa Yanayoruhusiwa LP",
-        "routerAdapters": "Rauta na Viongezaji",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Mashirika ya Bei",
         "riskFramework": "Mfumo wa Hatari",
         "contractsSecurity": "Mikataba na Usalama",
         "bugBounty": "Zawadi ya Hitilafu",
-        "insuranceFunds": "Fondi za Bima",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Ufadhili wa Usalama",
         "legalDisclaimer": "Tangazo la Kisheria",
         "aiIntroduction": "Utangulizi wa AI",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Kuhusu",
-      "description": "Kutana na Avana, itifaki ya kujitolea ya LP-kama-uhakika iliyojengwa kwenye Aave v4 na Spokes maalum, Hub ya pamoja, na Lend Spoke iliyoundwa kwa soko za kioo cha AMM."
+      "description": "Avana Labs hujenga dhamana ya LP kwa Aave V4. LP Vault, mikataba ya uthamini na mikataba ya usuluhishi huunganisha nafasi za Uniswap na Avana Hub."
     },
     "borrow": {
       "title": "Kokotoa",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Kuhusu Avana",
-      "subtitle": "LP-kama itifaki ya dhamana iliyojengwa juu ya Aave v4"
+      "subtitle": "Uunganishaji wa dhamana wa LP kwa Aave V4"
     },
     "brand": {
       "title": "Kifurushi cha chapa",

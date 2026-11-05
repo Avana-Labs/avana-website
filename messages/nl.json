@@ -110,11 +110,11 @@
         "keyConcepts": "Belangrijke concepten",
         "glossary": "Woordenlijst",
         "depositLp": "Storting LP",
-        "borrowAssets": "Activa Lenen",
+        "borrowAssets": "Lenen GHO",
         "manageLoans": "Leningen Beheren",
         "repayLoans": "Leningen terugbetalen",
         "withdrawCollateral": "Onderpand opnemen",
-        "claimLpFees": "Vordering LP Kosten",
+        "claimLpFees": "LP-kosten",
         "borrowSpoke": "Leen Spoke",
         "lendSpoke": "Leen sprak",
         "collateralFactors": "Onderpandfactoren",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Overzicht van integraties",
         "appkit": "AppKit",
         "allowedPools": "Toegestaan LP Pools",
-        "routerAdapters": "Router en adapters",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Prijsorakels",
         "riskFramework": "Risicokader",
         "contractsSecurity": "Contracten & Beveiliging",
         "bugBounty": "Bug-bounty",
-        "insuranceFunds": "Verzekeringsfondsen",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Beveiligingsmeldingen",
         "legalDisclaimer": "Juridische disclaimer",
         "aiIntroduction": "AI-introductie",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Over",
-      "description": "Ontmoet Avana, een toegewijd LP-als-zekerheid protocol gebouwd op Aave v4 met gespecialiseerde Spokes, een gedeelde Hub, en een Lend Spoke ontworpen voor AMM liquiditeitsmarkten."
+      "description": "Avana Labs bouwt LP-onderpand voor Aave V4. De LP Vault, de waarderingscontracten en de afwikkelingscontracten verbinden Uniswap-posities met de Avana Hub."
     },
     "borrow": {
       "title": "Lenen",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Ongeveer Avana",
-      "subtitle": "LP-als-onderpandprotocol gebouwd op Aave v4"
+      "subtitle": "Integratie van LP-onderpand voor Aave V4"
     },
     "brand": {
       "title": "Merkit",

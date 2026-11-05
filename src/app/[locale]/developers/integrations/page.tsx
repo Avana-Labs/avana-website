@@ -11,33 +11,33 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'integrations', {
     title: "Supported Integrations",
-    description: "Which DEXs and AMMs Avana can integrate with and what must be in place before a market goes live.",
+    description: "Which AMM positions Avana accepts as collateral, which are not supported, and what a pool needs before it is listed.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
   { id: "appkit", title: "AppKit" },
-  { id: "dex-families", title: "DEX Families" },
-  { id: "enablement-status", title: "Enablement Status" },
+  { id: "dex-families", title: "AMM Position Types" },
+  { id: "enablement-status", title: "Governance Approval" },
   { id: "review-requirements", title: "Review Requirements" },
 ]
 
 const dexFamilies = [
   {
-    title: "Concentrated liquidity DEXs",
+    title: "Uniswap v3 positions",
     body:
-      "Uniswap v3-style positions need position-level handling because value depends on current price, active range, and how inventory is split across the position.",
+      "Uniswap v3 positions are NFTs. Their value depends on the current price, the position's range and its liquidity. Avana accepts only full-range positions and specifically approved ranges. Each approved pool, fee tier and range has its own vault token.",
   },
   {
-    title: "Fungible stable and weighted pools",
+    title: "Uniswap v2 LP tokens",
     body:
-      "Curve, Balancer, and similar DEXs expose ERC-20 LP shares whose value can be rebuilt from pool balances, external prices, and conservative unwind assumptions.",
+      "Uniswap v2 LP tokens are fungible ERC-20 shares. The LP Vault holds them in the same way as NFTs, so every Uniswap v2 liquidation follows Avana's settlement route.",
   },
   {
-    title: "Custom or hook-based designs",
+    title: "Other AMMs",
     body:
-      "Custom and hook-based pool designs require oracle support, a defined custody path, and a liquidation adapter for their specific position format.",
+      "Avana does not support Uniswap v4, Curve, Balancer, Aerodrome or other AMMs. Adding any of them requires a separate review and governance approval. Full-position settlement covers most AMMs that use NFTs.",
   },
 ]
 
@@ -48,32 +48,32 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Supported Integrations"
-          description="Which DEXs Avana can work with and what must be reviewed before support goes live."
+          description="Which AMM positions Avana accepts as collateral and what is reviewed before a pool is listed."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Avana supports curated LP collateral markets across AMMs such as Uniswap, Balancer,
-            Curve, and Aerodrome as markets are launched. Support is approved pool by approved pool,
-            not automatically granted to every pool on a DEX.</>{" "}<>Each supported market needs reliable asset pricing, enough liquidity depth, a defined
-            unwind route, market caps, and collateral settings that match the pool type. See{" "}
+            <>Avana runs on Ethereum mainnet and accepts selected Uniswap v2 LP tokens and Uniswap
+            v3 positions as collateral. Each pool is approved individually. Approval does not
+            extend to every pool on an AMM. Avana does not support Uniswap v4, Curve, Balancer,
+            Aerodrome, other AMMs or other chains such as Base.</>{" "}<>Each approved pool needs reliable external pricing, enough liquidity history, and liquidity
+            removal that cannot be restricted. It also needs an approved settlement mode and its own risk parameters and caps. Admission and valuation details are on these pages:{" "}
             <Link href="/developers/integrations/allowed-pools" className="text-type-accent hover:underline">
               Allowed LP Pools
-            </Link>{" "}
-            and{" "}
+            </Link>,{" "}
             <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
-            </Link>{" "}
-            for admission and valuation details.</>
+            </Link>.</>
           </p>
         </section>
 
         <section id="appkit" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">AppKit</h2>
           <p className="mb-4 type-doc-body">
-            <>AppKit lets DEXs, wallets, and portfolio apps embed Avana credit inside their existing
-            user flows instead of sending users to a separate lending app.</>{" "}<>See the{" "}
+            <>AppKit lets DEXs, wallets and portfolio apps link users from their existing views
+            into Avana&apos;s borrowing flow. Users do not need AppKit or Avana&apos;s frontend. They
+            can call the contracts directly.</>{" "}<>See the{" "}
             <Link href="/developers/integrations/appkit" className="text-type-accent hover:underline">
               AppKit guide
             </Link>{" "}
@@ -82,7 +82,7 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
         </section>
 
         <section id="dex-families" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">DEX Families</h2>
+          <h2 className="mb-4 type-doc-section-title">AMM Position Types</h2>
           <p className="type-doc-body">
             {dexFamilies.map((family, index) => (
               <Fragment key={family.title}>
@@ -93,27 +93,26 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
         </section>
 
         <section id="enablement-status" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Enablement Status</h2>
+          <h2 className="mb-4 type-doc-section-title">Governance Approval</h2>
           <p className="mb-4 type-doc-body">
-            <>DEX enablement is specific to a network and deployment. Support for a DEX family does not establish that its pools are enabled there: oracle coverage, liquidation routes, and risk parameters must also be configured.</>{" "}<>Check the Avana interface, release notes, or contract registry for what is live on your
-            target deployment.</>
+            <>Deploying a market, activating a GHO credit line and approving risk parameters are separate governance decisions. Deployment and GHO funding each go through their own Snapshot vote and AIP.</>{" "}<>Each additional chain, starting with Base, requires its own governance approval. Contract addresses are published after deployment is approved.</>
           </p>
         </section>
 
         <section id="review-requirements" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Review Requirements</h2>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Conservative position valuation from robust external prices and verifiable state reconstruction</li>
-            <li>A dependable unwind path for liquidation, including fee collection and routing into the debt asset</li>
-            <li>Pool depth, concentration risk, correlation assumptions, and operational monitoring that fit the risk framework</li>
-            <li>Governance and risk review before new DEX or pool family support goes live</li>
+            <li>Reliable Chainlink pricing for both underlying tokens and an approved AMM TWAP for the consistency check</li>
+            <li>Enough liquidity and price history, and liquidation proceeds that can be recovered under stress</li>
+            <li>Liquidity removal that cannot be restricted, and an approved settlement mode and swap route</li>
+            <li>Publication for a two-week review and approval through Aave governance before listing</li>
           </ul>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="Which DEX families Avana can support and what must be reviewed before enablement."
+        pageSummary="Which AMM positions Avana supports and what is reviewed before a pool is listed."
         sectionColor="cyan"
       />
     </div>

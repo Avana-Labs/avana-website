@@ -110,11 +110,11 @@
         "keyConcepts": "Các khái niệm chính",
         "glossary": "Thuật ngữ",
         "depositLp": "Tiền gửi LP",
-        "borrowAssets": "Vay Tài Sản",
+        "borrowAssets": "Vay GHO",
         "manageLoans": "Quản lý khoản vay",
         "repayLoans": "Trả nợ",
         "withdrawCollateral": "Rút tài sản đảm bảo",
-        "claimLpFees": "Yêu cầu LP Phí",
+        "claimLpFees": "Phí LP",
         "borrowSpoke": "Mượn căm",
         "lendSpoke": "Bán kính cho",
         "collateralFactors": "Yếu tố tài sản đảm bảo",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Tổng quan về tích hợp",
         "appkit": "AppKit",
         "allowedPools": "Hồ bơi được phép LP",
-        "routerAdapters": "Bộ định tuyến & Bộ chuyển đổi",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Đồng hồ báo giá",
         "riskFramework": "Khung rủi ro",
         "contractsSecurity": "Hợp đồng & Bảo mật",
         "bugBounty": "Tiền thưởng lỗi phần mềm",
-        "insuranceFunds": "Quỹ bảo hiểm",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Công bố bảo mật",
         "legalDisclaimer": "Tuyên bố pháp lý",
         "aiIntroduction": "Giới thiệu AI",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Giới thiệu",
-      "description": "Gặp gỡ Avana, một giao thức LP với tài sản thế chấp được xây dựng trên Aave v4 với các Spokes chuyên biệt, một Hub chung và một Lend Spoke được thiết kế cho các thị trường thanh khoản AMM."
+      "description": "Avana Labs xây dựng tài sản thế chấp LP cho Aave V4. LP Vault, các hợp đồng định giá và các hợp đồng tất toán kết nối các vị thế Uniswap với Avana Hub."
     },
     "borrow": {
       "title": "Mượn",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Khoảng Avana",
-      "subtitle": "LP-giao thức thế chấp được xây dựng trên Aave v4"
+      "subtitle": "Tích hợp tài sản bảo đảm LP cho Aave V4"
     },
     "brand": {
       "title": "Bộ nhận diện thương hiệu",

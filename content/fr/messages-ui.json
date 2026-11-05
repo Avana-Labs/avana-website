@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "À propos",
-      "description": "Découvrez Avana, un protocole dédié à LP en tant que garantie construit sur Aave v4 avec des Spokes spécialisés, un Hub partagé et un Lend Spoke conçu pour les marchés de liquidité AMM."
+      "description": "Avana Labs développe la garantie LP pour Aave V4. Le LP Vault, les contrats de valorisation et les contrats de règlement relient les positions Uniswap à l'Avana Hub."
     },
     "borrow": {
       "title": "Emprunter",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Environ Avana",
-      "subtitle": "LP-comme protocole de garantie construit sur Aave v4"
+      "subtitle": "Intégration de garanties LP pour Aave V4"
     },
     "brand": {
       "title": "Kit de marque",

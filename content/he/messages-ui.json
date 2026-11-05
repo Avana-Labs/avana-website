@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "אודות",
-      "description": "הכירו את Avana, פרוטוקול ייחוסLP עם ערבות בנוי על Aave v4 עם צירים מיוחדים, מרכז משותף, וציר הלוואות המיועד לשווקי נזילות AMM."
+      "description": "Avana Labs בונה ביטחונות LP עבור Aave V4. ה-LP Vault, חוזי הערכת השווי וחוזי הסילוק מחברים פוזיציות Uniswap ל-Avana Hub."
     },
     "borrow": {
       "title": "להשאיל",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "בערך Avana",
-      "subtitle": "LP-פרוטוקול כביטחונות מבוסס על Aave v4"
+      "subtitle": "שילוב בטחונות LP עבור Aave V4"
     },
     "brand": {
       "title": "ערכת מותג",

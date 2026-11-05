@@ -36,7 +36,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-            <>Ask AI is Avana&apos;s conversational interface for questions about markets and positions. A request identifies the market, asset, or position to examine, and follow-up questions can clarify the inputs and assumptions. The response explains the available information; protocol checks still determine whether a requested transaction can proceed.</>{" "}<>Wallet-specific questions depend on the selected wallet and network. Public market data describes the market, while balances and positions belong to an account on a particular network. A missing balance, price, or route leaves the associated calculation incomplete.</>
+            <>Ask AI is Avana&apos;s conversational interface for questions about markets and positions. A request names the market, asset, or position to examine. Follow-up questions can clarify the inputs and assumptions. The response explains the available information. Protocol checks still determine whether a requested transaction can proceed.</>{" "}<>Avana supports GHO borrowing against selected Uniswap v2 LP tokens and Uniswap v3 positions on Ethereum mainnet.</>{" "}<>Wallet-specific questions depend on the selected wallet and network. Public market data describes the market. Balances and positions belong to an account on a particular network. A missing balance, price, or route leaves the associated calculation incomplete.</>
           </p>
           </div>
         </section>
@@ -59,12 +59,13 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
               for the upstream service and its interfaces.
             </p>
             <p className="type-doc-body">
-              Aave data retains its network, protocol version, and reserve context. It does
-              not establish that the same collateral or debt asset is enabled in an Avana
-              Borrow Spoke. Avana still applies its own pool admission, LP valuation, and
-              account checks. A capability offered by the upstream MCP server is also not
-              automatically an action exposed by Ask AI: available actions depend on Avana&apos;s
-              integration and the supported product flows.
+              Aave data keeps its network, protocol version, and reserve context. It does not
+              show that an asset is available in an Avana market. Avana Borrow Spokes accept only
+              vault tokens for approved Uniswap v2 and v3 positions as collateral, and GHO is the
+              only borrowable asset. Avana still applies its own pool admission, LP valuation, and
+              account checks. A capability of the upstream MCP server is not automatically an
+              action in Ask AI. Available actions depend on Avana&apos;s integration and the
+              supported product flows.
             </p>
           </div>
         </section>
@@ -73,20 +74,21 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Avana knowledge and RAG</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              Avana&apos;s retrieval-augmented generation (RAG) searches its protocol knowledge
-              for material relevant to a question and supplies that material as context for
-              the answer. Retrieved passages explain the architecture, collateral rules,
-              liquidation process, and product workflows, with source information that lets
-              the explanation be traced to its documentation. This supplies protocol knowledge
-              rather than live prices; rates and balances come from the relevant data sources.
+              Avana&apos;s retrieval-augmented generation (RAG) searches Avana&apos;s protocol
+              knowledge for material relevant to a question. It supplies that material as context
+              for the answer. Retrieved passages explain the architecture, collateral rules,
+              liquidation process, and product workflows. Each passage includes source
+              information, so the explanation can be traced to its documentation. RAG supplies
+              protocol knowledge, not live prices. Rates and balances come from the relevant data
+              sources.
             </p>
             <p className="type-doc-body">
               Avana&apos;s own position data and calculation logic provide the product-specific
               context. A borrowing question can combine Aave market information, retrieved
               explanations of LP collateral, and calculations for the selected position&apos;s
-              debt and borrowing capacity. Each input has a different role: a documentation
-              passage explains a rule, a market response reports observed conditions, and a
-              position calculation applies the relevant inputs to an account or scenario.
+              GHO debt and borrowing capacity. Each input has a different role. A documentation
+              passage explains a rule. A market response reports observed conditions. A position
+              calculation applies the relevant inputs to an account or scenario.
             </p>
           </div>
         </section>
@@ -95,7 +97,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Market analysis</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              Market comparisons can include borrowing costs, available liquidity, and collateral requirements. A displayed yield is only one input: debt interest and changes in the LP position also affect the result. Input sources, timestamps, and scenario assumptions provide the context needed to interpret the comparison.
+              Market comparisons can include the GHO borrowing rate (BaseRate × (1 + UserRiskPremium)), GHO available in the Avana Hub, and each market&apos;s Collateral Factor. A displayed fee yield is only one input. Debt interest and changes in the LP position also affect the result. Borrowers still bear impermanent loss, price risk, and liquidation risk. Input sources, timestamps, and scenario assumptions give the context needed to interpret the comparison.
             </p>
           </div>
         </section>
@@ -104,7 +106,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">From analysis to action</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-              Analysis and transaction execution are separate steps. For a supported action, the relevant product flow presents the account, network, assets, amounts, and costs for review and requests any required wallet approval. Submission is followed by confirmation and an update to the resulting position.
+              Analysis and transaction execution are separate steps. For a supported action, the relevant product flow shows the account, network, assets, amounts, and costs for review. It then requests any required wallet approval. After submission, the transaction is confirmed and the position updates. In the sandbox at app.avana.cc, results are simulated and no onchain transaction is submitted.
             </p>
           </div>
         </section>

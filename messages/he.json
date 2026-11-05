@@ -110,11 +110,11 @@
         "keyConcepts": "מושגים מפתח",
         "glossary": "מילון מונחים",
         "depositLp": "זיכוי LP",
-        "borrowAssets": "השאלת נכסים",
+        "borrowAssets": "להשאיל GHO",
         "manageLoans": "ניהול הלוואות",
         "repayLoans": "להחזיר הלוואות",
         "withdrawCollateral": "משוך משכון",
-        "claimLpFees": "טענת LP עמלות",
+        "claimLpFees": "עמלות LP",
         "borrowSpoke": "לווה ספוק",
         "lendSpoke": "רכב קדמי",
         "collateralFactors": "גורמי בטוחה",
@@ -128,12 +128,12 @@
         "integrationsOverview": "סקירת אינטגרציות",
         "appkit": "AppKit",
         "allowedPools": "בריכות מותרות LP",
-        "routerAdapters": "נתב ומתאמים",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "אורקלי מחירים",
         "riskFramework": "מסגרת סיכונים",
         "contractsSecurity": "חוזים ואבטחה",
         "bugBounty": "פרס באגים",
-        "insuranceFunds": "קרנות ביטוח",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "גילויים ביטחוניים",
         "legalDisclaimer": "כתב ויתור משפטי",
         "aiIntroduction": "מבוא לבינה מלאכותית",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "אודות",
-      "description": "הכירו את Avana, פרוטוקול ייחוסLP עם ערבות בנוי על Aave v4 עם צירים מיוחדים, מרכז משותף, וציר הלוואות המיועד לשווקי נזילות AMM."
+      "description": "Avana Labs בונה ביטחונות LP עבור Aave V4. ה-LP Vault, חוזי הערכת השווי וחוזי הסילוק מחברים פוזיציות Uniswap ל-Avana Hub."
     },
     "borrow": {
       "title": "להשאיל",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "בערך Avana",
-      "subtitle": "LP-פרוטוקול כביטחונות מבוסס על Aave v4"
+      "subtitle": "שילוב בטחונות LP עבור Aave V4"
     },
     "brand": {
       "title": "ערכת מותג",

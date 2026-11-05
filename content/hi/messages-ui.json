@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "के बारे में",
-      "description": "मिलिए Avana से, एक समर्पित LP-को-जमानत प्रोटोकॉल जो Aave v4 पर बनाया गया है, जिसमें विशेष Spokes, एक साझा Hub, और AMM तरलता बाजारों के लिए डिज़ाइन किया गया Lend Spoke शामिल है।"
+      "description": "Avana Labs, Aave V4 के लिए LP कोलैटरल बनाता है। LP Vault, मूल्यांकन कॉन्ट्रैक्ट्स और सेटलमेंट कॉन्ट्रैक्ट्स Uniswap पोज़िशन को Avana Hub से जोड़ते हैं।"
     },
     "borrow": {
       "title": "उधार लेना",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "लगभग Avana",
-      "subtitle": "LP-एक Aave v4 पर निर्मित गारंटी प्रोटोकॉल"
+      "subtitle": "Aave V4 के लिए एलपी गारंटी एकीकरण"
     },
     "brand": {
       "title": "ब्रांड किट",

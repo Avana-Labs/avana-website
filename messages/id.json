@@ -110,11 +110,11 @@
         "keyConcepts": "Konsep Kunci",
         "glossary": "Glosarium",
         "depositLp": "Setoran LP",
-        "borrowAssets": "Meminjam Aset",
+        "borrowAssets": "Meminjam GHO",
         "manageLoans": "Kelola Pinjaman",
         "repayLoans": "Melunasi Pinjaman",
         "withdrawCollateral": "Tarik Jaminan",
-        "claimLpFees": "Biaya Klaim LP",
+        "claimLpFees": "Biaya LP",
         "borrowSpoke": "Pinjam Jari-Jari",
         "lendSpoke": "Jari-jari Luar",
         "collateralFactors": "Faktor Agunan",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Ikhtisar Integrasi",
         "appkit": "AppKit",
         "allowedPools": "Kolam yang Diizinkan LP",
-        "routerAdapters": "Router & Adapter",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Oracle Harga",
         "riskFramework": "Kerangka Risiko",
         "contractsSecurity": "Kontrak & Keamanan",
         "bugBounty": "Hadiah Bug",
-        "insuranceFunds": "Dana Asuransi",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Pengungkapan Keamanan",
         "legalDisclaimer": "Penafian Hukum",
         "aiIntroduction": "Pengantar AI",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Tentang",
-      "description": "Temui Avana, sebuah protokol LP-sebagai-jaminan yang dibangun di atas Aave v4 dengan Spokes khusus, Hub bersama, dan Lend Spoke yang dirancang untuk pasar likuiditas AMM."
+      "description": "Avana Labs membangun kolateral LP untuk Aave V4. LP Vault, kontrak valuasi, dan kontrak penyelesaian menghubungkan posisi Uniswap ke Avana Hub."
     },
     "borrow": {
       "title": "Meminjam",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Sekitar Avana",
-      "subtitle": "LP-sebagai protokol jaminan yang dibangun di atas Aave v4"
+      "subtitle": "Integrasi jaminan LP untuk Aave V4"
     },
     "brand": {
       "title": "Perangkat merek",

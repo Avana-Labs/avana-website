@@ -19,21 +19,21 @@ const sections = [
 const flowSteps = [
   {
     step: "01",
-    title: "Deposit a supported LP position",
+    title: "Pledge a supported LP position",
     description:
-      "A borrower deposits an approved LP position into the relevant Borrow Spoke, but the liquidity itself stays deployed in the underlying pool instead of being redeemed first.",
+      "A borrower pledges an approved Uniswap v2 LP token or Uniswap v3 position to the LP Vault. A Pledge changes custody but does not remove liquidity from the pool. The position keeps earning fees while it is in range.",
   },
   {
     step: "02",
-    title: "Value it conservatively",
+    title: "Represent and value it",
     description:
-      "The spoke rebuilds the position from its pool data, prices the underlying exposure through the oracle stack, and then discounts that value through collateral factors and market-specific controls.",
+      "The Collateralization Module mints vault tokens 1:1 with the pledged liquidity. The AaveAdapter supplies them to the market's Avana Borrow Spoke through the borrower's Position Proxy. The LPOracle values each vault token from the pool's liquidity math at Chainlink prices, with no haircut. It then checks the result against the pool's TWAP.",
   },
   {
     step: "03",
-    title: "Borrow through the Hub",
+    title: "Borrow GHO from the Avana Hub",
     description:
-      "If the resulting capacity is sufficient, the loan draws from shared Hub liquidity while health checks, collateral accounting, and liquidation behavior remain specific to that spoke.",
+      "Borrowing capacity is the position's value multiplied by the reserve's Collateral Factor. If capacity is sufficient, the borrower draws GHO from the Avana Hub. A capped GHO credit line from the Aave DAO funds the Hub.",
   },
 ]
 
@@ -44,17 +44,17 @@ const collateralHighlights: Array<{
   {
     title: "Liquidity stays in the pool",
     description:
-      "Depositing an LP position as collateral leaves its liquidity in the underlying AMM. The borrower can access a loan without first redeeming the position for its underlying assets.",
+      "Pledging an LP position moves custody to the LP Vault but leaves its liquidity in the underlying pool. The borrower can borrow GHO without first withdrawing the position and giving up its fees or range.",
   },
   {
-    title: "Capacity follows the real LP",
+    title: "Valuation and limits are separate",
     description:
-      "Borrowing power comes from the actual structure of the position: token mix, accrued fees, active range when relevant, available depth, and the way the position could be exited during stress.",
+      "The LPOracle reports the value of the liquidity with no haircut. Each reserve's Collateral Factor, min(Token0CF, Token1CF) × PoolRiskFactor, sets how much of that value supports debt.",
   },
   {
     title: "Liquidation has explicit rules",
     description:
-      "LP collateral is not handled as a generic token balance. Each supported market defines how value is recovered, what gets sold or unwound, and how debt is closed if the account becomes unsafe.",
+      "Each market has an approved settlement mode. LPVaultSwap uses a flash loan to repay debt and settle the LP collateral in one transaction. Partial settlement removes only the liquidity needed to restore health. Full-position settlement settles the whole position and returns any surplus to the borrower.",
   },
 ]
 
@@ -81,7 +81,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="welcome" className="scroll-mt-32 pb-10">
           <DeveloperDocPageHeader
             title="Introduction"
-            description="Avana uses Aave v4 to support borrowing against active LP positions. Borrow Spokes manage LP-specific risk, while the Hub supplies shared lending liquidity."
+            description="Avana lets liquidity providers borrow GHO on Aave V4 against their Uniswap v2 and v3 positions. The positions stay active in their pools and keep earning trading fees."
           />
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <Link
@@ -104,18 +104,18 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="what-is-avana" className="mt-10 scroll-mt-32">
           <SectionHeader
             title="What is Avana?"
-            description="Avana is a lending protocol built for LP collateral. It lets users deposit supported AMM positions, keep those positions active in the underlying pool, and borrow against them through Aave v4 infrastructure."
+            description="Avana brings AMM liquidity positions to Aave V4 as collateral. A depositor pledges a Uniswap v2 LP token or Uniswap v3 position to the LP Vault. The depositor then borrows GHO from the Avana Hub while the position stays in the pool."
           />
 
           <p className="max-w-3xl type-doc-body">
-            <>Borrowing against the underlying tokens normally requires redeeming the LP position first. That reduces or closes the position and stops fee accrual on the liquidity removed from the pool.</>{" "}<>Avana instead accepts supported LP positions as collateral. The position remains active in its AMM while Avana tracks its value. An internal vault collateral token represents the backing position in Aave v4&apos;s borrowing accounts.</>
+            <>To borrow against LP assets elsewhere, a liquidity provider usually has to withdraw from the pool first. Withdrawing gives up trading fees and, for concentrated positions, the chosen range.</>{" "}<>Avana keeps the position in its pool. The LP Vault holds the position, and a vault token represents it on an Avana Borrow Spoke. A vault token is a transfer-restricted, collateral-only ERC-20 record that maps 1:1 to the underlying liquidity. Avana runs on Ethereum mainnet with selected Uniswap v2 and v3 markets.</>
           </p>
         </section>
 
         <section id="how-it-works" className="mt-10 scroll-mt-32">
           <SectionHeader
             title="How It Works"
-            description="Each stage connects a user action to the protocol's accounting: a deposit establishes custody, valuation determines borrowing capacity, and a borrow creates debt against that capacity. The following guides explain these steps in detail."
+            description="Each stage connects a user action to the protocol's accounting. A Pledge establishes custody. Valuation and the Collateral Factor determine borrowing capacity. A borrow creates GHO debt against that capacity. The following guides explain each step in detail."
           />
 
           <p className="type-doc-body">
@@ -128,7 +128,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="unlocking-lp-collateral" className="mt-10 scroll-mt-32">
           <SectionHeader
             title="Why LP Collateral Matters"
-            description="LP collateral connects assets already deployed in an AMM to a lending market. The borrower's ability to access those assets as credit depends on the position's current value and the market's risk parameters."
+            description="LP collateral lets assets already deployed in an AMM support a GHO loan. The benefit is capital flexibility, not guaranteed positive carry. Borrowers still bear impermanent loss, price risk and liquidation risk."
           />
 
           <p className="type-doc-body">
@@ -141,11 +141,11 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="architecture" className="mt-10 scroll-mt-32">
           <SectionHeader
             title="Architecture"
-            description="Avana uses Aave v4 because LP collateral needs shared liquidity and isolated risk logic at the same time. The Hub handles the common monetary layer while spokes handle LP-specific work: pool collateral registration, position valuation, risk enforcement, and liquidation execution."
+            description="The Avana Hub and Avana Borrow Spokes are standard, unmodified Aave V4 contracts owned by the Aave DAO. All Avana-specific logic sits in Avana's own contracts: LP Vault, AaveAdapter, LPOracle, RiskModule, CollateralizationModule, LPVaultSwap, AMMSettlementAdapters and AvanaConfig."
           />
 
           <p className="mt-4 max-w-3xl type-doc-body">
-            The architecture separates shared lending accounts from LP-specific collateral management. The Hub manages reserves and debt, while each Borrow Spoke determines borrowing capacity and liquidation handling for its supported LP markets. The Lend Spoke routes supplier deposits into the Hub, so supplying capital does not require managing an LP position.
+            Each market category (Stable LP, Correlated LP and Blue-chip/stable LP) has its own Avana Borrow Spoke, parameters and caps. The Avana Hub holds the GHO credit line, and only approved Borrow Spokes can draw from it. A dedicated Position Proxy holds each borrower&apos;s Aave position. Deposits, borrows, repayments and withdrawals therefore pass through Avana&apos;s controls. The Avana Lend Spoke lets lenders supply assets directly to the Avana Hub. Aave governance approves it separately.
           </p>
         </section>
 
@@ -153,7 +153,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="High-level context for LP-backed borrowing, shared Hub liquidity, and the spoke-specific rules that make active LP collateral lendable."
+        pageSummary="An overview of Avana: pledging Uniswap LP positions, borrowing GHO from the Avana Hub, and the per-market rules for valuation and liquidation."
         sectionColor="blue"
       />
     </div>

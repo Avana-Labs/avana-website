@@ -123,11 +123,11 @@
         "keyConcepts": "핵심 개념",
         "glossary": "용어집",
         "depositLp": "예금 LP",
-        "borrowAssets": "자산을 빌리다",
+        "borrowAssets": "빌리다 GHO",
         "manageLoans": "대출 관리",
         "repayLoans": "대출 상환",
         "withdrawCollateral": "담보 인출",
-        "claimLpFees": "청구 LP 수수료",
+        "claimLpFees": "LP 수수료",
         "borrowSpoke": "빌린 스포크",
         "lendSpoke": "렌드 스포크",
         "collateralFactors": "담보 요인",
@@ -141,12 +141,12 @@
         "integrationsOverview": "통합 개요",
         "appkit": "AppKit",
         "allowedPools": "허용된 LP 풀",
-        "routerAdapters": "라우터 및 어댑터",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "가격 오라클",
         "riskFramework": "위험 프레임워크",
         "contractsSecurity": "계약 및 보안",
         "bugBounty": "버그 바운티",
-        "insuranceFunds": "보험 기금",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "보안 공개",
         "legalDisclaimer": "법적 고지",
         "aiIntroduction": "AI 소개",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "소개",
-      "description": "만나보세요 Avana, 전문화된 스포크, 공유 허브, 그리고 AMM 유동성 시장을 위해 설계된 렌드 스포크를 갖춘 Aave v4 위에 구축된 전용 LP 담보 프로토콜입니다."
+      "description": "Avana Labs는 Aave V4를 위한 LP 담보를 구축합니다. LP Vault, 가치 평가 컨트랙트, 정산 컨트랙트가 Uniswap 포지션을 Avana Hub에 연결합니다."
     },
     "borrow": {
       "title": "빌리다",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "약 Avana",
-      "subtitle": "LP-을 담보로 한 프로토콜이 Aave v4 위에 구축됨"
+      "subtitle": "Aave V4용 LP 담보 통합"
     },
     "brand": {
       "title": "브랜드 키트",

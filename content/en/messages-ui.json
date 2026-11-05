@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "About",
-      "description": "Meet Avana, a dedicated LP-as-collateral protocol built on Aave v4 with specialized Spokes, a shared Hub, and a Lend Spoke designed for AMM liquidity markets."
+      "description": "Avana Labs builds LP collateral for Aave V4. The LP Vault, valuation contracts, and settlement contracts connect Uniswap positions to the Avana Hub."
     },
     "borrow": {
       "title": "Borrow",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "About Avana",
-      "subtitle": "LP-as-collateral protocol built on Aave v4"
+      "subtitle": "LP collateral integration for Aave V4"
     },
     "brand": {
       "title": "Brand kit",

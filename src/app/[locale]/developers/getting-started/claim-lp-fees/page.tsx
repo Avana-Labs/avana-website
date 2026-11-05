@@ -9,8 +9,8 @@ import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-pa
 export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/claim-lp-fees', {
-    title: "Claim LP Fees",
-    description: "How to claim accrued LP trading fees on Avana without exiting your collateral position.",
+    title: "LP Fees",
+    description: "How Avana handles trading fees on a pledged LP position.",
   })
 }
 
@@ -28,16 +28,15 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
-          title="Claim LP Fees"
-          description="Claim trading fees from your LP position while it stays active as collateral."
+          title="LP Fees"
+          description="A pledged position keeps earning trading fees in the pool. Uncollected fees are released with the position when you withdraw it."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Avana accounts for principal liquidity and accrued fees separately. Where the LP format supports fee collection, a borrower can claim eligible fees without redeeming the principal position held as collateral.</>{" "}<>Fee claims still affect your collateral value, so Avana runs a health check before and
-            after the claim. If claiming fees would push your account below the required collateral
-            boundary, the claim is blocked until you repay debt or add more collateral.</>{" "}<>{"Interest increases outstanding debt over time, so health factor can decline even when the collateral position is unchanged. Unused borrowing capacity provides a buffer against that debt growth and changes in collateral value."}</>
+            <>A pledge changes custody of the LP position but does not remove its liquidity from the pool. The position keeps earning trading fees while the LP Vault holds it. A Uniswap v3 position earns no fees while it is out of range.</>{" "}<>Fees keep accruing while a position is pledged. Uncollected fees stay with the position
+            and are released with the LP tokens or NFT when you withdraw.</>{" "}<>{"Fee income does not reduce outstanding GHO debt. Interest on the loan keeps accruing until it is repaid."}</>
           </p>
         </section>
 
@@ -45,10 +44,10 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">How It Works</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <>A fee-claim request identifies the deposited position. Avana routes it through the DEX-specific collection method for that LP format.</>{" "}<>For concentrated-liquidity DEXs, that is typically a collect-style call that pulls
-              accrued fees while leaving principal in the pool. For fungible LP tokens, Avana uses
-              the DEX&apos;s native fee-claim path when one is available.</>{" "}<>After fees are claimed, Avana syncs the updated position state back into the Borrow
-              Spoke so health and borrowing capacity reflect the new balance.</>
+            <>On withdrawal, the AaveAdapter burns the matching vault tokens. The LP Vault then releases the LP tokens or NFT, with uncollected fees, to the depositor.</>{" "}<>Avana&apos;s AMMSettlementAdapters can redeem LP tokens, remove liquidity, and collect
+              fees. They are used for settlement and approved exits. They are not a fee-claim
+              action for borrowers.</>{" "}<>A withdrawal is allowed only if the account stays healthy afterward. See Withdraw
+              Collateral for the full process.</>
           </p>
           </div>
         </section>
@@ -56,10 +55,11 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
         <section id="health-checks" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Health Checks</h2>
           <p className="mb-4 type-doc-body">
-            <>Accrued fees can count toward your collateral buffer until they are claimed. When you
-            claim fees, that value leaves the position, which can lower health if your account is
-            already close to the liquidation threshold.</>{" "}<>Repay debt or add collateral first if a fee claim would leave your account under the
-            required boundary.</>
+            <>Fees are released only with the position. Collecting them therefore depends on the
+            same health check as a withdrawal: the account must stay healthy after the vault
+            tokens are burned.</>{" "}<>Withdrawals are also blocked when the pool&apos;s TWAP is outside tolerance or the
+            Chainlink feed is stale. If withdrawing the position leaves the account unhealthy,
+            repay GHO first. Repayment continues in all of these cases.</>
           </p>
         </section>
 
@@ -67,35 +67,33 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Fee Accounting</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <>The oracle reports principal value and fee value separately. This allows the Borrow Spoke to account for claimable fees in collateral valuation and to update that valuation when fees leave the position.</>{" "}<>During liquidation, eligible accrued fees may be collected before principal liquidity is unwound. Applying those fees to recovery can reduce the amount of principal needed to cover debt.</>
+            <>LPOracle prices each vault token as q0·P0 + q1·P1. Here q0 and q1 are the token amounts from the position&apos;s liquidity (and range, for concentrated positions), and P0 and P1 are Chainlink prices. Whether uncollected Uniswap v3 fees count toward collateral value is not specified.</>{" "}<>In a liquidation, LPVaultSwap removes liquidity through the market&apos;s approved settlement route. How uncollected fees are treated in that process is not specified.</>
           </p>
           </div>
           <p className="mt-4 type-doc-body">
-            See{" "}
+            Related pages:{" "}
             <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
-            </Link>{" "}
-            and{" "}
+            </Link>,{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
-            </Link>
-            .
+            </Link>.
           </p>
         </section>
 
         <section id="key-benefits" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Key Benefits</h2>
           <p className="type-doc-body">
-            <>Your LP principal keeps earning fees and stays active in the pool while you borrow.</>{" "}
-            <>You can realize fee income without unwinding the collateral position.</>{" "}
-            <>Health checks prevent fee claims from pulling out too much value and leaving debt undersecured.</>
+            <>Your liquidity stays in the pool and keeps earning fees while you borrow GHO.</>{" "}
+            <>You can borrow without withdrawing from the pool, so you keep your fees and your range.</>{" "}
+            <>Uncollected fees return with the position when you withdraw. Borrowers still bear impermanent loss, price risk, and liquidation risk.</>
           </p>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to claim accrued LP trading fees without exiting your collateral position."
+        pageSummary="How Avana handles trading fees on a pledged LP position."
         sectionColor="emerald"
       />
     </div>

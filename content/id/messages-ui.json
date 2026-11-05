@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Tentang",
-      "description": "Temui Avana, sebuah protokol LP-sebagai-jaminan yang dibangun di atas Aave v4 dengan Spokes khusus, Hub bersama, dan Lend Spoke yang dirancang untuk pasar likuiditas AMM."
+      "description": "Avana Labs membangun kolateral LP untuk Aave V4. LP Vault, kontrak valuasi, dan kontrak penyelesaian menghubungkan posisi Uniswap ke Avana Hub."
     },
     "borrow": {
       "title": "Meminjam",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Sekitar Avana",
-      "subtitle": "LP-sebagai protokol jaminan yang dibangun di atas Aave v4"
+      "subtitle": "Integrasi jaminan LP untuk Aave V4"
     },
     "brand": {
       "title": "Perangkat merek",

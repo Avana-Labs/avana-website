@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'architecture/health-factor', {
     title: "Health Factor",
-    description: "How Avana measures whether an LP-backed account has enough collateral to support its debt.",
+    description: "How Avana measures whether an LP-backed account has enough collateral to support its GHO debt.",
   })
 }
 
@@ -29,41 +29,41 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Health Factor"
-          description="The ratio between risk-adjusted collateral value and outstanding debt inside a Borrow Spoke."
+          description="The ratio between collateral value, after Collateral Factors, and outstanding GHO debt on an Avana Borrow Spoke."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Health factor measures the relationship between risk-adjusted collateral value and
-            outstanding debt inside a Borrow Spoke. Adjusted collateral value already includes
-            Avana&apos;s LP valuation, collateral factors, pool-level risk treatment, and
-            recoverable-value assumptions.</>{" "}<>If health falls below the liquidation boundary, the position becomes eligible for
-            liquidation. See the{" "}
+            <>Health factor compares collateral value, after each reserve&apos;s Collateral Factor,
+            with outstanding GHO debt on an Avana Borrow Spoke. The LPOracle values vault tokens
+            with no haircut. Pool risk reduces borrowing power through the Collateral Factor.</>{" "}<>If the health factor falls below 1, the account becomes eligible for
+            liquidation. For what happens next, see the{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
-            </Link>{" "}
-            for what happens next.</>{" "}<>{"Borrowing power is the sum of your approved LP positions in one Borrow Spoke, after collateral factors and risk discounts. Each position contributes based on its own pool, range, liquidity, and risk settings."}</>
+            </Link>.</>{" "}<>{"Borrowing power is the sum of an account's vault-token collateral on one Borrow Spoke. Each vault token is valued at its own market's price and Collateral Factor."}</>
           </p>
         </section>
 
         <section id="calculation" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Calculation</h2>
           <p className="mb-4 type-doc-body">
-            Health is computed per Borrow Spoke. The numerator is adjusted collateral value — already
-            discounted through reconstruction, pricing, collateral factors, and recoverable-value
-            assumptions.
+            The Borrow Spoke computes health using standard Aave V4 accounting. The numerator
+            is the value of the vault tokens at LPOracle prices, multiplied by each reserve&apos;s
+            Collateral Factor.
           </p>
 
           <div className="type-doc-code-block">
             <code className="type-doc-body text-gray-900">
-              healthFactor = adjustedCollateralValue / outstandingDebt
+              healthFactor = (collateralValue × collateralFactor) / outstandingDebt
             </code>
           </div>
 
           <p className="mt-4 type-doc-body">
-            If a user has collateral in more than one Borrow Spoke, each spoke computes health
-            independently. Extra margin in one market does not cover a deficit in another.
+            This example is illustrative and does not show market parameters. A $100,000 WETH/USDC
+            position with a 35% Collateral Factor and 25,000 GHO of debt starts at a health factor
+            of 1.40. The health factor reaches 1.00 if collateral value falls about 29%, to about
+            $71,400. Under a simplified full-range model, that fall corresponds to roughly a 49% ETH decline.
           </p>
         </section>
 
@@ -71,11 +71,11 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Monitoring Bands</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <><strong className="text-gray-900">Healthy:</strong> adjusted collateral value exceeds debt, leaving a buffer before the liquidation threshold.</>{" "}<><strong className="text-gray-900">Watchlist:</strong> the account passes health checks but has a smaller buffer. Repayment or additional approved collateral can increase that buffer.</>{" "}<><strong className="text-gray-900">Liquidatable:</strong> the account has crossed the liquidation threshold and is eligible for the configured liquidation process.</>
+            <><strong className="text-gray-900">Healthy:</strong> the health factor is above 1 with a buffer. In the illustrative example, the interface limits new borrowing to an opening health factor of 1.10.</>{" "}<><strong className="text-gray-900">Watchlist:</strong> the health factor is still above 1 but the buffer is small. Repayment or additional approved collateral increases that buffer.</>{" "}<><strong className="text-gray-900">Liquidatable:</strong> the health factor is below 1, and an approved keeper can liquidate the account through LPVaultSwap.</>
           </p>
           </div>
           <p className="mt-4 type-doc-body">
-            Interface warnings may appear earlier than the hard liquidation threshold to give users
+            Interface warnings may appear before the health factor reaches 1 to give users
             time to act.
           </p>
         </section>
@@ -84,8 +84,9 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Response Path</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <>When health weakens, the borrower can repay debt, add approved LP collateral, or take
-              other actions that improve the account under the spoke&apos;s health checks.</>{" "}<>Once health crosses the liquidation boundary, liquidators can begin recovering value from the collateral under the market&apos;s liquidation rules.</>
+            <>When health weakens, the borrower can repay GHO at any time through the AaveAdapter
+              unless it is paused. The borrower can also call the contracts directly without
+              Avana&apos;s frontend. Pledging additional approved collateral also increases the buffer.</>{" "}<>Once the health factor falls below 1, approved keepers can call LPVaultSwap. Partial settlement removes only the liquidity needed to restore health. Full-position settlement repays the debt and returns any surplus to the borrower.</>
           </p>
           </div>
         </section>
@@ -94,23 +95,22 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">User Actions</h2>
           <ul className="space-y-2 type-doc-body">
             <li>Borrowing more reduces health because debt rises against the same collateral.</li>
-            <li>Repaying debt improves health immediately.</li>
-            <li>Adding approved collateral can increase headroom if the spoke accepts and values it.</li>
-            <li>Claiming fees, withdrawing collateral, or changing a position can reduce its collateral contribution. These actions are subject to checks on the resulting account health.</li>
+            <li>Repaying debt improves health immediately. Repayment continues even when the oracle blocks new borrowing.</li>
+            <li>Pledging additional approved positions increases headroom if the RiskModule accepts them.</li>
+            <li>Withdrawing collateral is allowed only if the account stays healthy. Risk-increasing withdrawals are blocked when the TWAP check fails or the Chainlink feed is stale.</li>
           </ul>
           <p className="mt-4 type-doc-body">
-            See{" "}
+            For how each reserve&apos;s Collateral Factor is set, see{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
-            </Link>{" "}
-            for how adjusted collateral value is calculated.
+            </Link>.
           </p>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How health factor measures account safety from adjusted collateral value and debt."
+        pageSummary="How health factor measures account safety from vault-token value, Collateral Factors and GHO debt."
         sectionColor="violet"
       />
     </div>

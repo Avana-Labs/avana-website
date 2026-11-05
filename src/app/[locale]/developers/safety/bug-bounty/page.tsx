@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'safety/bug-bounty', {
     title: "Bug Bounty",
-    description: "Avana Bug Bounty responsible disclosure scope, LP-collateral risk surfaces, and economic-impact severity philosophy.",
+    description: "Responsible disclosure scope for Avana's contracts, LP-collateral risk surfaces, and economic-impact severity guidance.",
   })
 }
 
@@ -21,59 +21,59 @@ const sections = [
 
 const programs = [
   {
-    title: "Program A - Core Lending",
+    title: "Program A - Custody and Aave V4 Integration",
     summary:
-      "Covers the primary credit engine where accounting integrity, collateralization, and liquidation execution directly protect user funds.",
+      "Covers Avana's contracts that hold LP positions, issue vault tokens and connect them to the Avana Hub and Borrow Spokes. The Hub and Spokes themselves are standard Aave V4 contracts owned by the Aave DAO.",
     includes: [
-      "Deposit / withdraw flows",
-      "Borrow / repay logic",
-      "Health factor and interest accrual",
-      "Reserve accounting and debt mint / burn",
-      "Liquidation core execution and caps",
+      "LP Vault deposit, withdrawal and settlement release",
+      "Vault-token minting and burning in the Collateralization Module",
+      "Aave Adapter deposit, borrow, repay and withdraw flows",
+      "Position Proxy and Factory",
+      "Vault-token transfer restrictions",
     ],
     risks: [
-      "Theft of user funds",
-      "Reserve insolvency",
-      "Undercollateralized borrowing",
+      "Theft of LP positions held in the LP Vault",
+      "Vault-token supply without matching liquidity",
+      "Borrowing without sufficient collateral",
       "Blocked repayments, withdrawals, or liquidations",
     ],
   },
   {
-    title: "Program B - LP Collateral & Valuation",
+    title: "Program B - LP Valuation & Liquidation",
     summary:
-      "Covers the Avana-specific valuation system for LP-backed credit, including how LP positions are priced, risk-weighted, and stress-tested under volatile market conditions.",
+      "Covers how Avana prices vault tokens, checks eligibility and limits, and settles LP collateral during liquidation.",
     includes: [
-      "LP token onboarding logic",
-      "Collateral factor assignment for LP positions",
-      "LP share pricing and oracle integration",
+      "Risk Module eligibility, allowlist and exposure limits",
+      "LPOracle pricing from pool models and Chainlink",
+      "TWAP consistency checks and staleness rules",
       "Concentrated liquidity position handling",
-      "Edge cases during imbalance, depegs, low liquidity, or stale oracle states",
+      "LPVaultSwap settlement, flash loans and FirstLossReserve draws",
     ],
     risks: [
       "Overvaluation of LP collateral",
       "Oracle manipulation enabling bad debt",
       "Unfair liquidation from underpricing",
-      "Recursive exploit paths against mispriced LP collateral",
+      "Settlement that leaves debt unpaid or vault tokens unbacked",
     ],
     highlighted: true,
     note: "LP mispricing can have critical economic impact by enabling bad debt, insolvency, or incorrect liquidations, even without direct theft from a contract.",
   },
   {
-    title: "Program C - Governance, Admin, and Protocol Infrastructure",
+    title: "Program C - Governance, Admin, and Upgrades",
     summary:
-      "Covers privileged control surfaces that can alter parameters, upgrade contracts, pause operations, or redirect protocol-owned assets.",
+      "Covers privileged controls over Avana's own contracts. These controls can upgrade contracts and change settings. They can also pause operations or move reserve funds.",
     includes: [
-      "Governance executor and timelock",
-      "Role management and upgradeability mechanisms",
-      "Pause / guardian roles",
-      "Parameter admin systems",
-      "Treasury, collector, and privileged automation contracts",
+      "AccessManager and UpgradeTimelock",
+      "Upgradeable contract proxies",
+      "Emergency Guardian pause, freeze and cancel roles",
+      "AvanaConfig market, oracle, route and fee settings",
+      "FirstLossReserve and CreditLineController",
     ],
     risks: [
       "Unauthorized admin action",
-      "Upgrade hijack",
+      "Bypass of the upgrade timelock",
       "Parameter corruption",
-      "Governance takeover or treasury loss",
+      "Unauthorized movement of collateral or reserve funds",
     ],
   },
   {
@@ -81,15 +81,15 @@ const programs = [
     summary:
       "Covers supporting systems whose compromise can influence trusted protocol operations, user interactions, or keeper behavior.",
     includes: [
-      "Indexing or liquidation bots maintained by Avana",
-      "Keeper assumptions and oracle relays",
-      "SDK logic that can induce unsafe interactions",
+      "Keeper bots operated by Avana Labs",
+      "Price monitoring and keeper assumptions",
+      "Read-only views such as AaveAdapterLens and LiquidationPreview",
       "Hosted APIs used in safety-critical paths",
       "Frontend issues with direct wallet-risk consequences",
     ],
     risks: [
       "Malicious transaction construction",
-      "Compromised liquidation or oracle relay paths",
+      "Compromised keeper or monitoring paths",
       "User fund loss through trusted integrations",
       "Operational outages that freeze critical actions",
     ],
@@ -130,15 +130,15 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <><>The Avana Bug Bounty covers responsible disclosure across contracts, risk systems, and
-            supporting infrastructure that can affect user funds or protocol solvency.</>{" "}<>The scope includes direct contract vulnerabilities and economic failures involving LP collateral. Manipulated prices, insufficient liquidity, or inconsistent position state can affect borrowing capacity or prevent liquidation from recovering debt.</></>{" "}<><strong>Severity is based on economic impact:</strong> assessment considers exploitability and outcomes such as fund loss, insolvency, bad debt, or systemic collateral mispricing. The size of the affected code is not a measure of the potential loss.</>
+            <><>This page describes the scope for responsible disclosure across Avana&apos;s own contracts, risk systems and
+            supporting infrastructure. Program terms, rewards, platform and start date are announced separately.</>{" "}<>The scope includes direct contract vulnerabilities and economic failures involving LP collateral. Manipulated prices, insufficient liquidity, or vault tokens that no longer match liquidity in the LP Vault can affect borrowing capacity or prevent liquidation from recovering debt.</></>{" "}<><strong>Severity is based on economic impact.</strong> The assessment considers exploitability and outcomes such as fund loss, insolvency, bad debt or systemic collateral mispricing. The size of the affected code is not a measure of the potential loss.</>
           </p>
         </section>
 
         <section id="scope-and-system-architecture" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Scope & System Architecture</h2>
           <p className="mb-6 type-doc-body">
-            Reports are grouped by the affected subsystem: core lending, LP valuation, governance and administration, or offchain integrations. The grouping identifies the component involved; severity depends on the demonstrated impact.
+            Reports are grouped by the affected subsystem: custody and Aave V4 integration, LP valuation and liquidation, governance and upgrades, or offchain integrations. The grouping identifies the component involved. Severity depends on the demonstrated impact.
           </p>
 
           <div className="space-y-5">
@@ -208,7 +208,7 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
         <section id="severity-philosophy" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Severity Philosophy</h2>
           <p className="mb-6 type-doc-body">
-            Severity assessment considers a credible exploit path and the economic harm it could cause, rather than relying only on a generic vulnerability score.
+            Severity is assessed from a credible exploit path and the economic harm it enables, not only from a generic vulnerability score.
           </p>
 
           <div className="space-y-4">
