@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "باز کردن شبکه آزمایشی"
+      "sandboxLong": "راه‌اندازی Testnet"
     },
     "mega": {
       "exploreProducts": "محصولات را کاوش کنید",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "درباره",
-      "description": "با Avana آشنا شوید، یک پروتکل اختصاصی LP-به‌عنوان-وثیقه ساخته‌شده بر روی Aave v4 با اسپوک‌های تخصصی، یک هاب مشترک و یک اسپوک وام طراحی‌شده برای بازارهای نقدینگی AMM."
+      "description": "Avana Labs وثیقه LP را برای Aave V4 می‌سازد. LP Vault، قراردادهای ارزش‌گذاری و قراردادهای تسویه، موقعیت‌های Uniswap را به Avana Hub متصل می‌کنند."
     },
     "borrow": {
       "title": "قرض گرفتن",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "حدود Avana",
-      "subtitle": "LP-به‌عنوان پروتکل وثیقه‌ای ساخته‌شده بر روی Aave v4"
+      "subtitle": "ادغام وثیقه LP برای Aave V4"
     },
     "brand": {
       "title": "کیت برند",

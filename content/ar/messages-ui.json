@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "افتح الشبكة التجريبية"
+      "sandboxLong": "أطلق Testnet"
     },
     "mega": {
       "exploreProducts": "استكشاف المنتجات",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "حول",
-      "description": "قابل Avana، بروتوكول LP مخصص كضمان مبني على Aave v4 مع محاور متخصصة، ومحور مشترك، ومحور إقراض مصمم لأسواق سيولة AMM."
+      "description": "تبني Avana Labs ضمان LP لـAave V4. تربط LP Vault وعقود التقييم وعقود التسوية مراكز Uniswap بـAvana Hub."
     },
     "borrow": {
       "title": "يستعير",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "حوالي Avana",
-      "subtitle": "LP-كبروتوكول ضمان مبني على Aave v4"
+      "subtitle": "تكامل ضمانات LP لـ Aave V4"
     },
     "brand": {
       "title": "مجموعة العلامة التجارية",

@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "افتح الشبكة التجريبية"
+      "sandboxLong": "أطلق Testnet"
     },
     "mega": {
       "exploreProducts": "استكشاف المنتجات",
@@ -110,11 +110,11 @@
         "keyConcepts": "المفاهيم الرئيسية",
         "glossary": "قائمة المصطلحات",
         "depositLp": "الوديعة LP",
-        "borrowAssets": "اقترض الأصول",
+        "borrowAssets": "اقترض GHO",
         "manageLoans": "إدارة القروض",
         "repayLoans": "سداد القروض",
         "withdrawCollateral": "سحب الضمان",
-        "claimLpFees": "المطالبة LP الرسوم",
+        "claimLpFees": "رسوم الشركاء المحدودين",
         "borrowSpoke": "استعار سبوك",
         "lendSpoke": "لسان الدعامة",
         "collateralFactors": "العوامل الضامنة",
@@ -128,12 +128,12 @@
         "integrationsOverview": "نظرة عامة على التكاملات",
         "appkit": "AppKit",
         "allowedPools": "المسابح المسموح بها LP",
-        "routerAdapters": "الموجه والمهايئات",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "أوراكل الأسعار",
         "riskFramework": "إطار المخاطر",
         "contractsSecurity": "العقود والأمان",
         "bugBounty": "مكافأة الثغرات",
-        "insuranceFunds": "صناديق التأمين",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "الإفصاحات الأمنية",
         "legalDisclaimer": "تنبيه قانوني",
         "aiIntroduction": "مقدمة عن الذكاء الاصطناعي",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "حول",
-      "description": "قابل Avana، بروتوكول LP مخصص كضمان مبني على Aave v4 مع محاور متخصصة، ومحور مشترك، ومحور إقراض مصمم لأسواق سيولة AMM."
+      "description": "تبني Avana Labs ضمان LP لـAave V4. تربط LP Vault وعقود التقييم وعقود التسوية مراكز Uniswap بـAvana Hub."
     },
     "borrow": {
       "title": "يستعير",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "حوالي Avana",
-      "subtitle": "LP-كبروتوكول ضمان مبني على Aave v4"
+      "subtitle": "تكامل ضمانات LP لـ Aave V4"
     },
     "brand": {
       "title": "مجموعة العلامة التجارية",

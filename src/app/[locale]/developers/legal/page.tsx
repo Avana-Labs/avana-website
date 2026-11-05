@@ -41,18 +41,18 @@ export default async function SecurityDisclosuresPage({ params }: LocaleParamsPr
 
           title="Restricted Territories"
 
-          description="This page is maintained to reflect the most current list of Restricted Jurisdictions for the Avana domain."
+          description="This page lists the current Restricted Jurisdictions for the Avana domain."
 
         />
 
         <section id="overview" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Overview</h2>
           <p className="type-doc-body mb-4">
-            <>In accordance with our <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>,
-            access to the Avana website and its associated services is restricted for individuals or entities 
-            in certain jurisdictions. This page provides the current list of restricted territories and explains 
-            the access restrictions in place.</>{" "}<><strong>Important:</strong> Any attempt to access the Avana platform from a Restricted
-            Jurisdiction will result in immediate redirection to the Terms of Use and a denial of access.</>
+            <>Under our <Link href="/terms" className="text-blue-600 hover:underline">Terms of Use</Link>,
+            access to the Avana website and its associated services is restricted for individuals or entities
+            in certain jurisdictions. This page lists the current restricted territories and explains
+            the access restrictions.</>{" "}<><strong>Important:</strong> Any attempt to access the Avana platform from a Restricted
+            Jurisdiction is immediately redirected to the Terms of Use, and access is denied.</>
           </p>
         </section>
 

@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Apri la rete di test"
+      "sandboxLong": "Avvia la Testnet"
     },
     "mega": {
       "exploreProducts": "Esplora Prodotti",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Informazioni",
-      "description": "Incontra Avana, un protocollo dedicato LP come garanzia costruito su Aave v4 con Spoke specializzati, un Hub condiviso e un Lend Spoke progettato per mercati di liquidità AMM."
+      "description": "Avana Labs sviluppa collaterale LP per Aave V4. L'LP Vault, i contratti di valutazione e i contratti di regolamento collegano le posizioni Uniswap all'Avana Hub."
     },
     "borrow": {
       "title": "Prendere in prestito",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Circa Avana",
-      "subtitle": "Protocollo LP-come-collaterale costruito su Aave v4"
+      "subtitle": "Integrazione delle garanzie LP per Aave V4"
     },
     "brand": {
       "title": "Kit del marchio",

@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "关于",
-      "description": "认识Avana，一个基于Aave v4构建、以LP作为抵押的专用协议，配备了专门的Spokes、共享Hub，以及为AMM流动性市场设计的Lend Spoke。"
+      "description": "Avana Labs 为 Aave V4 构建 LP 抵押品。LP Vault、估值合约和结算合约将 Uniswap 仓位连接到 Avana Hub。"
     },
     "borrow": {
       "title": "借",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "大约Avana",
-      "subtitle": "基于Aave v4的LP作抵押协议"
+      "subtitle": "针对 Aave V4 的 LP 抵押品整合"
     },
     "brand": {
       "title": "品牌套件",

@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "ٹیسٹ نیٹ کھولیں"
+      "sandboxLong": "Testnet لانچ کریں"
     },
     "mega": {
       "exploreProducts": "مصنوعات کو دریافت کریں",
@@ -110,11 +110,11 @@
         "keyConcepts": "اہم تصورات",
         "glossary": "اصطلاحات کی فہرست",
         "depositLp": "جمع LP",
-        "borrowAssets": "اثاثے ادھار لیں",
+        "borrowAssets": "GHO ادھار لیں",
         "manageLoans": "قرضوں کا انتظام کریں",
         "repayLoans": "قرض واپس کریں",
         "withdrawCollateral": "ضمانت نکالیں",
-        "claimLpFees": "دعویٰ LP فیسیں",
+        "claimLpFees": "ایل پی فیس",
         "borrowSpoke": "ادھار لیا گیا سپوک",
         "lendSpoke": "لینڈ اسپوک",
         "collateralFactors": "ضمانتی عوامل",
@@ -128,12 +128,12 @@
         "integrationsOverview": "انٹیگریشنز کا جائزہ",
         "appkit": "AppKit",
         "allowedPools": "اجازت یافتہ LP پولز",
-        "routerAdapters": "روٹر اور اڈاپٹرز",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "قیمت کے اوریکل",
         "riskFramework": "خطرے کا فریم ورک",
         "contractsSecurity": "معاہدے اور سیکیورٹی",
         "bugBounty": "بگ باؤنٹی",
-        "insuranceFunds": "انشورنس فنڈز",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "سیکیورٹی انکشافات",
         "legalDisclaimer": "قانونی دستبرداری",
         "aiIntroduction": "AI تعارف",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "کے بارے میں",
-      "description": "ملاقات کریں Avana سے، ایک وقف شدہ LP بطور ضمانت پروٹوکول جو Aave v4 پر بنایا گیا ہے جس میں مخصوص Spokes، ایک مشترکہ Hub، اور AMM لیکویڈیٹی مارکیٹس کے لیے ڈیزائن کیا گیا Lend Spoke شامل ہیں۔"
+      "description": "Avana Labs، Aave V4 کے لیے LP کولیٹرل بناتا ہے۔ LP Vault، قدر پیمائی کے کنٹریکٹس اور سیٹلمنٹ کنٹریکٹس Uniswap پوزیشنز کو Avana Hub سے جوڑتے ہیں۔"
     },
     "borrow": {
       "title": "قرض لینا",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "تقریباً Avana",
-      "subtitle": "LP-بحیثیت ضمانت پروٹوکول Aave v4 پر بنایا گیا"
+      "subtitle": "LP ضامن ادغام برائے Aave V4"
     },
     "brand": {
       "title": "برانڈ کٹ",

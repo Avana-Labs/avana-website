@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Відкрити тестову мережу"
+      "sandboxLong": "Запустити Testnet"
     },
     "mega": {
       "exploreProducts": "Досліджуйте продукти",
@@ -110,11 +110,11 @@
         "keyConcepts": "Ключові поняття",
         "glossary": "Глосарій",
         "depositLp": "Внесок LP",
-        "borrowAssets": "Позичати активи",
+        "borrowAssets": "Позичати GHO",
         "manageLoans": "Керувати позиками",
         "repayLoans": "Погашати кредити",
         "withdrawCollateral": "Зняти заставу",
-        "claimLpFees": "Позов LP Витрати",
+        "claimLpFees": "Збори LP",
         "borrowSpoke": "Позичений спиці",
         "lendSpoke": "Передній спиць",
         "collateralFactors": "Забезпечувальні фактори",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Огляд інтеграцій",
         "appkit": "AppKit",
         "allowedPools": "Дозволені LP пулів",
-        "routerAdapters": "Маршрутизатор і адаптери",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Цінові Оракули",
         "riskFramework": "Рамки управління ризиками",
         "contractsSecurity": "Контракти та безпека",
         "bugBounty": "Програма винагороди за помилки",
-        "insuranceFunds": "Страхові фонди",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Розкриття інформації про безпеку",
         "legalDisclaimer": "Юридична заява",
         "aiIntroduction": "Вступ до ШІ",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Про",
-      "description": "Познайомтеся з Avana, відданим протоколом LP як забезпечення, побудованим на Aave v4 зі спеціалізованими Спосами, спільним Хабом та Спосом Позик, призначеним для ринків ліквідності AMM."
+      "description": "Avana Labs створює LP-заставу для Aave V4. LP Vault, контракти оцінювання та контракти врегулювання з'єднують позиції Uniswap з Avana Hub."
     },
     "borrow": {
       "title": "Позичати",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Про Avana",
-      "subtitle": "LP — протокол забезпечення, побудований на Aave v4"
+      "subtitle": "Інтеграція застави LP для Aave V4"
     },
     "brand": {
       "title": "Набір бренду",

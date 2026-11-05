@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'introduction/glossary', {
     title: "Glossary",
-    description: "DeFi glossary for Avana - definitions of Spoke, Hub, LP NFT, collateral factor, debt shares, liquidation, oracle, and other protocol terms.",
+    description: "Definitions of Avana protocol terms, including the Avana Hub, Borrow Spokes, LP Vault, vault tokens, Collateral Factor, LPOracle and settlement modes.",
   })
 }
 
@@ -25,156 +25,221 @@ const sections = [
 const glossaryTerms = {
   coreComponents: [
     {
-      term: "Borrow Spoke",
+      term: "Avana Hub",
       definition:
-        "The borrower-facing Avana spoke that receives LP collateral, values positions, tracks debt, and coordinates borrowing and liquidation against Hub liquidity.",
+        "A standard, unmodified Aave V4 Hub owned by the Aave DAO. It holds a capped GHO credit line allocated through the GHO Reserve. Only approved Avana Borrow Spokes can draw from it.",
     },
     {
-      term: "Lend Spoke",
+      term: "Avana Borrow Spoke",
       definition:
-        "The lender-facing capital entry point that routes supplied assets into the Hub so Borrow Spokes can draw shared liquidity.",
+        "A standard Aave V4 Spoke owned by the Aave DAO. It holds collateral-only vault-token reserves for one market category. It lends GHO under each reserve's Collateral Factor, Collateral Risk and liquidation parameters.",
     },
     {
-      term: "Hub",
+      term: "Avana Lend Spoke",
       definition:
-        "The shared Aave v4 component that manages liquidity, reserves, and debt accounting for connected spokes.",
+        "An Aave V4 Spoke that Aave governance approves separately. It adds direct lender supply to the Avana Hub and borrowing of assets other than GHO.",
     },
     {
       term: "Hub-and-Spoke Architecture",
       definition:
-        "A design where shared capital lives in the Hub while collateral-specific logic is isolated in spokes. Avana uses this model because LP collateral needs DEX-specific valuation and liquidation behavior.",
+        "The Aave V4 design in which liquidity sits in a Hub and collateral rules sit in Spokes. Avana uses standard Aave V4 Hub and Spoke contracts and keeps all Avana-specific logic in its own contracts.",
     },
     {
-      term: "Liquidation Node",
+      term: "Keeper",
       definition:
-        "A protocol-operated runtime that indexes active positions and serves as a specialized liquidation backstop for complex LP collateral.",
+        "An approved operator that calls LPVaultSwap to liquidate unhealthy accounts. At least two keeper operators run: Avana Labs and at least one independent operator.",
     },
   ],
   lpAndCollateral: [
     {
       term: "LP Position",
       definition:
-        "A liquidity position from a supported AMM. Depending on the DEX, it may be a fungible LP token, a concentrated-liquidity NFT, or another approved pool-share format.",
+        "A liquidity position in a supported AMM pool. Avana supports selected Uniswap v2 LP tokens and Uniswap v3 positions on Ethereum mainnet. Uniswap v3 is limited to full-range positions and specifically approved ranges.",
+    },
+    {
+      term: "Pledge",
+      definition:
+        "Depositing an LP position into the LP Vault. A Pledge changes custody but does not remove liquidity from the pool.",
+    },
+    {
+      term: "LP Vault",
+      definition:
+        "The Avana contract that holds pledged LP tokens and NFTs. It records each position's owner, market, backing and status. It releases a position only through an approved withdrawal or settlement.",
+    },
+    {
+      term: "Vault Token",
+      definition:
+        "A transfer-restricted, collateral-only ERC-20 record (18 decimals) that represents pledged liquidity 1:1 on an Avana Borrow Spoke. There is one vault token per approved pool, and per range where applicable. It has no owner, no secondary market and no emissions.",
+    },
+    {
+      term: "Position Proxy",
+      definition:
+        "A dedicated contract that holds each borrower's Aave position. Every deposit, borrow, repayment and withdrawal therefore passes through Avana's controls. In full-position markets it also carries settlement authority.",
     },
     {
       term: "Collateral Factor",
       definition:
-        "The portion of USD collateral value that may count toward borrowing power. In LP markets, this is applied at the position level rather than to the spoke as a whole.",
+        "The share of a vault token's value that supports debt: LPCollateralFactor = min(Token0CF, Token1CF) × PoolRiskFactor.",
+    },
+    {
+      term: "Pool Risk Factor",
+      definition:
+        "A per-market reduction applied once to the lower underlying Collateral Factor. It reflects range, price sensitivity, pool depth and expected liquidation costs.",
     },
     {
       term: "Borrowing Capacity",
       definition:
-        "The amount a user can borrow inside a Borrow Spoke after each deposited LP position has been valued, risk-adjusted, and added to the user’s aggregate capacity.",
+        "LPPositionValue × LPCollateralFactor. Capacity also depends on existing debt, exposure caps, available GHO liquidity and oracle checks.",
     },
     {
-      term: "Allowed Pool",
+      term: "Market Category",
       definition:
-        "A governance-approved pool that meets admissibility requirements such as oracle coverage, liquidity depth, unwind quality, and spoke compatibility.",
-    },
-    {
-      term: "Loan-to-Value (LTV)",
-      definition:
-        "The borrowing ratio associated with collateral after Avana’s position valuation and pool-specific risk controls have been applied.",
+        "One of three groups of approved markets, each with its own Borrow Spoke, parameters and caps: Stable LP (candidate USDC/USDT), Correlated LP (candidate wstETH/WETH) and Blue-chip/stable LP (candidate WETH/USDC).",
     },
   ],
   debtAndInterest: [
     {
-      term: "Debt Shares",
+      term: "GHO",
       definition:
-        "The internal accounting unit used to track borrower obligations while interest accrues over time without rewriting every loan balance continuously.",
+        "Aave's stablecoin and the only asset borrowers can borrow from Avana.",
     },
     {
-      term: "Borrow Rate",
+      term: "GHO Credit Line",
       definition:
-        "The rate borrowers pay on outstanding debt. It reflects both shared Hub conditions and LP-specific risk considerations.",
+        "A capped GHO allocation from the Aave DAO to the Avana Hub through the GHO Reserve. Each increase is subject to conditions and governance approval.",
     },
     {
-      term: "Utilization Rate",
+      term: "Borrowing Rate",
       definition:
-        "The proportion of borrowed liquidity relative to available supply in the relevant Hub-connected capital layer.",
+        "BaseRate × (1 + UserRiskPremium). For example, a 50% risk premium on a 4.5% base rate gives 6.75%.",
     },
     {
-      term: "Risk Premium",
+      term: "Base Rate",
       definition:
-        "The additional borrowing-rate component associated with the risk of the LP collateral market, applied alongside the Hub base rate.",
+        "The Avana Hub GHO base rate, which is at least the Core Hub GHO base rate.",
     },
     {
-      term: "Reserve Factor",
+      term: "User Risk Premium",
       definition:
-        "The portion of protocol economics or interest flows reserved for the system rather than passed through entirely to liquidity suppliers.",
+        "The premium added to the base rate, set from the Collateral Risk of the borrower's collateral. With several collateral reserves, it is a weighted average. Aave V4 updates it on borrow, withdrawal, collateral change and on request.",
+    },
+    {
+      term: "Collateral Risk",
+      definition:
+        "A per-reserve setting on the Borrow Spoke that determines the borrower's interest premium. It is not a haircut on collateral value.",
     },
   ],
   liquidationTerms: [
     {
       term: "Health Factor",
       definition:
-        "The ratio between adjusted collateral value and outstanding debt inside a Borrow Spoke. When it falls too low, the position approaches liquidation eligibility.",
+        "Collateral value after Collateral Factors, divided by outstanding GHO debt. An account becomes liquidatable when its health factor falls below 1.",
     },
     {
-      term: "Liquidation",
+      term: "Partial Settlement",
       definition:
-        "The process of repaying debt against an unhealthy LP-backed position, unwinding enough collateral to restore solvency, and returning any residual value after settlement.",
+        "The settlement mode for Uniswap v2 and selected Aerodrome or Uniswap v3 markets. LPVaultSwap calls Aave V4's standard liquidation with a GHO flash loan. Only the liquidity needed to restore health is removed, so the borrower keeps the rest of the position.",
+    },
+    {
+      term: "Full-Position Settlement",
+      definition:
+        "The settlement mode for most AMMs that use NFTs. LPVaultSwap repays the debt with a flash loan and settles the whole position through an approved route. Any surplus after debt, fees and costs returns to the borrower.",
     },
     {
       term: "Liquidation Bonus",
       definition:
-        "The liquidation premium paid to the party that executes the unwind, compensating them for capital use, routing complexity, and execution risk.",
+        "Aave V4's liquidation incentive in partial-settlement markets. It funds the keeper reward, execution costs and Avana's capped liquidation fee. It does not apply in full-position settlement.",
+    },
+    {
+      term: "FirstLossReserve",
+      definition:
+        "Committed loss-coverage capital that LPVaultSwap draws on within a liquidation if proceeds fall short. If the reserve cannot cover the shortfall, the transaction reverts, and debt and collateral stay unchanged. It counts only once it is funded.",
     },
   ],
   oracleAndTransform: [
     {
-      term: "Oracle",
+      term: "LPOracle",
       definition:
-        "Avana’s valuation engine for LP collateral. It combines external asset prices, LP position reconstruction, and recoverable-value safeguards.",
+        "Avana's oracle for vault tokens. It prices each vault token from the pool's liquidity math at Chainlink prices (VaultTokenPrice = q0·P0 + q1·P1) and applies no haircut.",
     },
     {
-      term: "Recoverable Value",
+      term: "TWAP Check",
       definition:
-        "An estimate of the value recoverable from a position during a stressed liquidation, after accounting for slippage, pool conditions, and risk buffers.",
+        "A consistency check against the pool's time-weighted average price. It is not averaged into the price. If the TWAP moves outside tolerance, new borrowing and risk-increasing withdrawals are blocked. Repayment and liquidation continue at the Chainlink price.",
     },
     {
-      term: "Transform",
+      term: "AaveAdapter",
       definition:
-        "A controlled modification of a collateralized LP position, such as a rebalance or range change, that is only allowed when the resulting position still satisfies protocol health checks.",
+        "The borrower's entry point to Avana. It coordinates deposits with the LP Vault and Collateralization Module, then mints and supplies vault tokens. Borrowing, repayment and withdrawal also go through the AaveAdapter. It enforces the TWAP and stale-price gates but does not set risk parameters or collateral values.",
+    },
+    {
+      term: "LPVaultSwap",
+      definition:
+        "The only contract that performs liquidations. It takes flash loans and runs each market's settlement route. It draws from the FirstLossReserve when needed and pays keepers, Avana and borrowers. It is not a spoke and cannot draw from the Avana Hub. It is owned by an Aave DAO executor, and its operational controls are held by an Avana Labs and Aave DAO service-provider multisig.",
+    },
+    {
+      term: "RiskModule",
+      definition:
+        "Checks market eligibility, the pilot allowlist, position-size limits and exposure limits at the pool, underlying-token and depositor level.",
+    },
+    {
+      term: "CollateralizationModule",
+      definition:
+        "Sets the vault-token amount for each position at 1:1 with its liquidity and reconciles backing. The oracle cannot affect issuance.",
+    },
+    {
+      term: "AMMSettlementAdapters",
+      definition:
+        "Immutable, versioned contracts that execute approved exits. They redeem LP tokens, remove liquidity and collect fees.",
+    },
+    {
+      term: "AvanaConfig",
+      definition:
+        "Holds market definitions, contract mappings, Avana-side limits, oracle settings, settlement routes and fee terms.",
     },
   ],
   metrics: [
-    { term: "TVL", definition: "Total value of assets supplied as LP collateral or capital across Avana-connected components." },
-    { term: "Outstanding Debt", definition: "The amount currently borrowed against approved collateral positions." },
-    { term: "Borrow Utilization", definition: "The share of available Hub liquidity that has been drawn by borrowers." },
-    { term: "Borrowing Headroom", definition: "The difference between a user’s current debt and remaining aggregate borrowing capacity inside a Borrow Spoke." },
-    { term: "Residual Value", definition: "Any value left in a position after debt, liquidation premium, and execution costs have been settled." },
+    { term: "LP Collateral", definition: "The value of LP positions held in the LP Vault and represented by vault tokens on Avana Borrow Spokes." },
+    { term: "Outstanding Debt", definition: "The amount of GHO currently borrowed against vault-token collateral." },
+    { term: "Credit-Line Usage", definition: "The share of the Avana Hub's GHO credit line that borrowers have drawn." },
+    { term: "Borrowing Headroom", definition: "The difference between a borrower's current debt and their borrowing capacity on a Borrow Spoke." },
+    { term: "Backing Reconciliation", definition: "The comparison of vault-token supply with LP Vault liquidity for each market, reported by AaveAdapterLens." },
   ],
   riskMitigation: [
     {
       term: "Pool Approval",
       definition:
-        "The rule that only pre-approved pools may be admitted as collateral, limiting exposure to unsupported or weakly monitored markets.",
+        "Only approved pools can be used as collateral. New collateral pools are published for a two-week review before listing approval. Meme-token pools and pools without enough liquidity history or reliable external pricing are excluded.",
     },
     {
-      term: "Recovery Haircut",
+      term: "Pilot Allowlist",
       definition:
-        "A discount for potential losses during liquidation, applied when converting reconstructed LP value into borrowing capacity.",
+        "During the pilot, only allowlisted depositors can pledge positions. Each market has minimum and maximum position sizes, and each account has a limit on positions. Governance can remove the allowlist once pilot criteria are met.",
     },
     {
       term: "Exposure Caps",
       definition:
-        "Risk limits that bound borrowable exposure by pool family, collateral class, or liquidity depth.",
+        "Limits checked at the pool, underlying-token and depositor level, including a limit on the share of a pool's liquidity. Hub add and draw caps also limit flows per Borrow Spoke.",
     },
     {
-      term: "Circuit Breaker",
+      term: "Emergency Guardian",
       definition:
-        "A risk control that can pause or restrict actions when prices, market behavior, or protocol dependencies become inconsistent or unsafe.",
+        "A multisig that can pause, freeze and cancel. It cannot upgrade contracts, change parameters or move collateral. It can freeze a market by freezing both the vault-token reserve and the GHO reserve on the Borrow Spoke.",
     },
     {
-      term: "Governance Safety",
+      term: "Governance Roles",
       definition:
-        "The proposing, review, timelock, veto, and emergency roles that govern changes to protocol risk parameters.",
+        "The Aave DAO owns the Avana Hub and Borrow Spokes and holds pause and freeze roles over Avana's contracts. It can stop markets without Avana Labs. Avana Labs administers its own contracts within these permissions.",
     },
     {
-      term: "Reentrancy Protection",
+      term: "Upgrade Timelock",
       definition:
-        "The contract-level protection that prevents a state-changing workflow from being entered again before the first execution is complete.",
+        "A delay on upgrades to Avana's upgradeable contracts, followed by a grace window. Avana Labs cannot bypass the delay. The Aave DAO can cancel queued upgrades.",
+    },
+    {
+      term: "Avana Umbrella",
+      definition:
+        "Avana's protocol safety module, named after Aave's Umbrella. It is third in the loss order, after dedicated first-loss capital and revenues committed to loss coverage.",
     },
   ],
 }
@@ -246,7 +311,7 @@ export default async function GlossaryPage({ params }: LocaleParamsProps) {
             ))}
           </dl>
 
-          <h3 className="text-xl type-doc-subsection-title mt-8 mb-4">Oracle & Transform</h3>
+          <h3 className="text-xl type-doc-subsection-title mt-8 mb-4">Oracle & Contracts</h3>
           <dl className="space-y-4">
             {glossaryTerms.oracleAndTransform.map((item) => (
               <div key={item.term} className="group">
@@ -298,7 +363,8 @@ export default async function GlossaryPage({ params }: LocaleParamsProps) {
           <div className="type-doc-callout type-doc-callout-warning">
             <ul className="type-doc-body space-y-2">
               <li><strong>No Investment Advice:</strong> Avana is a software protocol. This documentation does not constitute investment advice.</li>
-              <li><strong>Risk of Loss:</strong> Users can lose funds through smart contract vulnerabilities, market volatility, liquidation, or oracle manipulation.</li>
+              <li><strong>Status:</strong> The public sandbox uses simulated assets and makes no onchain transactions.</li>
+              <li><strong>Risk of Loss:</strong> Users can lose funds through smart contract vulnerabilities, market volatility, impermanent loss, liquidation, or oracle failure.</li>
               <li><strong>Regulatory Status:</strong> The regulatory status of Avana and its tokens (if any) is not guaranteed and may vary by jurisdiction.</li>
               <li><strong>No Warranty:</strong> The software is provided &quot;as is&quot; without warranty of any kind.</li>
             </ul>

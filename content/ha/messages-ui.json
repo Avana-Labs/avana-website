@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Buɗe hanyar sadarwar gwaji"
+      "sandboxLong": "Kaddamar da Testnet"
     },
     "mega": {
       "exploreProducts": "Binciki Kayayyaki",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Game da",
-      "description": "Sadu da Avana, wani ƙa'ida mai sadaukarwa na LP-a-matsayi na jingina an gina shi a kan Aave v4 tare da Spokes na musamman, Hub ɗin da aka raba, da Lend Spoke da aka ƙera don kasuwannin ruwa na AMM."
+      "description": "Avana Labs yana gina jinginar LP don Aave V4. LP Vault, kwangilolin ƙimantawa, da kwangilolin sasantawa suna haɗa matsayin Uniswap da Avana Hub."
     },
     "borrow": {
       "title": "Arapa",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Game da Avana",
-      "subtitle": "LP-a matsayin jinginar al'ada da aka gina a kan Aave v4"
+      "subtitle": "Haɗin haɗin gwiwar LP don Aave V4"
     },
     "brand": {
       "title": "Kayan tambari",

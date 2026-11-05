@@ -32,10 +32,10 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
 
         <section id="principles" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Ask a specific question</h2>
-          <blockquote className="doc-example">Compare the borrowing cost and health factor for borrowing 1,000 USDC against my selected LP position.</blockquote>
+          <blockquote className="doc-example">Compare the borrowing cost and health factor for borrowing 1,000 GHO against my selected LP position.</blockquote>
           <div className="doc-prose">
             <p className="type-doc-body">
-              This request identifies the intended borrow and links it to a selected collateral position. The asset and amount define the debt being evaluated; the position supplies the collateral context. Asking for the assumptions and included costs makes the result easier to trace to its inputs.
+              This request identifies the intended borrow and links it to a selected collateral position. The asset and amount define the debt being evaluated. The position supplies the collateral context. Asking for the assumptions and included costs makes the result easier to trace to its inputs.
             </p>
           </div>
         </section>
@@ -45,7 +45,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <blockquote className="doc-example">What happens to this position&apos;s health factor if its collateral value falls by 20% while debt stays the same?</blockquote>
           <div className="doc-prose">
             <p className="type-doc-body">
-              This scenario changes collateral value while holding debt constant, which isolates its effect on health factor. A larger debt balance or a different LP range would be a separate scenario with different inputs. The result illustrates the stated assumptions; it is not an execution quote or a prediction of returns.
+              This scenario changes collateral value and holds debt constant. That isolates the effect of collateral value on the health factor. For example, 25,000 GHO borrowed against a $100,000 position with a 35% Collateral Factor has a health factor of 1.40. A 20% fall in collateral value lowers it to 1.12. A larger debt balance or a different LP range is a separate scenario with different inputs. The result illustrates the stated assumptions. It is not an execution quote or a prediction of returns.
             </p>
           </div>
         </section>
@@ -55,7 +55,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <blockquote className="doc-example">Which network and data timestamp does this estimate use, and which costs are excluded?</blockquote>
           <div className="doc-prose">
             <p className="type-doc-body">
-              Network, timestamp, and cost coverage determine what an estimate represents. A follow-up request can resolve missing context before the result is used to prepare an action. The relevant product flow then provides the current transaction terms for review.
+              Network, timestamp, and cost coverage determine what an estimate represents. A follow-up request can resolve missing context before the result is used to prepare an action. The relevant product flow then provides the current transaction terms for review. Estimates in the sandbox at app.avana.cc use simulated assets.
             </p>
           </div>
         </section>

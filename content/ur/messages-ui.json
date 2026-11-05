@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "ٹیسٹ نیٹ کھولیں"
+      "sandboxLong": "Testnet لانچ کریں"
     },
     "mega": {
       "exploreProducts": "مصنوعات کو دریافت کریں",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "کے بارے میں",
-      "description": "ملاقات کریں Avana سے، ایک وقف شدہ LP بطور ضمانت پروٹوکول جو Aave v4 پر بنایا گیا ہے جس میں مخصوص Spokes، ایک مشترکہ Hub، اور AMM لیکویڈیٹی مارکیٹس کے لیے ڈیزائن کیا گیا Lend Spoke شامل ہیں۔"
+      "description": "Avana Labs، Aave V4 کے لیے LP کولیٹرل بناتا ہے۔ LP Vault، قدر پیمائی کے کنٹریکٹس اور سیٹلمنٹ کنٹریکٹس Uniswap پوزیشنز کو Avana Hub سے جوڑتے ہیں۔"
     },
     "borrow": {
       "title": "قرض لینا",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "تقریباً Avana",
-      "subtitle": "LP-بحیثیت ضمانت پروٹوکول Aave v4 پر بنایا گیا"
+      "subtitle": "LP ضامن ادغام برائے Aave V4"
     },
     "brand": {
       "title": "برانڈ کٹ",

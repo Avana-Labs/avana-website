@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Test Ağını Aç"
+      "sandboxLong": "Testnet'i başlat"
     },
     "mega": {
       "exploreProducts": "Ürünleri Keşfet",
@@ -110,11 +110,11 @@
         "keyConcepts": "Temel Kavramlar",
         "glossary": "Sözlük",
         "depositLp": "Mevduat LP",
-        "borrowAssets": "Varlık Ödünç Al",
+        "borrowAssets": "Ödünç al GHO",
         "manageLoans": "Kredileri Yönet",
         "repayLoans": "Kredileri Geri Öde",
         "withdrawCollateral": "Teminatı Çek",
-        "claimLpFees": "Talep LP Ücretler",
+        "claimLpFees": "LP Ücretleri",
         "borrowSpoke": "Borç Aldı Konuştu",
         "lendSpoke": "Verdi Konuştu",
         "collateralFactors": "Teminat Faktörleri",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Entegrasyonlar Genel Bakış",
         "appkit": "AppKit",
         "allowedPools": "İzin Verilen LP Havuzlar",
-        "routerAdapters": "Yönlendirici ve Adaptörler",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Fiyat Kehanetleri",
         "riskFramework": "Risk Çerçevesi",
         "contractsSecurity": "Sözleşmeler ve Güvenlik",
         "bugBounty": "Hata Ödülü",
-        "insuranceFunds": "Sigorta Fonları",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Güvenlik Açıklamaları",
         "legalDisclaimer": "Yasal Uyarı",
         "aiIntroduction": "Yapay zekaya giriş",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Hakkında",
-      "description": "Tanışın Avana ile, Aave v4 üzerinde inşa edilmiş, özel Spokes, paylaşılan bir Hub ve AMM likidite piyasaları için tasarlanmış bir Lend Spoke içeren, teminat olarak LP adanmış bir protokol."
+      "description": "Avana Labs, Aave V4 için LP teminatı geliştirir. LP Vault, değerleme sözleşmeleri ve tasfiye sözleşmeleri Uniswap pozisyonlarını Avana Hub'a bağlar."
     },
     "borrow": {
       "title": "Ödünç almak",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Yaklaşık Avana",
-      "subtitle": "LP-teminat protokolü Aave v4 üzerine inşa edilmiştir"
+      "subtitle": "Aave V4 için LP teminat entegrasyonu"
     },
     "brand": {
       "title": "Marka seti",

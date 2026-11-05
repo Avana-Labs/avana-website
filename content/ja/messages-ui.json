@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "テストネットを開く"
+      "sandboxLong": "テストネットを起動"
     },
     "mega": {
       "exploreProducts": "商品を探す",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "約",
-      "description": "Avanaに出会いましょう。これは、専用のスポーク、共有ハブ、AMM流動性市場向けに設計されたレンドスポークを備えた、Aave v4上に構築された専用のLP担保プロトコルです。"
+      "description": "Avana Labsは、Aave V4向けのLP担保を構築しています。LP Vault、評価コントラクト、決済コントラクトが、UniswapのポジションをAvana Hubにつなぎます。"
     },
     "borrow": {
       "title": "借りる",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "おおよそAvana",
-      "subtitle": "Aave v4上に構築された担保用プロトコルLP"
+      "subtitle": "Aave V4のLP担保統合"
     },
     "brand": {
       "title": "ブランドキット",

@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic"
 import { useTranslations } from "next-intl"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import HeaderLanguageDropdown from "@/components/header-language-dropdown"
 
 const DeferredHeaderMobileMenu = dynamic(() => import("@/components/header-mobile-menu"), {
@@ -10,6 +10,18 @@ const DeferredHeaderMobileMenu = dynamic(() => import("@/components/header-mobil
 })
 
 let mobileMenuPromise: Promise<unknown> | null = null
+
+function subscribeToHydration() {
+  return () => {}
+}
+
+function getHydrationSnapshot() {
+  return true
+}
+
+function getServerHydrationSnapshot() {
+  return false
+}
 
 function warmMobileMenu() {
   mobileMenuPromise ??= import("@/components/header-mobile-menu")
@@ -34,6 +46,11 @@ function MobileMenuToggleIcon({ open }: { open: boolean }) {
 
 export default function HeaderMobileNavigation() {
   const t = useTranslations("common")
+  const isHydrated = useSyncExternalStore(
+    subscribeToHydration,
+    getHydrationSnapshot,
+    getServerHydrationSnapshot,
+  )
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileMenuMounted, setMobileMenuMounted] = useState(false)
   const [mobileMenuAnimationCycle, setMobileMenuAnimationCycle] = useState(0)
@@ -53,10 +70,12 @@ export default function HeaderMobileNavigation() {
 
       <button
         type="button"
-        className="inline-flex h-11 w-11 items-center justify-center text-type-accent transition hover:text-type-accent/80"
+        className="inline-flex h-11 w-11 items-center justify-center text-type-accent transition hover:text-type-accent/80 disabled:cursor-wait disabled:opacity-60"
         aria-label={mobileMenuOpen ? t("a11y.closeMenu") : t("a11y.openMenu")}
         aria-expanded={mobileMenuOpen}
         aria-controls="mobile-site-nav"
+        disabled={!isHydrated}
+        aria-busy={!isHydrated}
         onFocus={warmMobileMenu}
         onPointerEnter={warmMobileMenu}
         onTouchStart={warmMobileMenu}

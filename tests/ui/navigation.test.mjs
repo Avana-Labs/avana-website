@@ -30,6 +30,7 @@ async function visit(width, fn) {
 test("mobile menu moves focus inside and Escape restores the trigger", async () => {
   await visit(390, async page => {
     const trigger = 'button[aria-controls="mobile-site-nav"]';
+    await page.waitForFunction(sel => document.querySelector(sel)?.disabled === false, {}, trigger);
     await page.click(trigger);
     await page.waitForSelector('[role="dialog"][aria-hidden="false"], dialog[open]', { visible: true });
     await page.waitForFunction(() => Boolean(document.activeElement?.closest('[role="dialog"],dialog')));
@@ -50,6 +51,7 @@ test("mobile menu moves focus inside and Escape restores the trigger", async () 
 test("closed mobile menu has no reachable links", async () => {
   await visit(390, async page => {
     const trigger = 'button[aria-controls="mobile-site-nav"]';
+    await page.waitForFunction(sel => document.querySelector(sel)?.disabled === false, {}, trigger);
     await page.click(trigger);
     await page.waitForSelector('[role="dialog"][aria-hidden="false"], dialog[open]', { visible: true });
     await page.keyboard.press("Escape");

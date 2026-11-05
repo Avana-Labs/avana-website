@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Testnet öffnen"
+      "sandboxLong": "Testnet starten"
     },
     "mega": {
       "exploreProducts": "Produkte entdecken",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Über",
-      "description": "Treffen Sie Avana, ein dediziertes LP-als-Sicherheit-Protokoll, das auf Aave v4 mit spezialisierten Spokes, einem gemeinsamen Hub und einem Lend-Spoke entwickelt wurde, der für AMM-Liquiditätsmärkte konzipiert ist."
+      "description": "Avana Labs entwickelt LP-Sicherheiten für Aave V4. Der LP Vault, die Bewertungsverträge und die Abwicklungsverträge verbinden Uniswap-Positionen mit dem Avana Hub."
     },
     "borrow": {
       "title": "Leihen",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Ungefähr Avana",
-      "subtitle": "LP-als-gesichertes Protokoll aufgebaut auf Aave v4"
+      "subtitle": "LP-Sicherheitenintegration für Aave V4"
     },
     "brand": {
       "title": "Markenkit",

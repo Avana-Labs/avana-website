@@ -8,27 +8,27 @@
         {
           "id": "what-is-avana",
           "q": "O que é a Avana?",
-          "a": "A Avana é um protocolo de empréstimo feito para colateral LP. Permite depositar posições AMM suportadas, mantê-las ativas no pool subjacente e tomar emprestado contra elas pela infraestrutura Aave v4.\n\nA ideia central é que o capital LP não precisa ficar inutilizável só porque está dentro de um pool. A Avana transforma posições LP suportadas em colateral que pode lastrear crédito enquanto a posição original continua a apoiar swaps, ganhar taxas e permanecer ligada ao seu mercado AMM."
+          "a": "A Avana permite que provedores de liquidez usem posições de AMM como colateral no Aave V4. Um tomador empenha um token LP Uniswap v2 ou uma posição Uniswap v3 no LP Vault da Avana. Em seguida, o tomador toma GHO emprestado do Avana Hub por meio de um Borrow Spoke da Avana, enquanto a liquidez permanece no pool.\n\nA Avana opera na mainnet do Ethereum. O Avana Hub e os Borrow Spokes são contratos padrão do Aave V4 de propriedade da Aave DAO."
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Que problema a Avana resolve?",
-          "a": "Provedores de liquidez muitas vezes precisam remover liquidez antes de poder tomar emprestado contra o capital. Isso significa sair do pool, abrir mão da exposição a taxas e interromper a posição de mercado que já construíram.\n\nA Avana resolve isso tornando posições LP suportadas utilizáveis como colateral. O LP permanece ao vivo, a Avana acompanha e valoriza a posição, e a Aave v4 cuida da contabilidade do lado do empréstimo por meio de um token de colateral vault interno."
+          "a": "Os provedores de liquidez normalmente precisam retirar a liquidez antes de poder tomar emprestado contra seu capital. Para isso, eles saem do pool e abrem mão da receita de taxas e da faixa escolhida.\n\nA Avana torna as posições LP suportadas utilizáveis como colateral. A posição permanece no pool. O LPOracle da Avana a avalia, e o Aave V4 a registra como um vault token que corresponde 1:1 à liquidez subjacente. O benefício para os LPs é flexibilidade de capital, não um retorno positivo garantido. Os tomadores continuam sujeitos a perda impermanente, risco de preço e risco de liquidação."
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Como a Avana difere de um mercado de lending padrão?",
-          "a": "Mercados de lending padrão costumam tratar o colateral como saldos simples de tokens: ETH, BTC, stablecoins ou outros ativos ERC-20. A Avana é feita para colateral que muda de forma com o tempo. Posições LP podem conter vários ativos, acumular taxas, derivar com o preço, ficar unilaterais ou exigir uma rota de unwind específica.\n\nPor isso a Avana faz underwriting do colateral no nível do mercado LP. Cada pool ou família LP suportada pode ter sua própria lógica de valuation, fatores de colateral, ativos tomáveis, pressupostos de liquidação e limites de risco."
+          "a": "Os mercados de empréstimo tradicionais normalmente tratam o colateral como simples saldos de tokens, como ETH, BTC, stablecoins ou outros ativos ERC-20. A Avana foi criada para um colateral que muda ao longo do tempo. Uma posição LP contém dois ativos e gera taxas. Sua composição muda conforme os preços variam, ela pode sair da faixa e precisa de uma rota específica para ser desmontada.\n\nPor isso, a Avana define o risco por mercado. Cada pool aprovado, e faixa quando relevante, tem seu próprio vault token, fator de colateral, limites e modo de acerto. O fator de colateral parte do menor fator de colateral entre os dois tokens do pool e depois é reduzido pelo risco específico do pool."
         },
         {
           "id": "which-amms-can-avana-support",
-          "q": "Quais AMMs a Avana pode suportar?",
-          "a": "A Avana suporta mercados de colateral LP selecionados em AMMs como Uniswap, Balancer, Curve e Aerodrome conforme os mercados são lançados. O suporte é aprovado pool a pool — não é concedido automaticamente a todo pool de um venue.\n\nCada mercado suportado tem requisitos claros: pricing confiável dos ativos, profundidade de liquidez suficiente, rota de unwind definida, caps de mercado e configurações de colateral alinhadas ao tipo de pool. Por isso os mercados de lançamento permanecem curados antes de ampliar a cobertura."
+          "q": "Quais AMMs a Avana suporta?",
+          "a": "A Avana suporta tokens LP Uniswap v2 e posições Uniswap v3 selecionados na mainnet do Ethereum. No Uniswap v3, apenas posições de faixa completa e faixas especificamente aprovadas são aceitas.\n\nAdicionar Uniswap v4, Curve, Balancer, Aerodrome, outros AMMs ou outras redes como a Base exige uma análise técnica e de risco própria e a aprovação da governança da Aave. Os pools são aprovados um de cada vez. A Avana exclui pools de meme tokens, pools sem histórico de liquidez suficiente ou precificação externa confiável e pools em que a retirada de liquidez pode ser restringida."
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "A Avana substitui o AMM onde está minha liquidez?",
-          "a": "Não. O AMM continua a cuidar de swaps, estado do pool, movimento de preços e geração de taxas. A Avana adiciona uma camada de colateral e crédito em torno das posições LP suportadas.\n\nQuando você deposita uma posição elegível na Avana, o protocolo acompanha o colateral LP real e o conecta à contabilidade do lado do empréstimo. O AMM subjacente continua sendo o venue onde a posição de liquidez existe e ganha taxas."
+          "a": "Não. O AMM continua cuidando dos swaps, do estado do pool, da variação de preço e da geração de taxas. A Avana adiciona uma camada de colateral em torno das posições LP suportadas.\n\nQuando você empenha uma posição elegível, o LP Vault da Avana a mantém, e a Avana emite um vault token correspondente para o Aave V4. A liquidez permanece no pool do AMM e continua gerando taxas enquanto estiver dentro da faixa."
         }
       ]
     },
@@ -40,27 +40,27 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Como a Avana funciona em alto nível?",
-          "a": "A Avana funciona em três passos. Primeiro, um usuário deposita uma posição LP suportada na Avana. Segundo, a Avana avalia a posição lendo ativos subjacentes, estrutura do pool, volatilidade, correlação, profundidade de liquidez e risco de liquidação. Terceiro, depois que a posição passa pelos checks do mercado, o usuário pode tomar emprestado contra o valor ajustado ao risco.\n\nA posição LP permanece ativa no AMM. A Avana gerencia o registro de colateral, a valuation e a lógica de risco específica de LP, enquanto a Aave v4 cuida do crédito e da contabilidade do lado do empréstimo pelo modelo Hub-and-Spoke conectado."
+          "a": "A Avana funciona em três etapas. Primeiro, você empenha uma posição LP suportada no LP Vault. Segundo, o Risk Module da Avana verifica o pool, o nível de taxa, a faixa, a disponibilidade do oráculo e os limites. O Aave Adapter então emite um vault token correspondente e o fornece ao Borrow Spoke da Avana desse mercado. Terceiro, você toma GHO emprestado do Avana Hub até sua capacidade de empréstimo.\n\nA posição LP permanece no AMM. Os contratos próprios da Avana cuidam da custódia, da avaliação e do acerto. O Avana Hub e os Borrow Spokes são contratos padrão e não modificados do Aave V4 de propriedade da Aave DAO."
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Por que a Avana usa a infraestrutura Hub-and-Spoke da Aave v4?",
-          "a": "A Avana usa a Aave v4 porque o colateral LP precisa de liquidez compartilhada e lógica de risco isolada ao mesmo tempo. O Hub cuida da camada monetária comum: reservas, contabilidade, modelos de juros e coordenação global do crédito.\n\nOs Spokes cuidam do trabalho específico de LP: registro de colateral do pool, valuation de posições, enforcement de risco e execução de liquidações. Assim pools estáveis, pares correlacionados, pares voláteis e mercados de liquidez concentrada podem usar as regras de que realmente precisam em vez de um modelo de risco genérico."
+          "q": "Por que a Avana usa a infraestrutura Hub-and-Spoke do Aave V4?",
+          "a": "A Avana usa o Aave V4 porque ele separa a liquidez compartilhada das configurações de risco específicas de cada mercado. O Avana Hub mantém uma linha de crédito limitada de GHO alocada pela Aave DAO. Apenas Borrow Spokes aprovados podem sacar dela.\n\nCada Borrow Spoke abrange uma categoria de mercado com seus próprios parâmetros e limites: LP estável (candidato USDC/USDT), LP correlacionado (candidato wstETH/WETH) e LP blue-chip/estável (candidato WETH/USDC). Os candidatos ainda estão em avaliação. A Avana não faz fork nem modifica o código do Aave V4. Toda a lógica específica da Avana está nos contratos próprios da Avana."
         },
         {
           "id": "what-is-a-borrow-spoke",
           "q": "O que é um Borrow Spoke?",
-          "a": "Um Borrow Spoke é um mercado isolado de colateral LP. Ele decide quais pools são suportados, como cada posição LP é valorizada, quais fatores de colateral se aplicam, quais ativos podem ser tomados emprestados e como a liquidação funciona naquele mercado.\n\nBorrow Spokes são separados porque posições LP não se comportam todas igual. Um LP de stablecoin, um LP correlacionado ETH–staked ETH e um LP de token de governança volátil precisam de configurações de risco, caps e, às vezes, rotas de liquidação diferentes."
+          "a": "Um Borrow Spoke é um Spoke padrão do Aave V4 de propriedade da Aave DAO. Ele aceita vault tokens da Avana como colateral e permite que tomadores saquem GHO do Avana Hub. Ele aplica o fator de colateral, o Risco de Colateral e os parâmetros de liquidação dos seus mercados.\n\nA Avana usa Borrow Spokes separados porque nem todas as posições LP se comportam da mesma forma. Um par de stablecoins, um par correlacionado como wstETH/WETH e um par blue-chip/estável como WETH/USDC precisam de fatores de colateral, limites e configurações de acerto diferentes."
         },
         {
           "id": "what-are-vault-tokens",
           "q": "O que são os vault tokens da Avana?",
-          "a": "Vault tokens são ativos internos ERC-20 de contabilidade que representam colateral LP aprovado no lado voltado à Aave do sistema. Por exemplo, uma posição LINK/ETH suportada pode mapear para um token de colateral estilo vaultLINKETH, enquanto uma posição WETH/USDC pode mapear para um token estilo vaultWETHUSDC.\n\nO vault token é a ponte. A Avana acompanha a posição LP real e seu valor, o Aave Adapter fornece o vault token correspondente na Aave v4, e a Aave usa esse token para a contabilidade de colateral. O usuário não toma emprestado só contra um wrapper abstrato; o vault token permanece lastreado pela posição LP rastreada por trás."
+          "a": "Os vault tokens são tokens ERC-20 exclusivos para colateral que representam posições LP empenhadas no Aave V4. Cada pool aprovado, e faixa quando relevante, tem seu próprio vault token. A Avana emite vault tokens 1:1 com a liquidez subjacente quando você empenha uma posição e os queima no saque ou no acerto. Não há cronograma de emissão, emissões nem taxa de câmbio.\n\nOs vault tokens não são ativos do usuário e não têm mercado secundário. Eles só circulam entre o Avana Hub, os Borrow Spokes, os Position Proxies, o Aave Adapter e o LPVaultSwap. Todo vault token em circulação é lastreado por liquidez mantida no LP Vault."
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Quais são as principais partes do protocolo Avana?",
-          "a": "A Avana é construída em torno de vários módulos focados. O LP Position Manager registra a posição LP real, incluindo owner, pool, par, fee tier, range, liquidez, valor atual, taxas acumuladas e status de colateral. O Risk Module aprova o pool, os ativos, a profundidade, o range e os caps de mercado antes que a posição lastreie dívida.\n\nO Collateralization Module traz pricing, valoriza a posição, decide o valor de colateral suportado e mint ou remove o vault token interno. O Aave Adapter cuida do lado voltado à Aave fornecendo e sacando vault collateral, e mantém a integração Aave separada da lógica específica de LP."
+          "a": "O LP Vault mantém os tokens LP e NFTs empenhados. Ele registra o proprietário, o pool, o par de tokens, o nível de taxa, a faixa e o status de cada posição. O Risk Module verifica a elegibilidade do pool, a lista de permissões do piloto, os limites de tamanho de posição e os limites de exposição. O Collateralization Module emite vault tokens 1:1 com a liquidez. O LPOracle precifica os vault tokens com a Chainlink e usa o TWAP do pool como segunda verificação.\n\nO Aave Adapter é o ponto de entrada do tomador. Ele processa depósitos, empréstimos, pagamentos e saques por meio de um Position Proxy dedicado para cada tomador. O LPVaultSwap executa liquidações com flash loans, e os adaptadores de acerto de AMM retiram liquidez e coletam taxas. Os contratos atualizáveis da Avana ficam protegidos por um timelock que a Avana Labs não pode contornar. A Aave DAO detém os papéis de pausa e congelamento."
         }
       ]
     },
@@ -72,27 +72,27 @@
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "O que acontece quando deposito colateral LP?",
-          "a": "Quando você deposita uma posição LP suportada, a Avana registra a posição e a roteia para o Borrow Spoke relevante. O protocolo verifica que o pool está aprovado, reconstrói a posição, checa as configurações de risco e calcula o valor de colateral ligado àquele mercado.\n\nDepois que a posição passa nesses checks, a Avana mint o vault token interno correspondente para a contabilidade do lado do empréstimo. Depositar não toma emprestado ativos automaticamente; cria capacidade de empréstimo que a conta pode usar enquanto permanecer saudável e o mercado tiver liquidez disponível."
+          "a": "Quando você empenha uma posição LP suportada, o Aave Adapter a deposita no LP Vault. O Risk Module então verifica o pool, o nível de taxa, a faixa, a disponibilidade do oráculo e os limites. Durante o piloto, apenas depositantes na lista de permissões podem empenhar, e cada mercado tem tamanhos mínimo e máximo de posição.\n\nQuando as verificações são aprovadas, a Avana emite um vault token correspondente e o fornece como colateral no Borrow Spoke por meio do seu Position Proxy. O empenho, por si só, não toma nada emprestado. Ele cria capacidade de empréstimo que você pode usar enquanto a conta continuar saudável e houver liquidez de GHO disponível."
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "Minha posição LP permanece ativa após o depósito?",
-          "a": "Sim. Posições LP suportadas permanecem ativas enquanto servem como colateral. A liquidez continua ligada à posição AMM subjacente, então o pool segue processando swaps e a posição continua acumulando taxas e incentivos conforme as regras do AMM.\n\nAções que mudam o valor do colateral são checadas pela Avana enquanto a dívida está aberta. Sacar liquidez, resgatar taxas, mudar um range ou modificar a posição passa pelo Borrow Spoke porque essas ações afetam o valor que lastreia o empréstimo."
+          "a": "Sim. Um empenho muda a custódia, mas não retira a liquidez do pool. O pool continua processando swaps, e sua posição continua gerando taxas. Uma posição Uniswap v3 deixa de gerar taxas enquanto estiver fora da faixa.\n\nEnquanto houver dívida em aberto, as ações que reduzem o colateral, como saques, passam pelo Aave Adapter. Elas só são permitidas se a conta continuar saudável depois delas."
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "Posso resgatar taxas LP enquanto tomo emprestado?",
-          "a": "A Avana separa a liquidez principal das taxas acumuladas no seu modelo de valuation. Isso permite reconhecer receita de taxas e liberar taxas resgatáveis mantendo o principal LP ativo como colateral.\n\nResgates de taxas passam por checks de saúde antes e depois. Se remover o valor das taxas deixar a conta abaixo do limite de colateral exigido, a Avana bloqueia o resgate até o usuário reembolsar dívida ou adicionar mais colateral."
+          "a": "As taxas continuam se acumulando na sua posição enquanto ela está no LP Vault. Quando você saca, o LP Vault libera seus tokens LP ou seu NFT junto com as taxas não coletadas.\n\nVocê pode sacar tudo depois que sua dívida for paga, ou sacar parte da posição se sua conta continuar saudável depois disso."
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "As taxas LP entram no valor do colateral?",
-          "a": "Taxas acumuladas são acompanhadas separadamente da liquidez principal. O modelo de oráculo da Avana distingue valor principal de valor de taxas, para o protocolo entender quanto da posição é liquidez núcleo e quanto é receita de taxas resgatável.\n\nEssa distinção importa na liquidação. A Avana aplica taxas acumuladas antes da liquidez principal quando a rota do mercado admite isso, reduzindo quanto do LP núcleo precisa ser desmontado para cobrir a dívida."
+          "a": "O LPOracle avalia a liquidez da sua posição. Ele calcula as quantidades de tokens a partir da matemática de liquidez do pool e as precifica aos preços da Chainlink, sem deságio. As taxas não coletadas são liberadas com a posição quando você saca.\n\nO fator de colateral do mercado define os limites de empréstimo separadamente. A Avana não aplica desconto ao valor do oráculo."
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "Quando posso sacar colateral LP?",
-          "a": "Você pode sacar colateral depois de reembolsar a dívida por completo, ou depois que a Avana confirmar que a conta restante ainda passa nos checks de saúde após o saque. O reembolso completo é o caminho mais limpo porque a posição LP não garante mais dívida aberta.\n\nMudanças parciais de colateral passam pelo Borrow Spoke. A Avana recalcula a conta após remover ou modificar a posição LP solicitada e só libera colateral quando o colateral aprovado restante ainda lastreia a dívida pendente."
+          "a": "Você pode sacar tudo depois que sua dívida for paga. Você também pode sacar parte do seu colateral se a conta continuar saudável depois disso. O Aave Adapter saca e queima os vault tokens correspondentes, e o LP Vault libera seus tokens LP ou seu NFT com as taxas não coletadas.\n\nO pagamento e o saque também funcionam sem o frontend da Avana, chamando os contratos diretamente. Novos empréstimos e saques voluntários são bloqueados enquanto um preço do oráculo estiver desatualizado ou a verificação de TWAP falhar. O pagamento continua nesses casos."
         }
       ]
     },
@@ -104,27 +104,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Como a Avana precifica o colateral LP?",
-          "a": "A Avana precifica o colateral LP reconstruindo a posição e valorizando os ativos dentro dela. Em LPs fungíveis, o protocolo deriva valor de preços externos dos ativos e da reconstrução dos saldos do pool. Em liquidez concentrada, decompõe a posição por liquidez, range, tick atual, exposição a tokens e taxas acumuladas.\n\nO resultado é então descontado até o valor de colateral recuperável. O poder de empréstimo se baseia no que a posição pode lastrear de forma realista sob os pressupostos de risco do mercado, não em um NAV otimista."
+          "a": "O LPOracle precifica cada vault token a partir da matemática de liquidez do pool aos preços da Chainlink. A fórmula é valor = q0·P0 + q1·P1, em que q0 e q1 são as quantidades de tokens por trás de um vault token. Para posições Uniswap v3, as quantidades de tokens vêm da liquidez e da faixa da posição ao preço de referência.\n\nO oráculo informa o valor sem deságio. O fator de colateral do mercado define os limites de empréstimo separadamente. O fator de colateral parte do menor fator de colateral entre os dois tokens do pool e é reduzido por um fator de risco do pool."
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
           "q": "Como a Avana reduz o risco de oráculo e de preço?",
-          "a": "A Avana usa um framework de precificação com duplo oráculo para colateral LP. Os price feeds da Chainlink fornecem a referência primária dos ativos subjacentes, enquanto TWAPs derivados do AMM atuam como camada de verificação independente vinda da liquidez onchain.\n\nO poder de empréstimo só é concedido quando as fontes de preço permanecem dentro da banda de tolerância do mercado. Isso reduz a exposição a manipulação flash-loan, distorções transitórias de preço do AMM, updates stale e marks ruins de colateral que criam dívida insegura."
+          "a": "A Chainlink é a referência de avaliação. O TWAP do pool é uma verificação de consistência, não uma média nem um substituto. Se o TWAP sair da tolerância permitida, novos empréstimos e saques que aumentam o risco são bloqueados. O pagamento e a liquidação continuam ao preço da Chainlink.\n\nSe o feed da Chainlink estiver desatualizado, o oráculo usa o último preço válido até uma idade máxima. Durante esse período, novos empréstimos e saques voluntários são bloqueados. Após a idade máxima, as liquidações ficam pausadas até que o feed se recupere ou a governança aprove um feed de reserva. O pagamento continua."
         },
         {
           "id": "what-is-recoverable-value",
-          "q": "O que é valor recuperável?",
-          "a": "Valor recuperável é o valor de colateral descontado que a Avana usa para decisões de empréstimo e liquidação. Reflete o que a posição LP vale após considerar sua rota de unwind, venda, transferência ou settlement sob estresse.\n\nO valor recuperável é menor que o valor teórico do LP quando a rota de liquidação inclui slippage, impacto de preço, movimento de range, volatilidade, tratamento de taxas ou pouca profundidade de rota. A Avana dimensiona o empréstimo contra o valor recuperável porque esse é o valor que protege a dívida."
+          "q": "O Avana desconta o valor do oráculo?",
+          "a": "A Avana não aplica desconto ao valor do oráculo em si. Em vez disso, o fator de colateral de cada mercado considera quanto valor pode ser recuperado em uma liquidação. A fórmula é: fator de colateral LP = menor fator de colateral entre os dois tokens do pool × fator de risco do pool.\n\nO fator de risco do pool reflete a faixa, a sensibilidade ao preço, a profundidade do pool e os custos de liquidação esperados. A Gauntlet sugeriu começar com até 0,25× o menor fator subjacente quando o ativo tomado emprestado não é um dos tokens do pool, como GHO contra WETH/USDC."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "Por que posições de liquidez concentrada são tratadas com cuidado?",
-          "a": "Posições de liquidez concentrada mudam de exposição rapidamente conforme o preço se move. Uma posição pode ficar majoritariamente em um ativo, sair do range, parar de ganhar taxas ou exigir settlement no nível da posição NFT completa.\n\nA Avana valoriza posições concentradas decompondo o estado real da posição em vez de tratar o NFT como saldo de token estático. O mercado então aplica fatores de colateral, caps e pressupostos de liquidação alinhados ao range, inventário e risco de unwind da posição."
+          "a": "Posições de liquidez concentrada mudam de exposição rapidamente conforme o preço se move. Uma posição pode passar a ser composta principalmente por um único ativo ou sair da faixa e deixar de gerar taxas.\n\nA Avana aceita apenas posições Uniswap v3 de faixa completa e faixas especificamente aprovadas, cada uma com seu próprio vault token. O oráculo calcula as quantidades de tokens a partir da liquidez e da faixa da posição. Cada mercado define seu próprio fator de risco do pool e modo de acerto."
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Que dados de mercado a Avana monitora?",
-          "a": "Os Borrow Spokes monitoram os sinais que afetam a qualidade do colateral LP: composição do pool, preços de tokens, correlação de ativos, volatilidade, profundidade de liquidez, acumulação de taxas, confiabilidade do oráculo e custo de unwind.\n\nEsses sinais alimentam o tratamento de colateral do mercado. Pools estáveis e altamente correlacionados recebem limites diferentes de pares voláteis ou pouco negociados porque seus perfis de liquidação e slippage são diferentes."
+          "a": "O Risk Module da Avana verifica a exposição nos níveis de pool, de token subjacente e de depositante, incluindo um limite para a participação na liquidez de um pool. Cada mercado tem seu próprio fator de risco do pool, modo de acerto, janela de TWAP, desvio de preço permitido e idade máxima do feed.\n\nA Avana Labs publica relatórios semanais de uso e relatórios mensais de receita. Os relatórios cobrem dívida e colateral por mercado, concentração, distribuição do fator de saúde e liquidações bem-sucedidas, malsucedidas e repetidas. Eles também cobrem o uso do FirstLossReserve, dívida incobrável, incidentes de oráculo, uso da linha de crédito, taxas e recursos de primeira perda."
         }
       ]
     },
@@ -136,27 +136,27 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Como funciona tomar emprestado na Avana?",
-          "a": "O empréstimo acontece depois que o Borrow Spoke admite e valoriza seu colateral LP. Quando você solicita um ativo, o Spoke checa a capacidade restante, confirma que a posição permanece saudável após a nova dívida e retira liquidez do Hub se o ativo estiver disponível.\n\nO ativo emprestado é enviado ao usuário e a conta registra a dívida pela camada de contabilidade do lado do empréstimo. Os juros acumulam com o tempo, então a saúde pode mudar mesmo se a posição de colateral em si não mudar."
+          "a": "Depois que sua posição é empenhada e o vault token correspondente é fornecido como colateral, você toma GHO emprestado do Avana Hub por meio do Borrow Spoke. O Aave Adapter verifica se as checagens de preço são aprovadas e se sua conta continua saudável após a nova dívida.\n\nO GHO é enviado para sua carteira, e a dívida é registrada no Aave V4. Os juros acumulam à taxa base × (1 + seu prêmio de risco), então seu fator de saúde pode mudar mesmo que seu colateral não mude."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Como a capacidade de empréstimo é calculada?",
-          "a": "A capacidade de empréstimo vem do valor ajustado ao risco das posições LP aprovadas dentro de um Borrow Spoke. A Avana reconstrói cada posição, precifica a exposição subjacente, aplica o tratamento de risco no nível do pool e então aplica o fator de colateral do mercado.\n\nO Borrow Spoke reporta essa capacidade ao Hub para enforcement. Quando um usuário tem várias posições aprovadas no mesmo mercado, a Avana agrega a capacidade valorizando cada posição segundo seu próprio pool, range, liquidez e pressupostos de risco."
+          "a": "Capacidade de empréstimo = valor da posição LP × fator de colateral LP. O fator de colateral LP é o menor fator de colateral entre os dois tokens do pool multiplicado por um fator de risco do pool. O fator de risco do pool reflete a faixa, a sensibilidade ao preço, a profundidade do pool e os custos de liquidação esperados.\n\nA capacidade também depende da dívida existente, dos limites de exposição, da liquidez de GHO disponível e das verificações do oráculo. Por exemplo, uma posição WETH/USDC de faixa completa de US$ 100.000 com fator de colateral final de 35% tem capacidade de 35.000 GHO. Esses números são ilustrativos, não parâmetros reais de mercado."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Por que o poder de empréstimo é menor que o valor do meu LP?",
-          "a": "O poder de empréstimo é menor porque a Avana usa um valor de colateral conservador, não o mark completo do LP. Posições LP podem perder valor por divergência de preços, impermanent loss, drift de range, estresse de liquidez e slippage de liquidação.\n\nA diferença entre o valor LP e o poder de empréstimo é o buffer de segurança. Ele protege o mercado garantindo que a dívida seja dimensionada contra o valor de colateral recuperável — não contra o melhor caso em condições normais."
+          "a": "A capacidade de empréstimo é menor que o valor do LP porque o fator de colateral deixa margem para variações de preço, perda impermanente, mudanças de faixa e custos de liquidação. O oráculo informa o valor total. O fator de colateral define quanto desse valor pode lastrear dívida.\n\nO fator de risco do pool é aplicado uma única vez e definido por mercado, portanto a diferença entre o valor do LP e a capacidade de empréstimo varia entre os mercados."
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "Quais ativos posso tomar emprestado?",
-          "a": "Ativos tomáveis são definidos por mercado. Os mercados de empréstimo da Avana focam em ativos líquidos como grandes stablecoins, GHO, ETH, BTC e outros ativos que cabem na liquidez, nos caps e na configuração de risco do mercado.\n\nA interface mostra o conjunto ativo de empréstimo de cada mercado. Um tipo de colateral LP suportado não desbloqueia automaticamente todo ativo de dívida; cada ativo de dívida faz parte da configuração do mercado."
+          "a": "Os Borrow Spokes emprestam GHO. O Avana Hub é financiado por uma linha de crédito limitada de GHO da Aave DAO, e a governança aprova cada aumento.\n\nOutros ativos são tomados emprestados por meio do Lend Spoke da Avana, que a governança da Aave aprova separadamente."
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "Posso tomar emprestado contra várias posições LP ao mesmo tempo?",
-          "a": "Sim, quando as posições são suportadas dentro do mercado relevante. A Avana pode agregar poder de empréstimo em várias posições LP aprovadas no mesmo Borrow Spoke, dando ao usuário uma superfície de crédito combinada para aquele mercado.\n\nA agregação não mescla risco às cegas. Cada posição ainda contribui com capacidade com base no próprio pool, range, liquidez, taxas e tratamento de risco, e a conta total deve permanecer acima do limiar de saúde exigido."
+          "a": "Sim. As posições fornecidas ao mesmo Borrow Spoke lastreiam uma única conta, e seu prêmio de risco é a média ponderada entre elas. Cada posição ainda tem seu próprio vault token, fator de colateral e limites.\n\nDurante o piloto, cada conta tem um limite no número de posições. A conta inteira precisa permanecer acima do fator de saúde exigido."
         }
       ]
     },
@@ -168,22 +168,22 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Como os fornecedores usam a Avana?",
-          "a": "Os fornecedores aportam ativos como ETH, BTC, GHO, USDC, USDT ou outros ativos suportados no lado voltado ao fornecedor do protocolo. Esse capital é roteado pelo Hub para lastrear empréstimos nos mercados de colateral LP.\n\nFornecedores não gerenciam ranges LP, impermanent loss nem operações de colateral específicas de AMM. Os Borrow Spokes cuidam do underwriting e da lógica de liquidação de LP, enquanto o capital do fornecedor impulsiona a camada de crédito."
+          "a": "Os empréstimos passam pelo Lend Spoke da Avana, que é separado dos Borrow Spokes de GHO. A governança da Aave o aprova separadamente.\n\nO Lend Spoke permite que credores forneçam ativos diretamente ao Avana Hub e que tomadores tomem emprestados ativos além do GHO. O Avana Hub também mantém a linha de crédito de GHO da Aave DAO."
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "De onde vem o yield do fornecedor?",
-          "a": "O yield do fornecedor vem dos tomadores que pagam juros para acessar liquidez lastreada em colateral LP. O modelo da Avana combina a taxa base compartilhada do Hub com prêmios de risco no nível do Spoke ligados aos mercados LP financiados.\n\nIsso significa que o yield pode refletir tanto a utilização normal quanto a demanda adicional criada pelo empréstimo lastreado em LP. As taxas ainda se movem com condições de mercado, liquidez disponível, utilização e o perfil de risco dos mercados de tomadores subjacentes."
+          "a": "Por meio do Lend Spoke, os credores recebem juros pagos por tomadores com lastro em LP. A Avana Labs retém uma participação do protocolo sobre a liquidez financiada por credores. Os juros das linhas de crédito da Aave DAO continuam indo para a DAO.\n\nOs tomadores pagam a taxa base do Avana Hub mais um prêmio de risco baseado em seu colateral. A taxa base é definida em nível igual ou superior à taxa base do Core Hub da Aave. A governança da Aave define os termos exatos para os credores."
         },
         {
           "id": "do-lenders-manage-lp-collateral",
           "q": "Os fornecedores gerenciam o colateral LP eles mesmos?",
-          "a": "Não. Fornecedores aportam capital limpo em mercados de lending suportados. Eles não escolhem ranges LP, não resgatam taxas LP nem decidem como uma posição AMM específica é desmontada.\n\nEssa separação é o ponto do Lend Spoke. O capital do fornecedor lastreia a demanda especializada de tomadores lastreados em LP, enquanto os Borrow Spokes mantêm valuation de colateral, checks de saúde e handling de liquidação isolados do fluxo do fornecedor."
+          "a": "Não. Os credores fornecem ativos ao Avana Hub. Eles não escolhem faixas LP nem cuidam do acerto. Os Borrow Spokes, o LP Vault e o LPVaultSwap cuidam da avaliação do colateral, das verificações de saúde e da liquidação.\n\nA governança da Aave aprova o Lend Spoke separadamente."
         },
         {
           "id": "what-protects-lender-capital",
           "q": "O que protege o capital do fornecedor?",
-          "a": "A Avana protege o capital do fornecedor por meio de empréstimos sobregarantidos, valuation conservadora de LP, checks de duplo oráculo, caps de mercado, enforcement do fator de saúde e rotas de liquidação específicas de LP. Cada Borrow Spoke precifica o colateral conforme os riscos do próprio pool antes que a dívida seja sacada da liquidez do Hub.\n\nO protocolo ainda carrega risco DeFi: risco de smart contract, risco de oráculo, risco de execução de liquidação e estresse de mercado. A Avana contém esse risco medindo o colateral LP no nível do mercado em vez de tratar cada posição LP como um simples saldo de tokens."
+          "a": "A única exposição da Aave DAO é a linha de crédito limitada de GHO, e cada aumento exige a aprovação da governança. As proteções incluem depositantes na lista de permissões durante o piloto, limites por mercado, fatores de colateral reduzidos pelo risco do pool, preços da Chainlink com verificações de TWAP e liquidações acertadas em uma única transação.\n\nSe uma liquidação consumir o colateral e ainda restar dívida, as perdas são cobertas nesta ordem: primeiro pelo capital de primeira perda dedicado, depois pelas receitas comprometidas com a cobertura de perdas e, em seguida, pelo Avana Umbrella. Os riscos de contratos inteligentes, de oráculo e de execução de liquidações permanecem. Os contratos da Avana estão em revisão de segurança interna, e auditorias públicas independentes virão em seguida."
         }
       ]
     },
@@ -195,27 +195,27 @@
         {
           "id": "what-is-health-factor",
           "q": "O que é o fator de saúde?",
-          "a": "O fator de saúde mede a relação entre o valor de colateral ajustado ao risco e a dívida pendente dentro de um Borrow Spoke. O modelo simplificado é valor de colateral ajustado dividido pela dívida pendente.\n\nO valor de colateral ajustado já inclui a valuation LP da Avana, fatores de colateral, tratamento de risco no nível do pool e pressupostos de valor recuperável. Se a saúde cair abaixo do limite de liquidação, a posição se torna elegível à liquidação."
+          "a": "O fator de saúde compara o valor de empréstimo do seu colateral (valor × fator de colateral) com sua dívida. Acima de 1, a conta está saudável. Abaixo de 1, ela pode ser liquidada.\n\nEm um exemplo ilustrativo, tomar 25.000 GHO emprestados contra uma posição WETH/USDC de US$ 100.000 com fator de colateral de 35% resulta em um fator de saúde inicial de 1,40. A interface limita novos empréstimos a um fator de saúde de abertura de 1,10."
         },
         {
           "id": "what-affects-health-factor",
           "q": "O que afeta meu fator de saúde?",
-          "a": "O fator de saúde muda quando mudam o valor do colateral, a dívida, taxas são resgatadas, colateral é sacado, alavancagem é adicionada ou parâmetros de mercado são atualizados. Posições LP também podem mudar porque preços de tokens se movem, inventário do pool muda, taxas acumulam ou posições concentradas entram e saem do range.\n\nTomar mais emprestado reduz a saúde porque a dívida sobe. Reembolsar dívida, adicionar colateral aprovado ou reduzir exposição melhora a saúde porque a conta tem mais suporte de colateral em relação à dívida."
+          "a": "O fator de saúde muda quando o valor do colateral, a dívida ou os parâmetros de mercado mudam. As posições LP mudam de valor conforme os preços dos tokens variam, e as posições Uniswap v3 também mudam de composição dentro de sua faixa. Os juros aumentam a dívida ao longo do tempo.\n\nTomar mais emprestado reduz seu fator de saúde. Pagar a dívida ou adicionar colateral aprovado o aumenta."
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Como a liquidação funciona na Avana?",
-          "a": "A liquidação começa quando o fator de saúde de uma conta cai abaixo do limiar de liquidação. A Aave cuida da contabilidade da dívida, dos checks de saúde e do ponto de entrada da liquidação contra o colateral vault ERC-20.\n\nA Avana cuida do settlement LP por trás desse vault token. O Adapter queima o vault collateral, mapeia a liquidação de volta à posição LP real e a camada de settlement segue a rota do mercado: unwind, venda, leilão ou transferência da posição de lastro. A dívida é coberta primeiro, depois a recompensa do liquidador e os custos de settlement, com o excedente conforme a regra do mercado."
+          "a": "Uma conta pode ser liquidada quando seu fator de saúde cai abaixo de 1. Em uma única transação, o LPVaultSwap toma um flash loan, paga a dívida e acerta o colateral LP correspondente. Cada mercado tem um modo de acerto aprovado.\n\nO acerto parcial abrange o Uniswap v2 e mercados selecionados do Aerodrome ou do Uniswap v3. Ele usa a liquidação padrão do Aave V4. Normalmente, apenas a liquidez necessária para restaurar a saúde é retirada, e você mantém o restante. O acerto da posição inteira abrange a maioria dos AMMs que usam NFTs. Ele acerta a posição inteira e devolve ao tomador qualquer excedente após a dívida, as taxas e os custos."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Quem pode liquidar uma posição não saudável?",
-          "a": "As liquidações são permissionless depois que uma posição cruza o limiar de liquidação. Qualquer liquidador elegível pode reembolsar o valor de dívida permitido e acionar a rota de settlement.\n\nColateral LP é mais difícil de desmontar do que colateral token simples, então a Avana também contempla cobertura especializada de liquidação. Liquidadores acompanham o mesmo estado de risco, mapeamento de vault token, profundidade de rota e pressupostos de unwind usados pelo protocolo."
+          "a": "Apenas keepers aprovados podem chamar o LPVaultSwap, que é o único contrato que executa liquidações. Os keepers são operados por pelo menos dois operadores: a Avana Labs e pelo menos um operador independente.\n\nAbrir as liquidações para liquidantes de terceiros exige a aprovação da governança."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
-          "q": "O que acontece com as taxas LP durante a liquidação?",
-          "a": "A Avana distingue taxas acumuladas da liquidez principal. Durante a liquidação, a rota de settlement aplica taxas acumuladas antes da liquidez principal quando a rota do mercado admite essa sequência.\n\nIsso reduz quanto do LP núcleo precisa ser perturbado. Se o valor das taxas não cobrir dívida suficiente, a camada de settlement desmonta ou transfere o colateral LP necessário conforme a rota de liquidação daquele mercado."
+          "q": "Quais taxas são aplicadas durante a liquidação?",
+          "a": "Nos mercados de acerto parcial, o bônus de liquidação do Aave V4 paga a recompensa do keeper, os custos de execução e a taxa de liquidação limitada da Avana. Por isso, a taxa não aumenta o custo do tomador. Você mantém a parte da posição que não é retirada.\n\nNos mercados de posição inteira, a recompensa do keeper, os custos e a taxa da Avana são deduzidos dos recursos do acerto, até um percentual máximo da dívida definido por mercado. Qualquer excedente é devolvido ao tomador."
         }
       ]
     },
@@ -227,22 +227,22 @@
         {
           "id": "how-are-new-pools-added",
           "q": "Como novos pools LP são adicionados?",
-          "a": "Novos pools LP são adicionados por revisão e aprovação de mercado. Um pool precisa de pricing confiável dos ativos subjacentes, liquidez suficiente, pressupostos claros de unwind e parâmetros de risco que cabem no tipo de colateral.\n\nA Avana começa com mercados LP curados para que valuation e liquidação permaneçam limpas. A cobertura mais ampla de pools pode crescer com o tempo conforme melhoram suporte de oráculos, profundidade de liquidez e dados de risco."
+          "a": "A Avana Labs submete novos mercados e parâmetros, e um revisor de risco designado os revisa. Cada novo pool de colateral é publicado para uma revisão de duas semanas antes da aprovação da listagem.\n\nUm pool precisa de precificação externa confiável, histórico de liquidez suficiente, uma forma de recuperar os recursos da liquidação sob estresse e nenhuma restrição à retirada de liquidez. Cada AMM além do Uniswap v2 e v3 exige sua própria revisão e a aprovação da governança da Aave."
         },
         {
           "id": "can-risk-parameters-change",
-          "q": "Os parâmetros de risco podem mudar após o lançamento?",
-          "a": "Sim. Parâmetros de risco podem mudar conforme as condições de mercado mudam. Um pool pode ficar menos líquido, mais volátil, menos correlacionado ou mais difícil de desmontar do que quando foi listado.\n\nAtualizações de parâmetros podem afetar fatores de colateral, caps, pools suportados, ativos tomáveis, pausas, limiares de liquidação e bônus de liquidação. Usuários com dívida aberta acompanham essas atualizações porque mudanças de parâmetros afetam poder de empréstimo e fator de saúde."
+          "q": "Os parâmetros de risco podem mudar com o tempo?",
+          "a": "Sim. Os parâmetros de risco mudam conforme as condições de mercado mudam. Um pool pode se tornar menos líquido, mais volátil, menos correlacionado ou mais difícil de desmontar do que era quando foi listado.\n\nAs atualizações podem afetar fatores de colateral, limites, pools suportados, pausas, parâmetros de liquidação e modos de acerto. A Aave DAO é proprietária do Hub e dos Spokes e pode pausar ou congelar mercados sem a Avana Labs. Os upgrades dos contratos da Avana passam por um timelock que a Avana Labs não pode contornar, e a DAO pode cancelá-los."
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "Onde posso acompanhar a discussão de governança?",
-          "a": "A maioria das atualizações de governança e discussão de mercado da Avana acontece pela Avana Labs no X em https://twitter.com/avana_labs. Esse canal cobre novos pools, parâmetros de mercado, integrações, revisões de segurança e fases de produto.\n\nPropostas mais longas, notas de risco e threads externos de governança são linkados pela Avana Labs quando relevantes. Para posições grandes, os usuários revisam as últimas atualizações da Avana Labs e os parâmetros de mercado ao vivo antes de confiar em um pool."
+          "a": "A Avana é discutida no fórum de governança da Aave (governance.aave.com) e depois vai para uma votação no Snapshot. A implantação no Ethereum e o financiamento em GHO passam, cada um, por uma revisão de acompanhamento no fórum e por sua própria votação no Snapshot antes das AIPs.\n\nA Avana Labs também publica atualizações no X em https://twitter.com/avana_labs."
         },
         {
           "id": "can-interface-fees-change",
           "q": "As taxas de interface podem mudar com o tempo?",
-          "a": "Sim. Taxas de interface e serviço da Avana são configurações operacionais dos frontends oficiais. Elas são separadas da mecânica central do protocolo que governa colateral, dívida, checks de oráculo e liquidação.\n\nQuando uma taxa de interface se aplica, o fluxo da transação a exibe antes da assinatura para que os usuários distingam o custo do frontend do gas, da execução de swap, dos juros do protocolo e da economia de liquidação."
+          "a": "A Avana Labs recebe uma taxa de frontend na interface oficial e uma taxa de liquidação. A governança da Aave define os valores exatos e aprova quaisquer alterações posteriores. Você pode evitar a taxa de frontend chamando os contratos diretamente.\n\nOs juros da linha de crédito de GHO da Aave DAO vão para a DAO, não para a Avana Labs."
         }
       ]
     },
@@ -254,17 +254,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Posso tomar emprestado GHO pela Avana?",
-          "a": "GHO é um dos ativos do lado do empréstimo suportados pela Avana em mercados que incluem liquidez GHO. Quando um mercado oferece GHO, os usuários podem tomá-lo emprestado contra colateral LP aprovado enquanto a conta permanece acima do limiar de saúde exigido.\n\nTomar emprestado GHO funciona como qualquer outro ativo de dívida na Avana: aumenta a dívida pendente, afeta o fator de saúde, acumula juros e é reembolsado em GHO mais quaisquer custos aplicáveis."
+          "a": "Sim. GHO é o único ativo que pode ser tomado emprestado. Você o toma emprestado do Avana Hub, que mantém uma linha de crédito limitada de GHO alocada pela Aave DAO por meio da GHO Reserve.\n\nA dívida em GHO afeta seu fator de saúde e acumula juros à taxa base do Avana Hub mais seu prêmio de risco. Toda a receita de juros atribuível à linha de crédito vai para a Aave DAO."
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "GHO pode fazer parte do colateral LP?",
-          "a": "Sim. GHO pode fazer parte do colateral LP quando o pool GHO específico está aprovado para um mercado Avana. O pool é avaliado como outros mercados LP: pricing de ativos, profundidade de liquidez, correlação, composição de tokens, caps e rota de liquidação importam.\n\nIsso significa que GHO não é tratado como aprovação geral para todo par. A Avana suporta a configuração do pool, não só o símbolo do ativo."
+          "a": "Não. Os pools candidatos são USDC/USDT, wstETH/WETH e WETH/USDC, e eles ainda estão em avaliação.\n\nUm pool que contenha GHO pode ser adicionado depois pelo mesmo processo de revisão e governança de qualquer outro pool novo."
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "Como reembolso dívida GHO?",
-          "a": "A dívida GHO é reembolsada em GHO mais juros acumulados e quaisquer custos aplicáveis. Depois que o reembolso confirma, a Avana reduz a dívida pendente da conta e o fator de saúde melhora.\n\nApós o reembolso completo, as restrições de colateral ligadas a essa dívida são liberadas conforme as regras do mercado, permitindo sacar ou modificar a posição LP quando não restar outra dívida."
+          "a": "Você pode pagar o GHO mais os juros acumulados a qualquer momento, a menos que o mercado esteja pausado. Você paga pelo Aave Adapter ou chamando os contratos diretamente. O pagamento reduz sua dívida e aumenta seu fator de saúde.\n\nApós o pagamento integral, você pode sacar a posição. O LP Vault então libera seus tokens LP ou seu NFT com as taxas não coletadas."
         }
       ]
     },
@@ -276,22 +276,22 @@
         {
           "id": "what-is-avana-multiply",
           "q": "O que é Avana Multiply?",
-          "a": "Avana Multiply é o fluxo de alavancagem gerenciada construído sobre crédito lastreado em LP. Um usuário deposita colateral LP suportado, a Avana o valoriza e a interface pode usar esse poder de empréstimo para abrir exposição de loop ou alavancagem aprovada em um só fluxo.\n\nEm vez de tomar emprestado, fazer swap, redepositar e acompanhar dívida manualmente em várias ferramentas, o Multiply empacota a posição em um fluxo monitorado com colateral, dívida, nível de alavancagem, fator de saúde e controles de unwind mostrados juntos."
+          "a": "O Multiply é um fluxo no sandbox público da Avana em app.avana.cc. Em um único fluxo de trabalho, ele toma emprestado contra o colateral LP e reinveste os fundos tomados para aumentar a exposição. O sandbox usa ativos simulados e não faz transações onchain.\n\nO Multiply não faz parte dos mercados Aave V4 da Avana, que abrangem empréstimos de GHO contra posições Uniswap v2 e v3."
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
           "q": "Como o Multiply difere de tomar emprestado?",
-          "a": "Tomar emprestado dá aos usuários ativos que podem usar diretamente, desde que a conta permaneça saudável. O Multiply usa o poder de empréstimo lastreado em LP dentro de uma estratégia gerenciada, em que o capital emprestado é roteado para exposição aprovada e acompanhado como uma só posição.\n\nComo o Multiply adiciona alavancagem, pode aumentar a eficiência de capital e os retornos potenciais, mas também aumenta o downside, o risco de liquidação e a sensibilidade ao movimento de preços. A visão de saúde importa mais, não menos, quando uma posição está em loop."
+          "a": "O empréstimo fornece ativos que você pode usar diretamente enquanto a conta continuar saudável. O Multiply usa o poder de empréstimo lastreado em LP dentro de uma estratégia gerenciada. O capital tomado emprestado vai para uma exposição aprovada e é acompanhado como uma única posição.\n\nO Multiply adiciona alavancagem. A alavancagem aumenta a eficiência de capital e os retornos potenciais, mas também aumenta as perdas potenciais, o risco de liquidação e a sensibilidade às variações de preço. A visão de saúde importa mais, e não menos, quando uma posição está em loop."
         },
         {
           "id": "do-i-keep-lp-while-using-multiply",
           "q": "Eu mantenho meu LP enquanto uso o Multiply?",
-          "a": "Sim. A posição LP permanece a base de colateral enquanto a posição Multiply está aberta. O usuário não precisa sair totalmente da posição AMM só para criar exposição alavancada.\n\nO LP continua lastreando dívida, então permanece sujeito às regras de colateral e à liquidação se a conta ficar não saudável. Os usuários monitoram valor do colateral, dívida, alavancagem e buffer de liquidação durante toda a vida do loop."
+          "a": "Sim. A posição LP continua sendo a base de colateral enquanto a posição Multiply estiver aberta. Você não precisa sair da posição no AMM para criar exposição alavancada.\n\nA posição LP ainda lastreia a dívida, então as regras de colateral se aplicam, e ela pode ser liquidada se a conta deixar de ser saudável. Os usuários monitoram o valor do colateral, a dívida, a alavancagem e a margem até a liquidação durante todo o tempo em que o loop estiver aberto."
         },
         {
           "id": "what-limits-maximum-leverage",
           "q": "O que limita a alavancagem máxima?",
-          "a": "A alavancagem máxima depende da qualidade do colateral, liquidez do pool, volatilidade, confiança do oráculo, ativo de empréstimo, caps de mercado e pressupostos de liquidação. Pools estáveis ou altamente correlacionados costumam suportar limites de alavancagem diferentes dos de pools voláteis ou rasos.\n\nA Avana usa controles de risco específicos do mercado para que a alavancagem fique limitada pelo colateral LP real por trás da posição — não por um multiplicador plano aplicado a todos os pools."
+          "a": "A alavancagem máxima depende da qualidade do colateral, da liquidez do pool, da volatilidade, da confiabilidade do oráculo, do ativo tomado emprestado, dos limites do mercado e das premissas de liquidação. Pools estáveis ou altamente correlacionados normalmente suportam limites de alavancagem diferentes dos pools voláteis ou com pouca liquidez.\n\nA Avana usa controles de risco específicos por mercado. A alavancagem é limitada pelo colateral LP real por trás da posição, não por um multiplicador fixo aplicado a todos os pools."
         }
       ]
     },
@@ -303,17 +303,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "A automação pode ajudar a gerenciar o risco da posição?",
-          "a": "A automação monitora a saúde da conta e pode acionar ações predefinidas como reembolso, deleveraging ou redução de exposição antes da liquidação. Isso importa porque posições lastreadas em LP se movem tanto com a acumulação de dívida quanto com mudanças de mercado no nível do pool.\n\nAutomação é uma ferramenta de gestão de risco, não uma garantia. A execução ainda pode ser afetada por movimentos de mercado, condições de liquidez, atrasos de transação, updates de oráculo e disponibilidade de rotas."
+          "a": "O sandbox apresenta uma prévia de automação que monitora a saúde da conta e aciona ações como pagamento ou desalavancagem antes da liquidação. A automação não faz parte dos mercados Aave V4 da Avana.\n\nA automação é uma ferramenta de gestão de risco, não uma garantia. Movimentos de mercado, condições de liquidez, atrasos nas transações, atualizações do oráculo e a disponibilidade de rotas ainda podem afetar a execução."
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "O colateral LP pode lastrear exposição estilo perps?",
-          "a": "O colateral LP lastreia alavancagem ou exposição estilo perps aprovadas por meio de mercados e integrações que roteiam crédito lastreado em LP para estratégias controladas. A posição LP cria poder de empréstimo, e esse crédito pode ser implantado por rotas de exposição suportadas em vez de ser usado só como um empréstimo simples para a wallet.\n\nA disponibilidade é definida pela configuração ativa do mercado: tipo de colateral, parâmetros de mercado, confiança do oráculo, liquidez, ativo de dívida e rota de integração. A interface mostra as rotas suportadas de cada mercado."
+          "a": "Não. A Avana abrange empréstimos de GHO contra posições Uniswap v2 e v3 aprovadas no Ethereum.\n\nVocê decide como usar o GHO que toma emprestado, mas a Avana não direciona crédito lastreado em LP para perps ou outras estratégias."
         },
         {
           "id": "what-users-monitor",
           "q": "O que os usuários monitoram depois de abrir uma posição?",
-          "a": "Os usuários monitoram fator de saúde, uso do empréstimo, valor do colateral, crescimento da dívida, status do range LP, acumulação de taxas e buffer de liquidação. Em posições Multiply, também monitoram o nível de alavancagem e os controles de unwind.\n\nA Avana exibe esses valores na interface para que os usuários vejam quando uma posição está saudável, quando precisa de atenção e quando o risco se aproxima da liquidação."
+          "a": "Os tomadores monitoram o fator de saúde, a dívida, o valor do colateral, a taxa de empréstimo, o status da faixa no Uniswap v3 e a distância até a liquidação. No fluxo Multiply do sandbox, eles também veem o nível de alavancagem e os controles de desmontagem.\n\nA interface da Avana mostra esses valores. Você pode ver quando uma posição está saudável, quando precisa de atenção e quando está se aproximando da liquidação."
         }
       ]
     }

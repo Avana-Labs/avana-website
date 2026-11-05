@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Buɗe hanyar sadarwar gwaji"
+      "sandboxLong": "Kaddamar da Testnet"
     },
     "mega": {
       "exploreProducts": "Binciki Kayayyaki",
@@ -110,11 +110,11 @@
         "keyConcepts": "Muhimman Ra'ayoyi",
         "glossary": "Jerin Kalma",
         "depositLp": "Ajiya LP",
-        "borrowAssets": "Arziki Bashi",
+        "borrowAssets": "Ara GHO",
         "manageLoans": "Sarrafa Bashi",
         "repayLoans": "Biya Bashi",
         "withdrawCollateral": "Cire Bada Baya",
-        "claimLpFees": "Kira LP Kuɗaɗe",
+        "claimLpFees": "Kudin LP",
         "borrowSpoke": "Ara Spoke",
         "lendSpoke": "Bako na Baya",
         "collateralFactors": "Abubuwan Bada Bashi",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Bayanin Hada-Hadar Tsarin",
         "appkit": "AppKit",
         "allowedPools": "An yarda da LP Tafkin",
-        "routerAdapters": "Na'urar mai ba da hanyar sadarwa da Na'urorin haɗi",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Masu Bada Farashi",
         "riskFramework": "Tsarin Hadarin",
         "contractsSecurity": "Kwantiragi & Tsaro",
         "bugBounty": "Lambar Ladabi ga Kwari",
-        "insuranceFunds": "Kudaden Inshora",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Bayanan Tsaro",
         "legalDisclaimer": "Bayani na Shari'a",
         "aiIntroduction": "Gabatarwar AI",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Game da",
-      "description": "Sadu da Avana, wani ƙa'ida mai sadaukarwa na LP-a-matsayi na jingina an gina shi a kan Aave v4 tare da Spokes na musamman, Hub ɗin da aka raba, da Lend Spoke da aka ƙera don kasuwannin ruwa na AMM."
+      "description": "Avana Labs yana gina jinginar LP don Aave V4. LP Vault, kwangilolin ƙimantawa, da kwangilolin sasantawa suna haɗa matsayin Uniswap da Avana Hub."
     },
     "borrow": {
       "title": "Arapa",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Game da Avana",
-      "subtitle": "LP-a matsayin jinginar al'ada da aka gina a kan Aave v4"
+      "subtitle": "Haɗin haɗin gwiwar LP don Aave V4"
     },
     "brand": {
       "title": "Kayan tambari",

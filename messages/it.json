@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Apri la rete di test"
+      "sandboxLong": "Avvia la Testnet"
     },
     "mega": {
       "exploreProducts": "Esplora Prodotti",
@@ -110,11 +110,11 @@
         "keyConcepts": "Concetti Chiave",
         "glossary": "Glossario",
         "depositLp": "Deposito LP",
-        "borrowAssets": "Prendere in prestito attività",
+        "borrowAssets": "Prendere in prestito GHO",
         "manageLoans": "Gestisci Prestiti",
         "repayLoans": "Rimborsare i prestiti",
         "withdrawCollateral": "Ritirare la Garanzia",
-        "claimLpFees": "Rivendicazione LP Tariffe",
+        "claimLpFees": "Commissioni LP",
         "borrowSpoke": "Spoke in prestito",
         "lendSpoke": "Raggio del cerchione",
         "collateralFactors": "Fattori Collaterali",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Panoramica delle integrazioni",
         "appkit": "AppKit",
         "allowedPools": "Pool LP consentiti",
-        "routerAdapters": "Router e Adattatori",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Oracoli dei prezzi",
         "riskFramework": "Quadro di rischio",
         "contractsSecurity": "Contratti e Sicurezza",
         "bugBounty": "Premio per la scoperta di bug",
-        "insuranceFunds": "Fondi assicurativi",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Divulgazioni sulla sicurezza",
         "legalDisclaimer": "Disclaimer legale",
         "aiIntroduction": "Introduzione all'IA",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Informazioni",
-      "description": "Incontra Avana, un protocollo dedicato LP come garanzia costruito su Aave v4 con Spoke specializzati, un Hub condiviso e un Lend Spoke progettato per mercati di liquidità AMM."
+      "description": "Avana Labs sviluppa collaterale LP per Aave V4. L'LP Vault, i contratti di valutazione e i contratti di regolamento collegano le posizioni Uniswap all'Avana Hub."
     },
     "borrow": {
       "title": "Prendere in prestito",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Circa Avana",
-      "subtitle": "Protocollo LP-come-collaterale costruito su Aave v4"
+      "subtitle": "Integrazione delle garanzie LP per Aave V4"
     },
     "brand": {
       "title": "Kit del marchio",

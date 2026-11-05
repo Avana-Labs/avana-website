@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started', {
     title: "Getting Started - Deposit LP",
-    description: "How to deposit a supported LP position into Avana and start building borrowing capacity.",
+    description: "How to pledge an approved Uniswap v2 LP token or Uniswap v3 position into Avana's LP Vault as collateral for borrowing GHO.",
   })
 }
 
@@ -24,19 +24,19 @@ const sections = [
 
 const supportedFamilies = [
   {
-    family: "Concentrated liquidity positions",
-    examples: "Range-bound NFT or position-manager based LPs",
-    notes: "Range, tick position, and fee accrual are part of the valuation path.",
+    family: "Uniswap v2 LP tokens",
+    examples: "Fungible LP tokens from selected Uniswap v2 pools on Ethereum mainnet",
+    notes: "Avana mints one vault-token base unit per LP-token base unit. In a liquidation, these markets use partial settlement by default.",
   },
   {
-    family: "Fungible stable or correlated LPs",
-    examples: "Stable-swap and tightly correlated pool shares",
-    notes: "Pool inventory and unwind quality drive conservative borrowing power.",
+    family: "Uniswap v3 positions",
+    examples: "Full-range positions and specifically approved ranges in selected Uniswap v3 pools",
+    notes: "The pool, fee tier, and range must be approved. Avana mints one vault-token base unit per unit of liquidity.",
   },
   {
-    family: "Weighted and multi-asset LPs",
-    examples: "Weighted baskets and multi-token pools",
-    notes: "Each supported family is admitted only through approved pool templates.",
+    family: "Not supported",
+    examples: "Uniswap v4, Curve, Balancer, Aerodrome, other AMMs, and other chains such as Base",
+    notes: "Adding any of these requires a separate review and governance approval.",
   },
 ]
 
@@ -47,13 +47,13 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Deposit LP"
-          description="Deposit a supported LP position into Avana to use it as collateral while it keeps earning fees in the pool."
+          description="Pledge an approved Uniswap v2 LP token or Uniswap v3 position to Avana's LP Vault and use it as collateral. Its liquidity stays in the pool."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Depositing an LP position establishes the collateral account used for borrowing. The borrower selects an approved market, authorizes transfer of the LP token or position NFT, and submits the deposit from a wallet that holds the position.</>{" "}<>Avana records custody of the position, values it, and adds its risk-adjusted contribution to borrowing capacity in the relevant Borrow Spoke. The underlying liquidity remains in the AMM and continues to accrue fees. A deposit does not create debt; borrowing is a separate transaction.</>
+            <>Pledging (depositing) an LP position is the first step before borrowing. The depositor approves the transfer of the LP token or position NFT, then deposits it into Avana&apos;s LP Vault through the AaveAdapter. A pledge changes custody but does not remove liquidity from the pool. The position stays in the AMM and keeps earning trading fees. A Uniswap v3 position earns no fees while it is out of range.</>{" "}<>The AaveAdapter then mints vault tokens 1:1 with the deposited liquidity. It supplies them to the market&apos;s Avana Borrow Spoke through the borrower&apos;s Position Proxy and enables them as collateral. A deposit does not create debt. Borrowing GHO is a separate transaction.</>
           </p>
         </section>
 
@@ -61,39 +61,44 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Deposit Flow</h2>
           <div className="space-y-5">
             <div>
-              <h3 className="mb-2 type-doc-subsection-title">1. Choose a supported pool</h3>
+              <h3 className="mb-2 type-doc-subsection-title">1. Choose an approved market</h3>
               <p className="type-doc-body">
-                Open the Avana interface and select an LP market that is live on your deployment.
-                Only approved pools can be deposited. See{" "}
+                Avana supports selected Uniswap v2 and Uniswap v3 markets on Ethereum mainnet.
+                Markets are grouped into three categories: stable, correlated, and blue-chip/stable.
+                During the pilot, only allowlisted depositors can pledge positions. See{" "}
                 <Link href="/developers/integrations/allowed-pools" className="text-type-accent hover:underline">
                   Allowed LP Pools
                 </Link>{" "}
-                for how pool support is defined.
+                for the market categories.
               </p>
             </div>
             <div>
-              <h3 className="mb-2 type-doc-subsection-title">2. Approve and deposit your LP</h3>
+              <h3 className="mb-2 type-doc-subsection-title">2. Approve and pledge your LP</h3>
               <p className="type-doc-body">
-                Approve the LP token or position NFT if needed, then confirm the deposit. Avana
-                routes the position into the Borrow Spoke for that market.
+                Approve the LP token or position NFT for transfer, then confirm the deposit. The
+                AaveAdapter moves the position into the LP Vault. The LP Vault records the
+                depositor, pool, token pair, fee tier, range, and vault-token market.
               </p>
             </div>
             <div>
-              <h3 className="mb-2 type-doc-subsection-title">3. Wait for valuation</h3>
+              <h3 className="mb-2 type-doc-subsection-title">3. Eligibility checks</h3>
               <p className="type-doc-body">
-                The spoke checks that the pool is approved, reconstructs the position, and applies
-                collateral factors to calculate how much borrowing capacity the deposit adds.
+                The Risk Module checks the pool, fee tier, range, oracle availability, and caps. It
+                also applies the pilot allowlist, the per-market minimum and maximum position size,
+                and the limit on positions per account. A position can be pledged only if it
+                passes these checks.
               </p>
             </div>
             <div>
               <h3 className="mb-2 type-doc-subsection-title">4. Borrow when ready</h3>
               <p className="type-doc-body">
-                Once the deposit clears, your borrowing capacity updates in the interface. You can
-                move on to{" "}
+                Once the vault tokens are supplied and enabled as collateral, your borrowing
+                capacity appears in the interface. To borrow GHO from the Avana Hub, continue
+                to{" "}
                 <Link href="/developers/getting-started/borrow-assets" className="text-type-accent hover:underline">
-                  Borrow Assets
-                </Link>{" "}
-                when you want to draw liquidity from the Hub.
+                  Borrow GHO
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -103,12 +108,13 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Technical Details</h2>
           <div className="space-y-4 type-doc-body">
             <p>
-            <><strong className="text-gray-900">Borrowing power updates with the market.</strong>{" "}
-              Capacity is recalculated from the LP position as prices, fees, and pool state change. The valuation recorded at deposit does not fix the position&apos;s borrowing capacity for the duration of a loan.</>{" "}<><strong className="text-gray-900">LP formats differ by DEX.</strong>{" "}
-              Some pools issue fungible LP tokens; concentrated-liquidity DEXs use position NFTs or
-              position-manager shares. Avana handles both through the same spoke custody model.</>{" "}<><strong className="text-gray-900">No unwind on deposit.</strong>{" "}
-              You are not removing liquidity from the pool when you deposit. The position stays
-              active in the AMM.</>
+            <><strong className="text-gray-900">Borrowing capacity changes with prices.</strong>{" "}
+              LPOracle values each vault token from the pool&apos;s liquidity math at Chainlink prices and uses the pool&apos;s TWAP as a consistency check. Capacity is that value multiplied by the reserve&apos;s Collateral Factor. The value at deposit therefore does not fix capacity for the life of the loan.</>{" "}<><strong className="text-gray-900">LP formats differ between Uniswap v2 and v3.</strong>{" "}
+              Uniswap v2 pools issue fungible LP tokens. Uniswap v3 positions are NFTs. The LP
+              Vault holds both, and vault tokens represent them on Aave. Each approved pool, and
+              each range where applicable, has its own vault token.</>{" "}<><strong className="text-gray-900">No unwind on deposit.</strong>{" "}
+              Pledging does not remove liquidity from the pool. The position stays active in the
+              AMM.</>
           </p>
           </div>
         </section>
@@ -140,13 +146,13 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="after-deposit" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">After Deposit</h2>
           <ul className="space-y-2 type-doc-body">
-            <li>Your LP keeps earning trading fees in the underlying pool</li>
-            <li>Borrowing capacity appears in the interface for that Borrow Spoke</li>
-            <li>You can deposit more approved positions in the same market to add capacity</li>
+            <li>Your liquidity keeps earning trading fees in the pool (a Uniswap v3 position earns none while out of range)</li>
+            <li>Vault tokens are held by your Position Proxy and enabled as collateral in that market&apos;s Borrow Spoke</li>
+            <li>You can pledge more approved positions, within the per-market and per-account limits</li>
             <li>
               Next step:{" "}
               <Link href="/developers/getting-started/borrow-assets" className="text-type-accent hover:underline">
-                Borrow Assets
+                Borrow GHO
               </Link>
             </li>
           </ul>
@@ -155,7 +161,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to deposit a supported LP position and start building borrowing capacity on Avana."
+        pageSummary="How to pledge an approved Uniswap v2 or v3 LP position and start building borrowing capacity on Avana."
         sectionColor="emerald"
       />
     </div>

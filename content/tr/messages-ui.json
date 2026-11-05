@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Test Ağını Aç"
+      "sandboxLong": "Testnet'i başlat"
     },
     "mega": {
       "exploreProducts": "Ürünleri Keşfet",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Hakkında",
-      "description": "Tanışın Avana ile, Aave v4 üzerinde inşa edilmiş, özel Spokes, paylaşılan bir Hub ve AMM likidite piyasaları için tasarlanmış bir Lend Spoke içeren, teminat olarak LP adanmış bir protokol."
+      "description": "Avana Labs, Aave V4 için LP teminatı geliştirir. LP Vault, değerleme sözleşmeleri ve tasfiye sözleşmeleri Uniswap pozisyonlarını Avana Hub'a bağlar."
     },
     "borrow": {
       "title": "Ödünç almak",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Yaklaşık Avana",
-      "subtitle": "LP-teminat protokolü Aave v4 üzerine inşa edilmiştir"
+      "subtitle": "Aave V4 için LP teminat entegrasyonu"
     },
     "brand": {
       "title": "Marka seti",

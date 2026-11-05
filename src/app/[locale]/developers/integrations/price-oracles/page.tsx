@@ -9,86 +9,71 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'integrations/price-oracles', {
     title: "Price Oracles",
-    description: "How Avana Oracle prices LP collateral through external feeds, deterministic position reconstruction, and recoverable-value discounts.",
+    description: "How Avana's LPOracle prices vault tokens from pool liquidity math at Chainlink prices, with the pool TWAP as a consistency check.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
-  { id: "oracle-interface", title: "Oracle Interface" },
-  { id: "multi-layer-architecture", title: "Multi-Layer Architecture" },
-  { id: "dex-handling", title: "DEX-Specific Handling" },
-  { id: "twap-computation", title: "TWAP Computation" },
-  { id: "safety-measures", title: "Safety & Manipulation Prevention" },
-  { id: "configurable-parameters", title: "Configurable Parameters" },
+  { id: "oracle-interface", title: "Vault Token Price" },
+  { id: "multi-layer-architecture", title: "Valuation Steps" },
+  { id: "dex-handling", title: "Supported Position Types" },
+  { id: "twap-computation", title: "TWAP Consistency Check" },
+  { id: "safety-measures", title: "Price Conditions" },
+  { id: "configurable-parameters", title: "Per-Market Settings" },
 ]
 
 const collateralValueDrivers = [
-  "The prices of the underlying assets",
-  "The pool reserves or inventory split",
-  "Fee accrual",
-  "For concentrated liquidity, the current tick relative to the position range",
-  "Whether the position is in-range or mostly one-sided",
+  "The Chainlink prices of the two underlying tokens",
+  "The amount of liquidity represented by the vault token",
+  "For Uniswap v2, the LP token's share of the pool",
+  "For Uniswap v3, the position's range relative to the reference price",
+  "Whether a Uniswap v3 position is in range or holds only one of its tokens",
 ]
 
 const architectureChecklist = [
   {
-    title: "Price underlying assets from external robust oracles",
+    title: "Read Chainlink reference prices",
     description:
-      "External feeds provide reference prices for the underlying tokens. This separates the asset-price input from the pool's instantaneous trading price, which can be affected by short-lived trades or manipulation.",
+      "Chainlink is the valuation reference for both underlying tokens. Each feed must be within the market's maximum feed age.",
   },
   {
-    title: "Derive LP value conservatively",
+    title: "Compute token amounts from liquidity",
     description:
-      "The oracle reconstructs fungible LP balances or decomposes concentrated-liquidity positions using reserves, liquidity, range, and accrued fees. These inputs determine the assets represented by the position.",
+      "The token amounts behind one vault token are computed from the pool's liquidity math at the reference price. For Uniswap v3 positions, they are computed from the position's liquidity and range.",
   },
   {
-    title: "Haircut for impermanent loss and liquidation slippage",
+    title: "Check against the pool TWAP",
     description:
-      "The reconstructed value is discounted for stressed market conditions, liquidation slippage, and the position's exit route. The resulting value estimates what liquidation could recover.",
+      "The approved AMM TWAP is compared with the Chainlink-derived price. It is only a consistency check. It is not averaged with the Chainlink price and does not replace it.",
   },
   {
-    title: "Cap exposure by LP family and pool depth",
+    title: "Report value with no haircut",
     description:
-      "Exposure controls use the LP family, pool type, and available liquidity depth to limit how much borrowing a market can support.",
+      "LPOracle reports the full value of the liquidity per vault token. It does not discount for impermanent loss, slippage or liquidation costs.",
   },
   {
-    title: "Apply recoverable value to borrowing and liquidation",
+    title: "Apply the Collateral Factor separately",
     description:
-      "Borrowing capacity and liquidation checks use the estimated value recoverable through the configured unwind route.",
+      "Borrowing limits come from the reserve's Collateral Factor, where LPCollateralFactor = min(Token0CF, Token1CF) × PoolRiskFactor. BorrowingCapacity = LPPositionValue × LPCollateralFactor. Collateral Risk sets the borrower's interest premium. It is not a haircut.",
   },
 ]
 
 const dexOracleTable = [
   {
-    dex: "Curve Stable/Stable ERC-20 LPs",
-    source: "External stablecoin feeds + pool-state checks + TWAP verification",
-    notes: "External prices anchor the assets while pool balances and fee accrual determine discounted collateral value.",
+    dex: "Uniswap v2 LP tokens",
+    source: "Chainlink + pool liquidity math + TWAP consistency check",
+    notes: "Supported. 1 vault-token base unit per LP-token base unit.",
   },
   {
-    dex: "Uniswap V2 ERC-20 LPs",
-    source: "Chainlink + reserve reconstruction + TWAP verification",
-    notes: "Standard LP tokens are valued from reconstructed underlying balances, with TWAP used as a manipulation-resistant cross-check.",
+    dex: "Uniswap v3 positions (full-range or approved range)",
+    source: "Chainlink + position liquidity and range + TWAP consistency check",
+    notes: "Supported. 1 vault-token base unit per unit of liquidity in that pool, fee tier and range.",
   },
   {
-    dex: "Uniswap V3 NFT LPs",
-    source: "Chainlink + position decomposition + tick/TWAP checks",
-    notes: "The NFT is decomposed by liquidity, active range, and current price, then haircut for recoverable liquidation value.",
-  },
-  {
-    dex: "Balancer Multi-Asset LPs",
-    source: "Chainlink + weighted inventory reconstruction",
-    notes: "Multi-token pools use external prices and weighted pool inventory to estimate conservative collateral value.",
-  },
-  {
-    dex: "SushiSwap / Aerodrome",
-    source: "Chainlink + reserve reconstruction + TWAP verification",
-    notes: "Pool-derived observations verify reconstructed value and help resist same-transaction abuse in lower-liquidity markets.",
-  },
-  {
-    dex: "PancakeSwap",
-    source: "Chainlink + block-based TWAP verification",
-    notes: "External prices remain the anchor while block-based observations validate position state and unwind assumptions.",
+    dex: "Uniswap v4, Curve, Balancer, Aerodrome, SushiSwap and other AMMs",
+    source: "Not defined",
+    notes: "Not supported. Adding any of them requires a separate review and governance approval, including approval of its pricing method.",
   },
 ]
 
@@ -102,21 +87,21 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
 
           title="Price Oracles"
 
-          description="How the protocol turns LP position state into credit-relevant collateral values."
+          description="How LPOracle values vault tokens, and what the Aave Adapter allows when price checks fail."
 
         />
 
         <section id="overview" className="mb-10">
           <h2 className="type-doc-section-title mb-4">Overview</h2>
           <p className="type-doc-body mb-4">
-            <>Avana prices LP collateral by reconstructing the position and valuing the assets inside
-            it. For fungible LPs, the protocol derives value from external asset prices and pool
-            balance reconstruction. For concentrated liquidity, it decomposes the position by
-            liquidity, range, current tick, token exposure, and accrued fees.</>{" "}<>The result is discounted to estimate recoverable collateral value under the market&apos;s risk assumptions. Borrowing capacity therefore reflects both the position&apos;s underlying assets and the conditions under which they could be recovered during liquidation.</>{" "}<>The distinction between position value and recoverable value matters because the oracle supplies inputs to lending decisions. ERC-20 LP tokens, position NFTs, and multi-asset pools share an interface, but each format has its own reconstruction, validation, and manipulation checks before its value reaches the Borrow Spoke.</>
+            <>Avana&apos;s LPOracle prices each vault token from the pool&apos;s liquidity math at
+            Chainlink prices. Chainlink is the valuation reference, and the pool&apos;s TWAP is a
+            second check. For concentrated positions, token amounts are computed from the
+            position&apos;s liquidity and range at the reference price.</>{" "}<>LPOracle reports the value of the liquidity per vault token with no haircut. How much of that value can support debt is set separately, through each reserve&apos;s Collateral Factor on the Borrow Spoke.</>{" "}<>Valuation and borrowing limits are kept separate. The oracle reports what the position is worth. The Collateral Factor and pool risk factor account for range, price sensitivity, pool depth and expected liquidation costs.</>
           </p>
 
           <div className="doc-topic">
-            <h3 className="type-doc-subsection-title mb-3">LP collateral value depends on:</h3>
+            <h3 className="type-doc-subsection-title mb-3">Vault-token value depends on:</h3>
             <ul className="space-y-3">
               {collateralValueDrivers.map((item) => (
                 <li key={item} className="type-doc-callout type-doc-callout-info">
@@ -128,47 +113,42 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="oracle-interface" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Oracle Interface: IOracle</h2>
+          <h2 className="type-doc-section-title mb-4">Vault Token Price</h2>
           <p className="type-doc-body mb-4">
-            `IOracle` gives Borrow Spokes a common valuation interface across LP formats. Its return values distinguish principal, accrued fees, and reserved buffers so the caller can account for each component separately:
+            Each vault token is priced as the value of the two token amounts it represents:
           </p>
           
           <div className="type-doc-code-block-dark mb-4">
             <code>
-              function getValue(uint256 tokenId, address asset)<br/>
-              &nbsp;&nbsp;external view returns (<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;uint256 fullValue,<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;uint256 feeValue,<br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;uint256 reserveValue<br/>
-              &nbsp;&nbsp;);
+              VaultTokenPrice = q0·P0 + q1·P1
             </code>
           </div>
 
           <div className="space-y-3">
             <div className="doc-topic">
-              <span className="type-doc-subsection-title">fullValue</span>
-              <span className="type-doc-body ml-2">Reconstructed value of the principal liquidity before later liquidation stress adjustments are applied.</span>
+              <span className="type-doc-subsection-title">q0, q1</span>
+              <span className="type-doc-body ml-2">Amounts of token0 and token1 represented by one vault token. They are computed at the reference price from the pool&apos;s liquidity math and, for Uniswap v3, the position&apos;s range.</span>
             </div>
             <div className="doc-topic">
-              <span className="type-doc-subsection-title">feeValue</span>
-              <span className="type-doc-body ml-2">Value of the fees accrued by the position that can be recognized alongside principal.</span>
+              <span className="type-doc-subsection-title">P0, P1</span>
+              <span className="type-doc-body ml-2">Chainlink reference prices for token0 and token1.</span>
             </div>
             <div className="doc-topic">
-              <span className="type-doc-subsection-title">reserveValue</span>
-              <span className="type-doc-body ml-2">Reserved portion held back for oracle, unwind, and protocol risk buffers.</span>
+              <span className="type-doc-subsection-title">No haircut</span>
+              <span className="type-doc-body ml-2">The result is the full value of the liquidity. Risk adjustments are applied through the Collateral Factor, not in the price.</span>
             </div>
           </div>
 
           <p className="mt-4 type-doc-body">
-            The adapter behind this interface handles the DEX-specific reconstruction and validation. Borrow Spokes receive the same return fields for ERC-20 LP tokens, position NFTs, and multi-asset pools, while each implementation applies the checks required by its collateral type.
+            Vault tokens have 18 decimals and are minted 1:1 with liquidity. There is no scaling factor or exchange rate, so the oracle cannot affect how many vault tokens are issued.
           </p>
         </section>
 
         <section id="multi-layer-architecture" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Multi-Layer Architecture</h2>
+          <h2 className="type-doc-section-title mb-4">Valuation Steps</h2>
           <p className="type-doc-body mb-4">
-            LP valuation is a staged process rather than a single spot-price read. The oracle path
-            moves through the following steps:
+            LP valuation is not a single spot-price read. The path from prices to borrowing
+            capacity has these steps:
           </p>
 
           <div className="space-y-4">
@@ -189,16 +169,16 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="dex-handling" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">DEX-Specific Handling</h2>
+          <h2 className="type-doc-section-title mb-4">Supported Position Types</h2>
           <p className="type-doc-body mb-4">
-            Each DEX exposes different position and pool data. The oracle reconstructs the underlying assets from that data and verifies the resulting valuation against its reference prices and risk controls.
+            LPOracle prices only selected Uniswap v2 LP tokens and Uniswap v3 positions on Ethereum mainnet. Each approved pool has its own vault token, and so does each fee tier and range where applicable.
           </p>
           
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="text-left px-3 py-2 type-doc-subsection-title">DEX / LP Type</th>
+                  <th className="text-left px-3 py-2 type-doc-subsection-title">AMM / Position Type</th>
                   <th className="text-left px-3 py-2 type-doc-subsection-title">Oracle Source</th>
                   <th className="text-left px-3 py-2 type-doc-subsection-title">Notes</th>
                 </tr>
@@ -217,147 +197,144 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="twap-computation" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">TWAP Computation by DEX</h2>
+          <h2 className="type-doc-section-title mb-4">TWAP Consistency Check</h2>
           <p className="type-doc-body mb-4">
-            Time-weighted average prices (TWAPs) provide verification data alongside external asset prices and position reconstruction. Comparing these inputs helps identify short-lived price distortions or inconsistent pool state. TWAP data supplements the valuation process rather than supplying the collateral value on its own.
+            The approved AMM TWAP is a consistency check on the Chainlink-derived price. It is not an average of the two prices and does not replace Chainlink. It detects when pool state and reference prices disagree.
           </p>
           
           <div className="space-y-3">
             <div className="doc-topic">
-              <h3 className="type-doc-subsection-title mb-1">Uniswap V2 & SushiSwap</h3>
+              <h3 className="type-doc-subsection-title mb-1">Uniswap v2</h3>
               <p className="type-doc-body">
-                On-chain cumulative price data over a 1-hour window is used to cross-check the
-                reconstructed reserve picture and reduce sensitivity to flash swaps or other
-                short-lived pool distortions.
+                The pool&apos;s TWAP over the market&apos;s configured window is compared with the
+                price implied by Chainlink. The window length is set per market.
               </p>
             </div>
             <div className="doc-topic">
-              <h3 className="type-doc-subsection-title mb-1">Uniswap V3</h3>
+              <h3 className="type-doc-subsection-title mb-1">Uniswap v3</h3>
               <p className="type-doc-body">
-                For concentrated-liquidity positions, checks use tick range, liquidity distribution, and accrued fees to verify the token exposure represented by each NFT.
+                The position&apos;s token amounts are computed from its liquidity and range. Before they are accepted, the pool&apos;s TWAP is compared with the Chainlink-derived price.
               </p>
             </div>
             <div className="doc-topic">
-              <h3 className="type-doc-subsection-title mb-1">Balancer</h3>
+              <h3 className="type-doc-subsection-title mb-1">Tolerance</h3>
               <p className="type-doc-body">
-                Weighted token observations are combined with pool weights to validate multi-asset
-                inventory splits before the oracle assigns a conservative collateral value.
+                Each market has an allowed price deviation. If the TWAP is outside it, the Aave
+                Adapter blocks new borrowing and risk-increasing withdrawals.
               </p>
             </div>
             <div className="doc-topic">
-              <h3 className="type-doc-subsection-title mb-1">Curve</h3>
+              <h3 className="type-doc-subsection-title mb-1">Chainlink stays the reference</h3>
               <p className="type-doc-body">
-                Stablecoin observations are used mainly to detect stale feeds, reserve drift, and
-                short-term anomalies while external prices remain the primary anchor.
+                When the TWAP is outside tolerance, repayment and liquidation continue at the
+                Chainlink price. The TWAP is never used as the valuation price.
               </p>
             </div>
             <div className="doc-topic">
-              <h3 className="type-doc-subsection-title mb-1">Trader Joe & Aerodrome</h3>
+              <h3 className="type-doc-subsection-title mb-1">Other AMMs</h3>
               <p className="type-doc-body">
-                Cumulative price observations over a 30-60 minute window help validate
-                lower-liquidity pool state and resist same-transaction manipulation during
-                collateral checks.
+                Avana defines TWAP sources only for Uniswap v2 and v3. A TWAP source for another
+                AMM is defined in that AMM&apos;s review and approved by governance.
               </p>
             </div>
           </div>
         </section>
 
         <section id="safety-measures" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Safety & Manipulation Prevention</h2>
+          <h2 className="type-doc-section-title mb-4">Price Conditions</h2>
           
           <ul className="space-y-3">
             <li className="type-doc-callout type-doc-callout-danger">
-              <span className="type-doc-subsection-title">Deviation Thresholds</span>
+              <span className="type-doc-subsection-title">Allowed deviation and maximum feed age</span>
               <p className="type-doc-body mt-0.5">
-                New loans or liquidations can be paused when pool-derived verification data moves
-                too far away from external reference prices beyond{" "}
-                <code className="type-doc-inline-code">maxDifference</code>.
+                Each market sets an allowed deviation between the TWAP and the Chainlink-derived
+                price, and a maximum feed age. The four conditions below determine what remains
+                available. Separately, the Guardian can freeze a market by freezing both the
+                vault-token reserve and the GHO reserve on its Borrow Spoke.
               </p>
             </li>
             <li>
-              <span className="type-doc-subsection-title">maxPoolPriceDifference</span>
+              <span className="type-doc-subsection-title">Chainlink valid, TWAP within tolerance</span>
               <p className="type-doc-body mt-0.5">
-                This keeps pool-implied state aligned with underlying token prices and limits
-                instantaneous pool manipulation or same-transaction oracle abuse.
+                Normal operation.
               </p>
             </li>
             <li>
-              <span className="type-doc-subsection-title">Open Interest Caps</span>
+              <span className="type-doc-subsection-title">Chainlink valid, TWAP outside tolerance</span>
               <p className="type-doc-body mt-0.5">
-                Exposure is capped by LP family, pool depth, and collateral complexity so thinner
-                markets receive tighter borrow limits.
+                The Aave Adapter blocks new borrowing and risk-increasing withdrawals. Repayment
+                and liquidation continue at the Chainlink price.
               </p>
             </li>
             <li>
-              <span className="type-doc-subsection-title">Recovery Haircuts</span>
+              <span className="type-doc-subsection-title">Chainlink stale or invalid, cached price within maximum age</span>
               <p className="type-doc-body mt-0.5">
-                The oracle discounts theoretical LP value for impermanent loss, unwind slippage,
-                and stressed liquidation assumptions before any borrow power is granted.
+                The last valid price is used. New borrowing and voluntary withdrawals are blocked.
+                Repayment and liquidation continue.
               </p>
             </li>
             <li>
-              <span className="type-doc-subsection-title">Oracle Sentinel</span>
+              <span className="type-doc-subsection-title">Cached price past maximum age</span>
               <p className="type-doc-body mt-0.5">
-                Oracle Sentinel watches feed health and verification inputs and can trigger fallback
-                behavior when data is stale, compromised, or inconsistent with position-state
-                checks.
+                Liquidations pause until the feed recovers or governance approves a backup feed.
+                Repayment continues.
               </p>
             </li>
           </ul>
         </section>
 
         <section id="configurable-parameters" className="mb-10">
-          <h2 className="type-doc-section-title mb-4">Configurable Oracle Parameters</h2>
+          <h2 className="type-doc-section-title mb-4">Per-Market Oracle Settings</h2>
           <p className="type-doc-body mb-4">
-            Pool-specific oracle settings are configured per token through{" "}
-            <code className="type-doc-inline-code">setTokenConfig</code>. The table below lists the parameters used to validate a token&apos;s price feed and associated pool:
+            Oracle settings are held per market in{" "}
+            <code className="type-doc-inline-code">AvanaConfig</code>. Avana Labs recommends the values, a designated risk reviewer checks them, and governance sets them:
           </p>
           
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="text-left px-4 py-2 type-doc-subsection-title">Parameter</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Setting</th>
                   <th className="text-left px-4 py-2 type-doc-subsection-title">Description</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">Token</td>
-                  <td className="px-4 py-2">Collateral token address</td>
+                  <td className="px-4 py-2 type-doc-inline-code">Market</td>
+                  <td className="px-4 py-2">Vault-token market: approved pool, and fee tier and range for Uniswap v3</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">AggregatorV3Interface</td>
-                  <td className="px-4 py-2">Chainlink feed for underlying token</td>
+                  <td className="px-4 py-2 type-doc-inline-code">Chainlink feeds</td>
+                  <td className="px-4 py-2">Reference price feeds for both underlying tokens</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">maxFeedAge</td>
-                  <td className="px-4 py-2">Maximum acceptable age for Chainlink feed</td>
+                  <td className="px-4 py-2 type-doc-inline-code">Maximum feed age</td>
+                  <td className="px-4 py-2">Oldest acceptable Chainlink update, and the limit for using a cached price</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">Pool</td>
-                  <td className="px-4 py-2">Specific DEX pool (Uniswap V3, Balancer, Curve, etc.)</td>
+                  <td className="px-4 py-2 type-doc-inline-code">TWAP source</td>
+                  <td className="px-4 py-2">Approved AMM pool used for the consistency check</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">twapSeconds</td>
-                  <td className="px-4 py-2">Window for TWAP computation</td>
+                  <td className="px-4 py-2 type-doc-inline-code">TWAP window</td>
+                  <td className="px-4 py-2">Time window for the TWAP</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">Mode</td>
-                  <td className="px-4 py-2">Oracle operational mode (standard/fallback)</td>
+                  <td className="px-4 py-2 type-doc-inline-code">Allowed price deviation</td>
+                  <td className="px-4 py-2">Maximum difference between the TWAP and the Chainlink-derived price</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2 type-doc-inline-code">maxDifference</td>
-                  <td className="px-4 py-2">Max allowed deviation between DEX and verification price</td>
+                  <td className="px-4 py-2 type-doc-inline-code">Backup feed</td>
+                  <td className="px-4 py-2">Used only if governance approves it after the cached price passes its maximum age</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p className="mt-4 type-doc-body">
-            In practice, oracle behavior comes from the combination of external asset pricing, LP
-            reconstruction logic, recoverable-value treatment, and the per-token settings configured
-            through <code className="type-doc-inline-code">setTokenConfig</code>.
+            In practice, oracle behavior comes from Chainlink reference pricing, the pool&apos;s
+            liquidity math, the TWAP consistency check, and the per-market settings held in{" "}
+            <code className="type-doc-inline-code">AvanaConfig</code>.
           </p>
         </section>
       </div>
@@ -365,7 +342,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
       {/* Right scroll-spy sidebar */}
       <DeveloperScrollSpyRail 
         sections={sections} 
-        pageSummary="How Avana Oracle reconstructs LP positions, applies conservative pricing, and checks market data before value reaches the spoke."
+        pageSummary="How LPOracle prices vault tokens at Chainlink prices, checks them against the pool TWAP, and what happens when price checks fail."
         sectionColor="cyan"
       />
     </div>

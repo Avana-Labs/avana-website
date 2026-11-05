@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "टेस्टनेट खोलें"
+      "sandboxLong": "टेस्टनेट लॉन्च करें"
     },
     "mega": {
       "exploreProducts": "उत्पादों का अन्वेषण करें",
@@ -110,11 +110,11 @@
         "keyConcepts": "मुख्य अवधारणाएँ",
         "glossary": "शब्दकोष",
         "depositLp": "जमा LP",
-        "borrowAssets": "संपत्ति उधार लें",
+        "borrowAssets": "उधार GHO",
         "manageLoans": "ऋण प्रबंधित करें",
         "repayLoans": "ऋण चुकाएँ",
         "withdrawCollateral": "जमानत निकालें",
-        "claimLpFees": "दावा LP शुल्क",
+        "claimLpFees": "एलपी शुल्क",
         "borrowSpoke": "उधार लिया हुआ स्पोक",
         "lendSpoke": "उधार स्पोक",
         "collateralFactors": "संपार्श्विक कारक",
@@ -128,12 +128,12 @@
         "integrationsOverview": "एकीकरण अवलोकन",
         "appkit": "AppKit",
         "allowedPools": "अनुमत LP पूल",
-        "routerAdapters": "राउटर और एडाप्टर",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "मूल्य ऑरेकल",
         "riskFramework": "जोखिम संरचना",
         "contractsSecurity": "संपर्क और सुरक्षा",
         "bugBounty": "बग बाउंटी",
-        "insuranceFunds": "बीमा कोष",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "सुरक्षा प्रकटीकरण",
         "legalDisclaimer": "कानूनी अस्वीकरण",
         "aiIntroduction": "AI परिचय",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "के बारे में",
-      "description": "मिलिए Avana से, एक समर्पित LP-को-जमानत प्रोटोकॉल जो Aave v4 पर बनाया गया है, जिसमें विशेष Spokes, एक साझा Hub, और AMM तरलता बाजारों के लिए डिज़ाइन किया गया Lend Spoke शामिल है।"
+      "description": "Avana Labs, Aave V4 के लिए LP कोलैटरल बनाता है। LP Vault, मूल्यांकन कॉन्ट्रैक्ट्स और सेटलमेंट कॉन्ट्रैक्ट्स Uniswap पोज़िशन को Avana Hub से जोड़ते हैं।"
     },
     "borrow": {
       "title": "उधार लेना",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "लगभग Avana",
-      "subtitle": "LP-एक Aave v4 पर निर्मित गारंटी प्रोटोकॉल"
+      "subtitle": "Aave V4 के लिए एलपी गारंटी एकीकरण"
     },
     "brand": {
       "title": "ब्रांड किट",

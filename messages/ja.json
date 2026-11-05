@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "テストネットを開く"
+      "sandboxLong": "テストネットを起動"
     },
     "mega": {
       "exploreProducts": "商品を探す",
@@ -110,11 +110,11 @@
         "keyConcepts": "重要な概念",
         "glossary": "用語集",
         "depositLp": "預金 LP",
-        "borrowAssets": "資産を借りる",
+        "borrowAssets": "借りる GHO",
         "manageLoans": "ローンを管理する",
         "repayLoans": "ローンを返済する",
         "withdrawCollateral": "担保を引き出す",
-        "claimLpFees": "請求 LP 手数料",
+        "claimLpFees": "LP手数料",
         "borrowSpoke": "ボロー・スポーク",
         "lendSpoke": "レンドスポーク",
         "collateralFactors": "担保要因",
@@ -128,12 +128,12 @@
         "integrationsOverview": "統合の概要",
         "appkit": "AppKit",
         "allowedPools": "許可された LP プール",
-        "routerAdapters": "ルーターとアダプター",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "価格オラクル",
         "riskFramework": "リスクフレームワーク",
         "contractsSecurity": "契約と保証",
         "bugBounty": "バグ報奨金",
-        "insuranceFunds": "保険基金",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "セキュリティの開示",
         "legalDisclaimer": "法的免責事項",
         "aiIntroduction": "AI 入門",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "約",
-      "description": "Avanaに出会いましょう。これは、専用のスポーク、共有ハブ、AMM流動性市場向けに設計されたレンドスポークを備えた、Aave v4上に構築された専用のLP担保プロトコルです。"
+      "description": "Avana Labsは、Aave V4向けのLP担保を構築しています。LP Vault、評価コントラクト、決済コントラクトが、UniswapのポジションをAvana Hubにつなぎます。"
     },
     "borrow": {
       "title": "借りる",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "おおよそAvana",
-      "subtitle": "Aave v4上に構築された担保用プロトコルLP"
+      "subtitle": "Aave V4のLP担保統合"
     },
     "brand": {
       "title": "ブランドキット",

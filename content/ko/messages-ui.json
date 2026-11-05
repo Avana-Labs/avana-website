@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "테스트넷 열기"
+      "sandboxLong": "테스트넷 시작하기"
     },
     "mega": {
       "exploreProducts": "제품 탐색",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "소개",
-      "description": "만나보세요 Avana, 전문화된 스포크, 공유 허브, 그리고 AMM 유동성 시장을 위해 설계된 렌드 스포크를 갖춘 Aave v4 위에 구축된 전용 LP 담보 프로토콜입니다."
+      "description": "Avana Labs는 Aave V4를 위한 LP 담보를 구축합니다. LP Vault, 가치 평가 컨트랙트, 정산 컨트랙트가 Uniswap 포지션을 Avana Hub에 연결합니다."
     },
     "borrow": {
       "title": "빌리다",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "약 Avana",
-      "subtitle": "LP-을 담보로 한 프로토콜이 Aave v4 위에 구축됨"
+      "subtitle": "Aave V4용 LP 담보 통합"
     },
     "brand": {
       "title": "브랜드 키트",

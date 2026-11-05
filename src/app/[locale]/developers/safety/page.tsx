@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'safety', {
     title: "Safety Mechanisms - Risk Framework",
-    description: "Protocol-wide risk management for the Avana Hub and LP Collateral Spokes, including roles, bounded updates, and emergency controls.",
+    description: "Governance roles, the upgrade timelock, emergency controls and reporting for the Avana Hub, Borrow Spokes and Avana's own contracts.",
   })
 }
 
@@ -17,178 +17,180 @@ const sections = [
   { id: "overview", title: "Overview" },
   { id: "core-principles", title: "Core Principles" },
   { id: "roles", title: "Roles" },
-  { id: "update-flow", title: "Update Flow" },
-  { id: "parameter-classes", title: "Parameter Classes" },
-  { id: "public-disclosure", title: "Public Disclosure" },
+  { id: "update-flow", title: "Change Process" },
+  { id: "parameter-classes", title: "Change Classes" },
+  { id: "public-disclosure", title: "Reporting" },
   { id: "emergency-actions", title: "Emergency Actions" },
 ]
 
 const corePrinciples = [
   {
-    title: "Role Separation",
+    title: "Aave DAO Ownership",
     description:
-      "The framework assigns proposing, reviewing, and emergency containment to different actors so one party does not control the full path alone.",
+      "The Avana Hub and Borrow Spokes are standard, unmodified Aave V4 contracts owned by the Aave DAO. All Avana-specific logic sits in Avana's own contracts.",
   },
   {
-    title: "Constrained Execution",
+    title: "Timelocked Upgrades",
     description:
-      "Routine risk changes execute only when they remain inside predefined policy bounds and pass validation checks.",
+      "Upgradeable Avana contracts sit behind an upgrade timelock with a grace window. Avana Labs cannot bypass the timelock, and the Aave DAO can cancel a queued upgrade.",
   },
   {
-    title: "Public Consistency",
+    title: "Separate Review",
     description:
-      "Public disclosure identifies the parameter change submitted for execution so reviewers can compare the notice with the queued payload.",
+      "Avana Labs submits markets and parameters, and a designated risk reviewer reviews them. New collateral pools are published for a two-week review before listing approval.",
   },
   {
-    title: "Spoke Awareness",
+    title: "Per-Market Settings",
     description:
-      "Each LP collateral spoke carries its own listing rules, oracle assumptions, liquidation path, and risk profile.",
+      "Each pool category has its own Borrow Spoke, parameters and caps. Each market has its own pool risk factor, settlement mode, TWAP window, allowed price deviation and maximum feed age.",
   },
   {
-    title: "Defensive Asymmetry",
+    title: "Limited Emergency Powers",
     description:
-      "The framework gives exposure-reducing actions a more direct path than changes that expand protocol risk.",
+      "The Emergency Guardian can pause, freeze and cancel. It cannot upgrade contracts, change parameters or move collateral.",
   },
 ]
 
 const roles = [
   {
-    title: "Avana Risk Initiator",
+    title: "Aave DAO",
     summary:
-      "The role that prepares and recommends routine risk changes for the Hub and LP Collateral Spokes.",
+      "Owns the Avana Hub and Borrow Spokes and holds pause and freeze roles over Avana's own contracts.",
     responsibilities: [
-      "Publish the rationale and classify the update as defensive or growth-oriented",
-      "Submit routine updates into the timelocked execution path",
-      "Recommend supply caps, borrow caps, LT/LTV, reserve factor, and interest-rate changes inside approved ranges",
-      "Initiate spoke-level de-risking and pool onboarding inside preapproved spoke templates",
+      "Own the Avana Hub, Borrow Spokes and their configuration",
+      "Pause or freeze Avana's contracts and stop markets without Avana Labs",
+      "Cancel queued upgrades during the timelock",
+      "Own LPVaultSwap through an Aave DAO executor, while an Avana Labs and Aave DAO service-provider multisig holds its operational controls",
+      "Approve new pools, credit-line increases and removal of the pilot allowlist through governance",
     ],
   },
   {
-    title: "Avana Risk Guardian",
+    title: "Avana Labs",
     summary:
-      "The independent reviewer with veto authority over queued routine changes.",
+      "Builds, operates and pays for Avana's own contracts, audits, monitoring and keepers, within the permissions set by governance.",
     responsibilities: [
-      "Verify that the queued update matches the public disclosure",
-      "Check that the action stays inside approved policy bounds",
-      "Reject updates based on invalid oracle, liquidity, or liquidation assumptions",
-      "Cancel a queued update during the timelock window when it creates obvious spoke-level or hub-level instability",
+      "Administer the LP Vault, AvanaConfig, Risk Module, Collateralization Module, LPOracle, AMM settlement adapters and Aave Adapter",
+      "Submit markets and parameters for review by a designated risk reviewer",
+      "Submit upgrades through the timelock, which it cannot bypass",
+      "Run a keeper operator alongside at least one independent operator",
     ],
   },
   {
-    title: "Avana Risk Defender",
+    title: "Emergency Guardian",
     summary:
-      "The emergency-only role used to contain incidents when the normal timelocked path is too slow.",
+      "A multisig that can act quickly to restrict activity, with no power to upgrade or move funds.",
     responsibilities: [
-      "Reduce borrow caps or supply caps to defensive levels",
-      "Freeze new borrowing on a spoke or freeze collateral usage for a pool, template, or spoke",
-      "Disable a specific adapter or borrow path when predefined failure conditions are met",
-      "Block new debt origination under emergency conditions without being used for routine optimization or growth actions",
+      "Pause Avana contracts",
+      "Freeze a market by freezing both the vault-token reserve and the GHO reserve on its Borrow Spoke",
+      "Cancel queued upgrades",
+      "Cannot upgrade contracts, change parameters or move collateral",
     ],
   },
 ]
 
 const updateFlow = [
   {
-    step: "Public Notice",
-    description:
-      "The Risk Initiator publishes the intended change, why it is needed, and the scope it is expected to affect.",
-  },
-  {
     step: "Submission",
     description:
-      "The Risk Initiator places the proposed change into the execution path used by the framework.",
+      "Avana Labs submits a market, parameter set or contract change.",
   },
   {
-    step: "Validation",
+    step: "Public Review",
     description:
-      "Framework checks confirm that the update stays inside predefined constraints and approved policy bounds.",
+      "New collateral pools are published for a two-week review before listing approval.",
+  },
+  {
+    step: "Risk Review",
+    description:
+      "A designated risk reviewer reviews the submitted markets and parameters.",
+  },
+  {
+    step: "Governance Approval",
+    description:
+      "Changes that need Aave DAO approval go through Aave governance: a request for final comment, a Snapshot vote and an onchain AIP vote.",
   },
   {
     step: "Timelock",
     description:
-      "If validation passes, the change enters a timelock window instead of executing immediately.",
+      "Upgrades to Avana contracts are queued in a timelock with a grace window before execution. Avana Labs cannot bypass the timelock.",
   },
   {
-    step: "Guardian Review",
+    step: "Cancellation Window",
     description:
-      "During timelock, the Risk Guardian reviews the exact queued payload and can cancel it if needed.",
-  },
-  {
-    step: "Execution",
-    description:
-      "If the change survives review, it executes automatically after the timelock expires.",
+      "While an upgrade is queued, the Aave DAO or the Emergency Guardian can cancel it.",
   },
   {
     step: "Emergency Path",
     description:
-      "If emergency conditions are met, the Risk Defender can use a separate defensive path with narrower authority.",
+      "Separately, the Aave DAO and the Emergency Guardian can pause or freeze at any time. These actions only restrict activity.",
   },
 ]
 
 const parameterClasses = [
   {
-    title: "Defensive Changes",
+    title: "Defensive Actions",
     tone: "border-red-400 bg-red-50/70",
-    description: "These are the fastest routine changes because they reduce protocol exposure.",
+    description: "Actions that reduce exposure. The Aave DAO and the Emergency Guardian can take them without Avana Labs.",
     examples: [
-      "Lowering borrow caps",
-      "Lowering supply caps",
-      "Reducing LTV or liquidation threshold",
-      "Freezing borrow or collateral usage",
-      "Tightening spoke settings",
+      "Pausing Avana contracts",
+      "Freezing a market's vault-token and GHO reserves on its Borrow Spoke",
+      "Cancelling a queued upgrade",
+      "Freezing new borrowing during offboarding",
+      "Stopping a market",
     ],
   },
   {
-    title: "Routine Bounded Changes",
+    title: "Avana Contract Changes",
     tone: "border-amber-400 bg-amber-50/70",
     description:
-      "These follow the standard Initiator -> Guardian -> timelock route inside approved bounds.",
+      "Changes to Avana's own contracts and settings, administered by Avana Labs within its permissions. Upgrades go through the timelock and can be cancelled by the Aave DAO.",
     examples: [
-      "Modest cap increases",
-      "Modest parameter tuning inside approved ranges",
-      "Adding new pools inside an existing spoke template",
+      "Upgrades to the LP Vault, AvanaConfig, Risk Module, Collateralization Module, LPOracle, Aave Adapter or LPVaultSwap",
+      "Avana-side limits, oracle settings, settlement routes and fee terms in AvanaConfig",
+      "Pilot allowlist, position-size and exposure limits in the Risk Module",
     ],
   },
   {
     title: "Governance-Level Changes",
     tone: "border-gray-300 bg-gray-50",
-    description: "These are outside the routine framework and require a higher-level decision path.",
+    description: "Changes that need Aave DAO approval.",
     examples: [
-      "Creating a new spoke family",
-      "Enabling a new LP primitive",
-      "Adding a new oracle model",
-      "Enabling a new liquidation adapter",
-      "Materially expanding the risk surface beyond preapproved assumptions",
+      "Listing a new collateral pool, after a two-week public review",
+      "Adding an AMM beyond Uniswap v2 and v3",
+      "Deploying on another chain, starting with Base",
+      "Increasing the GHO credit line beyond the pilot",
+      "Removing the pilot allowlist",
     ],
   },
 ]
 
 const disclosureItems = [
-  "Affected spoke",
-  "Affected pools or templates",
-  "Current parameters",
-  "Proposed parameters",
-  "Reason for the update",
-  "Whether the update is defensive or growth-oriented",
-  "Expected submission timing",
-  "Expected timelock window",
-  "Relevant dependencies or assumptions",
+  "Debt and collateral by market",
+  "Concentration",
+  "Health factor distribution",
+  "Successful, failed and retried liquidations",
+  "FirstLossReserve usage",
+  "Bad debt",
+  "Oracle incidents",
+  "Credit-line usage",
+  "Fees",
+  "First-loss resources",
 ]
 
 const emergencyTriggers = [
-  "Oracle inconsistency",
-  "Liquidation path degradation",
-  "Abnormal pool behavior",
-  "Wrapper dependency failure",
-  "Adapter-level compromise",
-  "Sudden spoke-level instability",
+  "Chainlink price valid, TWAP outside tolerance: new borrowing and risk-increasing withdrawals are blocked. Repayment and liquidation continue at the Chainlink price.",
+  "Chainlink stale or invalid, cached price within its maximum age: the last valid price is used. New borrowing and voluntary withdrawals are blocked.",
+  "Cached price past its maximum age: liquidations pause until the feed recovers or governance approves a backup feed. Repayment continues.",
+  "Guardian market freeze: the vault-token reserve and GHO reserve are frozen on the Borrow Spoke.",
+  "Offboarding: new borrowing is frozen. Repayment and withdrawal continue, and unhealthy positions can still be liquidated.",
+  "Liquidation shortfall that the FirstLossReserve cannot cover: the transaction reverts and debt and collateral are unchanged.",
 ]
 
 const emergencyDisclosures = [
-  "The trigger",
-  "The action taken",
-  "The intended duration",
-  "The path back to normal operation",
+  "The Emergency Guardian cannot upgrade contracts",
+  "The Emergency Guardian cannot change parameters",
+  "The Emergency Guardian cannot move collateral",
+  "Offboarding does not cancel debt",
 ]
 
 export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
@@ -200,29 +202,27 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
 
           title="Risk Framework"
 
-          description="How Avana proposes, reviews, and executes risk changes across the Hub and LP Collateral Spokes."
+          description="How governance roles, the upgrade timelock and emergency controls apply to the Avana Hub, Borrow Spokes and Avana's own contracts."
 
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>The Avana Risk Framework defines how parameter changes are proposed, checked, and
-            executed across the Hub and LP Collateral Spokes. It covers the controls used when the
-            protocol adjusts supply and borrow caps, LT/LTV settings, interest-rate inputs, market
-            status, and other parameters that depend on prices, utilization, pool depth,
-            concentration, volatility, peg behavior, circuit breakers, position health, and
-            related state.</>{" "}<>LP markets differ in their asset mix, valuation methods, liquidation routes, and failure modes. Stable, correlated, weighted, and concentrated-liquidity pools can therefore require different risk parameters. The framework applies those differences when reviewing updates to a spoke or pool.</>
+            <>The Avana Hub and Borrow Spokes are standard, unmodified Aave V4 contracts owned
+            by the Aave DAO. Avana-specific logic sits in Avana&apos;s own contracts: the LP Vault,
+            AvanaConfig, Risk Module, Collateralization Module, LPOracle, AMM settlement adapters,
+            Aave Adapter and LPVaultSwap.</>{" "}<>Avana has three pool categories: stable, correlated and blue-chip/stable. Each category has its own Borrow Spoke, parameters and caps. Each market also has its own pool risk factor, settlement mode and oracle settings.</>
           </p>
           <p className="mb-4 type-doc-body">
-            Three roles stay separate throughout that process: Avana Risk Initiator, Avana Risk
-            Guardian, and Avana Risk Defender. The party that recommends a routine change is not
-            the same party that independently checks it, and the role that can act during an
-            emergency is intentionally narrower than the routine path.
+            Three parties hold separate powers: the Aave DAO, Avana Labs and an Emergency
+            Guardian multisig. Avana Labs submits and administers changes, and a designated risk
+            reviewer reviews them. The Aave DAO approves changes and can stop markets. The Guardian
+            can only pause, freeze and cancel.
           </p>
           <p className="type-doc-body type-doc-callout type-doc-callout-danger">
-            <strong>Operating rule:</strong> exposure-reducing actions follow a more direct path
-            than changes that expand protocol risk.
+            <strong>Operating rule:</strong> the Aave DAO can pause, freeze or stop Avana markets
+            without Avana Labs, and Avana Labs cannot bypass the upgrade timelock.
           </p>
         </section>
 
@@ -268,12 +268,10 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="update-flow" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Update Flow</h2>
+          <h2 className="mb-4 type-doc-section-title">Change Process</h2>
           <p className="mb-6 type-doc-body">
-            Routine changes follow a fixed path so the protocol can distinguish normal parameter
-            maintenance from emergency containment. The standard sequence is public notice,
-            submission, bound checks, timelock, Guardian review, and execution if the proposal is
-            not vetoed.
+            Changes follow the fixed path below. New pools get a public review, and governance
+            approval applies only where required. Pause and freeze actions use a separate, faster path.
           </p>
 
           <div className="space-y-4">
@@ -301,9 +299,9 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="parameter-classes" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Parameter Classes</h2>
+          <h2 className="mb-4 type-doc-section-title">Change Classes</h2>
           <p className="mb-6 type-doc-body">
-            Parameter changes are grouped by their effect on risk. Each class defines the required authority and execution path, from bounded routine updates to changes that require broader governance approval.
+            Changes are grouped by who can make them and how. Governance sets timelock lengths, grace windows and Guardian signers.
           </p>
 
           <div className="space-y-4">
@@ -331,14 +329,14 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="public-disclosure" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Public Disclosure</h2>
+          <h2 className="mb-4 type-doc-section-title">Reporting</h2>
           <p className="mb-6 type-doc-body">
-            Public notice precedes submission in the routine update flow. It records the affected markets and proposed parameters so developers and reviewers can compare the stated change with the payload queued for execution.
+            Avana Labs publishes weekly usage reports and monthly revenue reports. New collateral pools are published for a two-week review before listing approval.
           </p>
 
           <div className="doc-topic">
             <h3 className="mb-3 type-doc-subsection-title">
-              Minimum disclosure standard
+              Report contents
             </h3>
             <ul className="flex flex-col gap-3 type-doc-body">
               {disclosureItems.map((item) => (
@@ -350,20 +348,20 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
           </div>
 
           <p className="mt-4 type-doc-body">
-            Comparing these fields with the queued payload reveals differences in the affected markets, parameter values, timing, or assumptions before execution.
+            AaveAdapterLens reports vault-token supply against LP Vault liquidity for each market, so anyone can check backing onchain.
           </p>
         </section>
 
         <section id="emergency-actions" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Emergency Actions</h2>
           <p className="mb-4 type-doc-body">
-            The Risk Defender&apos;s emergency path is limited to containing defined or highly probable failures when waiting for the normal timelock would be unsafe. Its narrower authority allows defensive actions such as restricting borrowing or disabling an affected adapter. Routine parameter changes continue to use the Initiator and Guardian process.
+            The Aave DAO holds pause and freeze roles over Avana&apos;s contracts. It can stop markets without Avana Labs. The Emergency Guardian multisig can pause, freeze and cancel queued upgrades. Some restrictions apply automatically when oracle checks fail.
           </p>
 
           <div className="flex flex-col gap-4">
             <div className="doc-topic">
               <h3 className="mb-3 type-doc-subsection-title">
-                Emergency triggers
+                Conditions that restrict activity
               </h3>
               <ul className="space-y-2 type-doc-body">
                 {emergencyTriggers.map((item) => (
@@ -376,7 +374,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
 
             <div className="doc-topic">
               <h3 className="mb-3 type-doc-subsection-title">
-                Required post-action disclosure
+                Limits on emergency powers
               </h3>
               <ul className="space-y-2 type-doc-body">
                 {emergencyDisclosures.map((item) => (
@@ -389,20 +387,20 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
           </div>
 
           <p className="mt-6 type-doc-body type-doc-callout type-doc-callout-danger">
-            Emergency authority exists only for defined or highly probable failure cases where
-            waiting on the normal timelock path is unsafe. It is not a path for routine growth or
-            optimization.
+            Emergency powers can only stop or restrict activity. Borrowers can still repay and
+            make permitted withdrawals by calling the contracts directly, without Avana&apos;s
+            frontend.
           </p>
         </section>
 
         <p className="type-doc-body">
-          The separation of proposing, review, and emergency roles applies across LP markets, while each market retains its own valuation assumptions, risk limits, and liquidation behavior.
+          Avana Labs owns, operates and pays for its own contracts, audits, monitoring and keepers. The Aave DAO&apos;s exposure is limited to the capped GHO credit line. Each increase to the credit line requires governance approval.
         </p>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How Avana governs risk updates across the Hub and LP Collateral Spokes through bounded roles, disclosure, and emergency controls."
+        pageSummary="Governance roles, the upgrade timelock, emergency controls and reporting for Avana on Aave V4."
         sectionColor="rose"
       />
     </div>

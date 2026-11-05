@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Fungua mtandao wa majaribio"
+      "sandboxLong": "Zindua Testnet"
     },
     "mega": {
       "exploreProducts": "Chunguza Bidhaa",
@@ -194,7 +194,7 @@
     },
     "about": {
       "title": "Kuhusu",
-      "description": "Kutana na Avana, itifaki ya kujitolea ya LP-kama-uhakika iliyojengwa kwenye Aave v4 na Spokes maalum, Hub ya pamoja, na Lend Spoke iliyoundwa kwa soko za kioo cha AMM."
+      "description": "Avana Labs hujenga dhamana ya LP kwa Aave V4. LP Vault, mikataba ya uthamini na mikataba ya usuluhishi huunganisha nafasi za Uniswap na Avana Hub."
     },
     "borrow": {
       "title": "Kokotoa",
@@ -295,7 +295,7 @@
     },
     "about": {
       "title": "Kuhusu Avana",
-      "subtitle": "LP-kama itifaki ya dhamana iliyojengwa juu ya Aave v4"
+      "subtitle": "Uunganishaji wa dhamana wa LP kwa Aave V4"
     },
     "brand": {
       "title": "Kifurushi cha chapa",

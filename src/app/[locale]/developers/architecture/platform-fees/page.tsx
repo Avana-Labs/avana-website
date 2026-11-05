@@ -9,15 +9,15 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'architecture/platform-fees', {
     title: "Platform Fees",
-    description: "How interface fees on Avana frontends differ from protocol borrowing economics.",
+    description: "How Avana Labs' frontend and liquidation fees differ from interest on the GHO credit line, which accrues to the Aave DAO.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
   { id: "interface-vs-protocol", title: "Interface vs Protocol" },
-  { id: "disclosure", title: "Disclosure" },
-  { id: "treasury-usage", title: "Treasury Usage" },
+  { id: "disclosure", title: "Liquidation Fee" },
+  { id: "treasury-usage", title: "Costs & Loss Coverage" },
   { id: "integration-notes", title: "Integration Notes" },
 ]
 
@@ -28,51 +28,50 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Platform Fees"
-          description="Interface-level fees on Avana frontends, separate from protocol borrowing economics."
+          description="Avana Labs' frontend and liquidation fees, separate from borrowing interest."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Avana may charge frontend or service fees on official interfaces. Those charges are
-            separate from the protocol&apos;s collateral, oracle, and liquidation rules.</>{" "}<>Fee rates, exemptions, and rollout status are operational settings. Verify them in the
-            live interface or release materials before relying on them.</>
+            <>Avana Labs earns two fees: a frontend fee on its interface and a liquidation fee.
+            All interest revenue attributable to the GHO credit line accrues to the Aave DAO.</>{" "}<>Fee terms are held in AvanaConfig. Their values are set by governance.</>
           </p>
         </section>
 
         <section id="interface-vs-protocol" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Interface vs Protocol</h2>
           <p className="mb-4 type-doc-body">
-            Core contracts determine collateral admission, borrowing capacity, debt, and liquidation. An interface fee applies to a particular frontend or service transaction; it is separate from those protocol calculations.
+            Core contracts determine collateral admission, borrowing capacity, debt and liquidation. The frontend fee applies only to transactions made through Avana&apos;s interface. Borrowers can call the contracts directly and avoid it.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Protocol economics determine debt accrual, collateral treatment, and liquidation outcomes</li>
-            <li>Interface fees are tied to a specific frontend or service path</li>
-            <li>Direct contract integrations may follow different fee assumptions than the official UI</li>
+            <li>Borrowing interest on the GHO credit line, BaseRate × (1 + UserRiskPremium), accrues to the Aave DAO</li>
+            <li>The frontend fee applies only to Avana&apos;s interface. Direct contract calls avoid it</li>
+            <li>The liquidation fee is charged once, in LPVaultSwap. Aave&apos;s built-in liquidation fee is set to 0 for vault-token reserves</li>
           </ul>
         </section>
 
         <section id="disclosure" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Disclosure</h2>
+          <h2 className="mb-4 type-doc-section-title">Liquidation Fee</h2>
           <p className="mb-4 type-doc-body">
-            An interface fee is a distinct cost alongside network gas, any swap fees, and debt-related charges. For an integration&apos;s transaction review, itemize these costs separately so the user can identify what each charge covers.
+            In partial-settlement markets, the liquidation fee is a fixed percentage of Aave&apos;s liquidation bonus and never adds to the borrower&apos;s cost. In full-position markets, it is part of a capped settlement charge. The keeper reward, execution costs and Avana&apos;s fee are deducted from proceeds, up to a per-market maximum percentage of debt. In integrations, itemize the frontend fee separately from gas, swap costs and liquidation charges.
           </p>
         </section>
 
         <section id="treasury-usage" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Treasury Usage</h2>
+          <h2 className="mb-4 type-doc-section-title">Costs &amp; Loss Coverage</h2>
           <p className="type-doc-body">
-            If interface fees are collected, they typically fund product operations such as
-            infrastructure, monitoring, security work, and support. Governance may formalize or
-            revise those policies over time.
+            Avana Labs owns, operates and pays for its own contracts, audits, monitoring and
+            keepers. Revenues committed to loss coverage are second in the loss order, after
+            dedicated first-loss capital and before the Avana Umbrella.
           </p>
         </section>
 
         <section id="integration-notes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Integration Notes</h2>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Verify current fee policy before quoting end-user costs</li>
-            <li>Do not hard-code interface-fee assumptions into protocol integrations unless policy is formally versioned</li>
+            <li>Fee levels are set by governance and are not final. Check the governance-approved values before quoting end-user costs</li>
+            <li>Do not apply the frontend fee to direct contract integrations, which do not pay it</li>
             <li>Keep fee policy separate from borrow capacity and liquidation logic in integration docs</li>
           </ul>
         </section>
@@ -80,7 +79,7 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="Interface fee policy for Avana frontends and service layers."
+        pageSummary="Avana Labs' frontend and liquidation fees, and how they differ from interest that accrues to the Aave DAO."
         sectionColor="violet"
       />
     </div>

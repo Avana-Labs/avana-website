@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Abrir a rede de testes"
+      "sandboxLong": "Lançar a Testnet"
     },
     "mega": {
       "exploreProducts": "Explorar Produtos",
@@ -110,11 +110,11 @@
         "keyConcepts": "Conceitos-chave",
         "glossary": "Glossário",
         "depositLp": "Depósito LP",
-        "borrowAssets": "Pegar emprestado ativos",
+        "borrowAssets": "Emprestar GHO",
         "manageLoans": "Gerenciar Empréstimos",
         "repayLoans": "Pagar Empréstimos",
         "withdrawCollateral": "Retirar Garantia",
-        "claimLpFees": "Reivindicação LP Taxas",
+        "claimLpFees": "Taxas de LP",
         "borrowSpoke": "Pegar emprestado o raio",
         "lendSpoke": "Raio do Cubo de Empréstimo",
         "collateralFactors": "Fatores Colaterais",
@@ -128,12 +128,12 @@
         "integrationsOverview": "Visão Geral das Integrações",
         "appkit": "AppKit",
         "allowedPools": "Piscinas Permitidas LP",
-        "routerAdapters": "Roteador e Adaptadores",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "Oráculos de Preços",
         "riskFramework": "Estrutura de Risco",
         "contractsSecurity": "Contratos e Segurança",
         "bugBounty": "Programa de Recompensa por Bugs",
-        "insuranceFunds": "Fundos de Seguro",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "Divulgações de Segurança",
         "legalDisclaimer": "Aviso Legal",
         "aiIntroduction": "Introdução à IA",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "Sobre",
-      "description": "Conheça Avana, um protocolo de LP como garantia dedicado construído sobre Aave v4 com Spokes especializados, um Hub compartilhado e um Lend Spoke projetado para mercados de liquidez AMM."
+      "description": "A Avana Labs cria colateral LP para o Aave V4. O LP Vault, os contratos de avaliação e os contratos de acerto conectam posições Uniswap ao Avana Hub."
     },
     "borrow": {
       "title": "Pegar emprestado",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "Cerca de Avana",
-      "subtitle": "LP-um protocolo de garantia construído sobre Aave v4"
+      "subtitle": "Integração de garantia de LP para Aave V4"
     },
     "brand": {
       "title": "Kit de marca",

@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "เปิดเครือข่ายทดสอบ"
+      "sandboxLong": "เปิดใช้งาน Testnet"
     },
     "mega": {
       "exploreProducts": "สำรวจสินค้า",
@@ -110,11 +110,11 @@
         "keyConcepts": "แนวคิดหลัก",
         "glossary": "อภิธานศัพท์",
         "depositLp": "เงินฝาก LP",
-        "borrowAssets": "ยืมสินทรัพย์",
+        "borrowAssets": "ยืม GHO",
         "manageLoans": "จัดการสินเชื่อ",
         "repayLoans": "ชำระหนี้เงินกู้",
         "withdrawCollateral": "ถอนหลักประกัน",
-        "claimLpFees": "ค่าธรรมเนียมการเคลม LP",
+        "claimLpFees": "ค่าธรรมเนียม LP",
         "borrowSpoke": "ยืมซี่ลวด",
         "lendSpoke": "ชักยืม",
         "collateralFactors": "ปัจจัยหลักประกัน",
@@ -128,12 +128,12 @@
         "integrationsOverview": "ภาพรวมของการรวมระบบ",
         "appkit": "AppKit",
         "allowedPools": "พูลที่อนุญาต LP",
-        "routerAdapters": "เราเตอร์และอะแดปเตอร์",
+        "routerAdapters": "Aave Adapter",
         "priceOracles": "ออราเคิลราคา",
         "riskFramework": "กรอบความเสี่ยง",
         "contractsSecurity": "สัญญาและความปลอดภัย",
         "bugBounty": "โปรแกรมรายงานช่องโหว่",
-        "insuranceFunds": "กองทุนประกันภัย",
+        "insuranceFunds": "Umbrella",
         "securityDisclosures": "การเปิดเผยด้านความปลอดภัย",
         "legalDisclaimer": "ข้อจำกัดความรับผิดทางกฎหมาย",
         "aiIntroduction": "แนะนำ AI",
@@ -199,7 +199,7 @@
     },
     "about": {
       "title": "เกี่ยวกับ",
-      "description": "พบกับ Avana โปรโตคอลแบบ LP-เป็นหลักประกันที่สร้างบน Aave v4 พร้อม Spokes เฉพาะ, Hub ร่วม, และ Lend Spoke ที่ออกแบบมาสำหรับตลาดสภาพคล่อง AMM"
+      "description": "Avana Labs สร้างหลักประกัน LP สำหรับ Aave V4 โดย LP Vault สัญญาประเมินมูลค่า และสัญญาการชำระบัญชีเชื่อมโพซิชัน Uniswap เข้ากับ Avana Hub"
     },
     "borrow": {
       "title": "ยืม",
@@ -300,7 +300,7 @@
     },
     "about": {
       "title": "ประมาณ Avana",
-      "subtitle": "LP-ในฐานะโพรโตคอลหลักประกันที่สร้างบน Aave v4"
+      "subtitle": "การรวมหลักประกัน LP สำหรับ Aave V4"
     },
     "brand": {
       "title": "ชุดแบรนด์",

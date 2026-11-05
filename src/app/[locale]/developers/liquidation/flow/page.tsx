@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'liquidation/flow', {
     title: "Liquidation Flow",
-    description: "Operational liquidation flow for Avana, covering the runtime sequence used when vault-backed LP collateral is seized and unwound.",
+    description: "The Avana liquidation sequence: a flash loan, debt repayment, vault-token burn, LP settlement and swap to GHO in one transaction.",
   })
 }
 
@@ -18,53 +18,53 @@ const sections = [
   { id: "overview", title: "Overview" },
   { id: "related-docs", title: "Related Docs" },
   { id: "runtime-sequence", title: "Runtime Sequence" },
-  { id: "state-transitions", title: "State Transitions" },
-  { id: "operator-notes", title: "Operator Notes" },
+  { id: "state-transitions", title: "Outcomes" },
+  { id: "operator-notes", title: "Keeper Notes" },
 ]
 
 const runtimeSteps = [
   {
-    title: "Detect an unhealthy account",
+    title: "Detect an account below health factor 1",
     body:
-      "Liquidation nodes or external keepers watch the same risk-adjusted collateral values used by the protocol and flag accounts whose debt now exceeds allowed borrowing capacity.",
+      "Approved keepers monitor accounts using the health factor that Aave V4 computes from LPOracle vault-token prices and each reserve's Collateral Factor. An account is eligible for liquidation when its health factor falls below 1.",
   },
   {
-    title: "Source execution liquidity",
+    title: "Take a GHO flash loan",
     body:
-      "The liquidator sources the capital needed to repay debt before LP settlement completes. A flashloan-based route can provide temporary liquidity; a prefunded route uses the liquidator's own capital.",
+      "The keeper calls LPVaultSwap, which takes a GHO flash loan from the GHO FlashMinter on Ethereum. LPVaultSwap is not a spoke and does not borrow from the Avana Hub.",
   },
   {
-    title: "Repay debt and seize the vault collateral",
+    title: "Repay debt and take the vault tokens",
     body:
-      "The Borrow Spoke coordinates debt settlement with the Hub and transfers the seized vault collateral into the LP-specific settlement process.",
+      "In partial-settlement markets, LPVaultSwap calls Aave V4's standard liquidation on the Borrow Spoke. The standard liquidation applies the target health factor and dust rules and transfers the seized vault tokens to LPVaultSwap. In full-position markets, LPVaultSwap repays the debt through the Position Proxy's settlement authority. The Aave Adapter then withdraws all vault tokens for the position.",
   },
   {
-    title: "Burn the vault token and mark the backing position",
+    title: "Burn the vault tokens and remove the liquidity",
     body:
-      "The adapter burns the seized vault token and marks the real LP position as in settlement so the backing supply cannot remain outstanding against a position that is already being unwound.",
+      "The vault tokens are burned. In partial settlement, the LP Vault removes the matching liquidity. For Uniswap v3, it removes part of the liquidity and the NFT stays in the vault. For Uniswap v2, it redeems the matching LP tokens. In full-position settlement, the LP Vault releases the NFT for settlement through an approved route.",
   },
   {
-    title: "Settle the LP position and close the liquidation",
+    title: "Swap to GHO and repay the flash loan",
     body:
-      "Avana unwinds, sells, auctions, or transfers the real LP position, repays execution liquidity, pays the liquidator reward, and routes any surplus according to the market rule.",
+      "Proceeds are converted to GHO through CoW Swap within the same transaction. The flash loan is repaid, and the keeper reward and Avana fee are paid. In full-position markets, any surplus goes to the borrower. If proceeds fall short, LPVaultSwap draws from the FirstLossReserve. If the reserve cannot cover the shortfall, the transaction reverts.",
   },
 ]
 
 const stateTransitions = [
   {
-    title: "ACTIVE to LIQUIDATING",
+    title: "Before liquidation",
     body:
-      (<>{"Once Aave permits liquidation, the selected position moves from ACTIVE to LIQUIDATING. Borrower withdrawal is blocked while that position is in settlement."}{" "}{"The settlement layer uses the collateral family, backing-position identifier, and configured unwind route to resolve the position and clear its corresponding vault supply."}</>),
+      (<>{"The position sits in the LP Vault and stays in its pool. Its vault tokens are supplied to the Borrow Spoke through the borrower's Position Proxy and are fully backed by that liquidity."}{" "}{"Vault tokens can be transferred only to approved Avana contracts, so LPVaultSwap is the only contract that can liquidate them."}</>),
   },
   {
-    title: "LIQUIDATING to SETTLED",
+    title: "After settlement",
     body:
-      (<>{"After the real LP position has been unwound or sold, the backing supply is cleared and the position becomes SETTLED."}{" "}{"Settlement value is applied in a fixed order. It first covers debt, then the liquidator reward, then settlement costs. Any value left after those obligations is surplus, and that surplus follows the market rule for the collateral being settled."}</>),
+      (<>{"After a partial settlement, the borrower keeps the remaining position and its vault tokens, and the account's health factor is restored to the target."}{" "}{"After a full-position settlement, all vault tokens for the position are burned, and the NFT is released and settled through an approved route. Any surplus after debt, fees and costs is returned to the borrower."}</>),
   },
   {
-    title: "State rule",
+    title: "Reverted liquidation",
     body:
-      (<>{"A vault token cannot remain outstanding after its backing LP position has been removed. If the vault tokens are burned, the LP position must be withdrawn, unwound, or moved into settlement."}{" "}{"Liquidation connects two representations of the same collateral: the vault token balance recorded in Aave and the backing LP position tracked by Avana. Seizure of the vault token must resolve to the corresponding LP position so settlement removes both the backing position and its collateral representation consistently."}</>),
+      (<>{"If any step fails, or the FirstLossReserve cannot cover a shortfall, the whole transaction reverts and debt and collateral are unchanged. No deficit is recorded, and keepers may retry with a smaller partial liquidation."}{" "}{"Aave V4 records a deficit on the Avana Hub only when a completed standard Aave V4 liquidation uses up the collateral with debt remaining."}</>),
   },
 ]
 
@@ -75,31 +75,30 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Liquidation Flow"
-          description="Runtime sequence for how unhealthy LP-backed positions move from detection through settlement once liquidation starts."
+          description="The sequence for liquidating an LP-backed position in a single transaction, from detection to flash-loan repayment."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>Liquidation starts when an account&apos;s health factor falls below the liquidation
-            threshold. Aave handles debt accounting and the liquidation entry point against the
-            ERC-20 vault collateral. Avana handles the LP settlement behind that vault token.</>{" "}<>Debt is repaid, vault collateral is seized, the matching vault token is burned, the real
-            LP position is settled, and any residual value is returned according to the market rule.</>
+            <>Liquidation starts when an account&apos;s health factor falls below 1. Aave V4 handles
+            eligibility and debt accounting. Avana&apos;s LPVaultSwap settles the LP collateral
+            behind the vault tokens.</>{" "}<>The whole liquidation runs in one transaction. A flash loan repays the debt and the vault tokens are burned.
+            The matching liquidity is removed or the position is released. The proceeds are swapped to GHO and the flash loan is repaid.</>
           </p>
         </section>
 
         <section id="related-docs" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Related Docs</h2>
           <p className="mb-4 type-doc-body">
-            Liquidation policy lives on the{" "}
+            Settlement modes, fees and shortfall handling are described in{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">
               Liquidation Framework
-            </Link>{" "}
-            page. This flow assumes the recoverable value model in{" "}
+            </Link>. This flow uses the vault-token pricing in{" "}
             <Link href="/developers/integrations/price-oracles" className="text-type-accent hover:underline">
               Price Oracles
             </Link>{" "}
-            and position-level aggregation in{" "}
+            and the borrowing limits in{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">
               Collateral Factors
             </Link>
@@ -123,9 +122,9 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
         </section>
 
         <section id="state-transitions" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">State Transitions</h2>
+          <h2 className="mb-4 type-doc-section-title">Outcomes</h2>
           <p className="mb-4 type-doc-body">
-            LP families use different settlement methods to reach the SETTLED state. The adapter selects the method required by the position format, such as redeeming fungible LP shares or resolving an individual position NFT.
+            Every liquidation either completes or reverts within one transaction, so there is no intermediate liquidating state. The outcome depends on the market&apos;s settlement mode.
           </p>
           <div className="space-y-4">
             {stateTransitions.map((item) => (
@@ -138,13 +137,13 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
         </section>
 
         <section id="operator-notes" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Operator Notes</h2>
+          <h2 className="mb-4 type-doc-section-title">Keeper Notes</h2>
           <div className="space-y-3 type-doc-body">
             <p>
-            <>Liquidation monitoring combines indexed positions, current debt including accrued interest, and the protocol&apos;s oracle valuation. Raw AMM spot prices alone do not reproduce the collateral values used for eligibility checks.</>{" "}<>An execution estimate includes slippage, route depth, temporary-liquidity costs, and transaction risk. For large or unusual unwinds, private transaction delivery may reduce exposure to adverse MEV.</>
+            <>Eligibility is based on LPOracle valuation, which uses Chainlink as the reference price and the pool&apos;s TWAP as a consistency check. Raw AMM spot prices do not reproduce these values.</>{" "}<>If Chainlink is stale or invalid, liquidation continues at the last valid price while that price is within its maximum age. Past that age, liquidations pause until the feed recovers or governance approves a backup feed.</>
           </p>
             <p>
-              Thresholds, rewards, and admission rules come from the architecture and risk docs.
+              Governance sets the liquidation bonus, target health factor and fee caps for each market. Opening liquidation to third-party keepers requires governance approval.
             </p>
           </div>
         </section>
@@ -152,7 +151,7 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="Operator-facing runtime sequence for liquidation nodes and keepers."
+        pageSummary="Keeper-facing sequence for a single-transaction LPVaultSwap liquidation."
         sectionColor="amber"
       />
     </div>
