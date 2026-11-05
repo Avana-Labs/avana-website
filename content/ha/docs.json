@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Collateral Factor",
-      "description": "Yadda kowace ajiyar vault-token"
+      "description": "Yadda kowane abubuwan ajiya na vault-token Collateral Factor ke mayar da ƙimar matsayin LP zuwa damar aron GHO akan Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Kuɗin dandamali",
-      "description": "Yaya Avana Labs"
+      "description": "Yadda kudaden gaba da na sayar da Avana Labs suke bambanta da riba a kan layin bashi na GHO, wanda yake tarawa zuwa Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Yadda Ask AI ke haɗawa da Aave MCP, Avana"
+      "description": "Yadda Ask AI ke haɗa Aave MCP, RAG na Avana, da ƙididdigar samfura don bayyana kasuwanni da matsayin da LP ke tallafawa."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Fara - Ajiye LP",
-      "description": "Yadda ake alƙawarin amincewa da token ɗin LP Uniswap v2 ko matsayi Uniswap v3 cikin Avana"
+      "description": "Yadda ake yin alƙawarin ƙwararren Uniswap v2 token na LP ko Uniswap v3 matsayi cikin LP Vault na Avana a matsayin jinginar don aro GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "Yadda AppKit ke miƙa walat da mahallin kasuwa daga manhajar abokin hulɗa zuwa Avana"
+      "description": "Yadda AppKit ke miƙa walat da mahallin kasuwa daga manhajar abokin hulɗa zuwa tsarin aro na Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Oracle na Farashi",
-      "description": "Yaya Avana"
+      "description": "Yadda LPOracle na Avana ke ƙimanta vault tokens daga lissafin ruwan kuɗi na pool a farashin Chainlink, tare da TWAP na pool a matsayin binciken daidaito."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Yadda Aave Adapter, Avana"
+      "description": "Yadda Aave Adapter, mashigar mai aro zuwa Avana, ke kula da ajiya, aro, biyan bashi da cirewa ta Position Proxy na kowane mai aro."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Sanarwar Shari'a",
-      "description": "Yaya Avana"
+      "description": "Yadda Sharuɗɗan Sabis na Avana ke aiki ga takardun sa, fuskar mai amfani, da haɗin ka'idodi."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Tsarin Liquidation",
-      "description": "Yaya Avana"
+      "description": "Yadda LPVaultSwap na Avana ke sasanta jinginar LP a Aave V4 lokacin da ma'aunin lafiyar asusu ya faɗi ƙasa da 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Lambar Ladabi ga Kwari",
-      "description": "Fagen bayyana rauni cikin alhaki ga Avana"
+      "description": "Fagen bayyana rauni cikin alhaki ga kwangilolin Avana, wuraren haɗarin jinginar LP, da jagorar tsananin matsala bisa tasirin tattalin arziki."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Yaya Avana"
+      "description": "Yadda tsarin ɗaukar asara na Avana ke amfani da jarin asarar farko, kuɗaɗen shiga da aka keɓe da Avana Umbrella wajen biyan ƙarancin kuɗi da giɓi a Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Hanyoyin Tsaro - Risk Framework",
-      "description": "Ayyukan gudanarwa, timelock na haɓakawa, ikon sarrafawa na gaggawa da rahotanni don Avana Hub, Borrow Spokes da Avana"
+      "description": "Ayyukan gudanarwa, timelock na haɓakawa, ikon sarrafawa na gaggawa da rahotanni don Avana Hub, Borrow Spokes da kwangilolin Avana na kansa."
     },
     "toc": [
       {

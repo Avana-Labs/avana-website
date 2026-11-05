@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Fattori di collaterale",
-      "description": "Come ogni riserva vault-token"
+      "description": "Come il fattore collaterale di ciascuna riserva vault-token trasforma il valore della posizione LP in una capacità di prestito di GHO su un Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Fee di piattaforma",
-      "description": "Come Avana Labs"
+      "description": "In che modo le commissioni di frontend e di liquidazione di Avana Labs differiscono dagli interessi sulla linea di credito GHO, che matura su Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Come Ask AI combina Aave MCP, Avana"
+      "description": "Come Ask AI combina Aave MCP, RAG di Avana e i calcoli dei prodotti per spiegare i mercati e le posizioni supportate da LP."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Per iniziare - Depositare LP",
-      "description": "Come impegnare un token Uniswap v2 LP approvato o una posizione Uniswap v3 in Avana"
+      "description": "Come impegnare un token Uniswap v2 LP approvato o una posizione Uniswap v3 in LP Vault di Avana come garanzia per il prestito di GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "Come AppKit trasmette il contesto del wallet e del mercato da un'applicazione partner ad Avana"
+      "description": "Come AppKit trasmette il contesto del wallet e del mercato da un'applicazione partner al flusso di prestito di Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Oracoli di prezzo",
-      "description": "Come Avana"
+      "description": "Come l'LPOracle di Avana prezza i vault token in base alla matematica della liquidità del pool ai prezzi Chainlink, con il TWAP del pool come controllo di coerenza."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Come il Aave Adapter, Avana"
+      "description": "Come l'Aave Adapter, il punto di accesso dei mutuatari ad Avana, gestisce depositi, prestiti, rimborsi e prelievi tramite il Position Proxy di ciascun mutuatario."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Disclaimer legale",
-      "description": "Come Avana"
+      "description": "Come i Termini di Servizio di Avana si applicano alla sua documentazione, interfaccia e integrazioni di protocollo."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Framework di liquidazione",
-      "description": "Come Avana"
+      "description": "Come LPVaultSwap di Avana regola il collaterale LP su Aave V4 quando l'health factor di un account scende sotto 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Premio per la scoperta di bug",
-      "description": "Ambito della divulgazione responsabile per Avana"
+      "description": "Ambito della divulgazione responsabile per i contratti di Avana e le superfici di rischio del collaterale LP, con linee guida sulla gravità basate sull'impatto economico."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Come Avana"
+      "description": "Come l'ordine di copertura delle perdite di Avana applica il capitale first-loss, i ricavi impegnati e Avana Umbrella agli ammanchi e ai deficit sull'Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Meccanismi di sicurezza - Risk Framework",
-      "description": "Ruoli di governance, timelock sugli upgrade, controlli di emergenza e reportistica per l'Avana Hub, i Borrow Spoke e Avana"
+      "description": "Ruoli di governance, timelock sugli upgrade, controlli di emergenza e reportistica per l'Avana Hub, i Borrow Spoke e i contratti propri di Avana."
     },
     "toc": [
       {

@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Collateral Factor",
-      "description": "แต่ละvault-tokenจองยังไง"
+      "description": "แต่ละปัจจัยสินค้าค้ำประกันของสำรอง vault-token เปลี่ยนมูลค่าตำแหน่ง LP ให้เป็นความสามารถในการยืม GHO บน Avana Borrow Spoke"
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "ค่าธรรมเนียมแพลตฟอร์ม",
-      "description": "อย่างไร Avana Labs"
+      "description": "ค่าธรรมเนียม frontend และการชำระหนี้ของ Avana Labs แตกต่างจากดอกเบี้ยของวงเงินเครดิต GHO ซึ่งสะสมไปยัง Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "18 รวมกับ 8, 22 อย่างไร"
+      "description": "วิธีที่ Ask AI รวม Aave MCP, RAG ของ Avana และการคำนวณผลิตภัณฑ์เพื่ออธิบายตลาดและตำแหน่งที่รองรับโดย LP"
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "เริ่มต้น - ฝาก LP",
-      "description": "วิธีวางเดิมพันโทเค็น LP Uniswap v2 หรือสถานะ Uniswap v3 ที่ได้รับการอนุมัติลงใน Avana"
+      "description": "วิธีการวางเดิมพันโทเค็น LP Uniswap v2 หรือสถานะ Uniswap v3 ที่ได้รับการอนุมัติลงใน LP Vault ของ Avana เป็นหลักประกันสำหรับการกู้ยืม GHO"
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "วิธีที่ AppKit ส่งบริบทวอลเล็ตและตลาดจากแอปพลิเคชันพาร์ทเนอร์เข้าสู่ Avana"
+      "description": "วิธีที่ AppKit ส่งบริบทวอลเล็ตและตลาดจากแอปพลิเคชันพาร์ทเนอร์เข้าสู่ขั้นตอนการกู้ยืมของ Avana"
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Price Oracle",
-      "description": "อย่างไร Avana"
+      "description": "วิธีที่ LPOracle ของ Avana กำหนดราคา vault token จากคณิตศาสตร์สภาพคล่องของพูลที่ราคา Chainlink โดยใช้ TWAP ของพูลเป็นการตรวจสอบความสอดคล้อง"
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "อย่างไร Aave Adapter, Avana"
+      "description": "วิธีที่ Aave Adapter ซึ่งเป็นจุดเข้าใช้งานของผู้กู้ใน Avana จัดการการฝาก การกู้ การชำระคืน และการถอนผ่าน Position Proxy ของผู้กู้แต่ละราย"
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "ข้อจำกัดความรับผิดทางกฎหมาย",
-      "description": "อย่างไร Avana"
+      "description": "ข้อกำหนดการให้บริการของ How Avana ใช้กับเอกสาร ส่วนติดต่อผู้ใช้ และการรวมโปรโตคอลอย่างไร"
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "กรอบการชำระบัญชี",
-      "description": "อย่างไร Avana"
+      "description": "วิธีที่ LPVaultSwap ของ Avana ชำระบัญชีหลักประกัน LP บน Aave V4 เมื่อ health factor ของบัญชีต่ำกว่า 1"
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "โปรแกรมรายงานช่องโหว่",
-      "description": "ขอบเขตการเปิดเผยช่องโหว่อย่างรับผิดชอบสำหรับ Avana"
+      "description": "ขอบเขตการเปิดเผยช่องโหว่อย่างรับผิดชอบสำหรับสัญญาของ Avana พื้นผิวความเสี่ยงของหลักประกัน LP และแนวทางการประเมินระดับความรุนแรงตามผลกระทบทางเศรษฐกิจ"
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "อย่างไร Avana"
+      "description": "วิธีที่ลำดับการรับผลขาดทุนของ Avana นำเงินทุนรับผลขาดทุนลำดับแรก รายได้ที่ผูกพันไว้ และ Avana Umbrella มาใช้กับส่วนขาดและยอดขาดดุลบน Avana Hub"
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "กลไกความปลอดภัย - Risk Framework",
-      "description": "บทบาทด้าน governance, timelock สำหรับการอัปเกรด การควบคุมฉุกเฉิน และการรายงานสำหรับ Avana Hub, Borrow Spokes และ Avana"
+      "description": "บทบาทด้าน governance, timelock สำหรับการอัปเกรด การควบคุมฉุกเฉิน และการรายงานสำหรับ Avana Hub, Borrow Spokes และสัญญาของ Avana เอง"
     },
     "toc": [
       {

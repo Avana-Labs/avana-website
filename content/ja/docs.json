@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "担保ファクター",
-      "description": "各vault-tokenリザーブの方法"
+      "description": "各 vault-token リザーブの担保係数が、LP ポジションの価値を Avana Borrow Spoke での GHO の借入能力にどのように変換するか。"
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "プラットフォーム手数料",
-      "description": "どうやって Avana Labs"
+      "description": "Avana Labsのフロントエンドおよび清算手数料は、Aave DAOに発生するGHOの信用枠の利息とはどのように異なるか。"
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "18が8と22をどのように組み合わせるか"
+      "description": "Ask AIがどのようにAave MCP、AvanaのRAG、および製品の計算を組み合わせて、市場とLP裏付けのポジションを説明するか。"
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "はじめに — LP の預け入れ",
-      "description": "承認されたUniswap v2 LPトークンまたはUniswap v3ポジションをAvanaに誓約する方法"
+      "description": "承認されたUniswap v2 LPトークンまたはUniswap v3ポジションを、GHOの借入の担保としてAvanaのLP Vaultに誓約する方法。"
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "AppKitがパートナーアプリケーションからAvanaにウォレットとマーケットのコンテキストを渡す仕組み"
+      "description": "AppKitがパートナーアプリケーションからAvanaの借入フローにウォレットとマーケットのコンテキストを渡す仕組み。"
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "価格オラクル",
-      "description": "どうやって Avana"
+      "description": "AvanaのLPOracleが、Chainlink価格でのプールの流動性計算からvault tokenの価格を算出し、プールのTWAPを整合性チェックに使う仕組み。"
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "どのようにAave Adapter、Avana"
+      "description": "借り手にとってのAvanaへのエントリーポイントであるAave Adapterが、各借り手のPosition Proxyを通じて預け入れ、借入、返済、引き出しを処理する仕組み。"
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "法的免責事項",
-      "description": "どうやって Avana"
+      "description": "Avanaのサービス利用規約が、そのドキュメント、インターフェース、およびプロトコル統合にどのように適用されるか。"
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "清算フレームワーク",
-      "description": "どうやって Avana"
+      "description": "アカウントのヘルスファクターが1を下回ったときに、AvanaのLPVaultSwapがAave V4上のLP担保を決済する仕組み。"
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "バグバウンティ",
-      "description": "Avanaの責任ある開示の範囲"
+      "description": "Avanaのコントラクト、LP担保のリスク領域に関する責任ある開示の範囲と、経済的影響に基づく深刻度のガイダンス。"
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "どうやって Avana"
+      "description": "Avanaの損失負担順位が、ファーストロス資本、確約された収益、Avana UmbrellaをAvana Hub上の不足と欠損にどのように適用するか。"
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "セーフティ機構 — Risk Framework",
-      "description": "Avana Hub、Borrow Spoke、およびAvanaのガバナンスロール、アップグレードタイムロック、緊急時の管理機能、レポート"
+      "description": "Avana Hub、Borrow Spoke、Avana独自のコントラクトに関するガバナンスロール、アップグレードタイムロック、緊急時の管理機能、レポート。"
     },
     "toc": [
       {

@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "담보 팩터",
-      "description": "vault-token 각각의 예약 방법"
+      "description": "각 vault-token 준비금의 담보 계수가 LP 포지션 가치를 Avana Borrow Spoke에서 GHO 대출 한도로 전환하는 방식."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "플랫폼 수수료",
-      "description": "어떻게 Avana Labs"
+      "description": "Avana Labs' 프런트엔드 및 청산 수수료는 Aave DAO에 발생하는 GHO 신용 한도에 대한 이자와 어떻게 다른가요?"
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "어떻게 Ask AI이 Aave MCP, Avana를 결합하는가"
+      "description": "Ask AI가 Aave MCP, Avana의 RAG, 그리고 제품 계산을 결합하여 시장과 LP 지원 포지션을 설명하는 방법."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "시작하기 — LP 예치",
-      "description": "승인된 Uniswap v2 LP 토큰 또는 Uniswap v3 포지션을 Avana에 서약하는 방법"
+      "description": "승인된 Uniswap v2 LP 토큰 또는 Uniswap v3 포지션을 Avana의 LP Vault에 GHO 대출을 위한 담보로 제공하는 방법."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "AppKit이 파트너 애플리케이션에서 Avana로 지갑 및 마켓 컨텍스트를 전달하는 방법"
+      "description": "AppKit이 파트너 애플리케이션에서 Avana의 차입 흐름으로 지갑 및 마켓 컨텍스트를 전달하는 방법."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "가격 오라클",
-      "description": "어떻게 Avana"
+      "description": "Avana의 LPOracle이 Chainlink 가격을 적용한 풀 유동성 계산으로 vault token 가격을 산정하고, 풀 TWAP을 일관성 검사로 사용하는 방법."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Aave Adapter, Avana가 어떻게"
+      "description": "차입자의 Avana 진입점인 Aave Adapter가 각 차입자의 Position Proxy를 통해 예치, 차입, 상환, 인출을 처리하는 방법."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "법적 면책 조항",
-      "description": "어떻게 Avana"
+      "description": "Avana의 서비스 약관이 그 문서, 인터페이스 및 프로토콜 통합에 어떻게 적용되는지."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "청산 프레임워크",
-      "description": "어떻게 Avana"
+      "description": "계정의 헬스 팩터가 1 아래로 떨어질 때 Avana의 LPVaultSwap이 Aave V4에서 LP 담보를 정산하는 방법."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "버그 바운티",
-      "description": "Avana의 책임 있는 공개 범위"
+      "description": "Avana 컨트랙트, LP 담보 리스크 영역에 대한 책임 있는 공개 범위와 경제적 영향 기반 심각도 지침."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "어떻게 Avana"
+      "description": "Avana의 손실 충당 순서가 1차 손실 자본, 약정된 수익, Avana Umbrella를 Avana Hub의 부족분과 결손에 적용하는 방법."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "안전 메커니즘 — Risk Framework",
-      "description": "Avana Hub, Borrow Spoke 및 Avana의 거버넌스 역할, 업그레이드 타임록, 긴급 통제, 보고"
+      "description": "Avana Hub, Borrow Spoke, Avana 자체 컨트랙트에 대한 거버넌스 역할, 업그레이드 타임록, 긴급 통제, 보고."
     },
     "toc": [
       {

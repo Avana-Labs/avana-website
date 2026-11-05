@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Collateral Factors",
-      "description": "How each vault-token reserve"
+      "description": "How each vault-token reserve's Collateral Factor turns LP position value into GHO borrowing capacity on an Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Platform Fees",
-      "description": "How Avana Labs"
+      "description": "How Avana Labs' frontend and liquidation fees differ from interest on the GHO credit line, which accrues to the Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "How Ask AI combines Aave MCP, Avana"
+      "description": "How Ask AI combines Aave MCP, Avana's RAG, and product calculations to explain markets and LP-backed positions."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Getting Started - Deposit LP",
-      "description": "How to pledge an approved Uniswap v2 LP token or Uniswap v3 position into Avana"
+      "description": "How to pledge an approved Uniswap v2 LP token or Uniswap v3 position into Avana's LP Vault as collateral for borrowing GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "How AppKit passes wallet and market context from a partner application into Avana"
+      "description": "How AppKit passes wallet and market context from a partner application into Avana's borrowing flow."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Price Oracles",
-      "description": "How Avana"
+      "description": "How Avana's LPOracle prices vault tokens from pool liquidity math at Chainlink prices, with the pool TWAP as a consistency check."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "How the Aave Adapter, Avana"
+      "description": "How the Aave Adapter, Avana's borrower entry point, handles deposits, borrowing, repayment and withdrawal through each borrower's Position Proxy."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Legal Disclaimer",
-      "description": "How Avana"
+      "description": "How Avana's Terms of Service apply to its documentation, interface, and protocol integrations."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Liquidation Framework",
-      "description": "How Avana"
+      "description": "How Avana's LPVaultSwap settles LP collateral on Aave V4 when an account's health factor falls below 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Bug Bounty",
-      "description": "Responsible disclosure scope for Avana"
+      "description": "Responsible disclosure scope for Avana's contracts, LP-collateral risk surfaces, and economic-impact severity guidance."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "How Avana"
+      "description": "How Avana's loss order applies first-loss capital, committed revenues and Avana Umbrella to shortfalls and deficits on the Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Safety Mechanisms - Risk Framework",
-      "description": "Governance roles, the upgrade timelock, emergency controls and reporting for the Avana Hub, Borrow Spokes and Avana"
+      "description": "Governance roles, the upgrade timelock, emergency controls and reporting for the Avana Hub, Borrow Spokes and Avana's own contracts."
     },
     "toc": [
       {

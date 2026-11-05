@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "ضمانتی عوامل",
-      "description": "ہر vault-token ریزرو کیسے"
+      "description": "ہر vault-token ریزرو کا کولٹرل فیکٹر LP پوزیشن کی قیمت کو GHO قرض لینے کی صلاحیت میں تبدیل کرتا ہے ایک Avana Borrow Spoke پر۔"
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "پلیٹ فارم فیس",
-      "description": "کیسے Avana Labs"
+      "description": "کیسے Avana Labs کے فرنٹ اینڈ اور لیکویڈیشن فیس، GHO کریڈٹ لائن پر سود سے مختلف ہیں، جو Aave DAO کے حصے میں آتا ہے۔"
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "کیسے Ask AI، Aave MCP، Avana کو جوڑتا ہے"
+      "description": "کیسے Ask AI، Aave MCP، Avana کے RAG، اور مصنوعاتی حسابات کو ملا کر مارکیٹ اور LP سے حمایت یافتہ پوزیشنز کی وضاحت کرتا ہے۔"
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "شروعات کرنا - جمع LP",
-      "description": "کس طرح ایک منظور شدہ Uniswap v2 LP ٹوکن یا Uniswap v3 پوزیشن کو Avana میں عہد کریں"
+      "description": "منظور شدہ Uniswap v2 LP ٹوکن یا Uniswap v3 پوزیشن کو GHO کے لیے قرض لینے کے لیے Avana کے LP Vault میں بطور ضمانت کیسے جمع کرائیں۔"
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "AppKit کسی پارٹنر ایپلیکیشن سے والیٹ اور مارکیٹ کا سیاق Avana تک کیسے پہنچاتا ہے"
+      "description": "AppKit کسی پارٹنر ایپلیکیشن سے والیٹ اور مارکیٹ کا سیاق Avana کے قرض کے فلو تک کیسے پہنچاتا ہے۔"
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "قیمت کے اوریکل",
-      "description": "کیسے Avana"
+      "description": "Avana کا LPOracle، Chainlink قیمتوں پر پول کے لیکویڈیٹی ریاضی سے vault tokens کی قیمت کیسے طے کرتا ہے، اور پول TWAP کو مطابقت کی جانچ کے طور پر کیسے استعمال کرتا ہے۔"
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "कैसे Aave Adapter، Avana"
+      "description": "Avana میں قرض دار کا انٹری پوائنٹ، Aave Adapter، ہر قرض دار کے Position Proxy کے ذریعے ڈپازٹس، قرض، ادائیگی اور انخلا کو کیسے سنبھالتا ہے۔"
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "قانونی دستبرداری",
-      "description": "کیسے Avana"
+      "description": "22 کے سروس کے قواعد و ضوابط اس کی دستاویزات، انٹرفیس، اور پروٹوکول انضمامات پر کس طرح لاگو ہوتے ہیں۔"
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "لیکویڈیشن فریم ورک",
-      "description": "کیسے Avana"
+      "description": "جب کسی اکاؤنٹ کا ہیلتھ فیکٹر 1 سے نیچے آ جائے تو Avana کا LPVaultSwap، Aave V4 پر LP کولیٹرل کو کیسے سیٹل کرتا ہے۔"
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "بگ باؤنٹی",
-      "description": "Avana کے لیے ذمہ دارانہ انکشاف کا دائرہ"
+      "description": "Avana کے کنٹریکٹس، LP کولیٹرل کے خطرے کے پہلوؤں کے لیے ذمہ دارانہ انکشاف کا دائرہ، اور معاشی اثر پر مبنی سنگینی کی رہنمائی۔"
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "کیسے Avana"
+      "description": "Avana کی نقصان کی ترتیب Avana Hub پر کمی اور خسارے کے لیے فرسٹ لاس سرمایہ، مختص آمدنی اور Avana Umbrella کو کیسے لاگو کرتی ہے۔"
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "حفاظتی اقدامات - خطرے کا فریم ورک",
-      "description": "Avana Hub، Borrow Spokes اور Avana کے لیے گورننس کے کردار، اپ گریڈ ٹائم لاک، ہنگامی کنٹرولز اور رپورٹنگ"
+      "description": "Avana Hub، Borrow Spokes اور Avana کے اپنے کنٹریکٹس کے لیے گورننس کے کردار، اپ گریڈ ٹائم لاک، ہنگامی کنٹرولز اور رپورٹنگ۔"
     },
     "toc": [
       {

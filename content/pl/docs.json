@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Czynniki zabezpieczenia",
-      "description": "Jak każdy vault-token rezerwuje"
+      "description": "Jak współczynnik zabezpieczenia każdej rezerwy vault-token zamienia wartość pozycji LP na zdolność kredytową GHO na Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Opłaty platformy",
-      "description": "Jak Avana Labs"
+      "description": "Czym Avana Labs' opłaty frontendowe i likwidacyjne różnią się od odsetek od linii kredytowej GHO, które naliczane są do Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Jak Ask AI łączy Aave MCP, Avana"
+      "description": "Jak Ask AI łączy Aave MCP, Avana's RAG i obliczenia produktów, aby wyjaśnić rynki i pozycje wspierane przez LP."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Wprowadzenie – wpłata LP",
-      "description": "Jak zastawić zatwierdzony token Uniswap v2 LP lub pozycję Uniswap v3 na Avana"
+      "description": "Jak zastawić zatwierdzony token LP Uniswap v2 lub pozycję Uniswap v3 w LP Vault Avana jako zabezpieczenie pod pożyczkę GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "Jak AppKit przekazuje portfel i kontekst rynku z aplikacji partnera do Avana"
+      "description": "Jak AppKit przekazuje portfel i kontekst rynku z aplikacji partnera do procesu pożyczania w Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Wyrocznie cenowe",
-      "description": "Jak Avana"
+      "description": "Jak LPOracle Avana wycenia vault tokeny na podstawie matematyki płynności puli po cenach Chainlink, z TWAP puli jako kontrolą spójności."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Jak Aave Adapter, Avana"
+      "description": "Jak Aave Adapter, punkt wejścia kredytobiorcy do Avana, obsługuje depozyty, pożyczki, spłaty i wypłaty za pośrednictwem Position Proxy każdego kredytobiorcy."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Zastrzeżenie prawne",
-      "description": "Jak Avana"
+      "description": "Jak Warunki korzystania z usług Avana mają zastosowanie do jego dokumentacji, interfejsu i integracji protokołów."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Ram likwidacji",
-      "description": "Jak Avana"
+      "description": "Jak LPVaultSwap Avana rozlicza zabezpieczenie LP w Aave V4, gdy współczynnik zdrowia konta spadnie poniżej 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Program nagród za błędy",
-      "description": "Zakres odpowiedzialnego ujawniania dla Avana"
+      "description": "Zakres odpowiedzialnego ujawniania dla kontraktów Avana, powierzchni ryzyka zabezpieczeń LP oraz wytyczne dotyczące poziomu istotności na podstawie wpływu ekonomicznego."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Jak Avana"
+      "description": "Jak kolejność pokrywania strat w Avana wykorzystuje kapitał pierwszej straty, zaangażowane przychody i Avana Umbrella do pokrycia niedoborów i deficytów w Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Mechanizmy bezpieczeństwa – Risk Framework",
-      "description": "Role governance, timelock aktualizacji, mechanizmy awaryjne i raportowanie dotyczące Avana Hub, Borrow Spokes i Avana"
+      "description": "Role governance, timelock aktualizacji, mechanizmy awaryjne i raportowanie dotyczące Avana Hub, Borrow Spokes i własnych kontraktów Avana."
     },
     "toc": [
       {

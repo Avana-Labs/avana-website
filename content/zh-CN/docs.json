@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "抵押品因子",
-      "description": "每个vault-token储备如何"
+      "description": "每个vault-token储备的抵押因子如何将LP头寸价值转化为AvanaBorrow Spoke上的GHO借贷能力。"
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "平台费用",
-      "description": "怎么Avana Labs"
+      "description": "Avana Labs 的前端和清算费用与 GHO 信用额度上的利息不同，利息会累积到 Aave DAO。"
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "如何 Ask AI 结合 Aave MCP、Avana"
+      "description": "如何将Ask AI、Avana的RAG以及产品计算结合起来解释市场和LP支持的头寸。"
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "入门 — 存入 LP",
-      "description": "如何将已批准的 Uniswap v2 LP 代币或 Uniswap v3 头寸质押到 Avana"
+      "description": "如何将已批准的 Uniswap v2 LP 代币或 Uniswap v3 仓位质押到 Avana 的 LP Vault 中，以借用 GHO 作为抵押。"
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "AppKit 如何将钱包和市场上下文从合作方应用传入 Avana"
+      "description": "AppKit 如何将钱包和市场上下文从合作方应用传入 Avana 的借款流程。"
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "价格预言机",
-      "description": "怎么Avana"
+      "description": "Avana 的 LPOracle 如何按 Chainlink 价格，根据池的流动性数学为 vault token 定价，并以池的 TWAP 作为一致性校验。"
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "如何 Aave Adapter，Avana"
+      "description": "Aave Adapter 作为 Avana 的借款人入口，如何通过每个借款人的 Position Proxy 处理存入、借款、还款和提取。"
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "法律免责声明",
-      "description": "怎么Avana"
+      "description": "Avana 的服务条款如何适用于其文档、界面和协议集成。"
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "清算框架",
-      "description": "怎么Avana"
+      "description": "当账户的健康因子低于 1 时，Avana 的 LPVaultSwap 如何在 Aave V4 上结算 LP 抵押品。"
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "漏洞赏金",
-      "description": "Avana 的负责任披露范围"
+      "description": "Avana 合约、LP 抵押品风险面的负责任披露范围，以及经济影响严重程度指南。"
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "怎么Avana"
+      "description": "Avana 的损失顺序如何运用首损资本、承诺收入和 Avana Umbrella 来弥补 Avana Hub 上的缺口和赤字。"
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "安全机制 — Risk Framework",
-      "description": "治理角色、升级时间锁、紧急控制和报告，适用于 Avana Hub、Borrow Spoke 和 Avana"
+      "description": "Avana Hub、Borrow Spoke 和 Avana 自有合约的治理角色、升级时间锁、紧急控制和报告。"
     },
     "toc": [
       {

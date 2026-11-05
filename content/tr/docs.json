@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Teminat Faktörleri",
-      "description": "Her vault-token rezerv nasıl"
+      "description": "Her bir vault-token rezervin Teminat Faktörü, LP pozisyon değerini Avana Borrow Spoke üzerindeki GHO borçlanma kapasitesine nasıl dönüştürdüğünü gösterir."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Platform Ücretleri",
-      "description": "Nasıl Avana Labs"
+      "description": "Avana Labs' ön uç ve tasfiye ücretleri, Aave DAO'ye tahakkuk eden GHO kredi limitindeki faizden ne kadar farklıdır?"
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Ask AI, Aave MCP, Avana ile nasıl birleşir"
+      "description": "Ask AI, piyasaları ve LP destekli pozisyonları açıklamak için Aave MCP, Avana'nin RAG'ını ve ürün hesaplamalarını nasıl birleştirir."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Başlarken — LP Yatırma",
-      "description": "Onaylanmış bir Uniswap v2 LP jetonu veya Uniswap v3 pozisyonu Avana'ye nasıl eklenir?"
+      "description": "Uniswap v2 LP tokenini veya Uniswap v3 pozisyonunu, GHO ödünç almak için teminat olarak Avana'nin LP Vault'sine nasıl taahhüt edilir."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "AppKit'in cüzdan ve piyasa bağlamını bir partner uygulamadan Avana'ya nasıl ilettiği"
+      "description": "AppKit'in cüzdan ve piyasa bağlamını bir partner uygulamadan Avana'nın borçlanma akışına nasıl ilettiği."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Fiyat Kehanetleri",
-      "description": "Nasıl Avana"
+      "description": "Avana'nın LPOracle'ının vault token'ları havuz likidite matematiğinden Chainlink fiyatlarıyla nasıl fiyatladığı ve havuz TWAP'ını tutarlılık kontrolü olarak nasıl kullandığı."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Aave Adapter, Avana nasıl"
+      "description": "Avana'nın borçlu giriş noktası olan Aave Adapter'ın, her borçlunun Position Proxy'si üzerinden yatırma, borç alma, geri ödeme ve çekme işlemlerini nasıl yürüttüğü."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Yasal feragatname",
-      "description": "Nasıl Avana"
+      "description": "Avana'nin Hizmet Şartlarının belgelerine, arayüzüne ve protokol entegrasyonlarına nasıl uygulandığı."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Tasfiye Çerçevesi",
-      "description": "Nasıl Avana"
+      "description": "Bir hesabın sağlık faktörü 1'in altına düştüğünde Avana'nın LPVaultSwap'inin Aave V4 üzerindeki LP teminatını nasıl tasfiye ettiği."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Hata Ödülü",
-      "description": "Avana için sorumlu bildirim kapsamı"
+      "description": "Avana'nın sözleşmeleri ve LP teminatı risk yüzeyleri için sorumlu bildirim kapsamı ve ekonomik etkiye dayalı önem derecesi rehberi."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Nasıl Avana"
+      "description": "Avana'nın zarar sırasının, Avana Hub'daki eksik tutarlara ve açıklara ilk zarar sermayesini, taahhüt edilmiş gelirleri ve Avana Umbrella'yı nasıl uyguladığı."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Güvenlik mekanizmaları - Risk çerçevesi",
-      "description": "Avana Hub, Borrow Spoke'lar ve Avana için yönetişim rolleri, yükseltme zaman kilidi, acil durum kontrolleri ve raporlama"
+      "description": "Avana Hub, Borrow Spoke'lar ve Avana'nın kendi sözleşmeleri için yönetişim rolleri, yükseltme zaman kilidi, acil durum kontrolleri ve raporlama."
     },
     "toc": [
       {

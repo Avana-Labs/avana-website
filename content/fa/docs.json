@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "ضریب‌های وثیقه",
-      "description": "چگونه هر vault-token ذخیره"
+      "description": "چگونه ضریب وثیقه هر ذخیره vault-token ارزش موقعیت LP را به ظرفیت وام‌گیری GHO روی یک Avana Borrow Spoke تبدیل می‌کند."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "هزینه های پلتفرم",
-      "description": "چگونه Avana Labs"
+      "description": "چگونه هزینه‌های frontend و لیکوئیدیشن Avana Labs با بهره خط اعتباری GHO که به Aave DAO تعلق می‌گیرد، متفاوت است."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "چگونه Ask AI با Aave MCP، Avana ترکیب می‌شود"
+      "description": "چگونه Ask AI، Aave MCP، RAG Avana و محاسبات محصول را برای توضیح بازارها و موقعیت‌های پشتیبانی‌شده توسط LP ترکیب می‌کند."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "شروع کار - واریز LP",
-      "description": "نحوه تعهد یک توکن Uniswap v2 LP یا موقعیت Uniswap v3 در Avana"
+      "description": "چگونه یک توکن Uniswap v2 LP تأیید شده یا موقعیت Uniswap v3 را به عنوان وثیقه برای قرض گرفتن GHO در LP Vault از Avana تعهد کنیم."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "چگونه AppKit کیف پول و زمینه بازار را از یک برنامه شریک به Avana منتقل می‌کند"
+      "description": "چگونه AppKit کیف پول و زمینه بازار را از یک برنامه شریک به جریان استقراض Avana منتقل می‌کند."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "اوراکل‌های قیمت",
-      "description": "چگونه Avana"
+      "description": "چگونه LPOracle در Avana، vault tokenها را بر اساس ریاضیات نقدینگی استخر و با قیمت‌های Chainlink قیمت‌گذاری می‌کند و TWAP استخر را به‌عنوان بررسی سازگاری به کار می‌برد."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "چگونه Aave Adapter، Avana"
+      "description": "چگونه Aave Adapter، نقطه ورود وام‌گیرنده به Avana، سپرده‌گذاری‌ها، استقراض، بازپرداخت و برداشت را از طریق Position Proxy هر وام‌گیرنده انجام می‌دهد."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "سلب مسئولیت قانونی",
-      "description": "چگونه Avana"
+      "description": "چگونه شرایط خدمات Avana به مستندات، رابط کاربری و یکپارچه‌سازی‌های پروتکل آن اعمال می‌شود."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "چارچوب لیکوییدیشن",
-      "description": "چگونه Avana"
+      "description": "چگونه LPVaultSwap در Avana، وثیقه LP را در Aave V4 تسویه می‌کند، وقتی فاکتور سلامت یک حساب به زیر 1 می‌رسد."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "پاداش باگ",
-      "description": "دامنه افشای مسئولانه برای Avana"
+      "description": "دامنه افشای مسئولانه برای قراردادهای Avana، سطوح ریسک وثیقه LP و راهنمای شدت بر اساس اثر اقتصادی."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "چگونه Avana"
+      "description": "چگونه ترتیب پوشش زیان Avana، سرمایه زیان اول، درآمدهای متعهدشده و Avana Umbrella را برای کمبودها و کسری‌ها در Avana Hub به کار می‌گیرد."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "مکانیسم های ایمنی - Risk Framework",
-      "description": "نقش‌های حاکمیتی، قفل زمانی ارتقا، کنترل‌های اضطراری و گزارش‌دهی برای Avana Hub، Borrow Spokeها و Avana"
+      "description": "نقش‌های حاکمیتی، قفل زمانی ارتقا، کنترل‌های اضطراری و گزارش‌دهی برای Avana Hub، Borrow Spokeها و قراردادهای خود Avana."
     },
     "toc": [
       {

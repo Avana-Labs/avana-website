@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "מקדמי בטוחה",
-      "description": "כיצד כל vault-token רזרבה"
+      "description": "איך מקדם החסכון של כל vault-token הופך את ערך מיקום ה-LP ליכולת הלוואה של GHO על Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "עמלות פלטפורמה",
-      "description": "איך Avana Labs"
+      "description": "איך עמלות frontend ו-liquidation של Avana Labs שונות מהריבית על קו האשראי של GHO, שמצטברת לAave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "איך Ask AI משלב Aave MCP, Avana"
+      "description": "איך Ask AI משלב את Aave MCP, את RAG של Avana, וחישובי מוצרים כדי להסביר שווקים ומיקומים מגובים ב-LP."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "התחלה - הפקדת LP",
-      "description": "כיצד לשעבד אסימון Uniswap v2 LP מאושר או מיקום Uniswap v3 לתוך Avana"
+      "description": "כיצד להפקיד אסימון LP מאושר Uniswap v2 או עמידה Uniswap v3 ב-LP Vault של Avana כבטחונות להלוואת GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "כיצד AppKit מעביר הקשר ארנק ושוק מאפליקציית שותף אל Avana"
+      "description": "כיצד AppKit מעביר הקשר ארנק ושוק מאפליקציית שותף אל תהליך ההלוואה של Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "אורקלי מחירים",
-      "description": "איך Avana"
+      "description": "כיצד ה-LPOracle של Avana מתמחר vault tokens מתוך מתמטיקת הנזילות של המאגר לפי מחירי Chainlink, עם ה-TWAP של המאגר כבדיקת עקביות."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "איך Aave Adapter, Avana"
+      "description": "כיצד ה-Aave Adapter, נקודת הכניסה של הלווים ל-Avana, מטפל בהפקדות, בהלוואה, בהחזר ובמשיכה דרך ה-Position Proxy של כל לווה."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "כתב ויתור משפטי",
-      "description": "איך Avana"
+      "description": "איך תנאי השירות של Avana חלים על התיעוד, הממשק, ואינטגרציות הפרוטוקול שלו."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "מסגרת חיסול",
-      "description": "איך Avana"
+      "description": "כיצד LPVaultSwap של Avana מסלק ביטחונות LP ב-Aave V4 כאשר מקדם הבריאות של חשבון יורד מתחת ל-1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "באג באנטי",
-      "description": "היקף הגילוי האחראי עבור Avana"
+      "description": "היקף הגילוי האחראי עבור החוזים של Avana, משטחי הסיכון של ביטחונות LP, והנחיות חומרה לפי השפעה כלכלית."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "איך Avana"
+      "description": "כיצד סדר ספיגת ההפסדים של Avana מחיל הון הפסד ראשון, הכנסות שהוקצו ו-Avana Umbrella על חוסרים וגירעונות ב-Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "מנגנוני בטיחות - מסגרת סיכון",
-      "description": "תפקידי ממשל, נעילת הזמן לשדרוגים, בקרות חירום ודיווח עבור ה-Avana Hub, ה-Borrow Spokes ו-Avana"
+      "description": "תפקידי ממשל, נעילת הזמן לשדרוגים, בקרות חירום ודיווח עבור ה-Avana Hub, ה-Borrow Spokes והחוזים של Avana עצמה."
     },
     "toc": [
       {

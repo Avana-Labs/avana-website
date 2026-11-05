@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Faktor Agunan",
-      "description": "Bagaimana setiap vault-token cadangan"
+      "description": "Bagaimana Faktor Agunan setiap cadangan vault-token mengubah nilai posisi LP menjadi kapasitas pinjaman GHO pada Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Biaya Platform",
-      "description": "Bagaimana Avana Labs"
+      "description": "Bagaimana biaya frontend dan likuidasi Avana Labs berbeda dari bunga pada jalur kredit GHO, yang diakumulasi ke Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Bagaimana Ask AI menggabungkan Aave MCP, Avana"
+      "description": "Bagaimana Ask AI menggabungkan Aave MCP, RAG milik Avana, dan perhitungan produk untuk menjelaskan pasar dan posisi yang didukung LP."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Memulai - Setor LP",
-      "description": "Cara mengikat token LP Uniswap v2 yang disetujui atau posisi Uniswap v3 ke dalam Avana"
+      "description": "Bagaimana cara menjaminkan token Uniswap v2 LP atau posisi Uniswap v3 yang disetujui ke dalam LP Vault milik Avana sebagai jaminan untuk pinjaman GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "Cara AppKit meneruskan wallet dan konteks pasar dari aplikasi mitra ke Avana"
+      "description": "Cara AppKit meneruskan wallet dan konteks pasar dari aplikasi mitra ke alur pinjaman Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Oracle Harga",
-      "description": "Bagaimana Avana"
+      "description": "Cara LPOracle Avana menghargai vault token dari matematika likuiditas pool pada harga Chainlink, dengan TWAP pool sebagai pemeriksaan konsistensi."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Bagaimana Aave Adapter, Avana"
+      "description": "Cara Aave Adapter, titik masuk peminjam ke Avana, menangani deposit, pinjaman, pembayaran kembali, dan penarikan melalui Position Proxy setiap peminjam."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Penafian Hukum",
-      "description": "Bagaimana Avana"
+      "description": "Bagaimana Ketentuan Layanan Avana berlaku untuk dokumentasi, antarmuka, dan integrasi protokolnya."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Kerangka likuidasi",
-      "description": "Bagaimana Avana"
+      "description": "Cara LPVaultSwap Avana menyelesaikan kolateral LP di Aave V4 ketika faktor kesehatan sebuah akun turun di bawah 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Hadiah Bug",
-      "description": "Cakupan pengungkapan bertanggung jawab untuk Avana"
+      "description": "Cakupan pengungkapan bertanggung jawab untuk kontrak Avana, permukaan risiko kolateral LP, dan panduan tingkat keparahan berdasarkan dampak ekonomi."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Bagaimana Avana"
+      "description": "Cara urutan kerugian Avana menerapkan modal kerugian pertama, pendapatan yang dikomitmenkan, dan Avana Umbrella pada kekurangan dan defisit di Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Mekanisme Keamanan - Risk Framework",
-      "description": "Peran tata kelola, timelock upgrade, kontrol darurat, dan pelaporan untuk Avana Hub, Borrow Spoke, dan Avana"
+      "description": "Peran tata kelola, timelock upgrade, kontrol darurat, dan pelaporan untuk Avana Hub, Borrow Spoke, dan kontrak milik Avana sendiri."
     },
     "toc": [
       {

@@ -2,7 +2,7 @@
   "architecture/collateral-factors": {
     "meta": {
       "title": "Collateral Factor",
-      "description": "Jinsi kila vault-token hifadhi"
+      "description": "Jinsi Kiwango cha Dhamana cha kila vault-token kirahisi kubadilisha thamani ya nafasi ya LP kuwa uwezo wa kukopa wa GHO kwenye Avana Borrow Spoke."
     },
     "toc": [
       {
@@ -296,7 +296,7 @@
   "architecture/platform-fees": {
     "meta": {
       "title": "Ada za Jukwaa",
-      "description": "Je, Avana Labs"
+      "description": "Jinsi ada za mbele na ufutaji za Avana Labs zinavyotofautiana na riba kwenye mstari wa mkopo wa GHO, ambao unakusanywa kwa Aave DAO."
     },
     "toc": [
       {
@@ -346,7 +346,7 @@
   "copilot": {
     "meta": {
       "title": "Ask AI",
-      "description": "Jinsi Ask AI inavyounganisha Aave MCP, Avana"
+      "description": "Jinsi Ask AI inavyounganisha Aave MCP, RAG ya Avana, na mahesabu ya bidhaa kuelezea masoko na nafasi zinazotegemewa na LP."
     },
     "toc": [
       {
@@ -656,7 +656,7 @@
   "getting-started": {
     "meta": {
       "title": "Anza - Weka LP",
-      "description": "Jinsi ya kuahidi tokeni ya LP iliyokubaliwa Uniswap v2 au nafasi ya Uniswap v3 ndani ya Avana"
+      "description": "Jinsi ya kuwaahidi tokeni ya LP iliyoidhinishwa Uniswap v2 au nafasi Uniswap v3 ndani ya LP Vault ya Avana kama dhamana kwa mkopo wa GHO."
     },
     "toc": [
       {
@@ -891,7 +891,7 @@
   "integrations/appkit": {
     "meta": {
       "title": "AppKit",
-      "description": "Jinsi AppKit inavyopitisha pochi na muktadha wa soko kutoka programu ya mshirika kwenda Avana"
+      "description": "Jinsi AppKit inavyopitisha pochi na muktadha wa soko kutoka programu ya mshirika kwenda kwenye mtiririko wa ukopaji wa Avana."
     },
     "toc": [
       {
@@ -1005,7 +1005,7 @@
   "integrations/price-oracles": {
     "meta": {
       "title": "Oracle za Bei",
-      "description": "Je, Avana"
+      "description": "Jinsi LPOracle ya Avana inavyoweka bei za vault tokens kutoka hesabu za ukwasi za bwawa kwa bei za Chainlink, huku TWAP ya bwawa ikiwa ukaguzi wa uwiano."
     },
     "toc": [
       {
@@ -1137,7 +1137,7 @@
   "integrations/router-contract": {
     "meta": {
       "title": "Aave Adapter",
-      "description": "Jinsi Aave Adapter, Avana"
+      "description": "Jinsi Aave Adapter, kituo cha kuingia cha mkopaji kwenye Avana, inavyoshughulikia uwekaji, ukopaji, ulipaji na utoaji kupitia Position Proxy ya kila mkopaji."
     },
     "toc": [
       {
@@ -1388,7 +1388,7 @@
   "legal/disclaimer": {
     "meta": {
       "title": "Kanusho la Kisheria",
-      "description": "Je, Avana"
+      "description": "Jinsi Masharti ya Huduma ya Avana yanavyotumika kwa nyaraka zake, kiolesura, na ujumuishaji wa itifaki."
     },
     "toc": [
       {
@@ -1754,7 +1754,7 @@
   "liquidation": {
     "meta": {
       "title": "Mfumo wa Liquidation",
-      "description": "Je, Avana"
+      "description": "Jinsi LPVaultSwap ya Avana inavyosuluhisha dhamana ya LP kwenye Aave V4 pale kipimo cha afya cha akaunti kinaposhuka chini ya 1."
     },
     "toc": [
       {
@@ -1911,7 +1911,7 @@
   "safety/bug-bounty": {
     "meta": {
       "title": "Zawadi ya Hitilafu",
-      "description": "Wigo wa ufichuzi wa kuwajibika kwa Avana"
+      "description": "Wigo wa ufichuzi wa kuwajibika kwa mikataba ya Avana, maeneo ya hatari ya dhamana ya LP, na mwongozo wa ukali kulingana na athari za kiuchumi."
     },
     "toc": [
       {
@@ -2098,7 +2098,7 @@
   "safety/insurance": {
     "meta": {
       "title": "Umbrella",
-      "description": "Je, Avana"
+      "description": "Jinsi mpangilio wa hasara wa Avana unavyotumia mtaji wa hasara ya kwanza, mapato yaliyotengwa na Avana Umbrella kwa upungufu na nakisi kwenye Avana Hub."
     },
     "toc": [
       {
@@ -2173,7 +2173,7 @@
   "safety": {
     "meta": {
       "title": "Mbinu za Usalama - Risk Framework",
-      "description": "Majukumu ya utawala, timelock ya uboreshaji, vidhibiti vya dharura na uripoti kwa Avana Hub, Borrow Spokes na Avana"
+      "description": "Majukumu ya utawala, timelock ya uboreshaji, vidhibiti vya dharura na uripoti kwa Avana Hub, Borrow Spokes na mikataba ya Avana yenyewe."
     },
     "toc": [
       {
