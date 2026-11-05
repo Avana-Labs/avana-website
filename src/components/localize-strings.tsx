@@ -13,8 +13,7 @@ function normalizePhrase(value: string): string {
     .trim()
 }
 
-function lookup(map: Record<string, string>, value: string): string {
-  if (!value) return value
+function findTranslation(map: Record<string, string>, value: string): string | undefined {
   if (map[value]) return map[value]
   const trimmed = value.trim()
   if (map[trimmed]) return map[trimmed]
@@ -26,7 +25,18 @@ function lookup(map: Record<string, string>, value: string): string {
   for (const [from, to] of Object.entries(map)) {
     if (normalizePhrase(from) === normalized) return to
   }
-  return value
+  return undefined
+}
+
+function lookup(map: Record<string, string>, value: string): string {
+  if (!value) return value
+  const translated = findTranslation(map, value)
+  if (translated === undefined) return value
+  // Catalog entries are stored trimmed. Keep the source text node's edge
+  // spacing so text next to links or <strong> labels doesn't run together.
+  const lead = /^\s/.test(value) && !/^\s/.test(translated) ? " " : ""
+  const trail = /\s$/.test(value) && !/\s$/.test(translated) ? " " : ""
+  return lead + translated + trail
 }
 
 /** Longest-phrase first replacement for composed attrs like aria-label templates. */
