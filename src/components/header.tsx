@@ -19,6 +19,7 @@ function BrandLogo({ alt }: { alt: string }) {
         height={240}
         quality={85}
         sizes="121px"
+        preload
         className="h-[56px] w-auto origin-left -translate-x-[10%] scale-[1.08] md:h-[52px]"
       />
     </span>
