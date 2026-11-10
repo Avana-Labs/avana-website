@@ -162,7 +162,8 @@
         "parameters": "Parameters",
         "securityVerification": "Security & Verification",
         "audits": "Audits",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Protocol Overview"
       }
     },
     "faqUi": {

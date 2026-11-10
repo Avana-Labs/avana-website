@@ -149,7 +149,8 @@
         "parameters": "Параметри",
         "securityVerification": "Безпека та верифікація",
         "audits": "Аудити",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Огляд протоколу"
       }
     },
     "faqUi": {

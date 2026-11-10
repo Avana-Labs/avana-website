@@ -162,7 +162,8 @@
         "parameters": "파라미터",
         "securityVerification": "보안 및 검증",
         "audits": "감사",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "프로토콜 개요"
       }
     },
     "faqUi": {

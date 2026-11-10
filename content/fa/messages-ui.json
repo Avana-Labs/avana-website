@@ -149,7 +149,8 @@
         "parameters": "پارامترها",
         "securityVerification": "امنیت و راستی‌آزمایی",
         "audits": "حسابرسی‌ها",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "نمای کلی پروتکل"
       }
     },
     "faqUi": {

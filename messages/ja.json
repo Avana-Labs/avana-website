@@ -150,7 +150,8 @@
         "parameters": "パラメータ",
         "securityVerification": "セキュリティと検証",
         "audits": "監査",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "プロトコル概要"
       }
     },
     "faqUi": {

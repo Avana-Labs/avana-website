@@ -149,7 +149,8 @@
         "parameters": "พารามิเตอร์",
         "securityVerification": "ความปลอดภัยและการตรวจสอบ",
         "audits": "การตรวจสอบโดยผู้ตรวจ",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "ภาพรวมโปรโตคอล"
       }
     },
     "faqUi": {

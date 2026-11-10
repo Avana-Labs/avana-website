@@ -100,6 +100,7 @@ export const navigationSections = [
     icon: BookOpen,
     items: [
       { href: "/developers", labelKey: "docs.items.overview", icon: FileText },
+      { href: "/developers/introduction", labelKey: "docs.items.protocolOverview", icon: Layers },
       { href: "/developers/introduction/key-concepts", labelKey: "docs.items.keyConcepts", icon: Lightbulb },
       { href: "/developers/introduction/glossary", labelKey: "docs.items.glossary", icon: BookMarked },
     ],

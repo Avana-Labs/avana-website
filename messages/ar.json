@@ -150,7 +150,8 @@
         "parameters": "المعاملات",
         "securityVerification": "الأمان والتحقق",
         "audits": "عمليات التدقيق",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "نظرة عامة على البروتوكول"
       }
     },
     "faqUi": {

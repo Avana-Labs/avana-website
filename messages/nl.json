@@ -150,7 +150,8 @@
         "parameters": "Parameters",
         "securityVerification": "Beveiliging & verificatie",
         "audits": "Audits",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Protocoloverzicht"
       }
     },
     "faqUi": {

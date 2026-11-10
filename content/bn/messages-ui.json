@@ -149,7 +149,8 @@
         "parameters": "প্যারামিটার",
         "securityVerification": "নিরাপত্তা ও যাচাই",
         "audits": "অডিট",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "প্রোটোকল ওভারভিউ"
       }
     },
     "faqUi": {

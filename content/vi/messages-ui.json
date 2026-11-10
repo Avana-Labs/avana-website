@@ -149,7 +149,8 @@
         "parameters": "Tham số",
         "securityVerification": "Bảo mật và xác minh",
         "audits": "Kiểm toán",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Tổng quan giao thức"
       }
     },
     "faqUi": {

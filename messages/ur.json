@@ -150,7 +150,8 @@
         "parameters": "پیرامیٹرز",
         "securityVerification": "سیکیورٹی اور تصدیق",
         "audits": "آڈٹس",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "پروٹوکول کا جائزہ"
       }
     },
     "faqUi": {

@@ -150,7 +150,8 @@
         "parameters": "Sigogi",
         "securityVerification": "Tsaro da Tabbatarwa",
         "audits": "Bincike",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Bayanin Ka'idar Aiki"
       }
     },
     "faqUi": {

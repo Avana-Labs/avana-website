@@ -150,7 +150,8 @@
         "parameters": "פרמטרים",
         "securityVerification": "אבטחה ואימות",
         "audits": "ביקורות",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "סקירת הפרוטוקול"
       }
     },
     "faqUi": {

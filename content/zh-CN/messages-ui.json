@@ -149,7 +149,8 @@
         "parameters": "参数",
         "securityVerification": "安全与验证",
         "audits": "审计",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "协议概览"
       }
     },
     "faqUi": {

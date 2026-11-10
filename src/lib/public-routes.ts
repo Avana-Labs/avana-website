@@ -15,6 +15,7 @@ export const landingPaths = [
 ] as const
 
 export const developerPaths = [
+  "/developers/introduction",
   "/developers/introduction/key-concepts",
   "/developers/introduction/glossary",
   "/developers/getting-started",

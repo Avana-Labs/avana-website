@@ -149,7 +149,8 @@
         "parameters": "Parametreler",
         "securityVerification": "Güvenlik ve Doğrulama",
         "audits": "Denetimler",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Protokole Genel Bakış"
       }
     },
     "faqUi": {

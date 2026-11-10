@@ -150,7 +150,8 @@
         "parameters": "Parameter",
         "securityVerification": "Keamanan & Verifikasi",
         "audits": "Audit",
-        "lens": "Lens"
+        "lens": "Lens",
+        "protocolOverview": "Ikhtisar Protokol"
       }
     },
     "faqUi": {
