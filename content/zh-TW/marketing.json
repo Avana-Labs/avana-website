@@ -200,8 +200,8 @@
       "面向 AMM 流動性的借貸市場。",
       "Avana 關於頁主視覺",
       "Avana 是 Aave V4 上專為 AMM 流動性打造的借貸市場。我們的使命是讓 AMM 流動性部位能在整個 DeFi 中作為抵押品使用。",
-      "主要 AMM 持有數十億規模的流動性，但 LP 部位大多仍被視為被動持有的資產，而非能發揮作用的抵押品。Avana 從 Ethereum 上部分 Uniswap v2 與 v3 部位起步。",
-      "將 LP 部位作為抵押品，遠不只是上架 LP 代幣這麼簡單。Avana 的 LP Vault 持有每個已質押的部位，並在 Aave V4 上以 1:1 的 vault token 代表它。借款人透過分別對應穩定、相關性與藍籌／穩定 LP 市場的 Borrow Spoke，從 Avana Hub 借入 GHO。Hub 與 Spoke 是由 Aave DAO 擁有的標準 Aave V4 合約。Avana Lend Spoke 讓放款人能直接向 Avana Hub 提供資產。",
+      "主要 AMM 持有數十億美元的流動性，但 LP 部位大多仍被視為被動持有，而非具生產力的抵押品。Avana 從 Ethereum 上的 Uniswap v3 部位與 Base 上的 Aerodrome Slipstream 部位開始。",
+      "將 LP 部位作為抵押品，不只是上架 LP 代幣這麼簡單。Avana 的 LP Vault 持有每個已質押的部位，並在 Aave V4 上以其市場的 vault token 代表該部位。借款人透過每個 AMM 對應的 CDP Spoke，從 Avana Stable LP Hub 借入 GHO，以及陸續啟用的其他債務資產。Hub 與 Spoke 是由 Aave DAO 擁有的標準 Aave V4 合約，Aave DAO 透過 Avana Lend Spoke 上的 GHO 信用額度為 Hub 提供資金。",
       "智慧合約只是工作的一部分。部位必須持續在其池中運作。其價值必須隨情況變化而衡量。市場必須有足夠的流動性來支撐貸款。Avana 將這些工作分配給四個團隊，每個團隊負責風險的不同面向。",
       "每個領域都有專責負責人：技術執行、營運、市場建模與抵押品審查。",
       "我們是一支小團隊，正在解決一個重大問題。如果您想加入這項研究工作，"

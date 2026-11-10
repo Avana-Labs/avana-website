@@ -8,27 +8,32 @@
         {
           "id": "what-is-avana",
           "q": "Menene Avana?",
-          "a": "Avana yana bai wa masu samar da ruwan kuɗi damar amfani da matsayin AMM a matsayin jingina a Aave V4. Mai aro yana jingina LP token na Uniswap v2 ko matsayin Uniswap v3 ga LP Vault na Avana. Sannan mai aron yana aron GHO daga Avana Hub ta hanyar Borrow Spoke na Avana, yayin da ruwan kuɗin ke nan a cikin pool.\n\nAvana yana aiki a Ethereum mainnet. Avana Hub da Borrow Spokes daidaitattun kwangilolin Aave V4 ne mallakar Aave DAO."
+          "a": "Avana tana ba masu samar da ruwan kuɗi damar amfani da matsayin AMM a matsayin jingina a kan Aave V4. Mai aro yana pledge matsayin Uniswap v3 a Ethereum ko matsayin Aerodrome Slipstream a Base. LPVault na Avana yana riƙe da matsayin, kuma ana samar da vault token da ya dace a matsayin jingina a kan Avana CDP Spoke. Sannan mai aro yana aron GHO, ko wata kadarar bashi da Spoke ke bayarwa, yayin da ruwan kuɗin ke zama a cikin pool.\n\nAvana tana ƙaddamarwa a Ethereum da Base, tare da Avana Stable LP Hub a kowane chain. Hubs da Spokes kwangiloli ne na Aave V4 na yau da kullum, da ba a gyara ba, mallakar Aave DAO kuma shi ke saita su. Kwangilolin Avana kanta suna kula da tsarewa, ƙimantawa, ayyukan mai aro da liquidation."
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Wane matsala Avana ke warwarewa?",
-          "a": "Masu samar da ruwan kuɗi yawanci sai sun cire ruwan kuɗi kafin su iya aro a kan jarinsu. Don yin hakan, suna fita daga pool kuma suna rasa samun kuɗaɗe da kewayon da suka zaɓa.\n\nAvana yana sa matsayin LP da ake tallafawa su zama masu amfani a matsayin jingina. Matsayin yana nan a cikin pool. LPOracle na Avana yana ƙimanta shi, kuma Aave V4 yana rubuta shi a matsayin vault token da ke daidai 1:1 da ruwan kuɗin da ke ƙasa. Amfanin ga LPs shi ne sassaucin jari, ba tabbacin riba mai kyau ba. Masu aro har yanzu suna ɗaukar asarar wucin gadi, haɗarin farashi, da haɗarin liquidation."
+          "a": "Masu samar da ruwan kuɗi galibi dole su cire ruwan kuɗi kafin su iya aro a kansa. Wannan yana nufin barin pool da rasa kuɗin shiga na kuɗaɗe da kewayon da suka zaɓa.\n\nAvana tana sa matsayin LP da ake goyon baya su zama masu amfani a matsayin jingina yayin da suke zama a cikin pool. LPOracle yana ƙimanta kowane matsayi daga adadin tokens ɗinsa a farashin oracle, kuma Aave V4 yana rubuta shi a matsayin vault token. Fa'idar ga LPs sassaucin jari ce, ba tabbataccen riba ba. Masu aro har yanzu suna ɗaukar impermanent loss, haɗarin farashi da haɗarin liquidation."
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Yaya Avana ta bambanta da kasuwar lamuni ta yau da kullum?",
-          "a": "Kasuwannin ba da rance na yau da kullum yawanci suna ɗaukar jingina a matsayin ragowar token masu sauƙi, kamar ETH, BTC, stablecoins, ko wasu kadarorin ERC-20. An gina Avana ne don jinginar da ke canzawa a tsawon lokaci. Matsayin LP ya ƙunshi kadarori biyu kuma yana samun kuɗaɗe. Abin da ya ƙunsa yana canzawa yayin da farashi ke motsi, yana iya fita daga kewayonsa, kuma yana buƙatar takamaiman hanya don warware shi.\n\nSaboda haka, Avana yana tsayar da haɗari bisa kowace kasuwa. Kowane pool da aka amince da shi, da kewayo inda ya dace, yana da nasa vault token, collateral factor, iyakoki, da yanayin sasantawa. Collateral factor yana farawa daga collateral factor mafi ƙanƙanta na tokens biyu na pool sannan a rage shi saboda haɗarin da ya keɓanta ga pool."
+          "a": "Kasuwannin rance na yau da kullum suna ɗaukar jingina a matsayin ma'aunin tokens. Matsayin LP yana riƙe da tokens da yawa, yana samun kuɗaɗe, yana canza haɗinsa yayin da farashi ke motsawa, zai iya fita daga kewayo, kuma yana buƙatar takamaiman hanya don warwarewa.\n\nDon haka Avana tana saita haɗari ga kowace kasuwa. Kasuwa pool ɗaya ce da ainihin kewayon tick ɗaya a kan CDP Spoke ɗaya, tare da vault token nata, Collateral Factor, iyakoki, hanyar farashi da hanyoyin musanya. Kowane wallet yana da asusu daban ga kowace kasuwa, don haka jinginar kasuwa ɗaya ba ta taɓa tallafa wa bashi a wata kasuwa ba."
         },
         {
           "id": "which-amms-can-avana-support",
           "q": "Waɗanne AMMs ne Avana ke tallafawa?",
-          "a": "Avana yana tallafa wa zaɓaɓɓun LP tokens na Uniswap v2 da matsayin Uniswap v3 a Ethereum mainnet. Ga Uniswap v3, matsayi masu cikakken kewayo da kewayon da aka amince da su musamman kaɗai ake karɓa.\n\nƘara Uniswap v4, Curve, Balancer, Aerodrome, wasu AMMs, ko wasu chains kamar Base yana buƙatar nasa bitar fasaha da haɗari da amincewar gudanarwar Aave. Ana amincewa da pools ɗaya bayan ɗaya. Avana yana cire pools na meme-token, pools marasa isasshen tarihin ruwan kuɗi ko ingantaccen farashi daga waje, da pools da za a iya hana cire ruwan kuɗi daga cikinsu."
+          "a": "A lokacin ƙaddamarwa, Avana tana goyon bayan matsayin Uniswap v3 a Ethereum da matsayin Aerodrome Slipstream a Base. Dole a cire matsayin Slipstream daga stake; ba za a iya yin pledge da matsayin da aka yi stake a gauge ba. Kowace kasuwa tana karɓar ainihin kewayon tick ɗaya, kuma ana ƙin matsayi mai kowane kewayo daban.\n\nTushen Avana AMM-neutral ne. An bayyana haɗawa ga Uniswap v2, Curve StableSwap-NG, Balancer da Uniswap v4, amma ana jera kowanne ne kawai bayan binciken shirinsa ya wuce kuma gudanarwa ta amince da shi. An cire pools masu tokens na fee-on-transfer, rebasing ko hook."
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "Shin Avana yana maye gurbin AMM inda kuɗin ruwa na yake?",
-          "a": "A'a. AMM har yanzu yana kula da musaya (swaps), halin pool, motsin farashi, da samar da kuɗaɗe. Avana yana ƙara matakin jingina a kewayen matsayin LP da ake tallafawa.\n\nLokacin da kuka jingina matsayi da ya cancanta, LP Vault na Avana yana riƙe da shi, kuma Avana yana ƙirƙirar vault token da ya dace don Aave V4. Ruwan kuɗin yana nan a cikin pool na AMM kuma yana ci gaba da samun kuɗaɗe muddin yana cikin kewayonsa."
+          "a": "A'a. AMM har yanzu yana kula da musanya, yanayin pool, motsin farashi da samar da kuɗaɗe. Avana tana ƙara matakin jingina a kewayen matsayin da ake goyon baya.\n\nLokacin da ka yi pledge da matsayi, LPVault na wannan AMM yana riƙe da NFT, kuma Avana tana mint vault tokens daidai da ruwan kuɗin matsayin. Ruwan kuɗin yana zama a cikin pool kuma yana ci gaba da samun kuɗaɗe yayin da yake cikin kewayo. Za ka iya karɓar waɗannan kuɗaɗe a kowane lokaci."
+        },
+        {
+          "id": "is-avana-live",
+          "q": "An tura Avana?",
+          "a": "Tukuna ba. Takardar bayanin Avana da interfaces na kwangiloli sun cika kuma sun bi ta bita ta cikin gida da yin samfuri na formal. Ana rubuta lambar kwangila a gaba, sannan binciken tsaro masu zaman kansu na kowace kwangila da ƙuri'un Aave DAO da ke amincewa da turawa da kuɗaɗe.\n\nZa a jera adireshin kwangiloli a shafin Contracts na takardun masu haɓakawa da zarar an tura kwangilolin. Sandbox na jama'a a app.avana.cc yana amfani da kadarorin kwaikwayo."
         }
       ]
     },
@@ -40,59 +45,64 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Ta yaya Avana ke aiki a babban mataki?",
-          "a": "Avana yana aiki a matakai uku. Na farko, kuna jingina matsayin LP da ake tallafawa ga LP Vault. Na biyu, Risk Module na Avana yana duba pool, matakin kuɗi, kewayo, samuwar oracle, da iyakoki. Sannan Aave Adapter yana ƙirƙirar vault token da ya dace kuma yana samar da shi ga Borrow Spoke na Avana na wannan kasuwa. Na uku, kuna aron GHO daga Avana Hub har zuwa ƙarfin aronku.\n\nMatsayin LP yana nan a cikin AMM. Kwangilolin Avana na kansa suna kula da riƙo, ƙimantawa, da sasantawa. Avana Hub da Borrow Spokes daidaitattun kwangilolin Aave V4 ne waɗanda ba a gyara ba, mallakar Aave DAO."
+          "a": "Kana pledge matsayin da ake goyon baya ta AaveAdapter. LPVault yana karɓar tsarewar NFT, Collateralization tana rubuta yawan ruwan kuɗin da yake tallafawa, kuma AaveAdapter yana mint wannan adadin vault tokens ga PositionProxy ɗinka na kasuwar. Proxy yana samar da su a matsayin jingina a kan CDP Spoke na kasuwar. Sannan kana aro ta AaveAdapter, wanda ke bincika farashi, iyakoki da ma'aunin lafiyarka.\n\nBiya, cirewa, cire wani ɓangare na ruwan kuɗi, biya da jingina da karɓar kuɗaɗe suma suna gudana ta AaveAdapter. Liquidation tana gudana ta LPVaultSwap. Kowace haɓakawa ko canjin siga ga kwangilolin Avana tana bi ta AvanaTimelock na chain."
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Me ya sa Avana ke amfani da tsarin Hub-and-Spoke na Aave V4?",
-          "a": "Avana yana amfani da Aave V4 saboda yana raba ruwan kuɗi na bai ɗaya da saitunan haɗari na musamman ga kowace kasuwa. Avana Hub yana riƙe da layin bashi na GHO mai iyaka wanda Aave DAO ya ware. Borrow Spokes da aka amince da su kaɗai ne za su iya cirewa daga gare shi.\n\nKowane Borrow Spoke yana shafar rukunin kasuwa guda da nasa sigogi da iyakoki: stable LP (wanda ake la'akari: USDC/USDT), correlated LP (wanda ake la'akari: wstETH/WETH), da blue-chip/stable LP (wanda ake la'akari: WETH/USDC). Har yanzu ana tantance waɗanda ake la'akari da su. Avana ba ya yin fork ko gyara lambar Aave V4. Dukkan lambar aiki da ta keɓanta ga Avana tana cikin kwangilolin Avana na kansa."
+          "q": "Me yasa Avana ke amfani da Aave V4 Hubs da Spokes?",
+          "a": "Aave V4 yana raba ruwan kuɗi na tarayya (Hubs) da saitunan haɗari na musamman na kasuwa (Spokes). Kowane chain yana da Avana Stable LP Hub. Aave DAO yana ba shi layin bashin GHO mai iyaka ta Lend Spoke na samarwa kaɗai, kuma CDP Spokes na Avana kaɗai za su iya ɗauka daga gare shi.\n\nAkwai CDP Spoke ɗaya ga kowane chain, Hub, yarjejeniyar AMM da matakin haɗari. A lokacin ƙaddamarwa waɗannan su ne \"Uniswap v3 Stable\" a Ethereum da \"Aerodrome Slipstream Stable\" a Base. An ƙera Correlated LP da Volatile LP Hubs don nan gaba. Avana ba ta yin fork ko gyara Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
-          "q": "Menene Zuƙowar Ara?",
-          "a": "Borrow Spoke daidaitaccen Aave V4 Spoke ne mallakar Aave DAO. Yana karɓar vault tokens na Avana a matsayin jingina kuma yana bai wa masu aro damar cire GHO daga Avana Hub. Yana aiwatar da collateral factor, Collateral Risk, da sigogin liquidation na kasuwanninsa.\n\nAvana yana amfani da Borrow Spokes daban-daban saboda ba dukkan matsayin LP ne ke da ɗabi'a iri ɗaya ba. Haɗin stablecoins biyu, haɗin kadarori masu tafiya tare kamar wstETH/WETH, da haɗin blue-chip/stable kamar WETH/USDC suna buƙatar collateral factors, iyakoki, da saitunan sasantawa daban-daban."
+          "q": "Menene CDP Spoke?",
+          "a": "CDP Spoke Aave V4 Spoke ne na yau da kullum mallakar Aave DAO. Yana riƙe da reserve ɗaya na vault-token na jingina kaɗai ga kowace kasuwar Avana da reserves na bashi da aka kunna masa, GHO na farko. Yana amfani da Collateral Factor, ribar liquidation da iyakokin kowace kasuwa.\n\nKowane reserve na vault-token yana amfani da saituna uku da ake buƙata: an kashe karɓar hannun jari, kuɗin liquidation na Aave 0 ne (ko ana biyan sa ga mai karɓar kuɗin Avana), kuma ba a saita mai sarrafa sake saka jari ba. Tare da ƙa'idar canja wurin vault token, waɗannan suna sa LPVaultSwap ya zama kwangila ɗaya tilo da za ta iya karɓar jinginar da aka ƙwace."
         },
         {
           "id": "what-are-vault-tokens",
           "q": "Menene alamun Avana vault?",
-          "a": "Vault tokens tokens ne na ERC-20 na jingina kawai waɗanda ke wakiltar matsayin LP da aka jingina a Aave V4. Kowane pool da aka amince da shi, da kewayo inda ya dace, yana da nasa vault token. Avana yana ƙirƙirar vault tokens 1:1 da ruwan kuɗin da ke ƙasa lokacin da kuka jingina matsayi kuma yana ƙone su lokacin cirewa ko sasantawa. Babu jadawalin fitarwa, babu fitar da tokens (emissions), kuma babu farashin musaya.\n\nVault tokens ba kadarorin mai amfani ba ne kuma ba su da kasuwa ta biyu. Suna matsawa ne kawai tsakanin Avana Hub, Borrow Spokes, Position Proxies, Aave Adapter, da LPVaultSwap. Kowane vault token da ke yawo yana da goyon bayan ruwan kuɗin da ake riƙewa a LP Vault."
+          "a": "Vault tokens tokens ne na ERC-20 na jingina kaɗai, ɗaya ga kowace kasuwa. Raka'ar tushe ɗaya daidai take da raka'a ɗaya ta ruwan kuɗin da aka sa a asusu. Ana tsayar da decimals ga kowace kasuwa tsakanin 6 da 18 a jera kasuwa. AaveAdapter kaɗai ke mint da ƙona su, kuma suna motsawa ne kawai tsakanin PositionProxies masu rajista, CDP Spoke da LPVaultSwap.\n\nVault tokens ba su da kasuwa ta biyu, ba su da fitarwa kuma ba su da farashin musanya. Wadatarsu ba ta taɓa wuce ruwan kuɗin da Collateralization ta sa a asusu tare da duk wasu raka'o'in da ke jiran sasantawa."
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Menene manyan sassan tsarin Avana?",
-          "a": "LP Vault yana riƙe da LP tokens da NFTs da aka jingina. Yana rubuta mai shi, pool, haɗin tokens, matakin kuɗi, kewayo, da halin kowane matsayi. Risk Module yana duba cancantar pool, jerin izini na matakin gwaji, iyakokin girman matsayi, da iyakokin fallasa. Collateralization Module yana ƙirƙirar vault tokens 1:1 da ruwan kuɗi. LPOracle yana ƙimanta vault tokens daga Chainlink kuma yana amfani da TWAP na pool a matsayin bincike na biyu.\n\nAave Adapter shi ne mashigar mai aro. Yana kula da ajiya, aro, biyan bashi, da cirewa ta keɓaɓɓen Position Proxy ga kowane mai aro. LPVaultSwap yana gudanar da liquidations da flash loans, kuma adaftocin sasantawa na AMM suna cire ruwan kuɗi da karɓar kuɗaɗe. Kwangilolin Avana masu iya haɓakawa suna bayan timelock da Avana Labs ba zai iya tsallakewa ba. Aave DAO yana riƙe da ayyukan dakatarwa da daskarewa."
+          "a": "Tsarewa: LPVault mara canzawa ga kowace yarjejeniyar AMM a kowane chain, da ledger na Collateralization. Asusu da tokens: VaultToken da VaultTokenFactory, PositionProxy da ProxyManager. Manufa: AaveAdapter (hanyar shigar mai aro), RiskModule (bincike), MarketRegistry (kasuwanni, hanyoyi, yanayin dakatarwa, breakers) da ParameterStore (sigogin haɗari).\n\nOracles: LPOracle ga kowace kasuwa da DebtOracle ga kowace kadarar bashi da ba GHO ba. Liquidation: LPVaultSwap, kwangilolin hanyar musanya, tushen flash a kan Aave V3 Pool da InKindEscrow. Kayayyakin more rayuwa: AvanaTimelock, Lock da Lens na karatu kaɗai. Sashen Developers yana lissafa kowace kwangila a shafinsa na Contracts."
         }
       ]
     },
     {
       "id": "lp-collateral",
-      "name": "Jinginar LP",
+      "name": "Farashin LP",
       "summary": "",
       "questions": [
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "Me ke faruwa lokacin da na ajiye jinginar LP?",
-          "a": "Lokacin da kuka jingina matsayin LP da ake tallafawa, Aave Adapter yana ajiye shi a cikin LP Vault. Sannan Risk Module yana duba pool, matakin kuɗi, kewayo, samuwar oracle, da iyakoki. A lokacin matakin gwaji, masu ajiya da ke cikin jerin izini kaɗai ne za su iya jingina, kuma kowace kasuwa tana da mafi ƙanƙanta da mafi girman girman matsayi.\n\nDa zarar binciken ya yi nasara, Avana yana ƙirƙirar vault token da ya dace kuma yana samar da shi a matsayin jingina a kan Borrow Spoke ta Position Proxy ɗinku. Jinginarwa ba ta yin aro da kanta. Tana samar da ƙarfin aro da za ku iya amfani da shi muddin asusun yana cikin ƙoshin lafiya kuma akwai ruwan kuɗin GHO."
+          "a": "Kana amincewa da LPVault don NFT na matsayinka kuma kana kiran pledge a kan AaveAdapter. LPVault yana bincika cewa matsayin ya yi daidai da pool da ainihin kewayon kasuwar kuma yana karɓar tsarewa. RiskModule yana bincika yanayin farashi, matsayin kasuwar, mafi ƙanƙantar pledge ($10 a lokacin ƙaddamarwa), iyakokin kasuwa, token da mai ajiya, iyakar kason pool, iyakar rikodi 16 ga kowane asusu da kasuwa, da duk wani breaker.\n\nIdan binciken ya wuce, AaveAdapter yana tura PositionProxy ɗinka na kasuwar idan ana buƙata, yana mint vault tokens daidai da ruwan kuɗin da aka sa a asusu kuma yana samar da su a matsayin jingina. Pledge ba ya aron komai. Babu jerin izini kuma babu mafi girman girman matsayi fiye da iyakoki."
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "Shin matsayin LP na zai ci gaba da aiki bayan ajiya?",
-          "a": "Ee. Jinginarwa tana canza mai riƙe da shi, amma ba ta cire ruwan kuɗi daga pool ba. Pool yana ci gaba da sarrafa musaya, kuma matsayinku yana ci gaba da samun kuɗaɗe. Matsayin Uniswap v3 yana daina samun kuɗaɗe yayin da yake a wajen kewayonsa.\n\nYayin da bashi ke buɗe, matakan da ke rage jingina, kamar cirewa, suna bi ta Aave Adapter. Ana ba da izinin su ne kawai idan asusun ya kasance cikin ƙoshin lafiya bayan haka."
+          "a": "Eh. Pledge yana canza tsarewa amma ba ya cire ruwan kuɗi. Pool yana ci gaba da sarrafa musanya kuma matsayinka yana ci gaba da samun kuɗaɗe. Matsayi mai taruwa yana daina samun kuɗaɗe yayin da yake wajen kewayo.\n\nZa ka iya ƙara ruwan kuɗi ga NFT da aka yi pledge da shi kuma ka sa shi a asusu da recredit, cire wani ɓangare na ruwan kuɗin yayin da NFT ke zama a pledge da removeLiquidity, ko ƙara jingina da wani matsayi a kasuwa ɗaya."
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "Shin zan iya karɓar kuɗin LP yayin da nake aro?",
-          "a": "Kuɗaɗe suna ci gaba da taruwa ga matsayinku yayin da yake cikin LP Vault. Lokacin da kuka cire, LP Vault yana sakin LP tokens ko NFT ɗinku tare da kuɗaɗen da ba a karɓa ba.\n\nKuna iya cire gaba ɗaya da zarar an biya bashinku, ko ku cire wani ɓangare na matsayin idan asusunku ya kasance cikin ƙoshin lafiya bayan haka."
+          "a": "Eh. Mai ajiya zai iya kiran collectFees a kan AaveAdapter a kowane lokaci. AMM yana biyan kuɗaɗen kai tsaye gare ka. Karɓar kuɗaɗe ba ya canza vault tokens ɗinka, iyakoki, bashi ko ma'aunin lafiya.\n\nBabu dakatarwa, daskarewa, breaker ko yanayin farashi da ke toshe karɓar kuɗaɗe. A Base kuma yana aiki yayin katsewar sequencer ta tilasta shigarwa daga L1."
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "Shin kudaden LP suna cikin ƙimar jingina?",
-          "a": "LPOracle yana ƙimanta ruwan kuɗin da ke cikin matsayinku. Yana lissafa adadin tokens daga lissafin ruwan kuɗi na pool kuma yana ƙimanta su a farashin Chainlink, ba tare da ragi ba. Ana sakin kuɗaɗen da ba a karɓa ba tare da matsayin lokacin da kuka cire.\n\nCollateral factor na kasuwar yana tsayar da iyakokin aro daban. Avana ba ya rage ƙimar oracle."
+          "a": "A'a. LPOracle yana ƙimanta ruwan kuɗin da ke bayan kowane vault token kaɗai. An cire kuɗaɗen da ba a karɓa ba daga farashin, kuma liquidation ba ta taɓa ƙwace su ba.\n\nIyakokin aro suna fitowa daga Collateral Factor na kasuwar, da ake amfani da shi daban. Ƙimar oracle kanta ba ta da ragi."
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "Yaushe zan iya janye jinginar LP?",
-          "a": "Kuna iya cire gaba ɗaya bayan an biya bashinku. Kuna iya kuma cire wani ɓangare na jinginarku idan asusun ya kasance cikin ƙoshin lafiya bayan haka. Aave Adapter yana cirewa kuma yana ƙone vault tokens da suka dace, kuma LP Vault yana sakin LP tokens ko NFT ɗinku tare da kuɗaɗen da ba a karɓa ba.\n\nBiyan bashi da cirewa suna aiki ma ba tare da frontend na Avana ba, ta hanyar kiran kwangilolin kai tsaye. Ana hana sabon aro da cire-cire na son rai yayin da farashin oracle ya tsufa ko binciken TWAP ya gaza. Biyan bashi yana ci gaba a waɗannan yanayi."
+          "a": "Idan babu bashi, za ka iya cirewa a kowane lokaci, kuma babu dakatarwa, daskarewa, breaker ko yanayin farashi da ke toshe shi. repayAllAndWithdraw yana biyan kowane bashi kuma yana mayar da matsayin a kira ɗaya.\n\nIdan akwai bashi, cirewa tana buƙatar Hub kada ya kasance a dakatar (Hub da aka daskarar har yanzu yana ba da izini), adireshinka kada ya kasance a daskare, farashin Live, sequencer mai aiki a Base, babu breaker da ya kunna, da ma'aunin lafiya a ko sama da mafi ƙanƙantar da ka zaɓa bayan haka. LPVault yana mayar da NFT tare da kuɗaɗensa da ba a karɓa ba."
+        },
+        {
+          "id": "how-many-positions-per-account",
+          "q": "Matsayi nawa asusu ɗaya zai iya riƙewa?",
+          "a": "Kowane wallet yana da PositionProxy ɗaya, don haka asusun Aave ɗaya, ga kowane CDP Spoke da kasuwa. Asusu yana riƙe da rikodin tallafi 16 a mafi yawa na kasuwarsa. Matsayi a wata kasuwa yana buɗe asusu daban tare da ma'aunin lafiyarsa.\n\nIdan aka yi liquidation ga asusu, Collateralization tana ƙwace rikodinsa daga mafi girma."
         }
       ]
     },
@@ -104,27 +114,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Yaya Avana ke ƙayyade farashin jinginar LP?",
-          "a": "LPOracle yana ƙimanta kowane vault token daga lissafin ruwan kuɗi na pool a farashin Chainlink. Tsarin lissafin shi ne value = q0·P0 + q1·P1, inda q0 da q1 su ne adadin tokens da ke bayan vault token ɗaya. Ga matsayin Uniswap v3, adadin tokens yana fitowa daga ruwan kuɗi da kewayon matsayin a farashin ma'auni.\n\nOracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral factor na kasuwar yana tsayar da iyakokin aro daban. Collateral factor yana farawa daga collateral factor mafi ƙanƙanta na tokens biyu na pool kuma ana rage shi da ma'aunin haɗarin pool."
+          "a": "LPOracle yana ƙimanta farashin kowane vault token ta haɗin gaskiya: yana lissafa adadin tokens da ke bayan raka'a ɗaya ta ruwan kuɗi a rabon farashin oracle, da aka takaita a cikin kewayon kasuwar, kuma yana ninka su da farashin USD na Chainlink. Ana zagaye adadi ƙasa kuma an cire kuɗaɗen da ba a karɓa ba. Farashi suna da decimals 8, kuma oracle ba ya taɓa komawa baya kuma ba ya taɓa mayar da 0.\n\nAna ƙimanta bashin GHO a tsayayyen $1. Ana ƙimanta sauran kadarorin bashi ta DebtOracle nasu."
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
-          "q": "Ta yaya Avana ke rage haɗarin oracle da farashi?",
-          "a": "Chainlink shi ne ma'aunin ƙimantawa. TWAP na pool binciken daidaito ne, ba matsakaici ko madadi ba. Idan TWAP ya fita daga iyakar da aka yarda, ana hana sabon aro da cire-cire masu ƙara haɗari. Biyan bashi da liquidation suna ci gaba a farashin Chainlink.\n\nIdan feed na Chainlink ya tsufa, oracle yana amfani da farashi na ƙarshe mai inganci har zuwa iyakar tsufa. A wannan lokacin, ana hana sabon aro da cire-cire na son rai. Bayan iyakar tsufa, liquidations suna tsayawa har sai feed ya dawo ko gudanarwa ta amince da feed na ajiya. Biyan bashi yana ci gaba."
+          "q": "Yaya Avana ke sarrafa gazawar oracle?",
+          "a": "Kowane token yana da babbar hanya da madadin hanyar Chainlink da hanyar jiran aiki da aka riga aka amince da ita. Dole farashi su zama sababbi a cikin heartbeat na feed tare da tazara. Aro kuma yana buƙatar tushe na biyu mai zaman kansa ya yarda, binciken daidaiton TWAP na pool, da stablecoins a cikin iyakar $0.90–$1.02.\n\nFarashin kowace kasuwa yana cikin ɗaya daga cikin yanayi huɗu: Live, Drifting, Cached ko Expired. Cached (har zuwa awa 1) da Expired suna toshe sabon aro da liquidation na wannan kasuwa. Expired yana ƙimanta jinginar a kusan sifili yayin da biya da fita ba tare da bashi ba ke ci gaba. Bayan dawowa, lokacin alheri na mintuna 30 yana ba da izinin liquidation ne kawai ƙasa da ma'aunin lafiya na 0.95."
         },
         {
           "id": "what-is-recoverable-value",
           "q": "Shin Avana yana rage darajar baka?",
-          "a": "Avana ba ya rage ƙimar oracle kanta. Maimakon haka, collateral factor na kowace kasuwa yana la'akari da yawan ƙimar da za a iya dawo da ita a liquidation. Tsarin lissafin shi ne: LP collateral factor = collateral factor mafi ƙanƙanta na tokens biyu na pool × ma'aunin haɗarin pool.\n\nMa'aunin haɗarin pool yana nuna kewayo, tasirin canjin farashi, zurfin pool, da kuɗaɗen liquidation da ake tsammani. Gauntlet ya ba da shawarar farawa da ƙasa har zuwa 0.25× na factor mafi ƙanƙanta na ƙasa idan kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce, kamar GHO a kan WETH/USDC."
+          "a": "A'a. Oracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral Factor na kowace kasuwa yana saita yawan wannan ƙima da zai iya tallafa wa bashi: Collateral Factor mafi ƙanƙanta na Aave V4 a cikin tokens na pool da aka ninka da ma'aunin haɗarin pool na 40% a mafi yawa. Hanyar GHO tana amfani da bayyanannen factor da aka saita a jera kasuwa.\n\nNazarin Gauntlet na jinginar LP yana ba da shawarar factors na farawa masu taka-tsantsan, har zuwa ƙasa da 0.25× na factor mafi ƙanƙanta na ƙasa lokacin da kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce. Ana daidaita factors na ƙarshe ga kowace kasuwa tare da masu ba da sabis na Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "Me ya sa ake kula da matsayin tsarin mai yawa na ruwa da kyau?",
-          "a": "Matsayin tattaccen ruwan kuɗi suna canza fallasa da sauri yayin da farashi ke motsi. Matsayi na iya zama galibi kadara ɗaya, ko ya fita daga kewayonsa ya daina samun kuɗaɗe.\n\nAvana yana karɓar matsayin Uniswap v3 masu cikakken kewayo ne kawai da kewayon da aka amince da su musamman, kowanne da nasa vault token. Oracle yana lissafa adadin tokens daga ruwan kuɗi da kewayon matsayin. Kowace kasuwa tana tsayar da nata ma'aunin haɗarin pool da yanayin sasantawa."
+          "a": "Matsayi mai taruwa yana canza haɗinsa da sauri yayin da farashi ke motsawa kuma zai iya fita daga kewayo. Don haka Avana tana jera kowane ainihin kewayo a matsayin kasuwarsa, tana ƙimanta shi tare da takaita kewayon, kuma tana saita ma'aunin haɗarin pool gare shi.\n\nLPVault yana ƙin matsayin da kewayonsa ya bambanta da na kasuwar, kuma LPOracle yana bincika yanayin pool a kan TWAP kafin aro."
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Wadanne bayanan kasuwa ne Avana ke lura da su?",
-          "a": "Risk Module na Avana yana duba fallasa a matakin pool, token na ƙasa, da mai ajiya, ciki har da iyaka kan kason ruwan kuɗin pool. Kowace kasuwa tana da nata ma'aunin haɗarin pool, yanayin sasantawa, tsawon lokacin TWAP, karkacewar farashi da aka yarda, da iyakar tsufan feed.\n\nAvana Labs yana wallafa rahotannin amfani na mako-mako da rahotannin kuɗaɗen shiga na wata-wata. Rahotannin sun ƙunshi bashi da jingina bisa kasuwa, taruwar fallasa, rabon ma'aunin lafiya, da liquidations da suka yi nasara, suka gaza, da aka sake gwadawa. Sun kuma ƙunshi amfani da FirstLossReserve, mummunan bashi, matsalolin oracle, amfani da layin bashi, kuɗaɗe, da albarkatun asarar farko."
+          "a": "Keeper da sa idon Avana suna bin yanayin farashi, kason pool, zurfin pool, ƙwacewa, gazawar hanyar musanya, gibi da saitin Aave na kowane reserve. Wasu yanayi suna kunna breakers a kan chain; wasu suna tayar da faɗakarwa, kamar faɗuwar farashi ta 3% cikin awanni 2, fiye da 20% na kasuwa da aka ƙwace cikin awa 1, gazawar hanyar musanya 3 cikin awa 1, ko Avana tana riƙe da fiye da 25% na pool.\n\nAvana Labs tana wallafa rahotannin amfani na mako-mako da rahotannin kuɗin shiga na wata-wata da ke rufe bashi da jingina bisa kasuwa, taruwa, ma'aunin lafiya, liquidations, amfani da Avana Umbrella, mummunan bashi, lamuran oracle, dakatarwa da kunna breaker, amfani da layin bashi da kuɗaɗe."
         }
       ]
     },
@@ -136,27 +146,32 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Yaya aro ke aiki a Avana?",
-          "a": "Bayan an jingina matsayinku kuma an samar da vault token ɗinsa a matsayin jingina, kuna aron GHO daga Avana Hub ta hanyar Borrow Spoke. Aave Adapter yana tabbatar da cewa binciken farashi ya yi nasara kuma asusunku ya kasance cikin ƙoshin lafiya bayan sabon bashin.\n\nAna aika GHO zuwa walat ɗinku, kuma ana rubuta bashin a Aave V4. Riba tana taruwa a kan ribar tushe × (1 + ƙarin ribar haɗarinku), don haka ma'aunin lafiyarku na iya canzawa ko da jinginarku ba ta canza ba."
+          "a": "Kana kiran borrow a kan AaveAdapter tare da kasuwa, reserve na bashi, adadi, wa'adi, mafi ƙanƙantar ma'aunin lafiya da ka karɓa da nonce da kake tsammani. RiskModule yana bincika farashin Live, sabuntar farashin bashi, breakers, yanayin dakatarwa da cewa akwai keeper da aka amince da shi. PositionProxy ɗinka yana aro a kan CDP Spoke kuma ana aika maka kuɗaɗen.\n\nRiba tana taruwa a ƙimar tushe ta Hub × (1 + risk premium ɗinka), don haka ma'aunin lafiyarka zai iya canzawa ko da jinginarka ba ta canza ba."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Yaya ake ƙididdige ƙarfin aron kudi?",
-          "a": "Ƙarfin aro = ƙimar matsayin LP × LP collateral factor. LP collateral factor shi ne collateral factor mafi ƙanƙanta na tokens biyu na pool wanda aka ninka da ma'aunin haɗarin pool. Ma'aunin haɗarin pool yana nuna kewayo, tasirin canjin farashi, zurfin pool, da kuɗaɗen liquidation da ake tsammani.\n\nƘarfin aro kuma ya dogara ne da bashin da ake da shi, iyakokin fallasa, ruwan kuɗin GHO da ake da shi, da binciken oracle. Misali, matsayin WETH/USDC mai cikakken kewayo na $100,000 tare da collateral factor na ƙarshe na 35% yana da ƙarfin aro na GHO 35,000. Waɗannan alkaluman misali ne, ba sigogin kasuwa na gaske ba."
+          "a": "Ƙarfin aro = ƙimar matsayin LP × LP Collateral Factor, kuma LP Collateral Factor = Collateral Factor na token mafi ƙanƙanta × ma'aunin haɗarin pool. Ƙarfi kuma ya dogara da bashin da ake da shi, iyakoki, ruwan kuɗin da ke akwai na layin bashi da binciken oracle.\n\nƘimomin misali: matsayin USDC/USDT na Slipstream da ya kai $20,000 tare da Collateral Factor na 31.20% yana ba da jingina mai nauyi ta $6,240. Lens yana ba da shawarar aro har zuwa ma'aunin lafiya na 1.10 (5,673.29 USDC a nan) kuma yana nuna mafi yawa a 1.00 (6,209.56 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Me ya sa ƙarfin aron ya ƙasa da ƙimar LP nawa?",
-          "a": "Ƙarfin aro ya fi ƙimar LP ƙanƙanta saboda collateral factor yana barin tazara don motsin farashi, asarar wucin gadi (impermanent loss), canje-canjen kewayo, da kuɗaɗen liquidation. Oracle yana ba da rahoton cikakkiyar ƙima. Collateral factor yana tsayar da yawan wannan ƙimar da za ta iya tallafa wa bashi.\n\nAna amfani da ma'aunin haɗarin pool sau ɗaya kuma ana tsayar da shi bisa kowace kasuwa, don haka tazarar da ke tsakanin ƙimar LP da ƙarfin aro ta bambanta tsakanin kasuwanni."
+          "a": "Collateral Factor yana barin sarari don motsin farashi, impermanent loss, canje-canjen kewayo da kuɗaɗen liquidation. An iyakance ma'aunin haɗarin pool a 40%, don haka tare da tokens biyu a 78% loan-to-value na buɗewa yana kusan 28.4% a mafi yawa.\n\nTazarar da ke tsakanin ƙima da ƙarfi ta bambanta tsakanin kasuwanni saboda kowace kasuwa tana da ma'aunin haɗarin pool nata."
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "Waɗanne kadarorin zan iya aro?",
-          "a": "Borrow Spokes suna ba da rancen GHO. Layin bashi na GHO mai iyaka daga Aave DAO ne ke ba Avana Hub kuɗi, kuma gudanarwa tana amincewa da kowane ƙari.\n\nAna aron wasu kadarori ta Lend Spoke na Avana, wanda gudanarwar Aave ke amincewa da shi daban."
+          "a": "GHO ita ce kadarar bashi ta farko a kowane CDP Spoke. Ana iya kunna sauran kadarori, kamar USDC, USDT ko WETH, a matsayin reserves na bashi a kan CDP Spoke ta gudanarwa, kowacce da layin bashinta ke ba da kuɗinta kuma DebtOracle nata ke ƙimanta farashinta.\n\nA lokacin ƙaddamarwa layin bashi GHO ne daga Aave DAO: GHO 2M da aka gabatar a Ethereum, tare da layin Base da aka saita a cikin shawarar kuɗi."
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "Shin zan iya aro akan matsayi da dama na LP a lokaci guda?",
-          "a": "Ee. Matsayin da aka samar ga Borrow Spoke ɗaya suna tallafa wa asusu ɗaya, kuma ƙarin ribar haɗarinku matsakaicin ma'auni ne a tsakaninsu. Kowane matsayi har yanzu yana da nasa vault token, collateral factor, da iyakoki.\n\nA lokacin matakin gwaji, kowane asusu yana da iyaka kan yawan matsayi. Dole ne dukkan asusun ya kasance sama da ma'aunin lafiya da ake buƙata."
+          "a": "A cikin kasuwa ɗaya, eh: har zuwa matsayi 16 suna tallafa wa asusu ɗaya da ma'aunin lafiya ɗaya. Matsayi a kasuwanni daban-daban asusu ne daban, kowanne tare da ma'aunin lafiyarsa, don haka ba sa tallafa wa juna.\n\nA cikin asusu za ka iya aron kadarar bashi fiye da ɗaya idan CDP Spoke yana ba da rancensu."
+        },
+        {
+          "id": "is-there-a-minimum-health-factor",
+          "q": "Akwai mafi ƙanƙantar ma'aunin lafiya don aro?",
+          "a": "A kan chain, iyaka ɗaya tilo ita ce ma'aunin lafiya na 1.00 na Aave. Kiran borrow yana ɗaukar mafi ƙanƙantar ma'aunin lafiyarka kuma yana komawa baya ƙasa da shi. Lens yana ba da shawarar zama a ko sama da 1.10.\n\nBabu mafi ƙanƙantar bashi. Akwai tsayayyen mafi ƙanƙantar lafiya na kowace kasuwa amma a kashe yake a lokacin ƙaddamarwa."
         }
       ]
     },
@@ -167,55 +182,60 @@
       "questions": [
         {
           "id": "how-do-lenders-use-avana",
-          "q": "Yaya masu bayar da rance ke amfani da Avana?",
-          "a": "Ba da rance yana gudana ta Lend Spoke na Avana, wanda ya bambanta da Borrow Spokes na GHO. Gudanarwar Aave tana amincewa da shi daban.\n\nLend Spoke yana bai wa masu ba da rance damar samar da kadarori kai tsaye ga Avana Hub kuma yana bai wa masu aro damar aron kadarori ban da GHO. Avana Hub yana kuma riƙe da layin bashi na GHO na Aave DAO."
+          "q": "Wa ke samar da ruwan kuɗin da masu aro na Avana ke amfani da shi?",
+          "a": "A lokacin ƙaddamarwa, baitulmalin Aave DAO yana samar da layin bashin GHO mai iyaka ga Avana Stable LP Hub na kowane chain ta Lend Spoke na samarwa kaɗai. Ajiya ta jama'a ba a buɗe take ba a lokacin ƙaddamarwa.\n\nAave DAO ne ke saita iyakar ɗauka na kowane CDP Spoke a kan kadara, kuma jimillar iyakokin ɗauka ba ta wuce layin bashi ba."
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "Daga ina ake samun amfanin mai kaya?",
-          "a": "Ta hanyar Lend Spoke, masu ba da rance suna samun ribar da masu aro masu goyon bayan LP ke biya. Avana Labs yana riƙe kason protocol a kan ruwan kuɗin da masu ba da rance suka samar. Riba a kan layukan bashi na Aave DAO har yanzu tana zuwa ga DAO.\n\nMasu aro suna biyan ribar tushe ta Avana Hub tare da ƙarin ribar haɗari bisa jinginarsu. Ana tsayar da ribar tushe daidai ko sama da ribar tushe ta Aave Core Hub. Gudanarwar Aave ce ke tsayar da ainihin sharuɗɗan masu ba da rance."
+          "a": "Masu aro suna biyan ƙimar tushe ta Hub tare da risk premium ɗinsu. Ƙimar GHO ta Avana Hub tsayayya ce, ba ta dogara da amfani ba, kuma Aave DAO ne ke saita ta a ko sama da ƙimar tushe ta GHO na Core Hub.\n\nDukan riba a kan layukan bashi da Aave DAO ke ba da kuɗinsu tana zuwa ga Aave DAO. Avana ba ta cajin kuɗi a kan ribar aro."
         },
         {
           "id": "do-lenders-manage-lp-collateral",
-          "q": "Shin masu bayar da rance suna sarrafa jingina na LP da kansu?",
-          "a": "A'a. Masu ba da rance suna samar da kadarori ga Avana Hub. Ba sa zaɓar kewayon LP ko kula da sasantawa. Borrow Spokes, LP Vault, da LPVaultSwap suna kula da ƙimanta jingina, binciken lafiya, da liquidation.\n\nGudanarwar Aave tana amincewa da Lend Spoke daban."
+          "q": "Masu samarwa suna sarrafa jinginar LP da kansu?",
+          "a": "A'a. Masu samarwa ba sa zaɓar kewayo ko sarrafa sasantawa. CDP Spokes, kwangilolin tsarewa na Avana da LPVaultSwap suna kula da ƙimantawa, binciken lafiya da liquidation."
         },
         {
           "id": "what-protects-lender-capital",
           "q": "Menene ke kare babban jarin mai bayar da aron kudi?",
-          "a": "Fallasa kaɗai ta Aave DAO ita ce layin bashi na GHO mai iyaka, kuma kowane ƙari yana buƙatar amincewar gudanarwa. Matakan kariya sun haɗa da masu ajiya da ke cikin jerin izini a lokacin matakin gwaji, iyakoki ga kowace kasuwa, collateral factors da aka rage saboda haɗarin pool, farashin Chainlink tare da binciken TWAP, da liquidations da ke sasantawa a cikin ma'amala guda.\n\nIdan liquidation ya cinye jingina alhali bashi ya rage, ana biyan asara bisa tsari: na farko daga keɓaɓɓen jarin asarar farko, sannan daga kuɗaɗen shiga da aka keɓe don biyan asara, sannan daga Avana Umbrella. Haɗarin kwangila mai wayo, oracle, da aiwatar da liquidation suna nan. Kwangilolin Avana suna cikin bitar tsaro ta cikin gida, kuma binciken tsaro na jama'a masu zaman kansu za su biyo baya."
+          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool na 40% a mafi yawa, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation mara izini tare da keeper na Avana, da iyakokin ɗauka da ke zama a cikin ruwan kuɗin flash na chain don a iya yin liquidation ga kowane aro a cikin ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na wannan Hub da kadara yana rufe gibin, first-loss reserve da Avana Labs ke ba da kuɗinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibi mafi girma fiye da reserve asara ce ga masu samar da wannan kadarar Hub, wanda Aave DAO ke tabbatarwa."
         }
       ]
     },
     {
       "id": "liquidations",
-      "name": "Health da sayar da jingina",
+      "name": "Lafiya & Liquidation",
       "summary": "",
       "questions": [
         {
           "id": "what-is-health-factor",
           "q": "Mene ne ma'aunin lafiya?",
-          "a": "Ma'aunin lafiya yana kwatanta ƙimar aro ta jinginarku (ƙima × collateral factor) da bashinku. Sama da 1, asusun yana cikin ƙoshin lafiya. Ƙasa da 1, ana iya yi masa liquidation.\n\nA wani misali na bayani, aron GHO 25,000 a kan matsayin WETH/USDC na $100,000 tare da collateral factor na 35% yana bayar da ma'aunin lafiya na farko na 1.40. Manhajar tana taƙaita sabon aro a ma'aunin lafiya na buɗewa na 1.10."
+          "a": "Ma'aunin lafiya = ƙimar jingina × Collateral Factor ÷ ƙimar bashi, wanda Aave ke lissafawa ga kowane asusu, wato ga kowace kasuwa. Ƙasa da 1, ana iya yin liquidation ga asusun.\n\nƘimomin misali: jingina mai nauyi ta $6,240 a kan bashin USDC 4,999.50 yana ba da ma'aunin lafiya na 1.2481."
         },
         {
           "id": "what-affects-health-factor",
           "q": "Me ke shafar lafiyata?",
-          "a": "Ma'aunin lafiya yana canzawa lokacin da ƙimar jingina, bashi, ko sigogin kasuwa suka canza. Matsayin LP suna canza ƙima yayin da farashin tokens ke motsi, kuma matsayin Uniswap v3 suna kuma canza abin da suka ƙunsa a cikin kewayonsu. Riba tana ƙara bashi a tsawon lokaci.\n\nƘara aro yana rage ma'aunin lafiyarku. Biyan bashi ko ƙara jingina da aka amince da ita yana ɗaga shi."
+          "a": "Farashin jingina, haɗin matsayin a cikin kewayonsa, riba a kan bashinka, farashin kadarar bashi, da canje-canjen gudanarwa ga Collateral Factor. Yayin offboarding na kasuwa, iyakar liquidation ɗinta tana faɗuwa sau ɗaya a rana na kwanaki 30.\n\nBiya, ƙara jingina ko biya da jingina suna ɗaga shi. Aro, cirewa ko cire ruwan kuɗi suna rage shi."
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Yaya ake gudanar da sulhun kudi a Avana?",
-          "a": "Ana iya yi wa asusu liquidation idan ma'aunin lafiyarsa ya faɗi ƙasa da 1. A cikin ma'amala guda, LPVaultSwap yana ɗaukar flash loan, yana biyan bashin, kuma yana sasanta jinginar LP da ke bayansa. Kowace kasuwa tana da yanayin sasantawa da aka amince da shi.\n\nSasantawa ta ɓangare tana shafar Uniswap v2 da zaɓaɓɓun kasuwannin Aerodrome ko Uniswap v3. Tana amfani da daidaitaccen liquidation na Aave V4. A al'ada, ruwan kuɗin da ake buƙata don dawo da lafiya kaɗai ake cirewa, kuma kuna riƙe sauran. Sasantawa ta cikakken matsayi tana shafar yawancin AMMs da ke amfani da NFTs. Tana sasanta dukkan matsayin kuma tana mayar wa mai aro duk wata rara bayan bashi, kuɗaɗe, da kashe-kashe."
+          "a": "Lokacin da ma'aunin lafiyar asusu ya kasance ƙasa da 1, mai liquidation yana kiran LPVaultSwap. A cikin ma'amala ɗaya yana flash-borrow kadarar bashi daga Aave V3 Pool na chain, yana kiran liquidationCall na Aave don biyan wani ɓangare na bashin da karɓar vault tokens tare da riba, yana warware ruwan kuɗin da ya dace, yana musanya tokens zuwa kadarar bashi a tsayayyun hanyoyi, kuma yana biyan flash loan.\n\nKowace liquidation ta wani ɓangare ce kuma ƙa'idojin Aave ne ke auna ta. Dole adadin da aka dawo da shi ya kai mafi ƙanƙanta da aka samo daga oracle. Abin da aka samu sama da bashin yana biyan kuɗin Avana, ladar mai liquidation da duk wata rarar mai aro."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Wanene zai iya warware matsayi mai rashin lafiya?",
-          "a": "Keepers da aka amince da su kaɗai ne za su iya kiran LPVaultSwap, wanda shi ne kwangila kaɗai da ke aiwatar da liquidations. Aƙalla masu aiki biyu ne ke gudanar da keepers: Avana Labs da aƙalla mai aiki ɗaya mai zaman kansa.\n\nBuɗe liquidations ga masu liquidation na ɓangare na uku yana buƙatar amincewar gudanarwa."
+          "a": "Avana Labs tana gudanar da keeper da aka amince da shi. Kowa kuma zai iya kiran liquidatePermissionless, wanda ke amfani da hanyoyin musanya na babbar hanya-sannan-madadin kuma yana sa mai kira ya biya duk wani gibi har zuwa iyakar da ya saita.\n\nKowa kuma zai iya kiran settlePending don sasanta vault tokens da ƙwacewar da ba a kammala ba ta bari; abin da aka samu yana zuwa Avana Umbrella kuma mai kira ba ya karɓar komai."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Wadanne kudade ne ake bi yayin rushewa?",
-          "a": "A kasuwannin sasantawa ta ɓangare, kyautar liquidation ta Aave V4 tana biyan ladan keeper, kuɗaɗen aiwatarwa, da kuɗin liquidation na Avana mai iyaka. Saboda haka kuɗin ba ya ƙara wa mai aro kuɗi. Kuna riƙe ɓangaren matsayin da ba a cire ba.\n\nA kasuwannin cikakken matsayi, ana cire ladan keeper, kuɗaɗen kashewa, da kuɗin Avana daga kuɗin sasantawa da aka samu, har zuwa iyakar kaso na bashi na kowace kasuwa. Ana mayar da duk wata rara ga mai aro."
+          "a": "Kuɗin Avana 20% ne na ribar oracle (ƙimar da aka dawo da ita a farashin oracle ban da bashin da aka biya da premium na flash), wanda aka iyakance ga abin da liquidation ta samu a zahiri. Mai liquidation yana karɓar ragowar ribar oracle. Dawowa sama da ƙimar oracle tana zuwa ga mai aro.\n\nBa a taɓa ɗaukar kuɗaɗen LP ɗinka da ba a karɓa ba. Biya da jingina ba ya biyan riba kuma ba ya biyan kuɗin Avana, sai premium na flash kaɗai."
+        },
+        {
+          "id": "what-if-liquidation-cannot-run",
+          "q": "Me zai iya tsayar da liquidation?",
+          "a": "Dakatarwa, daskarewa da breakers ba sa taɓa tsayar da liquidation. Liquidation tana buƙatar farashi mai amfani: farashin Cached ko Expired suna toshe ta, kuma na mintuna 30 bayan dawowar farashi ko sake farawar sequencer na Base, asusun da ke ƙasa da ma'aunin lafiya na 0.95 kaɗai za a iya liquidation.\n\nLiquidation kuma tana komawa baya idan hanyoyin musanya ba za su iya kaiwa mafi ƙanƙantar dawowa ba kuma mai kira bai rufe gibin ba. Dakatarwar reserve ta ɓangaren Aave ma za ta iya toshe ta."
         }
       ]
     },
@@ -226,23 +246,23 @@
       "questions": [
         {
           "id": "how-are-new-pools-added",
-          "q": "Ta yaya ake ƙara sabbin tafkunan LP?",
-          "a": "Avana Labs yana gabatar da sabbin kasuwanni da sigogi, kuma wani keɓaɓɓen mai bitar haɗari yana bitar su. Ana wallafa kowane sabon pool na jingina don bita na makonni biyu kafin a amince da shigar da shi.\n\nPool yana buƙatar ingantaccen farashi daga waje, isasshen tarihin ruwan kuɗi, hanyar dawo da kuɗin liquidation a lokacin matsin lamba, da rashin wani hani kan cire ruwan kuɗi. Kowane AMM ban da Uniswap v2 da v3 yana buƙatar nasa bita da amincewar gudanarwar Aave."
+          "q": "Yaya ake ƙara sabbin kasuwannin LP?",
+          "a": "Avana Labs tana gabatar da kasuwanni da sigogi don tantancewa ta mai bitar haɗari da aka naɗa. Ana jera kowace kasuwa ta AvanaTimelock na chain a jinkiri na yau da kullum, bitar jama'a ta kwanaki biyar da ake tilastawa a kan chain, tare da payload na jera kasuwa na Aave DAO don Collateral Factor, riba da iyakoki.\n\nPool yana buƙatar ingantaccen farashi na waje, isasshen tarihin ruwan kuɗi, hanyoyin da za su iya dawo da abin da aka samu daga liquidation ƙarƙashin matsi, kuma babu takurawa a kan cire ruwan kuɗi."
         },
         {
           "id": "can-risk-parameters-change",
           "q": "Shin sigogin haɗari na iya canzawa a tsawon lokaci?",
-          "a": "Ee. Sigogin haɗari suna canzawa yayin da yanayin kasuwa ke canzawa. Pool na iya zama mai ƙarancin ruwan kuɗi, mai yawan sauyin farashi, mara tafiya tare sosai, ko mafi wahalar warwarewa fiye da lokacin da aka fara jera shi.\n\nSabuntawa na iya shafar collateral factors, iyakoki, pools da ake tallafawa, dakatarwa, sigogin liquidation, da yanayin sasantawa. Aave DAO ne ya mallaki Hub da Spokes kuma yana iya dakatarwa ko daskare kasuwanni ba tare da Avana Labs ba. Haɓakawa ga kwangilolin Avana suna bi ta timelock da Avana Labs ba zai iya tsallakewa ba, kuma DAO na iya soke su."
+          "a": "Eh, ta AvanaTimelock. Canje-canjen da ke sassauta haɗari suna jira jinkiri na yau da kullum na kwanaki 5 kuma suna da iyaka: iyakar USD za ta iya tashi 50% a mafi yawa kuma izinin slippage 25 bps a mafi yawa a kowane jinkiri. Canje-canjen da ke rage haɗari kaɗai za su iya amfani da gajeren jinkiri na awanni 12.\n\nEmergency Guardian da Aave Protocol Guardian za su iya dakatarwa ko daskarar da Hub, daskarar da adireshi, kunna breaker ko canjawa zuwa hanyar farashi ta jiran aiki nan take, amma ba za su iya haɓaka kwangiloli, canza sigogi ko motsa kuɗaɗe ba. Aave DAO kuma zai iya daskarewa ko dakatar da reserves na Avana a ɓangaren Aave."
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "A ina zan bi tattaunawar gudanarwa?",
-          "a": "Ana tattauna Avana a dandalin gudanarwa na Aave (governance.aave.com) sannan a kai shi ga zaɓen Snapshot. Ƙaddamar da shi a Ethereum da samar da kuɗin GHO kowanne yana bi ta bitar dandalin ta gaba da nasa zaɓen Snapshot kafin AIPs.\n\nAvana Labs kuma yana wallafa sabbin bayanai a X a https://twitter.com/avana_labs."
+          "a": "Ana tattauna Avana a dandalin gudanarwar Aave (governance.aave.com). ARFC yana zuwa ƙuri'ar Snapshot, sannan ARFC na turawa da ARFC na kuɗi, sannan AIPs.\n\nAvana Labs kuma tana wallafa sabbin bayanai a X a https://twitter.com/avana_labs."
         },
         {
           "id": "can-interface-fees-change",
-          "q": "Shin kudaden haɗin gwiwa na iya canzawa lokaci zuwa lokaci?",
-          "a": "Avana Labs yana samun kuɗin frontend a kan manhajar hukuma da kuma kuɗin liquidation. Gudanarwar Aave ce ke tsayar da ainihin adadin kuma tana amincewa da duk wani canji daga baya. Kuna iya guje wa kuɗin frontend ta hanyar kiran kwangilolin kai tsaye.\n\nRiba a kan layin bashi na GHO na Aave DAO tana zuwa ga DAO, ba ga Avana Labs ba."
+          "q": "Yaya Avana Labs ke samun kuɗin shiga?",
+          "a": "Avana Labs tana samun 20% na ribar oracle a kowace liquidation, da avanaFeeShareBps ke saitawa kuma ake canzawa ta timelock kaɗai, da kuɗin app da app ɗinta ke cajin a wajen kwangiloli. Babu kwangilar da ke lissafa ko tilasta kuɗin app, don haka kiran kwangiloli kai tsaye ba ya biyan sa.\n\nAvana ba ta cajin kuɗi a kan ribar aro. Riba a kan layukan bashi na Aave DAO tana zuwa ga DAO."
         }
       ]
     },
@@ -254,17 +274,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Zan iya aro GHO ta hanyar Avana?",
-          "a": "Ee. GHO ce kaɗai kadarar da za a iya aro. Kuna aron ta daga Avana Hub, wanda ke riƙe da layin bashi na GHO mai iyaka da Aave DAO ya ware ta hanyar GHO Reserve.\n\nBashin GHO yana shafar ma'aunin lafiyarku kuma yana tara riba a ribar tushe ta Avana Hub tare da ƙarin ribar haɗarinku. Dukkan kuɗaɗen shiga na riba da suka danganci layin bashin suna zuwa ga Aave DAO."
+          "a": "Eh. GHO ita ce kadarar bashi ta farko a kowane CDP Spoke, wadda layin bashi mai iyaka na Aave DAO ga Avana Stable LP Hub ke ba da kuɗinta. Ana ƙimanta bashin GHO a tsayayyen $1.\n\nBashin GHO yana tara riba a ƙimar GHO ta Hub tare da risk premium ɗinka. Dukan wannan riba tana zuwa ga Aave DAO."
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "Shin GHO na iya zama wani ɓangare na jinginar LP?",
-          "a": "A'a. Pools ɗin da ake la'akari da su su ne USDC/USDT, wstETH/WETH, da WETH/USDC, kuma har yanzu ana tantance su.\n\nAna iya ƙara pool da ke ɗauke da GHO daga baya ta hanyar bita da tsarin gudanarwa iri ɗaya da kowane sabon pool."
+          "a": "Eh. Ana iya jera pool na stablecoin da ke ɗauke da GHO. Hanyar GHO ɗinsa tana amfani da bayyanannen Collateral Factor da aka saita a jera kasuwa maimakon factor na Aave V4 Core Hub."
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "Yaya zan biya bashin GHO?",
-          "a": "Kuna iya biyan GHO tare da ribar da ta taru a kowane lokaci sai dai idan an dakatar da kasuwar. Kuna biya ta Aave Adapter ko ta hanyar kiran kwangilolin kai tsaye. Biyan bashi yana rage bashinku kuma yana ɗaga ma'aunin lafiyarku.\n\nBayan biyan bashi gaba ɗaya, kuna iya cire matsayin. Sannan LP Vault yana sakin LP tokens ko NFT ɗinku tare da kuɗaɗen da ba a karɓa ba."
+          "a": "Kira repay a kan AaveAdapter, ko ka bar kowa ya biya a madadinka. Saita repayAll don biyan cikakken bashin a lokacin shigarwa; duk wani adadi da ba a yi amfani da shi ba har zuwa iyakar kashewarka ana mayar da shi. Babu dakatarwar Avana, breaker, daskarewa, farashi ko yanayin sequencer da ke toshe biya; dakatarwar reserve ta ɓangaren Aave kaɗai za ta iya.\n\nZa ka iya kuma biya da jingina: LPVaultSwap yana flash-borrow kadarar bashi, yana biyan ta, yana warware wani ɓangare na matsayinka kuma yana musanya shi don rufe rancen. Bayan cikakken biya, za ka iya cire matsayin."
         }
       ]
     },
@@ -276,7 +296,7 @@
         {
           "id": "what-is-avana-multiply",
           "q": "Menene Avana Multiply?",
-          "a": "Multiply tsari ne a cikin sandbox na jama'a na Avana a app.avana.cc. A cikin tsari guda, yana aro a kan jinginar LP kuma yana sake saka kuɗin da aka aro don ƙara fallasa. Sandbox yana amfani da kadarorin kwaikwayo kuma ba ya yin ma'amaloli onchain.\n\nMultiply ba ɓangare ba ne na kasuwannin Aave V4 na Avana, waɗanda ke shafar aron GHO a kan matsayin Uniswap v2 da v3."
+          "a": "Multiply tsari ne a cikin sandbox na jama'a na Avana a app.avana.cc. A cikin tsarin aiki ɗaya, yana aro a kan jinginar LP kuma yana sake saka kuɗaɗen da aka aro don ƙara fallasa. Sandbox yana amfani da kadarorin kwaikwayo kuma ba ya yin ma'amaloli a kan chain.\n\nMultiply ba ɓangare ba ne na kasuwannin Aave V4 na Avana, waɗanda ke rufe aro a kan matsayin Uniswap v3 a Ethereum da matsayin Aerodrome Slipstream a Base."
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
@@ -303,17 +323,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "Shin atomatik na iya taimakawa wajen sarrafa haɗarin matsayi?",
-          "a": "Sandbox yana nuna samfoti na aiki da kai (automation) da ke sa ido kan lafiyar asusu kuma yana fara matakai kamar biyan bashi ko rage leverage kafin liquidation. Aiki da kai ba ɓangare ba ne na kasuwannin Aave V4 na Avana.\n\nAiki da kai kayan aikin sarrafa haɗari ne, ba tabbaci ba. Motsin kasuwa, yanayin ruwan kuɗi, jinkirin ma'amala, sabuntawar oracle, da samuwar hanya na iya shafar aiwatarwa har yanzu."
+          "a": "Sandbox yana nuna samfoti na aiki ta atomatik da ke sa ido a kan lafiyar asusu kuma yana kunna ayyuka kamar biya ko rage bashi kafin liquidation. Aiki ta atomatik ba ɓangare ba ne na kasuwannin Aave V4 na Avana, amma kowane sabis da ka ba da izini ya aika ma'amala zai iya kiran biya da biya da jingina.\n\nAiki ta atomatik kayan aikin sarrafa haɗari ne, ba tabbaci ba. Motsin kasuwa, yanayin ruwan kuɗi, jinkirin ma'amala, sabunta oracle, da samuwar hanya har yanzu za su iya shafar aiwatarwa."
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "Shin jinginar LP na iya tallafawa irin haɗarin perps?",
-          "a": "A'a. Avana yana shafar aron GHO a kan matsayin Uniswap v2 da v3 da aka amince da su a Ethereum.\n\nKuna yanke shawarar yadda za ku yi amfani da GHO da kuka aro, amma Avana ba ya tura bashi mai goyon bayan LP zuwa perps ko wasu dabaru."
+          "a": "A'a. Avana tana rufe aro a kan matsayin Uniswap v3 da aka amince da su a Ethereum da matsayin Aerodrome Slipstream a Base.\n\nKai ne ke yanke shawarar yadda za ka yi amfani da kadarorin da ka aro, amma Avana ba ta karkatar da bashi mai goyon bayan LP zuwa perps ko wasu dabaru."
         },
         {
           "id": "what-users-monitor",
           "q": "Me masu amfani ke sa ido a kai bayan buɗe matsayi?",
-          "a": "Masu aro suna sa ido kan ma'aunin lafiya, bashi, ƙimar jingina, ƙimar ribar aro, halin kewayon Uniswap v3, da nisan da ke tsakaninsu da liquidation. A cikin tsarin Multiply na sandbox, suna kuma ganin matakin leverage da kayan sarrafa warwarewa.\n\nManhajar Avana tana nuna waɗannan ƙimomin. Kuna iya ganin lokacin da matsayi ke cikin ƙoshin lafiya, lokacin da yake buƙatar kulawa, da lokacin da yake ƙara kusantar liquidation."
+          "a": "Masu aro suna sa ido a kan ma'aunin lafiya, bashi, ƙimar jingina, ƙimar aro, matsayin kewayo, yanayin farashin kasuwa da nisa zuwa liquidation. Lens yana bayyana waɗannan ƙimomi, har da adadin aro da aka ba da shawara da mafi yawa da sarari a iyaka.\n\nA tsarin Multiply na sandbox, masu amfani kuma suna ganin matakin leverage da ikon warwarewa."
         }
       ]
     }

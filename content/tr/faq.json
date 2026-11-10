@@ -8,27 +8,32 @@
         {
           "id": "what-is-avana",
           "q": "Avana nedir?",
-          "a": "Avana, likidite sağlayıcılarının AMM pozisyonlarını Aave V4 üzerinde teminat olarak kullanmasını sağlar. Borçlu, bir Uniswap v2 LP token'ını veya bir Uniswap v3 pozisyonunu Avana'nın LP Vault'una rehin verir. Ardından likidite havuzda kalırken bir Avana Borrow Spoke üzerinden Avana Hub'dan GHO borç alır.\n\nAvana, Ethereum ana ağında çalışır. Avana Hub ve Borrow Spoke'lar, Aave DAO'ya ait standart Aave V4 sözleşmeleridir."
+          "a": "Avana, likidite sağlayıcılarının AMM pozisyonlarını Aave V4 üzerinde teminat olarak kullanmasını sağlar. Bir borçlu Ethereum'da bir Uniswap v3 pozisyonunu veya Base'de bir Aerodrome Slipstream pozisyonunu rehin verir. Avana'nın LPVault'u pozisyonu tutar ve eşleşen bir vault token bir Avana CDP Spoke üzerinde teminat olarak sağlanır. Borçlu ardından GHO veya Spoke'un ödünç verdiği başka bir borç varlığını borç alır; likidite ise havuzda kalır.\n\nAvana, her zincirde bir Avana Stable LP Hub ile Ethereum ve Base üzerinde başlar. Hub'lar ve Spoke'lar, Aave DAO'ya ait ve onun tarafından yapılandırılan standart, değiştirilmemiş Aave V4 sözleşmeleridir. Avana'nın kendi sözleşmeleri saklama, değerleme, borçlu eylemleri ve likidasyonu yürütür."
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Avana hangi problemi çözer?",
-          "a": "Likidite sağlayıcıları, sermayeleri karşılığında borç alabilmek için genellikle önce likiditelerini çekmek zorundadır. Bunun için havuzdan çıkar, ücret gelirinden ve seçtikleri aralıktan vazgeçerler.\n\nAvana, desteklenen LP pozisyonlarını teminat olarak kullanılabilir hale getirir. Pozisyon havuzda kalır. Avana'nın LPOracle'ı pozisyonu değerler ve Aave V4 onu temeldeki likiditeye 1:1 karşılık gelen bir vault token olarak kaydeder. LP'ler için fayda, garantili pozitif getiri değil, sermaye esnekliğidir. Borçlular geçici kayıp, fiyat riski ve likidasyon riskini taşımaya devam eder."
+          "a": "Likidite sağlayıcıları genellikle likiditeye karşı borç alabilmek için önce onu kaldırmak zorundadır. Bu, havuzdan çıkmak ve ücret gelirinden ve seçtikleri aralıktan vazgeçmek anlamına gelir.\n\nAvana, desteklenen LP pozisyonlarını havuzda kalırken teminat olarak kullanılabilir hale getirir. LPOracle her pozisyonu oracle fiyatlarıyla token miktarlarından değerler ve Aave V4 onu bir vault token olarak kaydeder. LP'ler için fayda garantili bir getiri değil, sermaye esnekliğidir. Borçlular geçici kayıp, fiyat riski ve likidasyon riskini taşımaya devam eder."
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Avana standart bir kredi piyasasından nasıl farklıdır?",
-          "a": "Standart borç verme piyasaları teminatı genellikle ETH, BTC, stablecoin'ler veya diğer ERC-20 varlıklar gibi basit token bakiyeleri olarak ele alır. Avana ise zamanla değişen teminat için tasarlanmıştır. Bir LP pozisyonu iki varlık içerir ve ücret kazanır. Bileşimi fiyatlar hareket ettikçe değişir, aralık dışına çıkabilir ve çözülmesi için belirli bir rota gerektirir.\n\nBu nedenle Avana riski piyasa bazında belirler. Onaylanan her havuzun ve ilgili olduğunda aralığın kendi vault token'ı, teminat faktörü, üst sınırları ve tasfiye modu vardır. Teminat faktörü, iki havuz token'ının düşük olan teminat faktöründen başlar ve ardından havuza özgü risk için düşürülür."
+          "a": "Standart borç verme piyasaları teminatı token bakiyeleri olarak ele alır. Bir LP pozisyonu birkaç token tutar, ücret kazanır, fiyatlar hareket ettikçe bileşimini değiştirir, aralık dışına çıkabilir ve çözülmesi için belirli bir rota gerektirir.\n\nBu nedenle Avana riski piyasa başına belirler. Bir piyasa, kendi vault token'ı, Teminat Faktörü, üst sınırları, fiyat rotası ve swap rotalarıyla tek bir CDP Spoke üzerindeki tek bir havuz ve tek bir tam tick aralığıdır. Her cüzdanın her piyasa için ayrı bir hesabı vardır, bu nedenle bir piyasanın teminatı hiçbir zaman başka bir piyasadaki borcu karşılamaz."
         },
         {
           "id": "which-amms-can-avana-support",
           "q": "Avana hangi AMM'leri destekliyor?",
-          "a": "Avana, Ethereum ana ağında seçili Uniswap v2 LP token'larını ve Uniswap v3 pozisyonlarını destekler. Uniswap v3 için yalnızca tam aralıklı pozisyonlar ve özel olarak onaylanmış aralıklar kabul edilir.\n\nUniswap v4, Curve, Balancer, Aerodrome, diğer AMM'lerin veya Base gibi diğer zincirlerin eklenmesi, kendi teknik ve risk incelemesini ve Aave yönetişim onayını gerektirir. Havuzlar tek tek onaylanır. Avana; meme token havuzlarını, yeterli likidite geçmişi veya güvenilir harici fiyatlaması olmayan havuzları ve likidite çekmenin kısıtlanabildiği havuzları hariç tutar."
+          "a": "Lansmanda Avana, Ethereum'da Uniswap v3 pozisyonlarını ve Base'de Aerodrome Slipstream pozisyonlarını destekler. Slipstream pozisyonları stake'ten çıkarılmış olmalıdır; gauge'da stake edilmiş bir pozisyon rehin verilemez. Her piyasa tek bir tam tick aralığını kabul eder ve başka bir aralığa sahip pozisyon reddedilir.\n\nAvana'nın çekirdeği AMM'den bağımsızdır. Uniswap v2, Curve StableSwap-NG, Balancer ve Uniswap v4 entegrasyonları belirtilmiştir, ancak her biri yalnızca hazırlık kontrolleri geçtikten ve yönetişim onayladıktan sonra listelenir. Transfer ücretli, rebase'li veya hook'lu token içeren havuzlar hariç tutulur."
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "Avana, likiditemin bulunduğu AMM ile yer değiştiriyor mu?",
-          "a": "Hayır. Swap'ları, havuz durumunu, fiyat hareketlerini ve ücret üretimini yine AMM yürütür. Avana, desteklenen LP pozisyonlarının etrafına bir teminat katmanı ekler.\n\nUygun bir pozisyonu rehin verdiğinizde Avana'nın LP Vault'u onu tutar ve Avana, Aave V4 için eşleşen bir vault token basar. Likidite AMM havuzunda kalır ve aralık içinde olduğu sürece ücret kazanmaya devam eder."
+          "a": "Hayır. AMM swap'ları, havuz durumunu, fiyat hareketini ve ücret üretimini yürütmeye devam eder. Avana desteklenen pozisyonların etrafına bir teminat katmanı ekler.\n\nBir pozisyonu rehin verdiğinizde, o AMM'nin LPVault'u NFT'yi tutar ve Avana pozisyonun likiditesine eşit vault token basar. Likidite havuzda kalır ve aralık içinde olduğu sürece ücret kazanmaya devam eder. Bu ücretleri istediğiniz zaman toplayabilirsiniz."
+        },
+        {
+          "id": "is-avana-live",
+          "q": "Avana dağıtıldı mı?",
+          "a": "Henüz değil. Avana spesifikasyonu ve sözleşme arayüzleri tamamlandı ve dahili inceleme ile formel modellemeden geçti. Sırada sözleşme kodunun yazılması, ardından her sözleşmenin bağımsız denetimleri ve dağıtımı ve fonlamayı onaylayan Aave DAO oylamaları var.\n\nSözleşme adresleri, sözleşmeler dağıtıldıktan sonra geliştirici dokümanlarının Sözleşmeler sayfasında listelenecektir. app.avana.cc adresindeki herkese açık sandbox simüle edilmiş varlıklar kullanır."
         }
       ]
     },
@@ -40,59 +45,64 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Avana yüksek seviyede nasıl çalışır?",
-          "a": "Avana üç adımda çalışır. İlk olarak, desteklenen bir LP pozisyonunu LP Vault'a rehin verirsiniz. İkinci olarak, Avana'nın Risk Module'ü havuzu, ücret kademesini, aralığı, oracle kullanılabilirliğini ve üst sınırları kontrol eder. Ardından Aave Adapter eşleşen bir vault token basar ve onu o piyasanın Avana Borrow Spoke'una sağlar. Üçüncü olarak, borçlanma kapasitenize kadar Avana Hub'dan GHO borç alırsınız.\n\nLP pozisyonu AMM'de kalır. Saklama, değerleme ve tasfiyeyi Avana'nın kendi sözleşmeleri yürütür. Avana Hub ve Borrow Spoke'lar, Aave DAO'ya ait standart ve değiştirilmemiş Aave V4 sözleşmeleridir."
+          "a": "Desteklenen bir pozisyonu AaveAdapter üzerinden rehin verirsiniz. LPVault NFT'nin saklamasını üstlenir, Collateralization onun ne kadar likiditeyi karşıladığını kaydeder ve AaveAdapter o kadar vault token'ı piyasa için PositionProxy'nize basar. Proxy bunları piyasanın CDP Spoke'u üzerinde teminat olarak sağlar. Ardından fiyatları, üst sınırları ve sağlık faktörünüzü kontrol eden AaveAdapter üzerinden borç alırsınız.\n\nGeri ödeme, çekim, kısmi likidite kaldırma, teminatla geri ödeme ve ücret toplama da AaveAdapter üzerinden çalışır. Likidasyon LPVaultSwap üzerinden çalışır. Avana'nın sözleşmelerindeki her yükseltme veya parametre değişikliği zincirin AvanaTimelock'u üzerinden geçer."
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Avana neden Aave V4 Hub-and-Spoke altyapısını kullanıyor?",
-          "a": "Avana, Aave V4'ü kullanır çünkü Aave V4 paylaşılan likiditeyi piyasaya özgü risk ayarlarından ayırır. Avana Hub, Aave DAO tarafından tahsis edilen, üst sınırı olan bir GHO kredi hattını tutar. Bu hattan yalnızca onaylı Borrow Spoke'lar çekim yapabilir.\n\nHer Borrow Spoke, kendi parametreleri ve üst sınırlarıyla bir piyasa kategorisini kapsar: stabil LP (aday USDC/USDT), korelasyonlu LP (aday wstETH/WETH) ve blue-chip/stabil LP (aday WETH/USDC). Adaylar hâlâ değerlendirilmektedir. Avana, Aave V4 kodunu fork etmez veya değiştirmez. Avana'ya özgü tüm mantık Avana'nın kendi sözleşmelerindedir."
+          "q": "Avana neden Aave V4 Hub'larını ve Spoke'larını kullanıyor?",
+          "a": "Aave V4 paylaşılan likiditeyi (Hub'lar) piyasaya özgü risk ayarlarından (Spoke'lar) ayırır. Her zincirde bir Avana Stable LP Hub vardır. Aave DAO, yalnızca arz yapan bir Lend Spoke üzerinden ona üst sınırlı bir GHO kredi hattı sağlar ve ondan yalnızca Avana'nın CDP Spoke'ları çekim yapabilir.\n\nZincir, Hub, AMM protokolü ve risk katmanı başına bir CDP Spoke vardır. Lansmanda bunlar Ethereum'da \"Uniswap v3 Stable\" ve Base'de \"Aerodrome Slipstream Stable\"dır. Correlated LP ve Volatile LP Hub'ları daha sonrası için tasarlanmıştır. Avana, Aave V4'ü fork etmez veya değiştirmez."
         },
         {
           "id": "what-is-a-borrow-spoke",
-          "q": "Borrow Spoke nedir?",
-          "a": "Borrow Spoke, Aave DAO'ya ait standart bir Aave V4 Spoke'udur. Avana vault token'larını teminat olarak kabul eder ve borçluların Avana Hub'dan GHO çekmesini sağlar. Piyasaları için teminat faktörünü, Teminat Riski'ni ve likidasyon parametrelerini uygular.\n\nAvana ayrı Borrow Spoke'lar kullanır, çünkü LP pozisyonlarının hepsi aynı şekilde davranmaz. Bir stablecoin çifti, wstETH/WETH gibi korelasyonlu bir çift ve WETH/USDC gibi bir blue-chip/stabil çift farklı teminat faktörleri, üst sınırlar ve tasfiye ayarları gerektirir."
+          "q": "CDP Spoke nedir?",
+          "a": "CDP Spoke, Aave DAO'ya ait standart bir Aave V4 Spoke'udur. Her Avana piyasası için yalnızca teminat amaçlı bir vault-token rezervi ve onun için etkinleştirilmiş borç rezervlerini (öncelikle GHO) tutar. Her piyasanın Teminat Faktörünü, likidasyon bonusunu ve üst sınırlarını uygular.\n\nHer vault-token rezervi üç gerekli ayar kullanır: pay alma devre dışıdır, Aave likidasyon ücreti 0'dır (veya Avana'nın ücret alıcısına ödenir) ve yeniden yatırım denetleyicisi ayarlanmamıştır. Vault token'ın transfer kuralıyla birlikte bunlar, LPVaultSwap'i el konulan teminatı alabilen tek sözleşme yapar."
         },
         {
           "id": "what-are-vault-tokens",
           "q": "Avana kasa jetonları nedir?",
-          "a": "Vault token'lar, rehin verilen LP pozisyonlarını Aave V4 üzerinde temsil eden, yalnızca teminat amaçlı ERC-20 token'lardır. Onaylanan her havuzun ve ilgili olduğunda aralığın kendi vault token'ı vardır. Avana, bir pozisyonu rehin verdiğinizde temeldeki likiditeyle 1:1 oranında vault token basar ve bunları çekim veya tasfiye sırasında yakar. İhraç takvimi, emisyon veya dönüşüm oranı yoktur.\n\nVault token'lar kullanıcı varlığı değildir ve ikincil piyasaları yoktur. Yalnızca Avana Hub, Borrow Spoke'lar, Position Proxy'ler, Aave Adapter ve LPVaultSwap arasında hareket ederler. Dolaşımdaki her vault token, LP Vault'ta tutulan likiditeyle desteklenir."
+          "a": "Vault token'lar, piyasa başına bir tane olan, yalnızca teminat amaçlı ERC-20 token'lardır. Bir temel birim, kredilendirilmiş likiditenin bir birimine eşittir. Ondalıklar listelemede piyasa başına 6 ile 18 arasında sabitlenir. Onları yalnızca AaveAdapter basar ve yakar ve yalnızca kayıtlı PositionProxy'ler, CDP Spoke ve LPVaultSwap arasında hareket ederler.\n\nVault token'ların ikincil piyasası, ihracı ve döviz kuru yoktur. Arzları hiçbir zaman Collateralization'ın kredilendirdiği likidite artı uzlaşma bekleyen birimleri aşmaz."
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Avana protokolünün ana bölümleri nelerdir?",
-          "a": "LP Vault rehin verilen LP token'larını ve NFT'leri tutar. Her pozisyonun sahibini, havuzunu, token çiftini, ücret kademesini, aralığını ve durumunu kaydeder. Risk Module; havuz uygunluğunu, pilot izin listesini, pozisyon büyüklüğü limitlerini ve maruziyet üst sınırlarını kontrol eder. Collateralization Module, likiditeyle 1:1 oranında vault token basar. LPOracle vault token'ları Chainlink'ten fiyatlar ve havuz TWAP'ını ikinci bir kontrol olarak kullanır.\n\nAave Adapter, borçlunun giriş noktasıdır. Yatırma, borç alma, geri ödeme ve çekme işlemlerini her borçluya özel bir Position Proxy üzerinden yürütür. LPVaultSwap likidasyonları flash loan'larla yürütür; AMM tasfiye adaptörleri likidite çeker ve ücretleri toplar. Yükseltilebilir Avana sözleşmeleri, Avana Labs'in atlayamayacağı bir zaman kilidinin arkasındadır. Duraklatma ve dondurma rolleri Aave DAO'dadır."
+          "a": "Saklama: zincir başına her AMM protokolü için bir değiştirilemez LPVault ve Collateralization defteri. Hesaplar ve token'lar: VaultToken ve VaultTokenFactory, PositionProxy ve ProxyManager. Politika: AaveAdapter (borçlu giriş noktası), RiskModule (kontroller), MarketRegistry (piyasalar, rotalar, duraklatma durumu, devre kesiciler) ve ParameterStore (risk parametreleri).\n\nOracle'lar: piyasa başına bir LPOracle ve GHO olmayan borç varlığı başına bir DebtOracle. Likidasyon: LPVaultSwap, swap rotası sözleşmeleri, Aave V3 Pool üzerinden bir flash kaynağı ve InKindEscrow. Altyapı: AvanaTimelock, Lock ve salt okunur Lens. Geliştiriciler bölümü her sözleşmeyi Sözleşmeler sayfasında listeler."
         }
       ]
     },
     {
       "id": "lp-collateral",
-      "name": "LP teminatı",
+      "name": "LP Teminat",
       "summary": "",
       "questions": [
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "LP teminat yatırdığımda ne olur?",
-          "a": "Desteklenen bir LP pozisyonunu rehin verdiğinizde Aave Adapter onu LP Vault'a yatırır. Ardından Risk Module havuzu, ücret kademesini, aralığı, oracle kullanılabilirliğini ve üst sınırları kontrol eder. Pilot dönem boyunca yalnızca izin listesindeki yatıranlar rehin verebilir ve her piyasanın minimum ve maksimum pozisyon büyüklükleri vardır.\n\nKontroller geçildiğinde Avana eşleşen bir vault token basar ve onu Position Proxy'niz üzerinden Borrow Spoke'ta teminat olarak sağlar. Rehin vermek tek başına borç almak anlamına gelmez. Hesap sağlıklı kaldığı ve GHO likiditesi mevcut olduğu sürece kullanabileceğiniz bir borçlanma kapasitesi oluşturur."
+          "a": "Pozisyonunuzun NFT'si için LPVault'u onaylar ve AaveAdapter üzerinde pledge'i çağırırsınız. LPVault, pozisyonun piyasanın havuzu ve tam aralığıyla eşleştiğini kontrol eder ve saklamayı üstlenir. RiskModule fiyat durumunu, piyasanın statüsünü, asgari rehni (lansmanda $10), piyasa, token ve yatırıcı üst sınırlarını, havuz payı sınırını, hesap ve piyasa başına 16 kayıt sınırını ve devre kesicileri kontrol eder.\n\nKontroller geçerse AaveAdapter gerekirse piyasa için PositionProxy'nizi dağıtır, kredilendirilen likiditeye eşit vault token basar ve bunları teminat olarak sağlar. Rehin vermek hiçbir şey borç almaz. İzin listesi ve üst sınırların ötesinde azami pozisyon boyutu yoktur."
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "Mevduattan sonra LP pozisyonum aktif kalıyor mu?",
-          "a": "Evet. Rehin saklamayı değiştirir ancak likiditeyi havuzdan çekmez. Havuz swap'ları işlemeye devam eder ve pozisyonunuz ücret kazanmaya devam eder. Bir Uniswap v3 pozisyonu aralık dışındayken ücret kazanmayı durdurur.\n\nBorç açıkken, çekim gibi teminatı azaltan işlemler Aave Adapter'dan geçer. Bu işlemlere yalnızca hesap sonrasında sağlıklı kalırsa izin verilir."
+          "a": "Evet. Rehin vermek saklamayı değiştirir ancak likiditeyi kaldırmaz. Havuz swap'ları işlemeye devam eder ve pozisyonunuz ücret kazanmaya devam eder. Yoğunlaştırılmış bir pozisyon aralık dışındayken ücret kazanmayı durdurur.\n\nRehin verilmiş bir NFT'ye likidite ekleyip recredit ile kredilendirebilir, removeLiquidity ile NFT'yi rehinli tutarken likiditenin bir kısmını kaldırabilir veya aynı piyasadaki başka bir pozisyonla ek teminat sağlayabilirsiniz."
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "Borç alırken LP ücretlerini talep edebilir miyim?",
-          "a": "Pozisyonunuz LP Vault'tayken ücretler pozisyonunuzda birikmeye devam eder. Çekim yaptığınızda LP Vault, LP token'larınızı veya NFT'nizi toplanmamış ücretlerle birlikte serbest bırakır.\n\nBorcunuz geri ödendikten sonra tamamını çekebilir veya hesabınız sonrasında sağlıklı kalırsa pozisyonun bir kısmını çekebilirsiniz."
+          "a": "Evet. Yatırıcı AaveAdapter üzerinde collectFees'i istediği zaman çağırabilir. AMM ücretleri doğrudan size öder. Ücret toplamak vault token'larınızı, üst sınırları, borcu veya sağlık faktörünüzü değiştirmez.\n\nHiçbir duraklatma, dondurma, devre kesici veya fiyat durumu ücret toplamayı engellemez. Base'de bir sequencer kesintisi sırasında da L1 zorunlu dahil etme yoluyla çalışır."
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "Teminat değerine LP ücreti dahil mi?",
-          "a": "LPOracle pozisyonunuzdaki likiditeyi değerler. Token miktarlarını havuzun likidite matematiğinden hesaplar ve bunları kesinti uygulamadan Chainlink fiyatlarıyla fiyatlar. Toplanmamış ücretler, çekim yaptığınızda pozisyonla birlikte serbest bırakılır.\n\nBorçlanma limitlerini piyasanın teminat faktörü ayrıca belirler. Avana oracle değerine indirim uygulamaz."
+          "a": "Hayır. LPOracle yalnızca her vault token'ın arkasındaki likiditeyi değerler. Toplanmamış ücretler fiyata dahil edilmez ve bir likidasyon onlara hiçbir zaman el koymaz.\n\nBorçlanma sınırları ayrıca uygulanan piyasanın Teminat Faktöründen gelir. Oracle değerinin kendisinde kesinti yoktur."
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "LP teminatı ne zaman çekebilirim?",
-          "a": "Borcunuz geri ödendikten sonra tamamını çekebilirsiniz. Hesap sonrasında sağlıklı kalırsa teminatınızın bir kısmını da çekebilirsiniz. Aave Adapter ilgili vault token'larını çeker ve yakar; LP Vault, LP token'larınızı veya NFT'nizi toplanmamış ücretlerle birlikte serbest bırakır.\n\nGeri ödeme ve çekme, sözleşmeleri doğrudan çağırarak Avana arayüzü olmadan da çalışır. Bir oracle fiyatı eskimişken veya TWAP kontrolü başarısız olduğunda yeni borçlanmalar ve gönüllü çekimler engellenir. Bu durumlarda geri ödeme devam eder."
+          "a": "Borcunuz yoksa istediğiniz zaman çekim yapabilirsiniz ve hiçbir duraklatma, dondurma, devre kesici veya fiyat durumu bunu engellemez. repayAllAndWithdraw her borcu geri öder ve pozisyonu tek bir çağrıda iade eder.\n\nBorçluyken bir çekim için Hub'ın duraklatılmamış olması (dondurulmuş bir Hub buna yine de izin verir), adresinizin dondurulmamış olması, Live fiyatlar, Base'de çalışan bir sequencer, tetiklenmiş devre kesici olmaması ve sonrasında seçtiğiniz asgari değerde veya üzerinde bir sağlık faktörü gerekir. LPVault NFT'yi toplanmamış ücretleriyle birlikte iade eder."
+        },
+        {
+          "id": "how-many-positions-per-account",
+          "q": "Bir hesap kaç pozisyon tutabilir?",
+          "a": "Her cüzdanın CDP Spoke ve piyasa başına bir PositionProxy'si, dolayısıyla bir Aave hesabı vardır. Bir hesap kendi piyasası için en fazla 16 karşılık kaydı tutar. Başka bir piyasadaki pozisyon, kendi sağlık faktörüne sahip ayrı bir hesap açar.\n\nBir hesap likide edilirse Collateralization kayıtlarına en büyükten başlayarak el koyar."
         }
       ]
     },
@@ -104,27 +114,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Avana, LP teminatı nasıl fiyatlandırır?",
-          "a": "LPOracle her vault token'ı havuzun likidite matematiğinden Chainlink fiyatlarıyla fiyatlar. Formül değer = q0·P0 + q1·P1 şeklindedir; burada q0 ve q1, bir vault token'ın arkasındaki token miktarlarıdır. Uniswap v3 pozisyonlarında token miktarları, referans fiyatta pozisyonun likiditesinden ve aralığından gelir.\n\nOracle değeri kesinti uygulamadan bildirir. Borçlanma limitlerini piyasanın teminat faktörü ayrıca belirler. Teminat faktörü, iki havuz token'ının düşük olan teminat faktöründen başlar ve bir havuz risk faktörüyle düşürülür."
+          "a": "LPOracle her vault token'ı adil bileşimle fiyatlar: bir likidite biriminin arkasındaki token miktarlarını, piyasanın aralığıyla sınırlanmış oracle fiyat oranında hesaplar ve bunları Chainlink USD fiyatlarıyla çarpar. Miktarlar aşağı yuvarlanır ve toplanmamış ücretler hariç tutulur. Fiyatların 8 ondalığı vardır ve oracle hiçbir zaman geri dönmez ve hiçbir zaman 0 döndürmez.\n\nGHO borcu sabit $1 olarak fiyatlanır. Diğer borç varlıkları kendi DebtOracle'larıyla fiyatlanır."
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
-          "q": "Avana, oracle ve fiyatlama riskini nasıl azaltır?",
-          "a": "Değerleme referansı Chainlink'tir. Havuzun TWAP'ı bir tutarlılık kontrolüdür; ortalama veya ikame değildir. TWAP izin verilen toleransın dışına çıkarsa yeni borçlanmalar ve riski artıran çekimler engellenir. Geri ödeme ve likidasyon Chainlink fiyatıyla devam eder.\n\nChainlink beslemesi eskimişse oracle son geçerli fiyatı maksimum bir yaşa kadar kullanır. Bu süre boyunca yeni borçlanmalar ve gönüllü çekimler engellenir. Maksimum yaş aşıldığında, besleme düzelene veya yönetişim bir yedek beslemeyi onaylayana kadar likidasyonlar durur. Geri ödeme devam eder."
+          "q": "Avana oracle arızalarını nasıl ele alır?",
+          "a": "Her token'ın birincil ve alternatif bir Chainlink rotası ile önceden onaylanmış bir yedek rotası vardır. Fiyatlar, beslemenin heartbeat'i artı bir marj içinde güncel olmalıdır. Borçlanma ayrıca bağımsız bir ikinci kaynağın uyuşmasını, bir havuz TWAP tutarlılık kontrolünü ve stablecoin'lerin $0.90–$1.02 bandı içinde olmasını gerektirir.\n\nHer piyasanın fiyatı dört durumdan birindedir: Live, Drifting, Cached veya Expired. Cached (1 saate kadar) ve Expired, o piyasada yeni borçlanmayı ve likidasyonu engeller. Expired, geri ödeme ve borçsuz çıkışlar devam ederken teminatı neredeyse sıfır olarak değerler. Kurtarmadan sonra 30 dakikalık bir ödemesiz dönem, likidasyona yalnızca 0.95 sağlık faktörünün altında izin verir."
         },
         {
           "id": "what-is-recoverable-value",
           "q": "Avana, kehanet değerinden indirimi düşer mi?",
-          "a": "Avana oracle değerinin kendisine indirim uygulamaz. Bunun yerine, her piyasanın teminat faktörü bir likidasyonda ne kadar değerin geri kazanılabileceğini hesaba katar. Formül şudur: LP teminat faktörü = iki havuz token'ının düşük olan teminat faktörü × havuz risk faktörü.\n\nHavuz risk faktörü aralığı, fiyat hassasiyetini, havuz derinliğini ve beklenen likidasyon maliyetlerini yansıtır. Gauntlet, borç alınan varlık havuzun token'larından biri olmadığında (örneğin WETH/USDC karşılığında GHO), düşük olan temel faktörün 0.25× katı kadar düşük bir değerle başlanmasını önermiştir."
+          "a": "Hayır. Oracle değeri kesinti uygulamadan bildirir. Her piyasanın Teminat Faktörü bu değerin ne kadarının borcu destekleyebileceğini belirler: havuzun token'ları arasındaki en düşük Aave V4 Teminat Faktörü ile en fazla %40 olan bir havuz risk faktörünün çarpımı. Bir GHO ayağı listelemede belirlenen açık bir faktör kullanır.\n\nGauntlet'in LP teminatı analizi, borç alınan varlık havuzun token'larından biri olmadığında düşük olan temel faktörün 0.25× katına kadar inen ihtiyatlı başlangıç faktörleri önerir. Nihai faktörler Aave'nin hizmet sağlayıcılarıyla piyasa başına kalibre edilir."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "Yoğunlaştırılmış likidite pozisyonları neden dikkatlice ele alınır?",
-          "a": "Konsantre likidite pozisyonları, fiyat hareket ettikçe maruziyetlerini hızla değiştirir. Bir pozisyon ağırlıklı olarak tek bir varlığa dönüşebilir veya aralık dışına çıkıp ücret kazanmayı durdurabilir.\n\nAvana yalnızca tam aralıklı Uniswap v3 pozisyonlarını ve özel olarak onaylanmış aralıkları kabul eder; her birinin kendi vault token'ı vardır. Oracle token miktarlarını pozisyonun likiditesinden ve aralığından hesaplar. Her piyasa kendi havuz risk faktörünü ve tasfiye modunu belirler."
+          "a": "Yoğunlaştırılmış bir pozisyon fiyat hareket ettikçe bileşimini hızla değiştirir ve aralık dışına çıkabilir. Bu nedenle Avana her tam aralığı kendi piyasası olarak listeler, aralığı sınırlayarak değerler ve onun için bir havuz risk faktörü belirler.\n\nLPVault, aralığı piyasanınkinden farklı olan bir pozisyonu reddeder ve LPOracle borçlanmadan önce havuz durumunu bir TWAP'a karşı kontrol eder."
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Avana hangi piyasa verilerini izliyor?",
-          "a": "Avana'nın Risk Module'ü, bir havuzun likiditesindeki pay limiti dahil olmak üzere havuz, temel token ve yatıran düzeyinde maruziyeti kontrol eder. Her piyasanın kendi havuz risk faktörü, tasfiye modu, TWAP penceresi, izin verilen fiyat sapması ve maksimum besleme yaşı vardır.\n\nAvana Labs haftalık kullanım raporları ve aylık gelir raporları yayımlar. Raporlar; piyasaya göre borç ve teminatı, yoğunlaşmayı, sağlık faktörü dağılımını ve başarılı, başarısız ve yeniden denenen likidasyonları kapsar. Ayrıca FirstLossReserve kullanımını, batık borcu, oracle olaylarını, kredi hattı kullanımını, ücretleri ve ilk zarar kaynaklarını da kapsar."
+          "a": "Avana'nın keeper'ı ve izleme sistemi fiyat durumlarını, havuz payını, havuz derinliğini, el koymaları, swap rotası arızalarını, açıkları ve her rezervin Aave yapılandırmasını izler. Bazı koşullar zincir üstü devre kesicileri tetikler; diğerleri ise 2 saatte %3'lük bir fiyat düşüşü, 1 saatte bir piyasanın %20'sinden fazlasına el konulması, 1 saatte 3 swap rotası arızası veya Avana'nın bir havuzun %25'inden fazlasını tutması gibi uyarılar oluşturur.\n\nAvana Labs; piyasaya göre borç ve teminatı, yoğunlaşmayı, sağlık faktörlerini, likidasyonları, Avana Umbrella kullanımını, kötü borcu, oracle olaylarını, duraklatmaları ve devre kesici tetiklemelerini, kredi hattı kullanımını ve ücretleri kapsayan haftalık kullanım raporları ve aylık gelir raporları yayımlar."
         }
       ]
     },
@@ -136,27 +146,32 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Avana'de borçlanma nasıl çalışır?",
-          "a": "Pozisyonunuz rehin verildikten ve vault token'ı teminat olarak sağlandıktan sonra, Borrow Spoke üzerinden Avana Hub'dan GHO borç alırsınız. Aave Adapter, fiyat kontrollerinin geçtiğini ve yeni borçtan sonra hesabınızın sağlıklı kaldığını kontrol eder.\n\nGHO cüzdanınıza gönderilir ve borç Aave V4'e kaydedilir. Faiz, baz oran × (1 + risk priminiz) üzerinden işler; bu nedenle teminatınız değişmese bile sağlık faktörünüz değişebilir."
+          "a": "AaveAdapter üzerinde borrow'u piyasa, borç rezervi, tutar, son tarih, kabul ettiğiniz asgari sağlık faktörü ve beklediğiniz nonce ile çağırırsınız. RiskModule Live fiyatları, borç fiyatı güncelliğini, devre kesicileri, duraklatma durumunu ve onaylı bir keeper'ın var olduğunu kontrol eder. PositionProxy'niz CDP Spoke üzerinde borç alır ve fonlar size gönderilir.\n\nFaiz Hub taban oranı × (1 + risk priminiz) ile işler, bu nedenle teminatınız değişmese bile sağlık faktörünüz değişebilir."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Borçlanma kapasitesi nasıl hesaplanır?",
-          "a": "Borçlanma kapasitesi = LP pozisyon değeri × LP teminat faktörü. LP teminat faktörü, iki havuz token'ının düşük olan teminat faktörünün bir havuz risk faktörüyle çarpımıdır. Havuz risk faktörü aralığı, fiyat hassasiyetini, havuz derinliğini ve beklenen likidasyon maliyetlerini yansıtır.\n\nKapasite ayrıca mevcut borca, maruziyet üst sınırlarına, kullanılabilir GHO likiditesine ve oracle kontrollerine bağlıdır. Örneğin, nihai teminat faktörü %35 olan $100,000 değerinde tam aralıklı bir WETH/USDC pozisyonunun 35,000 GHO kapasitesi vardır. Bu rakamlar açıklama amaçlıdır, gerçek piyasa parametreleri değildir."
+          "a": "Borçlanma kapasitesi = LP pozisyon değeri × LP Teminat Faktörü ve LP Teminat Faktörü = en düşük token Teminat Faktörü × havuz risk faktörü. Kapasite ayrıca mevcut borca, üst sınırlara, kredi hattının kullanılabilir likiditesine ve oracle kontrollerine bağlıdır.\n\nÖrnek değerler: %31.20 Teminat Faktörüne sahip $20,000 değerinde bir USDC/USDT Slipstream pozisyonu $6,240 ağırlıklı teminat verir. Lens 1.10 sağlık faktörüne kadar borç almayı önerir (burada 5,673.29 USDC) ve azamiyi 1.00'da gösterir (6,209.56 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Borçlanma gücü, LP değerimden neden daha düşük?",
-          "a": "Borçlanma kapasitesi LP değerinden düşüktür, çünkü teminat faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Oracle tam değeri bildirir. Teminat faktörü, bu değerin ne kadarının borcu destekleyebileceğini belirler.\n\nHavuz risk faktörü bir kez uygulanır ve piyasa bazında belirlenir; bu nedenle LP değeri ile borçlanma kapasitesi arasındaki fark piyasadan piyasaya değişir."
+          "a": "Teminat Faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Havuz risk faktörünün üst sınırı %40'tır, bu nedenle %78'de iki token ile açılış kredi-değer oranı en fazla yaklaşık %28.4'tür.\n\nDeğer ile kapasite arasındaki fark piyasalar arasında farklılık gösterir, çünkü her piyasanın kendi havuz risk faktörü vardır."
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "Hangi varlıkları ödünç alabilirim?",
-          "a": "Borrow Spoke'lar GHO borç verir. Avana Hub, Aave DAO'dan gelen ve üst sınırı olan bir GHO kredi hattıyla fonlanır ve her artışı yönetişim onaylar.\n\nDiğer varlıklar, Aave yönetişiminin ayrıca onayladığı Avana Lend Spoke üzerinden borç alınır."
+          "a": "GHO her CDP Spoke'taki ilk borç varlığıdır. USDC, USDT veya WETH gibi diğer varlıklar, yönetişim yoluyla bir CDP Spoke'ta borç rezervi olarak etkinleştirilebilir; her biri kendi kredi hattıyla fonlanır ve kendi DebtOracle'ı ile fiyatlanır.\n\nLansmanda kredi hattı Aave DAO'dan GHO'dur: Ethereum'da 2M GHO önerilmiştir, Base hattı ise fonlama önerisinde belirlenir."
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "Birden fazla LP pozisyona aynı anda karşılık olarak ödünç alabilir miyim?",
-          "a": "Evet. Aynı Borrow Spoke'a sağlanan pozisyonlar tek bir hesabı destekler ve risk priminiz bunların ağırlıklı ortalamasıdır. Her pozisyonun yine kendi vault token'ı, teminat faktörü ve üst sınırları vardır.\n\nPilot dönem boyunca her hesabın pozisyon sayısında bir limit vardır. Hesabın tamamı gerekli sağlık faktörünün üzerinde kalmalıdır."
+          "a": "Tek bir piyasa içinde evet: en fazla 16 pozisyon tek bir hesabı ve tek bir sağlık faktörünü karşılar. Farklı piyasalardaki pozisyonlar, her birinin kendi sağlık faktörü olan ayrı hesaplardır, bu nedenle birbirlerini karşılamazlar.\n\nBir hesap içinde, CDP Spoke birden fazla borç varlığı ödünç veriyorsa birden fazla borç varlığı borç alabilirsiniz."
+        },
+        {
+          "id": "is-there-a-minimum-health-factor",
+          "q": "Borçlanma için asgari bir sağlık faktörü var mı?",
+          "a": "Zincir üstünde tek sınır Aave'nin 1.00 sağlık faktörüdür. Borçlanma çağrısı kendi asgari sağlık faktörünüzü alır ve bunun altında geri döner. Lens 1.10'da veya üzerinde kalmayı önerir.\n\nAsgari borç yoktur. Piyasa başına katı bir sağlık tabanı vardır ancak lansmanda kapalıdır."
         }
       ]
     },
@@ -167,55 +182,60 @@
       "questions": [
         {
           "id": "how-do-lenders-use-avana",
-          "q": "Kredi verenler Avana'i nasıl kullanır?",
-          "a": "Borç verme, GHO Borrow Spoke'larından ayrı olan Avana Lend Spoke üzerinden yürür. Aave yönetişimi onu ayrıca onaylar.\n\nLend Spoke, borç verenlerin Avana Hub'a doğrudan varlık sağlamasına ve borçluların GHO dışındaki varlıkları borç almasına olanak tanır. Avana Hub, Aave DAO'nun GHO kredi hattını da tutar."
+          "q": "Avana borçlularının kullandığı likiditeyi kim sağlar?",
+          "a": "Lansmanda Aave DAO hazinesi, yalnızca arz yapan bir Lend Spoke üzerinden her zincirin Avana Stable LP Hub'ına üst sınırlı bir GHO kredi hattı sağlar. Lansmanda kamuya açık yatırmalar açık değildir.\n\nHer CDP Spoke'un bir varlıktaki çekme üst sınırı Aave DAO tarafından belirlenir ve çekme üst sınırlarının toplamı en fazla kredi hattı kadardır."
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "Tedarikçi verimi nereden geliyor?",
-          "a": "Lend Spoke aracılığıyla borç verenler, LP destekli borçluların ödediği faizi kazanır. Avana Labs, borç verenlerce fonlanan likidite üzerinden bir protokol payı alır. Aave DAO kredi hatlarındaki faiz yine DAO'ya gider.\n\nBorçlular, Avana Hub baz oranına ek olarak teminatlarına dayalı bir risk primi öder. Baz oran, Aave Core Hub baz oranına eşit veya daha yüksek belirlenir. Borç verenler için kesin koşulları Aave yönetişimi belirler."
+          "a": "Borçlular Hub'ın taban oranını artı risk primlerini öder. Avana Hub'ının GHO oranı sabittir, kullanımdan bağımsızdır ve Aave DAO tarafından Core Hub GHO taban oranına eşit veya onun üzerinde belirlenir.\n\nAave DAO tarafından fonlanan kredi hatlarındaki tüm faiz Aave DAO'ya gider. Avana borç faizinden ücret almaz."
         },
         {
           "id": "do-lenders-manage-lp-collateral",
-          "q": "Kredi verenler teminatı kendileri mi yönetir?",
-          "a": "Hayır. Borç verenler Avana Hub'a varlık sağlar. LP aralıklarını seçmez veya tasfiyeyi yürütmezler. Teminat değerlemesini, sağlık kontrollerini ve likidasyonu Borrow Spoke'lar, LP Vault ve LPVaultSwap yürütür.\n\nAave yönetişimi Lend Spoke'u ayrıca onaylar."
+          "q": "Arz sağlayıcılar LP teminatını kendileri mi yönetir?",
+          "a": "Hayır. Arz sağlayıcılar aralık seçmez veya uzlaşmayı yürütmez. Değerleme, sağlık kontrolleri ve likidasyonu CDP Spoke'lar, Avana'nın saklama sözleşmeleri ve LPVaultSwap yürütür."
         },
         {
           "id": "what-protects-lender-capital",
           "q": "Borç verici sermayesini ne korur?",
-          "a": "Aave DAO'nun tek maruziyeti üst sınırı olan GHO kredi hattıdır ve her artış yönetişim onayı gerektirir. Korumalar arasında pilot dönemde izin listesindeki yatıranlar, piyasa başına üst sınırlar, havuz riski için düşürülmüş teminat faktörleri, TWAP kontrollü Chainlink fiyatları ve tek bir işlemde tamamlanan likidasyonlar yer alır.\n\nBir likidasyon teminatı tüketir ve borç kalırsa zararlar sırasıyla karşılanır: önce özel ilk zarar sermayesi, ardından zarar karşılamaya ayrılmış gelirler, ardından Avana Umbrella. Akıllı sözleşme, oracle ve likidasyon yürütme riskleri devam eder. Avana'nın sözleşmeleri iç güvenlik incelemesindedir ve bunu bağımsız kamu denetimleri izler."
+          "a": "En fazla %40 havuz risk faktörüyle piyasa başına Teminat Faktörleri, Hub başına piyasa, token ve yatırıcı üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında izinsiz likidasyon ve her borçlanmanın tek bir işlemde likide edilebilmesi için zincirin flash likiditesi içinde kalan çekme üst sınırları.\n\nBir likidasyon teminatsız borç bırakırsa açık, o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından 72 saat içinde karşılanır. Rezervden büyük bir açık, Aave DAO tarafından gerçekleştirilen ve o Hub varlığının arz sağlayıcılarına ait bir kayıptır."
         }
       ]
     },
     {
       "id": "liquidations",
-      "name": "Sağlık ve likidasyon",
+      "name": "Sağlık ve Tasfiye",
       "summary": "",
       "questions": [
         {
           "id": "what-is-health-factor",
           "q": "Sağlık faktörü nedir?",
-          "a": "Sağlık faktörü, teminatınızın borçlanma değerini (değer × teminat faktörü) borcunuzla karşılaştırır. 1'in üzerinde hesap sağlıklıdır. 1'in altında likide edilebilir.\n\nAçıklama amaçlı bir örnekte, %35 teminat faktörüne sahip $100,000 değerinde bir WETH/USDC pozisyonu karşılığında 25,000 GHO borç almak 1.40 başlangıç sağlık faktörü verir. Arayüz, yeni borçlanmayı 1.10 açılış sağlık faktöründe sınırlar."
+          "a": "Sağlık faktörü = teminat değeri × Teminat Faktörü ÷ borç değeri; Aave tarafından hesap başına, yani piyasa başına hesaplanır. 1'in altında hesap likide edilebilir.\n\nÖrnek değerler: 4,999.50 USDC borca karşı $6,240 ağırlıklı teminat 1.2481 sağlık faktörü verir."
         },
         {
           "id": "what-affects-health-factor",
           "q": "Sağlık faktörümü ne etkiler?",
-          "a": "Sağlık faktörü; teminat değeri, borç veya piyasa parametreleri değiştiğinde değişir. LP pozisyonlarının değeri token fiyatları hareket ettikçe değişir; Uniswap v3 pozisyonlarının bileşimi de aralıkları içinde kayar. Faiz, borcu zamanla artırır.\n\nDaha fazla borç almak sağlık faktörünüzü düşürür. Borcu geri ödemek veya onaylı teminat eklemek onu yükseltir."
+          "a": "Teminat fiyatları, pozisyonun aralığı içindeki bileşimi, borcunuzun faizi, borç varlığı fiyatları ve Teminat Faktöründeki yönetişim değişiklikleri. Bir piyasanın offboarding'i sırasında likidasyon eşiği 30 gün boyunca günde bir kez düşer.\n\nGeri ödeme, ek teminat sağlama veya teminatla geri ödeme onu yükseltir. Borç alma, çekme veya likidite kaldırma onu düşürür."
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Avana'de tasfiye nasıl çalışır?",
-          "a": "Bir hesabın sağlık faktörü 1'in altına düştüğünde hesap likide edilebilir. LPVaultSwap tek bir işlemde bir flash loan alır, borcu geri öder ve borcun arkasındaki LP teminatını tasfiye eder. Her piyasanın onaylı bir tasfiye modu vardır.\n\nKısmi tasfiye, Uniswap v2'yi ve seçili Aerodrome veya Uniswap v3 piyasalarını kapsar. Aave V4'ün standart likidasyonunu kullanır. Normalde yalnızca sağlığı geri kazandırmak için gereken likidite çekilir ve geri kalanı sizde kalır. Tam pozisyon tasfiyesi, NFT kullanan AMM'lerin çoğunu kapsar. Pozisyonun tamamını tasfiye eder ve borç, ücretler ve maliyetlerden sonra kalan fazla tutarı borçluya iade eder."
+          "a": "Bir hesabın sağlık faktörü 1'in altında olduğunda bir likidatör LPVaultSwap'i çağırır. LPVaultSwap tek bir işlemde borç varlığını zincirin Aave V3 Pool'undan flash ile borç alır, borcun bir kısmını geri ödemek ve vault token'ları artı bonusu almak için Aave'nin liquidationCall'unu çağırır, eşleşen likiditeyi çözer, token'ları sabit rotalar üzerinden borç varlığına swap eder ve flash loan'ı geri öder.\n\nHer likidasyon kısmidir ve Aave'nin kurallarına göre boyutlandırılır. Geri kazanılan tutar oracle'dan türetilen bir tabana ulaşmalıdır. Borcun üzerindeki gelirler Avana'nın ücretini, likidatörün ödülünü ve varsa borçlu fazlasını öder."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Sağlıksız bir pozisyonu kim tasfiye edebilir?",
-          "a": "LPVaultSwap'i yalnızca onaylı keeper'lar çağırabilir ve likidasyon yapan tek sözleşme LPVaultSwap'tir. Keeper'ları en az iki operatör çalıştırır: Avana Labs ve en az bir bağımsız operatör.\n\nLikidasyonların üçüncü taraf likidatörlere açılması yönetişim onayı gerektirir."
+          "a": "Avana Labs onaylı bir keeper çalıştırır. Herkes ayrıca liquidatePermissionless'ı çağırabilir; bu, önce birincil sonra yedek swap rotalarını kullanır ve herhangi bir eksikliği çağıranın belirlediği bir sınıra kadar çağırana ödetir.\n\nHerkes ayrıca tamamlanmamış bir el koymadan kalan vault token'ları uzlaştırmak için settlePending'i çağırabilir; gelirler Avana Umbrella'ya gider ve çağıran hiçbir şey almaz."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Tasfiye sırasında hangi ücretler uygulanır?",
-          "a": "Kısmi tasfiye piyasalarında Aave V4 likidasyon bonusu keeper ödülünü, yürütme maliyetlerini ve Avana'nın üst sınırlı likidasyon ücretini öder. Bu nedenle ücret borçlunun maliyetine eklenmez. Pozisyonun çekilmeyen kısmı sizde kalır.\n\nTam pozisyon piyasalarında keeper ödülü, maliyetler ve Avana'nın ücreti, piyasa başına borcun maksimum bir yüzdesine kadar tasfiye gelirlerinden düşülür. Kalan fazla tutar borçluya iade edilir."
+          "a": "Avana'nın ücreti oracle kazancının (oracle fiyatlarıyla geri kazanılan değer eksi geri ödenen borç ve flash primi) %20'sidir ve likidasyonun fiilen gerçekleştirdiği tutarla sınırlıdır. Likidatör oracle kazancının geri kalanını alır. Oracle değerinin üzerindeki geri kazanım borçluya gider.\n\nToplanmamış LP ücretleriniz asla alınmaz. Teminatla geri ödeme bonus ve Avana ücreti ödemez, yalnızca flash primini öder."
+        },
+        {
+          "id": "what-if-liquidation-cannot-run",
+          "q": "Bir likidasyonu ne durdurabilir?",
+          "a": "Duraklatmalar, dondurmalar ve devre kesiciler likidasyonu asla durdurmaz. Bir likidasyon kullanılabilir bir fiyat gerektirir: Cached veya Expired fiyatlar onu engeller ve bir fiyat kurtarmasından veya bir Base sequencer yeniden başlatmasından sonraki 30 dakika boyunca yalnızca sağlık faktörü 0.95'in altındaki hesaplar likide edilebilir.\n\nSwap rotaları kurtarma tabanına ulaşamazsa ve çağıran eksikliği karşılamazsa bir likidasyon ayrıca geri döner. Aave tarafındaki bir rezerv duraklatması da onu engelleyebilir."
         }
       ]
     },
@@ -226,23 +246,23 @@
       "questions": [
         {
           "id": "how-are-new-pools-added",
-          "q": "Yeni LP havuzlar nasıl eklenir?",
-          "a": "Avana Labs yeni piyasaları ve parametreleri sunar, belirlenmiş bir risk incelemecisi bunları inceler. Her yeni teminat havuzu, listeleme onayından önce iki haftalık bir inceleme için yayımlanır.\n\nBir havuz için güvenilir harici fiyatlama, yeterli likidite geçmişi, stres altında likidasyon gelirlerini geri kazanmanın bir yolu ve likidite çekme üzerinde kısıtlama olmaması gerekir. Uniswap v2 ve v3 dışındaki her AMM kendi incelemesini ve Aave yönetişim onayını gerektirir."
+          "q": "Yeni LP piyasaları nasıl eklenir?",
+          "a": "Avana Labs, belirlenmiş bir risk incelemecisi tarafından değerlendirilmek üzere piyasalar ve parametreler önerir. Her piyasa, Aave DAO'nun Teminat Faktörü, bonus ve üst sınırlar için listeleme yüküyle birlikte zincirin AvanaTimelock'u üzerinden normal gecikmeyle, yani zincir üstünde uygulanan beş günlük kamuya açık bir incelemeyle listelenir.\n\nBir havuz güvenilir dış fiyatlama, yeterli likidite geçmişi, stres altında likidasyon gelirlerini geri kazanabilen rotalar ve likidite kaldırmada kısıtlama olmamasını gerektirir."
         },
         {
           "id": "can-risk-parameters-change",
           "q": "Risk parametreleri zamanla değişebilir mi?",
-          "a": "Evet. Risk parametreleri piyasa koşulları değiştikçe değişir. Bir havuz, ilk listelendiği zamana göre daha az likit, daha volatil, daha az korelasyonlu veya çözülmesi daha zor hale gelebilir.\n\nGüncellemeler teminat faktörlerini, üst sınırları, desteklenen havuzları, duraklatmaları, likidasyon parametrelerini ve tasfiye modlarını etkileyebilir. Aave DAO, Hub'ın ve Spoke'ların sahibidir ve Avana Labs olmadan piyasaları duraklatabilir veya dondurabilir. Avana'nın sözleşmelerine yönelik yükseltmeler Avana Labs'in atlayamayacağı bir zaman kilidinden geçer ve DAO bunları iptal edebilir."
+          "a": "Evet, AvanaTimelock üzerinden. Riski gevşeten değişiklikler normal 5 günlük gecikmeyi bekler ve sınırlıdır: gecikme başına bir USD üst sınırı en fazla %50 ve bir kayma payı en fazla 25 bps artabilir. Yalnızca riski azaltan değişiklikler 12 saatlik kısa gecikmeyi kullanabilir.\n\nEmergency Guardian ve Aave Protocol Guardian bir Hub'ı anında duraklatabilir veya dondurabilir, bir adresi dondurabilir, bir devre kesiciyi tetikleyebilir veya yedek bir fiyat rotasına geçebilir, ancak sözleşmeleri yükseltemez, parametreleri değiştiremez veya fon taşıyamaz. Aave DAO da Avana rezervlerini Aave tarafında dondurabilir veya duraklatabilir."
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "Yönetim tartışmalarını nereden takip edebilirim?",
-          "a": "Avana, Aave yönetişim forumunda (governance.aave.com) tartışılır ve ardından Snapshot oylamasına sunulur. Ethereum dağıtımı ve GHO fonlaması, AIP'lerden önce her biri ayrı bir forum incelemesinden ve kendi Snapshot oylamasından geçer.\n\nAvana Labs ayrıca https://twitter.com/avana_labs adresinden X üzerinde güncellemeler paylaşır."
+          "a": "Avana, Aave yönetişim forumunda (governance.aave.com) tartışılır. ARFC bir Snapshot oylamasına gider, ardından bir dağıtım ARFC'si ve bir fonlama ARFC'si, sonra AIP'ler gelir.\n\nAvana Labs ayrıca X'te https://twitter.com/avana_labs adresinden güncellemeler paylaşır."
         },
         {
           "id": "can-interface-fees-change",
-          "q": "Arayüz ücretleri zamanla değişebilir mi?",
-          "a": "Avana Labs, resmi arayüzde bir arayüz ücreti ve bir likidasyon ücreti kazanır. Kesin tutarları Aave yönetişimi belirler ve sonraki değişiklikleri onaylar. Sözleşmeleri doğrudan çağırarak arayüz ücretinden kaçınabilirsiniz.\n\nAave DAO'nun GHO kredi hattındaki faiz Avana Labs'e değil, DAO'ya gider."
+          "q": "Avana Labs nasıl gelir elde eder?",
+          "a": "Avana Labs her likidasyonda oracle kazancının %20'sini kazanır; bu oran avanaFeeShareBps ile belirlenir ve yalnızca timelock üzerinden değiştirilir. Ayrıca uygulamasının sözleşmeler dışında aldığı bir uygulama ücreti kazanır. Hiçbir sözleşme uygulama ücretini hesaplamaz veya uygulamaz, bu nedenle sözleşmeleri doğrudan çağırmak bu ücreti ödemez.\n\nAvana borç faizinden ücret almaz. Aave DAO'nun kredi hatlarındaki faiz DAO'ya gider."
         }
       ]
     },
@@ -254,17 +274,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Avana aracılığıyla GHO ödünç alabilir miyim?",
-          "a": "Evet. Borç alınabilen tek varlık GHO'dur. GHO'yu, Aave DAO tarafından GHO Reserve aracılığıyla tahsis edilen ve üst sınırı olan bir GHO kredi hattını tutan Avana Hub'dan borç alırsınız.\n\nGHO borcu sağlık faktörünüzü etkiler ve Avana Hub baz oranı artı risk priminiz üzerinden faiz işletir. Kredi hattına atfedilebilen tüm faiz geliri Aave DAO'ya gider."
+          "a": "Evet. GHO her CDP Spoke'taki ilk borç varlığıdır ve Aave DAO'nun Avana Stable LP Hub'ına sağladığı üst sınırlı kredi hattıyla fonlanır. GHO borcu sabit $1 olarak fiyatlanır.\n\nGHO borcu Hub'ın GHO oranı artı risk priminizle faiz biriktirir. Bu faizin tamamı Aave DAO'ya gider."
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "GHO, LP teminatının bir parçası olabilir mi?",
-          "a": "Hayır. Aday havuzlar USDC/USDT, wstETH/WETH ve WETH/USDC'dir ve hâlâ değerlendirilmektedir.\n\nGHO içeren bir havuz daha sonra, diğer tüm yeni havuzlarla aynı inceleme ve yönetişim süreciyle eklenebilir."
+          "a": "Evet. GHO içeren bir stablecoin havuzu listelenebilir. GHO ayağı, bir Aave V4 Core Hub faktörü yerine listelemede belirlenen açık bir Teminat Faktörü kullanır."
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "GHO borcunu nasıl öderim?",
-          "a": "Piyasa duraklatılmadığı sürece GHO'yu ve tahakkuk etmiş faizi istediğiniz zaman geri ödeyebilirsiniz. Geri ödemeyi Aave Adapter üzerinden veya sözleşmeleri doğrudan çağırarak yaparsınız. Geri ödeme borcunuzu azaltır ve sağlık faktörünüzü yükseltir.\n\nTam geri ödemeden sonra pozisyonu çekebilirsiniz. Ardından LP Vault, LP token'larınızı veya NFT'nizi toplanmamış ücretlerle birlikte serbest bırakır."
+          "a": "AaveAdapter üzerinde repay'i çağırın veya herhangi birinin sizin adınıza geri ödeme yapmasını sağlayın. Dahil edilme anında borcun tamamını geri ödemek için repayAll'u ayarlayın; harcama üst sınırınıza kadar kullanılmayan tutar iade edilir. Hiçbir Avana duraklatması, devre kesicisi, dondurması, fiyatı veya sequencer durumu geri ödemeyi engellemez; yalnızca Aave tarafındaki bir rezerv duraklatması engelleyebilir.\n\nTeminatla da geri ödeme yapabilirsiniz: LPVaultSwap borç varlığını flash ile borç alır, borcu geri öder, pozisyonunuzun bir kısmını çözer ve krediyi karşılamak için swap eder. Tam geri ödemeden sonra pozisyonu çekebilirsiniz."
         }
       ]
     },
@@ -276,7 +296,7 @@
         {
           "id": "what-is-avana-multiply",
           "q": "Avana Çarpma nedir?",
-          "a": "Multiply, Avana'nın app.avana.cc adresindeki herkese açık sandbox'ında yer alan bir akıştır. Tek bir iş akışında LP teminatı karşılığında borç alır ve maruziyeti artırmak için borç alınan fonları yeniden yatırır. Sandbox simüle edilmiş varlıklar kullanır ve zincir üstü işlem yapmaz.\n\nMultiply, Uniswap v2 ve v3 pozisyonları karşılığında GHO borçlanmayı kapsayan Avana'nın Aave V4 piyasalarının bir parçası değildir."
+          "a": "Multiply, Avana'nın app.avana.cc adresindeki herkese açık sandbox'ında bulunan bir akıştır. Tek bir iş akışında LP teminatına karşı borç alır ve maruziyeti artırmak için borç alınan fonları yeniden yatırır. Sandbox simüle edilmiş varlıklar kullanır ve zincir üstü işlem yapmaz.\n\nMultiply, Ethereum'da Uniswap v3 pozisyonlarına ve Base'de Aerodrome Slipstream pozisyonlarına karşı borçlanmayı kapsayan Avana'nın Aave V4 piyasalarının bir parçası değildir."
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
@@ -303,17 +323,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "Otomasyon, pozisyon riskini yönetmeye yardımcı olabilir mi?",
-          "a": "Sandbox, hesap sağlığını izleyen ve likidasyondan önce geri ödeme veya kaldıraç azaltma gibi işlemleri tetikleyen otomasyonun önizlemesini sunar. Otomasyon, Avana'nın Aave V4 piyasalarının bir parçası değildir.\n\nOtomasyon bir garanti değil, bir risk yönetimi aracıdır. Piyasa hareketleri, likidite koşulları, işlem gecikmeleri, oracle güncellemeleri ve rota kullanılabilirliği yürütmeyi yine de etkileyebilir."
+          "a": "Sandbox, hesap sağlığını izleyen ve likidasyondan önce geri ödeme veya kaldıraç azaltma gibi eylemleri tetikleyen otomasyonun önizlemesini sunar. Otomasyon Avana'nın Aave V4 piyasalarının bir parçası değildir, ancak geri ödeme ve teminatla geri ödeme, işlemi göndermesi için yetkilendirdiğiniz herhangi bir hizmet tarafından çağrılabilir.\n\nOtomasyon bir garanti değil, bir risk yönetimi aracıdır. Piyasa hareketleri, likidite koşulları, işlem gecikmeleri, oracle güncellemeleri ve rota kullanılabilirliği yürütmeyi yine de etkileyebilir."
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "⊟31⊟ teminat, suçlular tarzı maruziyeti destekleyebilir mi?",
-          "a": "Hayır. Avana, Ethereum üzerindeki onaylı Uniswap v2 ve v3 pozisyonları karşılığında GHO borçlanmayı kapsar.\n\nBorç aldığınız GHO'yu nasıl kullanacağınıza siz karar verirsiniz, ancak Avana LP destekli krediyi perp'lere veya diğer stratejilere yönlendirmez."
+          "a": "Hayır. Avana, Ethereum'da onaylı Uniswap v3 pozisyonlarına ve Base'de Aerodrome Slipstream pozisyonlarına karşı borçlanmayı kapsar.\n\nBorç aldığınız varlıkları nasıl kullanacağınıza siz karar verirsiniz, ancak Avana LP destekli krediyi perp'lere veya başka stratejilere yönlendirmez."
         },
         {
           "id": "what-users-monitor",
           "q": "Kullanıcılar bir pozisyon açtıktan sonra neyi izler?",
-          "a": "Borçlular sağlık faktörünü, borcu, teminat değerini, borçlanma oranını, Uniswap v3 aralık durumunu ve likidasyona olan mesafeyi izler. Sandbox'taki Multiply akışında kaldıraç seviyesini ve pozisyon çözme kontrollerini de görürler.\n\nAvana arayüzü bu değerleri gösterir. Bir pozisyonun ne zaman sağlıklı olduğunu, ne zaman dikkat gerektirdiğini ve ne zaman likidasyona yaklaştığını görebilirsiniz."
+          "a": "Borçlular sağlık faktörünü, borcu, teminat değerini, borçlanma oranını, aralık durumunu, piyasanın fiyat durumunu ve likidasyona olan mesafeyi izler. Lens, önerilen ve azami borç tutarları ile üst sınır boşluğu dahil bu değerleri sunar.\n\nSandbox Multiply akışında kullanıcılar ayrıca kaldıraç seviyesini ve çözme kontrollerini görür."
         }
       ]
     }

@@ -200,8 +200,8 @@
       "面向 AMM 流动性的借贷市场。",
       "Avana 关于页主视觉",
       "Avana 是 Aave V4 上面向 AMM 流动性的借贷市场。我们的使命是让 AMM 流动性仓位能够在整个 DeFi 中用作抵押品。",
-      "主要 AMM 持有数十亿规模的流动性，但 LP 仓位大多仍被视为被动持有的资产，而非能发挥作用的抵押品。Avana 从 Ethereum 上部分 Uniswap v2 和 v3 仓位起步。",
-      "将 LP 仓位用作抵押品，远不止上架 LP 代币那么简单。Avana 的 LP Vault 持有每个已质押的仓位，并在 Aave V4 上以 1:1 的 vault token 代表它。借款人通过面向稳定、相关性和蓝筹/稳定 LP 市场的 Borrow Spoke，从 Avana Hub 借入 GHO。Hub 和 Spoke 是由 Aave DAO 拥有的标准 Aave V4 合约。Avana Lend Spoke 让出借人可以直接向 Avana Hub 供应资产。",
+      "主要 AMM 持有数十亿美元的流动性，但 LP 仓位大多仍被视为被动持有的资产，而非可产生效益的抵押品。Avana 从 Ethereum 上的 Uniswap v3 仓位和 Base 上的 Aerodrome Slipstream 仓位开始。",
+      "将 LP 仓位用作抵押品，不仅仅是上架 LP 代币。Avana 的 LP Vault 持有每个被质押的仓位，并在 Aave V4 上以对应市场的 vault token 表示它。借款人通过每个 AMM 对应的 CDP Spoke，从 Avana Stable LP Hub 借入 GHO 以及已启用的其他债务资产。Hub 和 Spoke 是由 Aave DAO 拥有的标准 Aave V4 合约，Aave DAO 通过 Avana Lend Spoke 上的 GHO 信用额度为 Hub 提供资金。",
       "智能合约只是工作的一部分。仓位必须在其池中保持活跃。其价值必须随条件变化而计量。市场必须有足够的流动性来支撑贷款。Avana 将这些工作分配给四个团队，每个团队负责风险的不同部分。",
       "每个领域都有专门的负责人：技术执行、运营、市场建模和抵押品审查。",
       "我们是一支小团队，正在解决一个重大问题。如果您想加入这项研究工作，"

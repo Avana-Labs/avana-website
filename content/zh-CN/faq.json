@@ -8,27 +8,32 @@
         {
           "id": "what-is-avana",
           "q": "什么是 Avana？",
-          "a": "Avana 让流动性提供者能够在 Aave V4 上将 AMM 仓位用作抵押品。借款人将 Uniswap v2 LP 代币或 Uniswap v3 仓位质押到 Avana 的 LP Vault，然后通过 Avana Borrow Spoke 从 Avana Hub 借入 GHO，而流动性仍留在池中。\n\nAvana 运行在 Ethereum 主网上。Avana Hub 和 Borrow Spoke 是由 Aave DAO 拥有的标准 Aave V4 合约。"
+          "a": "Avana 让流动性提供者能够在 Aave V4 上将 AMM 仓位用作抵押品。借款人质押 Ethereum 上的 Uniswap v3 仓位或 Base 上的 Aerodrome Slipstream 仓位。Avana 的 LPVault 持有该仓位，相应的 vault token 作为抵押品供应到 Avana CDP Spoke 上。借款人随后借入 GHO 或该 Spoke 出借的其他债务资产，而流动性仍留在池中。\n\nAvana 在 Ethereum 和 Base 上线，每条链上都有一个 Avana Stable LP Hub。Hub 和 Spoke 是由 Aave DAO 拥有和配置的标准、未经修改的 Aave V4 合约。Avana 自己的合约负责托管、估值、借款人操作和清算。"
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Avana 解决什么问题？",
-          "a": "流动性提供者通常必须先移除流动性，才能以其资本借款。为此，他们需要退出池，放弃手续费收入和所选区间。\n\nAvana 让受支持的 LP 仓位可用作抵押品。仓位留在池中。Avana 的 LPOracle 对其估值，Aave V4 将其记录为与底层流动性 1:1 对应的 vault token。对 LP 而言，好处在于资本灵活性，而非保证正收益。借款人仍需承担无常损失、价格风险和清算风险。"
+          "a": "流动性提供者通常必须先移除流动性，才能以其借款。这意味着要退出池，放弃手续费收入和所选区间。\n\nAvana 让受支持的 LP 仓位在留在池中的同时可用作抵押品。LPOracle 根据每个仓位的代币数量按预言机价格对其估值，Aave V4 将其记录为 vault token。对 LP 而言，好处在于资本灵活性，而非保证收益。借款人仍需承担无常损失、价格风险和清算风险。"
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Avana 与标准借贷市场有何不同？",
-          "a": "标准借贷市场通常将抵押品视为简单的代币余额，例如 ETH、BTC、稳定币或其他 ERC-20 资产。Avana 专为会随时间变化的抵押品而构建。LP 仓位包含两种资产并赚取手续费。其构成随价格变动而变化，可能超出区间，并且需要特定路径才能平仓。\n\n因此，Avana 按市场设定风险。每个获批的池（以及相关时的区间）都有自己的 vault token、抵押系数、上限和结算模式。抵押系数以两种池代币中较低的抵押系数为起点，再根据池特定风险下调。"
+          "a": "标准借贷市场将抵押品视为代币余额。LP 仓位持有多种代币、赚取手续费、构成随价格变动而变化、可能超出区间，并且需要特定路径才能解除。\n\n因此，Avana 按市场设定风险。一个市场是一个 CDP Spoke 上的一个池和一个确切的 tick 区间，拥有其自己的 vault token、抵押系数、上限、价格路径和兑换路径。每个钱包在每个市场都有一个独立账户，因此一个市场的抵押品绝不会支撑另一个市场的债务。"
         },
         {
           "id": "which-amms-can-avana-support",
           "q": "Avana 支持哪些 AMM？",
-          "a": "Avana 支持 Ethereum 主网上部分 Uniswap v2 LP 代币和 Uniswap v3 仓位。对于 Uniswap v3，仅接受全区间仓位和经专门批准的区间。\n\n添加 Uniswap v4、Curve、Balancer、Aerodrome、其他 AMM 或 Base 等其他链，均需要单独的技术和风险审查，并经 Aave 治理批准。池会逐个审批。Avana 排除 meme 代币池、缺乏足够流动性历史或可靠外部定价的池，以及流动性移除可能受限的池。"
+          "a": "上线时，Avana 支持 Ethereum 上的 Uniswap v3 仓位和 Base 上的 Aerodrome Slipstream 仓位。Slipstream 仓位必须先解除 gauge 质押；在 gauge 中质押的仓位无法被质押为抵押品。每个市场只接受一个确切的 tick 区间，任何其他区间的仓位都会被拒绝。\n\nAvana 的核心对 AMM 保持中立。Uniswap v2、Curve StableSwap-NG、Balancer 和 Uniswap v4 的集成已有规范，但每一项都只有在其就绪检查通过并经治理批准后才会上架。包含转账收费、rebase 或 hook 代币的池被排除在外。"
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "Avana 会取代我流动性所在的 AMM 吗？",
-          "a": "否。AMM 仍负责兑换、池状态、价格变动和手续费产生。Avana 在受支持的 LP 仓位外围增加了一个抵押层。\n\n当您质押符合条件的仓位时，Avana 的 LP Vault 会持有该仓位，Avana 会为 Aave V4 铸造相应的 vault token。流动性仍留在 AMM 池中，并在处于区间内时持续赚取手续费。"
+          "a": "否。AMM 仍负责兑换、池状态、价格变动和手续费产生。Avana 在受支持的仓位外围增加了一个抵押层。\n\n当您质押仓位时，该 AMM 的 LPVault 持有该 NFT，Avana 铸造与该仓位流动性等量的 vault token。流动性仍留在池中，并在处于区间内时持续赚取手续费。您可以随时领取这些手续费。"
+        },
+        {
+          "id": "is-avana-live",
+          "q": "Avana 已部署了吗？",
+          "a": "尚未部署。Avana 的规范和合约接口已经完成，并经过了内部审查和形式化建模。接下来将编写合约代码，随后对每个合约进行独立审计，并由 Aave DAO 投票批准部署和注资。\n\n合约部署后，合约地址将在开发者文档的合约页面中列出。app.avana.cc 上的公共沙盒使用模拟资产。"
         }
       ]
     },
@@ -40,59 +45,64 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Avana 在高层次上如何运作？",
-          "a": "Avana 的运作分为三步。第一步，您将受支持的 LP 仓位质押到 LP Vault。第二步，Avana 的 Risk Module 检查池、费率档位、区间、预言机可用性和上限。随后 Aave Adapter 铸造相应的 vault token，并将其存入该市场的 Avana Borrow Spoke。第三步，您在借款额度内从 Avana Hub 借入 GHO。\n\nLP 仓位仍留在 AMM 中。Avana 自己的合约负责托管、估值和结算。Avana Hub 和 Borrow Spoke 是由 Aave DAO 拥有的标准、未经修改的 Aave V4 合约。"
+          "a": "您通过 AaveAdapter 质押受支持的仓位。LPVault 托管该 NFT，Collateralization 记录其所支撑的流动性数量，AaveAdapter 向您在该市场的 PositionProxy 铸造相同数量的 vault token。代理将其作为抵押品供应到该市场的 CDP Spoke 上。然后您通过 AaveAdapter 借款，AaveAdapter 会检查价格、上限和您的健康因子。\n\n还款、提取、部分流动性移除、以抵押品还款和手续费领取也都通过 AaveAdapter 进行。清算通过 LPVaultSwap 进行。对 Avana 合约的每次升级或参数变更都要经过该链的 AvanaTimelock。"
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Avana 为什么使用 Aave V4 的 Hub-and-Spoke 基础设施？",
-          "a": "Avana 使用 Aave V4，因为它将共享流动性与特定市场的风险设置分离开来。Avana Hub 持有由 Aave DAO 分配的有上限 GHO 信用额度。只有经批准的 Borrow Spoke 才能从中动用资金。\n\n每个 Borrow Spoke 覆盖一个市场类别，并有自己的参数和上限：稳定 LP（候选为 USDC/USDT）、相关性 LP（候选为 wstETH/WETH）和蓝筹/稳定 LP（候选为 WETH/USDC）。候选池仍在评估中。Avana 不会分叉或修改 Aave V4 代码。所有 Avana 特有的逻辑都位于 Avana 自己的合约中。"
+          "q": "Avana 为什么使用 Aave V4 的 Hub 和 Spoke？",
+          "a": "Aave V4 将共享流动性（Hub）与特定市场的风险设置（Spoke）分开。每条链都有一个 Avana Stable LP Hub。Aave DAO 通过一个仅供应的 Lend Spoke 向其提供有上限的 GHO 信用额度，且只有 Avana 的 CDP Spoke 可以从中提取。\n\n每条链、每个 Hub、每个 AMM 协议和每个风险层级对应一个 CDP Spoke。上线时分别是 Ethereum 上的 \"Uniswap v3 Stable\" 和 Base 上的 \"Aerodrome Slipstream Stable\"。Correlated LP Hub 和 Volatile LP Hub 留待以后推出。Avana 不分叉也不修改 Aave V4。"
         },
         {
           "id": "what-is-a-borrow-spoke",
-          "q": "什么是 Borrow Spoke？",
-          "a": "Borrow Spoke 是由 Aave DAO 拥有的标准 Aave V4 Spoke。它接受 Avana vault token 作为抵押品，并允许借款人从 Avana Hub 借入 GHO。它为其市场应用抵押系数、抵押风险和清算参数。\n\nAvana 使用多个独立的 Borrow Spoke，因为不同 LP 仓位的表现并不相同。稳定币交易对、wstETH/WETH 等相关性交易对，以及 WETH/USDC 等蓝筹/稳定币交易对，需要不同的抵押系数、上限和结算设置。"
+          "q": "什么是 CDP Spoke？",
+          "a": "CDP Spoke 是由 Aave DAO 拥有的标准 Aave V4 Spoke。它为每个 Avana 市场持有一个仅作抵押的 vault-token 储备，以及为其启用的债务储备（首先是 GHO）。它应用每个市场的抵押系数、清算奖励和上限。\n\n每个 vault-token 储备都使用三项必需设置：禁用接收份额、Aave 清算费为 0（或支付给 Avana 的手续费接收方），以及不设再投资控制器。这些设置与 vault token 的转账规则一起，使 LPVaultSwap 成为唯一能够接收被扣押抵押品的合约。"
         },
         {
           "id": "what-are-vault-tokens",
           "q": "什么是 Avana vault 代币？",
-          "a": "vault token 是仅用于抵押的 ERC-20 代币，在 Aave V4 上代表已质押的 LP 仓位。每个获批的池（以及相关时的区间）都有自己的 vault token。您质押仓位时，Avana 按与底层流动性 1:1 的比例铸造 vault token，并在提取或结算时将其销毁。vault token 没有发行计划、没有排放，也没有兑换率。\n\nvault token 不是用户资产，也没有二级市场。它们只在 Avana Hub、Borrow Spoke、Position Proxy、Aave Adapter 和 LPVaultSwap 之间转移。每个流通中的 vault token 都由 LP Vault 中持有的流动性支持。"
+          "a": "Vault token 是仅作抵押的 ERC-20 代币，每个市场一种。一个基本单位等于一个单位的已记入流动性。小数位在上架时按市场固定在 6 到 18 之间。只有 AaveAdapter 可以铸造和销毁它们，它们只能在已注册的 PositionProxy、CDP Spoke 和 LPVaultSwap 之间移动。\n\nVault token 没有二级市场、没有排放，也没有兑换率。其供应量绝不会超过 Collateralization 已记入的流动性加上任何待结算的单位。"
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Avana 协议的主要组成部分有哪些？",
-          "a": "LP Vault 持有已质押的 LP 代币和 NFT，并记录每个仓位的所有者、池、代币对、费率档位、区间和状态。Risk Module 检查池资格、试点许可名单、仓位规模限制和敞口上限。Collateralization Module 按与流动性 1:1 的比例铸造 vault token。LPOracle 根据 Chainlink 为 vault token 定价，并以池的 TWAP 作为第二重校验。\n\nAave Adapter 是借款人的入口。它通过为每个借款人专设的 Position Proxy 处理存入、借款、还款和提取。LPVaultSwap 使用闪电贷执行清算，AMM 结算适配器负责移除流动性和领取手续费。可升级的 Avana 合约受 Avana Labs 无法绕过的时间锁约束。Aave DAO 持有暂停和冻结权限。"
+          "a": "托管：每条链上每个 AMM 协议一个不可变的 LPVault，以及 Collateralization 账本。账户与代币：VaultToken 和 VaultTokenFactory、PositionProxy 和 ProxyManager。策略：AaveAdapter（借款人入口）、RiskModule（检查）、MarketRegistry（市场、路径、暂停状态、熔断器）和 ParameterStore（风险参数）。\n\n预言机：每个市场一个 LPOracle，每种非 GHO 债务资产一个 DebtOracle。清算：LPVaultSwap、兑换路径合约、基于 Aave V3 Pool 的闪电贷来源以及 InKindEscrow。基础设施：AvanaTimelock、Lock 和只读的 Lens。开发者部分在其合约页面中列出了每个合约。"
         }
       ]
     },
     {
       "id": "lp-collateral",
-      "name": "LP 抵押品",
+      "name": "有限合伙人抵押品",
       "summary": "",
       "questions": [
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "存入 LP 抵押时会发生什么？",
-          "a": "当您质押受支持的 LP 仓位时，Aave Adapter 会将其存入 LP Vault。随后 Risk Module 检查池、费率档位、区间、预言机可用性和上限。试点期间，只有许可名单内的存款人才能质押，且每个市场都有最小和最大仓位规模。\n\n检查通过后，Avana 会铸造相应的 vault token，并通过您的 Position Proxy 将其作为抵押品存入 Borrow Spoke。质押本身不会借入任何资产。它创造借款额度，只要账户保持健康且有可用的 GHO 流动性，您就可以使用这些额度。"
+          "a": "您授权 LPVault 使用您仓位的 NFT，并在 AaveAdapter 上调用 pledge。LPVault 检查该仓位是否与市场的池和确切区间匹配，并进行托管。RiskModule 检查价格状态、市场状态、最低质押额（上线时为 $10）、市场、代币和存款人上限、池份额限制、每个账户和市场 16 条记录的限制以及任何熔断器。\n\n如果检查通过，AaveAdapter 会在需要时为该市场部署您的 PositionProxy，铸造与已记入流动性等量的 vault token，并将其作为抵押品供应。质押不会借入任何东西。没有允许列表，除上限外也没有最大仓位规模限制。"
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "存入后我的 LP 仓位仍保持活跃吗？",
-          "a": "是的。质押会改变托管方，但不会从池中移除流动性。池会继续处理兑换，您的仓位也会继续赚取手续费。Uniswap v3 仓位超出区间时将停止赚取手续费。\n\n在债务未清偿期间，提取等减少抵押品的操作都会经过 Aave Adapter，并且只有在操作后账户仍保持健康时才被允许。"
+          "a": "是的。质押改变的是托管方，但不会移除流动性。池继续处理兑换，您的仓位继续赚取手续费。集中仓位在超出区间期间停止赚取手续费。\n\n您可以向已质押的 NFT 添加流动性并通过 recredit 记入，通过 removeLiquidity 在保持 NFT 质押的同时移除部分流动性，或者用同一市场中的另一个仓位追加抵押。"
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "借款期间可以领取 LP 手续费吗？",
-          "a": "仓位存放在 LP Vault 期间，手续费会持续累计到您的仓位中。提取时，LP Vault 会释放您的 LP 代币或 NFT，以及未领取的手续费。\n\n偿还债务后，您可以全额提取；如果提取后账户仍保持健康，也可以提取部分仓位。"
+          "a": "是的。存款人可以随时在 AaveAdapter 上调用 collectFees。AMM 直接将手续费支付给您。领取手续费不会改变您的 vault token、上限、债务或健康因子。\n\n任何暂停、冻结、熔断器或价格状态都不会阻止手续费领取。在 Base 上，即使在排序器中断期间，它也可以通过 L1 强制打包正常工作。"
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "LP 手续费会计入抵押价值吗？",
-          "a": "LPOracle 对您仓位中的流动性进行估值。它根据池的流动性数学计算代币数量，并按 Chainlink 价格定价，不做折价。未领取的手续费会在您提取时随仓位一起释放。\n\n市场的抵押系数另行设定借款限额。Avana 不对预言机价值打折扣。"
+          "a": "否。LPOracle 只对每个 vault token 背后的流动性估值。未领取的手续费不计入价格，清算也绝不会扣押它们。\n\n借款限额来自市场的抵押系数，单独应用。预言机价值本身不做折价。"
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "何时可以提取 LP 抵押？",
-          "a": "偿还债务后，您可以全额提取。如果提取后账户仍保持健康，您也可以提取部分抵押品。Aave Adapter 会提取并销毁相应的 vault token，LP Vault 会释放您的 LP 代币或 NFT 以及未领取的手续费。\n\n不通过 Avana 前端、直接调用合约，同样可以还款和提取。当预言机价格过期或 TWAP 检查未通过时，新的借款和主动提取将被阻止。在这些情况下，还款仍可继续。"
+          "a": "没有债务时，您可以随时提取，任何暂停、冻结、熔断器或价格状态都不会阻止。repayAllAndWithdraw 在一次调用中偿还所有债务并返还仓位。\n\n有债务时，提取需要满足：Hub 未被暂停（Hub 被冻结时仍允许提取）、您的地址未被冻结、价格处于 Live、Base 上排序器正常运行、没有已触发的熔断器，且提取后的健康因子不低于您选择的最低值。LPVault 返还 NFT 及其未领取的手续费。"
+        },
+        {
+          "id": "how-many-positions-per-account",
+          "q": "一个账户可以持有多少个仓位？",
+          "a": "每个钱包针对每个 CDP Spoke 和市场有一个 PositionProxy，因此也就有一个 Aave 账户。一个账户在其市场中最多持有 16 条支撑记录。另一个市场中的仓位会开立一个独立账户，拥有其自己的健康因子。\n\n如果账户被清算，Collateralization 会按从大到小的顺序扣押其记录。"
         }
       ]
     },
@@ -104,27 +114,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Avana 如何为 LP 抵押定价？",
-          "a": "LPOracle 按 Chainlink 价格，根据池的流动性数学为每个 vault token 定价。公式为 价值 = q0·P0 + q1·P1，其中 q0 和 q1 是一个 vault token 背后的代币数量。对于 Uniswap v3 仓位，代币数量按参考价格，根据仓位的流动性和区间得出。\n\n预言机报告的价值不做折价。市场的抵押系数另行设定借款限额。抵押系数以两种池代币中较低的抵押系数为起点，再由池风险系数下调。"
+          "a": "LPOracle 按公允构成为每个 vault token 定价：它按预言机价格比率（限定在市场区间内）计算一个单位流动性背后的代币数量，再乘以 Chainlink 美元价格。数量向下取整，未领取的手续费不计入。价格有 8 位小数，预言机绝不回滚，也绝不返回 0。\n\nGHO 债务按固定的 $1 定价。其他债务资产由其各自的 DebtOracle 定价。"
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
-          "q": "Avana 如何降低预言机与定价风险？",
-          "a": "Chainlink 是估值基准。池的 TWAP 是一致性校验，既不参与平均，也不作为替代。如果 TWAP 超出允许的容差范围，新的借款和增加风险的提取将被阻止。还款和清算继续按 Chainlink 价格进行。\n\n如果 Chainlink 价格源过期，预言机会在最大时效内使用最后一个有效价格。在此期间，新的借款和主动提取将被阻止。超过最大时效后，清算暂停，直到价格源恢复或治理批准备用价格源。还款继续进行。"
+          "q": "Avana 如何处理预言机故障？",
+          "a": "每个代币都有一条 Chainlink 主路径、一条备选路径和一条预先批准的备用路径。价格必须在喂价心跳加余量的时间内保持新鲜。借款还需要独立的第二来源一致、池 TWAP 一致性检查通过，以及稳定币处于 $0.90–$1.02 区间内。\n\n每个市场的价格处于四种状态之一：Live、Drifting、Cached 或 Expired。Cached（最长 1 小时）和 Expired 会阻止该市场的新借款和清算。Expired 将抵押品估值为几乎为零，同时还款和无债务退出继续进行。恢复后，30 分钟的宽限期内只允许清算健康因子低于 0.95 的账户。"
         },
         {
           "id": "what-is-recoverable-value",
           "q": "Avana对预言机价值有折扣吗？",
-          "a": "Avana 不会对预言机价值本身打折扣。相反，每个市场的抵押系数会考虑清算中能够收回多少价值。公式为：LP 抵押系数 = 两种池代币中较低的抵押系数 × 池风险系数。\n\n池风险系数反映区间、价格敏感度、池深度和预期清算成本。Gauntlet 建议，当所借资产不是池中的代币时（例如以 WETH/USDC 借入 GHO），初始系数可低至较低底层系数的 0.25×。"
+          "a": "否。预言机报告的价值不做折价。每个市场的抵押系数决定该价值中有多少可以支撑债务：池中各代币在 Aave V4 中最低的抵押系数乘以最高为 40% 的池风险系数。GHO 一侧使用上架时设定的明确系数。\n\nGauntlet 对 LP 抵押品的分析建议采用保守的初始系数，当借入的资产不是池中的代币时，可低至较低底层系数的 0.25×。最终系数与 Aave 的服务提供商按市场逐一校准。"
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "为什么集中流动性仓位要谨慎处理？",
-          "a": "集中流动性仓位的风险敞口会随价格变动迅速变化。仓位可能变成主要由一种资产构成，也可能超出区间并停止赚取手续费。\n\nAvana 只接受全区间 Uniswap v3 仓位和经专门批准的区间，每个都有自己的 vault token。预言机根据仓位的流动性和区间计算代币数量。每个市场设定自己的池风险系数和结算模式。"
+          "a": "集中仓位的构成会随价格变动而迅速变化，并可能超出区间。因此，Avana 将每个确切区间作为独立市场上架，在估值时将价格限定在区间内，并为其设定池风险系数。\n\nLPVault 会拒绝区间与市场不同的仓位，LPOracle 在借款前会对照 TWAP 检查池状态。"
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Avana 监控哪些市场数据？",
-          "a": "Avana 的 Risk Module 在池、底层代币和存款人层面检查风险敞口，包括对占池流动性份额的限制。每个市场都有自己的池风险系数、结算模式、TWAP 窗口、允许的价格偏差和价格源最大时效。\n\nAvana Labs 发布每周使用报告和每月收入报告。报告涵盖各市场的债务和抵押品、集中度、健康因子分布，以及成功、失败和重试的清算。报告还涵盖 FirstLossReserve 使用情况、坏账、预言机事件、信用额度使用情况、费用和首损资源。"
+          "a": "Avana 的 Keeper 和监控会跟踪价格状态、池份额、池深度、扣押、兑换路径失败、赤字以及每个储备的 Aave 配置。部分条件会触发链上熔断器；其他条件会发出警报，例如 2 小时内价格下跌 3%、1 小时内某个市场超过 20% 被扣押、1 小时内 3 次兑换路径失败，或 Avana 持有某个池超过 25% 的份额。\n\nAvana Labs 发布每周使用报告和每月收入报告，内容包括按市场的债务和抵押品、集中度、健康因子、清算、Avana Umbrella 使用情况、坏账、预言机事故、暂停和熔断器触发、信用额度使用情况以及费用。"
         }
       ]
     },
@@ -136,27 +146,32 @@
         {
           "id": "how-does-borrowing-work",
           "q": "在 Avana 上如何借款？",
-          "a": "仓位完成质押且其 vault token 作为抵押品存入后，您即可通过 Borrow Spoke 从 Avana Hub 借入 GHO。Aave Adapter 会确认价格检查通过，并确认新增债务后您的账户仍保持健康。\n\nGHO 会发送到您的钱包，债务记录在 Aave V4 上。利息按基础利率 × (1 + 您的风险溢价) 累计，因此即使抵押品不变，您的健康因子也可能变化。"
+          "a": "您在 AaveAdapter 上调用 borrow，并提供市场、债务储备、金额、截止时间、您可接受的最低健康因子以及您预期的 nonce。RiskModule 检查价格处于 Live、债务价格的新鲜度、熔断器、暂停状态以及是否存在经批准的 Keeper。您的 PositionProxy 在 CDP Spoke 上借款，资金会发送给您。\n\n利息按 Hub 基础利率 × (1 + 您的风险溢价) 累计，因此即使您的抵押品不变，您的健康因子也可能变化。"
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "借款容量如何计算？",
-          "a": "借款额度 = LP 仓位价值 × LP 抵押系数。LP 抵押系数等于两种池代币中较低的抵押系数乘以池风险系数。池风险系数反映区间、价格敏感度、池深度和预期清算成本。\n\n额度还取决于现有债务、敞口上限、可用的 GHO 流动性和预言机检查。例如，一个价值 $100,000、最终抵押系数为 35% 的全区间 WETH/USDC 仓位，拥有 35,000 GHO 的借款额度。这些数字仅为示例，并非实际市场参数。"
+          "a": "借款能力 = LP 仓位价值 × LP 抵押系数，且 LP 抵押系数 = 最低的代币抵押系数 × 池风险系数。借款能力还取决于现有债务、上限、信用额度的可用流动性以及预言机检查。\n\n示例数值：一个价值 $20,000、抵押系数为 31.20% 的 USDC/USDT Slipstream 仓位，提供 $6,240 的加权抵押品。Lens 建议借款至健康因子 1.10（此处为 5,673.29 USDC），并显示 1.00 时的最大值（6,209.56 USDC）。"
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "为什么借款能力低于我的 LP 价值？",
-          "a": "借款额度低于 LP 价值，因为抵押系数为价格变动、无常损失、区间变化和清算成本预留了空间。预言机报告的是全部价值，抵押系数决定其中有多少价值可以支撑债务。\n\n池风险系数只应用一次，并按市场设定，因此 LP 价值与借款额度之间的差距因市场而异。"
+          "a": "抵押系数为价格变动、无常损失、区间变化和清算成本留出空间。池风险系数上限为 40%，因此当两种代币的系数均为 78% 时，开仓贷款价值比最多约为 28.4%。\n\n由于每个市场都有其自己的池风险系数，不同市场中价值与借款能力之间的差距也不同。"
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "可以借哪些资产？",
-          "a": "Borrow Spoke 借出 GHO。Avana Hub 由 Aave DAO 提供的有上限 GHO 信用额度提供资金，每次增加都须经治理批准。\n\n其他资产通过 Avana Lend Spoke 借入，该 Spoke 由 Aave 治理单独批准。"
+          "a": "GHO 是每个 CDP Spoke 上的第一种债务资产。其他资产（例如 USDC、USDT 或 WETH）可以通过治理在 CDP Spoke 上启用为债务储备，每种都由其自己的信用额度提供资金，并由其自己的 DebtOracle 定价。\n\n上线时的信用额度是来自 Aave DAO 的 GHO：Ethereum 上提议 2M GHO，Base 的额度在注资提案中设定。"
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "可以同时用多个 LP 仓位借款吗？",
-          "a": "是的。存入同一个 Borrow Spoke 的多个仓位共同为一个账户提供支持，您的风险溢价是这些仓位的加权平均值。每个仓位仍有自己的 vault token、抵押系数和上限。\n\n试点期间，每个账户可持有的仓位数量有上限。整个账户必须保持在要求的健康因子之上。"
+          "a": "在同一市场内可以：最多 16 个仓位支撑一个账户和一个健康因子。不同市场中的仓位属于独立账户，各有其自己的健康因子，因此不会相互支撑。\n\n在一个账户内，如果 CDP Spoke 出借多种债务资产，您可以借入不止一种。"
+        },
+        {
+          "id": "is-there-a-minimum-health-factor",
+          "q": "借款是否有最低健康因子要求？",
+          "a": "在链上，唯一的限制是 Aave 的健康因子 1.00。borrow 调用接受您自己设定的最低健康因子，低于该值时会回滚。Lens 建议保持在 1.10 或以上。\n\n没有最低债务。存在按市场的硬性健康下限，但上线时处于关闭状态。"
         }
       ]
     },
@@ -167,55 +182,60 @@
       "questions": [
         {
           "id": "how-do-lenders-use-avana",
-          "q": "出借人如何使用 Avana？",
-          "a": "出借通过 Avana Lend Spoke 进行，它独立于 GHO Borrow Spoke，由 Aave 治理单独批准。\n\nLend Spoke 允许出借人直接向 Avana Hub 供应资产，并允许借款人借入 GHO 以外的资产。Avana Hub 还持有 Aave DAO 的 GHO 信用额度。"
+          "q": "Avana 借款人使用的流动性由谁提供？",
+          "a": "上线时，Aave DAO 金库通过一个仅供应的 Lend Spoke，向每条链的 Avana Stable LP Hub 提供有上限的 GHO 信用额度。上线时不开放公开存款。\n\n每个 CDP Spoke 在某种资产上的提取上限由 Aave DAO 设定，提取上限之和最多等于信用额度。"
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "供应方收益来自哪里？",
-          "a": "通过 Lend Spoke，出借人赚取以 LP 为抵押的借款人支付的利息。Avana Labs 从出借人提供的流动性中保留一部分协议分成。Aave DAO 信用额度产生的利息仍归 DAO 所有。\n\n借款人支付 Avana Hub 基础利率，加上基于其抵押品的风险溢价。基础利率设定为不低于 Aave Core Hub 的基础利率。出借人的具体条款由 Aave 治理设定。"
+          "a": "借款人支付 Hub 的基础利率加上其风险溢价。Avana Hub 的 GHO 利率是固定的，与利用率无关，由 Aave DAO 设定为不低于 Core Hub GHO 基础利率。\n\nAave DAO 出资的信用额度上的所有利息都归 Aave DAO。Avana 不对借款利息收取任何费用。"
         },
         {
           "id": "do-lenders-manage-lp-collateral",
-          "q": "出借人需要自己管理 LP 抵押吗？",
-          "a": "否。出借人向 Avana Hub 供应资产，不选择 LP 区间，也不处理结算。Borrow Spoke、LP Vault 和 LPVaultSwap 负责抵押品估值、健康检查和清算。\n\nLend Spoke 由 Aave 治理单独批准。"
+          "q": "供应者需要自己管理 LP 抵押品吗？",
+          "a": "不需要。供应者不选择区间，也不处理结算。CDP Spoke、Avana 的托管合约和 LPVaultSwap 负责估值、健康检查和清算。"
         },
         {
           "id": "what-protects-lender-capital",
           "q": "什么保护出借人资金？",
-          "a": "Aave DAO 唯一的风险敞口是有上限的 GHO 信用额度，每次增加都须经治理批准。保护措施包括：试点期间的存款人许可名单、各市场上限、根据池风险下调的抵押系数、带 TWAP 检查的 Chainlink 价格，以及在单笔交易中完成结算的清算。\n\n如果清算耗尽抵押品后仍有债务剩余，损失将按以下顺序弥补：首先是专项首损资本，其次是承诺用于损失保障的收入，最后是 Avana Umbrella。智能合约、预言机和清算执行风险依然存在。Avana 的合约正在进行内部安全审查，之后将进行独立的公开审计。"
+          "a": "按市场设定的抵押系数（池风险系数最高为 40%）、每个 Hub 的市场、代币和存款人上限、预言机状态和熔断器、与 Avana 的 Keeper 并行的无许可清算，以及保持在该链闪电贷流动性之内的提取上限，从而使每笔借款都能在一笔交易内被清算。\n\n如果清算后留下了没有抵押品的债务，该赤字将在 72 小时内由该 Hub 和资产的 Avana Umbrella 覆盖，这是一个由 Avana Labs 注资、由 Aave DAO 控制的首损准备金。超过准备金的赤字是该 Hub 资产供应者的损失，由 Aave DAO 实现。"
         }
       ]
     },
     {
       "id": "liquidations",
-      "name": "健康度与清算",
+      "name": "健康与清算",
       "summary": "",
       "questions": [
         {
           "id": "what-is-health-factor",
           "q": "什么是健康因子？",
-          "a": "健康因子将抵押品的借款价值（价值 × 抵押系数）与您的债务进行比较。高于 1 时，账户是健康的。低于 1 时，账户可被清算。\n\n在一个示例中，以价值 $100,000、抵押系数为 35% 的 WETH/USDC 仓位借入 25,000 GHO，初始健康因子为 1.40。界面会在开仓健康因子为 1.10 时限制新的借款。"
+          "a": "健康因子 = 抵押品价值 × 抵押系数 ÷ 债务价值，由 Aave 按账户计算，也就是按市场计算。低于 1 时，账户即可被清算。\n\n示例数值：$6,240 的加权抵押品对应 4,999.50 USDC 的债务，健康因子为 1.2481。"
         },
         {
           "id": "what-affects-health-factor",
           "q": "哪些因素影响我的健康因子？",
-          "a": "当抵押品价值、债务或市场参数变化时，健康因子会随之变化。LP 仓位的价值随代币价格变动而变化，Uniswap v3 仓位的构成还会在其区间内变化。利息会随时间增加债务。\n\n借入更多会降低您的健康因子。偿还债务或添加经批准的抵押品会提高健康因子。"
+          "a": "抵押品价格、仓位在其区间内的构成、您债务的利息、债务资产价格，以及治理对抵押系数的变更。在市场下架期间，其清算阈值在 30 天内每天下调一次。\n\n还款、追加抵押或以抵押品还款会提高健康因子。借款、提取或移除流动性会降低健康因子。"
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Avana 上清算如何运作？",
-          "a": "当健康因子低于 1 时，账户可被清算。LPVaultSwap 在一笔交易中借入闪电贷、偿还债务，并结算其背后的 LP 抵押品。每个市场都有经批准的结算模式。\n\n部分结算适用于 Uniswap v2 以及部分 Aerodrome 或 Uniswap v3 市场。它使用 Aave V4 的标准清算。通常只会移除恢复健康所需的流动性，其余部分仍归您所有。全仓位结算适用于大多数使用 NFT 的 AMM。它结算整个仓位，并将扣除债务、费用和成本后的剩余部分退还给借款人。"
+          "a": "当账户的健康因子低于 1 时，清算人调用 LPVaultSwap。在一笔交易中，它从该链的 Aave V3 Pool 以闪电贷借入债务资产，调用 Aave 的 liquidationCall 偿还部分债务并获得 vault token 及奖励，解除对应的流动性，通过固定路径将代币兑换为债务资产，并偿还闪电贷。\n\n每笔清算都是部分清算，规模按 Aave 的规则确定。收回的金额必须达到基于预言机推导的下限。超出债务的所得用于支付 Avana 的费用、清算人的奖励以及任何借款人盈余。"
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "谁可以清算不健康仓位？",
-          "a": "只有经批准的 Keeper 才能调用 LPVaultSwap，而 LPVaultSwap 是唯一执行清算的合约。Keeper 至少由两个运营方运行：Avana Labs 和至少一个独立运营方。\n\n向第三方清算人开放清算需经治理批准。"
+          "a": "Avana Labs 运行一个经批准的 Keeper。任何人也可以调用 liquidatePermissionless，它使用先主后备的兑换路径，并由调用者在其设定的限额内支付任何缺口。\n\n任何人也可以调用 settlePending 来结算未完成的扣押所遗留的 vault token；所得进入 Avana Umbrella，调用者不获得任何报酬。"
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "清算期间适用哪些费用？",
-          "a": "在部分结算市场中，Aave V4 清算奖励用于支付 Keeper 报酬、执行成本以及 Avana 有上限的清算费用。因此，该费用不会增加借款人的成本。未被移除的仓位部分仍归您所有。\n\n在全仓位市场中，Keeper 报酬、成本和 Avana 费用从结算所得中扣除，上限为各市场规定的债务最高百分比。任何剩余部分都会退还给借款人。"
+          "a": "Avana 的费用为预言机收益的 20%（按预言机价格计算的收回价值减去偿还的债务和闪电贷费用），以清算实际实现的金额为限。清算人获得预言机收益的其余部分。超出预言机价值的收回部分归借款人。\n\n您未领取的 LP 手续费绝不会被拿走。以抵押品还款不支付奖励，也不支付 Avana 费用，只支付闪电贷费用。"
+        },
+        {
+          "id": "what-if-liquidation-cannot-run",
+          "q": "什么情况会阻止清算？",
+          "a": "暂停、冻结和熔断器绝不会停止清算。清算确实需要可用的价格：Cached 或 Expired 价格会阻止清算；在价格恢复或 Base 排序器重启后的 30 分钟内，只有健康因子低于 0.95 的账户可以被清算。\n\n如果兑换路径无法达到恢复下限且调用者不补足缺口，清算也会回滚。Aave 侧的储备暂停同样可能阻止清算。"
         }
       ]
     },
@@ -226,23 +246,23 @@
       "questions": [
         {
           "id": "how-are-new-pools-added",
-          "q": "如何新增 LP 资金池？",
-          "a": "Avana Labs 提交新市场和参数，由指定的风险审查方进行审查。每个新的抵押池在获准上架前都会公示两周以供审查。\n\n池需要具备可靠的外部定价、足够的流动性历史、在压力情况下收回清算所得的途径，且移除流动性不受限制。Uniswap v2 和 v3 之外的每个 AMM 都需要单独审查并经 Aave 治理批准。"
+          "q": "如何添加新的 LP 市场？",
+          "a": "Avana Labs 提议市场和参数，交由指定的风险审查方评估。每个市场都通过该链的 AvanaTimelock 以常规延迟上架，即在链上强制执行的五天公开审查期，同时附带 Aave DAO 关于抵押系数、奖励和上限的上架提案。\n\n池需要具备可靠的外部定价、足够的流动性历史、在压力下能够收回清算所得的路径，并且对移除流动性没有限制。"
         },
         {
           "id": "can-risk-parameters-change",
           "q": "风险参数会随时间变化吗？",
-          "a": "是的。风险参数会随市场状况变化而调整。一个池可能会比初次上架时流动性更低、波动更大、相关性更弱，或更难平仓。\n\n更新可能影响抵押系数、上限、受支持的池、暂停、清算参数和结算模式。Aave DAO 拥有 Hub 和 Spoke，无需 Avana Labs 即可暂停或冻结市场。Avana 合约的升级须经过 Avana Labs 无法绕过的时间锁，DAO 可以取消这些升级。"
+          "a": "是的，通过 AvanaTimelock。放宽风险的变更需等待 5 天的常规延迟，且受到限制：每个延迟期内，美元上限最多提高 50%，滑点容许值最多提高 25 bps。仅降低风险的变更可以使用 12 小时的短延迟。\n\nEmergency Guardian 和 Aave Protocol Guardian 可以立即暂停或冻结 Hub、冻结地址、触发熔断器或切换到备用价格路径，但不能升级合约、更改参数或转移资金。Aave DAO 也可以在 Aave 一侧冻结或暂停 Avana 储备。"
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "在哪里关注治理讨论？",
-          "a": "Avana 先在 Aave 治理论坛（governance.aave.com）上讨论，然后进入 Snapshot 投票。在提交 AIP 之前，Ethereum 部署和 GHO 注资都要分别经过后续的论坛审查和各自的 Snapshot 投票。\n\nAvana Labs 也会在 X 上发布动态：https://twitter.com/avana_labs"
+          "a": "Avana 在 Aave 治理论坛（governance.aave.com）上进行讨论。ARFC 进入 Snapshot 投票，随后是部署 ARFC 和注资 ARFC，然后是 AIP。\n\nAvana Labs 也会在 X 上发布更新：https://twitter.com/avana_labs。"
         },
         {
           "id": "can-interface-fees-change",
-          "q": "界面费用会随时间变化吗？",
-          "a": "Avana Labs 在官方界面上收取前端费用，并收取清算费用。具体金额由 Aave 治理设定，之后的任何变更也须经其批准。直接调用合约即可免除前端费用。\n\nAave DAO 的 GHO 信用额度产生的利息归 DAO 所有，而非 Avana Labs。"
+          "q": "Avana Labs 如何赚取收入？",
+          "a": "Avana Labs 从每笔清算中赚取预言机收益的 20%（由 avanaFeeShareBps 设定，只能通过时间锁更改），以及由其应用在合约之外收取的应用费。没有任何合约计算或强制执行应用费，因此直接调用合约无需支付该费用。\n\nAvana 不对借款利息收取任何费用。Aave DAO 信用额度上的利息归 DAO 所有。"
         }
       ]
     },
@@ -254,17 +274,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "可以在 Avana 上借 GHO 吗？",
-          "a": "是的。GHO 是唯一可借资产。您从 Avana Hub 借入 GHO，Avana Hub 持有 Aave DAO 通过 GHO Reserve 分配的有上限 GHO 信用额度。\n\nGHO 债务会影响您的健康因子，并按 Avana Hub 基础利率加上您的风险溢价计息。该信用额度产生的全部利息收入归 Aave DAO 所有。"
+          "a": "是的。GHO 是每个 CDP Spoke 上的第一种债务资产，由 Aave DAO 向 Avana Stable LP Hub 提供的有上限信用额度出资。GHO 债务按固定的 $1 定价。\n\nGHO 债务按 Hub 的 GHO 利率加上您的风险溢价计息。所有这些利息都归 Aave DAO 所有。"
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "GHO 可以成为 LP 抵押的一部分吗？",
-          "a": "否。候选池为 USDC/USDT、wstETH/WETH 和 WETH/USDC，目前仍在评估中。\n\n包含 GHO 的池以后可以通过与其他新池相同的审查和治理流程添加。"
+          "a": "是的。包含 GHO 的稳定币池可以上架。其 GHO 一侧使用上架时设定的明确抵押系数，而不是 Aave V4 Core Hub 的系数。"
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "如何偿还 GHO 债务？",
-          "a": "除非市场已暂停，否则您可以随时偿还 GHO 及累计利息。您可以通过 Aave Adapter 还款，也可以直接调用合约还款。还款会减少您的债务并提高健康因子。\n\n全额还款后，您可以提取仓位。随后 LP Vault 会释放您的 LP 代币或 NFT 以及未领取的手续费。"
+          "a": "在 AaveAdapter 上调用 repay，或由任何人代您还款。设置 repayAll 可在交易打包时偿还全部债务；在您的支出上限内，任何未使用的金额都会退还。任何 Avana 暂停、熔断器、冻结、价格或排序器状态都不会阻止还款；只有 Aave 侧的储备暂停可以。\n\n您也可以以抵押品还款：LPVaultSwap 以闪电贷借入债务资产，偿还债务，解除您仓位的一部分并将其兑换以偿还该贷款。全额还款后，您可以提取仓位。"
         }
       ]
     },
@@ -276,7 +296,7 @@
         {
           "id": "what-is-avana-multiply",
           "q": "什么是 Avana Multiply？",
-          "a": "Multiply 是 Avana 公共沙盒 app.avana.cc 中的一个流程。它在一个工作流中以 LP 抵押品借款，并将借入的资金再投资以增加敞口。沙盒使用模拟资产，不会进行任何链上交易。\n\nMultiply 不属于 Avana 的 Aave V4 市场；这些市场涵盖以 Uniswap v2 和 v3 仓位为抵押借入 GHO。"
+          "a": "Multiply 是 Avana 公共沙盒 app.avana.cc 中的一个流程。在一个工作流中，它以 LP 抵押品借款，并将借入的资金再投资以增加敞口。沙盒使用模拟资产，不进行任何链上交易。\n\nMultiply 不属于 Avana 的 Aave V4 市场，后者涵盖以 Ethereum 上的 Uniswap v3 仓位和 Base 上的 Aerodrome Slipstream 仓位借款。"
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
@@ -303,17 +323,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "自动化能否帮助管理仓位风险？",
-          "a": "沙盒预览了一种自动化功能，可监控账户健康状况，并在清算前触发还款或去杠杆等操作。自动化不属于 Avana 的 Aave V4 市场。\n\n自动化是风险管理工具，而非保证。市场波动、流动性状况、交易延迟、预言机更新和路径可用性仍可能影响执行。"
+          "a": "沙盒预览了一种自动化功能，它监控账户健康状况，并在清算前触发还款或去杠杆等操作。自动化不属于 Avana 的 Aave V4 市场，但还款和以抵押品还款可以由您授权发送交易的任何服务调用。\n\n自动化是一种风险管理工具，而非保证。市场变动、流动性状况、交易延迟、预言机更新和路径可用性仍可能影响执行。"
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "LP 抵押能否支持永续类敞口？",
-          "a": "否。Avana 涵盖以 Ethereum 上经批准的 Uniswap v2 和 v3 仓位为抵押借入 GHO。\n\n借入的 GHO 如何使用由您决定，但 Avana 不会将以 LP 为支撑的信贷导入永续合约或其他策略。"
+          "a": "否。Avana 涵盖以 Ethereum 上经批准的 Uniswap v3 仓位和 Base 上的 Aerodrome Slipstream 仓位借款。\n\n您自行决定如何使用借入的资产，但 Avana 不会将以 LP 为支撑的信贷导入永续合约或其他策略。"
         },
         {
           "id": "what-users-monitor",
           "q": "开仓后用户监控什么？",
-          "a": "借款人会监控健康因子、债务、抵押品价值、借款利率、Uniswap v3 区间状态以及与清算的距离。在沙盒的 Multiply 流程中，他们还能看到杠杆水平和解除杠杆控制。\n\nAvana 界面会显示这些数值。您可以看到仓位何时健康、何时需要关注，以及何时正在接近清算。"
+          "a": "借款人监控健康因子、债务、抵押品价值、借款利率、区间状态、市场的价格状态以及距离清算的距离。Lens 提供这些数值，包括建议借款额和最大借款额以及上限余量。\n\n在沙盒的 Multiply 流程中，用户还可以看到杠杆水平和平仓控制。"
         }
       ]
     }

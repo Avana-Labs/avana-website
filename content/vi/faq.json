@@ -8,27 +8,32 @@
         {
           "id": "what-is-avana",
           "q": "Avana là gì?",
-          "a": "Avana cho phép nhà cung cấp thanh khoản sử dụng các vị thế AMM làm tài sản thế chấp trên Aave V4. Người vay cầm cố một LP token Uniswap v2 hoặc một vị thế Uniswap v3 vào LP Vault của Avana. Sau đó, người vay vay GHO từ Avana Hub thông qua một Avana Borrow Spoke, trong khi thanh khoản vẫn nằm trong pool.\n\nAvana hoạt động trên Ethereum mainnet. Avana Hub và các Borrow Spoke là các hợp đồng Aave V4 tiêu chuẩn thuộc sở hữu của Aave DAO."
+          "a": "Avana cho phép nhà cung cấp thanh khoản sử dụng các vị thế AMM làm tài sản thế chấp trên Aave V4. Người vay cầm cố một vị thế Uniswap v3 trên Ethereum hoặc một vị thế Aerodrome Slipstream trên Base. LPVault của Avana nắm giữ vị thế, và một vault token tương ứng được cung cấp làm tài sản thế chấp trên một Avana CDP Spoke. Sau đó, người vay vay GHO, hoặc một tài sản nợ khác mà Spoke cho vay, trong khi thanh khoản vẫn nằm trong pool.\n\nAvana ra mắt trên Ethereum và Base, với một Avana Stable LP Hub trên mỗi chuỗi. Các Hub và Spoke là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, thuộc sở hữu và được cấu hình bởi Aave DAO. Các hợp đồng của chính Avana xử lý lưu ký, định giá, các hành động của người vay và thanh lý."
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Avana giải quyết vấn đề gì?",
-          "a": "Nhà cung cấp thanh khoản thường phải rút thanh khoản trước khi có thể vay bằng vốn của mình. Để làm điều đó, họ phải thoát khỏi pool và từ bỏ thu nhập từ phí cùng khoảng giá đã chọn.\n\nAvana giúp các vị thế LP được hỗ trợ có thể được sử dụng làm tài sản thế chấp. Vị thế vẫn nằm trong pool. LPOracle của Avana định giá vị thế, và Aave V4 ghi nhận vị thế dưới dạng một vault token tương ứng 1:1 với thanh khoản cơ sở. Lợi ích đối với LP là tính linh hoạt về vốn, không phải lợi nhuận dương được bảo đảm. Người vay vẫn chịu tổn thất tạm thời, rủi ro giá và rủi ro thanh lý."
+          "a": "Nhà cung cấp thanh khoản thường phải rút thanh khoản trước khi có thể vay dựa trên nó. Điều đó có nghĩa là rời khỏi pool và từ bỏ thu nhập từ phí cùng khoảng giá đã chọn.\n\nAvana giúp các vị thế LP được hỗ trợ có thể được sử dụng làm tài sản thế chấp trong khi vẫn nằm trong pool. LPOracle định giá mỗi vị thế từ số lượng token của nó theo giá oracle, và Aave V4 ghi nhận nó dưới dạng một vault token. Lợi ích đối với LP là tính linh hoạt về vốn, không phải lợi nhuận được bảo đảm. Người vay vẫn chịu tổn thất tạm thời, rủi ro giá và rủi ro thanh lý."
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Avana khác một thị trường cho vay tiêu chuẩn như thế nào?",
-          "a": "Các thị trường cho vay tiêu chuẩn thường coi tài sản thế chấp là số dư token đơn giản, như ETH, BTC, stablecoin hoặc các tài sản ERC-20 khác. Avana được xây dựng cho loại tài sản thế chấp thay đổi theo thời gian. Một vị thế LP chứa hai tài sản và kiếm phí. Thành phần của nó thay đổi khi giá biến động, nó có thể ra ngoài khoảng giá, và cần một tuyến cụ thể để gỡ vị thế.\n\nVì lý do này, Avana thiết lập rủi ro theo từng thị trường. Mỗi pool được phê duyệt, và khoảng giá khi có liên quan, đều có vault token, hệ số tài sản thế chấp, giới hạn trần và chế độ tất toán riêng. Hệ số tài sản thế chấp bắt đầu từ hệ số tài sản thế chấp thấp hơn của hai token trong pool và sau đó được giảm theo rủi ro đặc thù của pool."
+          "a": "Các thị trường cho vay tiêu chuẩn coi tài sản thế chấp là số dư token. Một vị thế LP nắm giữ nhiều token, kiếm phí, thay đổi thành phần khi giá biến động, có thể ra ngoài khoảng giá, và cần một tuyến cụ thể để gỡ vị thế.\n\nVì vậy, Avana thiết lập rủi ro theo từng thị trường. Một thị trường là một pool và một khoảng tick chính xác trên một CDP Spoke, với vault token, hệ số tài sản thế chấp, giới hạn, tuyến giá và tuyến hoán đổi riêng. Mỗi ví có một tài khoản riêng cho mỗi thị trường, nên tài sản thế chấp của một thị trường không bao giờ bảo chứng cho khoản nợ ở thị trường khác."
         },
         {
           "id": "which-amms-can-avana-support",
           "q": "Avana hỗ trợ những AMM nào?",
-          "a": "Avana hỗ trợ một số LP token Uniswap v2 và vị thế Uniswap v3 được chọn trên Ethereum mainnet. Đối với Uniswap v3, chỉ các vị thế toàn dải và các khoảng giá được phê duyệt cụ thể mới được chấp nhận.\n\nViệc bổ sung Uniswap v4, Curve, Balancer, Aerodrome, các AMM khác hoặc các chuỗi khác như Base đều cần đánh giá kỹ thuật và rủi ro riêng cùng sự phê duyệt của quản trị Aave. Các pool được phê duyệt lần lượt từng pool một. Avana loại trừ các pool meme token, các pool không có đủ lịch sử thanh khoản hoặc nguồn định giá bên ngoài đáng tin cậy, và các pool mà việc rút thanh khoản có thể bị hạn chế."
+          "a": "Khi ra mắt, Avana hỗ trợ các vị thế Uniswap v3 trên Ethereum và các vị thế Aerodrome Slipstream trên Base. Các vị thế Slipstream phải được hủy stake; một vị thế đã stake vào gauge không thể được cầm cố. Mỗi thị trường chấp nhận một khoảng tick chính xác, và vị thế có bất kỳ khoảng giá nào khác sẽ bị từ chối.\n\nLõi của Avana trung lập với AMM. Các tích hợp cho Uniswap v2, Curve StableSwap-NG, Balancer và Uniswap v4 đã được đặc tả, nhưng mỗi tích hợp chỉ được niêm yết sau khi vượt qua các phép kiểm tra mức sẵn sàng và được quản trị phê duyệt. Các pool có token tính phí khi chuyển, rebase hoặc có hook bị loại trừ."
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "Avana có thay thế AMM nơi thanh khoản của tôi đang nằm không?",
-          "a": "Không. AMM vẫn xử lý các giao dịch hoán đổi, trạng thái pool, biến động giá và việc tạo phí. Avana bổ sung một lớp tài sản thế chấp bao quanh các vị thế LP được hỗ trợ.\n\nKhi bạn cầm cố một vị thế đủ điều kiện, LP Vault của Avana nắm giữ vị thế đó, và Avana đúc một vault token tương ứng cho Aave V4. Thanh khoản vẫn nằm trong pool AMM và tiếp tục kiếm phí khi còn nằm trong khoảng giá."
+          "a": "Không. AMM vẫn xử lý hoán đổi, trạng thái pool, biến động giá và tạo phí. Avana bổ sung một lớp tài sản thế chấp xung quanh các vị thế được hỗ trợ.\n\nKhi bạn cầm cố một vị thế, LPVault cho AMM đó nắm giữ NFT, và Avana mint số vault token bằng với thanh khoản của vị thế. Thanh khoản vẫn nằm trong pool và tiếp tục kiếm phí khi còn trong khoảng giá. Bạn có thể thu số phí đó bất kỳ lúc nào."
+        },
+        {
+          "id": "is-avana-live",
+          "q": "Avana đã được triển khai chưa?",
+          "a": "Chưa. Đặc tả và giao diện hợp đồng của Avana đã hoàn tất và đã qua đánh giá nội bộ và mô hình hóa hình thức. Bước tiếp theo là viết mã hợp đồng, sau đó là kiểm toán độc lập cho mọi hợp đồng và các cuộc bỏ phiếu của Aave DAO phê duyệt việc triển khai và cấp vốn.\n\nĐịa chỉ hợp đồng sẽ được liệt kê trên trang Contracts của tài liệu dành cho nhà phát triển sau khi các hợp đồng được triển khai. Sandbox công khai tại app.avana.cc sử dụng tài sản mô phỏng."
         }
       ]
     },
@@ -40,59 +45,64 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Avana hoạt động như thế nào ở mức cao?",
-          "a": "Avana hoạt động theo ba bước. Thứ nhất, bạn cầm cố một vị thế LP được hỗ trợ vào LP Vault. Thứ hai, Risk Module của Avana kiểm tra pool, bậc phí, khoảng giá, tính khả dụng của oracle và giới hạn trần. Sau đó Aave Adapter đúc một vault token tương ứng và cung cấp nó cho Avana Borrow Spoke của thị trường đó. Thứ ba, bạn vay GHO từ Avana Hub trong phạm vi khả năng vay của mình.\n\nVị thế LP vẫn nằm trong AMM. Các hợp đồng riêng của Avana xử lý việc lưu ký, định giá và tất toán. Avana Hub và các Borrow Spoke là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, thuộc sở hữu của Aave DAO."
+          "a": "Bạn cầm cố một vị thế được hỗ trợ qua AaveAdapter. LPVault lưu ký NFT, Collateralization ghi nhận lượng thanh khoản mà nó bảo chứng, và AaveAdapter mint đúng số vault token đó vào PositionProxy của bạn cho thị trường. Proxy cung cấp chúng làm tài sản thế chấp trên CDP Spoke của thị trường. Sau đó bạn vay qua AaveAdapter, vốn kiểm tra giá, giới hạn và hệ số sức khỏe của bạn.\n\nHoàn trả, rút, rút một phần thanh khoản, hoàn trả bằng tài sản thế chấp và thu phí cũng chạy qua AaveAdapter. Thanh lý chạy qua LPVaultSwap. Mọi bản nâng cấp hoặc thay đổi tham số đối với các hợp đồng của Avana đều đi qua AvanaTimelock của chuỗi."
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Tại sao Avana sử dụng hạ tầng Hub-and-Spoke của Aave V4?",
-          "a": "Avana sử dụng Aave V4 vì nó tách biệt thanh khoản dùng chung khỏi các thiết lập rủi ro riêng cho từng thị trường. Avana Hub nắm giữ một hạn mức tín dụng GHO có giới hạn trần do Aave DAO phân bổ. Chỉ các Borrow Spoke được phê duyệt mới có thể rút từ đó.\n\nMỗi Borrow Spoke phụ trách một nhóm thị trường với tham số và giới hạn trần riêng: stable LP (ứng viên USDC/USDT), correlated LP (ứng viên wstETH/WETH) và blue-chip/stable LP (ứng viên WETH/USDC). Các ứng viên vẫn đang được đánh giá. Avana không fork hay chỉnh sửa mã Aave V4. Toàn bộ logic dành riêng cho Avana nằm trong các hợp đồng của chính Avana."
+          "q": "Tại sao Avana sử dụng Hub và Spoke của Aave V4?",
+          "a": "Aave V4 tách thanh khoản dùng chung (Hub) khỏi các thiết lập rủi ro riêng của từng thị trường (Spoke). Mỗi chuỗi có một Avana Stable LP Hub. Aave DAO cung cấp cho nó một hạn mức tín dụng GHO có giới hạn qua một Lend Spoke chỉ cung cấp, và chỉ các CDP Spoke của Avana mới có thể rút từ đó.\n\nCó một CDP Spoke cho mỗi chuỗi, Hub, giao thức AMM và tầng rủi ro. Khi ra mắt, đó là \"Uniswap v3 Stable\" trên Ethereum và \"Aerodrome Slipstream Stable\" trên Base. Correlated LP Hub và Volatile LP Hub được thiết kế cho giai đoạn sau. Avana không fork hay chỉnh sửa Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
-          "q": "Một Borrow Spoke là gì?",
-          "a": "Borrow Spoke là một Spoke Aave V4 tiêu chuẩn thuộc sở hữu của Aave DAO. Nó chấp nhận vault token của Avana làm tài sản thế chấp và cho phép người vay rút GHO từ Avana Hub. Nó áp dụng hệ số tài sản thế chấp, Collateral Risk và các tham số thanh lý cho các thị trường của mình.\n\nAvana sử dụng các Borrow Spoke riêng biệt vì không phải mọi vị thế LP đều hoạt động giống nhau. Một cặp stablecoin, một cặp tương quan như wstETH/WETH và một cặp blue-chip/stable như WETH/USDC cần các hệ số tài sản thế chấp, giới hạn trần và thiết lập tất toán khác nhau."
+          "q": "CDP Spoke là gì?",
+          "a": "CDP Spoke là một Aave V4 Spoke tiêu chuẩn thuộc sở hữu của Aave DAO. Nó nắm giữ một reserve vault-token chỉ dùng làm tài sản thế chấp cho mỗi thị trường Avana và các reserve nợ được bật cho nó, GHO trước tiên. Nó áp dụng hệ số tài sản thế chấp, mức thưởng thanh lý và giới hạn của mỗi thị trường.\n\nMọi reserve vault-token đều dùng ba thiết lập bắt buộc: tắt nhận cổ phần, phí thanh lý Aave bằng 0 (hoặc trả cho bên nhận phí của Avana), và không đặt bộ điều khiển tái đầu tư. Cùng với quy tắc chuyển của vault token, các thiết lập này khiến LPVaultSwap là hợp đồng duy nhất có thể nhận tài sản thế chấp bị tịch thu."
         },
         {
           "id": "what-are-vault-tokens",
           "q": "Token Avana vault là gì?",
-          "a": "Vault token là các token ERC-20 chỉ dùng làm tài sản thế chấp, đại diện cho các vị thế LP đã cầm cố trên Aave V4. Mỗi pool được phê duyệt, và khoảng giá khi có liên quan, đều có vault token riêng. Avana đúc vault token theo tỷ lệ 1:1 với thanh khoản cơ sở khi bạn cầm cố một vị thế và đốt chúng khi rút hoặc tất toán. Không có lịch phát hành, không có phát thải và không có tỷ giá quy đổi.\n\nVault token không phải là tài sản của người dùng và không có thị trường thứ cấp. Chúng chỉ di chuyển giữa Avana Hub, các Borrow Spoke, các Position Proxy, Aave Adapter và LPVaultSwap. Mọi vault token đang lưu hành đều được bảo chứng bởi thanh khoản được giữ trong LP Vault."
+          "a": "Vault token là các token ERC-20 chỉ dùng làm tài sản thế chấp, mỗi thị trường một loại. Một đơn vị cơ sở bằng một đơn vị thanh khoản đã ghi có. Số chữ số thập phân được cố định theo từng thị trường trong khoảng 6 đến 18 khi niêm yết. Chỉ AaveAdapter mint và burn chúng, và chúng chỉ di chuyển giữa các PositionProxy đã đăng ký, CDP Spoke và LPVaultSwap.\n\nVault token không có thị trường thứ cấp, không có phát thải và không có tỷ giá. Nguồn cung của chúng không bao giờ vượt quá lượng thanh khoản mà Collateralization đã ghi có cộng với mọi đơn vị đang chờ tất toán."
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Các phần chính của giao thức Avana là gì?",
-          "a": "LP Vault nắm giữ các LP token và NFT đã cầm cố. LP Vault ghi nhận chủ sở hữu, pool, cặp token, bậc phí, khoảng giá và trạng thái của từng vị thế. Risk Module kiểm tra điều kiện đủ của pool, danh sách cho phép trong giai đoạn thí điểm, giới hạn quy mô vị thế và giới hạn mức độ rủi ro. Collateralization Module đúc vault token theo tỷ lệ 1:1 với thanh khoản. LPOracle định giá vault token từ Chainlink và sử dụng TWAP của pool làm phép kiểm tra thứ hai.\n\nAave Adapter là điểm truy cập của người vay. Adapter xử lý việc gửi, vay, hoàn trả và rút thông qua một Position Proxy chuyên dụng cho từng người vay. LPVaultSwap thực hiện thanh lý bằng flash loan, và các adapter tất toán AMM rút thanh khoản và thu phí. Các hợp đồng Avana có thể nâng cấp nằm sau một timelock mà Avana Labs không thể bỏ qua. Aave DAO nắm giữ vai trò tạm dừng và đóng băng."
+          "a": "Lưu ký: một LPVault bất biến cho mỗi giao thức AMM trên mỗi chuỗi, và sổ cái Collateralization. Tài khoản và token: VaultToken và VaultTokenFactory, PositionProxy và ProxyManager. Chính sách: AaveAdapter (điểm vào của người vay), RiskModule (các phép kiểm tra), MarketRegistry (thị trường, tuyến, trạng thái tạm dừng, bộ ngắt) và ParameterStore (tham số rủi ro).\n\nOracle: một LPOracle cho mỗi thị trường và một DebtOracle cho mỗi tài sản nợ không phải GHO. Thanh lý: LPVaultSwap, các hợp đồng tuyến hoán đổi, một nguồn flash trên Aave V3 Pool và InKindEscrow. Hạ tầng: AvanaTimelock, Lock và Lens chỉ đọc. Mục Developers liệt kê mọi hợp đồng trên trang Contracts."
         }
       ]
     },
     {
       "id": "lp-collateral",
-      "name": "Tài sản thế chấp LP",
+      "name": "Tài sản bảo đảm LP",
       "summary": "",
       "questions": [
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "Điều gì xảy ra khi tôi gửi tài sản đảm bảo LP?",
-          "a": "Khi bạn cầm cố một vị thế LP được hỗ trợ, Aave Adapter gửi vị thế đó vào LP Vault. Sau đó, Risk Module kiểm tra pool, bậc phí, khoảng giá, tính khả dụng của oracle và giới hạn trần. Trong giai đoạn thí điểm, chỉ những người gửi trong danh sách cho phép mới có thể cầm cố, và mỗi thị trường có quy mô vị thế tối thiểu và tối đa.\n\nKhi các phép kiểm tra đạt, Avana đúc một vault token tương ứng và cung cấp nó làm tài sản thế chấp trên Borrow Spoke thông qua Position Proxy của bạn. Bản thân việc cầm cố không vay gì cả. Việc này tạo ra khả năng vay mà bạn có thể sử dụng trong khi tài khoản vẫn khỏe mạnh và có thanh khoản GHO khả dụng."
+          "a": "Bạn phê duyệt LPVault cho NFT của vị thế và gọi pledge trên AaveAdapter. LPVault kiểm tra rằng vị thế khớp với pool và khoảng giá chính xác của thị trường rồi lưu ký nó. RiskModule kiểm tra trạng thái giá, trạng thái của thị trường, mức cầm cố tối thiểu ($10 khi ra mắt), các giới hạn thị trường, token và người gửi, giới hạn tỷ lệ pool, giới hạn 16 bản ghi cho mỗi tài khoản và thị trường, và mọi bộ ngắt.\n\nNếu các phép kiểm tra đạt, AaveAdapter triển khai PositionProxy của bạn cho thị trường nếu cần, mint số vault token bằng thanh khoản đã ghi có và cung cấp chúng làm tài sản thế chấp. Cầm cố không vay bất cứ thứ gì. Không có allowlist và không có quy mô vị thế tối đa ngoài các giới hạn."
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "Vị trí LP của tôi có vẫn hoạt động sau khi nạp tiền không?",
-          "a": "Có. Việc cầm cố thay đổi quyền lưu ký nhưng không rút thanh khoản khỏi pool. Pool tiếp tục xử lý các giao dịch hoán đổi, và vị thế của bạn tiếp tục kiếm phí. Một vị thế Uniswap v3 ngừng kiếm phí khi nằm ngoài khoảng giá.\n\nKhi khoản nợ còn mở, các thao tác làm giảm tài sản thế chấp, như rút, đều đi qua Aave Adapter. Các thao tác này chỉ được phép nếu tài khoản vẫn khỏe mạnh sau đó."
+          "a": "Có. Cầm cố thay đổi bên lưu ký nhưng không rút thanh khoản. Pool tiếp tục xử lý các giao dịch hoán đổi và vị thế của bạn tiếp tục kiếm phí. Một vị thế tập trung ngừng kiếm phí khi ra ngoài khoảng giá.\n\nBạn có thể thêm thanh khoản vào một NFT đã cầm cố và ghi có nó bằng recredit, rút một phần thanh khoản trong khi vẫn giữ NFT ở trạng thái cầm cố bằng removeLiquidity, hoặc nạp thêm bằng một vị thế khác trong cùng thị trường."
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "Tôi có thể yêu cầu phí LP trong khi vay không?",
-          "a": "Phí tiếp tục tích lũy vào vị thế của bạn khi vị thế nằm trong LP Vault. Khi bạn rút, LP Vault giải phóng LP token hoặc NFT của bạn cùng với phí chưa thu.\n\nBạn có thể rút toàn bộ sau khi đã hoàn trả khoản nợ, hoặc rút một phần vị thế nếu tài khoản vẫn khỏe mạnh sau đó."
+          "a": "Có. Người gửi có thể gọi collectFees trên AaveAdapter bất kỳ lúc nào. AMM trả phí trực tiếp cho bạn. Thu phí không thay đổi vault token, giới hạn, khoản nợ hay hệ số sức khỏe của bạn.\n\nKhông cơ chế tạm dừng, đóng băng, bộ ngắt hay trạng thái giá nào chặn việc thu phí. Trên Base, nó cũng hoạt động khi sequencer ngừng hoạt động thông qua cơ chế đưa vào bắt buộc từ L1."
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "Phí LP có được bao gồm trong giá trị tài sản đảm bảo không?",
-          "a": "LPOracle định giá thanh khoản trong vị thế của bạn. LPOracle tính lượng token từ công thức thanh khoản của pool và định giá chúng theo giá Chainlink, không áp dụng chiết khấu. Phí chưa thu được giải phóng cùng với vị thế khi bạn rút.\n\nHệ số tài sản thế chấp của thị trường thiết lập giới hạn vay một cách riêng biệt. Avana không áp dụng chiết khấu đối với giá trị oracle."
+          "a": "Không. LPOracle chỉ định giá thanh khoản đứng sau mỗi vault token. Phí chưa thu bị loại khỏi giá, và một khoản thanh lý không bao giờ tịch thu chúng.\n\nGiới hạn vay đến từ hệ số tài sản thế chấp của thị trường, được áp dụng riêng. Bản thân giá trị oracle không có chiết khấu."
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "Khi nào tôi có thể rút tài sản đảm bảo LP?",
-          "a": "Bạn có thể rút toàn bộ sau khi khoản nợ đã được hoàn trả. Bạn cũng có thể rút một phần tài sản thế chấp nếu tài khoản vẫn khỏe mạnh sau đó. Aave Adapter rút và đốt số vault token tương ứng, và LP Vault giải phóng LP token hoặc NFT của bạn cùng với phí chưa thu.\n\nViệc hoàn trả và rút cũng hoạt động mà không cần frontend của Avana, bằng cách gọi trực tiếp các hợp đồng. Việc vay mới và các lệnh rút tự nguyện bị chặn khi giá oracle bị cũ hoặc phép kiểm tra TWAP thất bại. Việc hoàn trả vẫn tiếp tục trong những trường hợp đó."
+          "a": "Khi không có nợ, bạn có thể rút bất kỳ lúc nào, và không cơ chế tạm dừng, đóng băng, bộ ngắt hay trạng thái giá nào chặn việc đó. repayAllAndWithdraw hoàn trả mọi khoản nợ và trả lại vị thế trong một lệnh gọi.\n\nKhi có nợ, việc rút yêu cầu Hub không bị tạm dừng (Hub bị đóng băng vẫn cho phép), địa chỉ của bạn không bị đóng băng, giá ở trạng thái Live, sequencer đang hoạt động trên Base, không có bộ ngắt nào đã kích hoạt, và hệ số sức khỏe sau đó bằng hoặc cao hơn mức tối thiểu bạn chọn. LPVault trả lại NFT cùng với phí chưa thu của nó."
+        },
+        {
+          "id": "how-many-positions-per-account",
+          "q": "Một tài khoản có thể nắm giữ bao nhiêu vị thế?",
+          "a": "Mỗi ví có một PositionProxy, và do đó một tài khoản Aave, cho mỗi CDP Spoke và thị trường. Một tài khoản nắm giữ tối đa 16 bản ghi bảo chứng cho thị trường của nó. Một vị thế ở thị trường khác mở một tài khoản riêng với hệ số sức khỏe riêng.\n\nNếu một tài khoản bị thanh lý, Collateralization tịch thu các bản ghi của nó theo thứ tự lớn nhất trước."
         }
       ]
     },
@@ -104,27 +114,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Avana định giá tài sản đảm bảo LP như thế nào?",
-          "a": "LPOracle định giá mỗi vault token từ công thức thanh khoản của pool theo giá Chainlink. Công thức là giá trị = q0·P0 + q1·P1, trong đó q0 và q1 là lượng token đứng sau một vault token. Đối với các vị thế Uniswap v3, lượng token được tính từ thanh khoản và khoảng giá của vị thế tại giá tham chiếu.\n\nOracle báo cáo giá trị mà không áp dụng chiết khấu. Hệ số tài sản thế chấp của thị trường thiết lập giới hạn vay một cách riêng biệt. Hệ số tài sản thế chấp bắt đầu từ hệ số tài sản thế chấp thấp hơn của hai token trong pool và được giảm bởi hệ số rủi ro pool."
+          "a": "LPOracle định giá mỗi vault token theo thành phần hợp lý: nó tính số lượng token đứng sau một đơn vị thanh khoản theo tỷ lệ giá oracle, giới hạn trong khoảng giá của thị trường, và nhân chúng với giá USD của Chainlink. Số lượng được làm tròn xuống và phí chưa thu bị loại trừ. Giá có 8 chữ số thập phân, và oracle không bao giờ hoàn tác và không bao giờ trả về 0.\n\nNợ GHO được định giá cố định $1. Các tài sản nợ khác được định giá bởi DebtOracle riêng của chúng."
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
-          "q": "Avana giảm rủi ro về oracle và giá cả như thế nào?",
-          "a": "Chainlink là tham chiếu định giá. TWAP của pool là phép kiểm tra tính nhất quán, không phải giá trung bình hay giá thay thế. Nếu TWAP vượt ngoài ngưỡng dung sai cho phép, việc vay mới và các lệnh rút làm tăng rủi ro sẽ bị chặn. Việc hoàn trả và thanh lý tiếp tục theo giá Chainlink.\n\nNếu nguồn cấp giá Chainlink bị cũ, oracle sử dụng giá hợp lệ gần nhất trong giới hạn tuổi tối đa. Trong thời gian đó, việc vay mới và các lệnh rút tự nguyện bị chặn. Khi vượt quá tuổi tối đa, việc thanh lý tạm dừng cho đến khi nguồn cấp giá phục hồi hoặc quản trị phê duyệt một nguồn cấp giá dự phòng. Việc hoàn trả vẫn tiếp tục."
+          "q": "Avana xử lý sự cố oracle như thế nào?",
+          "a": "Mỗi token có một tuyến Chainlink chính, một tuyến thay thế và một tuyến dự phòng đã được phê duyệt trước. Giá phải còn mới trong khoảng heartbeat của nguồn cấp cộng một biên. Việc vay cũng cần một nguồn thứ hai độc lập đồng thuận, một phép kiểm tra tính nhất quán TWAP của pool, và stablecoin nằm trong dải $0.90–$1.02.\n\nGiá của mỗi thị trường ở một trong bốn trạng thái: Live, Drifting, Cached hoặc Expired. Cached (tối đa 1 giờ) và Expired chặn việc vay mới và thanh lý thị trường đó. Expired định giá tài sản thế chấp gần như bằng 0 trong khi hoàn trả và thoát khi không có nợ vẫn tiếp tục. Sau khi khôi phục, một thời gian ân hạn 30 phút chỉ cho phép thanh lý dưới hệ số sức khỏe 0.95."
         },
         {
           "id": "what-is-recoverable-value",
           "q": "Avana có làm giảm giá trị của oracle không?",
-          "a": "Avana không chiết khấu bản thân giá trị oracle. Thay vào đó, hệ số tài sản thế chấp của mỗi thị trường tính đến lượng giá trị có thể thu hồi khi thanh lý. Công thức là: hệ số tài sản thế chấp LP = hệ số tài sản thế chấp thấp hơn của hai token trong pool × hệ số rủi ro pool.\n\nHệ số rủi ro pool phản ánh khoảng giá, độ nhạy giá, độ sâu pool và chi phí thanh lý dự kiến. Gauntlet đã đề xuất mức khởi điểm có thể thấp tới 0.25× hệ số cơ sở thấp hơn khi tài sản được vay không phải là một trong các token của pool, chẳng hạn vay GHO bằng WETH/USDC."
+          "a": "Không. Oracle báo cáo giá trị mà không áp dụng chiết khấu. Hệ số tài sản thế chấp của mỗi thị trường xác định phần giá trị đó có thể bảo đảm cho khoản nợ: hệ số tài sản thế chấp Aave V4 thấp nhất trong số các token của pool nhân với hệ số rủi ro pool tối đa 40%. Một nhánh GHO dùng hệ số cụ thể được đặt khi niêm yết.\n\nPhân tích của Gauntlet về tài sản thế chấp LP khuyến nghị các hệ số khởi điểm thận trọng, có thể thấp tới 0.25× hệ số cơ sở thấp hơn khi tài sản được vay không phải là một trong các token của pool. Hệ số cuối cùng được hiệu chỉnh theo từng thị trường cùng các nhà cung cấp dịch vụ của Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "Tại sao các vị thế thanh khoản tập trung lại được xử lý cẩn thận?",
-          "a": "Các vị thế thanh khoản tập trung thay đổi mức độ tiếp xúc nhanh chóng khi giá biến động. Một vị thế có thể chủ yếu chỉ còn một tài sản, hoặc có thể ra ngoài khoảng giá và ngừng kiếm phí.\n\nAvana chỉ chấp nhận các vị thế Uniswap v3 toàn dải và các khoảng giá được phê duyệt cụ thể, mỗi loại có vault token riêng. Oracle tính toán lượng token từ thanh khoản và khoảng giá của vị thế. Mỗi thị trường thiết lập hệ số rủi ro pool và chế độ tất toán riêng."
+          "a": "Một vị thế tập trung thay đổi thành phần nhanh chóng khi giá biến động và có thể ra ngoài khoảng giá. Vì vậy, Avana niêm yết mỗi khoảng giá chính xác như một thị trường riêng, định giá nó với khoảng giá được giới hạn, và đặt hệ số rủi ro pool cho nó.\n\nLPVault từ chối vị thế có khoảng giá khác với khoảng giá của thị trường, và LPOracle kiểm tra trạng thái pool so với TWAP trước khi cho vay."
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Avana theo dõi dữ liệu thị trường nào?",
-          "a": "Risk Module của Avana kiểm tra mức độ rủi ro ở cấp pool, token cơ sở và người gửi, bao gồm giới hạn về tỷ trọng trong thanh khoản của một pool. Mỗi thị trường có hệ số rủi ro pool, chế độ tất toán, cửa sổ TWAP, độ lệch giá cho phép và tuổi tối đa của nguồn cấp giá riêng.\n\nAvana Labs công bố báo cáo sử dụng hàng tuần và báo cáo doanh thu hàng tháng. Các báo cáo bao gồm nợ và tài sản thế chấp theo thị trường, mức độ tập trung, phân bố hệ số sức khỏe, và các giao dịch thanh lý thành công, thất bại và được thử lại. Báo cáo cũng bao gồm việc sử dụng FirstLossReserve, nợ xấu, sự cố oracle, việc sử dụng hạn mức tín dụng, phí và nguồn lực chịu lỗ đầu tiên."
+          "a": "Keeper và hệ thống giám sát của Avana theo dõi trạng thái giá, tỷ lệ pool, độ sâu pool, các lần tịch thu, tuyến hoán đổi thất bại, thâm hụt và cấu hình Aave của mọi reserve. Một số điều kiện kích hoạt bộ ngắt on-chain; số khác tạo cảnh báo, như giá giảm 3% trong 2 giờ, hơn 20% của một thị trường bị tịch thu trong 1 giờ, 3 lần tuyến hoán đổi thất bại trong 1 giờ, hoặc Avana nắm giữ hơn 25% của một pool.\n\nAvana Labs công bố báo cáo sử dụng hằng tuần và báo cáo doanh thu hằng tháng bao gồm nợ và tài sản thế chấp theo thị trường, mức độ tập trung, hệ số sức khỏe, các khoản thanh lý, mức sử dụng Avana Umbrella, nợ xấu, sự cố oracle, tạm dừng và kích hoạt bộ ngắt, mức sử dụng hạn mức tín dụng và phí."
         }
       ]
     },
@@ -136,27 +146,32 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Vay mượn hoạt động như thế nào trên Avana?",
-          "a": "Sau khi vị thế của bạn được cầm cố và vault token của nó được cung cấp làm tài sản thế chấp, bạn vay GHO từ Avana Hub thông qua Borrow Spoke. Aave Adapter kiểm tra rằng các phép kiểm tra giá đều đạt và tài khoản của bạn vẫn khỏe mạnh sau khoản nợ mới.\n\nGHO được gửi vào ví của bạn, và khoản nợ được ghi nhận trên Aave V4. Lãi tích lũy theo lãi suất cơ sở × (1 + phần bù rủi ro của bạn), nên hệ số sức khỏe của bạn có thể thay đổi ngay cả khi tài sản thế chấp không đổi."
+          "a": "Bạn gọi borrow trên AaveAdapter với thị trường, reserve nợ, số lượng, thời hạn, hệ số sức khỏe tối thiểu bạn chấp nhận và nonce dự kiến của bạn. RiskModule kiểm tra giá Live, độ mới của giá nợ, các bộ ngắt, trạng thái tạm dừng và việc có tồn tại một keeper được phê duyệt. PositionProxy của bạn vay trên CDP Spoke và tiền được gửi cho bạn.\n\nLãi tích lũy theo lãi suất cơ sở của Hub × (1 + phần bù rủi ro của bạn), nên hệ số sức khỏe của bạn có thể thay đổi ngay cả khi tài sản thế chấp không đổi."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Khả năng vay được tính toán như thế nào?",
-          "a": "Khả năng vay = giá trị vị thế LP × hệ số tài sản thế chấp LP. Hệ số tài sản thế chấp LP là hệ số tài sản thế chấp thấp hơn của hai token trong pool nhân với hệ số rủi ro pool. Hệ số rủi ro pool phản ánh khoảng giá, độ nhạy giá, độ sâu pool và chi phí thanh lý dự kiến.\n\nKhả năng vay cũng phụ thuộc vào khoản nợ hiện có, giới hạn mức độ rủi ro, thanh khoản GHO khả dụng và các phép kiểm tra oracle. Ví dụ, một vị thế WETH/USDC toàn dải trị giá $100,000 với hệ số tài sản thế chấp cuối cùng là 35% có khả năng vay 35,000 GHO. Các số liệu này chỉ mang tính minh họa, không phải tham số thị trường thực tế."
+          "a": "Khả năng vay = giá trị vị thế LP × hệ số tài sản thế chấp LP, và hệ số tài sản thế chấp LP = hệ số tài sản thế chấp thấp nhất của token × hệ số rủi ro pool. Khả năng vay cũng phụ thuộc vào khoản nợ hiện có, các giới hạn, thanh khoản khả dụng của hạn mức tín dụng và các phép kiểm tra oracle.\n\nGiá trị ví dụ: một vị thế Slipstream USDC/USDT trị giá $20,000 với hệ số tài sản thế chấp 31.20% cho ra $6,240 tài sản thế chấp có trọng số. Lens khuyến nghị vay đến hệ số sức khỏe 1.10 (5,673.29 USDC trong trường hợp này) và hiển thị mức tối đa ở 1.00 (6,209.56 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Tại sao khả năng vay lại thấp hơn giá trị LP của tôi?",
-          "a": "Khả năng vay thấp hơn giá trị LP vì hệ số tài sản thế chấp chừa khoảng trống cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Oracle báo cáo toàn bộ giá trị. Hệ số tài sản thế chấp xác định phần giá trị đó có thể bảo đảm cho khoản nợ.\n\nHệ số rủi ro pool được áp dụng một lần và thiết lập theo từng thị trường, nên chênh lệch giữa giá trị LP và khả năng vay khác nhau giữa các thị trường."
+          "a": "Hệ số tài sản thế chấp chừa chỗ cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Hệ số rủi ro pool bị giới hạn ở 40%, nên với hai token ở mức 78%, tỷ lệ cho vay trên giá trị ban đầu tối đa khoảng 28.4%.\n\nKhoảng cách giữa giá trị và khả năng vay khác nhau giữa các thị trường vì mỗi thị trường có hệ số rủi ro pool riêng."
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "Tôi có thể vay những tài sản nào?",
-          "a": "Các Borrow Spoke cho vay GHO. Avana Hub được cấp vốn bởi một hạn mức tín dụng GHO có giới hạn trần từ Aave DAO, và quản trị phê duyệt mỗi lần tăng.\n\nCác tài sản khác được vay thông qua Avana Lend Spoke, vốn được quản trị Aave phê duyệt riêng."
+          "a": "GHO là tài sản nợ đầu tiên trên mọi CDP Spoke. Các tài sản khác, như USDC, USDT hoặc WETH, có thể được bật làm reserve nợ trên một CDP Spoke qua quản trị, mỗi tài sản được cấp vốn bằng hạn mức tín dụng riêng và được định giá bởi DebtOracle riêng.\n\nKhi ra mắt, hạn mức tín dụng là GHO từ Aave DAO: đề xuất 2M GHO trên Ethereum, với hạn mức trên Base được đặt trong đề xuất cấp vốn."
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "Tôi có thể vay dựa trên nhiều vị trí LP cùng một lúc không?",
-          "a": "Có. Các vị thế được cung cấp cho cùng một Borrow Spoke cùng bảo đảm cho một tài khoản, và phần bù rủi ro của bạn là bình quân gia quyền trên các vị thế đó. Mỗi vị thế vẫn có vault token, hệ số tài sản thế chấp và giới hạn trần riêng.\n\nTrong giai đoạn thí điểm, mỗi tài khoản có giới hạn về số lượng vị thế. Toàn bộ tài khoản phải duy trì trên hệ số sức khỏe yêu cầu."
+          "a": "Trong một thị trường, có: tối đa 16 vị thế bảo chứng cho một tài khoản và một hệ số sức khỏe. Các vị thế ở các thị trường khác nhau là các tài khoản riêng biệt, mỗi tài khoản có hệ số sức khỏe riêng, nên chúng không bảo chứng cho nhau.\n\nTrong một tài khoản, bạn có thể vay nhiều hơn một tài sản nợ nếu CDP Spoke cho vay các tài sản đó."
+        },
+        {
+          "id": "is-there-a-minimum-health-factor",
+          "q": "Có hệ số sức khỏe tối thiểu để vay không?",
+          "a": "On-chain, giới hạn duy nhất là hệ số sức khỏe 1.00 của Aave. Lệnh gọi borrow nhận hệ số sức khỏe tối thiểu của riêng bạn và hoàn tác nếu dưới mức đó. Lens khuyến nghị giữ ở mức bằng hoặc cao hơn 1.10.\n\nKhông có mức nợ tối thiểu. Có một mức sàn sức khỏe cứng theo từng thị trường nhưng nó tắt khi ra mắt."
         }
       ]
     },
@@ -167,55 +182,60 @@
       "questions": [
         {
           "id": "how-do-lenders-use-avana",
-          "q": "Các nhà cho vay sử dụng Avana như thế nào?",
-          "a": "Hoạt động cho vay diễn ra qua Avana Lend Spoke, tách biệt với các GHO Borrow Spoke. Quản trị Aave phê duyệt Spoke này riêng.\n\nLend Spoke cho phép người cho vay cung cấp tài sản trực tiếp cho Avana Hub và cho phép người vay vay các tài sản khác ngoài GHO. Avana Hub cũng nắm giữ hạn mức tín dụng GHO của Aave DAO."
+          "q": "Ai cung cấp thanh khoản mà người vay Avana sử dụng?",
+          "a": "Khi ra mắt, ngân quỹ Aave DAO cung cấp một hạn mức tín dụng GHO có giới hạn cho Avana Stable LP Hub của mỗi chuỗi qua một Lend Spoke chỉ cung cấp. Tiền gửi công khai chưa mở khi ra mắt.\n\nGiới hạn rút của mỗi CDP Spoke đối với một tài sản do Aave DAO thiết lập, và tổng các giới hạn rút tối đa bằng hạn mức tín dụng."
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "Năng suất của nhà cung cấp đến từ đâu?",
-          "a": "Thông qua Lend Spoke, người cho vay nhận lãi do người vay có tài sản bảo đảm bằng LP trả. Avana Labs giữ một phần chia cho giao thức trên thanh khoản do người cho vay cung cấp. Lãi từ các hạn mức tín dụng của Aave DAO vẫn thuộc về DAO.\n\nNgười vay trả lãi suất cơ sở của Avana Hub cộng với phần bù rủi ro dựa trên tài sản thế chấp của họ. Lãi suất cơ sở được thiết lập bằng hoặc cao hơn lãi suất cơ sở của Aave Core Hub. Quản trị Aave thiết lập các điều khoản cụ thể cho người cho vay."
+          "a": "Người vay trả lãi suất cơ sở của Hub cộng phần bù rủi ro của họ. Lãi suất GHO của Avana Hub là cố định, không phụ thuộc vào mức sử dụng, và được Aave DAO đặt bằng hoặc cao hơn lãi suất cơ sở GHO của Core Hub.\n\nToàn bộ lãi từ các hạn mức tín dụng do Aave DAO cấp vốn thuộc về Aave DAO. Avana không thu phí trên lãi vay."
         },
         {
           "id": "do-lenders-manage-lp-collateral",
-          "q": "Các nhà cho vay có tự quản lý tài sản đảm bảo của LP không?",
-          "a": "Không. Người cho vay cung cấp tài sản cho Avana Hub. Họ không chọn khoảng giá LP hay xử lý việc tất toán. Các Borrow Spoke, LP Vault và LPVaultSwap xử lý việc định giá tài sản thế chấp, kiểm tra sức khỏe và thanh lý.\n\nQuản trị Aave phê duyệt Lend Spoke riêng."
+          "q": "Bên cung cấp có tự quản lý tài sản thế chấp LP không?",
+          "a": "Không. Bên cung cấp không chọn khoảng giá hay xử lý tất toán. Các CDP Spoke, các hợp đồng lưu ký của Avana và LPVaultSwap xử lý việc định giá, kiểm tra sức khỏe và thanh lý."
         },
         {
           "id": "what-protects-lender-capital",
           "q": "Điều gì bảo vệ vốn của người cho vay?",
-          "a": "Mức độ rủi ro duy nhất của Aave DAO là hạn mức tín dụng GHO có giới hạn trần, và mỗi lần tăng đều cần sự phê duyệt của quản trị. Các biện pháp bảo vệ bao gồm danh sách cho phép người gửi trong giai đoạn thí điểm, giới hạn trần theo từng thị trường, hệ số tài sản thế chấp được giảm theo rủi ro pool, giá Chainlink kèm kiểm tra TWAP và các giao dịch thanh lý được tất toán trong một giao dịch duy nhất.\n\nNếu một giao dịch thanh lý sử dụng hết tài sản thế chấp mà vẫn còn nợ, tổn thất được bù theo thứ tự: trước tiên bằng vốn chịu lỗ đầu tiên chuyên dụng, sau đó bằng doanh thu được cam kết cho việc bù lỗ, rồi đến Avana Umbrella. Rủi ro hợp đồng thông minh, rủi ro oracle và rủi ro thực thi thanh lý vẫn tồn tại. Các hợp đồng của Avana đang trong quá trình đánh giá bảo mật nội bộ, và các đợt kiểm toán công khai độc lập sẽ được thực hiện sau đó."
+          "a": "Hệ số tài sản thế chấp theo từng thị trường với hệ số rủi ro pool tối đa 40%, giới hạn thị trường, token và người gửi theo từng Hub, trạng thái oracle và bộ ngắt, thanh lý không cần cấp phép bên cạnh keeper của Avana, và giới hạn rút nằm trong phạm vi thanh khoản flash của chuỗi để mọi khoản vay đều có thể được thanh lý trong một giao dịch.\n\nNếu một khoản thanh lý để lại nợ mà không còn tài sản thế chấp, khoản thâm hụt được bao phủ trong vòng 72 giờ bởi Avana Umbrella cho Hub và tài sản đó, một khoản dự trữ tổn thất đầu tiên do Avana Labs cấp vốn và Aave DAO kiểm soát. Một khoản thâm hụt lớn hơn reserve là tổn thất của các bên cung cấp tài sản Hub đó, do Aave DAO ghi nhận."
         }
       ]
     },
     {
       "id": "liquidations",
-      "name": "Health & thanh lý",
+      "name": "Sức khỏe & Thanh lý",
       "summary": "",
       "questions": [
         {
           "id": "what-is-health-factor",
           "q": "Hệ số sức khỏe là gì?",
-          "a": "Hệ số sức khỏe so sánh giá trị vay của tài sản thế chấp của bạn (giá trị × hệ số tài sản thế chấp) với khoản nợ của bạn. Trên 1, tài khoản khỏe mạnh. Dưới 1, tài khoản có thể bị thanh lý.\n\nTrong một ví dụ minh họa, vay 25,000 GHO bằng một vị thế WETH/USDC trị giá $100,000 với hệ số tài sản thế chấp 35% cho ra hệ số sức khỏe ban đầu là 1.40. Giao diện giới hạn khoản vay mới ở hệ số sức khỏe mở vị thế là 1.10."
+          "a": "Hệ số sức khỏe = giá trị tài sản thế chấp × hệ số tài sản thế chấp ÷ giá trị khoản nợ, do Aave tính cho từng tài khoản, tức là theo từng thị trường. Dưới 1, tài khoản có thể bị thanh lý.\n\nGiá trị ví dụ: $6,240 tài sản thế chấp có trọng số so với 4,999.50 USDC nợ cho ra hệ số sức khỏe 1.2481."
         },
         {
           "id": "what-affects-health-factor",
           "q": "Những gì ảnh hưởng đến yếu tố sức khỏe của tôi?",
-          "a": "Hệ số sức khỏe thay đổi khi giá trị tài sản thế chấp, khoản nợ hoặc tham số thị trường thay đổi. Vị thế LP thay đổi giá trị khi giá token biến động, và vị thế Uniswap v3 còn thay đổi thành phần trong khoảng giá của nó. Lãi làm tăng khoản nợ theo thời gian.\n\nVay thêm làm giảm hệ số sức khỏe của bạn. Hoàn trả nợ hoặc bổ sung tài sản thế chấp được phê duyệt làm tăng hệ số này."
+          "a": "Giá tài sản thế chấp, thành phần của vị thế trong khoảng giá của nó, lãi trên khoản nợ của bạn, giá tài sản nợ, và các thay đổi quản trị đối với hệ số tài sản thế chấp. Trong quá trình ngừng hoạt động của một thị trường, ngưỡng thanh lý của nó giảm mỗi ngày một lần trong 30 ngày.\n\nHoàn trả, nạp thêm hoặc hoàn trả bằng tài sản thế chấp làm tăng nó. Vay, rút hoặc rút thanh khoản làm giảm nó."
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Thanh lý hoạt động như thế nào trên Avana?",
-          "a": "Một tài khoản có thể bị thanh lý khi hệ số sức khỏe giảm xuống dưới 1. Trong một giao dịch duy nhất, LPVaultSwap sử dụng một flash loan, hoàn trả khoản nợ và tất toán tài sản thế chấp LP đứng sau khoản nợ đó. Mỗi thị trường có một chế độ tất toán được phê duyệt.\n\nTất toán một phần áp dụng cho Uniswap v2 và một số thị trường Aerodrome hoặc Uniswap v3 được chọn. Chế độ này sử dụng cơ chế thanh lý tiêu chuẩn của Aave V4. Thông thường, chỉ phần thanh khoản cần thiết để khôi phục sức khỏe bị rút ra, và bạn giữ phần còn lại. Tất toán toàn bộ vị thế áp dụng cho hầu hết các AMM sử dụng NFT. Chế độ này tất toán toàn bộ vị thế và trả lại mọi khoản dư sau khi trừ nợ, phí và chi phí cho người vay."
+          "a": "Khi hệ số sức khỏe của một tài khoản dưới 1, người thanh lý gọi LPVaultSwap. Trong một giao dịch, nó vay flash tài sản nợ từ Aave V3 Pool của chuỗi, gọi liquidationCall của Aave để hoàn trả một phần khoản nợ và nhận vault token cộng khoản thưởng, gỡ phần thanh khoản tương ứng, hoán đổi các token sang tài sản nợ trên các tuyến cố định, và hoàn trả flash loan.\n\nMọi khoản thanh lý đều là thanh lý một phần và được định cỡ theo quy tắc của Aave. Số tiền thu hồi phải đạt mức sàn suy ra từ oracle. Số tiền thu được vượt quá khoản nợ dùng để trả phí của Avana, phần thưởng của người thanh lý và mọi khoản thặng dư cho người vay."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Ai có thể thanh lý một vị trí không lành mạnh?",
-          "a": "Chỉ các keeper được phê duyệt mới có thể gọi LPVaultSwap, hợp đồng duy nhất thực hiện thanh lý. Keeper được vận hành bởi ít nhất hai nhà vận hành: Avana Labs và ít nhất một nhà vận hành độc lập.\n\nViệc mở thanh lý cho các bên thanh lý thứ ba cần sự phê duyệt của quản trị."
+          "a": "Avana Labs vận hành một keeper được phê duyệt. Bất kỳ ai cũng có thể gọi liquidatePermissionless, hàm này dùng các tuyến hoán đổi theo thứ tự tuyến chính rồi tuyến dự phòng và buộc bên gọi trả mọi khoản thiếu hụt đến giới hạn do họ đặt.\n\nBất kỳ ai cũng có thể gọi settlePending để tất toán các vault token còn lại từ một lần tịch thu chưa hoàn tất; số tiền thu được chuyển vào Avana Umbrella và bên gọi không nhận gì."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Những khoản phí nào được áp dụng trong quá trình thanh lý?",
-          "a": "Trong các thị trường tất toán một phần, thưởng thanh lý của Aave V4 chi trả phần thưởng cho keeper, chi phí thực thi và phí thanh lý có giới hạn trần của Avana. Do đó, phí này không làm tăng chi phí của người vay. Bạn giữ phần vị thế không bị rút.\n\nTrong các thị trường tất toán toàn bộ vị thế, phần thưởng cho keeper, chi phí và phí của Avana được khấu trừ từ số tiền thu được khi tất toán, tối đa bằng một tỷ lệ phần trăm tối đa của khoản nợ theo từng thị trường. Mọi khoản dư được trả lại cho người vay."
+          "a": "Phí của Avana là 20% khoản lãi theo oracle (giá trị thu hồi theo giá oracle trừ đi khoản nợ được hoàn trả và phí flash), giới hạn ở mức mà khoản thanh lý thực sự thu được. Người thanh lý nhận phần còn lại của khoản lãi theo oracle. Phần thu hồi vượt quá giá trị oracle thuộc về người vay.\n\nPhí LP chưa thu của bạn không bao giờ bị lấy. Hoàn trả bằng tài sản thế chấp không trả khoản thưởng và không trả phí Avana, chỉ trả phí flash."
+        },
+        {
+          "id": "what-if-liquidation-cannot-run",
+          "q": "Điều gì có thể dừng một khoản thanh lý?",
+          "a": "Tạm dừng, đóng băng và bộ ngắt không bao giờ dừng thanh lý. Tuy nhiên, một khoản thanh lý cần một mức giá có thể sử dụng: giá Cached hoặc Expired sẽ chặn nó, và trong 30 phút sau khi giá được khôi phục hoặc sequencer Base khởi động lại, chỉ các tài khoản có hệ số sức khỏe dưới 0.95 mới có thể bị thanh lý.\n\nMột khoản thanh lý cũng hoàn tác nếu các tuyến hoán đổi không thể đạt mức sàn khôi phục và bên gọi không bù khoản thiếu hụt. Việc tạm dừng reserve phía Aave cũng có thể chặn nó."
         }
       ]
     },
@@ -226,23 +246,23 @@
       "questions": [
         {
           "id": "how-are-new-pools-added",
-          "q": "Làm thế nào các pool LP mới được thêm vào?",
-          "a": "Avana Labs đệ trình các thị trường và tham số mới, và một bên đánh giá rủi ro được chỉ định sẽ xem xét chúng. Mỗi pool tài sản thế chấp mới được công bố để đánh giá trong hai tuần trước khi được phê duyệt niêm yết.\n\nMột pool cần có nguồn định giá bên ngoài đáng tin cậy, đủ lịch sử thanh khoản, cách thu hồi số tiền thanh lý trong điều kiện căng thẳng và không có hạn chế đối với việc rút thanh khoản. Mỗi AMM ngoài Uniswap v2 và v3 đều cần đánh giá riêng và sự phê duyệt của quản trị Aave."
+          "q": "Các thị trường LP mới được thêm như thế nào?",
+          "a": "Avana Labs đề xuất thị trường và tham số để một người đánh giá rủi ro được chỉ định xem xét. Mỗi thị trường được niêm yết qua AvanaTimelock của chuỗi với khoảng trễ thông thường, một đợt đánh giá công khai năm ngày được thực thi on-chain, cùng với payload niêm yết của Aave DAO cho hệ số tài sản thế chấp, khoản thưởng và các giới hạn.\n\nMột pool cần nguồn giá bên ngoài đáng tin cậy, đủ lịch sử thanh khoản, các tuyến có thể thu hồi số tiền thanh lý trong điều kiện căng thẳng, và không có hạn chế nào đối với việc rút thanh khoản."
         },
         {
           "id": "can-risk-parameters-change",
           "q": "Tham số rủi ro có thể thay đổi theo thời gian không?",
-          "a": "Có. Tham số rủi ro thay đổi khi điều kiện thị trường thay đổi. Một pool có thể trở nên kém thanh khoản hơn, biến động mạnh hơn, ít tương quan hơn hoặc khó gỡ vị thế hơn so với khi mới được niêm yết.\n\nCác bản cập nhật có thể ảnh hưởng đến hệ số tài sản thế chấp, giới hạn trần, các pool được hỗ trợ, việc tạm dừng, tham số thanh lý và chế độ tất toán. Aave DAO sở hữu Hub và các Spoke và có thể tạm dừng hoặc đóng băng thị trường mà không cần Avana Labs. Các bản nâng cấp hợp đồng của Avana đi qua một timelock mà Avana Labs không thể bỏ qua, và DAO có thể hủy chúng."
+          "a": "Có, qua AvanaTimelock. Các thay đổi nới lỏng rủi ro phải chờ khoảng trễ thông thường 5 ngày và bị giới hạn: một giới hạn USD có thể tăng tối đa 50% và mức trượt giá cho phép tối đa 25 bps mỗi khoảng trễ. Các thay đổi chỉ giảm rủi ro có thể dùng khoảng trễ ngắn 12 giờ.\n\nEmergency Guardian và Aave Protocol Guardian có thể tạm dừng hoặc đóng băng một Hub, đóng băng một địa chỉ, kích hoạt một bộ ngắt hoặc chuyển sang tuyến giá dự phòng ngay lập tức, nhưng không thể nâng cấp hợp đồng, thay đổi tham số hoặc di chuyển tiền. Aave DAO cũng có thể đóng băng hoặc tạm dừng các reserve của Avana ở phía Aave."
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "Tôi có thể theo dõi các cuộc thảo luận về quản trị ở đâu?",
-          "a": "Avana được thảo luận trên diễn đàn quản trị Aave (governance.aave.com) và sau đó được đưa ra bỏ phiếu Snapshot. Việc triển khai trên Ethereum và việc cấp vốn GHO đều trải qua một đợt đánh giá tiếp theo trên diễn đàn và một cuộc bỏ phiếu Snapshot riêng trước khi đến các AIP.\n\nAvana Labs cũng đăng thông tin cập nhật trên X tại https://twitter.com/avana_labs."
+          "a": "Avana được thảo luận trên diễn đàn quản trị Aave (governance.aave.com). ARFC được đưa ra bỏ phiếu Snapshot, sau đó là một ARFC triển khai và một ARFC cấp vốn, rồi đến các AIP.\n\nAvana Labs cũng đăng cập nhật trên X tại https://twitter.com/avana_labs."
         },
         {
           "id": "can-interface-fees-change",
-          "q": "Phí giao diện có thể thay đổi theo thời gian không?",
-          "a": "Avana Labs thu phí frontend trên giao diện chính thức và phí thanh lý. Quản trị Aave thiết lập mức phí chính xác và phê duyệt mọi thay đổi sau này. Bạn có thể tránh phí frontend bằng cách gọi trực tiếp các hợp đồng.\n\nLãi từ hạn mức tín dụng GHO của Aave DAO thuộc về DAO, không thuộc về Avana Labs."
+          "q": "Avana Labs tạo doanh thu như thế nào?",
+          "a": "Avana Labs nhận 20% khoản lãi theo oracle trên mỗi khoản thanh lý, được đặt bởi avanaFeeShareBps và chỉ thay đổi qua timelock, và một khoản phí ứng dụng do ứng dụng của họ thu bên ngoài các hợp đồng. Không hợp đồng nào tính toán hoặc thực thi phí ứng dụng, nên gọi trực tiếp các hợp đồng thì không phải trả phí này.\n\nAvana không thu phí trên lãi vay. Lãi từ các hạn mức tín dụng của Aave DAO thuộc về DAO."
         }
       ]
     },
@@ -254,17 +274,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Tôi có thể mượn GHO qua Avana không?",
-          "a": "Có. GHO là tài sản duy nhất có thể vay. Bạn vay GHO từ Avana Hub, nơi nắm giữ một hạn mức tín dụng GHO có giới hạn trần do Aave DAO phân bổ thông qua GHO Reserve.\n\nNợ GHO ảnh hưởng đến hệ số sức khỏe của bạn và tích lũy lãi theo lãi suất cơ sở của Avana Hub cộng với phần bù rủi ro của bạn. Toàn bộ doanh thu lãi phát sinh từ hạn mức tín dụng thuộc về Aave DAO."
+          "a": "Có. GHO là tài sản nợ đầu tiên trên mọi CDP Spoke, được cấp vốn bởi hạn mức tín dụng có giới hạn của Aave DAO cho Avana Stable LP Hub. Nợ GHO được định giá cố định $1.\n\nNợ GHO tích lũy lãi theo lãi suất GHO của Hub cộng phần bù rủi ro của bạn. Toàn bộ khoản lãi đó thuộc về Aave DAO."
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "Liệu GHO có thể là một phần của tài sản thế chấp LP không?",
-          "a": "Không. Các pool ứng viên là USDC/USDT, wstETH/WETH và WETH/USDC, và chúng vẫn đang được đánh giá.\n\nMột pool chứa GHO có thể được bổ sung sau này thông qua cùng quy trình đánh giá và quản trị như bất kỳ pool mới nào khác."
+          "a": "Có. Một pool stablecoin chứa GHO có thể được niêm yết. Nhánh GHO của nó dùng một hệ số tài sản thế chấp cụ thể được đặt khi niêm yết thay vì hệ số của Aave V4 Core Hub."
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "Làm thế nào để tôi trả nợ GHO?",
-          "a": "Bạn có thể hoàn trả GHO cộng lãi đã tích lũy bất cứ lúc nào trừ khi thị trường bị tạm dừng. Bạn hoàn trả qua Aave Adapter hoặc bằng cách gọi trực tiếp các hợp đồng. Việc hoàn trả làm giảm khoản nợ và tăng hệ số sức khỏe của bạn.\n\nSau khi hoàn trả toàn bộ, bạn có thể rút vị thế. Sau đó, LP Vault giải phóng LP token hoặc NFT của bạn cùng với phí chưa thu."
+          "a": "Gọi repay trên AaveAdapter, hoặc để bất kỳ ai hoàn trả thay cho bạn. Đặt repayAll để hoàn trả toàn bộ khoản nợ tại thời điểm giao dịch được đưa vào khối; mọi số tiền chưa dùng trong giới hạn chi tiêu của bạn sẽ được trả lại. Không trạng thái tạm dừng, bộ ngắt, đóng băng, giá hay sequencer nào của Avana chặn việc hoàn trả; chỉ việc tạm dừng reserve phía Aave mới có thể chặn.\n\nBạn cũng có thể hoàn trả bằng tài sản thế chấp: LPVaultSwap vay flash tài sản nợ, hoàn trả nó, gỡ một phần vị thế của bạn và hoán đổi để trả khoản vay. Sau khi hoàn trả toàn bộ, bạn có thể rút vị thế."
         }
       ]
     },
@@ -276,7 +296,7 @@
         {
           "id": "what-is-avana-multiply",
           "q": "Avana Multiply là gì?",
-          "a": "Multiply là một luồng trong sandbox công khai của Avana tại app.avana.cc. Trong một quy trình duy nhất, luồng này vay bằng tài sản thế chấp LP và tái đầu tư khoản vay để tăng mức độ tiếp xúc. Sandbox sử dụng tài sản mô phỏng và không thực hiện giao dịch onchain nào.\n\nMultiply không thuộc các thị trường Aave V4 của Avana, vốn bao gồm việc vay GHO bằng các vị thế Uniswap v2 và v3."
+          "a": "Multiply là một quy trình trong sandbox công khai của Avana tại app.avana.cc. Trong một quy trình làm việc, nó vay dựa trên tài sản thế chấp LP và tái đầu tư số tiền vay để tăng mức độ rủi ro. Sandbox sử dụng tài sản mô phỏng và không thực hiện giao dịch onchain nào.\n\nMultiply không phải là một phần của các thị trường Aave V4 của Avana, vốn chỉ bao gồm việc vay dựa trên các vị thế Uniswap v3 trên Ethereum và các vị thế Aerodrome Slipstream trên Base."
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
@@ -303,17 +323,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "Tự động hóa có thể giúp quản lý rủi ro vị thế không?",
-          "a": "Sandbox giới thiệu trước tính năng tự động hóa theo dõi sức khỏe tài khoản và kích hoạt các thao tác như hoàn trả hoặc giảm đòn bẩy trước khi bị thanh lý. Tự động hóa không thuộc các thị trường Aave V4 của Avana.\n\nTự động hóa là một công cụ quản lý rủi ro, không phải là sự bảo đảm. Biến động thị trường, điều kiện thanh khoản, độ trễ giao dịch, cập nhật oracle và tính khả dụng của tuyến vẫn có thể ảnh hưởng đến việc thực thi."
+          "a": "Sandbox xem trước tính năng tự động hóa theo dõi sức khỏe tài khoản và kích hoạt các hành động như hoàn trả hoặc giảm đòn bẩy trước khi bị thanh lý. Tự động hóa không phải là một phần của các thị trường Aave V4 của Avana, nhưng repay và hoàn trả bằng tài sản thế chấp có thể được gọi bởi bất kỳ dịch vụ nào bạn ủy quyền gửi giao dịch.\n\nTự động hóa là một công cụ quản lý rủi ro, không phải sự bảo đảm. Biến động thị trường, điều kiện thanh khoản, độ trễ giao dịch, cập nhật oracle và tình trạng khả dụng của tuyến vẫn có thể ảnh hưởng đến việc thực thi."
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "Tài sản đảm bảo LP có thể hỗ trợ mức độ rủi ro kiểu perps không?",
-          "a": "Không. Avana chỉ bao gồm việc vay GHO bằng các vị thế Uniswap v2 và v3 được phê duyệt trên Ethereum.\n\nBạn quyết định cách sử dụng GHO đã vay, nhưng Avana không định tuyến tín dụng được bảo đảm bằng LP vào perps hay các chiến lược khác."
+          "a": "Không. Avana bao gồm việc vay dựa trên các vị thế Uniswap v3 được phê duyệt trên Ethereum và các vị thế Aerodrome Slipstream trên Base.\n\nBạn quyết định cách sử dụng tài sản bạn vay, nhưng Avana không chuyển tín dụng được bảo đảm bằng LP vào perps hay các chiến lược khác."
         },
         {
           "id": "what-users-monitor",
           "q": "Người dùng theo dõi gì sau khi mở vị thế?",
-          "a": "Người vay theo dõi hệ số sức khỏe, khoản nợ, giá trị tài sản thế chấp, lãi suất vay, trạng thái khoảng giá Uniswap v3 và khoảng cách đến ngưỡng thanh lý. Trong luồng Multiply của sandbox, họ cũng thấy mức đòn bẩy và các công cụ kiểm soát việc gỡ vị thế.\n\nGiao diện Avana hiển thị các giá trị này. Bạn có thể thấy khi nào một vị thế khỏe mạnh, khi nào cần chú ý và khi nào đang tiến gần đến ngưỡng thanh lý."
+          "a": "Người vay theo dõi hệ số sức khỏe, khoản nợ, giá trị tài sản thế chấp, lãi suất vay, trạng thái khoảng giá, trạng thái giá của thị trường và khoảng cách đến mức thanh lý. Lens cung cấp các giá trị này, bao gồm số tiền vay khuyến nghị và tối đa cùng dư địa giới hạn.\n\nTrong quy trình Multiply của sandbox, người dùng cũng thấy mức đòn bẩy và các điều khiển gỡ vị thế."
         }
       ]
     }

@@ -8,27 +8,32 @@
         {
           "id": "what-is-avana",
           "q": "Avana ni nini?",
-          "a": "Avana huwaruhusu watoa ukwasi kutumia nafasi za AMM kama dhamana kwenye Aave V4. Mkopaji anaweka rehani LP token ya Uniswap v2 au nafasi ya Uniswap v3 kwenye LP Vault ya Avana. Kisha mkopaji anakopa GHO kutoka Avana Hub kupitia Borrow Spoke ya Avana, huku ukwasi ukibaki kwenye bwawa.\n\nAvana inafanya kazi kwenye Ethereum mainnet. Avana Hub na Borrow Spokes ni mikataba ya kawaida ya Aave V4 inayomilikiwa na Aave DAO."
+          "a": "Avana huwaruhusu watoa ukwasi kutumia nafasi za AMM kama dhamana kwenye Aave V4. Mkopaji huweka rehani nafasi ya Uniswap v3 kwenye Ethereum au nafasi ya Aerodrome Slipstream kwenye Base. LPVault ya Avana hushikilia nafasi hiyo, na vault token inayolingana hutolewa (supply) kama dhamana kwenye CDP Spoke ya Avana. Kisha mkopaji hukopa GHO, au mali nyingine ya deni ambayo Spoke inakopesha, huku ukwasi ukibaki kwenye bwawa.\n\nAvana inazinduliwa kwenye Ethereum na Base, ikiwa na Avana Stable LP Hub kwenye kila mnyororo. Hubs na Spokes ni mikataba ya kawaida ya Aave V4 isiyorekebishwa inayomilikiwa na kusanidiwa na Aave DAO. Mikataba ya Avana yenyewe hushughulikia uhifadhi, uthamini, vitendo vya mkopaji na ufilisishaji."
         },
         {
           "id": "what-problem-does-avana-solve",
           "q": "Avana inatatua tatizo gani?",
-          "a": "Kwa kawaida watoa ukwasi hulazimika kuondoa ukwasi kabla ya kukopa dhidi ya mtaji wao. Ili kufanya hivyo, wanatoka kwenye bwawa na kupoteza mapato ya ada na masafa waliyochagua.\n\nAvana hufanya nafasi za LP zinazoungwa mkono zitumike kama dhamana. Nafasi inabaki kwenye bwawa. LPOracle ya Avana huithamini, na Aave V4 huirekodi kama vault token inayolingana 1:1 na ukwasi wa msingi. Faida kwa watoa ukwasi ni unyumbufu wa mtaji, si faida chanya iliyohakikishwa. Wakopaji bado wanabeba hasara isiyo ya kudumu, hatari ya bei na hatari ya ufilisishaji."
+          "a": "Kwa kawaida watoa ukwasi hulazimika kuondoa ukwasi kabla ya kuweza kukopa dhidi yake. Hiyo inamaanisha kutoka kwenye bwawa na kupoteza mapato ya ada na masafa waliyochagua.\n\nAvana hufanya nafasi za LP zinazoungwa mkono zitumike kama dhamana huku zikibaki kwenye bwawa. LPOracle huthamini kila nafasi kutokana na viasi vyake vya tokeni kwa bei za oracle, na Aave V4 huirekodi kama vault token. Faida kwa watoa ukwasi ni unyumbufu wa mtaji, si faida iliyohakikishwa. Wakopaji bado wanabeba impermanent loss, hatari ya bei na hatari ya ufilisishaji."
         },
         {
           "id": "how-is-avana-different-from-standard-lending",
           "q": "Avana inatofautianaje na soko la mikopo la kawaida?",
-          "a": "Masoko ya kawaida ya mikopo kwa kawaida huchukulia dhamana kama salio rahisi la tokeni, kama ETH, BTC, stablecoins au mali nyingine za ERC-20. Avana imejengwa kwa ajili ya dhamana inayobadilika kadiri muda unavyokwenda. Nafasi ya LP ina mali mbili na hupata ada. Muundo wake hubadilika kadiri bei zinavyobadilika, inaweza kutoka nje ya masafa, na inahitaji njia maalum ya kufunguliwa.\n\nKwa sababu hii, Avana huweka hatari kwa kila soko. Kila bwawa lililoidhinishwa, na masafa inapohusika, lina vault token, Collateral Factor, vikomo na mfumo wa usuluhishi wake. Collateral Factor huanza kutoka Collateral Factor ya chini kati ya tokeni mbili za bwawa na kisha hupunguzwa kwa hatari mahususi ya bwawa."
+          "a": "Masoko ya kawaida ya mikopo huchukulia dhamana kama salio la tokeni. Nafasi ya LP hushikilia tokeni kadhaa, hupata ada, hubadilisha muundo wake kadiri bei zinavyosogea, inaweza kutoka nje ya masafa, na inahitaji njia maalum ya kufunguliwa.\n\nKwa hivyo Avana huweka hatari kwa kila soko. Soko ni bwawa moja na masafa moja halisi ya tick kwenye CDP Spoke moja, lenye vault token yake, Collateral Factor, vikomo, njia ya bei na njia za swap. Kila wallet ina akaunti tofauti kwa kila soko, kwa hivyo dhamana ya soko moja kamwe haiungi mkono deni katika soko jingine."
         },
         {
           "id": "which-amms-can-avana-support",
           "q": "Avana inaunga mkono AMM zipi?",
-          "a": "Avana inaunga mkono LP tokens teule za Uniswap v2 na nafasi za Uniswap v3 kwenye Ethereum mainnet. Kwa Uniswap v3, ni nafasi za masafa kamili na masafa yaliyoidhinishwa mahususi pekee zinazokubaliwa.\n\nKuongeza Uniswap v4, Curve, Balancer, Aerodrome, AMM nyingine au mitandao mingine kama Base kunahitaji mapitio yake ya kiufundi na ya hatari na idhini ya utawala wa Aave. Mabwawa huidhinishwa moja baada ya jingine. Avana haijumuishi mabwawa ya meme token, mabwawa yasiyo na historia ya kutosha ya ukwasi au bei za nje zinazotegemewa, na mabwawa ambayo uondoaji wa ukwasi unaweza kuzuiliwa."
+          "a": "Wakati wa uzinduzi, Avana inaunga mkono nafasi za Uniswap v3 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base. Nafasi za Slipstream lazima zisiwe zimewekwa kwenye staking; nafasi iliyowekwa kwenye gauge haiwezi kuwekwa rehani. Kila soko hukubali masafa moja halisi ya tick, na nafasi yenye masafa mengine yoyote hukataliwa.\n\nKiini cha Avana hakitegemei AMM fulani. Miunganisho ya Uniswap v2, Curve StableSwap-NG, Balancer na Uniswap v4 imefafanuliwa, lakini kila mmoja huorodheshwa tu baada ya ukaguzi wake wa utayari kupita na utawala kuuidhinisha. Mabwawa yenye tokeni za fee-on-transfer, rebasing au zenye hooks yameondolewa."
         },
         {
           "id": "does-avana-replace-the-amm",
           "q": "Je, Avana inachukua nafasi ya AMM ambapo uraibu wangu uko?",
-          "a": "Hapana. AMM bado hushughulikia swaps, hali ya bwawa, mabadiliko ya bei na uzalishaji wa ada. Avana huongeza safu ya dhamana kuzunguka nafasi za LP zinazoungwa mkono.\n\nUnapoweka rehani nafasi inayostahili, LP Vault ya Avana huishikilia, na Avana hutengeneza vault token inayolingana kwa Aave V4. Ukwasi unabaki kwenye bwawa la AMM na unaendelea kupata ada wakati uko ndani ya masafa."
+          "a": "Hapana. AMM bado hushughulikia swaps, hali ya bwawa, mwenendo wa bei na uzalishaji wa ada. Avana huongeza safu ya dhamana kuzunguka nafasi zinazoungwa mkono.\n\nUnapoweka rehani nafasi, LPVault ya AMM hiyo hushikilia NFT, na Avana hufanya mint ya vault tokens sawa na ukwasi wa nafasi hiyo. Ukwasi hubaki kwenye bwawa na huendelea kupata ada wakati uko ndani ya masafa. Unaweza kukusanya ada hizo wakati wowote."
+        },
+        {
+          "id": "is-avana-live",
+          "q": "Je, Avana imesambazwa?",
+          "a": "Bado. Vipimo vya Avana na violesura vya mikataba vimekamilika na vimepitia mapitio ya ndani na uigaji rasmi. Msimbo wa mikataba unaandikwa baadaye, ukifuatwa na ukaguzi huru wa kila mkataba na kura za Aave DAO zinazoidhinisha usambazaji na ufadhili.\n\nAnwani za mikataba zitaorodheshwa kwenye ukurasa wa Contracts wa nyaraka za wasanidi pindi mikataba itakaposambazwa. Sandbox ya umma kwenye app.avana.cc hutumia mali zilizoigwa."
         }
       ]
     },
@@ -40,27 +45,27 @@
         {
           "id": "how-does-avana-work-at-a-high-level",
           "q": "Avana inafanya kazi vipi kwa kiwango cha juu?",
-          "a": "Avana hufanya kazi kwa hatua tatu. Kwanza, unaweka rehani nafasi ya LP inayoungwa mkono kwenye LP Vault. Pili, Risk Module ya Avana hukagua bwawa, kiwango cha ada, masafa, upatikanaji wa oracle na vikomo. Kisha Aave Adapter hutengeneza vault token inayolingana na kuiweka kwenye Borrow Spoke ya Avana ya soko hilo. Tatu, unakopa GHO kutoka Avana Hub hadi kufikia uwezo wako wa kukopa.\n\nNafasi ya LP inabaki kwenye AMM. Mikataba ya Avana yenyewe hushughulikia uhifadhi, uthamini na usuluhishi. Avana Hub na Borrow Spokes ni mikataba ya kawaida ya Aave V4 isiyobadilishwa inayomilikiwa na Aave DAO."
+          "a": "Unaweka rehani nafasi inayoungwa mkono kupitia AaveAdapter. LPVault huchukua uhifadhi wa NFT, Collateralization hurekodi ni kiasi gani cha ukwasi inachokiunga mkono, na AaveAdapter hufanya mint ya idadi hiyo ya vault tokens kwenda PositionProxy yako ya soko hilo. Proxy huzitoa (supply) kama dhamana kwenye CDP Spoke ya soko. Kisha unakopa kupitia AaveAdapter, inayokagua bei, vikomo na kipimo chako cha afya.\n\nUlipaji, utoaji, uondoaji wa sehemu ya ukwasi, kulipa kwa dhamana na ukusanyaji wa ada pia huendeshwa kupitia AaveAdapter. Ufilisishaji huendeshwa kupitia LPVaultSwap. Kila uboreshaji au mabadiliko ya kigezo kwenye mikataba ya Avana hupitia AvanaTimelock ya mnyororo."
         },
         {
           "id": "why-aave-v4-hub-and-spoke",
-          "q": "Kwa nini Avana hutumia miundombinu ya Hub-and-Spoke ya Aave V4?",
-          "a": "Avana hutumia Aave V4 kwa sababu inatenganisha ukwasi wa pamoja na mipangilio ya hatari mahususi ya soko. Avana Hub inashikilia laini ya mkopo ya GHO yenye kikomo iliyotengwa na Aave DAO. Ni Borrow Spokes zilizoidhinishwa pekee zinazoweza kuchukua kutoka kwake.\n\nKila Borrow Spoke inahusu kundi moja la soko lenye vigezo na vikomo vyake: stable LP (inayopendekezwa: USDC/USDT), correlated LP (inayopendekezwa: wstETH/WETH) na blue-chip/stable LP (inayopendekezwa: WETH/USDC). Yanayopendekezwa bado yanatathminiwa. Avana haifanyi fork wala haibadilishi msimbo wa Aave V4. Mantiki yote mahususi ya Avana iko katika mikataba ya Avana yenyewe."
+          "q": "Kwa nini Avana inatumia Hubs na Spokes za Aave V4?",
+          "a": "Aave V4 hutenganisha ukwasi unaoshirikiwa (Hubs) na mipangilio ya hatari ya soko mahususi (Spokes). Kila mnyororo una Avana Stable LP Hub. Aave DAO huipa mstari wa mkopo wa GHO wenye kikomo kupitia Lend Spoke ya supply pekee, na CDP Spokes za Avana pekee ndizo zinaweza kuchota kutoka humo.\n\nKuna CDP Spoke moja kwa kila mnyororo, Hub, itifaki ya AMM na daraja la hatari. Wakati wa uzinduzi hizi ni \"Uniswap v3 Stable\" kwenye Ethereum na \"Aerodrome Slipstream Stable\" kwenye Base. Correlated LP na Volatile LP Hubs zimeundwa kwa ajili ya baadaye. Avana haifanyi fork wala kurekebisha Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
-          "q": "Spoka ya Kukopa ni nini?",
-          "a": "Borrow Spoke ni Spoke ya kawaida ya Aave V4 inayomilikiwa na Aave DAO. Inapokea vault tokens za Avana kama dhamana na inawaruhusu wakopaji kuchukua GHO kutoka Avana Hub. Inatumia Collateral Factor, Collateral Risk na vigezo vya ufilisishaji vya masoko yake.\n\nAvana hutumia Borrow Spokes tofauti kwa sababu nafasi zote za LP hazina tabia sawa. Jozi ya stablecoin, jozi inayohusiana kama wstETH/WETH, na jozi ya blue-chip/stable kama WETH/USDC zinahitaji Collateral Factor, vikomo na mipangilio ya usuluhishi tofauti."
+          "q": "CDP Spoke ni nini?",
+          "a": "CDP Spoke ni Spoke ya kawaida ya Aave V4 inayomilikiwa na Aave DAO. Hushikilia akiba moja ya vault token ya dhamana pekee kwa kila soko la Avana na akiba za deni zilizowashwa kwa ajili yake, GHO kwanza. Hutumia Collateral Factor, bonasi ya ufilisishaji na vikomo vya kila soko.\n\nKila akiba ya vault token hutumia mipangilio mitatu inayohitajika: kupokea hisa kumezimwa, ada ya ufilisishaji ya Aave ni 0 (au inalipwa kwa mpokeaji wa ada wa Avana), na hakuna kidhibiti cha uwekezaji upya kilichowekwa. Pamoja na kanuni ya uhamishaji ya vault token, haya hufanya LPVaultSwap kuwa mkataba pekee unaoweza kupokea dhamana iliyokamatwa."
         },
         {
           "id": "what-are-vault-tokens",
           "q": "Je, mikopo ya hazina ya Avana ni nini?",
-          "a": "Vault tokens ni tokeni za ERC-20 za dhamana pekee zinazowakilisha nafasi za LP zilizowekwa rehani kwenye Aave V4. Kila bwawa lililoidhinishwa, na masafa inapohusika, lina vault token yake. Avana hutengeneza vault tokens 1:1 na ukwasi wa msingi unapoweka nafasi rehani na huzichoma wakati wa utoaji au usuluhishi. Hakuna ratiba ya utengenezaji, hakuna uzalishaji wa tokeni mpya (emissions), na hakuna kiwango cha ubadilishaji.\n\nVault tokens si mali za watumiaji na hazina soko la pili. Huhamia tu kati ya Avana Hub, Borrow Spokes, Position Proxies, Aave Adapter na LPVaultSwap. Kila vault token iliyopo inaungwa mkono na ukwasi unaoshikiliwa katika LP Vault."
+          "a": "Vault tokens ni tokeni za ERC-20 za dhamana pekee, moja kwa kila soko. Kizio kimoja cha msingi ni sawa na kizio kimoja cha ukwasi uliowekwa (credited). Decimals huwekwa bila kubadilika kwa kila soko kati ya 6 na 18 wakati wa uorodheshaji. AaveAdapter pekee ndiyo huzifanyia mint na burn, na husogea tu kati ya PositionProxies zilizosajiliwa, CDP Spoke na LPVaultSwap.\n\nVault tokens hazina soko la pili, hazina utoaji wa zawadi (emissions) na hazina kiwango cha ubadilishaji. Supply yao kamwe haizidi ukwasi ambao Collateralization imeuweka pamoja na vizio vyovyote vinavyosubiri usuluhishi."
         },
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Ni sehemu gani kuu za itifaki ya Avana?",
-          "a": "LP Vault inashikilia LP tokens na NFT zilizowekwa rehani. Hurekodi mmiliki, bwawa, jozi ya tokeni, kiwango cha ada, masafa na hali ya kila nafasi. Risk Module hukagua ustahiki wa bwawa, orodha ya walioidhinishwa ya majaribio, vikomo vya ukubwa wa nafasi na vikomo vya kiwango cha hatari. Collateralization Module hutengeneza vault tokens 1:1 na ukwasi. LPOracle huweka bei za vault tokens kutoka Chainlink na hutumia TWAP ya bwawa kama ukaguzi wa pili.\n\nAave Adapter ndiyo kituo cha kuingia cha mkopaji. Hushughulikia uwekaji, ukopaji, ulipaji na utoaji kupitia Position Proxy maalum kwa kila mkopaji. LPVaultSwap huendesha ufilisishaji kwa flash loans, na adapta za usuluhishi za AMM huondoa ukwasi na kukusanya ada. Mikataba ya Avana inayoweza kuboreshwa iko nyuma ya timelock ambayo Avana Labs haiwezi kuikwepa. Aave DAO inashikilia majukumu ya kusitisha na kugandisha."
+          "a": "Uhifadhi: LPVault isiyobadilika kwa kila itifaki ya AMM kwa kila mnyororo, na leja ya Collateralization. Akaunti na tokeni: VaultToken na VaultTokenFactory, PositionProxy na ProxyManager. Sera: AaveAdapter (sehemu ya kuingia ya mkopaji), RiskModule (ukaguzi), MarketRegistry (masoko, njia, hali ya pause, vikatiza) na ParameterStore (vigezo vya hatari).\n\nOracles: LPOracle kwa kila soko na DebtOracle kwa kila mali ya deni isiyo ya GHO. Ufilisishaji: LPVaultSwap, mikataba ya njia za swap, chanzo cha flash juu ya Aave V3 Pool na InKindEscrow. Miundombinu: AvanaTimelock, Lock na Lens ya kusoma pekee. Sehemu ya Developers huorodhesha kila mkataba kwenye ukurasa wake wa Contracts."
         }
       ]
     },
@@ -72,27 +77,32 @@
         {
           "id": "what-happens-when-i-deposit-lp-collateral",
           "q": "Nini kinatokea ninapoweka dhamana ya LP?",
-          "a": "Unapoweka rehani nafasi ya LP inayoungwa mkono, Aave Adapter huiweka kwenye LP Vault. Kisha Risk Module hukagua bwawa, kiwango cha ada, masafa, upatikanaji wa oracle na vikomo. Wakati wa majaribio (pilot), ni wawekaji walio kwenye orodha ya walioidhinishwa pekee wanaoweza kuweka rehani, na kila soko lina ukubwa wa chini na wa juu wa nafasi.\n\nUkaguzi ukishapita, Avana hutengeneza vault token inayolingana na kuiweka kama dhamana kwenye Borrow Spoke kupitia Position Proxy yako. Kuweka rehani peke yake hakukopi chochote. Hutengeneza uwezo wa kukopa unaoweza kuutumia wakati akaunti inabaki na afya na ukwasi wa GHO unapatikana."
+          "a": "Unaidhinisha LPVault kwa NFT ya nafasi yako na kuita pledge kwenye AaveAdapter. LPVault hukagua kuwa nafasi inalingana na bwawa na masafa halisi ya soko na huchukua uhifadhi. RiskModule hukagua hali ya bei, hali ya soko, uwekaji rehani wa chini ($10 wakati wa uzinduzi), vikomo vya soko, tokeni na mwekaji, kikomo cha sehemu ya bwawa, kikomo cha rekodi 16 kwa kila akaunti na soko, na vikatiza vyovyote.\n\nUkaguzi ukipita, AaveAdapter husambaza PositionProxy yako ya soko ikihitajika, hufanya mint ya vault tokens sawa na ukwasi uliowekwa na huzitoa (supply) kama dhamana. Kuweka rehani hakukopi kitu chochote. Hakuna orodha ya walioruhusiwa na hakuna ukubwa wa juu wa nafasi zaidi ya vikomo."
         },
         {
           "id": "does-my-lp-stay-active",
           "q": "Je, nafasi yangu ya LP inabaki hai baada ya kuwekeza?",
-          "a": "Ndiyo. Rehani hubadilisha uhifadhi, lakini haiondoi ukwasi kwenye bwawa. Bwawa linaendelea kushughulikia swaps, na nafasi yako inaendelea kupata ada. Nafasi ya Uniswap v3 huacha kupata ada wakati iko nje ya masafa.\n\nWakati deni liko wazi, vitendo vinavyopunguza dhamana, kama kutoa, hupitia Aave Adapter. Vinaruhusiwa tu ikiwa akaunti inabaki na afya baadaye."
+          "a": "Ndiyo. Kuweka rehani hubadilisha uhifadhi lakini hakuondoi ukwasi. Bwawa huendelea kushughulikia swaps na nafasi yako huendelea kupata ada. Nafasi iliyokolezwa huacha kupata ada wakati iko nje ya masafa.\n\nUnaweza kuongeza ukwasi kwenye NFT iliyowekwa rehani na kuiweka kwa recredit, kuondoa sehemu ya ukwasi huku NFT ikibaki imewekwa rehani kwa removeLiquidity, au kuongeza kwa nafasi nyingine katika soko lilelile."
         },
         {
           "id": "can-i-claim-lp-fees",
           "q": "Je, naweza kudai ada za LP wakati nikipa mkopo?",
-          "a": "Ada zinaendelea kulimbikizwa kwenye nafasi yako wakati iko kwenye LP Vault. Unapotoa, LP Vault huachilia LP tokens au NFT yako pamoja na ada ambazo hazijakusanywa.\n\nUnaweza kutoa kikamilifu mara deni lako likishalipwa, au kutoa sehemu ya nafasi ikiwa akaunti yako inabaki na afya baadaye."
+          "a": "Ndiyo. Mwekaji anaweza kuita collectFees kwenye AaveAdapter wakati wowote. AMM hukulipa ada moja kwa moja. Kukusanya ada hakubadilishi vault tokens zako, vikomo, deni wala kipimo cha afya.\n\nHakuna pause, kugandisha, kikatiza au hali ya bei inayozuia ukusanyaji wa ada. Kwenye Base pia hufanya kazi wakati sequencer imekatika kupitia L1 forced inclusion."
         },
         {
           "id": "are-lp-fees-part-of-collateral-value",
           "q": "Je, ada za LP zimo katika thamani ya rehani?",
-          "a": "LPOracle huthamini ukwasi ulio katika nafasi yako. Hukokotoa kiasi cha tokeni kutoka hesabu za ukwasi za bwawa na kukithamini kwa bei za Chainlink, bila punguzo la thamani. Ada ambazo hazijakusanywa huachiliwa pamoja na nafasi unapotoa.\n\nCollateral Factor ya soko huweka vikomo vya kukopa kando. Avana haitumii punguzo kwenye thamani ya oracle."
+          "a": "Hapana. LPOracle huthamini tu ukwasi ulio nyuma ya kila vault token. Ada ambazo hazijakusanywa haziingizwi kwenye bei, na ufilisishaji kamwe hauzikamati.\n\nVikomo vya kukopa hutokana na Collateral Factor ya soko, inayotumika kando. Thamani ya oracle yenyewe haina punguzo la thamani."
         },
         {
           "id": "when-can-i-withdraw-collateral",
           "q": "Naweza kutoa dhamana ya LP lini?",
-          "a": "Unaweza kutoa kikamilifu baada ya deni lako kulipwa. Unaweza pia kutoa sehemu ya dhamana yako ikiwa akaunti inabaki na afya baadaye. Aave Adapter hutoa na kuchoma vault tokens zinazolingana, na LP Vault huachilia LP tokens au NFT yako pamoja na ada ambazo hazijakusanywa.\n\nKulipa na kutoa pia hufanya kazi bila frontend ya Avana, kwa kuita mikataba moja kwa moja. Ukopaji mpya na utoaji wa hiari huzuiwa wakati bei ya oracle imepitwa na wakati au ukaguzi wa TWAP unashindwa. Ulipaji huendelea katika hali hizo."
+          "a": "Bila deni, unaweza kutoa wakati wowote, na hakuna pause, kugandisha, kikatiza au hali ya bei inayouzuia. repayAllAndWithdraw hulipa kila deni na hurudisha nafasi katika mwito mmoja.\n\nUkiwa na deni, utoaji unahitaji Hub isiwe imesitishwa (Hub iliyogandishwa bado inauruhusu), anwani yako isiwe imegandishwa, bei za Live, sequencer inayofanya kazi kwenye Base, hakuna kikatiza kilichowashwa, na kipimo cha afya kilicho sawa na au juu ya kiwango chako cha chini ulichochagua baadaye. LPVault hurudisha NFT pamoja na ada zake ambazo hazijakusanywa."
+        },
+        {
+          "id": "how-many-positions-per-account",
+          "q": "Akaunti moja inaweza kushikilia nafasi ngapi?",
+          "a": "Kila wallet ina PositionProxy moja, na hivyo akaunti moja ya Aave, kwa kila CDP Spoke na soko. Akaunti hushikilia si zaidi ya rekodi 16 za uungwaji mkono kwa soko lake. Nafasi katika soko jingine hufungua akaunti tofauti yenye kipimo chake cha afya.\n\nAkaunti ikifilisiwa, Collateralization hukamata rekodi zake kuanzia kubwa zaidi."
         }
       ]
     },
@@ -104,27 +114,27 @@
         {
           "id": "how-does-avana-price-lp-collateral",
           "q": "Je, Avana inalipa vipi dhamana za LP?",
-          "a": "LPOracle huweka bei ya kila vault token kutoka hesabu za ukwasi za bwawa kwa bei za Chainlink. Fomula ni thamani = q0·P0 + q1·P1, ambapo q0 na q1 ni kiasi cha tokeni kilicho nyuma ya vault token moja. Kwa nafasi za Uniswap v3, kiasi cha tokeni hutokana na ukwasi na masafa ya nafasi kwa bei ya marejeleo.\n\nOracle huripoti thamani bila punguzo la thamani. Collateral Factor ya soko huweka vikomo vya kukopa kando. Collateral Factor huanza kutoka Collateral Factor ya chini kati ya tokeni mbili za bwawa na hupunguzwa kwa kipengele cha hatari cha bwawa."
+          "a": "LPOracle huweka bei ya kila vault token kwa muundo wa haki: hukokotoa viasi vya tokeni vilivyo nyuma ya kizio kimoja cha ukwasi kwa uwiano wa bei za oracle, uliobanwa ndani ya masafa ya soko, na huvizidisha kwa bei za USD za Chainlink. Viasi hukadiriwa kwenda chini na ada ambazo hazijakusanywa haziingizwi. Bei zina decimals 8, na oracle kamwe hairejeshi (revert) na kamwe hairudishi 0.\n\nDeni la GHO huwekewa bei isiyobadilika ya $1. Mali nyingine za deni huwekewa bei na DebtOracle yao."
         },
         {
           "id": "how-does-avana-reduce-oracle-risk",
-          "q": "Je, Avana inapunguza vipi hatari ya orakili na bei?",
-          "a": "Chainlink ndiyo marejeleo ya uthamini. TWAP ya bwawa ni ukaguzi wa uwiano, si wastani wala mbadala. Ikiwa TWAP inatoka nje ya kiwango kinachoruhusiwa, ukopaji mpya na utoaji unaoongeza hatari huzuiwa. Ulipaji na ufilisishaji huendelea kwa bei ya Chainlink.\n\nIkiwa feed ya Chainlink imepitwa na wakati, oracle hutumia bei halali ya mwisho hadi umri wa juu. Katika kipindi hicho, ukopaji mpya na utoaji wa hiari huzuiwa. Baada ya umri wa juu, ufilisishaji husitishwa hadi feed irejee au utawala uidhinishe feed mbadala. Ulipaji huendelea."
+          "q": "Avana hushughulikiaje kushindwa kwa oracle?",
+          "a": "Kila tokeni ina njia kuu na mbadala ya Chainlink na njia ya akiba iliyoidhinishwa mapema. Bei lazima ziwe mpya ndani ya heartbeat ya feed pamoja na nafasi ya ziada. Ukopaji pia unahitaji chanzo cha pili huru kukubaliana, ukaguzi wa uthabiti wa TWAP ya bwawa, na stablecoins ndani ya bendi ya $0.90–$1.02.\n\nBei ya kila soko iko katika mojawapo ya hali nne: Live, Drifting, Cached au Expired. Cached (hadi saa 1) na Expired huzuia ukopaji mpya na ufilisishaji wa soko hilo. Expired huthamini dhamana kwa karibu sifuri huku ulipaji na njia za kutoka bila deni zikiendelea. Baada ya kurejea, kipindi cha neema cha dakika 30 huruhusu ufilisishaji chini ya kipimo cha afya cha 0.95 pekee."
         },
         {
           "id": "what-is-recoverable-value",
           "q": "Je, Avana inapunguza thamani ya chumba cha ndani?",
-          "a": "Avana haipunguzi thamani ya oracle yenyewe. Badala yake, Collateral Factor ya kila soko huzingatia kiasi cha thamani kinachoweza kurejeshwa katika ufilisishaji. Fomula ni: LP Collateral Factor = Collateral Factor ya chini kati ya tokeni mbili za bwawa × kipengele cha hatari cha bwawa.\n\nKipengele cha hatari cha bwawa huakisi masafa, unyeti wa bei, kina cha bwawa na gharama zinazotarajiwa za ufilisishaji. Gauntlet imependekeza kuanza na kiwango cha chini kama 0.25× ya Collateral Factor ya chini ya tokeni za msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa, kama GHO dhidi ya WETH/USDC."
+          "a": "Hapana. Oracle huripoti thamani bila punguzo la thamani. Collateral Factor ya kila soko huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni: Collateral Factor ya chini kabisa ya Aave V4 kati ya tokeni za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa kisichozidi 40%. Sehemu ya GHO hutumia kipengele mahususi kilichowekwa wakati wa uorodheshaji.\n\nUchambuzi wa Gauntlet wa dhamana ya LP unapendekeza vipengele vya kuanzia vya kihafidhina, chini hadi 0.25× ya kipengele cha chini cha msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa. Vipengele vya mwisho hurekebishwa kwa kila soko pamoja na watoa huduma wa Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
           "q": "Kwa nini nafasi za umwagaji mkusanyiko zinashughulikiwa kwa makini?",
-          "a": "Nafasi za ukwasi uliokolezwa hubadilisha haraka mchanganyiko wa mali zake kadiri bei inavyobadilika. Nafasi inaweza kugeuka kuwa kwa kiasi kikubwa mali moja, au inaweza kutoka nje ya masafa na kuacha kupata ada.\n\nAvana hupokea tu nafasi za Uniswap v3 za masafa kamili na masafa yaliyoidhinishwa mahususi, kila moja ikiwa na vault token yake. Oracle hukokotoa kiasi cha tokeni kutoka ukwasi na masafa ya nafasi. Kila soko huweka kipengele chake cha hatari cha bwawa na mfumo wa usuluhishi."
+          "a": "Nafasi iliyokolezwa hubadilisha muundo wake haraka kadiri bei inavyosogea na inaweza kutoka nje ya masafa. Kwa hivyo Avana huorodhesha kila masafa halisi kama soko lake, huithamini kwa masafa yaliyobanwa, na huweka kipengele cha hatari cha bwawa kwa ajili yake.\n\nLPVault hukataa nafasi ambayo masafa yake yanatofautiana na ya soko, na LPOracle hukagua hali ya bwawa dhidi ya TWAP kabla ya kukopa."
         },
         {
           "id": "what-data-does-avana-monitor",
           "q": "Je, Avana inafuatilia data gani za soko?",
-          "a": "Risk Module ya Avana hukagua kiwango cha hatari katika ngazi ya bwawa, tokeni ya msingi na mwekaji, ikiwemo kikomo cha sehemu ya ukwasi wa bwawa. Kila soko lina kipengele chake cha hatari cha bwawa, mfumo wa usuluhishi, dirisha la TWAP, mkengeuko wa bei unaoruhusiwa na umri wa juu zaidi wa feed ya bei.\n\nAvana Labs huchapisha ripoti za matumizi kila wiki na ripoti za mapato kila mwezi. Ripoti hizo zinahusu deni na dhamana kwa kila soko, mkusanyiko, mgawanyo wa kipimo cha afya, na ufilisishaji uliofaulu, ulioshindwa na uliorudiwa. Pia zinahusu matumizi ya FirstLossReserve, deni lisilolipika, matukio ya oracle, matumizi ya laini ya mkopo, ada na rasilimali za hasara ya kwanza."
+          "a": "Keeper na ufuatiliaji wa Avana hufuatilia hali za bei, sehemu ya bwawa, kina cha bwawa, ukamataji, kushindwa kwa njia za swap, upungufu na usanidi wa Aave wa kila akiba. Baadhi ya hali huwasha vikatiza kwenye mnyororo; nyingine hutoa tahadhari, kama kushuka kwa bei kwa 3% katika saa 2, zaidi ya 20% ya soko kukamatwa katika saa 1, kushindwa kwa njia za swap 3 katika saa 1, au Avana kushikilia zaidi ya 25% ya bwawa.\n\nAvana Labs huchapisha ripoti za matumizi za kila wiki na ripoti za mapato za kila mwezi zinazoshughulikia deni na dhamana kwa soko, mkusanyiko, vipimo vya afya, ufilisishaji, matumizi ya Avana Umbrella, deni baya, matukio ya oracle, pause na uwashaji wa vikatiza, matumizi ya mstari wa mkopo na ada."
         }
       ]
     },
@@ -136,27 +146,32 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Kukopa kunafanya kazi vipi kwenye Avana?",
-          "a": "Baada ya nafasi yako kuwekwa rehani na vault token yake kuwekwa kama dhamana, unakopa GHO kutoka Avana Hub kupitia Borrow Spoke. Aave Adapter hukagua kwamba ukaguzi wa bei unapita na kwamba akaunti yako inabaki na afya baada ya deni jipya.\n\nGHO hutumwa kwenye pochi yako, na deni hurekodiwa kwenye Aave V4. Riba hulimbikizwa kwa kiwango cha msingi × (1 + nyongeza yako ya hatari), hivyo kipimo chako cha afya kinaweza kubadilika hata kama dhamana yako haibadiliki."
+          "a": "Unaita borrow kwenye AaveAdapter ukitaja soko, akiba ya deni, kiasi, tarehe ya mwisho, kipimo cha afya cha chini unachokubali na nonce unayotarajia. RiskModule hukagua bei za Live, upya wa bei ya deni, vikatiza, hali ya pause na kwamba keeper aliyeidhinishwa yupo. PositionProxy yako hukopa kwenye CDP Spoke na fedha hutumwa kwako.\n\nRiba hulimbikizwa kwa kiwango cha msingi cha Hub × (1 + risk premium yako), kwa hivyo kipimo chako cha afya kinaweza kubadilika hata kama dhamana yako haibadiliki."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Kiasi cha mikopo kinahesabiwaje?",
-          "a": "Uwezo wa kukopa = thamani ya nafasi ya LP × LP Collateral Factor. LP Collateral Factor ni Collateral Factor ya chini kati ya tokeni mbili za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa. Kipengele cha hatari cha bwawa huakisi masafa, unyeti wa bei, kina cha bwawa na gharama zinazotarajiwa za ufilisishaji.\n\nUwezo pia hutegemea deni lililopo, vikomo vya kiwango cha hatari, ukwasi wa GHO unaopatikana na ukaguzi wa oracle. Kwa mfano, nafasi ya WETH/USDC ya masafa kamili ya $100,000 yenye Collateral Factor ya mwisho ya 35% ina uwezo wa 35,000 GHO. Takwimu hizi ni za mfano, si vigezo halisi vya soko."
+          "a": "Uwezo wa kukopa = thamani ya nafasi ya LP × LP Collateral Factor, na LP Collateral Factor = Collateral Factor ya tokeni ya chini kabisa × kipengele cha hatari cha bwawa. Uwezo pia hutegemea deni lililopo, vikomo, ukwasi unaopatikana wa mstari wa mkopo na ukaguzi wa oracle.\n\nThamani za mfano: nafasi ya Slipstream ya USDC/USDT yenye thamani ya $20,000 na Collateral Factor ya 31.20% hutoa $6,240 ya dhamana iliyopimwa. Lens inapendekeza kukopa hadi kipimo cha afya cha 1.10 (5,673.29 USDC hapa) na huonyesha kiwango cha juu kwa 1.00 (6,209.56 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Kwa nini nguvu ya kukopa ni chini ya thamani yangu ya LP?",
-          "a": "Uwezo wa kukopa ni mdogo kuliko thamani ya LP kwa sababu Collateral Factor huacha kiwango cha usalama kwa ajili ya mabadiliko ya bei, hasara isiyo ya kudumu, mabadiliko ya masafa na gharama za ufilisishaji. Oracle huripoti thamani kamili. Collateral Factor huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni.\n\nKipengele cha hatari cha bwawa hutumika mara moja na huwekwa kwa kila soko, hivyo pengo kati ya thamani ya LP na uwezo wa kukopa hutofautiana kati ya masoko."
+          "a": "Collateral Factor huacha nafasi kwa mabadiliko ya bei, impermanent loss, mabadiliko ya masafa na gharama za ufilisishaji. Kipengele cha hatari cha bwawa kina kikomo cha 40%, kwa hivyo kwa tokeni mbili za 78% loan-to-value ya kufungua ni si zaidi ya takriban 28.4%.\n\nTofauti kati ya thamani na uwezo hutofautiana kati ya masoko kwa sababu kila soko lina kipengele chake cha hatari cha bwawa."
         },
         {
           "id": "what-assets-can-i-borrow",
           "q": "Ninaweza kukopa mali gani?",
-          "a": "Borrow Spokes hukopesha GHO. Avana Hub inafadhiliwa na laini ya mkopo ya GHO yenye kikomo kutoka Aave DAO, na utawala huidhinisha kila ongezeko.\n\nMali nyingine hukopwa kupitia Avana Lend Spoke, ambayo utawala wa Aave huidhinisha kando."
+          "a": "GHO ni mali ya kwanza ya deni kwenye kila CDP Spoke. Mali nyingine, kama USDC, USDT au WETH, zinaweza kuwashwa kama akiba za deni kwenye CDP Spoke kupitia utawala, kila moja ikifadhiliwa na mstari wake wa mkopo na kuwekewa bei na DebtOracle yake.\n\nWakati wa uzinduzi mstari wa mkopo ni GHO kutoka Aave DAO: 2M GHO zinazopendekezwa kwenye Ethereum, huku mstari wa Base ukiwekwa katika pendekezo la ufadhili."
         },
         {
           "id": "can-i-borrow-against-multiple-positions",
           "q": "Je, ninaweza kukopa dhidi ya nafasi nyingi za LP kwa wakati mmoja?",
-          "a": "Ndiyo. Nafasi zilizowekwa kwenye Borrow Spoke moja huunga mkono akaunti moja, na nyongeza yako ya hatari ni wastani uliopimwa wa nafasi hizo. Kila nafasi bado ina vault token, Collateral Factor na vikomo vyake.\n\nWakati wa majaribio (pilot), kila akaunti ina kikomo cha idadi ya nafasi. Akaunti nzima lazima ibaki juu ya kipimo cha afya kinachohitajika."
+          "a": "Ndani ya soko moja, ndiyo: hadi nafasi 16 huunga mkono akaunti moja na kipimo kimoja cha afya. Nafasi katika masoko tofauti ni akaunti tofauti, kila moja ikiwa na kipimo chake cha afya, kwa hivyo haziungani mkono.\n\nNdani ya akaunti unaweza kukopa zaidi ya mali moja ya deni ikiwa CDP Spoke inazikopesha."
+        },
+        {
+          "id": "is-there-a-minimum-health-factor",
+          "q": "Je, kuna kipimo cha afya cha chini cha kukopa?",
+          "a": "Kwenye mnyororo, kikomo pekee ni kipimo cha afya cha Aave cha 1.00. Mwito wa borrow hupokea kipimo chako cha afya cha chini na hurejeshwa (revert) chini yake. Lens inapendekeza kubaki sawa na au juu ya 1.10.\n\nHakuna deni la chini. Kiwango cha chini madhubuti cha afya kwa kila soko kipo lakini kimezimwa wakati wa uzinduzi."
         }
       ]
     },
@@ -167,55 +182,60 @@
       "questions": [
         {
           "id": "how-do-lenders-use-avana",
-          "q": "Wakopaji hutumia Avana vipi?",
-          "a": "Ukopeshaji hufanyika kupitia Avana Lend Spoke, ambayo ni tofauti na Borrow Spokes za GHO. Utawala wa Aave huiidhinisha kando.\n\nLend Spoke huwaruhusu wakopeshaji kuweka mali moja kwa moja kwenye Avana Hub na huwaruhusu wakopaji kukopa mali nyingine zaidi ya GHO. Avana Hub pia inashikilia laini ya mkopo ya GHO ya Aave DAO."
+          "q": "Nani hutoa ukwasi unaotumiwa na wakopaji wa Avana?",
+          "a": "Wakati wa uzinduzi, hazina ya Aave DAO hutoa mstari wa mkopo wa GHO wenye kikomo kwa Avana Stable LP Hub ya kila mnyororo kupitia Lend Spoke ya supply pekee. Amana za umma hazijafunguliwa wakati wa uzinduzi.\n\nKikomo cha kuchota cha kila CDP Spoke kwa mali huwekwa na Aave DAO, na jumla ya vikomo vya kuchota haizidi mstari wa mkopo."
         },
         {
           "id": "where-does-supplier-yield-come-from",
           "q": "Utoaji wa muuzaji unatokana na wapi?",
-          "a": "Kupitia Lend Spoke, wakopeshaji hupata riba inayolipwa na wakopaji wanaotumia dhamana ya LP. Avana Labs hubaki na sehemu ya itifaki kwenye ukwasi unaofadhiliwa na wakopeshaji. Riba kwenye laini za mkopo za Aave DAO bado huenda kwa DAO.\n\nWakopaji hulipa kiwango cha msingi cha Avana Hub pamoja na nyongeza ya hatari kulingana na dhamana yao. Kiwango cha msingi huwekwa sawa na au juu ya kiwango cha msingi cha Aave Core Hub. Utawala wa Aave huweka masharti kamili ya wakopeshaji."
+          "a": "Wakopaji hulipa kiwango cha msingi cha Hub pamoja na risk premium yao. Kiwango cha GHO cha Avana Hub hakibadiliki, hakitegemei matumizi, na huwekwa na Aave DAO sawa na au juu ya kiwango cha msingi cha GHO cha Core Hub.\n\nRiba yote kwenye mistari ya mkopo inayofadhiliwa na Aave DAO huenda kwa Aave DAO. Avana haitozi ada kwenye riba ya mikopo."
         },
         {
           "id": "do-lenders-manage-lp-collateral",
-          "q": "Je, wakopeshaji wanadhibiti dhamana ya LP wenyewe?",
-          "a": "Hapana. Wakopeshaji huweka mali kwenye Avana Hub. Hawachagui masafa ya LP wala hawashughulikii usuluhishi. Borrow Spokes, LP Vault na LPVaultSwap hushughulikia uthamini wa dhamana, ukaguzi wa afya na ufilisishaji.\n\nUtawala wa Aave huidhinisha Lend Spoke kando."
+          "q": "Je, wasambazaji husimamia dhamana ya LP wenyewe?",
+          "a": "Hapana. Wasambazaji hawachagui masafa wala kushughulikia usuluhishi. CDP Spokes, mikataba ya uhifadhi ya Avana na LPVaultSwap hushughulikia uthamini, ukaguzi wa afya na ufilisishaji."
         },
         {
           "id": "what-protects-lender-capital",
           "q": "Nini kinacholinda mtaji wa mkopeshaji?",
-          "a": "Hatari pekee ambayo Aave DAO inabeba ni laini ya mkopo ya GHO yenye kikomo, na kila ongezeko linahitaji idhini ya utawala. Kinga zinajumuisha wawekaji walio kwenye orodha ya walioidhinishwa wakati wa majaribio (pilot), vikomo vya kila soko, Collateral Factor zilizopunguzwa kwa hatari ya bwawa, bei za Chainlink zenye ukaguzi wa TWAP, na ufilisishaji unaosuluhishwa katika muamala mmoja.\n\nIkiwa ufilisishaji unamaliza dhamana na deni likabaki, hasara hulipwa kwa mpangilio: kwanza kwa mtaji maalum wa hasara ya kwanza, kisha kwa mapato yaliyotengwa kwa ulinzi wa hasara, na kisha kwa Avana Umbrella. Hatari za mikataba mahiri, oracle na utekelezaji wa ufilisishaji zinabaki. Mikataba ya Avana iko katika mapitio ya ndani ya usalama, na ukaguzi huru wa usalama ulio wazi kwa umma utafuata."
+          "a": "Collateral Factors kwa kila soko zenye kipengele cha hatari cha bwawa kisichozidi 40%, vikomo vya soko, tokeni na mwekaji kwa kila Hub, hali za oracle na vikatiza, ufilisishaji usiohitaji ruhusa sambamba na keeper wa Avana, na vikomo vya kuchota vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, first-loss reserve inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa wasambazaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
         }
       ]
     },
     {
       "id": "liquidations",
-      "name": "Health na uuzaji wa dhamana",
+      "name": "Afya & Ufilisi",
       "summary": "",
       "questions": [
         {
           "id": "what-is-health-factor",
           "q": "Kipimo cha afya ni nini?",
-          "a": "Kipimo cha afya hulinganisha thamani ya ukopaji ya dhamana yako (thamani × Collateral Factor) na deni lako. Juu ya 1, akaunti ina afya. Chini ya 1, inaweza kufilisiwa.\n\nKatika mfano wa kufafanua, kukopa 25,000 GHO dhidi ya nafasi ya WETH/USDC ya $100,000 yenye Collateral Factor ya 35% hutoa kipimo cha afya cha awali cha 1.40. Kiolesura huweka kikomo cha ukopaji mpya kwenye kipimo cha afya cha 1.10 wakati wa kufungua mkopo."
+          "a": "Kipimo cha afya = thamani ya dhamana × Collateral Factor ÷ thamani ya deni, kinachokokotolewa na Aave kwa kila akaunti, yaani kwa kila soko. Chini ya 1, akaunti inaweza kufilisiwa.\n\nThamani za mfano: $6,240 ya dhamana iliyopimwa dhidi ya deni la 4,999.50 USDC hutoa kipimo cha afya cha 1.2481."
         },
         {
           "id": "what-affects-health-factor",
           "q": "Nini kinaathiri kipengele changu cha afya?",
-          "a": "Kipimo cha afya hubadilika pale thamani ya dhamana, deni au vigezo vya soko vinapobadilika. Nafasi za LP hubadilika thamani kadiri bei za tokeni zinavyobadilika, na nafasi za Uniswap v3 pia hubadilisha muundo ndani ya masafa yao. Riba huongeza deni kadiri muda unavyokwenda.\n\nKukopa zaidi hushusha kipimo chako cha afya. Kulipa deni au kuongeza dhamana iliyoidhinishwa hukipandisha."
+          "a": "Bei za dhamana, muundo wa nafasi ndani ya masafa yake, riba kwenye deni lako, bei za mali za deni, na mabadiliko ya utawala kwenye Collateral Factor. Wakati wa offboarding ya soko, kizingiti chake cha ufilisishaji hushuka mara moja kwa siku kwa siku 30.\n\nKulipa, kuongeza dhamana au kulipa kwa dhamana hukipandisha. Kukopa, kutoa au kuondoa ukwasi hukishusha."
         },
         {
           "id": "how-does-liquidation-work",
           "q": "Je, uharibifu wa mali unafanya kazi vipi kwenye Avana?",
-          "a": "Akaunti inaweza kufilisiwa pale kipimo chake cha afya kinaposhuka chini ya 1. Katika muamala mmoja, LPVaultSwap huchukua flash loan, hulipa deni, na kusuluhisha dhamana ya LP iliyo nyuma yake. Kila soko lina mfumo wa usuluhishi ulioidhinishwa.\n\nUsuluhishi wa sehemu unahusu Uniswap v2 na masoko teule ya Aerodrome au Uniswap v3. Hutumia ufilisishaji wa kawaida wa Aave V4. Kwa kawaida, ni ukwasi unaohitajika kurejesha afya pekee unaoondolewa, na unabaki na kilichosalia. Usuluhishi wa nafasi nzima unahusu AMM nyingi zinazotumia NFT. Husuluhisha nafasi nzima na kurudisha kwa mkopaji ziada yoyote baada ya deni, ada na gharama."
+          "a": "Kipimo cha afya cha akaunti kinapokuwa chini ya 1, mfilisi huita LPVaultSwap. Katika muamala mmoja hukopa mali ya deni kwa flash kutoka Aave V3 Pool ya mnyororo, huita liquidationCall ya Aave ili kulipa sehemu ya deni na kupokea vault tokens pamoja na bonasi, hufungua ukwasi unaolingana, hubadilisha (swap) tokeni kuwa mali ya deni kupitia njia zisizobadilika, na hulipa flash loan.\n\nKila ufilisishaji ni wa sehemu na hupimwa kwa kanuni za Aave. Kiasi kilichorejeshwa lazima kifikie kiwango cha chini kinachotokana na oracle. Mapato yaliyo juu ya deni hulipa ada ya Avana, zawadi ya mfilisi na ziada yoyote ya mkopaji."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Nani anaweza kuondoa nafasi isiyo na afya?",
-          "a": "Ni keepers walioidhinishwa pekee wanaoweza kuita LPVaultSwap, ambao ndio mkataba pekee unaofanya ufilisishaji. Keepers huendeshwa na angalau waendeshaji wawili: Avana Labs na angalau mwendeshaji mmoja huru.\n\nKufungua ufilisishaji kwa wafilisishaji wa wahusika wengine kunahitaji idhini ya utawala."
+          "a": "Avana Labs huendesha keeper aliyeidhinishwa. Mtu yeyote pia anaweza kuita liquidatePermissionless, inayotumia njia za swap za kuu-kisha-akiba na humfanya mwitaji alipe upungufu wowote hadi kikomo anachokiweka.\n\nMtu yeyote pia anaweza kuita settlePending ili kusuluhisha vault tokens zilizoachwa na ukamataji ambao haukukamilika; mapato huenda kwa Avana Umbrella na mwitaji hapokei kitu."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Ada gani zinatumika wakati wa utaftaji?",
-          "a": "Katika masoko ya usuluhishi wa sehemu, bonasi ya ufilisishaji ya Aave V4 hulipa zawadi ya keeper, gharama za utekelezaji na ada ya ufilisishaji ya Avana yenye kikomo. Kwa hiyo ada hiyo haiongezi gharama ya mkopaji. Unabaki na sehemu ya nafasi ambayo haijaondolewa.\n\nKatika masoko ya nafasi nzima, zawadi ya keeper, gharama na ada ya Avana hukatwa kutoka mapato ya usuluhishi, hadi asilimia ya juu ya deni iliyowekwa kwa kila soko. Ziada yoyote hurudishwa kwa mkopaji."
+          "a": "Ada ya Avana ni 20% ya faida ya oracle (thamani iliyorejeshwa kwa bei za oracle ukitoa deni lililolipwa na flash premium), ikiwa na kikomo cha kile ambacho ufilisishaji unapata kwa kweli. Mfilisi hupokea sehemu iliyobaki ya faida ya oracle. Urejeshaji ulio juu ya thamani ya oracle huenda kwa mkopaji.\n\nAda zako za LP ambazo hazijakusanywa kamwe hazichukuliwi. Kulipa kwa dhamana hakulipi bonasi wala ada ya Avana, ni flash premium pekee."
+        },
+        {
+          "id": "what-if-liquidation-cannot-run",
+          "q": "Ni nini kinachoweza kusimamisha ufilisishaji?",
+          "a": "Pause, ugandishaji na vikatiza kamwe havisimamishi ufilisishaji. Hata hivyo ufilisishaji unahitaji bei inayotumika: bei za Cached au Expired huuzuia, na kwa dakika 30 baada ya bei kurejea au sequencer ya Base kuwashwa upya, akaunti zilizo chini ya kipimo cha afya cha 0.95 pekee ndizo zinaweza kufilisiwa.\n\nUfilisishaji pia hurejeshwa (revert) ikiwa njia za swap haziwezi kufikia kiwango cha chini cha urejeshaji na mwitaji hafidii upungufu. Pause ya akiba upande wa Aave pia inaweza kuuzuia."
         }
       ]
     },
@@ -226,23 +246,23 @@
       "questions": [
         {
           "id": "how-are-new-pools-added",
-          "q": "Je, mikusanyiko mipya ya LP inaongezwa vipi?",
-          "a": "Avana Labs huwasilisha masoko mapya na vigezo, na mkaguzi wa hatari aliyeteuliwa huyapitia. Kila bwawa jipya la dhamana huchapishwa kwa mapitio ya wiki mbili kabla ya idhini ya kuorodheshwa.\n\nBwawa linahitaji bei za nje zinazotegemewa, historia ya kutosha ya ukwasi, njia ya kurejesha mapato ya ufilisishaji wakati wa msukosuko, na kutokuwepo kwa vikwazo vya kuondoa ukwasi. Kila AMM zaidi ya Uniswap v2 na v3 inahitaji mapitio yake na idhini ya utawala wa Aave."
+          "q": "Masoko mapya ya LP huongezwaje?",
+          "a": "Avana Labs hupendekeza masoko na vigezo ili yatathminiwe na mkaguzi wa hatari aliyeteuliwa. Kila soko huorodheshwa kupitia AvanaTimelock ya mnyororo kwa ucheleweshaji wa kawaida, mapitio ya umma ya siku tano yanayotekelezwa kwenye mnyororo, pamoja na payload ya uorodheshaji ya Aave DAO kwa Collateral Factor, bonasi na vikomo.\n\nBwawa linahitaji bei za nje zinazoaminika, historia ya kutosha ya ukwasi, njia zinazoweza kurejesha mapato ya ufilisishaji chini ya msongo, na kutokuwepo kwa vizuizi vya kuondoa ukwasi."
         },
         {
           "id": "can-risk-parameters-change",
           "q": "Je, vigezo vya hatari vinaweza kubadilika kadiri muda unavyokwenda?",
-          "a": "Ndiyo. Vigezo vya hatari hubadilika kadiri hali za soko zinavyobadilika. Bwawa linaweza kuwa na ukwasi mdogo zaidi, tete zaidi, uhusiano mdogo zaidi, au kuwa gumu zaidi kufunguliwa kuliko lilivyokuwa lilipoorodheshwa mara ya kwanza.\n\nMasasisho yanaweza kuathiri Collateral Factor, vikomo, mabwawa yanayoungwa mkono, usitishaji, vigezo vya ufilisishaji na mifumo ya usuluhishi. Aave DAO inamiliki Hub na Spokes na inaweza kusitisha au kugandisha masoko bila Avana Labs. Uboreshaji wa mikataba ya Avana hupitia timelock ambayo Avana Labs haiwezi kuikwepa, na DAO inaweza kuughairi."
+          "a": "Ndiyo, kupitia AvanaTimelock. Mabadiliko yanayolegeza hatari husubiri ucheleweshaji wa kawaida wa siku 5 na yana mipaka: kikomo cha USD kinaweza kupanda si zaidi ya 50% na posho ya slippage si zaidi ya 25 bps kwa kila ucheleweshaji. Mabadiliko yanayopunguza hatari pekee yanaweza kutumia ucheleweshaji mfupi wa saa 12.\n\nEmergency Guardian na Aave Protocol Guardian wanaweza kusitisha au kugandisha Hub, kugandisha anwani, kuwasha kikatiza au kubadilisha kwenda njia ya bei ya akiba mara moja, lakini hawawezi kuboresha mikataba, kubadilisha vigezo au kuhamisha fedha. Aave DAO pia inaweza kugandisha au kusitisha akiba za Avana upande wa Aave."
         },
         {
           "id": "where-can-i-follow-governance",
           "q": "Naweza kufuatilia majadiliano ya utawala wapi?",
-          "a": "Avana inajadiliwa kwenye jukwaa la utawala la Aave (governance.aave.com) kisha huenda kwenye kura ya Snapshot. Usambazaji kwenye Ethereum na ufadhili wa GHO kila moja hupitia mapitio ya nyongeza kwenye jukwaa na kura yake ya Snapshot kabla ya AIP.\n\nAvana Labs pia huchapisha taarifa mpya kwenye X kupitia https://twitter.com/avana_labs."
+          "a": "Avana inajadiliwa kwenye jukwaa la utawala la Aave (governance.aave.com). ARFC huenda kwenye kura ya Snapshot, ikifuatiwa na deployment ARFC na funding ARFC, kisha AIPs.\n\nAvana Labs pia huchapisha taarifa kwenye X kwenye https://twitter.com/avana_labs."
         },
         {
           "id": "can-interface-fees-change",
-          "q": "Je, ada za kiolesura zinaweza kubadilika kwa muda?",
-          "a": "Avana Labs hupata ada ya frontend kwenye kiolesura rasmi na ada ya ufilisishaji. Utawala wa Aave huweka kiasi kamili na huidhinisha mabadiliko yoyote ya baadaye. Unaweza kuepuka ada ya frontend kwa kuita mikataba moja kwa moja.\n\nRiba kwenye laini ya mkopo ya GHO ya Aave DAO huenda kwa DAO, si kwa Avana Labs."
+          "q": "Avana Labs hupataje mapato?",
+          "a": "Avana Labs hupata 20% ya faida ya oracle katika kila ufilisishaji, inayowekwa na avanaFeeShareBps na kubadilishwa kupitia timelock pekee, na ada ya programu inayotozwa na programu yake nje ya mikataba. Hakuna mkataba unaokokotoa au kutekeleza ada ya programu, kwa hivyo kuita mikataba moja kwa moja hakulipi ada hiyo.\n\nAvana haitozi ada kwenye riba ya mikopo. Riba kwenye mistari ya mkopo ya Aave DAO huenda kwa DAO."
         }
       ]
     },
@@ -254,17 +274,17 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Je, naweza kukopa GHO kupitia Avana?",
-          "a": "Ndiyo. GHO ndiyo mali pekee inayoweza kukopwa. Unaikopa kutoka Avana Hub, ambayo inashikilia laini ya mkopo ya GHO yenye kikomo iliyotengwa na Aave DAO kupitia GHO Reserve.\n\nDeni la GHO huathiri kipimo chako cha afya na hulimbikiza riba kwa kiwango cha msingi cha Avana Hub pamoja na nyongeza yako ya hatari. Mapato yote ya riba yanayotokana na laini ya mkopo huenda kwa Aave DAO."
+          "a": "Ndiyo. GHO ni mali ya kwanza ya deni kwenye kila CDP Spoke, inayofadhiliwa na mstari wa mkopo wenye kikomo wa Aave DAO kwa Avana Stable LP Hub. Deni la GHO huwekewa bei isiyobadilika ya $1.\n\nDeni la GHO hulimbikiza riba kwa kiwango cha GHO cha Hub pamoja na risk premium yako. Riba hiyo yote huenda kwa Aave DAO."
         },
         {
           "id": "can-gho-be-lp-collateral",
           "q": "Je, GHO inaweza kuwa sehemu ya dhamana ya LP?",
-          "a": "Hapana. Mabwawa yanayopendekezwa ni USDC/USDT, wstETH/WETH na WETH/USDC, na bado yanatathminiwa.\n\nBwawa lenye GHO linaweza kuongezwa baadaye kupitia mchakato uleule wa mapitio na utawala kama bwawa jingine lolote jipya."
+          "a": "Ndiyo. Bwawa la stablecoin lenye GHO linaweza kuorodheshwa. Sehemu yake ya GHO hutumia Collateral Factor mahususi iliyowekwa wakati wa uorodheshaji badala ya factor ya Aave V4 Core Hub."
         },
         {
           "id": "how-do-i-repay-gho",
           "q": "Ninawezaje kulipa deni la GHO?",
-          "a": "Unaweza kulipa GHO pamoja na riba iliyolimbikizwa wakati wowote isipokuwa soko limesitishwa. Unalipa kupitia Aave Adapter au kwa kuita mikataba moja kwa moja. Ulipaji hupunguza deni lako na kupandisha kipimo chako cha afya.\n\nBaada ya ulipaji kamili, unaweza kutoa nafasi. Kisha LP Vault huachilia LP tokens au NFT yako pamoja na ada ambazo hazijakusanywa."
+          "a": "Ita repay kwenye AaveAdapter, au mtu yeyote alipe kwa niaba yako. Weka repayAll ili kulipa deni lote wakati wa ujumuishaji; kiasi chochote kisichotumika hadi kikomo chako cha matumizi hurudishwa. Hakuna pause, kikatiza, kugandisha, bei au hali ya sequencer ya Avana inayozuia ulipaji; ni pause ya akiba upande wa Aave pekee inayoweza.\n\nUnaweza pia kulipa kwa dhamana: LPVaultSwap hukopa mali ya deni kwa flash, hulipa deni, hufungua sehemu ya nafasi yako na huibadilisha (swap) ili kufidia mkopo. Baada ya ulipaji kamili, unaweza kutoa nafasi."
         }
       ]
     },
@@ -276,7 +296,7 @@
         {
           "id": "what-is-avana-multiply",
           "q": "Avana Multiply ni nini?",
-          "a": "Multiply ni mtiririko katika sandbox ya umma ya Avana iliyoko app.avana.cc. Katika mtiririko mmoja wa kazi, hukopa dhidi ya dhamana ya LP na kuwekeza tena fedha zilizokopwa ili kuongeza kiwango cha uwekezaji. Sandbox hutumia mali zilizoigwa na haifanyi miamala ya onchain.\n\nMultiply si sehemu ya masoko ya Aave V4 ya Avana, ambayo yanahusu ukopaji wa GHO dhidi ya nafasi za Uniswap v2 na v3."
+          "a": "Multiply ni mtiririko katika sandbox ya umma ya Avana kwenye app.avana.cc. Katika mtiririko mmoja wa kazi, hukopa dhidi ya dhamana ya LP na huwekeza upya fedha zilizokopwa ili kuongeza mfiduo. Sandbox hutumia mali zilizoigwa na haifanyi miamala kwenye mnyororo.\n\nMultiply si sehemu ya masoko ya Aave V4 ya Avana, ambayo yanashughulikia ukopaji dhidi ya nafasi za Uniswap v3 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base."
         },
         {
           "id": "how-is-multiply-different-from-borrowing",
@@ -303,17 +323,17 @@
         {
           "id": "can-automation-help-manage-risk",
           "q": "Je, uendeshaji wa mashine unaweza kusaidia kusimamia hatari ya nafasi?",
-          "a": "Sandbox inaonyesha mfano wa awali wa mfumo wa kiotomatiki unaofuatilia afya ya akaunti na kuanzisha vitendo kama ulipaji au kupunguza leverage kabla ya ufilisishaji. Mfumo wa kiotomatiki si sehemu ya masoko ya Aave V4 ya Avana.\n\nMfumo wa kiotomatiki ni zana ya kudhibiti hatari, si hakikisho. Mabadiliko ya soko, hali za ukwasi, ucheleweshaji wa miamala, masasisho ya oracle na upatikanaji wa njia bado vinaweza kuathiri utekelezaji."
+          "a": "Sandbox inaonyesha mapema otomatiki inayofuatilia afya ya akaunti na kuanzisha vitendo kama ulipaji au deleveraging kabla ya ufilisishaji. Otomatiki si sehemu ya masoko ya Aave V4 ya Avana, lakini repay na kulipa kwa dhamana vinaweza kuitwa na huduma yoyote unayoiidhinisha kutuma muamala.\n\nOtomatiki ni zana ya kudhibiti hatari, si hakikisho. Mienendo ya soko, hali za ukwasi, ucheleweshaji wa miamala, masasisho ya oracle na upatikanaji wa njia bado vinaweza kuathiri utekelezaji."
         },
         {
           "id": "can-lp-collateral-support-perps-exposure",
           "q": "Je, dhamana ya LP inaweza kuunga mkono mfiduo wa aina ya perps?",
-          "a": "Hapana. Avana inahusu ukopaji wa GHO dhidi ya nafasi za Uniswap v2 na v3 zilizoidhinishwa kwenye Ethereum.\n\nWewe ndiye unaamua jinsi ya kutumia GHO unayokopa, lakini Avana haipitishi mikopo inayoungwa mkono na LP kwenda kwenye perps au mikakati mingine."
+          "a": "Hapana. Avana inashughulikia ukopaji dhidi ya nafasi za Uniswap v3 zilizoidhinishwa kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base.\n\nUnaamua jinsi ya kutumia mali unazokopa, lakini Avana haielekezi mikopo inayoungwa mkono na LP kwenda perps au mikakati mingine."
         },
         {
           "id": "what-users-monitor",
           "q": "Watumiaji hufuatilia nini baada ya kufungua nafasi?",
-          "a": "Wakopaji hufuatilia kipimo cha afya, deni, thamani ya dhamana, kiwango cha riba ya mkopo, hali ya masafa ya Uniswap v3 na umbali hadi ufilisishaji. Katika mtiririko wa Multiply wa sandbox, pia huona kiwango cha leverage na vidhibiti vya kufungua (unwind).\n\nKiolesura cha Avana huonyesha thamani hizi. Unaweza kuona nafasi inapokuwa na afya, inapohitaji uangalizi, na inapokaribia ufilisishaji."
+          "a": "Wakopaji hufuatilia kipimo cha afya, deni, thamani ya dhamana, kiwango cha kukopa, hali ya masafa, hali ya bei ya soko na umbali hadi ufilisishaji. Lens hutoa thamani hizi, ikiwa ni pamoja na viasi vya kukopa vinavyopendekezwa na vya juu kabisa na nafasi iliyobaki ya vikomo.\n\nKatika mtiririko wa Multiply wa sandbox, watumiaji pia huona kiwango cha leverage na vidhibiti vya kufungua."
         }
       ]
     }
