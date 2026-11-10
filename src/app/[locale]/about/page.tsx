@@ -88,13 +88,15 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
             </SectionLead>
             <p className="type-body-copy">
               Major AMMs hold billions in liquidity, but LP positions are still mostly treated as passive holdings,
-              not as productive collateral. Avana starts with selected Uniswap v2 and v3 positions on Ethereum.
+              not as productive collateral. Avana starts with Uniswap v3 positions on Ethereum and Aerodrome Slipstream
+              positions on Base.
             </p>
             <p className="type-body-copy">
               Using LP positions as collateral takes more than listing LP tokens. Avana&apos;s LP Vault holds each
-              pledged position and represents it on Aave V4 with a 1:1 vault token. Borrowers draw GHO from the Avana
-              Hub through Borrow Spokes for stable, correlated, and blue-chip/stable LP markets. The Hub and Spokes are
-              standard Aave V4 contracts owned by the Aave DAO. The Avana Lend Spoke lets lenders supply assets directly to the Avana Hub.
+              pledged position and represents it on Aave V4 with a vault token for its market. Borrowers draw GHO,
+              and other debt assets as they are enabled, from the Avana Stable LP Hub through a CDP Spoke for each AMM.
+              The Hubs and Spokes are standard Aave V4 contracts owned by the Aave DAO, which funds the Hub through a
+              GHO credit line on the Avana Lend Spoke.
             </p>
             <p className="type-body-copy">
               Smart contracts are only part of the work. The position must stay active in its pool. Its value must be

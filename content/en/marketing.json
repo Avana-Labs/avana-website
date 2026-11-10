@@ -200,8 +200,8 @@
       "The lending market for AMM liquidity.",
       "Avana about hero image",
       "Avana is the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
-      "Major AMMs hold billions in liquidity, but LP positions are still mostly treated as passive holdings, not as productive collateral. Avana starts with selected Uniswap v2 and v3 positions on Ethereum.",
-      "Using LP positions as collateral takes more than listing LP tokens. Avana's LP Vault holds each pledged position and represents it on Aave V4 with a 1:1 vault token. Borrowers draw GHO from the Avana Hub through Borrow Spokes for stable, correlated, and blue-chip/stable LP markets. The Hub and Spokes are standard Aave V4 contracts owned by the Aave DAO. The Avana Lend Spoke lets lenders supply assets directly to the Avana Hub.",
+      "Major AMMs hold billions in liquidity, but LP positions are still mostly treated as passive holdings, not as productive collateral. Avana starts with Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base.",
+      "Using LP positions as collateral takes more than listing LP tokens. Avana's LP Vault holds each pledged position and represents it on Aave V4 with a vault token for its market. Borrowers draw GHO, and other debt assets as they are enabled, from the Avana Stable LP Hub through a CDP Spoke for each AMM. The Hubs and Spokes are standard Aave V4 contracts owned by the Aave DAO, which funds the Hub through a GHO credit line on the Avana Lend Spoke.",
       "Smart contracts are only part of the work. The position must stay active in its pool. Its value must be measured as conditions change. The market must have enough liquidity to support a loan. Avana divides this work across four teams, and each team is responsible for a different part of the risk.",
       "Each area has its own owner: technical execution, operations, market modeling, and collateral review.",
       "We are a small team working on a large problem. If you want to join this research effort,"
