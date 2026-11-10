@@ -1,5 +1,6 @@
 import { withDocsI18n } from "@/lib/content-i18n/with-docs-i18n"
 import type { Metadata } from "next"
+import { Link } from "@/i18n/navigation"
 import { DeveloperScrollSpyRail } from "@/components/developer-scroll-spy-rail"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { createDocsMetadata } from "@/lib/content-i18n/docs-metadata"
@@ -9,188 +10,24 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'safety', {
     title: "Safety Mechanisms - Risk Framework",
-    description: "Governance roles, the upgrade timelock, emergency controls and reporting for the Avana Hub, Borrow Spokes and Avana's own contracts.",
+    description: "The risk layers in Avana's design: per-market accounts, collateral factors, caps, oracle states, circuit breakers, pause and freeze, liquidation, Avana Umbrella and governance limits.",
   })
 }
 
 const sections = [
   { id: "overview", title: "Overview" },
-  { id: "core-principles", title: "Core Principles" },
-  { id: "roles", title: "Roles" },
-  { id: "update-flow", title: "Change Process" },
-  { id: "parameter-classes", title: "Change Classes" },
-  { id: "public-disclosure", title: "Reporting" },
-  { id: "emergency-actions", title: "Emergency Actions" },
-]
-
-const corePrinciples = [
-  {
-    title: "Aave DAO Ownership",
-    description:
-      "The Avana Hub and Borrow Spokes are standard, unmodified Aave V4 contracts owned by the Aave DAO. All Avana-specific logic sits in Avana's own contracts.",
-  },
-  {
-    title: "Timelocked Upgrades",
-    description:
-      "Upgradeable Avana contracts sit behind an upgrade timelock with a grace window. Avana Labs cannot bypass the timelock, and the Aave DAO can cancel a queued upgrade.",
-  },
-  {
-    title: "Separate Review",
-    description:
-      "Avana Labs submits markets and parameters, and a designated risk reviewer reviews them. New collateral pools are published for a two-week review before listing approval.",
-  },
-  {
-    title: "Per-Market Settings",
-    description:
-      "Each pool category has its own Borrow Spoke, parameters and caps. Each market has its own pool risk factor, settlement mode, TWAP window, allowed price deviation and maximum feed age.",
-  },
-  {
-    title: "Limited Emergency Powers",
-    description:
-      "The Emergency Guardian can pause, freeze and cancel. It cannot upgrade contracts, change parameters or move collateral.",
-  },
-]
-
-const roles = [
-  {
-    title: "Aave DAO",
-    summary:
-      "Owns the Avana Hub and Borrow Spokes and holds pause and freeze roles over Avana's own contracts.",
-    responsibilities: [
-      "Own the Avana Hub, Borrow Spokes and their configuration",
-      "Pause or freeze Avana's contracts and stop markets without Avana Labs",
-      "Cancel queued upgrades during the timelock",
-      "Own LPVaultSwap through an Aave DAO executor, while an Avana Labs and Aave DAO service-provider multisig holds its operational controls",
-      "Approve new pools, credit-line increases and removal of the pilot allowlist through governance",
-    ],
-  },
-  {
-    title: "Avana Labs",
-    summary:
-      "Builds, operates and pays for Avana's own contracts, audits, monitoring and keepers, within the permissions set by governance.",
-    responsibilities: [
-      "Administer the LP Vault, AvanaConfig, Risk Module, Collateralization Module, LPOracle, AMM settlement adapters and Aave Adapter",
-      "Submit markets and parameters for review by a designated risk reviewer",
-      "Submit upgrades through the timelock, which it cannot bypass",
-      "Run a keeper operator alongside at least one independent operator",
-    ],
-  },
-  {
-    title: "Emergency Guardian",
-    summary:
-      "A multisig that can act quickly to restrict activity, with no power to upgrade or move funds.",
-    responsibilities: [
-      "Pause Avana contracts",
-      "Freeze a market by freezing both the vault-token reserve and the GHO reserve on its Borrow Spoke",
-      "Cancel queued upgrades",
-      "Cannot upgrade contracts, change parameters or move collateral",
-    ],
-  },
-]
-
-const updateFlow = [
-  {
-    step: "Submission",
-    description:
-      "Avana Labs submits a market, parameter set or contract change.",
-  },
-  {
-    step: "Public Review",
-    description:
-      "New collateral pools are published for a two-week review before listing approval.",
-  },
-  {
-    step: "Risk Review",
-    description:
-      "A designated risk reviewer reviews the submitted markets and parameters.",
-  },
-  {
-    step: "Governance Approval",
-    description:
-      "Changes that need Aave DAO approval go through Aave governance: a request for final comment, a Snapshot vote and an onchain AIP vote.",
-  },
-  {
-    step: "Timelock",
-    description:
-      "Upgrades to Avana contracts are queued in a timelock with a grace window before execution. Avana Labs cannot bypass the timelock.",
-  },
-  {
-    step: "Cancellation Window",
-    description:
-      "While an upgrade is queued, the Aave DAO or the Emergency Guardian can cancel it.",
-  },
-  {
-    step: "Emergency Path",
-    description:
-      "Separately, the Aave DAO and the Emergency Guardian can pause or freeze at any time. These actions only restrict activity.",
-  },
-]
-
-const parameterClasses = [
-  {
-    title: "Defensive Actions",
-    tone: "border-red-400 bg-red-50/70",
-    description: "Actions that reduce exposure. The Aave DAO and the Emergency Guardian can take them without Avana Labs.",
-    examples: [
-      "Pausing Avana contracts",
-      "Freezing a market's vault-token and GHO reserves on its Borrow Spoke",
-      "Cancelling a queued upgrade",
-      "Freezing new borrowing during offboarding",
-      "Stopping a market",
-    ],
-  },
-  {
-    title: "Avana Contract Changes",
-    tone: "border-amber-400 bg-amber-50/70",
-    description:
-      "Changes to Avana's own contracts and settings, administered by Avana Labs within its permissions. Upgrades go through the timelock and can be cancelled by the Aave DAO.",
-    examples: [
-      "Upgrades to the LP Vault, AvanaConfig, Risk Module, Collateralization Module, LPOracle, Aave Adapter or LPVaultSwap",
-      "Avana-side limits, oracle settings, settlement routes and fee terms in AvanaConfig",
-      "Pilot allowlist, position-size and exposure limits in the Risk Module",
-    ],
-  },
-  {
-    title: "Governance-Level Changes",
-    tone: "border-gray-300 bg-gray-50",
-    description: "Changes that need Aave DAO approval.",
-    examples: [
-      "Listing a new collateral pool, after a two-week public review",
-      "Adding an AMM beyond Uniswap v2 and v3",
-      "Deploying on another chain, starting with Base",
-      "Increasing the GHO credit line beyond the pilot",
-      "Removing the pilot allowlist",
-    ],
-  },
-]
-
-const disclosureItems = [
-  "Debt and collateral by market",
-  "Concentration",
-  "Health factor distribution",
-  "Successful, failed and retried liquidations",
-  "FirstLossReserve usage",
-  "Bad debt",
-  "Oracle incidents",
-  "Credit-line usage",
-  "Fees",
-  "First-loss resources",
-]
-
-const emergencyTriggers = [
-  "Chainlink price valid, TWAP outside tolerance: new borrowing and risk-increasing withdrawals are blocked. Repayment and liquidation continue at the Chainlink price.",
-  "Chainlink stale or invalid, cached price within its maximum age: the last valid price is used. New borrowing and voluntary withdrawals are blocked.",
-  "Cached price past its maximum age: liquidations pause until the feed recovers or governance approves a backup feed. Repayment continues.",
-  "Guardian market freeze: the vault-token reserve and GHO reserve are frozen on the Borrow Spoke.",
-  "Offboarding: new borrowing is frozen. Repayment and withdrawal continue, and unhealthy positions can still be liquidated.",
-  "Liquidation shortfall that the FirstLossReserve cannot cover: the transaction reverts and debt and collateral are unchanged.",
-]
-
-const emergencyDisclosures = [
-  "The Emergency Guardian cannot upgrade contracts",
-  "The Emergency Guardian cannot change parameters",
-  "The Emergency Guardian cannot move collateral",
-  "Offboarding does not cancel debt",
+  { id: "layers", title: "Risk Layers" },
+  { id: "accounts", title: "Per-Market Accounts" },
+  { id: "collateral-factor", title: "Collateral Factor" },
+  { id: "caps", title: "Caps" },
+  { id: "oracle-states", title: "Oracle States" },
+  { id: "breakers", title: "Breakers, Pause and Freeze" },
+  { id: "liquidation", title: "Liquidation Design" },
+  { id: "coverage", title: "Avana Umbrella" },
+  { id: "governance-limits", title: "Governance Limits" },
+  { id: "hub-tiers", title: "Hub Tiers" },
+  { id: "monitoring", title: "Monitoring and Reporting" },
+  { id: "related", title: "Related Pages" },
 ]
 
 export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
@@ -199,208 +36,403 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
-
           title="Risk Framework"
-
-          description="How governance roles, the upgrade timelock and emergency controls apply to the Avana Hub, Borrow Spokes and Avana's own contracts."
-
+          description="The layers that limit loss in Avana's Aave V4 markets, from account isolation and caps to liquidation, Avana Umbrella and governance limits."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            <>The Avana Hub and Borrow Spokes are standard, unmodified Aave V4 contracts owned
-            by the Aave DAO. Avana-specific logic sits in Avana&apos;s own contracts: the LP Vault,
-            AvanaConfig, Risk Module, Collateralization Module, LPOracle, AMM settlement adapters,
-            Aave Adapter and LPVaultSwap.</>{" "}<>Avana has three pool categories: stable, correlated and blue-chip/stable. Each category has its own Borrow Spoke, parameters and caps. Each market also has its own pool risk factor, settlement mode and oracle settings.</>
+            Avana lists AMM liquidity positions as collateral on standard, unmodified Aave V4 Spokes owned by the Aave DAO. Every Aave contract stays unmodified; custody, valuation and liquidation sit in Avana&apos;s own contracts. Risk is limited in layers, each with its own owner and parameters, and every market sets its own values at listing.
           </p>
+          <div className="doc-topic type-doc-body">
+            The Aave DAO owns and configures every Avana Hub and Spoke and can stop Avana&apos;s markets without Avana Labs. Every change to Avana&apos;s own contracts waits in the AvanaTimelock, which Avana Labs cannot bypass. No pause, freeze or breaker stops repayment, debt-free withdrawal, fee collection or eligible liquidation.
+          </div>
+        </section>
+
+        <section id="layers" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Risk Layers</h2>
+          <div className="overflow-x-auto">
+            <table className="type-doc-table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Layer</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">What it limits</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Set by</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-4 py-2">Per-market accounts</td>
+                  <td className="px-4 py-2">A price move in one market cannot liquidate a position in another</td>
+                  <td className="px-4 py-2">Fixed in the design</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Collateral factor with pool risk factor</td>
+                  <td className="px-4 py-2">How much of a position&apos;s value can support debt</td>
+                  <td className="px-4 py-2">Risk service providers and the Aave DAO at listing</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Caps</td>
+                  <td className="px-4 py-2">Exposure per market, per underlying token and per depositor on each Hub, and each credit line</td>
+                  <td className="px-4 py-2">Risk service providers and the Aave DAO</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Oracle states</td>
+                  <td className="px-4 py-2">New borrowing on prices Avana cannot trust, and seizure at such prices</td>
+                  <td className="px-4 py-2">Automatic</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Circuit breakers</td>
+                  <td className="px-4 py-2">New activity in one market or one debt reserve</td>
+                  <td className="px-4 py-2">Automatic, or a guardian</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Pause, freeze and address freeze</td>
+                  <td className="px-4 py-2">New activity on a Hub, every Hub of a chain, or one wallet</td>
+                  <td className="px-4 py-2">Guardians at once; the timelock at 12 hours</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Liquidation</td>
+                  <td className="px-4 py-2">Debt left on accounts below a health factor of 1</td>
+                  <td className="px-4 py-2">Avana&apos;s keepers and any caller</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Avana Umbrella (Coverage Spoke)</td>
+                  <td className="px-4 py-2">Recorded deficits, up to its funded balance</td>
+                  <td className="px-4 py-2">Funded by Avana Labs, controlled by the Aave DAO</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Governance limits</td>
+                  <td className="px-4 py-2">How fast and how far anyone can change Avana</td>
+                  <td className="px-4 py-2">AvanaTimelock and fixed bounds</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="accounts" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Per-Market Accounts</h2>
           <p className="mb-4 type-doc-body">
-            Three parties hold separate powers: the Aave DAO, Avana Labs and an Emergency
-            Guardian multisig. Avana Labs submits and administers changes, and a designated risk
-            reviewer reviews them. The Aave DAO approves changes and can stop markets. The Guardian
-            can only pause, freeze and cancel.
+            A market is one pool with one exact tick range, listed as one collateral reserve on one CDP Spoke. Each wallet gets one Position Proxy per (CDP Spoke, market): a logic-free, immutable Aave account bound to that wallet, Spoke and market. Each market therefore has its own health factor, and nothing is cross-collateralized across markets.
           </p>
-          <p className="type-doc-body type-doc-callout type-doc-callout-danger">
-            <strong>Operating rule:</strong> the Aave DAO can pause, freeze or stop Avana markets
-            without Avana Labs, and Avana Labs cannot bypass the upgrade timelock.
-          </p>
+          <ul className="list-disc space-y-2 ps-5 type-doc-body">
+            <li>An account holds at most 16 positions in one market, so the liquidation of its last part always fits in one transaction.</li>
+            <li>Each pledged position must match a listed market&apos;s exact pool and range, with a minimum value of $10. Aerodrome Slipstream positions must be unstaked.</li>
+            <li>There is no borrower allowlist and no minimum debt.</li>
+            <li>Borrowers in the same market still share exposure to its oracle, contracts and pool liquidity.</li>
+          </ul>
         </section>
 
-        <section id="core-principles" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Core Principles</h2>
-          <div className="flex flex-col gap-4">
-            {corePrinciples.map((principle) => (
-              <div
-                key={principle.title}
-                className="doc-topic"
-              >
-                <h3 className="mb-2 type-doc-subsection-title">
-                  {principle.title}
-                </h3>
-                <p className="type-doc-body">
-                  {principle.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="roles" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Roles</h2>
-          <div className="space-y-5">
-            {roles.map((role) => (
-              <div
-                key={role.title}
-                className="doc-topic"
-              >
-                <h3 className="text-lg type-doc-subsection-title">{role.title}</h3>
-                <p className="mt-2 type-doc-body">{role.summary}</p>
-                <ul className="mt-4 space-y-2 type-doc-body">
-                  {role.responsibilities.map((item) => (
-                    <li key={item} className="type-doc-callout type-doc-callout-danger">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="update-flow" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Change Process</h2>
-          <p className="mb-6 type-doc-body">
-            Changes follow the fixed path below. New pools get a public review, and governance
-            approval applies only where required. Pause and freeze actions use a separate, faster path.
+        <section id="collateral-factor" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Collateral Factor</h2>
+          <p className="mb-4 type-doc-body">
+            Valuation and borrowing limits are separate. The LPOracle values the vault token at its fair composition at Chainlink prices, with no haircut. The reserve&apos;s collateral factor then sets how much of that value can support debt. It starts from the lowest Aave V4 Core Hub collateral factor among the pool&apos;s tokens and applies the pool risk factor once, rounding down:
           </p>
-
-          <div className="space-y-4">
-            {updateFlow.map((item, index) => (
-              <div
-                key={item.step}
-                className="doc-topic"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="doc-step-number">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 className="mb-1 type-doc-subsection-title">
-                      {item.step}
-                    </h3>
-                    <p className="type-doc-body">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="type-doc-code-block">
+            <code className="type-doc-body text-gray-900">{"LP Collateral Factor = min(CF₁, …, CFₙ) × Pool Risk Factor"}</code>
           </div>
-        </section>
-
-        <section id="parameter-classes" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Change Classes</h2>
-          <p className="mb-6 type-doc-body">
-            Changes are grouped by who can make them and how. Governance sets timelock lengths, grace windows and Guardian signers.
+          <p className="mb-4 type-doc-body">
+            The pool risk factor is at most 40% and reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs. A GHO leg uses an explicit factor set at listing. The Aave DAO sets the reserve&apos;s factor at or below this value and never at 0 while accounts hold the reserve; Avana&apos;s drift check stops new borrowing if Aave&apos;s factor is set higher. Gauntlet&apos;s analysis of LP collateral recommends conservative starting factors, and final factors are calibrated per market with service providers.
           </p>
-
-          <div className="space-y-4">
-            {parameterClasses.map((group) => (
-              <div
-                key={group.title}
-                className="doc-topic"
-              >
-                <h3 className="mb-1 type-doc-subsection-title">
-                  {group.title}
-                </h3>
-                <p className="mb-3 type-doc-body">
-                  {group.description}
-                </p>
-                <ul className="space-y-2 type-doc-body">
-                  {group.examples.map((item) => (
-                    <li key={item} className="type-doc-callout">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <p className="mb-2 type-doc-body">Example values; each market&apos;s parameters are set at listing. GHO, USDC and USDT are assumed to hold at $1.</p>
+          <div className="overflow-x-auto">
+            <table className="type-doc-table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Item</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Result</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-4 py-2">USDC/USDT position value (exact range)</td>
+                  <td className="px-4 py-2">$100,000</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Lower token collateral factor × pool risk factor</td>
+                  <td className="px-4 py-2">75.00% × 37.50% = 28.12% (rounded down)</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Collateral-based borrowing capacity</td>
+                  <td className="px-4 py-2">28,120 GHO</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Recommended borrow shown by the Lens, at health factor 1.10</td>
+                  <td className="px-4 py-2">About 25,560 GHO</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Actual borrowing and initial health factor</td>
+                  <td className="px-4 py-2">20,000 GHO at 1.41</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Collateral value at health factor 1.00, debt unchanged</td>
+                  <td className="px-4 py-2">About $71,120</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </section>
-
-        <section id="public-disclosure" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Reporting</h2>
-          <p className="mb-6 type-doc-body">
-            Avana Labs publishes weekly usage reports and monthly revenue reports. New collateral pools are published for a two-week review before listing approval.
-          </p>
-
-          <div className="doc-topic">
-            <h3 className="mb-3 type-doc-subsection-title">
-              Report contents
-            </h3>
-            <ul className="flex flex-col gap-3 type-doc-body">
-              {disclosureItems.map((item) => (
-                <li key={item} className="type-doc-callout">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <p className="mt-4 type-doc-body">
-            AaveAdapterLens reports vault-token supply against LP Vault liquidity for each market, so anyone can check backing onchain.
+            Aave&apos;s rule is the only on-chain borrowing limit: an account may borrow up to a health factor of 1.00. The Lens shows a recommended borrow at 1.10 beside that maximum, because a loan opened at full capacity has no buffer. An optional per-market hard health floor exists, off at launch, and is set only if stress tests justify it.
           </p>
         </section>
 
-        <section id="emergency-actions" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Emergency Actions</h2>
+        <section id="caps" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Caps</h2>
           <p className="mb-4 type-doc-body">
-            The Aave DAO holds pause and freeze roles over Avana&apos;s contracts. It can stop markets without Avana Labs. The Emergency Guardian multisig can pause, freeze and cancel queued upgrades. Some restrictions apply automatically when oracle checks fail.
+            The risk service providers set every cap in each market&apos;s listing package, with its cap-sizing calculation. Caps are charged at the USD value at pledge, booked at no less than a stress floor of $1.00 per whole vault token.
           </p>
-
-          <div className="flex flex-col gap-4">
-            <div className="doc-topic">
-              <h3 className="mb-3 type-doc-subsection-title">
-                Conditions that restrict activity
-              </h3>
-              <ul className="space-y-2 type-doc-body">
-                {emergencyTriggers.map((item) => (
-                  <li key={item} className="type-doc-callout type-doc-callout-danger">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="doc-topic">
-              <h3 className="mb-3 type-doc-subsection-title">
-                Limits on emergency powers
-              </h3>
-              <ul className="space-y-2 type-doc-body">
-                {emergencyDisclosures.map((item) => (
-                  <li key={item} className="type-doc-callout">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="overflow-x-auto">
+            <table className="type-doc-table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Cap</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Scope</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Rule</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-4 py-2"><code className="type-doc-inline-code">marketUsdCap</code></td>
+                  <td className="px-4 py-2">Per market</td>
+                  <td className="px-4 py-2">Regular pledge budget of the market</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2"><code className="type-doc-inline-code">tokenUsdCap</code></td>
+                  <td className="px-4 py-2">Per underlying token, per Hub</td>
+                  <td className="px-4 py-2">Exposure to one token across every CDP Spoke and market of the Hub; each pledge charges its full value to both tokens&apos; counters</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2"><code className="type-doc-inline-code">depositorUsdCap</code></td>
+                  <td className="px-4 py-2">Per depositor, per Hub</td>
+                  <td className="px-4 py-2">Exposure of one depositor across every CDP Spoke and market of the Hub</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2"><code className="type-doc-inline-code">topUpSliceUsd</code></td>
+                  <td className="px-4 py-2">Per market</td>
+                  <td className="px-4 py-2">A reserved budget, 10% of the market cap by default, used only for rescue top-ups that bring an indebted account back to a health factor of 1.10; exempt from the token and depositor caps</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2"><code className="type-doc-inline-code">poolShareMaxBps</code></td>
+                  <td className="px-4 py-2">Per pool, per chain</td>
+                  <td className="px-4 py-2">Off by default. Where a pool&apos;s listing sets one, Avana&apos;s combined share of the pool above it blocks new borrowing and pledges that increase pool exposure. A share above 25% raises an alert</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Credit line and draw caps</td>
+                  <td className="px-4 py-2">Per (Hub, debt asset) and per CDP Spoke</td>
+                  <td className="px-4 py-2">Set by the Aave DAO; each draw cap stays within the chain&apos;s flash liquidity, swap-route depth and the Avana Umbrella coverage rule</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-
-          <p className="mt-6 type-doc-body type-doc-callout type-doc-callout-danger">
-            Emergency powers can only stop or restrict activity. Borrowers can still repay and
-            make permitted withdrawals by calling the contracts directly, without Avana&apos;s
-            frontend.
+          <p className="mt-4 type-doc-body">
+            Concentration is covered by the token and market caps and listing review rather than a default pool-share limit: removing liquidity has no price impact, and liquidation proceeds can be sold through any approved route. Caps are sized so that each Avana Umbrella covers two modelled losses: the 48-hour incident term, which includes each pool&apos;s worst historic LP drop and a debt-asset price rise, and the tail term for one pool token going to zero. Tightening a cap takes 12 hours; raising one takes 5 days and at most +50% per step.
           </p>
         </section>
 
-        <p className="type-doc-body">
-          Avana Labs owns, operates and pays for its own contracts, audits, monitoring and keepers. The Aave DAO&apos;s exposure is limited to the capped GHO credit line. Each increase to the credit line requires governance approval.
-        </p>
+        <section id="oracle-states" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Oracle States</h2>
+          <p className="mb-4 type-doc-body">
+            Each token has a Chainlink primary route, an alternate route with automatic failover and a standby route approved at listing. A feed counts as fresh for its own heartbeat plus 1,800 seconds, and stablecoins are never valued above $1. A 30-minute pool TWAP is a consistency check, not a price source, and borrowing also needs each token&apos;s price to agree with an independent second source.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="type-doc-table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Condition</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Market response</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-4 py-2">Live, second source agrees</td>
+                  <td className="px-4 py-2">Normal operation</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Live, second source disagrees or is unavailable</td>
+                  <td className="px-4 py-2">Borrowing and withdrawals that leave debt are blocked. Pledges, repayment and liquidation continue.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Drifting: TWAP consistency check fails</td>
+                  <td className="px-4 py-2">New pledges, borrowing and withdrawals that leave debt are blocked. Aave values the collateral at the lower of the fresh and last accepted price. Liquidation continues while the Chainlink inputs are fresh.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Drifting: primary and alternate routes disagree</td>
+                  <td className="px-4 py-2">Borrowing is blocked and the collateral is valued at the lower route. Liquidation of the market waits until the routes agree, a guardian switches the faulty route to its standby, or a timelock fix executes.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Cached: both routes of a token stale or invalid, for up to 1 hour</td>
+                  <td className="px-4 py-2">Pledges, top-ups and borrowing are blocked. Aave values the collateral at the last accepted price. Liquidation of the market waits for a fresh price or a standby switch.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Expired: after 1 hour of Cached</td>
+                  <td className="px-4 py-2">The collateral counts as worthless in Aave&apos;s health factor. Liquidation of the market waits for a fresh price or a standby switch, so collateral is never seized at a price Avana cannot trust.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">First 30 minutes after recovery from Expired</td>
+                  <td className="px-4 py-2">Only accounts below a health factor of 0.95 can be liquidated.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Base sequencer down, or within 1 hour of its restart</td>
+                  <td className="px-4 py-2">Borrowing is blocked. Liquidation pauses while the sequencer is down; for 1 hour after restart only accounts below 0.95 can be liquidated.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 type-doc-body">
+            In every row, repayment, fee collection and debt-free withdrawal stay open. A stablecoin outside the $0.90–$1.02 band also blocks new borrowing and withdrawals that leave debt. A non-GHO debt asset follows the same states through its DebtOracle, except that once Expired it serves a raised stress price, so debt is never undervalued.
+          </p>
+        </section>
+
+        <section id="breakers" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Breakers, Pause and Freeze</h2>
+          <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
+            <li>Temporary gates (ORACLE, POOL_SHARE, POOL_DEPTH) stop new activity in a market while their condition holds and reopen after 30 minutes of healthy observations.</li>
+            <li>Latched freezes (DEFICIT, ISSUER, CONFIG_DRIFT, MANUAL) stay tripped until a pause guardian or the timelock resets them. The deficit freeze trips when a CDP Spoke&apos;s outstanding GHO deficit exceeds 10,000 GHO.</li>
+            <li>Each Hub has a pause state: None, Frozen, Paused(General) or Paused(MintPathSuspect). Guardians can also freeze or pause every Hub of a chain at once.</li>
+            <li>A guardian can freeze up to 20 wallets per rolling 24 hours; a frozen wallet loses new activity, never its exits.</li>
+            <li>Price drops, seizure surges, swap-route failures and pool concentration above 25% are alerts, not on-chain trips.</li>
+          </ul>
+          <p className="type-doc-body">
+            What each state blocks, the playbooks and worked examples are described on this page:{" "}
+            <Link href="/developers/safety/emergency-controls" className="text-type-accent hover:underline">Emergency Controls</Link>.
+          </p>
+        </section>
+
+        <section id="liquidation" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Liquidation Design</h2>
+          <p className="mb-4 type-doc-body">
+            An account becomes liquidatable when its health factor falls below 1. Every liquidation runs through LPVaultSwap in one atomic transaction and is always partial:
+          </p>
+          <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
+            <li>LPVaultSwap flash-borrows the debt asset from the Aave V3 Pool, or the caller funds it.</li>
+            <li>It calls the CDP Spoke&apos;s standard liquidation, which sizes the repayment toward the Spoke&apos;s target health factor (Avana recommends 1.10) with Aave&apos;s dynamic bonus, and receives the seized vault tokens.</li>
+            <li>The seized tokens are burned and exactly that share of the position is unwound; the borrower keeps the rest of the position and all of its fees.</li>
+            <li>Each unwound token is swapped into the debt asset over the market&apos;s primary or backup route, with oracle-derived minimum outputs, and the proceeds must reach a recovery floor. A keeper may top up a small shortfall from its own funds; otherwise the transaction reverts and nothing changes.</li>
+            <li>Avana&apos;s fee is 20% of the oracle gain; the keeper receives the rest of the realized gain and any further surplus goes to the borrower. A payout a token refuses goes to the payout escrow.</li>
+          </ul>
+          <p className="mb-4 type-doc-body">
+            Avana runs its own keeper on each chain and pays its gas, liquidating every account below 1 whatever its size. Any address can also liquidate through the permissionless entry point. A direct liquidation from any other contract fails, because the vault token accepts seized collateral only to LPVaultSwap and every Avana reserve has three required settings: shares not received, no Aave liquidation fee and no reinvestment controller.
+          </p>
+          <p className="type-doc-body">
+            No Avana pause, breaker, configuration drift or address freeze stops liquidation. It waits only for a fresh price of the seized market and the repaid debt, the Base sequencer check, and Aave-side halts or reserve pauses. The full flow and examples are on this page:{" "}
+            <Link href="/developers/liquidation" className="text-type-accent hover:underline">Liquidation Framework</Link>.
+          </p>
+        </section>
+
+        <section id="coverage" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Avana Umbrella</h2>
+          <p className="mb-4 type-doc-body">
+            When a liquidation empties an account&apos;s collateral while debt remains, Aave records a deficit on the funding Hub in that debt asset. Each (Hub, debt asset) has its own Avana Umbrella, a Coverage Spoke funded by Avana Labs and controlled by the Aave DAO, which eliminates a recorded deficit within 72 hours. At launch there are two, GHO on each chain&apos;s Stable LP Hub. A loss larger than the reserve falls on that Hub asset&apos;s suppliers, pro rata, after the Aave DAO realizes it.
+          </p>
+          <p className="type-doc-body">
+            The coverage rule, the deficit breaker and worked examples are on this page:{" "}
+            <Link href="/developers/safety/insurance" className="text-type-accent hover:underline">Avana Umbrella</Link>.
+          </p>
+        </section>
+
+        <section id="governance-limits" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Governance Limits</h2>
+          <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
+            <li>Each chain has its own AvanaTimelock, 4-of-7 governance Safe and 3-of-5 Emergency Guardian; nothing on one chain acts on the other.</li>
+            <li>Every upgrade, parameter change, market listing and role change waits 5 days, never less than 4. Calls that only reduce risk or stop new activity wait 12 hours. Anyone can execute a ready operation within 14 days.</li>
+            <li>The governance Safe and the Aave governance executor propose. The governance Safe, both guardians and the Aave governance executor can cancel; only the Aave governance executor can cancel a role change or a restoring operation.</li>
+            <li>Loosening is limited: a USD cap rises at most 50% and the slippage allowance at most 25 bps per step, once per normal delay.</li>
+            <li>Guardians cannot upgrade, change parameters, choose a new price source, unfreeze an address or move funds.</li>
+            <li>Avana Labs proposes markets and parameter changes for assessment by a designated risk reviewer, and new markets are listed at the normal delay, a 5-day public review enforced on-chain.</li>
+          </ul>
+          <p className="type-doc-body">
+            The full role table and delay classes are on this page:{" "}
+            <Link href="/developers/safety/governance" className="text-type-accent hover:underline">Governance and Timelock</Link>.
+          </p>
+        </section>
+
+        <section id="hub-tiers" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Hub Tiers</h2>
+          <p className="mb-4 type-doc-body">
+            Stable, correlated and volatile LPs carry different risks, so liquidity is organized into three Hub tiers. Each Hub connects to its own CDP Spokes, one per (chain, Hub, AMM protocol, risk tier), and each credit line is a draw cap per (Hub, asset, Spoke).
+          </p>
+          <div className="overflow-x-auto">
+            <table className="type-doc-table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Pools</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Availability</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr>
+                  <td className="px-4 py-2">Avana Stable LP Hub (low risk)</td>
+                  <td className="px-4 py-2">Established stablecoin pools built for tight pricing, low slippage and minimal impermanent loss, such as USDC/USDT and pools containing GHO</td>
+                  <td className="px-4 py-2">At launch, on Ethereum (Uniswap v3 Stable CDP Spoke) and Base (Aerodrome Slipstream Stable CDP Spoke)</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Correlated LP Hub</td>
+                  <td className="px-4 py-2">Blue-chip pools of assets that move together, with tighter risk bands</td>
+                  <td className="px-4 py-2">Added later on any chain</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2">Volatile LP Hub (high risk)</td>
+                  <td className="px-4 py-2">Major DeFi assets and emerging markets with wider price ranges under stricter exposure limits</td>
+                  <td className="px-4 py-2">Added later on any chain</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 type-doc-body">
+            Pause states, caps on tokens and depositors, and each Avana Umbrella are keyed by Hub, so an incident in one Hub&apos;s pools can be stopped without stopping another Hub.
+          </p>
+        </section>
+
+        <section id="monitoring" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Monitoring and Reporting</h2>
+          <p className="mb-4 type-doc-body">Avana&apos;s monitoring pages on-call for these conditions, among others:</p>
+          <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
+            <li>A market price drop of 3% in 2 hours</li>
+            <li>More than 20% of a market&apos;s collateral seized in 1 hour</li>
+            <li>3 swap-route failures in 1 hour for one market or debt asset</li>
+            <li>Avana&apos;s combined share of a pool above 25%</li>
+            <li>Every new deficit, and any deficit still uncovered after 24 hours</li>
+            <li>An Avana Umbrella below 150% of its minimum (warning) or below its minimum (page)</li>
+            <li>Every operation scheduled, cancelled or executed on the AvanaTimelock, and every role or Safe owner change</li>
+            <li>Fewer than two proposers, a guardian role with no holder, or active keepers below the keeper floor</li>
+            <li>A price state of Cached or Expired, a route disagreement, or a stale debt feed</li>
+          </ul>
+          <p className="mb-4 type-doc-body">
+            For each market, the Lens reports vault-token supply alongside the liquidity held in the LPVault, so anyone can check on-chain that every vault token is backed one for one. Avana Labs publishes weekly usage reports and monthly revenue reports covering:
+          </p>
+          <ul className="list-disc space-y-2 ps-5 type-doc-body">
+            <li>Figures per chain</li>
+            <li>Debt and collateral by market</li>
+            <li>Concentration levels</li>
+            <li>The distribution of health factors</li>
+            <li>Successful, failed and retried liquidations</li>
+            <li>Avana Umbrella usage</li>
+            <li>Bad debt</li>
+            <li>Oracle incidents</li>
+            <li>Pauses, freezes, circuit-breaker trips and monitoring alerts</li>
+            <li>Credit-line usage</li>
+            <li>Fees earned</li>
+          </ul>
+        </section>
+
+        <section id="related" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">Related Pages</h2>
+          <ul className="list-disc space-y-2 ps-5 type-doc-body">
+            <li><Link href="/developers/safety/governance" className="text-type-accent hover:underline">Governance and Timelock</Link>: who can change Avana, how long each change waits and who can cancel it.</li>
+            <li><Link href="/developers/safety/emergency-controls" className="text-type-accent hover:underline">Emergency Controls</Link>: pause states, address freeze, breakers, alerts and playbooks.</li>
+            <li><Link href="/developers/safety/insurance" className="text-type-accent hover:underline">Avana Umbrella</Link>: the First-Loss Reserve and how deficits are covered.</li>
+            <li><Link href="/developers/safety/contracts" className="text-type-accent hover:underline">Contract Security</Link>: upgradeable and immutable contracts, trust boundaries and blast radius.</li>
+            <li><Link href="/developers/safety/bug-bounty" className="text-type-accent hover:underline">Bug Bounty</Link>: responsible disclosure scope and severity levels.</li>
+          </ul>
+        </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="Governance roles, the upgrade timelock, emergency controls and reporting for Avana on Aave V4."
+        pageSummary="Risk layers for Avana on Aave V4: accounts, collateral factors, caps, oracle states, breakers, liquidation, Avana Umbrella and governance."
         sectionColor="rose"
       />
     </div>
