@@ -102,7 +102,8 @@
         "integrations": "Uingizaji wa Msaada",
         "safety": "Vifaa vya Usalama",
         "legal": "Kisheria na Uzingatiaji",
-        "copilot": "Uliza AI"
+        "copilot": "Uliza AI",
+        "reference": "Marejeleo"
       },
       "items": {
         "overview": "Muhtasari",
@@ -114,7 +115,7 @@
         "repayLoans": "Lipa Mikopo",
         "withdrawCollateral": "Toa Dhamana",
         "claimLpFees": "Kidai LP Ada",
-        "borrowSpoke": "Kopa Ncha ya Gurudumu",
+        "borrowSpoke": "Hubs na Spokes",
         "lendSpoke": "Mkopo wa Spoke",
         "collateralFactors": "Vigezo vya Dhamana",
         "healthFactor": "Kigezo cha Afya",
@@ -127,18 +128,28 @@
         "integrationsOverview": "Muhtasari wa Ulinganisho",
         "appkit": "AppKit",
         "allowedPools": "Maziwa Yanayoruhusiwa LP",
-        "routerAdapters": "Rauta na Viongezaji",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Mashirika ya Bei",
         "riskFramework": "Mfumo wa Hatari",
-        "contractsSecurity": "Mikataba na Usalama",
+        "contractsSecurity": "Usalama wa Mikataba",
         "bugBounty": "Zawadi ya Hitilafu",
-        "insuranceFunds": "Fondi za Bima",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Ufadhili wa Usalama",
         "legalDisclaimer": "Tangazo la Kisheria",
         "aiIntroduction": "Utangulizi wa AI",
         "copilotProtocols": "Itifaki zinazotumika",
         "copilotPrompts": "Mifano ya prompt",
-        "copilotWorkflow": "Mtiririko wa wakala"
+        "copilotWorkflow": "Mtiririko wa wakala",
+        "custody": "Uhifadhi na Vault Tokens",
+        "priceStates": "Hali za Bei",
+        "marketLifecycle": "Mzunguko wa Maisha wa Soko",
+        "governance": "Utawala",
+        "emergencyControls": "Udhibiti wa Dharura",
+        "contractList": "Mikataba",
+        "parameters": "Vigezo",
+        "securityVerification": "Usalama na Uthibitishaji",
+        "audits": "Ukaguzi",
+        "lens": "Lens"
       }
     },
     "faqUi": {

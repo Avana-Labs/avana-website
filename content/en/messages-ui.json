@@ -115,7 +115,8 @@
         "copilot": "Ask AI",
         "integrations": "Supported Integrations",
         "safety": "Safety Mechanisms",
-        "legal": "Legal & Compliance"
+        "legal": "Legal & Compliance",
+        "reference": "Reference"
       },
       "items": {
         "overview": "Overview",
@@ -127,7 +128,7 @@
         "repayLoans": "Repay Loans",
         "withdrawCollateral": "Withdraw Collateral",
         "claimLpFees": "Claim LP Fees",
-        "borrowSpoke": "Borrow Spoke",
+        "borrowSpoke": "Hubs and Spokes",
         "lendSpoke": "Lend Spoke",
         "collateralFactors": "Collateral Factors",
         "healthFactor": "Health Factor",
@@ -144,14 +145,24 @@
         "integrationsOverview": "Integrations Overview",
         "appkit": "AppKit",
         "allowedPools": "Allowed LP Pools",
-        "routerAdapters": "Router & Adapters",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Price Oracles",
         "riskFramework": "Risk Framework",
-        "contractsSecurity": "Contracts & Security",
+        "contractsSecurity": "Contract Security",
         "bugBounty": "Bug Bounty",
-        "insuranceFunds": "Insurance Funds",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Security Disclosures",
-        "legalDisclaimer": "Legal Disclaimer"
+        "legalDisclaimer": "Legal Disclaimer",
+        "custody": "Custody & Vault Tokens",
+        "priceStates": "Price States",
+        "marketLifecycle": "Market Lifecycle",
+        "governance": "Governance",
+        "emergencyControls": "Emergency Controls",
+        "contractList": "Contracts",
+        "parameters": "Parameters",
+        "securityVerification": "Security & Verification",
+        "audits": "Audits",
+        "lens": "Lens"
       }
     },
     "faqUi": {
