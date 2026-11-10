@@ -120,17 +120,19 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               interruptions can cause transactions to fail or assets to be lost. Compatible
               assets and networks can also change. The interface does not remove these risks,
               and an example or test result in the documentation does not establish that a
-              later transaction produces the same outcome. Avana&apos;s contracts are in internal
-              security review and have not been independently audited. Independent public audits
-              follow. Deployment requires those audits, remediation, and Aave governance approval.
+              later transaction produces the same outcome. Avana&apos;s specification and contract
+              interfaces are complete and have been through internal review and formal modelling.
+              The contract code is written next and has not been audited or deployed. Deployment
+              requires independent audits of every contract, remediation, and Aave governance
+              approval.
             </p>
             <p className="type-doc-body">
               LP-backed borrowing depends on the value of the underlying position. Market
               movement, pool inventory, oracle inputs, and liquidation liquidity can affect
               collateral value and account health. Borrowers still bear impermanent loss, price
-              risk and liquidation risk. If an account&apos;s health factor falls below 1, part or
-              all of its LP position can be settled to repay debt, depending on the
-              market&apos;s settlement mode. These mechanics explain how protocol risk can affect
+              risk and liquidation risk. If an account&apos;s health factor falls below 1, part of
+              its LP position can be seized and settled to repay debt, and repeated liquidations
+              can take all of it. These mechanics explain how protocol risk can affect
               an integration. They do not limit the broader risks and user responsibilities
               described in{" "}
               <Link href="/terms#risks" className={policyLink}>Section 8</Link>.
