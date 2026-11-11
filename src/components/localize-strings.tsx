@@ -81,15 +81,19 @@ function lookupComposed(map: Record<string, string>, value: string): string {
  * phrase map. Used for long-form docs/marketing that remain authored in English JSX.
  */
 export function localizeTree(node: ReactNode, map: Record<string, string>): ReactNode {
+  // Check once here, not per node: listing the keys copies the whole catalog.
   if (!map || Object.keys(map).length === 0) return node
+  return localizeNode(node, map)
+}
 
+function localizeNode(node: ReactNode, map: Record<string, string>): ReactNode {
   if (typeof node === "string") {
     return lookup(map, node)
   }
 
   if (Array.isArray(node)) {
     return node.map((child, index) => {
-      const next = localizeTree(child, map)
+      const next = localizeNode(child, map)
       return isValidElement(next) ? cloneElement(next, { key: next.key ?? index }) : next
     })
   }
@@ -140,12 +144,12 @@ export function localizeTree(node: ReactNode, map: Record<string, string>): Reac
     ) {
       // Content props can also be JSX (e.g. a multi-line hero title); recurse
       // so their text leaves are swapped like children are.
-      nextProps[prop] = localizeTree(value, map)
+      nextProps[prop] = localizeNode(value, map)
     }
   }
 
   if ("children" in element.props) {
-    nextProps.children = localizeTree(element.props.children, map)
+    nextProps.children = localizeNode(element.props.children, map)
   }
 
   // Deep-localize common content object props (TOC / FAQs / rails).
