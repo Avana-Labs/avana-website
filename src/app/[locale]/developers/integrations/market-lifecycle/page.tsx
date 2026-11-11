@@ -96,7 +96,7 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
             <li>The Aave V4 risk service providers and Avana publish the listing package: thresholds and evidence for every listing rule, caps, the minimum pledge value, pool risk factor, each feed&apos;s published heartbeat, standby routes and issuer probes.</li>
             <li>Avana operators deploy the market&apos;s LPOracle, which must seed a Live price at initialization, and raise the pool&apos;s observation buffer to cover the TWAP window at the chain&apos;s block time.</li>
             <li>The governance multisig schedules one timelock batch at the normal delay. On the first market of a Spoke it includes the Spoke registration, the liquidation expectations and the first debt reserve; then new feeds, token collateral factors, tolerances and token listings; the vault-token deployment; the market registration; the market&apos;s parameters, caps and minimum pledge value; and the swap routes. Scheduling is public and starts the five-day review; any canceller can cancel the batch.</li>
-            <li>The Aave DAO executes the listing payload: the CDP Spoke and its AaveOracle on a Spoke&apos;s first market, the debt reserves, the flash-borrower role, the funded Coverage Spoke, the Hub asset with zero liquidity fee, and the vault-token reserve with borrowing off, share receiving off, liquidation fee 0, no reinvestment controller and the LPOracle as price source.</li>
+            <li>The Aave DAO executes the listing payload: the CDP Spoke and its AaveOracle on a Spoke&apos;s first market, the debt reserves, the flash-borrower role for the public flash liquidation helper and the flash source, the funded Coverage Spoke, the Hub asset with zero liquidity fee, and the vault-token reserve with borrowing off, share receiving off, liquidation fee 0, no reinvestment controller and the LPOracle as price source.</li>
             <li>After the delay, anyone executes the batch. The MarketRegistry stores the market as Registered and runs every on-chain listing check. Operators poke the LPOracle and confirm a Live price.</li>
             <li>Operators run the off-chain live-configuration check against the approved deployment manifest. Keepers add the market in observe-only mode.</li>
             <li>The governance multisig schedules <code className="type-doc-inline-code">activateMarket</code> at the short delay; anyone executes it.</li>
@@ -135,7 +135,7 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
             </table>
           </div>
           <p className="type-doc-body">
-            A ready operation can be executed by anyone until 14 days after it became ready; after that it expires and must be proposed again. An operation takes the short delay only when every call in it is on the short-delay list, so one loosening makes the whole batch wait the normal delay.
+            A ready operation can be executed by anyone until 14 days after it became ready; after that it expires and must be scheduled again. An operation takes the short delay only when every call in it is on the short-delay list, so one loosening makes the whole batch wait the normal delay.
           </p>
         </section>
 

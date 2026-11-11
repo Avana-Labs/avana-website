@@ -177,14 +177,14 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Path</th><th className="text-left px-4 py-2 type-doc-subsection-title">Who</th><th className="text-left px-4 py-2 type-doc-subsection-title">Notes</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2"><code className="type-doc-inline-code">liquidate</code></td><td className="px-4 py-2">Approved keepers, including Avana&apos;s own keeper on each chain</td><td className="px-4 py-2">Every swap-route mode</td></tr>
-                <tr><td className="px-4 py-2"><code className="type-doc-inline-code">liquidatePermissionless</code></td><td className="px-4 py-2">Any address, including the Aave DAO</td><td className="px-4 py-2">Primary-then-backup swap routes only; no gas reimbursement</td></tr>
+                <tr><td className="px-4 py-2"><code className="type-doc-inline-code">liquidate</code></td><td className="px-4 py-2">Any address that is not frozen, including Avana&apos;s keeper and the Aave DAO</td><td className="px-4 py-2">The only liquidation entry point; either swap-route mode; the caller funds the debt asset</td></tr>
+                <tr><td className="px-4 py-2"><code className="type-doc-inline-code">flashLiquidate</code></td><td className="px-4 py-2">Any caller without the debt asset, through the public flash liquidation helper</td><td className="px-4 py-2">The helper flash-borrows the debt asset from the Aave V3 Pool, calls liquidate and repays the loan from the caller&apos;s payout</td></tr>
                 <tr><td className="px-4 py-2"><code className="type-doc-inline-code">repayWithCollateral</code></td><td className="px-4 py-2">The borrower</td><td className="px-4 py-2">Repays from part of its own position; no bonus and no Avana fee</td></tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 type-doc-body">
-            In one transaction LPVaultSwap flash-borrows the debt asset from the Aave V3 Pool, repays the debt, receives and burns the seized vault tokens, has the LPVault unwind exactly those units, swaps each token into the debt asset with oracle-derived minimums, repays the flash loan and pays out. If the swaps cannot settle, the call reverts and nothing changes. No Avana pause, breaker or freeze stops liquidation. See{" "}
+            In one transaction LPVaultSwap takes the debt asset from its caller, repays the debt, receives and burns the seized vault tokens, has the LPVault unwind exactly those units, swaps each token into the debt asset with oracle-derived minimums and pays out: Avana&apos;s fee, any borrower surplus, then the rest to the caller. If the swaps cannot settle, the call reverts and nothing changes. No Avana pause, breaker or freeze stops liquidation. See{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">Liquidation</Link>.
           </p>
         </section>

@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "What are the main parts of the Avana protocol?",
-          "a": "Custody: an immutable LPVault per AMM protocol per chain, and the Collateralization ledger. Accounts and tokens: VaultToken and VaultTokenFactory, PositionProxy and ProxyManager. Policy: the AaveAdapter (borrower entry point), RiskModule (checks), MarketRegistry (markets, routes, pause state, breakers) and ParameterStore (risk parameters).\n\nOracles: an LPOracle per market and a DebtOracle per non-GHO debt asset. Liquidation: LPVaultSwap, swap-route contracts, a flash source over the Aave V3 Pool and the InKindEscrow. Infrastructure: AvanaTimelock, Lock and the read-only Lens. The Developers section lists every contract on its Contracts page."
+          "a": "Custody: an immutable LPVault per AMM protocol per chain, and the Collateralization ledger. Accounts and tokens: VaultToken and VaultTokenFactory, PositionProxy and ProxyManager. Policy: the AaveAdapter (borrower entry point), RiskModule (checks), MarketRegistry (markets, routes, pause state, breakers) and ParameterStore (risk parameters).\n\nOracles: an LPOracle per market and a DebtOracle per non-GHO debt asset. Liquidation: LPVaultSwap, swap-route contracts and the PayoutEscrow, plus Avana's public flash liquidation helper for callers that hold none of the debt asset. Repay with collateral uses a flash source over the Aave V3 Pool. Infrastructure: AvanaTimelock, Lock and the read-only Lens. The Developers section lists every contract on its Contracts page."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "How does borrowing work on Avana?",
-          "a": "You call borrow on the AaveAdapter with the market, the debt reserve, the amount, a deadline, the minimum health factor you accept and your expected nonce. The RiskModule checks Live prices, debt-price freshness, breakers, the pause state and that an approved keeper exists. Your PositionProxy borrows on the CDP Spoke and the funds are sent to you.\n\nInterest accrues at the Hub base rate × (1 + your risk premium), so your health factor can change even if your collateral does not."
+          "a": "You call borrow on the AaveAdapter with the market, the debt reserve, the amount, a deadline, the minimum health factor you accept and your expected nonce. The RiskModule checks Live prices, debt-price freshness, breakers, the pause state and that at least one committed operator is active on the chain. Your PositionProxy borrows on the CDP Spoke and the funds are sent to you.\n\nInterest accrues at the Hub base rate × (1 + your risk premium), so your health factor can change even if your collateral does not."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "What protects lender capital?",
-          "a": "Per-market Collateral Factors with a pool risk factor of at most 40%, market, token and depositor caps per Hub, oracle states and breakers, permissionless liquidation alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
+          "a": "Per-market Collateral Factors with a pool risk factor of at most 40%, market, token and depositor caps per Hub, oracle states and breakers, liquidation open to any address alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "How does liquidation work on Avana?",
-          "a": "When an account's health factor is below 1, a liquidator calls LPVaultSwap. In one transaction it flash-borrows the debt asset from the chain's Aave V3 Pool, calls Aave's liquidationCall to repay part of the debt and receive vault tokens plus the bonus, unwinds the matching liquidity, swaps the tokens into the debt asset on fixed routes, and repays the flash loan.\n\nEvery liquidation is partial and sized by Aave's rules. The recovered amount must reach an oracle-derived floor. Proceeds above the debt pay Avana's fee, the liquidator's reward and any borrower surplus."
+          "a": "When an account's health factor is below 1, any address can call liquidate on LPVaultSwap. In one transaction LPVaultSwap takes the debt asset from the caller, calls Aave's liquidationCall to repay part of the debt and receive vault tokens plus the bonus, unwinds the matching liquidity and swaps the tokens into the debt asset on fixed routes. A caller without the debt asset can use Avana's public flash liquidation helper, which flash-borrows it from the chain's Aave V3 Pool and repays the loan from the caller's payout.\n\nEvery liquidation is partial and sized by Aave's rules. The recovered amount must reach an oracle-derived floor. Avana's fee and any borrower surplus are paid first; the caller receives the rest: its unused funding, the recovered principal and its reward, paid directly or the liquidation reverts."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Who can liquidate an unhealthy position?",
-          "a": "Avana Labs runs an approved keeper. Anyone can also call liquidatePermissionless, which uses the primary-then-backup swap routes and makes the caller pay any shortfall up to a limit they set.\n\nAnyone can also call settlePending to settle vault tokens left by an unfinished seizure; the proceeds go to the Avana Umbrella and the caller receives nothing."
+          "a": "Any address that is not frozen can call liquidate, LPVaultSwap's only liquidation entry point, with either the primary-then-backup or the backup-only swap routes. The caller funds the debt asset itself or through Avana's public flash liquidation helper, and pays any shortfall below the recovery floor up to a limit it sets. Avana's keeper is the committed operator on each chain: it commits to liquidate every account below a health factor of 1, but registration gives it no power any other caller lacks.\n\nAnyone can also call settlePending to settle vault tokens left by an unfinished seizure; the proceeds go to the Avana Umbrella and the caller receives nothing."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "What fees apply during liquidation?",
-          "a": "Avana's fee is 20% of the oracle gain (recovered value at oracle prices minus the debt repaid and the flash premium), limited to what the liquidation actually realizes. The liquidator receives the rest of the oracle gain. Recovery above oracle value goes to the borrower.\n\nYour uncollected LP fees are never taken. Repay with collateral pays no bonus and no Avana fee, only the flash premium."
+          "a": "Avana's fee is 20% of the oracle gain (the seized collateral's value at oracle prices minus the debt repaid), limited to what the liquidation actually realizes. The liquidator receives the rest of the oracle gain. Recovery above oracle value goes to the borrower. A liquidator that borrows through the flash liquidation helper pays any flash premium from its own payout.\n\nYour uncollected LP fees are never taken. Repay with collateral pays no bonus and no Avana fee, only the flash premium."
         },
         {
           "id": "what-if-liquidation-cannot-run",

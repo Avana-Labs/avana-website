@@ -31,7 +31,7 @@ const availabilityRows = [
   ["Depositor address-frozen", "Allowed"],
   ["Base sequencer Down (forced in through L1) or in Grace", "Allowed"],
   ["Every price state, including stale feeds and grace windows", "Allowed"],
-  ["Market Offboarding, Closed or not active; liquidation halted; configuration drift", "Allowed"],
+  ["Market Offboarding, Closed or not active; no active committed operator; configuration drift", "Allowed"],
   ["Any Aave reserve paused or frozen, the Spoke halted, the credit line exhausted", "Allowed"],
   ["Any health factor, including below 1.00 and during a liquidation in another transaction", "Allowed"],
   ["Record at 0 credited units, or reduced by a partial removal or repay with collateral", "Allowed"],

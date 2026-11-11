@@ -61,21 +61,24 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
             Avana&apos;s share is computed from the oracle value of the seized units, not from what the caller&apos;s swaps returned, and it is never above the realized surplus:
           </p>
           <div className="type-doc-code-block">
-            <code className="type-doc-body text-gray-900">{"G = max(0, V − D − φ)"}</code>
+            <code className="type-doc-body text-gray-900">{"G = max(0, V − D)"}</code>
           </div>
           <div className="mt-2 type-doc-code-block">
-            <code className="type-doc-body text-gray-900">{"S = max(0, R′ − D − φ)"}</code>
+            <code className="type-doc-body text-gray-900">{"S = max(0, R′ − D)"}</code>
           </div>
           <div className="mt-2 type-doc-code-block">
             <code className="type-doc-body text-gray-900">{"A = min(floor(G × avanaFeeShareBps / 10⁴), S)"}</code>
           </div>
           <ul className="mt-4 list-disc space-y-2 ps-5 type-doc-body">
-            <li>V is the oracle value of the seized units in the debt asset, D the debt repaid and φ the flash-loan premium.</li>
+            <li>V is the oracle value of the seized units in the debt asset and D the debt repaid. No flash premium enters these terms: a caller that borrows through a flash liquidation helper pays the premium from its own payout.</li>
             <li>R′ is the amount the unwind and swaps recovered, plus any shortfall top-up from the caller.</li>
             <li>G is the oracle gain, the bonus Aave paid. S is the realized surplus.</li>
           </ul>
           <p className="mt-4 mb-4 type-doc-body">
             Because the fee is measured on the oracle gain, a caller that routes or sandwiches its own swaps badly cannot lower it while the surplus covers it. Because it is capped at the surplus, the fee never makes a liquidation revert, and the debt is always repaid first.
+          </p>
+          <p className="mb-4 type-doc-body">
+            In a market whose slippage allowance reaches the limit the bonus sets, the recovery floor falls to about the debt repaid. A caller that routes its swaps down to the floor can then reduce the fee to about zero, so the fee there is best-effort. The floor still protects the debt repaid and the borrower.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
@@ -91,27 +94,27 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
         <section id="payout-split" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Payout Split</h2>
           <p className="mb-4 type-doc-body">
-            After LPVaultSwap repays the flash loan and its premium, it divides the realized surplus three ways, all in the debt asset repaid:
+            After the swaps, LPVaultSwap divides the realized surplus three ways, all in the debt asset repaid. It pays Avana&apos;s fee first, then the borrower surplus, then the caller:
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Recipient</th><th className="text-left px-4 py-2 type-doc-subsection-title">Amount</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
                 <tr><td className="px-4 py-2">Avana fee recipient</td><td className="px-4 py-2">A, as above</td></tr>
-                <tr><td className="px-4 py-2">Caller (keeper or permissionless liquidator)</td><td className="px-4 py-2">kr = min(S, G) − A</td></tr>
+                <tr><td className="px-4 py-2">Caller (any address, such as Avana&apos;s keeper)</td><td className="px-4 py-2">kr = min(S, G) − A, paid together with the caller&apos;s unused funding and the recovered principal</td></tr>
                 <tr><td className="px-4 py-2">Borrower&apos;s wallet</td><td className="px-4 py-2">B = max(0, S − G), the recovery above the oracle value of the seizure</td></tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 type-doc-body">
-            A + kr + B = S. A payout that a token refuses, for example to a blocklisted address, is held in the payout escrow (InKindEscrow) for its recipient to claim, and the liquidation still completes.
+            A + kr + B = S. An Avana fee or borrower surplus that a token refuses, for example to a blocklisted address, is held in the payout escrow (PayoutEscrow) for its recipient to claim, and the liquidation still completes. The caller&apos;s payout is never escrowed: it is paid directly or the whole liquidation reverts.
           </p>
         </section>
 
         <section id="example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <p className="mb-4 type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}A Uniswap v3 USDC/USDT market on Ethereum, vault token priced at $2.10. Bob borrowed USDC and his health factor is below 1. Avana&apos;s keeper liquidates with a flash loan of 1,950 USDC at a 0.05% premium.
+            {"Example values; each market's parameters are set at listing."}{" "}A Uniswap v3 USDC/USDT market on Ethereum, vault token priced at $2.10. Bob borrowed USDC and his health factor is below 1. Avana&apos;s keeper liquidates through the public flash liquidation helper, which borrows 1,950 USDC at a 0.05% premium.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
@@ -119,20 +122,21 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
               <tbody className="divide-y divide-gray-200">
                 <tr><td className="px-4 py-2">Debt repaid, D</td><td className="px-4 py-2">1,950</td></tr>
                 <tr><td className="px-4 py-2">Seized: 975 vault tokens (1,950 × 1.05 ÷ 2.10), oracle value V</td><td className="px-4 py-2">2,047.50</td></tr>
-                <tr><td className="px-4 py-2">Flash premium, φ</td><td className="px-4 py-2">0.975</td></tr>
-                <tr><td className="px-4 py-2">Oracle gain, G = 2,047.50 − 1,950 − 0.975</td><td className="px-4 py-2">96.525</td></tr>
+                <tr><td className="px-4 py-2">Oracle gain, G = 2,047.50 − 1,950</td><td className="px-4 py-2">97.50</td></tr>
                 <tr><td className="px-4 py-2">Recovered after unwind and swaps, R (floor 2,026.02)</td><td className="px-4 py-2">2,040.30</td></tr>
-                <tr><td className="px-4 py-2">Realized surplus, S = 2,040.30 − 1,950 − 0.975</td><td className="px-4 py-2">89.325</td></tr>
-                <tr><td className="px-4 py-2">Avana fee, A = min(20% × 96.525, 89.325)</td><td className="px-4 py-2">19.305 (shown as 19.31)</td></tr>
-                <tr><td className="px-4 py-2">Keeper reward, kr = 89.325 − 19.305</td><td className="px-4 py-2">70.02</td></tr>
+                <tr><td className="px-4 py-2">Realized surplus, S = 2,040.30 − 1,950</td><td className="px-4 py-2">90.30</td></tr>
+                <tr><td className="px-4 py-2">Avana fee, A = min(20% × 97.50, 90.30)</td><td className="px-4 py-2">19.50</td></tr>
+                <tr><td className="px-4 py-2">Keeper reward, kr = 90.30 − 19.50</td><td className="px-4 py-2">70.80</td></tr>
                 <tr><td className="px-4 py-2">Borrower surplus, B</td><td className="px-4 py-2">0</td></tr>
+                <tr><td className="px-4 py-2">Paid to the helper: funding 1,950 plus the keeper reward</td><td className="px-4 py-2">2,020.80</td></tr>
+                <tr><td className="px-4 py-2">Helper repays the Pool 1,950.975 (0.975 premium); the keeper nets</td><td className="px-4 py-2">69.825</td></tr>
               </tbody>
             </table>
           </div>
           <ul className="mt-4 list-disc space-y-2 ps-5 type-doc-body">
-            <li>If the swaps had returned only 2,027 USDC, S would be 76.025 and Avana&apos;s fee would still be 19.305.</li>
-            <li>If the swaps had returned 2,052 USDC, S would be 101.025: the keeper would receive 77.22 (96.525 − 19.305) and Bob&apos;s wallet 4.5 USDC.</li>
-            <li>On Base, the same flow in the ARFC example repays 2,000 USDC with a 1 USDC premium and recovers 2,038.50 USDC: Avana&apos;s fee is 7.80 and the keeper receives 29.70.</li>
+            <li>If the swaps had returned only 2,027 USDC, S would be 77 and Avana&apos;s fee would still be 19.50.</li>
+            <li>If the swaps had returned 2,052 USDC, S would be 102: the keeper reward would be 78 (97.50 − 19.50) and Bob&apos;s wallet would receive 4.5 USDC.</li>
+            <li>On Base, the same flow in the ARFC example repays 2,000 USDC, borrowed through the helper with a 1 USDC premium, and recovers 2,038.50 USDC: Avana&apos;s fee is 8 and the keeper nets 29.50 after the premium.</li>
           </ul>
         </section>
 
@@ -164,12 +168,12 @@ export default async function PlatformFeesPage({ params }: LocaleParamsProps) {
                 <tr><td className="px-4 py-2">Liquidity fee on each debt asset</td><td className="px-4 py-2">Aave DAO</td><td className="px-4 py-2">Aave DAO treasury</td></tr>
                 <tr><td className="px-4 py-2">Aave liquidation fee on vault-token reserves</td><td className="px-4 py-2">Aave DAO, required to be 0 or paid to Avana&apos;s fee recipient</td><td className="px-4 py-2">No one at 0</td></tr>
                 <tr><td className="px-4 py-2">Liquidation bonus</td><td className="px-4 py-2">Aave DAO; Avana recommends a minimum of at least 2%</td><td className="px-4 py-2">Paid from the seized collateral; it is the oracle gain split above</td></tr>
-                <tr><td className="px-4 py-2">Flash-loan premium of the Aave V3 Pool</td><td className="px-4 py-2">Aave; 0 once Avana&apos;s flash source holds the flash-borrower role</td><td className="px-4 py-2">Aave V3 Pool; LPVaultSwap accepts at most 10 bps</td></tr>
+                <tr><td className="px-4 py-2">Flash-loan premium of the Aave V3 Pool</td><td className="px-4 py-2">Aave; 0 for a borrower that holds the flash-borrower role</td><td className="px-4 py-2">Aave V3 Pool; paid by a liquidation caller that borrows through a flash liquidation helper, or by the borrower in a repay with collateral, at most 10 bps</td></tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4 type-doc-body">
-            The live Aave V3 premium is 5 bps. Each listing proposal asks the Aave DAO to grant Avana&apos;s flash source the flash-borrower role on Ethereum and Base, so liquidation flash loans carry no premium. The bonus sizing is explained in{" "}
+            The live Aave V3 premium is 5 bps. Each listing proposal asks the Aave DAO to grant the flash-borrower role on Ethereum and Base to Avana&apos;s public flash liquidation helper and to Avana&apos;s flash source, used for repay with collateral, so their flash loans carry no premium. An operator&apos;s own helper pays the Pool premium unless an Aave proposal grants it the role. The bonus sizing is explained in{" "}
             <Link href="/developers/liquidation" className="text-type-accent hover:underline">Liquidation</Link>.
           </p>
         </section>

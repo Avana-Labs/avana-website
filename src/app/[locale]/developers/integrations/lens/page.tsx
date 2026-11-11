@@ -121,13 +121,15 @@ export default async function LensPage({ params }: LocaleParamsProps) {
         <section id="liquidation-preview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Liquidation Preview</h2>
           <p className="mb-4 type-doc-body">
-            <code className="type-doc-inline-code">previewLiquidation(proxy, debtReserveId, deadline)</code> returns every liquidation gate, Aave&apos;s sizing and ready-to-send liquidation parameters for one account, its market and one debt reserve, with the expected seizure, flash amount and premium, recovery floor and payouts, all in the debt asset. A caller without keeper tooling can submit a correct call from it.
+            <code className="type-doc-inline-code">previewLiquidation(proxy, debtReserveId, deadline)</code> returns every liquidation gate, Aave&apos;s sizing and ready-to-send liquidation parameters for one account, its market and one debt reserve, with the expected seizure, recovery floor, gross and net payout and the loss the caller may bear, all in the debt asset. Any caller without keeper tooling can submit a correct call from it.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Gates read fresh prices only for the seized market and the repaid debt reserve; the account&apos;s other reserves count at their served prices.</li>
             <li>The expected repayment follows the pinned Aave V4 liquidation formulas: target health factor, dynamic bonus, caps and the dust rule.</li>
             <li>When the expected repayment is the whole debt, the whole collateral is seized, or the remainder would be close to Aave&apos;s dust threshold, the debt to cover is the whole debt plus 5% (<code className="type-doc-inline-code">LENS_DUST_MARGIN_BPS</code>, 500 bps).</li>
-            <li>The parameters use a flash loan for the whole amount, capped by the flash source&apos;s available liquidity with the rest funded by the caller. The route mode is primary-then-backup when every primary swap route is usable, otherwise backup only.</li>
+            <li>The parameters have no funding field: the caller funds the whole debt to cover itself, directly or through a flash liquidation helper whose flash amount it sets to the debt to cover. The route mode is primary-then-backup when every primary swap route is usable, otherwise backup only.</li>
+            <li>The expected payout is gross: it includes the returned funding. The net payout is the caller&apos;s reward beyond that funding. A caller sets its minimum payout to its funding plus the smallest net payout it accepts. The expected caller loss is how far the payout can fall below the funding at oracle prices.</li>
+            <li>The preview reads no flash source and quotes no flash loan. A caller that borrows through a flash liquidation helper reads the helper&apos;s own available liquidity and premium, and sets the helper&apos;s top-up bound to cover the premium plus any expected caller loss beyond the net payout.</li>
             <li>All amounts are 0 when the account&apos;s health factor is at least 1.00.</li>
             <li>The preview is advisory: LPVaultSwap recomputes and enforces every check, Aave sizes the seizure inside its liquidation call, and settlement uses balance deltas, never a preview.</li>
           </ul>
@@ -190,7 +192,7 @@ export default async function LensPage({ params }: LocaleParamsProps) {
             <li>After a $20,000 pledge, the account view shows $20,000 of collateral, $6,240 weighted by the collateral factor, and no debt; the records view lists one record of 10,000,000,000 units.</li>
             <li>On the borrow screen, the recommended borrow is 5,673.29 USDC (6,240 / 1.10 / 0.9999) and the maximum is 6,209.56 USDC (6,240 / 1.0050011 / 0.9999).</li>
             <li>On the repay screen, the repay-all quote for 5,024.657535 USDC of debt is 5,029.687935 USDC; the app sets both the approval and the spend cap to it.</li>
-            <li>A keeper&apos;s liquidation preview for another account returns the gates, 1,950 USDC to cover, a 1,950 USDC flash loan with a 0.975 USDC premium, 975 expected seized vault tokens and ready-to-send parameters.</li>
+            <li>A keeper&apos;s liquidation preview for another account returns the gates, 1,950 USDC to cover, 975 expected seized vault tokens and ready-to-send parameters.</li>
           </ol>
         </section>
       </div>

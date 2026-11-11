@@ -180,11 +180,11 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
                 </tr>
                 <tr>
                   <td className="px-4 py-2">3. Liquidation</td>
-                  <td className="px-4 py-2">Through LPVaultSwap, Aave seizes all 20,000 vault tokens and restores 9,523.81 GHO. Dan&apos;s only collateral reserve is now empty, so the Spoke reports a deficit of 476.19 GHO. Dan&apos;s debt is 0.</td>
+                  <td className="px-4 py-2">The keeper calls LPVaultSwap with 10,000 GHO of its own as the amount to cover. Aave seizes all 20,000 vault tokens and restores 9,523.81 GHO. Dan&apos;s only collateral reserve is now empty, so the Spoke reports a deficit of 476.19 GHO. Dan&apos;s debt is 0.</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">4. Settlement</td>
-                  <td className="px-4 py-2">The unwind and swaps return 9,950 GHO, above the 9,899 GHO minimum. Of the 426.19 GHO gain, Avana&apos;s fee is 95.24 GHO (20% of the 476.19 GHO oracle gain) and the keeper receives 330.95 GHO.</td>
+                  <td className="px-4 py-2">The unwind and swaps return 9,950 GHO, above the 9,899 GHO minimum. Of the 426.19 GHO realized gain, Avana&apos;s fee is 95.24 GHO (20% of the 476.19 GHO oracle gain) and the keeper&apos;s reward is 330.95 GHO; the borrower surplus is 0. The keeper receives 10,330.95 GHO: its reward plus the 10,000 GHO it funded, of which Aave used 9,523.81 GHO.</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">5. Alert</td>
@@ -214,8 +214,8 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
         <section id="limits" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">What It Does Not Cover</h2>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
-            <li>Shortfalls inside a liquidation. A liquidation that cannot reach its recovery floor reverts with nothing changed, or its caller pays the gap through the shortfall top-up. Rounding gaps from Aave&apos;s dust rule are paid by the liquidating keeper.</li>
-            <li>Keeper gas and keeper losses, which Avana pays from its own keeper budget.</li>
+            <li>Shortfalls inside a liquidation. A liquidation that cannot reach its recovery floor reverts with nothing changed, or its caller pays the gap through the shortfall top-up. A recovery a few units below the debt repaid, for example from Aave&apos;s dust rule, comes out of the liquidation caller&apos;s own payout, never from the reserve.</li>
+            <li>Liquidation gas and the losses of liquidation callers. No Avana contract reimburses them: Avana&apos;s keeper pays its gas and any such loss as an operating cost of Avana, and a caller that borrows through a flash liquidation helper pays the loan premium from its own payout.</li>
             <li>Borrowers&apos; own losses. Borrowers still bear impermanent loss, price risk and liquidation risk; the reserve does not raise borrowing capacity.</li>
             <li>Another asset, Hub or chain. Each chain&apos;s instances are sized against that chain&apos;s caps only.</li>
           </ul>

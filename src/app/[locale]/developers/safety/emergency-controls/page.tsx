@@ -34,20 +34,20 @@ const playbooks = [
   { id: "P-04", name: "Pool or route liquidity drain", automatic: "POOL_DEPTH, and POOL_SHARE where a pool cap is set, stop new pledges and borrowing; route failures only alert.", action: "Confirm on a fork whether the approved routes can settle at size; only if they cannot, trip the market breaker. Keepers use the backup route and the dead route is disabled at the short delay." },
   { id: "P-05", name: "Exploit in progress", automatic: "Every condition breaker that holds.", action: "Within minutes, pause with MintPathSuspect if minting, the Adapter or Collateralization is suspect, otherwise General; freeze the attacker's addresses; cancel operations the attacker benefits from. The fix is an upgrade at the normal delay." },
   { id: "P-06", name: "Malicious or mistaken governance operation", automatic: "None; the timelock delay is the protection.", action: "Review the calldata within 1 hour and cancel; pause with General if it touches roles or upgrades." },
-  { id: "P-07", name: "Compromised signer or key", automatic: "Owner and threshold changes of the governance Safe wait 48 hours.", action: "Cancel every unexpected operation; the Aave governance executor schedules revocation of the compromised roles; a compromised keeper is frozen at once or removed at the short delay." },
-  { id: "P-08", name: "Keeper outage or misbehaving keeper", automatic: "With no active keeper, new borrowing on the chain stops.", action: "The standby keeper takes over and the permissionless path stays open; freeze a misbehaving keeper; trip the market breaker on any market left unliquidated past 3,600 seconds." },
+  { id: "P-07", name: "Compromised signer or key", automatic: "Owner and threshold changes of the governance Safe wait 48 hours.", action: "Cancel every unexpected operation; the Aave governance executor schedules revocation of the compromised roles; a compromised committed operator's key is removed from its Safe or operator helper, its address frozen at once with no floor check, or the operator removed at the short delay while the keeper floor permits; the key holds no power over liquidation that any caller lacks." },
+  { id: "P-08", name: "Keeper outage or misbehaving keeper", automatic: "With no active committed operator, new borrowing and withdrawals with debt stop on every Hub of the chain; liquidate stays open to every caller.", action: "The standby keeper takes over, and any address that is not frozen can still liquidate with its own debt asset or through the public flash liquidation helper; freeze a misbehaving operator, which stops its direct calls and removes it from the keeper floor; trip the market breaker on any market left unliquidated past 3,600 seconds." },
   { id: "P-09", name: "Bad debt", automatic: "The DEFICIT breaker freezes borrowing of the reserve above 10,000 GHO outstanding.", action: "The coverage caller covers the deficit from the asset's Avana Umbrella; if the reserve is short, trip the debt breaker and Avana Labs funds it." },
   { id: "P-10", name: "Hub liquidity crunch or withdrawal cascade", automatic: "None on the Avana side; Aave refuses borrows past available liquidity.", action: "Pause with General if new borrowing must stop; keep liquidations running; unpause once utilization is below 90%." },
-  { id: "P-11", name: "Token issuer action", automatic: "The ISSUER breaker on every market holding the token and every debt reserve of the asset.", action: "Pause with General if the token is in many markets; ask the Aave guardians to freeze affected reserves; refused payouts go to the payout escrow." },
+  { id: "P-11", name: "Token issuer action", automatic: "The ISSUER breaker on every market holding the token and every debt reserve of the asset.", action: "Pause with General if the token is in many markets; ask the Aave guardians to freeze affected reserves; a refused Avana fee or borrower surplus goes to the payout escrow, and the caller's payout is paid directly or the liquidation reverts." },
   { id: "P-12", name: "Aave-side incident", automatic: "The CONFIG_DRIFT check stops new activity.", action: "Follow Aave's incident process; do not unpause until the Spoke matches the deployment manifest." },
   { id: "P-13", name: "Frontend or infrastructure compromise", automatic: "None; the contracts are unaffected.", action: "Take the app offline, warn users, rotate keys and verify the bundle; users exit through a known-good build or a block explorer." },
   { id: "P-14", name: "Spoke-setting drift", automatic: "The market's CONFIG_DRIFT breaker stops new-account pledges, borrowing and withdrawals with debt; seizure stays exclusive to LPVaultSwap.", action: "Ask the Aave Protocol Guardian to freeze the vault-token reserve and set the Spoke's draw caps to 0; trip the breaker manually if no read has yet; the Aave DAO restores the setting." },
-  { id: "P-15", name: "Flash source short or paused", automatic: "None; every liquidation reverts before any state change when the source cannot lend.", action: "Keepers switch to their own funds; a lasting failure is answered by a reviewed replacement flash source at the normal delay." },
+  { id: "P-15", name: "Flash liquidity short or paused", automatic: "None; a liquidation takes no flash loan. A flash liquidation helper that cannot borrow reverts before LPVaultSwap is called, and a repay with collateral the flash source cannot serve reverts before any state change.", action: "Committed operators call liquidate directly from their own debt-asset inventory, which covers at least the largest single liquidation the chain's caps allow; a lasting failure of repay with collateral is answered by a reviewed replacement flash source at the normal delay, and liquidation does not depend on it." },
   { id: "P-16", name: "Aave halt of a CDP Spoke", automatic: "Every new activity on the Spoke is refused; repayment, withdrawal and liquidation stop on the Aave side.", action: "Ask the Aave guardians to replace the halt with a reserve freeze and zero draw caps; pause the Hub with General; keepers prepare liquidations for the first block after the lift." },
   { id: "P-17", name: "Sequencer outage (Base)", automatic: "While the sequencer is down, borrowing and liquidation stop; repay and debt-free withdrawal run through L1-forced transactions. For 1 hour after restart, only accounts below health factor 0.95 can be liquidated.", action: "None on-chain; keepers poke every oracle in the first block after restart and clear the backlog in health-factor order." },
   { id: "P-18", name: "Uncovered deficit", automatic: "The DEFICIT breaker stops borrowing the asset on the affected Spoke.", action: "Ask the Aave DAO to set every drawing Spoke's draw cap to 0; publish the uncovered amount and the adjusted share price; the DAO realizes the loss against that asset's suppliers." },
   { id: "P-19", name: "LPVault or ledger bug and relisting", automatic: "None beyond P-05.", action: "Pause every Hub of the chain (MintPathSuspect when minting or custody is suspect); the Aave guardians freeze affected reserves; offboard the affected markets and relist on fixed contracts." },
-  { id: "P-20", name: "Debt-asset transfer fee switched on", automatic: "The ISSUER breaker on every reserve of that asset and every market holding it; liquidation continues.", action: "Confirm the breakers show ISSUER and trip any reserve whose probe did not report; the transfer fee is borne by the keeper's payout." },
+  { id: "P-20", name: "Debt-asset transfer fee switched on", automatic: "The ISSUER breaker on every reserve of that asset and every market holding it; liquidation continues.", action: "Confirm the breakers show ISSUER and trip any reserve whose probe did not report; the transfer fee on the caller's funding and payout is borne by the caller, never by Avana's fee or the borrower surplus." },
   { id: "P-21", name: "Fee recipient blocklisted", automatic: "No liquidation reverts; Avana's fee goes to the payout escrow.", action: "Schedule a new fee recipient at the normal delay; the treasury claims the escrowed fee to an address it names." },
 ]
 
@@ -84,13 +84,16 @@ export default async function EmergencyControlsPage({ params }: LocaleParamsProp
             <li>Repayment by anyone, for any account, including repaying everything and withdrawing in one call</li>
             <li>Debt-free withdrawal and partial liquidity removal, and release of a position with no credit</li>
             <li>LP fee collection by the depositor of record</li>
-            <li>Liquidation of eligible accounts, through both the keeper and the permissionless entry point</li>
+            <li>Liquidation of eligible accounts through the single entry point, open to any caller</li>
             <li>Pending settlement and claims from the payout escrow</li>
             <li>Rescue top-ups: an indebted account adding collateral within its restore amount, except under Paused(MintPathSuspect)</li>
           </ul>
           <div className="doc-topic type-doc-body">
             Stopping liquidation would let unhealthy accounts lose more value with nobody able to close them, turning a code incident into bad debt. Liquidation still needs a fresh price for the market being seized and the debt being repaid, Aave eligibility and an executable swap route. On Base it also waits for the sequencer check. Only Aave-side actions, a Hub halt of a CDP Spoke or an Aave pause of a reserve, can block repayment or liquidation, and the deployment AIP asks the Aave DAO to use them only for exploits and lift them within 48 hours.
           </div>
+          <p className="mt-4 type-doc-body">
+            A short or paused Aave V3 Pool does not stop liquidation or borrowing: a liquidation takes no flash loan, and committed operators fund it from their own debt asset. If both swap routes of a pool token into a debt asset fail, every liquidation of that market against that debt reverts with NoRouteAvailable, whoever calls, because no in-kind settlement exists. A guardian trips the market breaker once a fork confirms the approved routes cannot settle valid liquidations at the required size. Once neither route record is usable, the RiskModule refuses new borrowing of that debt in the market, and withdrawals with debt by accounts that owe it, with DebtLiquidationHalted. With no active committed operator left on a chain, new borrowing stops on every Hub of the chain with LiquidationHalted, while liquidation stays open to every address.
+          </p>
         </section>
 
         <section id="pause-states" className="mb-10">
@@ -160,7 +163,7 @@ export default async function EmergencyControlsPage({ params }: LocaleParamsProp
                   <td className="px-4 py-2">Yes</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Liquidation (keeper and permissionless)</td>
+                  <td className="px-4 py-2">Liquidation (any caller)</td>
                   <td className="px-4 py-2">Yes</td>
                   <td className="px-4 py-2">Yes</td>
                   <td className="px-4 py-2">Yes</td>
@@ -271,7 +274,7 @@ export default async function EmergencyControlsPage({ params }: LocaleParamsProp
                   <td className="px-4 py-2">Pending settlement and payout-escrow claims</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Call either liquidation entry point as the caller</td>
+                  <td className="px-4 py-2">Call liquidate directly as the caller; a liquidation it sends through the public flash liquidation helper still runs</td>
                   <td className="px-4 py-2">Liquidation of the frozen wallet&apos;s own positions</td>
                 </tr>
               </tbody>
@@ -279,8 +282,9 @@ export default async function EmergencyControlsPage({ params }: LocaleParamsProp
           </div>
           <ul className="mt-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>Each caller can freeze at most <code className="type-doc-inline-code">MAX_ADDRESS_FREEZES_PER_DAY</code> = 20 addresses in any rolling 24 hours, counted in one-hour buckets, so a compromised guardian cannot freeze users in bulk and the other guardian keeps its full allowance.</li>
-            <li>Protected addresses cannot be frozen: the timelock, the Aave governance executor, every Avana contract, vault token, LPOracle and DebtOracle, every Hub, approved Spoke and Avana Umbrella, every debt asset, the flash source and the Aave V3 Pool, every recorded swap route and every registered proxy.</li>
-            <li>A guardian can freeze any keeper, including the last active one. While no active keeper remains, new borrowing stops on every Hub of the chain and liquidation stays open through the permissionless entry point.</li>
+            <li>Protected addresses cannot be frozen: the timelock, the Aave governance executor, every Avana contract, vault token, LPOracle and DebtOracle, every Hub, approved Spoke and Avana Umbrella, every debt asset, the flash source of repay with collateral and the Aave V3 Pool, every recorded swap route and every registered proxy.</li>
+            <li>A guardian can freeze any committed operator, including the last active one, with no floor check. While no active committed operator remains, new borrowing stops on every Hub of the chain and liquidation stays open to every address that is not frozen.</li>
+            <li>A freeze binds only the direct caller. A frozen address that liquidates through the public flash liquidation helper reaches LPVaultSwap as the helper and is not stopped, and every check that protects Avana and the borrower still runs. Freezing the public helper itself would stop every caller that uses it. A freeze therefore stops an address&apos;s direct calls and removes a frozen committed operator from the keeper floor, but cannot stop an address from liquidating.</li>
             <li>Unfreezing an address takes a timelock operation at the normal delay that only the Aave governance executor can cancel, so the guardian that froze it cannot keep it frozen by cancelling every unfreeze. A freeze has no on-chain expiry.</li>
           </ul>
         </section>

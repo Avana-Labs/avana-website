@@ -85,7 +85,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
         <section id="draw-caps" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Draw Caps</h2>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Each debt reserve&apos;s draw cap is at most the flash liquidity of its asset in the chain&apos;s Aave V3 Pool and the depth of its swap routes, measured at listing, so every borrowed amount can be flash-borrowed and swapped back in one liquidation.</li>
+            <li>Each debt reserve&apos;s draw cap is at most the flash liquidity of its asset in the chain&apos;s Aave V3 Pool and the depth of its swap routes, measured at listing, so every borrowed amount can be flash-borrowed through the flash liquidation helper and swapped back in one liquidation.</li>
             <li>The Hub admits a draw only if the Spoke&apos;s drawn debt, premium, uncovered deficit and the new amount fit under its draw cap. Accrued interest and recorded deficits use up capacity until they are repaid or covered.</li>
             <li>The sums are checked by Avana&apos;s MarketRegistry when a debt reserve is enabled and on every cap change, and by the drift check.</li>
             <li>Monitoring alerts when the debt drawn on a reserve, including interest and premium, reaches 90% of its draw cap. Only borrowing of that asset fails at the cap.</li>

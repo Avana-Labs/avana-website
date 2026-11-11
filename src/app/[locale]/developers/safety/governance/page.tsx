@@ -23,7 +23,7 @@ const sections = [
   { id: "role-table", title: "Role Table" },
   { id: "delay-classes", title: "Delay Classes" },
   { id: "parameter-changes", title: "Parameter Changes" },
-  { id: "keepers", title: "Keeper List" },
+  { id: "keepers", title: "Committed Operators" },
   { id: "aave-process", title: "Aave DAO Process" },
   { id: "key-security", title: "Multisig Key Security" },
   { id: "handover", title: "Handover and Fallback" },
@@ -71,7 +71,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Governance Safe (4-of-7 per chain)</td>
-                  <td className="px-4 py-2">Proposes, cancels and executes on its chain&apos;s AvanaTimelock: upgrades, the deployment operations and market activation, price sources, routes, parameters, keepers and role changes. It holds no role on any other Avana contract and has no immediate power. A Safe guard limits it to calls to the AvanaTimelock and to itself.</td>
+                  <td className="px-4 py-2">Proposes, cancels and executes on its chain&apos;s AvanaTimelock: upgrades, the deployment operations and market activation, price sources, routes, parameters, the committed-operator registry and role changes. It holds no role on any other Avana contract and has no immediate power. A Safe guard limits it to calls to the AvanaTimelock and to itself.</td>
                   <td className="px-4 py-2">12 hours or 5 days per operation</td>
                 </tr>
                 <tr>
@@ -181,7 +181,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
           </p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>A role-change operation: every call is a role grant, revoke or renounce on an Avana contract or the timelock.</li>
-            <li>A restoring operation: every call puts back configuration that was already reviewed, namely restoring a previously approved swap route, switching to a listed standby price route, adding a keeper or unfreezing an address.</li>
+            <li>A restoring operation: every call puts back configuration that was already reviewed, namely restoring a previously approved swap route, switching to a listed standby price route, adding a committed operator or unfreezing an address.</li>
           </ul>
           <p className="mb-4 type-doc-body">
             This stops a guardian or the governance Safe from blocking its own removal, a replacement&apos;s appointment, or a repair that brings back liquidation or an address. The mark needs every call in the batch to qualify: a batch that mixes an upgrade with a role call stays cancellable by every canceller, so a proposer cannot shield a harmful call by adding a role call to it.
@@ -215,7 +215,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Freeze up to 20 addresses per rolling 24 hours</td>
-                  <td className="px-4 py-2">Unfreeze an address, add or remove a keeper or route</td>
+                  <td className="px-4 py-2">Unfreeze an address, add or remove a committed operator or route</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Trip and reset market and debt circuit breakers</td>
@@ -244,7 +244,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
         <section id="role-table" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Role Table</h2>
           <p className="mb-4 type-doc-body">
-            Role constants are defined in AvanaRoles and OpenZeppelin. Keepers, the depositor of record and the fixed contract callers are identified by address checks, not roles.
+            Role constants are defined in AvanaRoles and OpenZeppelin. Committed operators, the depositor of record and the fixed contract callers are identified by address checks, not roles.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
@@ -269,7 +269,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                 <tr>
                   <td className="px-4 py-2"><code className="type-doc-inline-code">APPLICATION_ADMIN</code></td>
                   <td className="px-4 py-2">The AvanaTimelock only, on every upgradeable contract</td>
-                  <td className="px-4 py-2">UUPS upgrades, every parameter setter, fee changes, the three deployment operations and activation, price sources and swap routes, the flash source, keepers, offboarding, pause and freeze and their lifts, address freeze and unfreeze, breaker trips and resets, standby switches, and grants of the guardian roles</td>
+                  <td className="px-4 py-2">UUPS upgrades, every parameter setter, fee changes, the three deployment operations and activation, price sources and swap routes, the flash source, the committed-operator registry, offboarding, pause and freeze and their lifts, address freeze and unfreeze, breaker trips and resets, standby switches, and grants of the guardian roles</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2"><code className="type-doc-inline-code">PROPOSER_ROLE</code></td>
@@ -307,9 +307,9 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                   <td className="px-4 py-2">Return a stray position from an LPVault and deploy vault tokens through the VaultTokenFactory</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Keepers (address list, not a role)</td>
-                  <td className="px-4 py-2">Approved, unfrozen addresses on LPVaultSwap</td>
-                  <td className="px-4 py-2">Call the keeper liquidation entry point; anyone can use the permissionless one</td>
+                  <td className="px-4 py-2">Committed operators (registry, not a role)</td>
+                  <td className="px-4 py-2">Addresses registered on LPVaultSwap&apos;s per-chain registry</td>
+                  <td className="px-4 py-2">Nothing any other caller lacks: the registry gates no call, and any unfrozen address can call liquidate. Registered operators count toward the keeper floor</td>
                 </tr>
               </tbody>
             </table>
@@ -376,7 +376,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                   <td className="px-4 py-2">5 days</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Loosen a risk parameter, add a keeper, unfreeze an address, unfreeze, unpause or reset a breaker through the timelock, change the timelock&apos;s own settings</td>
+                  <td className="px-4 py-2">Loosen a risk parameter, add a committed operator, unfreeze an address, unfreeze, unpause or reset a breaker through the timelock, change the timelock&apos;s own settings</td>
                   <td className="px-4 py-2">5 days</td>
                 </tr>
                 <tr>
@@ -388,7 +388,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                   <td className="px-4 py-2">12 hours</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Tighten a parameter, disable a swap route, restore a previously approved route, remove a keeper down to the keeper floor of 1</td>
+                  <td className="px-4 py-2">Tighten a parameter, disable a swap route, restore a previously approved route, remove a committed operator down to the keeper floor of 1</td>
                   <td className="px-4 py-2">12 hours</td>
                 </tr>
                 <tr>
@@ -464,16 +464,17 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="keepers" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Keeper List</h2>
+          <h2 className="mb-4 type-doc-section-title">Committed Operators</h2>
           <p className="mb-4 type-doc-body">
-            Keepers hold no role: LPVaultSwap keeps a list of approved addresses. Avana runs its own keeper on each chain and pays its gas. The list changes only through the timelock:
+            The keeper list on each chain&apos;s LPVaultSwap is a registry of committed operators, covering every Hub on the chain. Each registered operator commits to liquidate every account below a health factor of 1 on that chain, whatever its size and whether or not the bonus covers the gas. The registry gates no call and grants no role: any address that is not frozen can liquidate, and a registered operator has no power any other caller lacks. The registry feeds the keeper floor, the borrowing halt and monitoring. At launch Avana&apos;s keeper is the committed operator on each chain, and Avana pays its gas. The registry changes only through the timelock:
           </p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
-            <li>Adding a keeper waits 5 days and only the Aave governance executor can cancel it, so no guardian can block a replacement.</li>
-            <li>Removing a keeper waits 12 hours and reverts if it would leave fewer active keepers than the keeper floor of 1.</li>
-            <li>At most 32 keepers can be approved per chain.</li>
-            <li>A guardian can freeze a misbehaving keeper&apos;s address at once, even the last active one. While no active keeper remains, new borrowing on the chain stops, and anyone can still liquidate through the permissionless entry point.</li>
-            <li>Keeper keys are rotated by adding the new key first (5 days) and removing the old one after (12 hours).</li>
+            <li>Adding an operator, such as Aave Labs or a risk provider, waits 5 days and only the Aave governance executor can cancel it, so no guardian can block a replacement.</li>
+            <li>Removing an operator waits 12 hours and reverts if it would leave fewer active operators than the keeper floor of 1. Removal never stops the operator from liquidating like any other address.</li>
+            <li>At most 32 operators can be registered per chain.</li>
+            <li>An operator registers its own key or Safe, or its own operator variant of the flash liquidation helper. The public flash liquidation helper is never registered.</li>
+            <li>A guardian can freeze a misbehaving operator&apos;s address at once, even the last active one, with no floor check. While no active operator remains, new borrowing and withdrawals that leave debt stop on every Hub of the chain, and liquidation stays open to every address.</li>
+            <li>Operator keys are rotated by adding the new key first (5 days) and removing the old one after (12 hours).</li>
           </ul>
         </section>
 
@@ -499,7 +500,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Deployment ARFC and Snapshot</td>
-                  <td className="px-4 py-2">Lists each CDP Spoke as a standard Aave V4 Spoke with the three required reserve settings, grants the flash-borrower role on each chain&apos;s Aave V3 Pool, sets each Spoke&apos;s liquidation settings, registers an Avana Umbrella for GHO on each Stable LP Hub, and adds the Aave executor and Aave Protocol Guardian to each AvanaTimelock</td>
+                  <td className="px-4 py-2">Lists each CDP Spoke as a standard Aave V4 Spoke with the three required reserve settings, grants the flash-borrower role on each chain&apos;s Aave V3 Pool to Avana&apos;s public flash liquidation helper and to its flash source (used for repay with collateral), sets each Spoke&apos;s liquidation settings, registers an Avana Umbrella for GHO on each Stable LP Hub, and adds the Aave executor and Aave Protocol Guardian to each AvanaTimelock</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Funding ARFC and Snapshot</td>
@@ -527,10 +528,10 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
         <section id="key-security" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Multisig Key Security</h2>
           <p className="mb-4 type-doc-body">
-            This standard applies on each chain to the governance Safe, the Emergency Guardian, the Avana treasury Safe and the keeper operators.
+            This standard applies on each chain to the governance Safe, the Emergency Guardian, the Avana treasury Safe and the committed operators.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Every Safe signer key is on a dedicated hardware wallet that shows EIP-712 typed data on the device. No hot keys, browser-extension keys or shared devices. Keeper operators keep keys in their own HSM or KMS.</li>
+            <li>Every Safe signer key is on a dedicated hardware wallet that shows EIP-712 typed data on the device. No hot keys, browser-extension keys or shared devices. Committed operators keep keys in their own HSM or KMS.</li>
             <li>At most 3 of the 7 governance Safe signers belong to Avana Labs, and the signers span at least 3 independent organisations and 3 jurisdictions.</li>
             <li>The Emergency Guardian has 5 different people across at least 3 time zones.</li>
             <li>No person signs on two Safes of the same chain, and the Aave Protocol Guardian&apos;s signers are disjoint from both.</li>

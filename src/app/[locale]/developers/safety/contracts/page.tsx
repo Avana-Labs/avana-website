@@ -35,17 +35,18 @@ const boundaries = [
   { boundary: "AMM position managers and pools → LPVaults, LPOracles, RiskModule", crosses: "Position data, liquidity units, fees, principal on removal, TWAP observations", checked: "Position manager and factory are immutables of each LPVault; calls revert while the AMM's reentrancy lock is held; valuation uses Chainlink prices only, the pool TWAP is a guard." },
   { boundary: "Chainlink → LPOracle and DebtOracle", crosses: "Token USD prices and timestamps", checked: "Per leg: positive answer, valid and non-future timestamp, age within heartbeat plus 1,800 seconds, inside the aggregator's bounds, decimals pinned at listing; any failure moves the market to a stricter price state." },
   { boundary: "LPOracle → Aave Spoke", crosses: "The vault-token price used for health and seizure sizing", checked: "Returns 8 decimals for life, never reverts and never returns 0, and rounds down. Once a market is Expired it serves 1 unit (10⁻⁸ USD per vault token), so Aave counts the collateral as worthless while exits keep working." },
-  { boundary: "Aave V3 Pool flash source → LPVaultSwap", crosses: "Flash-borrowed debt asset and the callback", checked: "Available liquidity and a premium at most maxFlashFeeBps checked before the loan; the callback reverts unless it comes from the chain's Aave V3 Pool with LPVaultSwap as initiator." },
+  { boundary: "Aave V3 Pool flash source → LPVaultSwap", crosses: "Flash-borrowed debt asset and the callback, for repay with collateral only", checked: "Available liquidity and a premium at most maxFlashFeeBps checked before the loan; the callback reverts unless it comes from the chain's Aave V3 Pool with LPVaultSwap as initiator inside a deleverage. A liquidation takes no flash loan, and the callback reverts inside one." },
+  { boundary: "Flash liquidation helper ↔ Aave V3 Pool and LPVaultSwap", crosses: "A flash loan of the debt asset, the liquidation call it funds, and the payout that repays the loan", checked: "The helper is immutable periphery outside the audited core, with no owner, setter or sweep and no balance between transactions. It borrows only from its fixed Pool, never from a recorded Hub; its callback must come from that Pool for the loan it requested; the premium is bounded by the caller's limit and maxFlashFeeBps. LPVaultSwap treats it as an ordinary caller and runs every check on it." },
   { boundary: "Swap-route pools → swap routes and LPVaultSwap", crosses: "Debt asset returned for unwound tokens", checked: "Routes are fixed per market, token and debt asset, added at the normal delay; each leg has an oracle-derived minimum output and the total must reach the recovery floor; routes never trade through the pool being unwound." },
-  { boundary: "Keepers and permissionless callers → LPVaultSwap", crosses: "Liquidation arguments: account, market, debt reserve, amounts, route mode, deadline, minimum payout, shortfall limit", checked: "Approved, unfrozen keeper for the keeper path; registered proxy and approved debt reserve; fresh prices for the seized market and the repaid debt; every input can only make a call smaller or revert; the payout always goes to the caller." },
-  { boundary: "Governance → AvanaTimelock → Avana contracts", crosses: "Upgrades, deployment operations, routes, price sources, parameters, keepers, roles", checked: "Every privileged call executes from the chain's timelock; required delay read from calldata; cancel rights; hard bounds and loosening steps re-checked at execution." },
+  { boundary: "Any caller → LPVaultSwap", crosses: "The caller's debt-asset funding and the liquidation arguments: account, market, debt reserve, amount to cover, route mode, deadline, minimum payout, shortfall limit", checked: "The caller is not frozen, with no role or committed-operator check; registered proxy and approved debt reserve; fresh prices for the seized market and the repaid debt; LPVaultSwap pulls at most the amount to cover from the caller; every input can only make a call smaller or revert; the caller's payout always goes to the caller, directly, or the call reverts." },
+  { boundary: "Governance → AvanaTimelock → Avana contracts", crosses: "Upgrades, deployment operations, routes, price sources, parameters, the committed-operator registry, roles", checked: "Every privileged call executes from the chain's timelock; required delay read from calldata; cancel rights; hard bounds and loosening steps re-checked at execution." },
   { boundary: "Guardians → pause state, address freeze, breakers, standby routes", crosses: "Freeze, pause, unfreeze, unpause, address freeze, breaker trips and resets, standby switch", checked: "Each power stops new activity or puts a reviewed route in service; none reaches repay, debt-free withdrawal, fee collection or liquidation; at most 20 address freezes per caller per rolling 24 hours." },
   { boundary: "Aave DAO → Aave configuration of Avana markets", crosses: "Collateral factors, caps, flags, halts, liquidation settings, price sources", checked: "Drift blocks new risk; a collateral factor of 0 is forbidden while accounts hold the reserve." },
   { boundary: "Tokens and debt assets → Avana", crosses: "Transfers during fee collection, borrow, repay, settlement and swaps", checked: "Fee-on-transfer, rebasing and hook tokens are not listed; SafeERC20 everywhere; amounts measured by balance change; issuer probes for pause and transfer-fee switches." },
   { boundary: "Donations and stray assets → Avana contracts", crosses: "Dust, vault tokens, pool tokens, positions", checked: "Balance-change checks make donations inert; an uncredited position returns only through the timelock." },
   { boundary: "Avana Umbrella → Hub deficit", crosses: "Deficit elimination amounts", checked: "Each Coverage Spoke covers only allowlisted CDP Spokes, only in its own asset, never beyond the recorded deficit or its funded balance." },
   { boundary: "Off-chain services → wallets and keepers", crosses: "Intents, displayed positions, health factors, candidate lists", checked: "Calldata is built from a bundled, verified deployment manifest and never taken from a hosted service; the wallet shows receiver and amount before signing; users and keepers can call contracts directly." },
-  { boundary: "LPVaultSwap → payout escrow", crosses: "Payouts a token refuses to deliver", checked: "Deposits only from LPVaultSwap under the Lock; each credit is claimable only by its recipient." },
+  { boundary: "LPVaultSwap → payout escrow (PayoutEscrow)", crosses: "An Avana fee, borrower surplus, route residue or dust leg a token refuses to deliver; never the caller's payout", checked: "Deposits only from LPVaultSwap under the Lock; each credit is claimable only by its recipient." },
 ]
 
 export default async function ContractsArchitecturePage({ params }: LocaleParamsProps) {
@@ -91,7 +92,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Immutable</td>
-                  <td className="px-4 py-2">Each LPVault (one per AMM protocol per chain), Collateralization, vault tokens and the VaultTokenFactory, every PositionProxy and the ProxyManager, the Lock, swap-route versions, the flash source implementations, the payout escrow (InKindEscrow), the AvanaTimelock, the Lens</td>
+                  <td className="px-4 py-2">Each LPVault (one per AMM protocol per chain), Collateralization, vault tokens and the VaultTokenFactory, every PositionProxy and the ProxyManager, the Lock, swap-route versions, the flash source implementations, the payout escrow (PayoutEscrow), the AvanaTimelock, the Lens, the flash liquidation helpers</td>
                   <td className="px-4 py-2">These hold the rules that bound every upgrade: positions return only to their depositor of record, the backing ledger and exposure counters, the seizure share and supply checks, the rule that seized vault tokens go only to LPVaultSwap, the flash-loan checks, escrowed payouts and the timelock&apos;s own delays and roles.</td>
                 </tr>
                 <tr>
@@ -103,10 +104,10 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
             </table>
           </div>
           <p className="mt-4 mb-4 type-doc-body">
-            An immutable component is replaced by deploying a new version and pointing the upgradeable layer at it through the timelock: a new swap route or flash source at the normal delay, or, for an LPVault or ledger fault, offboarding the affected markets and relisting them on fixed contracts. A PositionProxy has no logic, no implementation pointer and no upgrade path; it executes only the AaveAdapter&apos;s calls, so account logic changes only with an AaveAdapter upgrade.
+            An immutable component is replaced by deploying a new version and pointing the upgradeable layer at it through the timelock: a new swap route, or a new flash source for repay with collateral, at the normal delay, or, for an LPVault or ledger fault, offboarding the affected markets and relisting them on fixed contracts. A PositionProxy has no logic, no implementation pointer and no upgrade path; it executes only the AaveAdapter&apos;s calls, so account logic changes only with an AaveAdapter upgrade.
           </p>
           <p className="type-doc-body">
-            The Lens is a read-only periphery contract with no state and no admin. No core contract calls it or depends on what it returns, so it can be replaced at any time.
+            The Lens is a read-only periphery contract with no state and no admin. No core contract calls it or depends on what it returns, so it can be replaced at any time. The flash liquidation helper is also immutable periphery outside the audited core, with no owner, admin, upgrade path, setter or sweep. One public instance per chain (<code className="type-doc-inline-code">IFlashLiquidator</code>) lets anyone liquidate without holding the debt asset, and an operator may deploy its own operator variant (<code className="type-doc-inline-code">IOperatorFlashLiquidator</code>). No core contract calls a helper: LPVaultSwap sees it as an ordinary caller.
           </p>
         </section>
 
@@ -163,13 +164,13 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
                 </tr>
                 <tr>
                   <td className="px-4 py-2">4. Aave V4 and the Aave DAO</td>
-                  <td className="px-4 py-2">Hubs, CDP Spokes, Lend Spoke, Coverage Spokes, AaveOracle, the Aave V3 Pool behind the flash source</td>
+                  <td className="px-4 py-2">Hubs, CDP Spokes, Lend Spoke, Coverage Spokes, AaveOracle, the Aave V3 Pool behind the flash source and the flash liquidation helper</td>
                   <td className="px-4 py-2">Debt, interest, health factor, liquidation sizing, deficit accounting, debt-asset prices, flash liquidity</td>
                   <td className="px-4 py-2">Keeping Avana&apos;s reserve settings unchanged, which Avana re-checks on-chain</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">5. External protocols and off-chain parties</td>
-                  <td className="px-4 py-2">AMMs, Chainlink and second sources, the Base sequencer feed, token issuers, swap-route pools, keepers, the backend and indexer, the web app, Safe signers</td>
+                  <td className="px-4 py-2">AMMs, Chainlink and second sources, the Base sequencer feed, token issuers, swap-route pools, keepers and other liquidation callers, the flash liquidation helpers, the backend and indexer, the web app, Safe signers</td>
                   <td className="px-4 py-2">Only what each boundary below states, after its checks</td>
                   <td className="px-4 py-2">Anything else</td>
                 </tr>
@@ -204,7 +205,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
             </table>
           </div>
           <p className="mt-4 type-doc-body">
-            When an external dependency fails, Avana stops new activity and keeps exits open: a failing price route is replaced by its reviewed standby, a failing swap route by the market&apos;s backup route, a short flash source by caller-funded liquidation, and an outage of Avana&apos;s backend or app by calling the contracts directly.
+            When an external dependency fails, Avana stops new activity and keeps exits open: a failing price route is replaced by its reviewed standby, a failing swap route by the market&apos;s backup route, short flash liquidity by liquidation funded from the caller&apos;s own debt asset, and an outage of Avana&apos;s backend or app by calling the contracts directly.
           </p>
         </section>
 
@@ -269,7 +270,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Every Collateralization entry point and every value-moving LPVault function is reachable only inside a call tree one of the two members opened, and only from its expected caller. The custody contracts check the holder and never acquire.</li>
-            <li>Swap-route and flash callbacks are accepted only from the route&apos;s fixed pool or the chain&apos;s Aave V3 Pool while LPVaultSwap holds the Lock.</li>
+            <li>Swap-route and flash callbacks are accepted only from the route&apos;s fixed pool or the chain&apos;s Aave V3 Pool while LPVaultSwap holds the Lock. The flash source&apos;s callback serves only repay with collateral and reverts inside a liquidation. A flash liquidation helper is an ordinary caller: its own callback wraps the liquidation call and holds no Lock.</li>
             <li>Vault tokens have no transfer hooks, and position release uses a transfer with no receiver callback.</li>
             <li>A shared lock replaces per-contract guards: a guard per contract cannot stop a call that re-enters through a different Avana contract.</li>
             <li>The Lock is not a pause or an access list. It never blocks a protocol action at the start of a transaction, and every contract still follows checks-effects-interactions.</li>
@@ -279,7 +280,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
         <section id="exits" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Exits Are Never Blocked</h2>
           <p className="mb-4 type-doc-body">
-            Repayment, fee collection, debt-free withdrawal, zero-credit release, pending settlement and liquidation read no pause state, breaker or address freeze, and no Avana contract has a contract-wide pause. Leaving needs one repay per debt reserve, or one repay-all-and-withdraw, and one withdrawal per remaining position, each a single transaction.
+            Repayment, fee collection, debt-free withdrawal, zero-credit release, pending settlement and liquidation read no pause state or breaker, and no Avana contract has a contract-wide pause. Of these, only liquidation reads the address freeze, and only for its direct caller: a frozen address can still liquidate through the public flash liquidation helper. Leaving needs one repay per debt reserve, or one repay-all-and-withdraw, and one withdrawal per remaining position, each a single transaction.
           </p>
           <p className="mb-4 type-doc-body">
             Every change that could harm a borrower, such as an upgrade of the AaveAdapter, RiskModule or LPVaultSwap, a new flash source, a looser parameter, a new swap route or a role change, waits the normal delay. The 4-day minimum covers a 3-day borrower reaction time plus those few transactions; on Base it also covers the 12-hour forced-inclusion delay for a borrower who must send a transaction from L1 while the sequencer is down.

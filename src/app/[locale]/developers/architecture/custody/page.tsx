@@ -230,7 +230,7 @@ export default async function CustodyPage({ params }: LocaleParamsProps) {
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>AaveAdapter entry points: pledge, recredit, borrow, repay, withdraw, removeLiquidity, repayAllAndWithdraw, repayWithCollateral, collectFees and releaseZeroCredit.</li>
-            <li>LPVaultSwap entry points: liquidate, liquidatePermissionless and settlePending.</li>
+            <li>LPVaultSwap entry points: liquidate, its only liquidation entry point, and settlePending. A flash liquidation helper is an ordinary caller of liquidate and holds no lock.</li>
             <li>A new CDP Spoke, market or LPVault uses the same Lock with no redeploy and no membership change.</li>
             <li>The Lock is not a pause. It never blocks a protocol action at the start of a transaction.</li>
           </ul>

@@ -49,10 +49,10 @@ const programs = [
       "RiskModule: eligibility, caps, the top-up slice, circuit breakers and the configuration drift check",
       "LPOracle: fair-composition pricing from Chainlink, TWAP and second-source checks, and the price states",
       "DebtOracle: the price source of each non-GHO debt reserve",
-      "LPVaultSwap: liquidation, permissionless liquidation, repay with collateral and pending settlement",
+      "LPVaultSwap: liquidation through its single entry point open to any caller, repay with collateral and pending settlement",
       "Swap routes from unwound tokens into each debt asset",
-      "The IFlashSource implementation that flash-borrows from the Aave V3 Pool",
-      "InKindEscrow: the payout escrow for payouts a token refuses",
+      "The IFlashSource implementation that flash-borrows from the Aave V3 Pool for repay with collateral",
+      "PayoutEscrow: the payout escrow for an Avana fee, borrower surplus, residue or dust leg a token refuses",
     ],
     risks: [
       "Overvaluation of LP collateral or undervaluation of debt",

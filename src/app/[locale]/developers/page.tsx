@@ -54,7 +54,7 @@ const collateralHighlights: Array<{
   {
     title: "Liquidation has explicit rules",
     description:
-      "Every liquidation runs through LPVaultSwap with Aave's standard liquidation call and is always partial. LPVaultSwap flash-borrows the debt asset, unwinds only the seized units and swaps them in one transaction. Avana's keeper liquidates every account below health factor 1, and any address can use the permissionless entry point.",
+      "Every liquidation runs through LPVaultSwap with Aave's standard liquidation call and is always partial. LPVaultSwap takes the debt asset from its caller, unwinds only the seized units and swaps them in one transaction. Its one liquidation entry point is open to any address, and Avana's keeper liquidates every account below health factor 1.",
   },
 ]
 

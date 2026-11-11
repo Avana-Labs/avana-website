@@ -95,7 +95,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
                 <tr>
                   <td className="px-4 py-2">Liquidation</td>
                   <td className="px-4 py-2">Debt left on accounts below a health factor of 1</td>
-                  <td className="px-4 py-2">Avana&apos;s keepers and any caller</td>
+                  <td className="px-4 py-2">Any caller; Avana&apos;s keeper is the committed operator on each chain</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Avana Umbrella (Coverage Spoke)</td>
@@ -303,17 +303,17 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         <section id="liquidation" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Liquidation Design</h2>
           <p className="mb-4 type-doc-body">
-            An account becomes liquidatable when its health factor falls below 1. Every liquidation runs through LPVaultSwap in one atomic transaction and is always partial:
+            An account becomes liquidatable when its health factor falls below 1. Every liquidation runs through LPVaultSwap in one atomic transaction, through its single entry point <code className="type-doc-inline-code">liquidate</code>, and is always partial:
           </p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
-            <li>LPVaultSwap flash-borrows the debt asset from the Aave V3 Pool, or the caller funds it.</li>
+            <li>The caller funds the debt asset and LPVaultSwap takes no flash loan. A caller without the debt asset uses Avana&apos;s public flash liquidation helper, an immutable periphery contract that flash-borrows it from the Aave V3 Pool, calls LPVaultSwap and repays the loan from the caller&apos;s payout.</li>
             <li>It calls the CDP Spoke&apos;s standard liquidation, which sizes the repayment toward the Spoke&apos;s target health factor (Avana recommends 1.10) with Aave&apos;s dynamic bonus, and receives the seized vault tokens.</li>
             <li>The seized tokens are burned and exactly that share of the position is unwound; the borrower keeps the rest of the position and all of its fees.</li>
-            <li>Each unwound token is swapped into the debt asset over the market&apos;s primary or backup route, with oracle-derived minimum outputs, and the proceeds must reach a recovery floor. A keeper may top up a small shortfall from its own funds; otherwise the transaction reverts and nothing changes.</li>
-            <li>Avana&apos;s fee is 20% of the oracle gain; the keeper receives the rest of the realized gain and any further surplus goes to the borrower. A payout a token refuses goes to the payout escrow.</li>
+            <li>Each unwound token is swapped into the debt asset over the market&apos;s primary or backup route, with oracle-derived minimum outputs, and the proceeds must reach a recovery floor. The caller may top up a small shortfall from its own funds; otherwise the transaction reverts and nothing changes.</li>
+            <li>Avana&apos;s fee is 20% of the oracle gain, capped by the realized gain. Any recovery above the seized collateral&apos;s oracle value goes to the borrower, and everything else goes to the caller, paid directly or the transaction reverts. An Avana fee or borrower payout a token refuses goes to the payout escrow (PayoutEscrow).</li>
           </ul>
           <p className="mb-4 type-doc-body">
-            Avana runs its own keeper on each chain and pays its gas, liquidating every account below 1 whatever its size. Any address can also liquidate through the permissionless entry point. A direct liquidation from any other contract fails, because the vault token accepts seized collateral only to LPVaultSwap and every Avana reserve has three required settings: shares not received, no Aave liquidation fee and no reinvestment controller.
+            Any address can call <code className="type-doc-inline-code">liquidate</code>, with every check applied to every call. At launch Avana&apos;s keeper is the committed operator on each chain: Avana pays its gas, and it liquidates every account below 1 whatever its size. Registration as a committed operator gates no call. A direct liquidation from any other contract fails, because the vault token accepts seized collateral only to LPVaultSwap and every Avana reserve has three required settings: shares not received, no Aave liquidation fee and no reinvestment controller.
           </p>
           <p className="type-doc-body">
             No Avana pause, breaker, configuration drift or address freeze stops liquidation. It waits only for a fresh price of the seized market and the repaid debt, the Base sequencer check, and Aave-side halts or reserve pauses. The full flow and examples are on this page:{" "}
@@ -397,7 +397,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
             <li>Every new deficit, and any deficit still uncovered after 24 hours</li>
             <li>An Avana Umbrella below 150% of its minimum (warning) or below its minimum (page)</li>
             <li>Every operation scheduled, cancelled or executed on the AvanaTimelock, and every role or Safe owner change</li>
-            <li>Fewer than two proposers, a guardian role with no holder, or active keepers below the keeper floor</li>
+            <li>Fewer than two proposers, a guardian role with no holder, or active committed operators below the keeper floor</li>
             <li>A price state of Cached or Expired, a route disagreement, or a stale debt feed</li>
           </ul>
           <p className="mb-4 type-doc-body">
