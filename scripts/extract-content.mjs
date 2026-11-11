@@ -22,6 +22,7 @@ const ATTRS = new Set([
   "eyebrow",
   "subtitle",
   "summary",
+  "pageSummary",
   "question",
   "answer",
   "name",
@@ -38,6 +39,10 @@ function decodeEntities(s) {
     .replace(/&gt;/g, ">")
     .replace(/&#8209;/g, "-")
     .replace(/&amp;/g, "&")
+}
+
+function unescapeJs(s) {
+  return s.replace(/\\(["'`\\])/g, "$1")
 }
 
 function isJunk(s) {
@@ -189,17 +194,19 @@ function walk(dir, base = "") {
       // pull metadata title/description separately if present
       const meta = { title: "", description: "" }
       const src = fs.readFileSync(full, "utf8")
-      const titleM = src.match(/title:\s*["'`]([^"'`]+)["'`]/)
-      const descM = src.match(/description:\s*["'`]([^"'`]+)["'`]|description:\s*\n\s*["'`]([^"'`]+)["'`]/)
-      if (titleM) meta.title = decodeEntities(titleM[1])
-      if (descM) meta.description = decodeEntities(descM[1] || descM[2] || "")
+      // Match each string up to its own closing quote, so an apostrophe inside
+      // a double-quoted value (e.g. "Avana's") does not end the match early.
+      const titleM = src.match(/title:\s*(["'`])((?:\\.|(?!\1)[^\\])*)\1/)
+      const descM = src.match(/description:\s*(["'`])((?:\\.|(?!\1)[^\\])*)\1/)
+      if (titleM) meta.title = decodeEntities(unescapeJs(titleM[2]))
+      if (descM) meta.description = decodeEntities(unescapeJs(descM[2]))
 
       // toc from sections array if any
       const toc = []
-      const secRe = /\{\s*id:\s*["'`]([^"'`]+)["'`]\s*,\s*title:\s*["'`]([^"'`]+)["'`]/g
+      const secRe = /\{\s*id:\s*["'`]([^"'`]+)["'`]\s*,\s*title:\s*(["'`])((?:\\.|(?!\2)[^\\])*)\2/g
       let m
       while ((m = secRe.exec(src))) {
-        toc.push({ id: m[1], title: decodeEntities(m[2]) })
+        toc.push({ id: m[1], title: decodeEntities(unescapeJs(m[3])) })
       }
 
       docs[key] = { meta, toc, strings }

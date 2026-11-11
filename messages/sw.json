@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Fungua mtandao wa majaribio"
+      "sandboxLong": "Zindua Testnet"
     },
     "mega": {
       "exploreProducts": "Chunguza Bidhaa",
@@ -103,7 +103,8 @@
         "integrations": "Uingizaji wa Msaada",
         "safety": "Vifaa vya Usalama",
         "legal": "Kisheria na Uzingatiaji",
-        "copilot": "Uliza AI"
+        "copilot": "Uliza AI",
+        "reference": "Marejeleo"
       },
       "items": {
         "overview": "Muhtasari",
@@ -114,8 +115,8 @@
         "manageLoans": "Dhibiti Mikopo",
         "repayLoans": "Lipa Mikopo",
         "withdrawCollateral": "Toa Dhamana",
-        "claimLpFees": "Kidai LP Ada",
-        "borrowSpoke": "Kopa Ncha ya Gurudumu",
+        "claimLpFees": "Ada za LP",
+        "borrowSpoke": "Hubs na Spokes",
         "lendSpoke": "Mkopo wa Spoke",
         "collateralFactors": "Vigezo vya Dhamana",
         "healthFactor": "Kigezo cha Afya",
@@ -128,18 +129,29 @@
         "integrationsOverview": "Muhtasari wa Ulinganisho",
         "appkit": "AppKit",
         "allowedPools": "Maziwa Yanayoruhusiwa LP",
-        "routerAdapters": "Rauta na Viongezaji",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Mashirika ya Bei",
         "riskFramework": "Mfumo wa Hatari",
-        "contractsSecurity": "Mikataba na Usalama",
+        "contractsSecurity": "Usalama wa Mikataba",
         "bugBounty": "Zawadi ya Hitilafu",
-        "insuranceFunds": "Fondi za Bima",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Ufadhili wa Usalama",
         "legalDisclaimer": "Tangazo la Kisheria",
         "aiIntroduction": "Utangulizi wa AI",
         "copilotProtocols": "Itifaki zinazotumika",
         "copilotPrompts": "Mifano ya prompt",
-        "copilotWorkflow": "Mtiririko wa wakala"
+        "copilotWorkflow": "Mtiririko wa wakala",
+        "custody": "Uhifadhi na Vault Tokens",
+        "priceStates": "Hali za Bei",
+        "marketLifecycle": "Mzunguko wa Maisha wa Soko",
+        "governance": "Utawala",
+        "emergencyControls": "Udhibiti wa Dharura",
+        "contractList": "Mikataba",
+        "parameters": "Vigezo",
+        "securityVerification": "Usalama na Uthibitishaji",
+        "audits": "Ukaguzi",
+        "lens": "Lens",
+        "protocolOverview": "Muhtasari wa Itifaki"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "Kuhusu",
-      "description": "Kutana na Avana, itifaki ya kujitolea ya LP-kama-uhakika iliyojengwa kwenye Aave v4 na Spokes maalum, Hub ya pamoja, na Lend Spoke iliyoundwa kwa soko za kioo cha AMM."
+      "description": "Avana Labs hujenga dhamana ya LP kwa Aave V4. LP Vault, mikataba ya uthamini na mikataba ya usuluhishi huunganisha nafasi za Uniswap na Avana Hub."
     },
     "borrow": {
       "title": "Kokotoa",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "Kuhusu Avana",
-      "subtitle": "LP-kama itifaki ya dhamana iliyojengwa juu ya Aave v4"
+      "subtitle": "Uunganishaji wa dhamana wa LP kwa Aave V4"
     },
     "brand": {
       "title": "Kifurushi cha chapa",

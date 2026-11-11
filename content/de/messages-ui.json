@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Testnet öffnen"
+      "sandboxLong": "Testnet starten"
     },
     "mega": {
       "exploreProducts": "Produkte entdecken",
@@ -102,19 +102,20 @@
         "integrations": "Unterstützte Integrationen",
         "safety": "Sicherheitsmechanismen",
         "legal": "Recht & Compliance",
-        "copilot": "KI fragen"
+        "copilot": "KI fragen",
+        "reference": "Referenz"
       },
       "items": {
         "overview": "Übersicht",
         "keyConcepts": "Schlüsselkonzepte",
         "glossary": "Glossar",
         "depositLp": "Einzahlung LP",
-        "borrowAssets": "Vermögenswerte leihen",
+        "borrowAssets": "Assets leihen",
         "manageLoans": "Kredite verwalten",
         "repayLoans": "Darlehen zurückzahlen",
         "withdrawCollateral": "Sicherheiten abheben",
         "claimLpFees": "Anspruch LP Gebühren",
-        "borrowSpoke": "Borrow-Spoke",
+        "borrowSpoke": "Hubs und Spokes",
         "lendSpoke": "Lend-Spoke",
         "collateralFactors": "Kollateralfaktoren",
         "healthFactor": "Gesundheitsfaktor",
@@ -127,18 +128,29 @@
         "integrationsOverview": "Integrationsübersicht",
         "appkit": "AppKit",
         "allowedPools": "Erlaubte LP Pools",
-        "routerAdapters": "Router & Adapter",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Preisorakel",
         "riskFramework": "Risikorahmen",
-        "contractsSecurity": "Verträge & Sicherheit",
+        "contractsSecurity": "Vertragssicherheit",
         "bugBounty": "Fehlerprämie",
-        "insuranceFunds": "Versicherungsfonds",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Sicherheitsbekanntmachungen",
         "legalDisclaimer": "Rechtlicher Hinweis",
         "aiIntroduction": "KI-Einführung",
         "copilotProtocols": "Unterstützte Protokolle",
         "copilotPrompts": "Prompt-Beispiele",
-        "copilotWorkflow": "Agenten-Workflow"
+        "copilotWorkflow": "Agenten-Workflow",
+        "custody": "Verwahrung & Vault-Token",
+        "priceStates": "Preiszustände",
+        "marketLifecycle": "Markt-Lebenszyklus",
+        "governance": "Governance",
+        "emergencyControls": "Notfallkontrollen",
+        "contractList": "Verträge",
+        "parameters": "Parameter",
+        "securityVerification": "Sicherheit & Verifizierung",
+        "audits": "Audits",
+        "lens": "Lens",
+        "protocolOverview": "Protokollübersicht"
       }
     },
     "faqUi": {
@@ -194,7 +206,7 @@
     },
     "about": {
       "title": "Über",
-      "description": "Treffen Sie Avana, ein dediziertes LP-als-Sicherheit-Protokoll, das auf Aave v4 mit spezialisierten Spokes, einem gemeinsamen Hub und einem Lend-Spoke entwickelt wurde, der für AMM-Liquiditätsmärkte konzipiert ist."
+      "description": "Avana Labs entwickelt LP-Sicherheiten für Aave V4. Der LP Vault, die Bewertungsverträge und die Abwicklungsverträge verbinden Uniswap-Positionen mit dem Avana Hub."
     },
     "borrow": {
       "title": "Leihen",
@@ -295,7 +307,7 @@
     },
     "about": {
       "title": "Ungefähr Avana",
-      "subtitle": "LP-als-gesichertes Protokoll aufgebaut auf Aave v4"
+      "subtitle": "LP-Sicherheitenintegration für Aave V4"
     },
     "brand": {
       "title": "Markenkit",

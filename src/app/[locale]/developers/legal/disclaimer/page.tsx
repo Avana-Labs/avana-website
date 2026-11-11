@@ -47,7 +47,7 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
             that are relevant to developers. It is a summary, not a replacement for the Terms
             or an amendment to them. Accessing or using the Services constitutes acceptance of
             the Terms, including revisions that take effect when posted. The complete Terms
-            define the agreement between you and Avana; refer to them for the applicable
+            define the agreement between you and Avana. Refer to them for the applicable
             wording, conditions, and exceptions.
           </p>
         </section>
@@ -59,7 +59,7 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               Avana provides technical services, including a test environment, a web interface,
               and informational resources. The protocol consists of open-source smart contracts
               that can receive and hold supported crypto assets. Section 2 distinguishes those
-              contracts from the Services and describes use of the contracts as being at the
+              contracts from the Services and states that use of the contracts is at the
               user&apos;s own risk. Avana does not control third-party applications built on the
               protocol or the activity of users interacting with it.
             </p>
@@ -80,10 +80,10 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
           <p className="type-doc-body">
             Documentation, tutorials, articles, and other resources explain the system for
             informational and educational purposes. They do not replace an independent
-            evaluation of an integration or a financial decision, and the Terms state that
-            they may not be a complete or exclusive source of information. Avana is not acting
-            as a broker, dealer, exchange, investment adviser, custodian, or financial service
-            provider and does not undertake a fiduciary obligation to users. Section 4 addresses
+            evaluation of an integration or a financial decision. The Terms state that they
+            may not be a complete or exclusive source of information. Avana does not act as a
+            broker, dealer, exchange, investment adviser, custodian, or financial service
+            provider, and does not undertake a fiduciary obligation to users. Section 4 addresses
             reliance on these resources and responsibility for associated losses.
           </p>
         </section>
@@ -97,16 +97,16 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               wallet keys, and transactions signed with those keys. Sections 5 and 11 prohibit
               unauthorized access, disruption, abusive request volumes, and misleading
               integrations. Third-party wallets, protocols, and services have their own terms,
-              fees, privacy practices, and risks, which also apply when they are used through
-              an Avana integration.
+              fees, privacy practices, and risks. These also apply when they are used through an
+              Avana integration.
             </p>
             <p className="type-doc-body">
               Code availability does not give every part of the Services the same license.
               Section 6 describes the Services license, restrictions on Avana&apos;s marks, and
               the treatment of feedback. Where a software component has a separate open-source
               or business-source license, Section 6.2 provides that the component&apos;s license
-              governs it. An integration therefore needs to account for the terms of each
-              component it uses as well as the rules for accessing the Services.
+              governs it. An integration must therefore account for the terms of each component
+              it uses, as well as the rules for accessing the Services.
             </p>
           </div>
         </section>
@@ -120,15 +120,21 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               interruptions can cause transactions to fail or assets to be lost. Compatible
               assets and networks can also change. The interface does not remove these risks,
               and an example or test result in the documentation does not establish that a
-              later transaction will produce the same outcome.
+              later transaction produces the same outcome. Avana&apos;s specification and contract
+              interfaces are complete and have been through internal review and formal modelling.
+              The contract code is written next and has not been audited or deployed. Deployment
+              requires independent audits of every contract, remediation, and Aave governance
+              approval.
             </p>
             <p className="type-doc-body">
-              LP-backed borrowing depends on the value recoverable from the underlying position.
-              Market movement, pool inventory, oracle inputs, and liquidation liquidity can
-              affect collateral value and account health. If an account crosses its liquidation
-              threshold, its collateral may be settled to repay debt. These mechanics explain
-              how protocol risk can affect an integration; they do not limit the broader risks
-              and user responsibilities described in{" "}
+              LP-backed borrowing depends on the value of the underlying position. Market
+              movement, pool inventory, oracle inputs, and liquidation liquidity can affect
+              collateral value and account health. Borrowers still bear impermanent loss, price
+              risk and liquidation risk. If an account&apos;s health factor falls below 1, part of
+              its LP position can be seized and settled to repay debt, and repeated liquidations
+              can take all of it. These mechanics explain how protocol risk can affect
+              an integration. They do not limit the broader risks and user responsibilities
+              described in{" "}
               <Link href="/terms#risks" className={policyLink}>Section 8</Link>.
             </p>
           </div>
@@ -142,7 +148,8 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
             converted for fiat, production crypto assets, or other value. Avana may change,
             suspend, or discontinue all or part of the Testnet without notice. Test balances
             and results describe a testing environment, not a claim on assets or confirmation
-            of equivalent production behavior.
+            of equivalent production behavior. The public sandbox at app.avana.cc uses simulated
+            assets, makes no onchain transactions, and is not evidence of production readiness.
           </p>
         </section>
 
@@ -166,8 +173,8 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               indirect, incidental, and special damages, lost data, lost profits, and reductions
               in value. It also limits Avana&apos;s aggregate liability under the Terms to US$100.
               Section 9.3 explains that some exclusions or limits may not apply in jurisdictions
-              that do not permit them. These provisions need to be read together with the
-              conditions and exceptions in the Terms.
+              that do not permit them. Read these provisions together with the conditions and
+              exceptions in the Terms.
             </p>
             <p className="type-doc-body">
               Section 9.4 sets out indemnification, defense, and reimbursement obligations for
@@ -196,12 +203,10 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
         <section id="related-policies" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Related policies</h2>
           <p className="type-doc-body">
-            The <Link href="/terms" className={policyLink}>Terms of Service</Link>{" "}
-            contain the complete agreement. The{" "}
-            <Link href="/privacy" className={policyLink}>Privacy Policy</Link>{" "}
-            explains the handling of personal information, and the{" "}
+            The complete agreement is in the{" "}<Link href="/terms" className={policyLink}>Terms of Service</Link>. Personal information is handled as described in the{" "}
+            <Link href="/privacy" className={policyLink}>Privacy Policy</Link>. Service-access restrictions are listed on the{" "}
             <Link href="/developers/legal" className={policyLink}>Restricted Territories</Link>{" "}
-            page lists service-access restrictions. Section 12.2 provides the contact for legal
+            page. Section 12.2 provides the contact for legal
             notices: <a href="mailto:legal@avana.cc" className={policyLink}>legal@avana.cc</a>.
             Refer to the current published policies when evaluating an integration or using
             the Services.

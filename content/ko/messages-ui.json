@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "테스트넷 열기"
+      "sandboxLong": "테스트넷 시작하기"
     },
     "mega": {
       "exploreProducts": "제품 탐색",
@@ -115,19 +115,20 @@
         "integrations": "지원되는 통합",
         "safety": "안전 장치",
         "legal": "법률 및 준수",
-        "copilot": "AI에게 묻기"
+        "copilot": "AI에게 묻기",
+        "reference": "참조"
       },
       "items": {
         "overview": "개요",
         "keyConcepts": "핵심 개념",
         "glossary": "용어집",
         "depositLp": "예금 LP",
-        "borrowAssets": "자산을 빌리다",
+        "borrowAssets": "자산 대출",
         "manageLoans": "대출 관리",
         "repayLoans": "대출 상환",
         "withdrawCollateral": "담보 인출",
         "claimLpFees": "청구 LP 수수료",
-        "borrowSpoke": "빌린 스포크",
+        "borrowSpoke": "Hub와 Spoke",
         "lendSpoke": "렌드 스포크",
         "collateralFactors": "담보 요인",
         "healthFactor": "건강 요소",
@@ -140,18 +141,29 @@
         "integrationsOverview": "통합 개요",
         "appkit": "AppKit",
         "allowedPools": "허용된 LP 풀",
-        "routerAdapters": "라우터 및 어댑터",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "가격 오라클",
         "riskFramework": "위험 프레임워크",
-        "contractsSecurity": "계약 및 보안",
+        "contractsSecurity": "컨트랙트 보안",
         "bugBounty": "버그 바운티",
-        "insuranceFunds": "보험 기금",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "보안 공개",
         "legalDisclaimer": "법적 고지",
         "aiIntroduction": "AI 소개",
         "copilotProtocols": "지원 프로토콜",
         "copilotPrompts": "프롬프트 예시",
-        "copilotWorkflow": "에이전트 워크플로"
+        "copilotWorkflow": "에이전트 워크플로",
+        "custody": "커스터디와 볼트 토큰",
+        "priceStates": "가격 상태",
+        "marketLifecycle": "마켓 수명 주기",
+        "governance": "거버넌스",
+        "emergencyControls": "긴급 제어",
+        "contractList": "컨트랙트",
+        "parameters": "파라미터",
+        "securityVerification": "보안 및 검증",
+        "audits": "감사",
+        "lens": "Lens",
+        "protocolOverview": "프로토콜 개요"
       }
     },
     "faqUi": {
@@ -194,7 +206,7 @@
     },
     "about": {
       "title": "소개",
-      "description": "만나보세요 Avana, 전문화된 스포크, 공유 허브, 그리고 AMM 유동성 시장을 위해 설계된 렌드 스포크를 갖춘 Aave v4 위에 구축된 전용 LP 담보 프로토콜입니다."
+      "description": "Avana Labs는 Aave V4를 위한 LP 담보를 구축합니다. LP Vault, 가치 평가 컨트랙트, 정산 컨트랙트가 Uniswap 포지션을 Avana Hub에 연결합니다."
     },
     "borrow": {
       "title": "빌리다",
@@ -295,7 +307,7 @@
     },
     "about": {
       "title": "약 Avana",
-      "subtitle": "LP-을 담보로 한 프로토콜이 Aave v4 위에 구축됨"
+      "subtitle": "Aave V4용 LP 담보 통합"
     },
     "brand": {
       "title": "브랜드 키트",

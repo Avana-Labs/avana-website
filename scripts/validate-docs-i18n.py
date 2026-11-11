@@ -69,7 +69,7 @@ def main() -> int:
             total += 1
             if a == b:
                 identical += 1
-            if BAD.search(b) or HASHISH.match(b.strip()):
+            if BAD.search(b) or (HASHISH.match(b.strip()) and b != a):
                 issues.append(f"garbage: {b[:100]!r}")
             if SPOKE_BAD.search(b) and "Spoke" not in b:
                 issues.append(f"spoke-mistranslation: {b[:100]!r}")

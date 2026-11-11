@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Buka Testnet"
+      "sandboxLong": "Luncurkan Testnet"
     },
     "mega": {
       "exploreProducts": "Jelajahi Produk",
@@ -103,19 +103,20 @@
         "integrations": "Integrasi yang Didukung",
         "safety": "Mekanisme Keamanan",
         "legal": "Hukum & Kepatuhan",
-        "copilot": "Tanya AI"
+        "copilot": "Tanya AI",
+        "reference": "Referensi"
       },
       "items": {
         "overview": "Gambaran Umum",
         "keyConcepts": "Konsep Kunci",
         "glossary": "Glosarium",
         "depositLp": "Setoran LP",
-        "borrowAssets": "Meminjam Aset",
+        "borrowAssets": "Pinjam Aset",
         "manageLoans": "Kelola Pinjaman",
         "repayLoans": "Melunasi Pinjaman",
         "withdrawCollateral": "Tarik Jaminan",
-        "claimLpFees": "Biaya Klaim LP",
-        "borrowSpoke": "Pinjam Jari-Jari",
+        "claimLpFees": "Biaya LP",
+        "borrowSpoke": "Hubs dan Spokes",
         "lendSpoke": "Jari-jari Luar",
         "collateralFactors": "Faktor Agunan",
         "healthFactor": "Faktor Kesehatan",
@@ -128,18 +129,29 @@
         "integrationsOverview": "Ikhtisar Integrasi",
         "appkit": "AppKit",
         "allowedPools": "Kolam yang Diizinkan LP",
-        "routerAdapters": "Router & Adapter",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Oracle Harga",
         "riskFramework": "Kerangka Risiko",
-        "contractsSecurity": "Kontrak & Keamanan",
+        "contractsSecurity": "Keamanan Kontrak",
         "bugBounty": "Hadiah Bug",
-        "insuranceFunds": "Dana Asuransi",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Pengungkapan Keamanan",
         "legalDisclaimer": "Penafian Hukum",
         "aiIntroduction": "Pengantar AI",
         "copilotProtocols": "Protokol yang didukung",
         "copilotPrompts": "Contoh prompt",
-        "copilotWorkflow": "Alur kerja agen"
+        "copilotWorkflow": "Alur kerja agen",
+        "custody": "Kustodi & Vault Token",
+        "priceStates": "Status Harga",
+        "marketLifecycle": "Siklus Hidup Pasar",
+        "governance": "Tata Kelola",
+        "emergencyControls": "Kontrol Darurat",
+        "contractList": "Kontrak",
+        "parameters": "Parameter",
+        "securityVerification": "Keamanan & Verifikasi",
+        "audits": "Audit",
+        "lens": "Lens",
+        "protocolOverview": "Ikhtisar Protokol"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "Tentang",
-      "description": "Temui Avana, sebuah protokol LP-sebagai-jaminan yang dibangun di atas Aave v4 dengan Spokes khusus, Hub bersama, dan Lend Spoke yang dirancang untuk pasar likuiditas AMM."
+      "description": "Avana Labs membangun kolateral LP untuk Aave V4. LP Vault, kontrak valuasi, dan kontrak penyelesaian menghubungkan posisi Uniswap ke Avana Hub."
     },
     "borrow": {
       "title": "Meminjam",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "Sekitar Avana",
-      "subtitle": "LP-sebagai protokol jaminan yang dibangun di atas Aave v4"
+      "subtitle": "Integrasi jaminan LP untuk Aave V4"
     },
     "brand": {
       "title": "Perangkat merek",

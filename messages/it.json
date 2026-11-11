@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Apri la rete di test"
+      "sandboxLong": "Avvia la Testnet"
     },
     "mega": {
       "exploreProducts": "Esplora Prodotti",
@@ -103,19 +103,20 @@
         "integrations": "Integrazioni supportate",
         "safety": "Meccanismi di sicurezza",
         "legal": "Legale e Conformità",
-        "copilot": "Chiedi all'IA"
+        "copilot": "Chiedi all'IA",
+        "reference": "Riferimento"
       },
       "items": {
         "overview": "Panoramica",
         "keyConcepts": "Concetti Chiave",
         "glossary": "Glossario",
         "depositLp": "Deposito LP",
-        "borrowAssets": "Prendere in prestito attività",
+        "borrowAssets": "Prendere in prestito asset",
         "manageLoans": "Gestisci Prestiti",
         "repayLoans": "Rimborsare i prestiti",
         "withdrawCollateral": "Ritirare la Garanzia",
-        "claimLpFees": "Rivendicazione LP Tariffe",
-        "borrowSpoke": "Spoke in prestito",
+        "claimLpFees": "Commissioni LP",
+        "borrowSpoke": "Hub e Spoke",
         "lendSpoke": "Raggio del cerchione",
         "collateralFactors": "Fattori Collaterali",
         "healthFactor": "Fattore di salute",
@@ -128,18 +129,29 @@
         "integrationsOverview": "Panoramica delle integrazioni",
         "appkit": "AppKit",
         "allowedPools": "Pool LP consentiti",
-        "routerAdapters": "Router e Adattatori",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Oracoli dei prezzi",
         "riskFramework": "Quadro di rischio",
-        "contractsSecurity": "Contratti e Sicurezza",
+        "contractsSecurity": "Sicurezza dei contratti",
         "bugBounty": "Premio per la scoperta di bug",
-        "insuranceFunds": "Fondi assicurativi",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Divulgazioni sulla sicurezza",
         "legalDisclaimer": "Disclaimer legale",
         "aiIntroduction": "Introduzione all'IA",
         "copilotProtocols": "Protocolli supportati",
         "copilotPrompts": "Esempi di prompt",
-        "copilotWorkflow": "Flusso dell'agente"
+        "copilotWorkflow": "Flusso dell'agente",
+        "custody": "Custodia e vault token",
+        "priceStates": "Stati del prezzo",
+        "marketLifecycle": "Ciclo di vita del mercato",
+        "governance": "Governance",
+        "emergencyControls": "Controlli di emergenza",
+        "contractList": "Contratti",
+        "parameters": "Parametri",
+        "securityVerification": "Sicurezza e verifica",
+        "audits": "Audit",
+        "lens": "Lens",
+        "protocolOverview": "Panoramica del protocollo"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "Informazioni",
-      "description": "Incontra Avana, un protocollo dedicato LP come garanzia costruito su Aave v4 con Spoke specializzati, un Hub condiviso e un Lend Spoke progettato per mercati di liquidità AMM."
+      "description": "Avana Labs sviluppa collaterale LP per Aave V4. L'LP Vault, i contratti di valutazione e i contratti di regolamento collegano le posizioni Uniswap all'Avana Hub."
     },
     "borrow": {
       "title": "Prendere in prestito",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "Circa Avana",
-      "subtitle": "Protocollo LP-come-collaterale costruito su Aave v4"
+      "subtitle": "Integrazione delle garanzie LP per Aave V4"
     },
     "brand": {
       "title": "Kit del marchio",

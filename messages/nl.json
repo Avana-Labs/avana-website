@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Testnet openen"
+      "sandboxLong": "Testnet starten"
     },
     "mega": {
       "exploreProducts": "Ontdek Producten",
@@ -103,19 +103,20 @@
         "integrations": "Ondersteunde integraties",
         "safety": "Veiligheidsmechanismen",
         "legal": "Juridisch & Compliance",
-        "copilot": "Vraag AI"
+        "copilot": "Vraag AI",
+        "reference": "Referentie"
       },
       "items": {
         "overview": "Overzicht",
         "keyConcepts": "Belangrijke concepten",
         "glossary": "Woordenlijst",
         "depositLp": "Storting LP",
-        "borrowAssets": "Activa Lenen",
+        "borrowAssets": "Activa lenen",
         "manageLoans": "Leningen Beheren",
         "repayLoans": "Leningen terugbetalen",
         "withdrawCollateral": "Onderpand opnemen",
-        "claimLpFees": "Vordering LP Kosten",
-        "borrowSpoke": "Leen Spoke",
+        "claimLpFees": "LP-kosten",
+        "borrowSpoke": "Hubs en Spokes",
         "lendSpoke": "Leen sprak",
         "collateralFactors": "Onderpandfactoren",
         "healthFactor": "Gezondheidsfactor",
@@ -128,18 +129,29 @@
         "integrationsOverview": "Overzicht van integraties",
         "appkit": "AppKit",
         "allowedPools": "Toegestaan LP Pools",
-        "routerAdapters": "Router en adapters",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Prijsorakels",
         "riskFramework": "Risicokader",
-        "contractsSecurity": "Contracten & Beveiliging",
+        "contractsSecurity": "Contractbeveiliging",
         "bugBounty": "Bug-bounty",
-        "insuranceFunds": "Verzekeringsfondsen",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Beveiligingsmeldingen",
         "legalDisclaimer": "Juridische disclaimer",
         "aiIntroduction": "AI-introductie",
         "copilotProtocols": "Ondersteunde protocollen",
         "copilotPrompts": "Promptvoorbeelden",
-        "copilotWorkflow": "Agentworkflow"
+        "copilotWorkflow": "Agentworkflow",
+        "custody": "Bewaring & vault-tokens",
+        "priceStates": "Prijstoestanden",
+        "marketLifecycle": "Marktlevenscyclus",
+        "governance": "Governance",
+        "emergencyControls": "Noodmaatregelen",
+        "contractList": "Contracten",
+        "parameters": "Parameters",
+        "securityVerification": "Beveiliging & verificatie",
+        "audits": "Audits",
+        "lens": "Lens",
+        "protocolOverview": "Protocoloverzicht"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "Over",
-      "description": "Ontmoet Avana, een toegewijd LP-als-zekerheid protocol gebouwd op Aave v4 met gespecialiseerde Spokes, een gedeelde Hub, en een Lend Spoke ontworpen voor AMM liquiditeitsmarkten."
+      "description": "Avana Labs bouwt LP-onderpand voor Aave V4. De LP Vault, de waarderingscontracten en de afwikkelingscontracten verbinden Uniswap-posities met de Avana Hub."
     },
     "borrow": {
       "title": "Lenen",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "Ongeveer Avana",
-      "subtitle": "LP-als-onderpandprotocol gebouwd op Aave v4"
+      "subtitle": "Integratie van LP-onderpand voor Aave V4"
     },
     "brand": {
       "title": "Merkit",

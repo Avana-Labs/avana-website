@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "เปิดเครือข่ายทดสอบ"
+      "sandboxLong": "เปิดใช้งาน Testnet"
     },
     "mega": {
       "exploreProducts": "สำรวจสินค้า",
@@ -103,7 +103,8 @@
         "integrations": "การรวมระบบที่รองรับ",
         "safety": "กลไกความปลอดภัย",
         "legal": "กฎหมายและการปฏิบัติตาม",
-        "copilot": "ถาม AI"
+        "copilot": "ถาม AI",
+        "reference": "ข้อมูลอ้างอิง"
       },
       "items": {
         "overview": "ภาพรวม",
@@ -114,8 +115,8 @@
         "manageLoans": "จัดการสินเชื่อ",
         "repayLoans": "ชำระหนี้เงินกู้",
         "withdrawCollateral": "ถอนหลักประกัน",
-        "claimLpFees": "ค่าธรรมเนียมการเคลม LP",
-        "borrowSpoke": "ยืมซี่ลวด",
+        "claimLpFees": "ค่าธรรมเนียม LP",
+        "borrowSpoke": "Hubs และ Spokes",
         "lendSpoke": "ชักยืม",
         "collateralFactors": "ปัจจัยหลักประกัน",
         "healthFactor": "ปัจจัยด้านสุขภาพ",
@@ -128,18 +129,29 @@
         "integrationsOverview": "ภาพรวมของการรวมระบบ",
         "appkit": "AppKit",
         "allowedPools": "พูลที่อนุญาต LP",
-        "routerAdapters": "เราเตอร์และอะแดปเตอร์",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "ออราเคิลราคา",
         "riskFramework": "กรอบความเสี่ยง",
-        "contractsSecurity": "สัญญาและความปลอดภัย",
+        "contractsSecurity": "ความปลอดภัยของสัญญา",
         "bugBounty": "โปรแกรมรายงานช่องโหว่",
-        "insuranceFunds": "กองทุนประกันภัย",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "การเปิดเผยด้านความปลอดภัย",
         "legalDisclaimer": "ข้อจำกัดความรับผิดทางกฎหมาย",
         "aiIntroduction": "แนะนำ AI",
         "copilotProtocols": "โปรโตคอลที่รองรับ",
         "copilotPrompts": "ตัวอย่างพรอมต์",
-        "copilotWorkflow": "เวิร์กโฟลว์ของเอเจนต์"
+        "copilotWorkflow": "เวิร์กโฟลว์ของเอเจนต์",
+        "custody": "การดูแลรักษาและ Vault Token",
+        "priceStates": "สถานะราคา",
+        "marketLifecycle": "วงจรชีวิตของตลาด",
+        "governance": "การกำกับดูแล",
+        "emergencyControls": "การควบคุมฉุกเฉิน",
+        "contractList": "สัญญา",
+        "parameters": "พารามิเตอร์",
+        "securityVerification": "ความปลอดภัยและการตรวจสอบ",
+        "audits": "การตรวจสอบโดยผู้ตรวจ",
+        "lens": "Lens",
+        "protocolOverview": "ภาพรวมโปรโตคอล"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "เกี่ยวกับ",
-      "description": "พบกับ Avana โปรโตคอลแบบ LP-เป็นหลักประกันที่สร้างบน Aave v4 พร้อม Spokes เฉพาะ, Hub ร่วม, และ Lend Spoke ที่ออกแบบมาสำหรับตลาดสภาพคล่อง AMM"
+      "description": "Avana Labs สร้างหลักประกัน LP สำหรับ Aave V4 โดย LP Vault สัญญาประเมินมูลค่า และสัญญาการชำระบัญชีเชื่อมโพซิชัน Uniswap เข้ากับ Avana Hub"
     },
     "borrow": {
       "title": "ยืม",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "ประมาณ Avana",
-      "subtitle": "LP-ในฐานะโพรโตคอลหลักประกันที่สร้างบน Aave v4"
+      "subtitle": "การรวมหลักประกัน LP สำหรับ Aave V4"
     },
     "brand": {
       "title": "ชุดแบรนด์",

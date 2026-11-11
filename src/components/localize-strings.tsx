@@ -13,8 +13,34 @@ function normalizePhrase(value: string): string {
     .trim()
 }
 
-function lookup(map: Record<string, string>, value: string): string {
-  if (!value) return value
+type PreparedMap = {
+  byNormalizedKey: Map<string, string>
+  composedEntries: Array<[string, string]>
+}
+
+// Phrase maps are reused for every text leaf on a page, so normalize their keys
+// once instead of scanning the whole map for each leaf that has no exact match.
+const preparedMaps = new WeakMap<Record<string, string>, PreparedMap>()
+
+function prepare(map: Record<string, string>): PreparedMap {
+  let prepared = preparedMaps.get(map)
+  if (prepared) return prepared
+  const byNormalizedKey = new Map<string, string>()
+  const composedEntries: Array<[string, string]> = []
+  for (const [from, to] of Object.entries(map)) {
+    const fromN = normalizePhrase(from)
+    if (!byNormalizedKey.has(fromN)) byNormalizedKey.set(fromN, to)
+    if (from && to && from !== to && from.length >= 10 && fromN.length >= 10) {
+      composedEntries.push([fromN, to])
+    }
+  }
+  composedEntries.sort((a, b) => b[0].length - a[0].length)
+  prepared = { byNormalizedKey, composedEntries }
+  preparedMaps.set(map, prepared)
+  return prepared
+}
+
+function findTranslation(map: Record<string, string>, value: string): string | undefined {
   if (map[value]) return map[value]
   const trimmed = value.trim()
   if (map[trimmed]) return map[trimmed]
@@ -22,11 +48,18 @@ function lookup(map: Record<string, string>, value: string): string {
   if (map[collapsed]) return map[collapsed]
   const normalized = normalizePhrase(value)
   if (map[normalized]) return map[normalized]
-  // also try map keys normalized (build reverse once would be better; linear fallback)
-  for (const [from, to] of Object.entries(map)) {
-    if (normalizePhrase(from) === normalized) return to
-  }
-  return value
+  return prepare(map).byNormalizedKey.get(normalized) || undefined
+}
+
+function lookup(map: Record<string, string>, value: string): string {
+  if (!value) return value
+  const translated = findTranslation(map, value)
+  if (translated === undefined) return value
+  // Catalog entries are stored trimmed. Keep the source text node's edge
+  // spacing so text next to links or <strong> labels doesn't run together.
+  const lead = /^\s/.test(value) && !/^\s/.test(translated) ? " " : ""
+  const trail = /\s$/.test(value) && !/\s$/.test(translated) ? " " : ""
+  return lead + translated + trail
 }
 
 /** Longest-phrase first replacement for composed attrs like aria-label templates. */
@@ -35,13 +68,7 @@ function lookupComposed(map: Record<string, string>, value: string): string {
   if (exact !== value) return exact
 
   let out = normalizePhrase(value)
-  const entries = Object.entries(map)
-    .filter(([from, to]) => from && to && from !== to && from.length >= 10)
-    .sort((a, b) => b[0].length - a[0].length)
-
-  for (const [from, to] of entries) {
-    const fromN = normalizePhrase(from)
-    if (!fromN || fromN.length < 10) continue
+  for (const [fromN, to] of prepare(map).composedEntries) {
     if (out.includes(fromN)) {
       out = out.split(fromN).join(to)
     }
@@ -54,15 +81,19 @@ function lookupComposed(map: Record<string, string>, value: string): string {
  * phrase map. Used for long-form docs/marketing that remain authored in English JSX.
  */
 export function localizeTree(node: ReactNode, map: Record<string, string>): ReactNode {
+  // Check once here, not per node: listing the keys copies the whole catalog.
   if (!map || Object.keys(map).length === 0) return node
+  return localizeNode(node, map)
+}
 
+function localizeNode(node: ReactNode, map: Record<string, string>): ReactNode {
   if (typeof node === "string") {
     return lookup(map, node)
   }
 
   if (Array.isArray(node)) {
     return node.map((child, index) => {
-      const next = localizeTree(child, map)
+      const next = localizeNode(child, map)
       return isValidElement(next) ? cloneElement(next, { key: next.key ?? index }) : next
     })
   }
@@ -113,12 +144,12 @@ export function localizeTree(node: ReactNode, map: Record<string, string>): Reac
     ) {
       // Content props can also be JSX (e.g. a multi-line hero title); recurse
       // so their text leaves are swapped like children are.
-      nextProps[prop] = localizeTree(value, map)
+      nextProps[prop] = localizeNode(value, map)
     }
   }
 
   if ("children" in element.props) {
-    nextProps.children = localizeTree(element.props.children, map)
+    nextProps.children = localizeNode(element.props.children, map)
   }
 
   // Deep-localize common content object props (TOC / FAQs / rails).

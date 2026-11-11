@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "باز کردن شبکه آزمایشی"
+      "sandboxLong": "راه‌اندازی Testnet"
     },
     "mega": {
       "exploreProducts": "محصولات را کاوش کنید",
@@ -102,19 +102,20 @@
         "integrations": "ادغام‌های پشتیبانی‌شده",
         "safety": "مکانیسم‌های ایمنی",
         "legal": "حقوقی و انطباق",
-        "copilot": "پرسش از هوش مصنوعی"
+        "copilot": "پرسش از هوش مصنوعی",
+        "reference": "مرجع"
       },
       "items": {
         "overview": "مرور کلی",
         "keyConcepts": "مفاهیم کلیدی",
         "glossary": "واژه‌نامه",
         "depositLp": "سپرده LP",
-        "borrowAssets": "استقراض دارایی‌ها",
+        "borrowAssets": "قرض گرفتن دارایی‌ها",
         "manageLoans": "مدیریت وام‌ها",
         "repayLoans": "بازپرداخت وام‌ها",
         "withdrawCollateral": "برداشت وثیقه",
         "claimLpFees": "ادعای LP هزینه‌ها",
-        "borrowSpoke": "اسپوک قرض گرفتن",
+        "borrowSpoke": "Hubها و Spokeها",
         "lendSpoke": "چرخ‌دنده وام",
         "collateralFactors": "عوامل تضمینی",
         "healthFactor": "عامل سلامتی",
@@ -127,18 +128,29 @@
         "integrationsOverview": "مروری بر یکپارچه‌سازی‌ها",
         "appkit": "AppKit",
         "allowedPools": "استخرهای مجاز LP",
-        "routerAdapters": "روتر و آداپتورها",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "اوراکل‌های قیمت",
         "riskFramework": "چارچوب ریسک",
-        "contractsSecurity": "قراردادها و امنیت",
+        "contractsSecurity": "امنیت قراردادها",
         "bugBounty": "جایزه باگ",
-        "insuranceFunds": "صندوق‌های بیمه",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "افشای امنیتی",
         "legalDisclaimer": "سلب مسئولیت قانونی",
         "aiIntroduction": "معرفی هوش مصنوعی",
         "copilotProtocols": "پروتکل‌های پشتیبانی‌شده",
         "copilotPrompts": "نمونه پرامپت‌ها",
-        "copilotWorkflow": "گردش کار عامل"
+        "copilotWorkflow": "گردش کار عامل",
+        "custody": "نگهداری و توکن‌های خزانه",
+        "priceStates": "وضعیت‌های قیمت",
+        "marketLifecycle": "چرخه عمر بازار",
+        "governance": "حاکمیت",
+        "emergencyControls": "کنترل‌های اضطراری",
+        "contractList": "قراردادها",
+        "parameters": "پارامترها",
+        "securityVerification": "امنیت و راستی‌آزمایی",
+        "audits": "حسابرسی‌ها",
+        "lens": "Lens",
+        "protocolOverview": "نمای کلی پروتکل"
       }
     },
     "faqUi": {
@@ -194,7 +206,7 @@
     },
     "about": {
       "title": "درباره",
-      "description": "با Avana آشنا شوید، یک پروتکل اختصاصی LP-به‌عنوان-وثیقه ساخته‌شده بر روی Aave v4 با اسپوک‌های تخصصی، یک هاب مشترک و یک اسپوک وام طراحی‌شده برای بازارهای نقدینگی AMM."
+      "description": "Avana Labs وثیقه LP را برای Aave V4 می‌سازد. LP Vault، قراردادهای ارزش‌گذاری و قراردادهای تسویه، موقعیت‌های Uniswap را به Avana Hub متصل می‌کنند."
     },
     "borrow": {
       "title": "قرض گرفتن",
@@ -295,7 +307,7 @@
     },
     "about": {
       "title": "حدود Avana",
-      "subtitle": "LP-به‌عنوان پروتکل وثیقه‌ای ساخته‌شده بر روی Aave v4"
+      "subtitle": "ادغام وثیقه LP برای Aave V4"
     },
     "brand": {
       "title": "کیت برند",

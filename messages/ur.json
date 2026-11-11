@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "ٹیسٹ نیٹ کھولیں"
+      "sandboxLong": "Testnet لانچ کریں"
     },
     "mega": {
       "exploreProducts": "مصنوعات کو دریافت کریں",
@@ -103,7 +103,8 @@
         "integrations": "معاونت یافتہ انضمام",
         "safety": "حفاظتی میکنزم",
         "legal": "قانونی اور تعمیل",
-        "copilot": "AI سے پوچھیں"
+        "copilot": "AI سے پوچھیں",
+        "reference": "حوالہ"
       },
       "items": {
         "overview": "جائزہ",
@@ -114,8 +115,8 @@
         "manageLoans": "قرضوں کا انتظام کریں",
         "repayLoans": "قرض واپس کریں",
         "withdrawCollateral": "ضمانت نکالیں",
-        "claimLpFees": "دعویٰ LP فیسیں",
-        "borrowSpoke": "ادھار لیا گیا سپوک",
+        "claimLpFees": "ایل پی فیس",
+        "borrowSpoke": "Hubs اور Spokes",
         "lendSpoke": "لینڈ اسپوک",
         "collateralFactors": "ضمانتی عوامل",
         "healthFactor": "صحت کا عنصر",
@@ -128,18 +129,29 @@
         "integrationsOverview": "انٹیگریشنز کا جائزہ",
         "appkit": "AppKit",
         "allowedPools": "اجازت یافتہ LP پولز",
-        "routerAdapters": "روٹر اور اڈاپٹرز",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "قیمت کے اوریکل",
         "riskFramework": "خطرے کا فریم ورک",
-        "contractsSecurity": "معاہدے اور سیکیورٹی",
+        "contractsSecurity": "کنٹریکٹ سیکیورٹی",
         "bugBounty": "بگ باؤنٹی",
-        "insuranceFunds": "انشورنس فنڈز",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "سیکیورٹی انکشافات",
         "legalDisclaimer": "قانونی دستبرداری",
         "aiIntroduction": "AI تعارف",
         "copilotProtocols": "معاون پروٹوکولز",
         "copilotPrompts": "پرامپٹ مثالیں",
-        "copilotWorkflow": "ایجنٹ ورک فلو"
+        "copilotWorkflow": "ایجنٹ ورک فلو",
+        "custody": "تحویل اور والٹ ٹوکنز",
+        "priceStates": "قیمت کی حالتیں",
+        "marketLifecycle": "مارکیٹ لائف سائیکل",
+        "governance": "گورننس",
+        "emergencyControls": "ہنگامی کنٹرولز",
+        "contractList": "کنٹریکٹس",
+        "parameters": "پیرامیٹرز",
+        "securityVerification": "سیکیورٹی اور تصدیق",
+        "audits": "آڈٹس",
+        "lens": "Lens",
+        "protocolOverview": "پروٹوکول کا جائزہ"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "کے بارے میں",
-      "description": "ملاقات کریں Avana سے، ایک وقف شدہ LP بطور ضمانت پروٹوکول جو Aave v4 پر بنایا گیا ہے جس میں مخصوص Spokes، ایک مشترکہ Hub، اور AMM لیکویڈیٹی مارکیٹس کے لیے ڈیزائن کیا گیا Lend Spoke شامل ہیں۔"
+      "description": "Avana Labs، Aave V4 کے لیے LP کولیٹرل بناتا ہے۔ LP Vault، قدر پیمائی کے کنٹریکٹس اور سیٹلمنٹ کنٹریکٹس Uniswap پوزیشنز کو Avana Hub سے جوڑتے ہیں۔"
     },
     "borrow": {
       "title": "قرض لینا",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "تقریباً Avana",
-      "subtitle": "LP-بحیثیت ضمانت پروٹوکول Aave v4 پر بنایا گیا"
+      "subtitle": "LP ضامن ادغام برائے Aave V4"
     },
     "brand": {
       "title": "برانڈ کٹ",

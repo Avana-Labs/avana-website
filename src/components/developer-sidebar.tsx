@@ -79,6 +79,17 @@ import {
   Gavel,
   Bot,
   MessageSquare,
+  Vault,
+  Activity,
+  Eye,
+  RefreshCw,
+  Landmark,
+  Siren,
+  Library,
+  FileCode,
+  SlidersHorizontal,
+  ShieldCheck,
+  ClipboardCheck,
 } from "lucide-react"
 
 // Navigation structure - exported for use in PageNavigation component
@@ -89,6 +100,7 @@ export const navigationSections = [
     icon: BookOpen,
     items: [
       { href: "/developers", labelKey: "docs.items.overview", icon: FileText },
+      { href: "/developers/introduction", labelKey: "docs.items.protocolOverview", icon: Layers },
       { href: "/developers/introduction/key-concepts", labelKey: "docs.items.keyConcepts", icon: Lightbulb },
       { href: "/developers/introduction/glossary", labelKey: "docs.items.glossary", icon: BookMarked },
     ],
@@ -112,6 +124,7 @@ export const navigationSections = [
     icon: Layers,
     items: [
       { href: "/developers/architecture", labelKey: "docs.items.borrowSpoke", icon: Workflow },
+      { href: "/developers/architecture/custody", labelKey: "docs.items.custody", icon: Vault },
       { href: "/developers/architecture/lend-spoke", labelKey: "docs.items.lendSpoke", icon: Coins },
       { href: "/developers/architecture/collateral-factors", labelKey: "docs.items.collateralFactors", icon: Percent },
       { href: "/developers/architecture/health-factor", labelKey: "docs.items.healthFactor", icon: Heart },
@@ -150,6 +163,9 @@ export const navigationSections = [
       { href: "/developers/integrations/allowed-pools", labelKey: "docs.items.allowedPools", icon: Droplets },
       { href: "/developers/integrations/router-contract", labelKey: "docs.items.routerAdapters", icon: Router },
       { href: "/developers/integrations/price-oracles", labelKey: "docs.items.priceOracles", icon: BarChart3 },
+      { href: "/developers/integrations/price-states", labelKey: "docs.items.priceStates", icon: Activity },
+      { href: "/developers/integrations/lens", labelKey: "docs.items.lens", icon: Eye },
+      { href: "/developers/integrations/market-lifecycle", labelKey: "docs.items.marketLifecycle", icon: RefreshCw },
     ],
   },
   {
@@ -161,6 +177,19 @@ export const navigationSections = [
       { href: "/developers/safety/contracts", labelKey: "docs.items.contractsSecurity", icon: Building },
       { href: "/developers/safety/bug-bounty", labelKey: "docs.items.bugBounty", icon: Bug },
       { href: "/developers/safety/insurance", labelKey: "docs.items.insuranceFunds", icon: Umbrella },
+      { href: "/developers/safety/governance", labelKey: "docs.items.governance", icon: Landmark },
+      { href: "/developers/safety/emergency-controls", labelKey: "docs.items.emergencyControls", icon: Siren },
+    ],
+  },
+  {
+    id: "reference",
+    titleKey: "docs.sections.reference",
+    icon: Library,
+    items: [
+      { href: "/developers/reference/contracts", labelKey: "docs.items.contractList", icon: FileCode },
+      { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
+      { href: "/developers/reference/security", labelKey: "docs.items.securityVerification", icon: ShieldCheck },
+      { href: "/developers/reference/audits", labelKey: "docs.items.audits", icon: ClipboardCheck },
     ],
   },
   {
@@ -191,6 +220,7 @@ const sectionColors: Record<string, typeof activeSectionStyles> = {
   copilot: activeSectionStyles,
   integrations: activeSectionStyles,
   safety: activeSectionStyles,
+  reference: activeSectionStyles,
   legal: activeSectionStyles,
 }
 

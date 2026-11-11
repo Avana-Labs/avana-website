@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "פתיחת רשת הבדיקה"
+      "sandboxLong": "השיקו את ה-Testnet"
     },
     "mega": {
       "exploreProducts": "לחקור מוצרים",
@@ -103,19 +103,20 @@
         "integrations": "אינטגרציות נתמכות",
         "safety": "מנגנוני בטיחות",
         "legal": "משפטי וציות",
-        "copilot": "שאל את הבינה המלאכותית"
+        "copilot": "שאל את הבינה המלאכותית",
+        "reference": "עיון"
       },
       "items": {
         "overview": "סקירה",
         "keyConcepts": "מושגים מפתח",
         "glossary": "מילון מונחים",
         "depositLp": "זיכוי LP",
-        "borrowAssets": "השאלת נכסים",
+        "borrowAssets": "שאילת נכסים",
         "manageLoans": "ניהול הלוואות",
         "repayLoans": "להחזיר הלוואות",
         "withdrawCollateral": "משוך משכון",
-        "claimLpFees": "טענת LP עמלות",
-        "borrowSpoke": "לווה ספוק",
+        "claimLpFees": "עמלות LP",
+        "borrowSpoke": "Hubs ו-Spokes",
         "lendSpoke": "רכב קדמי",
         "collateralFactors": "גורמי בטוחה",
         "healthFactor": "גורם בריאות",
@@ -128,18 +129,29 @@
         "integrationsOverview": "סקירת אינטגרציות",
         "appkit": "AppKit",
         "allowedPools": "בריכות מותרות LP",
-        "routerAdapters": "נתב ומתאמים",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "אורקלי מחירים",
         "riskFramework": "מסגרת סיכונים",
-        "contractsSecurity": "חוזים ואבטחה",
+        "contractsSecurity": "אבטחת חוזים",
         "bugBounty": "פרס באגים",
-        "insuranceFunds": "קרנות ביטוח",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "גילויים ביטחוניים",
         "legalDisclaimer": "כתב ויתור משפטי",
         "aiIntroduction": "מבוא לבינה מלאכותית",
         "copilotProtocols": "פרוטוקולים נתמכים",
         "copilotPrompts": "דוגמאות לפרומפטים",
-        "copilotWorkflow": "זרימת עבודה של הסוכן"
+        "copilotWorkflow": "זרימת עבודה של הסוכן",
+        "custody": "משמורת ו-Vault Tokens",
+        "priceStates": "מצבי מחיר",
+        "marketLifecycle": "מחזור חיי שוק",
+        "governance": "ממשל",
+        "emergencyControls": "בקרות חירום",
+        "contractList": "חוזים",
+        "parameters": "פרמטרים",
+        "securityVerification": "אבטחה ואימות",
+        "audits": "ביקורות",
+        "lens": "Lens",
+        "protocolOverview": "סקירת הפרוטוקול"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "אודות",
-      "description": "הכירו את Avana, פרוטוקול ייחוסLP עם ערבות בנוי על Aave v4 עם צירים מיוחדים, מרכז משותף, וציר הלוואות המיועד לשווקי נזילות AMM."
+      "description": "Avana Labs בונה ביטחונות LP עבור Aave V4. ה-LP Vault, חוזי הערכת השווי וחוזי הסילוק מחברים פוזיציות Uniswap ל-Avana Hub."
     },
     "borrow": {
       "title": "להשאיל",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "בערך Avana",
-      "subtitle": "LP-פרוטוקול כביטחונות מבוסס על Aave v4"
+      "subtitle": "שילוב בטחונות LP עבור Aave V4"
     },
     "brand": {
       "title": "ערכת מותג",

@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   static:
-    name: Static checks and production build
+    name: Static checks, production build and browser checks
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -38,27 +38,9 @@ jobs:
       - name: Validate generated pages
         run: npm run check:built
 
-  browser:
-    name: Browser navigation and resilience checks
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    needs: static
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build production output
-        run: npm run build
-
+      # Browser checks run against the build above instead of rebuilding in a
+      # second job. The build output is too large to pass between jobs faster
+      # than rebuilding it.
       - name: Start production server
         run: |
           nohup npm run start -- -p 3000 > /tmp/avana-next.log 2>&1 &

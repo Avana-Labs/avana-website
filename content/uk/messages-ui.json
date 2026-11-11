@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Відкрити тестову мережу"
+      "sandboxLong": "Запустити Testnet"
     },
     "mega": {
       "exploreProducts": "Досліджуйте продукти",
@@ -102,19 +102,20 @@
         "integrations": "Підтримувані інтеграції",
         "safety": "Механізми безпеки",
         "legal": "Юридичний та комплаєнс",
-        "copilot": "Запитати ШІ"
+        "copilot": "Запитати ШІ",
+        "reference": "Довідник"
       },
       "items": {
         "overview": "Огляд",
         "keyConcepts": "Ключові поняття",
         "glossary": "Глосарій",
         "depositLp": "Внесок LP",
-        "borrowAssets": "Позичати активи",
+        "borrowAssets": "Позика активів",
         "manageLoans": "Керувати позиками",
         "repayLoans": "Погашати кредити",
         "withdrawCollateral": "Зняти заставу",
         "claimLpFees": "Позов LP Витрати",
-        "borrowSpoke": "Позичений спиці",
+        "borrowSpoke": "Hubs і Spokes",
         "lendSpoke": "Передній спиць",
         "collateralFactors": "Забезпечувальні фактори",
         "healthFactor": "Фактор здоров'я",
@@ -127,18 +128,29 @@
         "integrationsOverview": "Огляд інтеграцій",
         "appkit": "AppKit",
         "allowedPools": "Дозволені LP пулів",
-        "routerAdapters": "Маршрутизатор і адаптери",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Цінові Оракули",
         "riskFramework": "Рамки управління ризиками",
-        "contractsSecurity": "Контракти та безпека",
+        "contractsSecurity": "Безпека контрактів",
         "bugBounty": "Програма винагороди за помилки",
-        "insuranceFunds": "Страхові фонди",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Розкриття інформації про безпеку",
         "legalDisclaimer": "Юридична заява",
         "aiIntroduction": "Вступ до ШІ",
         "copilotProtocols": "Підтримувані протоколи",
         "copilotPrompts": "Приклади промптів",
-        "copilotWorkflow": "Робочий процес агента"
+        "copilotWorkflow": "Робочий процес агента",
+        "custody": "Зберігання та vault-токени",
+        "priceStates": "Стани ціни",
+        "marketLifecycle": "Життєвий цикл ринку",
+        "governance": "Управління",
+        "emergencyControls": "Екстрені заходи",
+        "contractList": "Контракти",
+        "parameters": "Параметри",
+        "securityVerification": "Безпека та верифікація",
+        "audits": "Аудити",
+        "lens": "Lens",
+        "protocolOverview": "Огляд протоколу"
       }
     },
     "faqUi": {
@@ -194,7 +206,7 @@
     },
     "about": {
       "title": "Про",
-      "description": "Познайомтеся з Avana, відданим протоколом LP як забезпечення, побудованим на Aave v4 зі спеціалізованими Спосами, спільним Хабом та Спосом Позик, призначеним для ринків ліквідності AMM."
+      "description": "Avana Labs створює LP-заставу для Aave V4. LP Vault, контракти оцінювання та контракти врегулювання з'єднують позиції Uniswap з Avana Hub."
     },
     "borrow": {
       "title": "Позичати",
@@ -295,7 +307,7 @@
     },
     "about": {
       "title": "Про Avana",
-      "subtitle": "LP — протокол забезпечення, побудований на Aave v4"
+      "subtitle": "Інтеграція застави LP для Aave V4"
     },
     "brand": {
       "title": "Набір бренду",

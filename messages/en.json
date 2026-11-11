@@ -116,7 +116,8 @@
         "copilot": "Ask AI",
         "integrations": "Supported Integrations",
         "safety": "Safety Mechanisms",
-        "legal": "Legal & Compliance"
+        "legal": "Legal & Compliance",
+        "reference": "Reference"
       },
       "items": {
         "overview": "Overview",
@@ -127,8 +128,8 @@
         "manageLoans": "Manage Loans",
         "repayLoans": "Repay Loans",
         "withdrawCollateral": "Withdraw Collateral",
-        "claimLpFees": "Claim LP Fees",
-        "borrowSpoke": "Borrow Spoke",
+        "claimLpFees": "LP Fees",
+        "borrowSpoke": "Hubs and Spokes",
         "lendSpoke": "Lend Spoke",
         "collateralFactors": "Collateral Factors",
         "healthFactor": "Health Factor",
@@ -145,14 +146,25 @@
         "integrationsOverview": "Integrations Overview",
         "appkit": "AppKit",
         "allowedPools": "Allowed LP Pools",
-        "routerAdapters": "Router & Adapters",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Price Oracles",
         "riskFramework": "Risk Framework",
-        "contractsSecurity": "Contracts & Security",
+        "contractsSecurity": "Contract Security",
         "bugBounty": "Bug Bounty",
-        "insuranceFunds": "Insurance Funds",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Security Disclosures",
-        "legalDisclaimer": "Legal Disclaimer"
+        "legalDisclaimer": "Legal Disclaimer",
+        "custody": "Custody & Vault Tokens",
+        "priceStates": "Price States",
+        "marketLifecycle": "Market Lifecycle",
+        "governance": "Governance",
+        "emergencyControls": "Emergency Controls",
+        "contractList": "Contracts",
+        "parameters": "Parameters",
+        "securityVerification": "Security & Verification",
+        "audits": "Audits",
+        "lens": "Lens",
+        "protocolOverview": "Protocol Overview"
       }
     },
     "faqUi": {
@@ -195,7 +207,7 @@
     },
     "about": {
       "title": "About",
-      "description": "Meet Avana, a dedicated LP-as-collateral protocol built on Aave v4 with specialized Spokes, a shared Hub, and a Lend Spoke designed for AMM liquidity markets."
+      "description": "Avana Labs builds LP collateral for Aave V4. The LP Vault, valuation contracts, and settlement contracts connect Uniswap positions to the Avana Hub."
     },
     "borrow": {
       "title": "Borrow",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "About Avana",
-      "subtitle": "LP-as-collateral protocol built on Aave v4"
+      "subtitle": "LP collateral integration for Aave V4"
     },
     "brand": {
       "title": "Brand kit",

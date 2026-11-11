@@ -15,6 +15,7 @@ export const landingPaths = [
 ] as const
 
 export const developerPaths = [
+  "/developers/introduction",
   "/developers/introduction/key-concepts",
   "/developers/introduction/glossary",
   "/developers/getting-started",
@@ -24,6 +25,7 @@ export const developerPaths = [
   "/developers/getting-started/withdraw-collateral",
   "/developers/getting-started/claim-lp-fees",
   "/developers/architecture",
+  "/developers/architecture/custody",
   "/developers/architecture/lend-spoke",
   "/developers/architecture/collateral-factors",
   "/developers/architecture/health-factor",
@@ -37,6 +39,9 @@ export const developerPaths = [
   "/developers/integrations/allowed-pools",
   "/developers/integrations/price-oracles",
   "/developers/integrations/router-contract",
+  "/developers/integrations/price-states",
+  "/developers/integrations/lens",
+  "/developers/integrations/market-lifecycle",
   "/developers/liquidation",
   "/developers/liquidation/liquidators",
   "/developers/liquidation/flow",
@@ -45,6 +50,12 @@ export const developerPaths = [
   "/developers/safety/contracts",
   "/developers/safety/bug-bounty",
   "/developers/safety/insurance",
+  "/developers/safety/governance",
+  "/developers/safety/emergency-controls",
+  "/developers/reference/contracts",
+  "/developers/reference/parameters",
+  "/developers/reference/security",
+  "/developers/reference/audits",
   "/developers/legal",
   "/developers/legal/disclaimer",
 ] as const

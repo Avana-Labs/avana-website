@@ -103,7 +103,8 @@
         "integrations": "支持的集成",
         "safety": "安全機制",
         "legal": "法律與合規",
-        "copilot": "詢問 AI"
+        "copilot": "詢問 AI",
+        "reference": "參考"
       },
       "items": {
         "overview": "概覽",
@@ -114,8 +115,8 @@
         "manageLoans": "管理貸款",
         "repayLoans": "償還貸款",
         "withdrawCollateral": "提取抵押品",
-        "claimLpFees": "權利要求 LP 費用",
-        "borrowSpoke": "借用輻條",
+        "claimLpFees": "有限合夥人費用",
+        "borrowSpoke": "Hub 與 Spoke",
         "lendSpoke": "放貸輻條",
         "collateralFactors": "抵押因素",
         "healthFactor": "健康因素",
@@ -128,18 +129,29 @@
         "integrationsOverview": "集成概覽",
         "appkit": "AppKit",
         "allowedPools": "允許的 LP 個池",
-        "routerAdapters": "路由器和適配器",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "價格預言機",
         "riskFramework": "風險框架",
-        "contractsSecurity": "合同與安全",
+        "contractsSecurity": "合約安全",
         "bugBounty": "漏洞賞金",
-        "insuranceFunds": "保險基金",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "安全披露",
         "legalDisclaimer": "法律免責聲明",
         "aiIntroduction": "AI 簡介",
         "copilotProtocols": "支援的協議",
         "copilotPrompts": "提示範例",
-        "copilotWorkflow": "智能體工作流程"
+        "copilotWorkflow": "智能體工作流程",
+        "custody": "託管與金庫代幣",
+        "priceStates": "價格狀態",
+        "marketLifecycle": "市場生命週期",
+        "governance": "治理",
+        "emergencyControls": "緊急控制",
+        "contractList": "合約",
+        "parameters": "參數",
+        "securityVerification": "安全與驗證",
+        "audits": "稽核",
+        "lens": "Lens",
+        "protocolOverview": "協議概覽"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "關於",
-      "description": "認識Avana，一個基於Aave v4構建、以LP作為抵押的專用協議，配備了專門的Spokes、共享Hub，以及為AMM流動性市場設計的Lend Spoke。"
+      "description": "Avana Labs 為 Aave V4 打造 LP 抵押品。LP Vault、估值合約與結算合約將 Uniswap 部位連接至 Avana Hub。"
     },
     "borrow": {
       "title": "借",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "大約Avana",
-      "subtitle": "基於Aave v4的LP作抵押協議"
+      "subtitle": "LP 抵押品整合Aave V4"
     },
     "brand": {
       "title": "品牌套件",

@@ -1806,3 +1806,38 @@ body:has([data-developer-doc-shell]) footer.site-content-shell {
     transition: none !important;
   }
 }
+
+/* Long developer docs: skip layout and paint for sections far below the
+   viewport, and reveal sections that start below the first screen as they
+   scroll in (data-reveal is set by DocSectionReveal). */
+.developer-content[data-developer-doc-shell] [data-developer-doc-export-root] > section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
+}
+
+.developer-content[data-developer-doc-shell] [data-developer-doc-export-root] > section[data-reveal] {
+  transition:
+    opacity 420ms ease-out,
+    transform 420ms ease-out;
+}
+
+.developer-content[data-developer-doc-shell] [data-developer-doc-export-root] > section[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] > section[data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media print {
+  .developer-content[data-developer-doc-shell] [data-developer-doc-export-root] > section {
+    content-visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}

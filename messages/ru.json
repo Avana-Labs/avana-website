@@ -35,7 +35,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "Открыть тестовую сеть"
+      "sandboxLong": "Запустить Testnet"
     },
     "mega": {
       "exploreProducts": "Исследуйте продукты",
@@ -103,19 +103,20 @@
         "integrations": "Поддерживаемые интеграции",
         "safety": "Механизмы безопасности",
         "legal": "Юридические вопросы и соответствие требованиям",
-        "copilot": "Спросить ИИ"
+        "copilot": "Спросить ИИ",
+        "reference": "Справочник"
       },
       "items": {
         "overview": "Обзор",
         "keyConcepts": "Ключевые концепции",
         "glossary": "Глоссарий",
         "depositLp": "Депозит LP",
-        "borrowAssets": "Занимать активы",
+        "borrowAssets": "Заимствование активов",
         "manageLoans": "Управление кредитами",
         "repayLoans": "Погасить кредиты",
         "withdrawCollateral": "Вывести залог",
-        "claimLpFees": "Иск LP Пошлины",
-        "borrowSpoke": "Взять Spoke в долг",
+        "claimLpFees": "Комиссии LP",
+        "borrowSpoke": "Hubs и Spokes",
         "lendSpoke": "Осевая спица",
         "collateralFactors": "Залоговые факторы",
         "healthFactor": "Фактор здоровья",
@@ -128,18 +129,29 @@
         "integrationsOverview": "Обзор интеграций",
         "appkit": "AppKit",
         "allowedPools": "Разрешенные LP пулы",
-        "routerAdapters": "Маршрутизатор и адаптеры",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "Ценовые оракулы",
         "riskFramework": "Рамки риска",
-        "contractsSecurity": "Контракты и безопасность",
+        "contractsSecurity": "Безопасность контрактов",
         "bugBounty": "Награда за баг",
-        "insuranceFunds": "Страховые фонды",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "Раскрытие информации о безопасности",
         "legalDisclaimer": "Юридический отказ от ответственности",
         "aiIntroduction": "Введение в ИИ",
         "copilotProtocols": "Поддерживаемые протоколы",
         "copilotPrompts": "Примеры промптов",
-        "copilotWorkflow": "Рабочий процесс агента"
+        "copilotWorkflow": "Рабочий процесс агента",
+        "custody": "Хранение и vault-токены",
+        "priceStates": "Состояния цены",
+        "marketLifecycle": "Жизненный цикл рынка",
+        "governance": "Управление",
+        "emergencyControls": "Экстренные меры",
+        "contractList": "Контракты",
+        "parameters": "Параметры",
+        "securityVerification": "Безопасность и верификация",
+        "audits": "Аудиты",
+        "lens": "Lens",
+        "protocolOverview": "Обзор протокола"
       }
     },
     "faqUi": {
@@ -199,7 +211,7 @@
     },
     "about": {
       "title": "О",
-      "description": "Познакомьтесь с Avana, преданным протоколом LP в качестве залога, построенным на Aave v4 с специализированными Spokes, общим Hub и Lend Spoke, предназначенным для рынков ликвидности AMM."
+      "description": "Avana Labs создаёт LP-залог для Aave V4. LP Vault, контракты оценки и контракты урегулирования связывают позиции Uniswap с Avana Hub."
     },
     "borrow": {
       "title": "Занимать",
@@ -300,7 +312,7 @@
     },
     "about": {
       "title": "Около Avana",
-      "subtitle": "LP — протокол обеспечения, построенный на Aave v4"
+      "subtitle": "Интеграция залога LP для Aave V4"
     },
     "brand": {
       "title": "Набор бренда",

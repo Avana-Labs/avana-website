@@ -34,7 +34,7 @@
     },
     "cta": {
       "sandboxShort": "Sandbox",
-      "sandboxLong": "افتح الشبكة التجريبية"
+      "sandboxLong": "أطلق Testnet"
     },
     "mega": {
       "exploreProducts": "استكشاف المنتجات",
@@ -102,19 +102,20 @@
         "integrations": "التكاملات المدعومة",
         "safety": "آليات السلامة",
         "legal": "القانونية والامتثال",
-        "copilot": "اسأل الذكاء الاصطناعي"
+        "copilot": "اسأل الذكاء الاصطناعي",
+        "reference": "المرجع"
       },
       "items": {
         "overview": "نظرة عامة",
         "keyConcepts": "المفاهيم الرئيسية",
         "glossary": "قائمة المصطلحات",
         "depositLp": "الوديعة LP",
-        "borrowAssets": "اقترض الأصول",
+        "borrowAssets": "اقتراض الأصول",
         "manageLoans": "إدارة القروض",
         "repayLoans": "سداد القروض",
         "withdrawCollateral": "سحب الضمان",
         "claimLpFees": "المطالبة LP الرسوم",
-        "borrowSpoke": "استعار سبوك",
+        "borrowSpoke": "Hubs و Spokes",
         "lendSpoke": "لسان الدعامة",
         "collateralFactors": "العوامل الضامنة",
         "healthFactor": "عامل الصحة",
@@ -127,18 +128,29 @@
         "integrationsOverview": "نظرة عامة على التكاملات",
         "appkit": "AppKit",
         "allowedPools": "المسابح المسموح بها LP",
-        "routerAdapters": "الموجه والمهايئات",
+        "routerAdapters": "AaveAdapter",
         "priceOracles": "أوراكل الأسعار",
         "riskFramework": "إطار المخاطر",
-        "contractsSecurity": "العقود والأمان",
+        "contractsSecurity": "أمان العقود",
         "bugBounty": "مكافأة الثغرات",
-        "insuranceFunds": "صناديق التأمين",
+        "insuranceFunds": "Avana Umbrella",
         "securityDisclosures": "الإفصاحات الأمنية",
         "legalDisclaimer": "تنبيه قانوني",
         "aiIntroduction": "مقدمة عن الذكاء الاصطناعي",
         "copilotProtocols": "البروتوكولات المدعومة",
         "copilotPrompts": "أمثلة على المطالبات",
-        "copilotWorkflow": "سير عمل الوكيل"
+        "copilotWorkflow": "سير عمل الوكيل",
+        "custody": "الحفظ ورموز الخزنة",
+        "priceStates": "حالات السعر",
+        "marketLifecycle": "دورة حياة السوق",
+        "governance": "الحوكمة",
+        "emergencyControls": "ضوابط الطوارئ",
+        "contractList": "العقود",
+        "parameters": "المعاملات",
+        "securityVerification": "الأمان والتحقق",
+        "audits": "عمليات التدقيق",
+        "lens": "Lens",
+        "protocolOverview": "نظرة عامة على البروتوكول"
       }
     },
     "faqUi": {
@@ -194,7 +206,7 @@
     },
     "about": {
       "title": "حول",
-      "description": "قابل Avana، بروتوكول LP مخصص كضمان مبني على Aave v4 مع محاور متخصصة، ومحور مشترك، ومحور إقراض مصمم لأسواق سيولة AMM."
+      "description": "تبني Avana Labs ضمان LP لـAave V4. تربط LP Vault وعقود التقييم وعقود التسوية مراكز Uniswap بـAvana Hub."
     },
     "borrow": {
       "title": "يستعير",
@@ -295,7 +307,7 @@
     },
     "about": {
       "title": "حوالي Avana",
-      "subtitle": "LP-كبروتوكول ضمان مبني على Aave v4"
+      "subtitle": "تكامل ضمانات LP لـ Aave V4"
     },
     "brand": {
       "title": "مجموعة العلامة التجارية",
