@@ -13,6 +13,33 @@ function normalizePhrase(value: string): string {
     .trim()
 }
 
+type PreparedMap = {
+  byNormalizedKey: Map<string, string>
+  composedEntries: Array<[string, string]>
+}
+
+// Phrase maps are reused for every text leaf on a page, so normalize their keys
+// once instead of scanning the whole map for each leaf that has no exact match.
+const preparedMaps = new WeakMap<Record<string, string>, PreparedMap>()
+
+function prepare(map: Record<string, string>): PreparedMap {
+  let prepared = preparedMaps.get(map)
+  if (prepared) return prepared
+  const byNormalizedKey = new Map<string, string>()
+  const composedEntries: Array<[string, string]> = []
+  for (const [from, to] of Object.entries(map)) {
+    const fromN = normalizePhrase(from)
+    if (!byNormalizedKey.has(fromN)) byNormalizedKey.set(fromN, to)
+    if (from && to && from !== to && from.length >= 10 && fromN.length >= 10) {
+      composedEntries.push([fromN, to])
+    }
+  }
+  composedEntries.sort((a, b) => b[0].length - a[0].length)
+  prepared = { byNormalizedKey, composedEntries }
+  preparedMaps.set(map, prepared)
+  return prepared
+}
+
 function findTranslation(map: Record<string, string>, value: string): string | undefined {
   if (map[value]) return map[value]
   const trimmed = value.trim()
@@ -21,11 +48,7 @@ function findTranslation(map: Record<string, string>, value: string): string | u
   if (map[collapsed]) return map[collapsed]
   const normalized = normalizePhrase(value)
   if (map[normalized]) return map[normalized]
-  // also try map keys normalized (build reverse once would be better; linear fallback)
-  for (const [from, to] of Object.entries(map)) {
-    if (normalizePhrase(from) === normalized) return to
-  }
-  return undefined
+  return prepare(map).byNormalizedKey.get(normalized) || undefined
 }
 
 function lookup(map: Record<string, string>, value: string): string {
@@ -45,13 +68,7 @@ function lookupComposed(map: Record<string, string>, value: string): string {
   if (exact !== value) return exact
 
   let out = normalizePhrase(value)
-  const entries = Object.entries(map)
-    .filter(([from, to]) => from && to && from !== to && from.length >= 10)
-    .sort((a, b) => b[0].length - a[0].length)
-
-  for (const [from, to] of entries) {
-    const fromN = normalizePhrase(from)
-    if (!fromN || fromN.length < 10) continue
+  for (const [fromN, to] of prepare(map).composedEntries) {
     if (out.includes(fromN)) {
       out = out.split(fromN).join(to)
     }
