@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Menene manyan sassan tsarin Avana?",
-          "a": "Tsarewa: LPVault mara canzawa ga kowace yarjejeniyar AMM a kowane chain, da ledger na Collateralization. Asusu da tokens: VaultToken da VaultTokenFactory, PositionProxy da ProxyManager. Manufa: AaveAdapter (hanyar shigar mai aro), RiskModule (bincike), MarketRegistry (kasuwanni, hanyoyi, yanayin dakatarwa, breakers) da ParameterStore (sigogin haɗari).\n\nOracles: LPOracle ga kowace kasuwa da DebtOracle ga kowace kadarar bashi da ba GHO ba. Liquidation: LPVaultSwap, kwangilolin hanyar musanya, tushen flash a kan Aave V3 Pool da InKindEscrow. Kayayyakin more rayuwa: AvanaTimelock, Lock da Lens na karatu kaɗai. Sashen Developers yana lissafa kowace kwangila a shafinsa na Contracts."
+          "a": "Tsarewa: LPVault mara canzawa ga kowace yarjejeniyar AMM a kowace chain, da littafin lissafi na Collateralization. Asusu da tokens: VaultToken da VaultTokenFactory, PositionProxy da ProxyManager. Manufa: AaveAdapter (hanyar shiga ta mai aro), RiskModule (bincike), MarketRegistry (kasuwanni, hanyoyi, yanayin dakatarwa, breakers) da ParameterStore (ma'aunan haɗari).\n\nOracles: LPOracle ga kowace kasuwa da DebtOracle ga kowace kadarar bashi da ba GHO ba. Liquidation: LPVaultSwap, kwangilolin hanyoyin musanya da PayoutEscrow, tare da mataimakin flash liquidation na jama'a na Avana ga masu kira da ba sa riƙe da ko kaɗan na kadarar bashi. Biyan bashi da jingina yana amfani da tushen flash a kan Aave V3 Pool. Kayan more rayuwa: AvanaTimelock, Lock da Lens na karatu kaɗai. Sashen Developers yana jera kowace kwangila a shafinsa na Contracts."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Yaya aro ke aiki a Avana?",
-          "a": "Kana kiran borrow a kan AaveAdapter tare da kasuwa, reserve na bashi, adadi, wa'adi, mafi ƙanƙantar ma'aunin lafiya da ka karɓa da nonce da kake tsammani. RiskModule yana bincika farashin Live, sabuntar farashin bashi, breakers, yanayin dakatarwa da cewa akwai keeper da aka amince da shi. PositionProxy ɗinka yana aro a kan CDP Spoke kuma ana aika maka kuɗaɗen.\n\nRiba tana taruwa a ƙimar tushe ta Hub × (1 + risk premium ɗinka), don haka ma'aunin lafiyarka zai iya canzawa ko da jinginarka ba ta canza ba."
+          "a": "Kana kiran borrow a AaveAdapter da kasuwa, reserve na bashi, adadi, ƙarshen lokaci, mafi ƙanƙantar ma'aunin lafiya da kake karɓa da nonce da kake tsammani. RiskModule yana bincika farashi Live, sabuntar farashin bashi, breakers, yanayin dakatarwa da cewa aƙalla operator mai alƙawari ɗaya yana aiki a chain. PositionProxy ɗinka yana aro a CDP Spoke kuma ana aika maka kuɗin.\n\nRiba tana taruwa a ƙimar tushe ta Hub × (1 + ƙarin ribar haɗarinka), don haka ma'aunin lafiyarka zai iya canzawa ko da jinginarka ba ta canza ba."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Menene ke kare babban jarin mai bayar da aron kudi?",
-          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool na 40% a mafi yawa, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation mara izini tare da keeper na Avana, da iyakokin ɗauka da ke zama a cikin ruwan kuɗin flash na chain don a iya yin liquidation ga kowane aro a cikin ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na wannan Hub da kadara yana rufe gibin, first-loss reserve da Avana Labs ke ba da kuɗinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibi mafi girma fiye da reserve asara ce ga masu samar da wannan kadarar Hub, wanda Aave DAO ke tabbatarwa."
+          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool da bai wuce 40% ba, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation a buɗe ga kowane adireshi tare da keeper na Avana, da iyakokin cirowa da ke zama cikin ruwan kuɗin flash na chain don a iya yi wa kowane aro liquidation a ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na waccan Hub da kadara yana rufe gibin, reserve na asarar farko da Avana Labs ke ɗaukar nauyinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibin da ya fi reserve girma asara ce ga masu ba da kadarar waccan Hub, wadda Aave DAO ke tabbatarwa."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Yaya ake gudanar da sulhun kudi a Avana?",
-          "a": "Lokacin da ma'aunin lafiyar asusu ya kasance ƙasa da 1, mai liquidation yana kiran LPVaultSwap. A cikin ma'amala ɗaya yana flash-borrow kadarar bashi daga Aave V3 Pool na chain, yana kiran liquidationCall na Aave don biyan wani ɓangare na bashin da karɓar vault tokens tare da riba, yana warware ruwan kuɗin da ya dace, yana musanya tokens zuwa kadarar bashi a tsayayyun hanyoyi, kuma yana biyan flash loan.\n\nKowace liquidation ta wani ɓangare ce kuma ƙa'idojin Aave ne ke auna ta. Dole adadin da aka dawo da shi ya kai mafi ƙanƙanta da aka samo daga oracle. Abin da aka samu sama da bashin yana biyan kuɗin Avana, ladar mai liquidation da duk wata rarar mai aro."
+          "a": "Lokacin da ma'aunin lafiyar asusu ke ƙasa da 1, kowane adireshi zai iya kiran liquidate a LPVaultSwap. A ma'amala ɗaya LPVaultSwap yana karɓar kadarar bashi daga mai kira, yana kiran liquidationCall na Aave don biyan wani ɓangare na bashin kuma ya karɓi vault tokens tare da karin, yana warware ruwan kuɗin da ya dace kuma yana musanya tokens zuwa kadarar bashi a tsayayyun hanyoyi. Mai kira ba tare da kadarar bashi ba zai iya amfani da mataimakin flash liquidation na jama'a na Avana, wanda ke aron ta ta flash daga Aave V3 Pool na chain kuma yana biyan lamunin daga biyan mai kira.\n\nKowace liquidation ta ɓangare ce kuma dokokin Aave ne ke auna girmanta. Adadin da aka dawo da shi dole ne ya kai matakin ƙasa da aka samo daga oracle. Ana biyan kuɗin Avana da duk wata rarar mai aro da farko; mai kiran yana karɓar sauran: kuɗinsa da ba a yi amfani da su ba, babban kuɗin da aka dawo da shi da ladarsa, ana biya kai tsaye ko liquidation ta revert."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Wanene zai iya warware matsayi mai rashin lafiya?",
-          "a": "Avana Labs tana gudanar da keeper da aka amince da shi. Kowa kuma zai iya kiran liquidatePermissionless, wanda ke amfani da hanyoyin musanya na babbar hanya-sannan-madadin kuma yana sa mai kira ya biya duk wani gibi har zuwa iyakar da ya saita.\n\nKowa kuma zai iya kiran settlePending don sasanta vault tokens da ƙwacewar da ba a kammala ba ta bari; abin da aka samu yana zuwa Avana Umbrella kuma mai kira ba ya karɓar komai."
+          "a": "Kowane adireshi da ba a daskarar ba zai iya kiran liquidate, hanyar shiga ɗaya tilo ta liquidation ta LPVaultSwap, da hanyoyin musanya primary-then-backup ko backup-only. Mai kiran yana ɗaukar nauyin kadarar bashi da kansa ko ta mataimakin flash liquidation na jama'a na Avana, kuma yana biyan duk wani gibi ƙasa da matakin ƙasa na dawowa har zuwa iyakar da ya tsayar. Keeper na Avana shi ne operator mai alƙawari a kowace chain: yana yin alƙawarin yi wa kowane asusu da ke ƙasa da ma'aunin lafiya 1 liquidation, amma rajista ba ta ba shi wani iko da kowane mai kira ba shi da shi.\n\nKowa kuma zai iya kiran settlePending don sasanta vault tokens da ƙwacewar da ba a kammala ba ta bari; kuɗin da aka samu suna zuwa Avana Umbrella kuma mai kiran ba ya karɓar komai."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Wadanne kudade ne ake bi yayin rushewa?",
-          "a": "Kuɗin Avana 20% ne na ribar oracle (ƙimar da aka dawo da ita a farashin oracle ban da bashin da aka biya da premium na flash), wanda aka iyakance ga abin da liquidation ta samu a zahiri. Mai liquidation yana karɓar ragowar ribar oracle. Dawowa sama da ƙimar oracle tana zuwa ga mai aro.\n\nBa a taɓa ɗaukar kuɗaɗen LP ɗinka da ba a karɓa ba. Biya da jingina ba ya biyan riba kuma ba ya biyan kuɗin Avana, sai premium na flash kaɗai."
+          "a": "Kuɗin Avana 20% ne na ribar oracle (ƙimar jinginar da aka ƙwace a farashin oracle ban da bashin da aka biya), wanda aka iyakance ga abin da liquidation ta samu a zahiri. Mai liquidation yana karɓar sauran ribar oracle. Dawowa sama da ƙimar oracle yana zuwa ga mai aro. Mai liquidation da ke aro ta mataimakin flash liquidation yana biyan duk wani flash premium daga biyansa.\n\nBa a taɓa ɗaukar kuɗaɗen LP ɗinka da ba a karɓa ba. Biyan bashi da jingina ba ya biyan kari ko kuɗin Avana, sai flash premium kaɗai."
         },
         {
           "id": "what-if-liquidation-cannot-run",

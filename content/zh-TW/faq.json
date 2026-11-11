@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Avana 協議的主要組成部分有哪些？",
-          "a": "保管：每條鏈上每個 AMM 協議一個不可變的 LPVault，以及 Collateralization 帳本。帳戶與代幣：VaultToken 與 VaultTokenFactory、PositionProxy 與 ProxyManager。政策：AaveAdapter（借款人進入點）、RiskModule（檢查）、MarketRegistry（市場、路徑、暫停狀態、熔斷機制）與 ParameterStore（風險參數）。\n\n預言機：每個市場一個 LPOracle，每種非 GHO 債務資產一個 DebtOracle。清算：LPVaultSwap、兌換路徑合約、基於 Aave V3 Pool 的閃電貸來源與 InKindEscrow。基礎設施：AvanaTimelock、Lock 與唯讀的 Lens。開發者章節在其合約頁面列出每個合約。"
+          "a": "保管：每條鏈每個 AMM 協議一個不可變的 LPVault，以及 Collateralization 帳本。帳戶與代幣：VaultToken 與 VaultTokenFactory、PositionProxy 與 ProxyManager。政策：AaveAdapter（借款人進入點）、RiskModule（檢查）、MarketRegistry（市場、路徑、暫停狀態、熔斷器）與 ParameterStore（風險參數）。\n\n預言機：每個市場一個 LPOracle，每種非 GHO 債務資產一個 DebtOracle。清算：LPVaultSwap、兌換路徑合約與 PayoutEscrow，以及供未持有任何債務資產之呼叫者使用的 Avana 公開閃電清算輔助合約。以抵押品還款使用建立在 Aave V3 Pool 之上的閃電貸來源。基礎設施：AvanaTimelock、Lock 與唯讀的 Lens。開發者章節的合約頁面列出了每個合約。"
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "在 Avana 上如何借款？",
-          "a": "你在 AaveAdapter 上呼叫 borrow，並提供市場、債務儲備、金額、截止時間、你可接受的最低健康因子與預期的 nonce。RiskModule 會檢查價格是否為 Live、債務價格的新鮮度、熔斷機制、暫停狀態，以及是否存在已核准的 Keeper。你的 PositionProxy 在 CDP Spoke 上借款，資金隨即發送給你。\n\n利息以 Hub 基礎利率 × (1 + 你的風險溢價) 累計，因此即使抵押品不變，你的健康因子也可能改變。"
+          "a": "你在 AaveAdapter 上呼叫 borrow，並提供市場、債務儲備、金額、截止時間、你可接受的最低健康因子，以及你預期的 nonce。RiskModule 會檢查 Live 價格、債務價格的時效、熔斷器、暫停狀態，以及該鏈上至少有一個有效的承諾營運者。你的 PositionProxy 在 CDP Spoke 上借款，資金隨即送給你。\n\n利息以 Hub 基準利率 × (1 + 你的風險溢價) 計算，因此即使你的抵押品不變，你的健康因子也可能改變。"
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "什麼保護出借人資金？",
-          "a": "各市場的 Collateral Factor 搭配最高 40% 的池風險係數、每個 Hub 的市場、代幣與存入者上限、預言機狀態與熔斷機制、與 Avana 的 Keeper 並行的無許可清算，以及保持在該鏈閃電貸流動性之內的提取上限，使每筆借款都能在一筆交易內被清算。\n\n若清算後留下無抵押品的債務，赤字會在 72 小時內由該 Hub 與資產的 Avana Umbrella 覆蓋，這是由 Avana Labs 注資、由 Aave DAO 控制的首損準備金。超過準備金的赤字是該 Hub 資產供應者的損失，由 Aave DAO 實現。"
+          "a": "每個市場的抵押係數（池風險係數至多 40%）、每個 Hub 的市場、代幣與存入者上限、預言機狀態與熔斷器、除 Avana 的 Keeper 之外也對任何地址開放的清算，以及維持在該鏈閃電流動性範圍內的動用上限，使每筆借款都能在一筆交易中被清算。\n\n若清算留下沒有抵押品的債務，赤字會在 72 小時內由該 Hub 與資產的 Avana Umbrella 支付，這是由 Avana Labs 注資並由 Aave DAO 控制的第一損失準備金。超過準備金的赤字，將由 Aave DAO 認列為該 Hub 資產供應者的損失。"
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Avana 上清算如何運作？",
-          "a": "當帳戶的健康因子低於 1 時，清算人會呼叫 LPVaultSwap。在一筆交易中，它從該鏈的 Aave V3 Pool 以閃電貸借入債務資產，呼叫 Aave 的 liquidationCall 償還部分債務並收取 vault token 加上獎勵，拆解相應的流動性，透過固定路徑將代幣兌換為債務資產，並償還閃電貸。\n\n每筆清算都是部分清算，規模依 Aave 的規則計算。收回金額必須達到由預言機推導的下限。超過債務的所得用於支付 Avana 的費用、清算人的報酬以及任何借款人盈餘。"
+          "a": "當帳戶的健康因子低於 1 時，任何地址都可以在 LPVaultSwap 上呼叫 liquidate。在一筆交易中，LPVaultSwap 從呼叫者取得債務資產，呼叫 Aave 的 liquidationCall 償還部分債務並接收 vault token 及獎勵，拆解對應的流動性，並透過固定路徑將代幣兌換為債務資產。沒有債務資產的呼叫者可以使用 Avana 的公開閃電清算輔助合約，它從該鏈的 Aave V3 Pool 以閃電貸借入債務資產，並以呼叫者的支付款項償還貸款。\n\n每次清算都是部分清算，金額依 Aave 的規則計算。回收金額必須達到由預言機推導的下限。先支付 Avana 的費用與任何借款人盈餘；呼叫者收到其餘部分：其未使用的資金、回收的本金與其獎勵，直接支付，否則清算回滾。"
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "誰可以清算不健康倉位？",
-          "a": "Avana Labs 運行一個已核准的 Keeper。任何人也都可以呼叫 liquidatePermissionless，它使用先主要後備用的兌換路徑，並由呼叫者在其自行設定的上限內支付任何差額。\n\n任何人也都可以呼叫 settlePending，以結算未完成扣押所留下的 vault token；所得歸入 Avana Umbrella，呼叫者不會獲得任何報酬。"
+          "a": "任何未被凍結的地址都可以呼叫 LPVaultSwap 唯一的清算進入點 liquidate，並使用先主要後備用或僅備用的兌換路徑。呼叫者自行或透過 Avana 的公開閃電清算輔助合約提供債務資產，並在其自行設定的上限內支付低於回收下限的任何短缺。Avana 的 Keeper 是每條鏈上的承諾營運者：它承諾清算每個健康因子低於 1 的帳戶，但登記不會賦予它任何其他呼叫者所沒有的權限。\n\n任何人也都可以呼叫 settlePending，結算未完成扣押所留下的 vault token；所得歸 Avana Umbrella，呼叫者不會收到任何款項。"
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "清算期間收取哪些費用？",
-          "a": "Avana 的費用為預言機收益的 20%（以預言機價格計算的收回價值，減去償還的債務與閃電貸溢價），以清算實際實現的金額為上限。清算人獲得預言機收益的其餘部分。超過預言機價值的收回金額歸借款人。\n\n你未收取的 LP 費用絕不會被拿走。以抵押品還款不支付獎勵，也不支付 Avana 費用，只支付閃電貸溢價。"
+          "a": "Avana 的費用是預言機收益（被扣押抵押品以預言機價格計算的價值減去所償還的債務）的 20%，並以清算實際實現的金額為上限。清算人收到預言機收益的其餘部分。高於預言機價值的回收歸借款人所有。透過閃電清算輔助合約借款的清算人，從其自身的支付款項中支付任何閃電貸溢價。\n\n你未領取的 LP 費用絕不會被拿走。以抵押品還款不支付獎勵，也不支付 Avana 費用，只需支付閃電貸溢價。"
         },
         {
           "id": "what-if-liquidation-cannot-run",

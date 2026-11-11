@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Avana protokolünün ana bölümleri nelerdir?",
-          "a": "Saklama: zincir başına her AMM protokolü için bir değiştirilemez LPVault ve Collateralization defteri. Hesaplar ve token'lar: VaultToken ve VaultTokenFactory, PositionProxy ve ProxyManager. Politika: AaveAdapter (borçlu giriş noktası), RiskModule (kontroller), MarketRegistry (piyasalar, rotalar, duraklatma durumu, devre kesiciler) ve ParameterStore (risk parametreleri).\n\nOracle'lar: piyasa başına bir LPOracle ve GHO olmayan borç varlığı başına bir DebtOracle. Likidasyon: LPVaultSwap, swap rotası sözleşmeleri, Aave V3 Pool üzerinden bir flash kaynağı ve InKindEscrow. Altyapı: AvanaTimelock, Lock ve salt okunur Lens. Geliştiriciler bölümü her sözleşmeyi Sözleşmeler sayfasında listeler."
+          "a": "Saklama: zincir başına AMM protokolü başına değiştirilemez bir LPVault ve Collateralization defteri. Hesaplar ve token'lar: VaultToken ve VaultTokenFactory, PositionProxy ve ProxyManager. Politika: AaveAdapter (borçlu giriş noktası), RiskModule (kontroller), MarketRegistry (piyasalar, rotalar, duraklatma durumu, devre kesiciler) ve ParameterStore (risk parametreleri).\n\nOracle'lar: piyasa başına bir LPOracle ve GHO dışındaki her borç varlığı için bir DebtOracle. Likidasyon: LPVaultSwap, swap rotası sözleşmeleri ve PayoutEscrow, artı borç varlığından hiç tutmayan çağıranlar için Avana'nın herkese açık flash likidasyon yardımcısı. Teminatla geri ödeme, Aave V3 Pool üzerinde bir flash kaynağı kullanır. Altyapı: AvanaTimelock, Lock ve salt okunur Lens. Geliştiriciler bölümü her sözleşmeyi Sözleşmeler sayfasında listeler."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Avana'de borçlanma nasıl çalışır?",
-          "a": "AaveAdapter üzerinde borrow'u piyasa, borç rezervi, tutar, son tarih, kabul ettiğiniz asgari sağlık faktörü ve beklediğiniz nonce ile çağırırsınız. RiskModule Live fiyatları, borç fiyatı güncelliğini, devre kesicileri, duraklatma durumunu ve onaylı bir keeper'ın var olduğunu kontrol eder. PositionProxy'niz CDP Spoke üzerinde borç alır ve fonlar size gönderilir.\n\nFaiz Hub taban oranı × (1 + risk priminiz) ile işler, bu nedenle teminatınız değişmese bile sağlık faktörünüz değişebilir."
+          "a": "AaveAdapter'da borrow'u piyasa, borç rezervi, tutar, bir son tarih, kabul ettiğiniz minimum sağlık faktörü ve beklenen nonce'unuzla çağırırsınız. RiskModule Live fiyatları, borç fiyatının güncelliğini, devre kesicileri, duraklatma durumunu ve zincirde en az bir taahhütlü operatörün aktif olduğunu kontrol eder. PositionProxy'niz CDP Spoke'ta borç alır ve fonlar size gönderilir.\n\nFaiz, Hub temel oranı × (1 + risk priminiz) üzerinden tahakkuk eder; bu nedenle teminatınız değişmese bile sağlık faktörünüz değişebilir."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Borç verici sermayesini ne korur?",
-          "a": "En fazla %40 havuz risk faktörüyle piyasa başına Teminat Faktörleri, Hub başına piyasa, token ve yatırıcı üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında izinsiz likidasyon ve her borçlanmanın tek bir işlemde likide edilebilmesi için zincirin flash likiditesi içinde kalan çekme üst sınırları.\n\nBir likidasyon teminatsız borç bırakırsa açık, o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından 72 saat içinde karşılanır. Rezervden büyük bir açık, Aave DAO tarafından gerçekleştirilen ve o Hub varlığının arz sağlayıcılarına ait bir kayıptır."
+          "a": "En fazla %40 havuz risk faktörüyle piyasa başına Collateral Factor'ler, Hub başına piyasa, token ve yatıran üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında herhangi bir adrese açık likidasyon ve her borcun tek bir işlemde likide edilebilmesi için zincirin flash likiditesi dahilinde kalan çekim tavanları.\n\nBir likidasyon teminatsız borç bırakırsa eksiklik, 72 saat içinde o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından karşılanır. Rezervden büyük bir eksiklik, Aave DAO tarafından gerçekleştirilen, o Hub varlığının arz sağlayıcıları için bir kayıptır."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Avana'de tasfiye nasıl çalışır?",
-          "a": "Bir hesabın sağlık faktörü 1'in altında olduğunda bir likidatör LPVaultSwap'i çağırır. LPVaultSwap tek bir işlemde borç varlığını zincirin Aave V3 Pool'undan flash ile borç alır, borcun bir kısmını geri ödemek ve vault token'ları artı bonusu almak için Aave'nin liquidationCall'unu çağırır, eşleşen likiditeyi çözer, token'ları sabit rotalar üzerinden borç varlığına swap eder ve flash loan'ı geri öder.\n\nHer likidasyon kısmidir ve Aave'nin kurallarına göre boyutlandırılır. Geri kazanılan tutar oracle'dan türetilen bir tabana ulaşmalıdır. Borcun üzerindeki gelirler Avana'nın ücretini, likidatörün ödülünü ve varsa borçlu fazlasını öder."
+          "a": "Bir hesabın sağlık faktörü 1'in altında olduğunda herhangi bir adres LPVaultSwap'te liquidate'i çağırabilir. Tek bir işlemde LPVaultSwap borç varlığını çağırandan alır, borcun bir kısmını geri ödemek ve vault token'ları artı bonusu almak için Aave'nin liquidationCall'unu çağırır, eşleşen likiditeyi çözer ve token'ları sabit rotalar üzerinden borç varlığına swap eder. Borç varlığı olmayan bir çağıran, onu zincirin Aave V3 Pool'undan flash olarak borç alan ve krediyi çağıranın ödemesinden geri ödeyen Avana'nın herkese açık flash likidasyon yardımcısını kullanabilir.\n\nHer likidasyon kısmidir ve Aave'nin kurallarıyla boyutlandırılır. Kurtarılan tutar oracle'dan türetilmiş bir tabana ulaşmalıdır. Önce Avana'nın ücreti ve varsa borçlu fazlası ödenir; çağıran geri kalanı alır: kullanılmayan fonlaması, kurtarılan anapara ve ödülü; doğrudan ödenir veya likidasyon revert olur."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Sağlıksız bir pozisyonu kim tasfiye edebilir?",
-          "a": "Avana Labs onaylı bir keeper çalıştırır. Herkes ayrıca liquidatePermissionless'ı çağırabilir; bu, önce birincil sonra yedek swap rotalarını kullanır ve herhangi bir eksikliği çağıranın belirlediği bir sınıra kadar çağırana ödetir.\n\nHerkes ayrıca tamamlanmamış bir el koymadan kalan vault token'ları uzlaştırmak için settlePending'i çağırabilir; gelirler Avana Umbrella'ya gider ve çağıran hiçbir şey almaz."
+          "a": "Dondurulmamış herhangi bir adres, LPVaultSwap'in tek likidasyon giriş noktası olan liquidate'i önce-birincil-sonra-yedek veya yalnızca-yedek swap rotalarıyla çağırabilir. Çağıran borç varlığını kendisi veya Avana'nın herkese açık flash likidasyon yardımcısı üzerinden fonlar ve kurtarma tabanının altındaki herhangi bir açığı kendi belirlediği bir limite kadar öder. Avana'nın keeper'ı her zincirdeki taahhütlü operatördür: sağlık faktörü 1'in altındaki her hesabı likide etmeyi taahhüt eder, ancak kayıt ona başka herhangi bir çağıranda olmayan hiçbir yetki vermez.\n\nHerkes ayrıca tamamlanmamış bir el koymadan kalan vault token'ları uzlaştırmak için settlePending'i çağırabilir; gelirler Avana Umbrella'ya gider ve çağıran hiçbir şey almaz."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Tasfiye sırasında hangi ücretler uygulanır?",
-          "a": "Avana'nın ücreti oracle kazancının (oracle fiyatlarıyla geri kazanılan değer eksi geri ödenen borç ve flash primi) %20'sidir ve likidasyonun fiilen gerçekleştirdiği tutarla sınırlıdır. Likidatör oracle kazancının geri kalanını alır. Oracle değerinin üzerindeki geri kazanım borçluya gider.\n\nToplanmamış LP ücretleriniz asla alınmaz. Teminatla geri ödeme bonus ve Avana ücreti ödemez, yalnızca flash primini öder."
+          "a": "Avana'nın ücreti, likidasyonun gerçekte elde ettiğiyle sınırlı olarak oracle kazancının (el konulan teminatın oracle fiyatlarındaki değeri eksi geri ödenen borç) %20'sidir. Likidatör oracle kazancının geri kalanını alır. Oracle değerinin üzerindeki kurtarma borçluya gider. Flash likidasyon yardımcısı üzerinden borç alan bir likidatör, herhangi bir flash primini kendi ödemesinden öder.\n\nToplanmamış LP ücretleriniz hiçbir zaman alınmaz. Teminatla geri ödeme bonus ve Avana ücreti ödemez, yalnızca flash primini öder."
         },
         {
           "id": "what-if-liquidation-cannot-run",

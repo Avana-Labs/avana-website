@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Quali sono le parti principali del protocollo Avana?",
-          "a": "Custodia: un LPVault immutabile per protocollo AMM per chain e il ledger Collateralization. Account e token: VaultToken e VaultTokenFactory, PositionProxy e ProxyManager. Policy: l'AaveAdapter (punto di ingresso dei mutuatari), il RiskModule (controlli), il MarketRegistry (mercati, percorsi, stato di pausa, breaker) e il ParameterStore (parametri di rischio).\n\nOracle: un LPOracle per mercato e un DebtOracle per ciascun asset di debito diverso da GHO. Liquidazione: LPVaultSwap, i contratti dei percorsi di swap, una fonte flash sul Pool di Aave V3 e l'InKindEscrow. Infrastruttura: AvanaTimelock, Lock e il Lens in sola lettura. La sezione Sviluppatori elenca ogni contratto nella pagina Contratti."
+          "a": "Custodia: un LPVault immutabile per protocollo AMM per chain, e il registro contabile Collateralization. Account e token: VaultToken e VaultTokenFactory, PositionProxy e ProxyManager. Policy: l'AaveAdapter (entry point del mutuatario), il RiskModule (controlli), il MarketRegistry (mercati, percorsi, stato di pausa, breaker) e il ParameterStore (parametri di rischio).\n\nOracle: un LPOracle per mercato e un DebtOracle per ogni asset di debito diverso da GHO. Liquidazione: LPVaultSwap, i contratti dei percorsi di swap e il PayoutEscrow, più l'helper di liquidazione flash pubblico di Avana per i chiamanti che non detengono l'asset di debito. Il rimborso con collaterale usa una fonte flash basata sul Pool Aave V3. Infrastruttura: AvanaTimelock, Lock e il Lens di sola lettura. La sezione Sviluppatori elenca ogni contratto nella sua pagina Contratti."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Come funziona il prestito su Avana?",
-          "a": "Chiami borrow sull'AaveAdapter con il mercato, la riserva di debito, l'importo, una scadenza, l'health factor minimo che accetti e il nonce previsto. Il RiskModule verifica prezzi Live, aggiornamento del prezzo del debito, breaker, stato di pausa e l'esistenza di un keeper approvato. Il tuo PositionProxy prende in prestito sul CDP Spoke e i fondi ti vengono inviati.\n\nGli interessi maturano al tasso base dell'Hub × (1 + il tuo premio di rischio), quindi il tuo health factor può cambiare anche se il collaterale non cambia."
+          "a": "Chiami borrow sull'AaveAdapter con il mercato, la riserva di debito, l'importo, una scadenza, l'health factor minimo che accetti e il nonce atteso. Il RiskModule verifica i prezzi Live, l'aggiornamento del prezzo del debito, i breaker, lo stato di pausa e che almeno un operatore impegnato sia attivo sulla chain. Il tuo PositionProxy prende in prestito sul CDP Spoke e i fondi ti vengono inviati.\n\nGli interessi maturano al tasso base dell'Hub × (1 + il tuo premio di rischio), quindi il tuo health factor può cambiare anche se il tuo collaterale non cambia."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Cosa protegge il capitale del prestatore?",
-          "a": "Collateral Factor per mercato con un fattore di rischio del pool al massimo del 40%, limiti per mercato, token e depositante per Hub, stati dell'oracle e breaker, liquidazione permissionless accanto al keeper di Avana, e limiti di prelievo che restano entro la liquidità flash della chain, così ogni prestito può essere liquidato in una sola transazione.\n\nSe una liquidazione lascia debito senza collaterale, il deficit viene coperto entro 72 ore dall'Avana Umbrella di quell'Hub e asset, una first-loss reserve finanziata da Avana Labs e controllata dalla Aave DAO. Un deficit più grande della riserva è una perdita per i fornitori di quell'asset dell'Hub, realizzata dalla Aave DAO."
+          "a": "Collateral Factor per mercato con un fattore di rischio del pool al massimo del 40%, limiti per mercato, token e depositante per Hub, stati degli oracle e breaker, liquidazione aperta a qualsiasi indirizzo oltre al keeper di Avana, e limiti di prelievo che restano entro la liquidità flash della chain così ogni prestito può essere liquidato in un'unica transazione.\n\nSe una liquidazione lascia debito senza collaterale, il deficit viene coperto entro 72 ore dall'Avana Umbrella per quell'Hub e quell'asset, una riserva first-loss finanziata da Avana Labs e controllata dall'Aave DAO. Un deficit superiore alla riserva è una perdita per i fornitori di quell'asset dell'Hub, realizzata dall'Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Come funziona la liquidazione su Avana?",
-          "a": "Quando l'health factor di un account è inferiore a 1, un liquidatore chiama LPVaultSwap. In un'unica transazione prende in prestito con flash loan l'asset di debito dal Pool di Aave V3 della chain, chiama liquidationCall di Aave per rimborsare parte del debito e ricevere i vault token più il bonus, smonta la liquidità corrispondente, scambia i token nell'asset di debito su percorsi fissi e rimborsa il flash loan.\n\nOgni liquidazione è parziale e dimensionata secondo le regole di Aave. L'importo recuperato deve raggiungere una soglia minima derivata dall'oracle. I proventi oltre il debito pagano la commissione di Avana, la ricompensa del liquidatore e qualsiasi eccedenza del mutuatario."
+          "a": "Quando l'health factor di un account è inferiore a 1, qualsiasi indirizzo può chiamare liquidate su LPVaultSwap. In un'unica transazione LPVaultSwap prende l'asset di debito dal chiamante, chiama liquidationCall di Aave per rimborsare parte del debito e ricevere vault token più il bonus, smobilizza la liquidità corrispondente e converte con uno swap i token nell'asset di debito su percorsi fissi. Un chiamante privo dell'asset di debito può usare l'helper di liquidazione flash pubblico di Avana, che lo prende in prestito con flash loan dal Pool Aave V3 della chain e rimborsa il prestito con il pagamento al chiamante.\n\nOgni liquidazione è parziale e dimensionata secondo le regole di Aave. L'importo recuperato deve raggiungere una soglia minima derivata dall'oracle. La commissione di Avana e l'eventuale eccedenza del mutuatario vengono pagate per prime; il chiamante riceve il resto: il suo finanziamento non utilizzato, il capitale recuperato e la sua ricompensa, pagati direttamente oppure la liquidazione fa revert."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Chi può liquidare una posizione non sana?",
-          "a": "Avana Labs gestisce un keeper approvato. Chiunque può anche chiamare liquidatePermissionless, che usa i percorsi di swap primario e poi di backup e fa pagare al chiamante qualsiasi ammanco fino a un limite da lui stabilito.\n\nChiunque può inoltre chiamare settlePending per regolare i vault token lasciati da un sequestro non completato; i proventi vanno all'Avana Umbrella e il chiamante non riceve nulla."
+          "a": "Qualsiasi indirizzo non congelato può chiamare liquidate, l'unico entry point di liquidazione di LPVaultSwap, con i percorsi di swap primario-poi-riserva o solo riserva. Il chiamante finanzia l'asset di debito in proprio o tramite l'helper di liquidazione flash pubblico di Avana, e paga qualsiasi ammanco al di sotto della soglia minima di recupero fino a un limite che stabilisce. Il keeper di Avana è l'operatore impegnato su ciascuna chain: si impegna a liquidare ogni account al di sotto di un health factor di 1, ma la registrazione non gli conferisce alcun potere di cui un altro chiamante sia privo.\n\nChiunque può anche chiamare settlePending per regolare i vault token lasciati da un sequestro non completato; i proventi vanno all'Avana Umbrella e il chiamante non riceve nulla."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Quali commissioni si applicano durante la liquidazione?",
-          "a": "La commissione di Avana è il 20% del guadagno oracle (valore recuperato ai prezzi dell'oracle meno il debito rimborsato e il premio del flash loan), limitata a quanto la liquidazione realizza effettivamente. Il liquidatore riceve il resto del guadagno oracle. Il recupero oltre il valore dell'oracle va al mutuatario.\n\nLe tue commissioni LP non riscosse non vengono mai prese. Il rimborso con collaterale non paga alcun bonus né commissione di Avana, solo il premio del flash loan."
+          "a": "La commissione di Avana è il 20% del guadagno oracle (il valore del collaterale sequestrato ai prezzi dell'oracle meno il debito rimborsato), limitata a quanto la liquidazione realizza effettivamente. Il liquidatore riceve il resto del guadagno oracle. Il recupero al di sopra del valore oracle va al mutuatario. Un liquidatore che prende in prestito tramite l'helper di liquidazione flash paga l'eventuale premio flash con il proprio pagamento.\n\nLe tue commissioni LP non riscosse non vengono mai prese. Il rimborso con collaterale non paga alcun bonus né alcuna commissione di Avana, solo il premio flash."
         },
         {
           "id": "what-if-liquidation-cannot-run",

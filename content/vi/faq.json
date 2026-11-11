@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Các phần chính của giao thức Avana là gì?",
-          "a": "Lưu ký: một LPVault bất biến cho mỗi giao thức AMM trên mỗi chuỗi, và sổ cái Collateralization. Tài khoản và token: VaultToken và VaultTokenFactory, PositionProxy và ProxyManager. Chính sách: AaveAdapter (điểm vào của người vay), RiskModule (các phép kiểm tra), MarketRegistry (thị trường, tuyến, trạng thái tạm dừng, bộ ngắt) và ParameterStore (tham số rủi ro).\n\nOracle: một LPOracle cho mỗi thị trường và một DebtOracle cho mỗi tài sản nợ không phải GHO. Thanh lý: LPVaultSwap, các hợp đồng tuyến hoán đổi, một nguồn flash trên Aave V3 Pool và InKindEscrow. Hạ tầng: AvanaTimelock, Lock và Lens chỉ đọc. Mục Developers liệt kê mọi hợp đồng trên trang Contracts."
+          "a": "Lưu ký: một LPVault bất biến cho mỗi giao thức AMM trên mỗi chuỗi, và sổ cái Collateralization. Tài khoản và token: VaultToken và VaultTokenFactory, PositionProxy và ProxyManager. Chính sách: AaveAdapter (điểm vào của người vay), RiskModule (các phép kiểm tra), MarketRegistry (thị trường, tuyến, trạng thái tạm dừng, cầu dao) và ParameterStore (tham số rủi ro).\n\nOracle: một LPOracle cho mỗi thị trường và một DebtOracle cho mỗi tài sản nợ không phải GHO. Thanh lý: LPVaultSwap, các hợp đồng tuyến hoán đổi và PayoutEscrow, cùng trình hỗ trợ thanh lý flash công khai của Avana cho các bên gọi không nắm giữ tài sản nợ. Việc hoàn trả bằng tài sản thế chấp dùng một nguồn flash trên Aave V3 Pool. Hạ tầng: AvanaTimelock, Lock và Lens chỉ đọc. Mục Nhà phát triển liệt kê mọi hợp đồng trên trang Hợp đồng."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Vay mượn hoạt động như thế nào trên Avana?",
-          "a": "Bạn gọi borrow trên AaveAdapter với thị trường, reserve nợ, số lượng, thời hạn, hệ số sức khỏe tối thiểu bạn chấp nhận và nonce dự kiến của bạn. RiskModule kiểm tra giá Live, độ mới của giá nợ, các bộ ngắt, trạng thái tạm dừng và việc có tồn tại một keeper được phê duyệt. PositionProxy của bạn vay trên CDP Spoke và tiền được gửi cho bạn.\n\nLãi tích lũy theo lãi suất cơ sở của Hub × (1 + phần bù rủi ro của bạn), nên hệ số sức khỏe của bạn có thể thay đổi ngay cả khi tài sản thế chấp không đổi."
+          "a": "Bạn gọi borrow trên AaveAdapter với thị trường, reserve nợ, số tiền, hạn chót, hệ số sức khỏe tối thiểu bạn chấp nhận và nonce dự kiến của bạn. RiskModule kiểm tra giá Live, độ mới của giá nợ, các cầu dao, trạng thái tạm dừng và việc có ít nhất một nhà vận hành cam kết đang hoạt động trên chuỗi. PositionProxy của bạn vay trên CDP Spoke và tiền được gửi cho bạn.\n\nLãi tích lũy theo lãi suất cơ sở của Hub × (1 + phần bù rủi ro của bạn), nên hệ số sức khỏe của bạn có thể thay đổi ngay cả khi tài sản thế chấp của bạn không đổi."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Điều gì bảo vệ vốn của người cho vay?",
-          "a": "Hệ số tài sản thế chấp theo từng thị trường với hệ số rủi ro pool tối đa 40%, giới hạn thị trường, token và người gửi theo từng Hub, trạng thái oracle và bộ ngắt, thanh lý không cần cấp phép bên cạnh keeper của Avana, và giới hạn rút nằm trong phạm vi thanh khoản flash của chuỗi để mọi khoản vay đều có thể được thanh lý trong một giao dịch.\n\nNếu một khoản thanh lý để lại nợ mà không còn tài sản thế chấp, khoản thâm hụt được bao phủ trong vòng 72 giờ bởi Avana Umbrella cho Hub và tài sản đó, một khoản dự trữ tổn thất đầu tiên do Avana Labs cấp vốn và Aave DAO kiểm soát. Một khoản thâm hụt lớn hơn reserve là tổn thất của các bên cung cấp tài sản Hub đó, do Aave DAO ghi nhận."
+          "a": "Collateral Factor theo từng thị trường với hệ số rủi ro pool tối đa 40%, giới hạn trần theo thị trường, token và người gửi trên mỗi Hub, trạng thái oracle và cầu dao, việc thanh lý mở cho bất kỳ địa chỉ nào bên cạnh keeper của Avana, và giới hạn rút nằm trong thanh khoản flash của chuỗi để mọi khoản vay đều có thể được thanh lý trong một giao dịch.\n\nNếu một lần thanh lý để lại khoản nợ không có tài sản thế chấp, khoản thâm hụt được bao phủ bởi Avana Umbrella cho Hub và tài sản đó, một quỹ dự trữ chịu lỗ đầu tiên do Avana Labs cấp vốn và Aave DAO kiểm soát, trong vòng 72 giờ. Một khoản thâm hụt lớn hơn quỹ dự trữ là khoản lỗ cho những người cung cấp tài sản Hub đó, do Aave DAO ghi nhận."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Thanh lý hoạt động như thế nào trên Avana?",
-          "a": "Khi hệ số sức khỏe của một tài khoản dưới 1, người thanh lý gọi LPVaultSwap. Trong một giao dịch, nó vay flash tài sản nợ từ Aave V3 Pool của chuỗi, gọi liquidationCall của Aave để hoàn trả một phần khoản nợ và nhận vault token cộng khoản thưởng, gỡ phần thanh khoản tương ứng, hoán đổi các token sang tài sản nợ trên các tuyến cố định, và hoàn trả flash loan.\n\nMọi khoản thanh lý đều là thanh lý một phần và được định cỡ theo quy tắc của Aave. Số tiền thu hồi phải đạt mức sàn suy ra từ oracle. Số tiền thu được vượt quá khoản nợ dùng để trả phí của Avana, phần thưởng của người thanh lý và mọi khoản thặng dư cho người vay."
+          "a": "Khi hệ số sức khỏe của một tài khoản dưới 1, bất kỳ địa chỉ nào cũng có thể gọi liquidate trên LPVaultSwap. Trong một giao dịch, LPVaultSwap lấy tài sản nợ từ bên gọi, gọi liquidationCall của Aave để hoàn trả một phần khoản nợ và nhận vault token cộng tiền thưởng, gỡ phần thanh khoản tương ứng và hoán đổi các token sang tài sản nợ trên các tuyến cố định. Một bên gọi không có tài sản nợ có thể dùng trình hỗ trợ thanh lý flash công khai của Avana, vốn vay flash tài sản đó từ Aave V3 Pool của chuỗi và hoàn trả khoản vay từ khoản chi trả cho bên gọi.\n\nMọi lần thanh lý đều là một phần và được định mức theo quy tắc của Aave. Lượng thu hồi được phải đạt mức sàn suy ra từ oracle. Phí của Avana và mọi thặng dư của người vay được trả trước; bên gọi nhận phần còn lại: phần vốn cấp chưa dùng, phần gốc thu hồi được và phần thưởng của nó, được trả trực tiếp hoặc lần thanh lý hoàn tác."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Ai có thể thanh lý một vị trí không lành mạnh?",
-          "a": "Avana Labs vận hành một keeper được phê duyệt. Bất kỳ ai cũng có thể gọi liquidatePermissionless, hàm này dùng các tuyến hoán đổi theo thứ tự tuyến chính rồi tuyến dự phòng và buộc bên gọi trả mọi khoản thiếu hụt đến giới hạn do họ đặt.\n\nBất kỳ ai cũng có thể gọi settlePending để tất toán các vault token còn lại từ một lần tịch thu chưa hoàn tất; số tiền thu được chuyển vào Avana Umbrella và bên gọi không nhận gì."
+          "a": "Bất kỳ địa chỉ nào không bị đóng băng đều có thể gọi liquidate, điểm vào thanh lý duy nhất của LPVaultSwap, với tuyến hoán đổi chính-rồi-dự-phòng hoặc chỉ-dự-phòng. Bên gọi tự cấp vốn tài sản nợ hoặc qua trình hỗ trợ thanh lý flash công khai của Avana, và trả mọi khoản thâm hụt dưới mức sàn thu hồi trong giới hạn do nó đặt. Keeper của Avana là nhà vận hành cam kết trên mỗi chuỗi: nó cam kết thanh lý mọi tài khoản có hệ số sức khỏe dưới 1, nhưng việc đăng ký không trao cho nó quyền nào mà bên gọi khác không có.\n\nBất kỳ ai cũng có thể gọi settlePending để tất toán các vault token còn lại từ một lần tịch thu chưa hoàn tất; số tiền thu được đi vào Avana Umbrella và bên gọi không nhận được gì."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Những khoản phí nào được áp dụng trong quá trình thanh lý?",
-          "a": "Phí của Avana là 20% khoản lãi theo oracle (giá trị thu hồi theo giá oracle trừ đi khoản nợ được hoàn trả và phí flash), giới hạn ở mức mà khoản thanh lý thực sự thu được. Người thanh lý nhận phần còn lại của khoản lãi theo oracle. Phần thu hồi vượt quá giá trị oracle thuộc về người vay.\n\nPhí LP chưa thu của bạn không bao giờ bị lấy. Hoàn trả bằng tài sản thế chấp không trả khoản thưởng và không trả phí Avana, chỉ trả phí flash."
+          "a": "Phí của Avana là 20% khoản lợi oracle (giá trị của tài sản thế chấp bị tịch thu theo giá oracle trừ khoản nợ được hoàn trả), giới hạn ở lượng mà lần thanh lý thực sự thu được. Bên thanh lý nhận phần còn lại của khoản lợi oracle. Khoản thu hồi vượt giá trị oracle thuộc về người vay. Một bên thanh lý vay qua trình hỗ trợ thanh lý flash trả mọi khoản phí flash từ khoản chi trả của chính mình.\n\nPhí LP chưa thu của bạn không bao giờ bị lấy. Việc hoàn trả bằng tài sản thế chấp không trả tiền thưởng và không trả phí Avana, chỉ trả phí flash."
         },
         {
           "id": "what-if-liquidation-cannot-run",

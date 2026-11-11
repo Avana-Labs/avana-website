@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Wat zijn de belangrijkste onderdelen van het Avana-protocol?",
-          "a": "Bewaring: een onveranderlijke LPVault per AMM-protocol per chain, en het Collateralization-grootboek. Accounts en tokens: VaultToken en VaultTokenFactory, PositionProxy en ProxyManager. Beleid: de AaveAdapter (entrypoint voor leners), RiskModule (controles), MarketRegistry (markten, routes, pauzestatus, breakers) en ParameterStore (risicoparameters).\n\nOracles: een LPOracle per markt en een DebtOracle per schuldasset dat geen GHO is. Liquidatie: LPVaultSwap, swaproutecontracten, een flashbron via de Aave V3 Pool en de InKindEscrow. Infrastructuur: AvanaTimelock, Lock en de read-only Lens. De sectie Developers vermeldt elk contract op de pagina Contracten."
+          "a": "Bewaring: een onveranderlijke LPVault per AMM-protocol per chain, en het Collateralization-grootboek. Accounts en tokens: VaultToken en VaultTokenFactory, PositionProxy en ProxyManager. Beleid: de AaveAdapter (entry point voor leners), RiskModule (controles), MarketRegistry (markten, routes, pauzestatus, breakers) en ParameterStore (risicoparameters).\n\nOracles: een LPOracle per markt en een DebtOracle per niet-GHO-schuldasset. Liquidatie: LPVaultSwap, swaproutecontracten en de PayoutEscrow, plus de openbare flashliquidatiehelper van Avana voor aanroepers die niets van het schuldasset aanhouden. Terugbetaling met onderpand gebruikt een flashbron bovenop de Aave V3 Pool. Infrastructuur: AvanaTimelock, Lock en de alleen-lezen Lens. De sectie Developers vermeldt elk contract op de pagina Contracten."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Hoe werkt lenen op Avana?",
-          "a": "U roept borrow aan op de AaveAdapter met de markt, de schuldreserve, het bedrag, een deadline, de minimale health factor die u accepteert en uw verwachte nonce. De RiskModule controleert Live prijzen, de actualiteit van de schuldprijs, breakers, de pauzestatus en dat er een goedgekeurde keeper bestaat. Uw PositionProxy leent op de CDP Spoke en de middelen worden naar u gestuurd.\n\nRente loopt op tegen het basistarief van de Hub × (1 + uw risicopremie), dus uw health factor kan veranderen, ook als uw onderpand dat niet doet."
+          "a": "U roept borrow aan op de AaveAdapter met de markt, de schuldreserve, het bedrag, een deadline, de minimale health factor die u accepteert en uw verwachte nonce. De RiskModule controleert Live prijzen, de versheid van de schuldprijs, breakers, de pauzestatus en dat er minstens één toegewijde operator actief is op de chain. Uw PositionProxy leent op de CDP Spoke en de middelen worden naar u gestuurd.\n\nRente loopt op tegen de basisrente van de Hub × (1 + uw risicopremie), dus uw health factor kan veranderen, ook als uw onderpand dat niet doet."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Wat beschermt het kapitaal van de kredietverstrekker?",
-          "a": "Collateral Factors per markt met een poolrisicofactor van maximaal 40%, markt-, token- en deposantcaps per Hub, oraclestatussen en breakers, permissionless liquidatie naast de keeper van Avana, en opnamecaps die binnen de flashliquiditeit van de chain blijven, zodat elke lening in één transactie kan worden geliquideerd.\n\nAls een liquidatie schuld zonder onderpand achterlaat, wordt het tekort binnen 72 uur gedekt door de Avana Umbrella voor die Hub en dat asset, een first-loss-reserve gefinancierd door Avana Labs en beheerd door de Aave DAO. Een tekort dat groter is dan de reserve, is een verlies voor de suppliers van dat Hub-asset, gerealiseerd door de Aave DAO."
+          "a": "Collateral Factors per markt met een poolrisicofactor van maximaal 40%, plafonds voor markt, token en depositor per Hub, oraclestatussen en breakers, liquidatie open voor elk adres naast de keeper van Avana, en opnameplafonds die binnen de flashliquiditeit van de chain blijven zodat elke lening in één transactie kan worden geliquideerd.\n\nAls een liquidatie schuld zonder onderpand achterlaat, wordt het tekort binnen 72 uur gedekt door de Avana Umbrella voor die Hub en dat asset, een first-loss-reserve die door Avana Labs wordt gefinancierd en door de Aave DAO wordt beheerd. Een tekort dat groter is dan de reserve, is een verlies voor de leveranciers van dat Hub-asset, gerealiseerd door de Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Hoe werkt liquidatie op Avana?",
-          "a": "Wanneer de health factor van een account onder 1 ligt, roept een liquidator LPVaultSwap aan. In één transactie leent die het schuldasset via een flash loan bij de Aave V3 Pool van de chain, roept liquidationCall van Aave aan om een deel van de schuld terug te betalen en vault tokens plus de bonus te ontvangen, bouwt de bijbehorende liquiditeit af, swapt de tokens via vaste routes naar het schuldasset, en betaalt de flash loan terug.\n\nElke liquidatie is gedeeltelijk en wordt gedimensioneerd volgens de regels van Aave. Het teruggewonnen bedrag moet een uit de oracle afgeleide ondergrens halen. Opbrengsten boven de schuld betalen de vergoeding van Avana, de beloning van de liquidator en een eventueel overschot voor de lener."
+          "a": "Wanneer de health factor van een account onder 1 ligt, kan elk adres liquidate aanroepen op LPVaultSwap. In één transactie neemt LPVaultSwap het schuldasset van de aanroeper, roept het liquidationCall van Aave aan om een deel van de schuld terug te betalen en vault tokens plus de bonus te ontvangen, bouwt het de bijbehorende liquiditeit af en wisselt het de tokens via vaste routes om naar het schuldasset. Een aanroeper zonder het schuldasset kan de openbare flashliquidatiehelper van Avana gebruiken, die het met een flash loan leent uit de Aave V3 Pool van de chain en de lening terugbetaalt uit de uitbetaling aan de aanroeper.\n\nElke liquidatie is gedeeltelijk en de omvang wordt bepaald door de regels van Aave. Het teruggewonnen bedrag moet een van het oracle afgeleide ondergrens halen. De fee van Avana en een eventueel overschot van de lener worden eerst betaald; de aanroeper ontvangt de rest: zijn ongebruikte financiering, de teruggewonnen hoofdsom en zijn beloning, rechtstreeks betaald of de liquidatie draait terug."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Wie kan een ongezonde positie liquideren?",
-          "a": "Avana Labs draait een goedgekeurde keeper. Iedereen kan ook liquidatePermissionless aanroepen, dat de swaproutes in de volgorde primair-dan-backup gebruikt en de aanroeper een eventueel tekort laat betalen tot een limiet die hij zelf instelt.\n\nIedereen kan ook settlePending aanroepen om vault tokens af te wikkelen die zijn achtergebleven na een onvoltooide inbeslagname; de opbrengst gaat naar de Avana Umbrella en de aanroeper ontvangt niets."
+          "a": "Elk adres dat niet bevroren is, kan liquidate aanroepen, het enige entry point voor liquidatie van LPVaultSwap, met de swaproutes primary-then-backup of backup-only. De aanroeper financiert het schuldasset zelf of via de openbare flashliquidatiehelper van Avana, en betaalt elk tekort onder de terugwinningsondergrens tot een limiet die hij zelf instelt. De keeper van Avana is de toegewijde operator op elke chain: hij verplicht zich om elk account onder een health factor van 1 te liquideren, maar registratie geeft hem geen bevoegdheid die een andere aanroeper niet heeft.\n\nIedereen kan ook settlePending aanroepen om vault tokens af te wikkelen die door een onvoltooide inbeslagname zijn achtergelaten; de opbrengst gaat naar de Avana Umbrella en de aanroeper ontvangt niets."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Welke kosten zijn van toepassing tijdens de liquidatie?",
-          "a": "De vergoeding van Avana is 20% van de oraclewinst (teruggewonnen waarde tegen oracleprijzen min de terugbetaalde schuld en de flashpremie), beperkt tot wat de liquidatie daadwerkelijk realiseert. De liquidator ontvangt de rest van de oraclewinst. Opbrengst boven de oraclewaarde gaat naar de lener.\n\nUw niet-geïnde LP-vergoedingen worden nooit afgenomen. Terugbetalen met onderpand betaalt geen bonus en geen Avana-vergoeding, alleen de flashpremie."
+          "a": "De fee van Avana is 20% van de oraclewinst (de waarde van het in beslag genomen onderpand tegen oracleprijzen min de terugbetaalde schuld), beperkt tot wat de liquidatie werkelijk oplevert. De liquidator ontvangt de rest van de oraclewinst. Terugwinning boven de oraclewaarde gaat naar de lener. Een liquidator die via de flashliquidatiehelper leent, betaalt een eventuele flashpremie uit zijn eigen uitbetaling.\n\nUw niet-geïnde LP-fees worden nooit afgenomen. Terugbetaling met onderpand betaalt geen bonus en geen fee van Avana, alleen de flashpremie."
         },
         {
           "id": "what-if-liquidation-cannot-run",

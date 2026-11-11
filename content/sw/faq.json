@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Ni sehemu gani kuu za itifaki ya Avana?",
-          "a": "Uhifadhi: LPVault isiyobadilika kwa kila itifaki ya AMM kwa kila mnyororo, na leja ya Collateralization. Akaunti na tokeni: VaultToken na VaultTokenFactory, PositionProxy na ProxyManager. Sera: AaveAdapter (sehemu ya kuingia ya mkopaji), RiskModule (ukaguzi), MarketRegistry (masoko, njia, hali ya pause, vikatiza) na ParameterStore (vigezo vya hatari).\n\nOracles: LPOracle kwa kila soko na DebtOracle kwa kila mali ya deni isiyo ya GHO. Ufilisishaji: LPVaultSwap, mikataba ya njia za swap, chanzo cha flash juu ya Aave V3 Pool na InKindEscrow. Miundombinu: AvanaTimelock, Lock na Lens ya kusoma pekee. Sehemu ya Developers huorodhesha kila mkataba kwenye ukurasa wake wa Contracts."
+          "a": "Uhifadhi: LPVault isiyobadilika kwa kila itifaki ya AMM kwa kila mnyororo, na leja ya Collateralization. Akaunti na tokeni: VaultToken na VaultTokenFactory, PositionProxy na ProxyManager. Sera: AaveAdapter (sehemu ya kuingia ya mkopaji), RiskModule (ukaguzi), MarketRegistry (masoko, njia, hali ya pause, breakers) na ParameterStore (vigezo vya hatari).\n\nOracles: LPOracle kwa kila soko na DebtOracle kwa kila mali ya deni isiyo GHO. Ufilisishaji: LPVaultSwap, mikataba ya njia za swap na PayoutEscrow, pamoja na msaidizi wa umma wa ufilisishaji wa flash wa Avana kwa waitaji wasioshikilia chochote cha mali ya deni. Ulipaji kwa dhamana hutumia chanzo cha flash juu ya Aave V3 Pool. Miundombinu: AvanaTimelock, Lock na Lens ya kusoma tu. Sehemu ya Wasanidi huorodhesha kila mkataba kwenye ukurasa wake wa Mikataba."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Kukopa kunafanya kazi vipi kwenye Avana?",
-          "a": "Unaita borrow kwenye AaveAdapter ukitaja soko, akiba ya deni, kiasi, tarehe ya mwisho, kipimo cha afya cha chini unachokubali na nonce unayotarajia. RiskModule hukagua bei za Live, upya wa bei ya deni, vikatiza, hali ya pause na kwamba keeper aliyeidhinishwa yupo. PositionProxy yako hukopa kwenye CDP Spoke na fedha hutumwa kwako.\n\nRiba hulimbikizwa kwa kiwango cha msingi cha Hub × (1 + risk premium yako), kwa hivyo kipimo chako cha afya kinaweza kubadilika hata kama dhamana yako haibadiliki."
+          "a": "Unaita borrow kwenye AaveAdapter ukiwa na soko, akiba ya deni, kiasi, muda wa mwisho, kipimo cha afya cha chini unachokubali na nonce yako inayotarajiwa. RiskModule hukagua bei za Live, upya wa bei ya deni, breakers, hali ya pause na kwamba angalau operator mmoja aliyejitolea yuko hai kwenye mnyororo. PositionProxy yako hukopa kwenye CDP Spoke na fedha hutumwa kwako.\n\nRiba hulimbikizwa kwa kiwango cha msingi cha Hub × (1 + nyongeza yako ya hatari), kwa hiyo kipimo chako cha afya kinaweza kubadilika hata kama dhamana yako haibadiliki."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Nini kinacholinda mtaji wa mkopeshaji?",
-          "a": "Collateral Factors kwa kila soko zenye kipengele cha hatari cha bwawa kisichozidi 40%, vikomo vya soko, tokeni na mwekaji kwa kila Hub, hali za oracle na vikatiza, ufilisishaji usiohitaji ruhusa sambamba na keeper wa Avana, na vikomo vya kuchota vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, first-loss reserve inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa wasambazaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
+          "a": "Collateral Factors za kila soko zenye kipengele cha hatari cha bwawa kisichozidi 40%, vikomo vya soko, tokeni na mweka amana kwa kila Hub, hali za oracle na breakers, ufilisishaji ulio wazi kwa anwani yoyote pamoja na keeper wa Avana, na vikomo vya uchukuaji vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, akiba ya hasara ya kwanza inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa watoaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Je, uharibifu wa mali unafanya kazi vipi kwenye Avana?",
-          "a": "Kipimo cha afya cha akaunti kinapokuwa chini ya 1, mfilisi huita LPVaultSwap. Katika muamala mmoja hukopa mali ya deni kwa flash kutoka Aave V3 Pool ya mnyororo, huita liquidationCall ya Aave ili kulipa sehemu ya deni na kupokea vault tokens pamoja na bonasi, hufungua ukwasi unaolingana, hubadilisha (swap) tokeni kuwa mali ya deni kupitia njia zisizobadilika, na hulipa flash loan.\n\nKila ufilisishaji ni wa sehemu na hupimwa kwa kanuni za Aave. Kiasi kilichorejeshwa lazima kifikie kiwango cha chini kinachotokana na oracle. Mapato yaliyo juu ya deni hulipa ada ya Avana, zawadi ya mfilisi na ziada yoyote ya mkopaji."
+          "a": "Wakati kipimo cha afya cha akaunti kiko chini ya 1, anwani yoyote inaweza kuita liquidate kwenye LPVaultSwap. Katika muamala mmoja LPVaultSwap huchukua mali ya deni kutoka kwa mwitaji, huita liquidationCall ya Aave kulipa sehemu ya deni na kupokea vault tokens pamoja na bonasi, hufungua ukwasi unaolingana na hubadilisha tokeni kuwa mali ya deni kwenye njia zisizobadilika. Mwitaji asiye na mali ya deni anaweza kutumia msaidizi wa umma wa ufilisishaji wa flash wa Avana, ambaye huikopa kwa flash kutoka Aave V3 Pool ya mnyororo na hulipa mkopo kutoka kwa malipo ya mwitaji.\n\nKila ufilisishaji ni wa sehemu na hupimwa kwa kanuni za Aave. Kiasi kilichorejeshwa lazima kifikie sakafu inayotokana na oracle. Ada ya Avana na ziada yoyote ya mkopaji hulipwa kwanza; mwitaji hupokea kilichobaki: ufadhili wake usiotumika, msingi uliorejeshwa na zawadi yake, hulipwa moja kwa moja au ufilisishaji hushindwa (revert)."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Nani anaweza kuondoa nafasi isiyo na afya?",
-          "a": "Avana Labs huendesha keeper aliyeidhinishwa. Mtu yeyote pia anaweza kuita liquidatePermissionless, inayotumia njia za swap za kuu-kisha-akiba na humfanya mwitaji alipe upungufu wowote hadi kikomo anachokiweka.\n\nMtu yeyote pia anaweza kuita settlePending ili kusuluhisha vault tokens zilizoachwa na ukamataji ambao haukukamilika; mapato huenda kwa Avana Umbrella na mwitaji hapokei kitu."
+          "a": "Anwani yoyote ambayo haijafungiwa inaweza kuita liquidate, sehemu pekee ya kuingia ya ufilisishaji ya LPVaultSwap, kwa njia za swap za primary-then-backup au backup-only. Mwitaji hufadhili mali ya deni mwenyewe au kupitia msaidizi wa umma wa ufilisishaji wa flash wa Avana, na hulipa upungufu wowote chini ya sakafu ya urejeshaji hadi kikomo anachoweka. Keeper wa Avana ndiye operator aliyejitolea kwenye kila mnyororo: hujitolea kufilisi kila akaunti iliyo chini ya kipimo cha afya cha 1, lakini usajili haumpi mamlaka yoyote ambayo mwitaji mwingine yeyote hana.\n\nMtu yeyote pia anaweza kuita settlePending kusuluhisha vault tokens zilizoachwa na ukamataji ambao haukukamilika; mapato huenda kwa Avana Umbrella na mwitaji hapokei chochote."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Ada gani zinatumika wakati wa utaftaji?",
-          "a": "Ada ya Avana ni 20% ya faida ya oracle (thamani iliyorejeshwa kwa bei za oracle ukitoa deni lililolipwa na flash premium), ikiwa na kikomo cha kile ambacho ufilisishaji unapata kwa kweli. Mfilisi hupokea sehemu iliyobaki ya faida ya oracle. Urejeshaji ulio juu ya thamani ya oracle huenda kwa mkopaji.\n\nAda zako za LP ambazo hazijakusanywa kamwe hazichukuliwi. Kulipa kwa dhamana hakulipi bonasi wala ada ya Avana, ni flash premium pekee."
+          "a": "Ada ya Avana ni 20% ya faida ya oracle (thamani ya dhamana iliyokamatwa kwa bei za oracle ukiondoa deni lililolipwa), ikiwekewa kikomo kwa kile ambacho ufilisishaji unapata kweli. Mfilisi hupokea sehemu iliyobaki ya faida ya oracle. Urejeshaji juu ya thamani ya oracle huenda kwa mkopaji. Mfilisi anayekopa kupitia msaidizi wa ufilisishaji wa flash hulipa flash premium yoyote kutoka kwa malipo yake mwenyewe.\n\nAda zako za LP ambazo hazijakusanywa hazichukuliwi kamwe. Ulipaji kwa dhamana haulipi bonasi wala ada ya Avana, ni flash premium pekee."
         },
         {
           "id": "what-if-liquidation-cannot-run",

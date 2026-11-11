@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Apa saja bagian utama dari protokol Avana?",
-          "a": "Kustodi: LPVault yang tidak dapat diubah per protokol AMM per chain, dan ledger Collateralization. Akun dan token: VaultToken dan VaultTokenFactory, PositionProxy dan ProxyManager. Kebijakan: AaveAdapter (titik masuk peminjam), RiskModule (pemeriksaan), MarketRegistry (pasar, rute, status jeda, breaker), dan ParameterStore (parameter risiko).\n\nOracle: LPOracle per pasar dan DebtOracle per aset utang non-GHO. Likuidasi: LPVaultSwap, kontrak rute swap, sumber flash di atas Pool Aave V3, dan InKindEscrow. Infrastruktur: AvanaTimelock, Lock, dan Lens yang read-only. Bagian Developers mencantumkan setiap kontrak di halaman Contracts."
+          "a": "Kustodi: satu LPVault yang tidak dapat diubah per protokol AMM per chain, dan buku besar Collateralization. Akun dan token: VaultToken dan VaultTokenFactory, PositionProxy dan ProxyManager. Kebijakan: AaveAdapter (entry point peminjam), RiskModule (pemeriksaan), MarketRegistry (pasar, rute, status jeda, breaker), dan ParameterStore (parameter risiko).\n\nOracle: satu LPOracle per pasar dan satu DebtOracle per aset utang non-GHO. Likuidasi: LPVaultSwap, kontrak rute swap, dan PayoutEscrow, ditambah helper likuidasi flash publik Avana untuk pemanggil yang tidak memegang aset utang sama sekali. Pembayaran kembali dengan kolateral menggunakan sumber flash di atas Aave V3 Pool. Infrastruktur: AvanaTimelock, Lock, dan Lens yang hanya-baca. Bagian Developers mencantumkan setiap kontrak di halaman Contracts-nya."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Bagaimana cara meminjam bekerja di Avana?",
-          "a": "Anda memanggil borrow pada AaveAdapter dengan pasar, cadangan utang, jumlah, tenggat waktu, faktor kesehatan minimum yang Anda terima, dan nonce yang Anda harapkan. RiskModule memeriksa harga Live, kesegaran harga utang, breaker, status jeda, dan keberadaan keeper yang disetujui. PositionProxy Anda meminjam pada CDP Spoke dan dana dikirimkan kepada Anda.\n\nBunga terakumulasi pada suku bunga dasar Hub × (1 + premi risiko Anda), sehingga faktor kesehatan Anda dapat berubah meskipun kolateral Anda tidak berubah."
+          "a": "Anda memanggil borrow di AaveAdapter dengan pasar, cadangan utang, jumlah, tenggat waktu, faktor kesehatan minimum yang Anda terima, dan nonce yang Anda harapkan. RiskModule memeriksa harga Live, kebaruan harga utang, breaker, status jeda, dan bahwa paling sedikit satu operator berkomitmen aktif di chain tersebut. PositionProxy Anda meminjam di CDP Spoke dan dana dikirim kepada Anda.\n\nBunga bertambah pada suku dasar Hub × (1 + premi risiko Anda), sehingga faktor kesehatan Anda dapat berubah meskipun kolateral Anda tidak berubah."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Apa yang melindungi modal pemberi pinjaman?",
-          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 40%, batas pasar, token, dan penyetor per Hub, status oracle dan breaker, likuidasi permissionless di samping keeper Avana, serta batas penarikan yang tetap berada dalam likuiditas flash chain sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi menyisakan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, yaitu cadangan first-loss yang didanai oleh Avana Labs dan dikendalikan oleh Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan merupakan kerugian bagi penyedia aset Hub tersebut, yang direalisasikan oleh Aave DAO."
+          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 40%, batas pasar, token, dan deposan per Hub, status oracle dan breaker, likuidasi yang terbuka untuk alamat mana pun di samping keeper Avana, dan draw cap yang tetap dalam batas likuiditas flash chain tersebut sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi meninggalkan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, cadangan first-loss yang didanai Avana Labs dan dikendalikan Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan menjadi kerugian bagi pemasok aset Hub tersebut, yang direalisasikan oleh Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Bagaimana cara likuidasi bekerja di Avana?",
-          "a": "Ketika faktor kesehatan akun berada di bawah 1, likuidator memanggil LPVaultSwap. Dalam satu transaksi, LPVaultSwap meminjam aset utang melalui flash dari Pool Aave V3 di chain tersebut, memanggil liquidationCall milik Aave untuk melunasi sebagian utang dan menerima vault token ditambah bonus, melakukan unwind likuiditas yang sesuai, menukar token ke aset utang melalui rute tetap, dan melunasi flash loan.\n\nSetiap likuidasi bersifat sebagian dan ukurannya ditentukan oleh aturan Aave. Jumlah yang dipulihkan harus mencapai batas bawah yang diturunkan dari oracle. Hasil di atas utang digunakan untuk membayar fee Avana, imbalan likuidator, dan surplus peminjam jika ada."
+          "a": "Ketika faktor kesehatan sebuah akun di bawah 1, alamat mana pun dapat memanggil liquidate di LPVaultSwap. Dalam satu transaksi, LPVaultSwap mengambil aset utang dari pemanggil, memanggil liquidationCall Aave untuk membayar kembali sebagian utang dan menerima vault token ditambah bonus, melepas likuiditas yang sesuai, dan menukar token menjadi aset utang melalui rute tetap. Pemanggil tanpa aset utang dapat menggunakan helper likuidasi flash publik Avana, yang meminjam aset tersebut melalui flash dari Aave V3 Pool chain tersebut dan membayar kembali pinjaman dari pembayaran pemanggil.\n\nSetiap likuidasi bersifat sebagian dan ukurannya ditentukan oleh aturan Aave. Jumlah yang dipulihkan harus mencapai batas bawah yang diturunkan dari oracle. Fee Avana dan surplus peminjam apa pun dibayarkan terlebih dahulu; pemanggil menerima sisanya: pendanaannya yang tidak terpakai, pokok yang dipulihkan, dan imbalannya, dibayarkan langsung atau likuidasi revert."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Siapa yang bisa melikuidasi posisi yang tidak sehat?",
-          "a": "Avana Labs menjalankan keeper yang disetujui. Siapa pun juga dapat memanggil liquidatePermissionless, yang menggunakan rute swap utama lalu cadangan dan membuat pemanggil membayar kekurangan apa pun hingga batas yang mereka tetapkan.\n\nSiapa pun juga dapat memanggil settlePending untuk menyelesaikan vault token yang tersisa dari penyitaan yang belum selesai; hasilnya masuk ke Avana Umbrella dan pemanggil tidak menerima apa pun."
+          "a": "Alamat mana pun yang tidak dibekukan dapat memanggil liquidate, satu-satunya entry point likuidasi LPVaultSwap, dengan rute swap primary-then-backup atau backup-only. Pemanggil mendanai aset utang sendiri atau melalui helper likuidasi flash publik Avana, dan membayar kekurangan apa pun di bawah batas bawah pemulihan hingga batas yang ditetapkannya. Keeper Avana adalah operator berkomitmen di setiap chain: keeper ini berkomitmen untuk melikuidasi setiap akun di bawah faktor kesehatan 1, tetapi pendaftaran tidak memberinya wewenang yang tidak dimiliki pemanggil lain.\n\nSiapa pun juga dapat memanggil settlePending untuk menyelesaikan vault token yang tertinggal dari penyitaan yang belum selesai; hasilnya masuk ke Avana Umbrella dan pemanggil tidak menerima apa pun."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Biaya apa yang berlaku selama likuidasi?",
-          "a": "Fee Avana adalah 20% dari keuntungan oracle (nilai yang dipulihkan pada harga oracle dikurangi utang yang dilunasi dan premi flash), dibatasi pada jumlah yang benar-benar direalisasikan oleh likuidasi. Likuidator menerima sisa keuntungan oracle. Pemulihan di atas nilai oracle diberikan kepada peminjam.\n\nFee LP Anda yang belum ditagih tidak pernah diambil. Pelunasan dengan kolateral tidak membayar bonus maupun fee Avana, hanya premi flash."
+          "a": "Fee Avana adalah 20% dari keuntungan oracle (nilai kolateral yang disita pada harga oracle dikurangi utang yang dibayar kembali), dibatasi pada jumlah yang benar-benar direalisasikan likuidasi. Likuidator menerima sisa keuntungan oracle. Pemulihan di atas nilai oracle diberikan kepada peminjam. Likuidator yang meminjam melalui helper likuidasi flash membayar premi flash apa pun dari pembayarannya sendiri.\n\nFee LP Anda yang belum dikumpulkan tidak pernah diambil. Pembayaran kembali dengan kolateral tidak membayar bonus dan fee Avana, hanya premi flash."
         },
         {
           "id": "what-if-liquidation-cannot-run",

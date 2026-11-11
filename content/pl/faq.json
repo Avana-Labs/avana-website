@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Jakie są główne części protokołu Avana?",
-          "a": "Przechowywanie: niezmienny LPVault na protokół AMM na łańcuch oraz rejestr Collateralization. Konta i tokeny: VaultToken i VaultTokenFactory, PositionProxy i ProxyManager. Polityka: AaveAdapter (punkt wejścia kredytobiorcy), RiskModule (kontrole), MarketRegistry (rynki, ścieżki, stan wstrzymania, wyłączniki) i ParameterStore (parametry ryzyka).\n\nWyrocznie: LPOracle dla każdego rynku i DebtOracle dla każdego aktywa dłużnego innego niż GHO. Likwidacja: LPVaultSwap, kontrakty ścieżek wymiany, źródło flash oparte na Aave V3 Pool i InKindEscrow. Infrastruktura: AvanaTimelock, Lock i Lens tylko do odczytu. Sekcja dla deweloperów wymienia każdy kontrakt na stronie Kontrakty."
+          "a": "Kustodia: niezmienny LPVault na protokół AMM na łańcuch oraz rejestr księgowy Collateralization. Konta i tokeny: VaultToken i VaultTokenFactory, PositionProxy i ProxyManager. Polityka: AaveAdapter (punkt wejścia kredytobiorcy), RiskModule (kontrole), MarketRegistry (rynki, ścieżki, stan pauzy, bezpieczniki) i ParameterStore (parametry ryzyka).\n\nWyrocznie: LPOracle dla każdego rynku i DebtOracle dla każdego aktywa dłużnego innego niż GHO. Likwidacja: LPVaultSwap, kontrakty ścieżek wymiany i PayoutEscrow, a także publiczny pomocnik likwidacji flash Avana dla wywołujących, którzy nie posiadają aktywa dłużnego. Spłata zabezpieczeniem korzysta ze źródła flash opartego na Aave V3 Pool. Infrastruktura: AvanaTimelock, Lock i Lens tylko do odczytu. Sekcja dla deweloperów wymienia każdy kontrakt na stronie Kontrakty."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Jak działa pożyczanie na Avana?",
-          "a": "Wywołujesz borrow w AaveAdapter, podając rynek, rezerwę dłużną, kwotę, termin, akceptowany minimalny współczynnik zdrowia i oczekiwany nonce. RiskModule sprawdza ceny w stanie Live, aktualność ceny zadłużenia, wyłączniki, stan wstrzymania oraz istnienie zatwierdzonego keepera. Twój PositionProxy pożycza w CDP Spoke, a środki są wysyłane do ciebie.\n\nOdsetki naliczają się według bazowej stopy Hub × (1 + twoja premia za ryzyko), więc twój współczynnik zdrowia może się zmienić, nawet jeśli twoje zabezpieczenie się nie zmienia."
+          "a": "Wywołujesz borrow na AaveAdapter, podając rynek, rezerwę dłużną, kwotę, termin, minimalny akceptowany współczynnik zdrowia i oczekiwany nonce. RiskModule sprawdza ceny w stanie Live, aktualność ceny zadłużenia, bezpieczniki, stan pauzy oraz to, czy w łańcuchu jest aktywny co najmniej jeden zobowiązany operator. Twój PositionProxy pożycza w CDP Spoke, a środki są wysyłane do Ciebie.\n\nOdsetki naliczają się według stopy bazowej Hub × (1 + Twoja premia za ryzyko), więc Twój współczynnik zdrowia może się zmienić, nawet jeśli Twoje zabezpieczenie się nie zmienia."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Co chroni kapitał pożyczkodawcy?",
-          "a": "Współczynniki zabezpieczenia dla każdego rynku ze współczynnikiem ryzyka puli wynoszącym najwyżej 40%, limity rynku, tokena i deponenta dla każdego Hub, stany wyroczni i wyłączniki, likwidacja bez uprawnień obok keepera Avana oraz limity pobrania pozostające w granicach płynności flash łańcucha, dzięki czemu każdą pożyczkę można zlikwidować w jednej transakcji.\n\nJeśli likwidacja pozostawi zadłużenie bez zabezpieczenia, deficyt jest pokrywany w ciągu 72 godzin przez Avana Umbrella dla danego Hub i aktywa, czyli rezerwę pierwszej straty zasilaną przez Avana Labs i kontrolowaną przez Aave DAO. Deficyt większy niż rezerwa jest stratą dostawców tego aktywa Hub, realizowaną przez Aave DAO."
+          "a": "Współczynniki Collateral Factor dla każdego rynku ze współczynnikiem ryzyka puli wynoszącym najwyżej 40%, limity rynku, tokena i deponenta dla każdego Hub, stany wyroczni i bezpieczniki, likwidacja otwarta dla dowolnego adresu obok keepera Avana oraz limity poboru, które mieszczą się w płynności flash łańcucha, tak aby każdą pożyczkę można było zlikwidować w jednej transakcji.\n\nJeśli likwidacja pozostawi zadłużenie bez zabezpieczenia, deficyt jest pokrywany w ciągu 72 godzin przez Avana Umbrella dla danego Hub i aktywa, rezerwę pierwszej straty finansowaną przez Avana Labs i kontrolowaną przez Aave DAO. Deficyt większy niż rezerwa jest stratą dostawców tego aktywa Hub, realizowaną przez Aave DAO."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Jak działa likwidacja na Avana?",
-          "a": "Gdy współczynnik zdrowia konta jest poniżej 1, likwidator wywołuje LPVaultSwap. W jednej transakcji pożycza on flash loanem aktywo dłużne z Aave V3 Pool łańcucha, wywołuje liquidationCall w Aave, aby spłacić część zadłużenia i otrzymać vault tokeny wraz z premią, zamyka odpowiadającą im płynność, wymienia tokeny na aktywo dłużne stałymi ścieżkami i spłaca flash loan.\n\nKażda likwidacja jest częściowa, a jej wielkość wynika z reguł Aave. Odzyskana kwota musi osiągnąć dolną granicę wyznaczoną z wyroczni. Wpływy ponad zadłużenie pokrywają opłatę Avana, nagrodę likwidatora i ewentualną nadwyżkę kredytobiorcy."
+          "a": "Gdy współczynnik zdrowia konta jest poniżej 1, dowolny adres może wywołać liquidate na LPVaultSwap. W jednej transakcji LPVaultSwap pobiera aktywo dłużne od wywołującego, wywołuje liquidationCall Aave, aby spłacić część zadłużenia i otrzymać vault tokeny plus premię, wycofuje odpowiadającą im płynność i wymienia tokeny na aktywo dłużne ustalonymi ścieżkami. Wywołujący bez aktywa dłużnego może użyć publicznego pomocnika likwidacji flash Avana, który pożycza je przez flash loan z Aave V3 Pool danego łańcucha i spłaca pożyczkę z wypłaty wywołującego.\n\nKażda likwidacja jest częściowa i wymiarowana według reguł Aave. Odzyskana kwota musi osiągnąć próg wyznaczony na podstawie wyroczni. Najpierw wypłacana jest opłata Avana i ewentualna nadwyżka kredytobiorcy; wywołujący otrzymuje resztę: niewykorzystane finansowanie, odzyskany kapitał i swoją nagrodę, wypłacane bezpośrednio albo likwidacja kończy się revertem."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "Kto może zlikwidować niezdrową pozycję?",
-          "a": "Avana Labs uruchamia zatwierdzonego keepera. Każdy może też wywołać liquidatePermissionless, które używa ścieżek wymiany w trybie podstawowa, a potem zapasowa i wymaga, aby wywołujący pokrył ewentualny niedobór do ustalonego przez siebie limitu.\n\nKażdy może też wywołać settlePending, aby rozliczyć vault tokeny pozostawione przez niedokończone zajęcie; wpływy trafiają do Avana Umbrella, a wywołujący niczego nie otrzymuje."
+          "a": "Każdy adres, który nie jest zamrożony, może wywołać liquidate, jedyny punkt wejścia likwidacji LPVaultSwap, ze ścieżkami wymiany w trybie primary-then-backup lub backup-only. Wywołujący finansuje aktywo dłużne samodzielnie lub przez publicznego pomocnika likwidacji flash Avana i pokrywa ewentualny niedobór poniżej progu odzysku do ustalonego przez siebie limitu. Keeper Avana jest zobowiązanym operatorem w każdym łańcuchu: zobowiązuje się likwidować każde konto poniżej współczynnika zdrowia 1, ale rejestracja nie daje mu żadnych uprawnień, których nie ma każdy inny wywołujący.\n\nKażdy może też wywołać settlePending, aby rozliczyć vault tokeny pozostawione przez nieukończone zajęcie; wpływy trafiają do Avana Umbrella, a wywołujący nic nie otrzymuje."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "Jakie opłaty obowiązują podczas likwidacji?",
-          "a": "Opłata Avana wynosi 20% zysku według wyroczni (wartość odzyskana po cenach z wyroczni minus spłacone zadłużenie i premia flash loana), ograniczona do tego, co likwidacja faktycznie realizuje. Likwidator otrzymuje resztę zysku według wyroczni. Odzysk ponad wartość według wyroczni trafia do kredytobiorcy.\n\nTwoje niepobrane opłaty LP nigdy nie są zabierane. Spłata zabezpieczeniem nie wiąże się z premią ani opłatą Avana, a jedynie z premią flash loana."
+          "a": "Opłata Avana wynosi 20% zysku wyroczni (wartości zajętego zabezpieczenia według cen wyroczni pomniejszonej o spłacone zadłużenie), ograniczonego do tego, co likwidacja faktycznie zrealizuje. Likwidator otrzymuje resztę zysku wyroczni. Odzysk ponad wartość według wyroczni trafia do kredytobiorcy. Likwidator, który pożycza przez pomocnika likwidacji flash, płaci ewentualną premię flash z własnej wypłaty.\n\nTwoje niepobrane opłaty LP nigdy nie są zabierane. Spłata zabezpieczeniem nie wiąże się z premią ani z opłatą Avana, a jedynie z premią flash."
         },
         {
           "id": "what-if-liquidation-cannot-run",

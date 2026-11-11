@@ -65,7 +65,7 @@
         {
           "id": "what-are-the-main-protocol-modules",
           "q": "Avana 프로토콜의 주요 부분은 무엇입니까?",
-          "a": "보관: 체인별 AMM 프로토콜당 하나의 불변 LPVault와 Collateralization 원장. 계정과 토큰: VaultToken과 VaultTokenFactory, PositionProxy와 ProxyManager. 정책: AaveAdapter(차입자 진입점), RiskModule(검사), MarketRegistry(마켓, 경로, 일시 중지 상태, 차단기), ParameterStore(리스크 파라미터).\n\n오라클: 마켓별 LPOracle과 GHO가 아닌 부채 자산별 DebtOracle. 청산: LPVaultSwap, 스왑 경로 컨트랙트, Aave V3 Pool 기반 플래시 소스, InKindEscrow. 인프라: AvanaTimelock, Lock, 읽기 전용 Lens. Developers 섹션의 Contracts 페이지에 모든 컨트랙트가 나열되어 있습니다."
+          "a": "보관: 체인별 AMM 프로토콜당 하나의 불변 LPVault와 Collateralization 원장. 계정과 토큰: VaultToken과 VaultTokenFactory, PositionProxy와 ProxyManager. 정책: AaveAdapter(차입자 진입점), RiskModule(검사), MarketRegistry(마켓, 경로, 일시 중지 상태, 차단기), ParameterStore(리스크 파라미터).\n\n오라클: 마켓별 LPOracle과 GHO가 아닌 부채 자산별 DebtOracle. 청산: LPVaultSwap, 스왑 경로 컨트랙트, PayoutEscrow, 그리고 부채 자산을 전혀 보유하지 않은 호출자를 위한 Avana의 공개 플래시 청산 헬퍼. 담보로 상환은 Aave V3 Pool 위의 플래시 소스를 사용합니다. 인프라: AvanaTimelock, Lock, 읽기 전용 Lens. Developers 섹션의 Contracts 페이지에 모든 컨트랙트가 나열되어 있습니다."
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "id": "how-does-borrowing-work",
           "q": "Avana에서 대출은 어떻게 작동하나요?",
-          "a": "마켓, 부채 리저브, 금액, 기한, 허용하는 최소 헬스 팩터, 예상 nonce를 지정해 AaveAdapter에서 borrow를 호출합니다. RiskModule은 Live 가격, 부채 가격의 신선도, 차단기, 일시 중지 상태, 승인된 키퍼의 존재를 확인합니다. PositionProxy가 CDP Spoke에서 차입하고 자금이 전송됩니다.\n\n이자는 Hub 기본 금리 × (1 + 리스크 프리미엄)으로 발생하므로, 담보가 바뀌지 않아도 헬스 팩터는 바뀔 수 있습니다."
+          "a": "마켓, 부채 리저브, 금액, 기한, 허용하는 최소 헬스 팩터, 예상 nonce를 지정해 AaveAdapter에서 borrow를 호출합니다. RiskModule은 Live 가격, 부채 가격의 신선도, 차단기, 일시 중지 상태, 그리고 체인에 최소 하나의 약정 운영자가 활성 상태인지를 확인합니다. PositionProxy가 CDP Spoke에서 차입하고 자금이 전송됩니다.\n\n이자는 Hub 기본 금리 × (1 + 리스크 프리미엄)으로 누적되므로, 담보가 변하지 않아도 헬스 팩터가 바뀔 수 있습니다."
         },
         {
           "id": "how-is-borrowing-capacity-calculated",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "무엇이 대출자 자본을 보호합니까?",
-          "a": "최대 40%의 풀 리스크 계수를 적용한 마켓별 담보 계수, Hub별 마켓·토큰·예치자 한도, 오라클 상태와 차단기, Avana 키퍼와 함께 작동하는 무허가 청산, 그리고 모든 차입을 하나의 트랜잭션으로 청산할 수 있도록 체인의 플래시 유동성 내에 머무는 인출 한도.\n\n청산 후 담보 없이 부채가 남으면, 해당 Hub와 자산의 Avana Umbrella가 72시간 안에 적자를 충당합니다. 이는 Avana Labs가 자금을 대고 Aave DAO가 통제하는 1차 손실 준비금입니다. 준비금보다 큰 적자는 해당 Hub 자산 공급자의 손실이 되며, Aave DAO가 이를 실현합니다."
+          "a": "최대 40%의 풀 리스크 계수를 적용한 마켓별 담보 계수, Hub별 마켓·토큰·예치자 한도, 오라클 상태와 차단기, Avana 키퍼와 함께 모든 주소에 열린 청산, 그리고 모든 차입을 하나의 트랜잭션으로 청산할 수 있도록 체인의 플래시 유동성 내에 머무는 인출 한도.\n\n청산 후 담보 없이 부채가 남으면, 해당 Hub와 자산의 Avana Umbrella가 72시간 안에 적자를 충당합니다. 이는 Avana Labs가 자금을 대고 Aave DAO가 통제하는 1차 손실 준비금입니다. 준비금보다 큰 적자는 해당 Hub 자산 공급자의 손실이 되며, Aave DAO가 이를 실현합니다."
         }
       ]
     },
@@ -220,17 +220,17 @@
         {
           "id": "how-does-liquidation-work",
           "q": "Avana에서 청산은 어떻게 작동하나요?",
-          "a": "계정의 헬스 팩터가 1 미만이면 청산인이 LPVaultSwap을 호출합니다. 하나의 트랜잭션에서 체인의 Aave V3 Pool로부터 부채 자산을 플래시 차입하고, Aave의 liquidationCall을 호출해 부채 일부를 상환하고 보너스를 포함한 vault token을 받으며, 해당 유동성을 언와인드하고, 고정 경로로 토큰을 부채 자산으로 스왑한 뒤, 플래시 론을 상환합니다.\n\n모든 청산은 부분 청산이며 Aave의 규칙에 따라 규모가 정해집니다. 회수액은 오라클에서 도출한 하한에 도달해야 합니다. 부채를 넘는 수익으로 Avana의 수수료, 청산인의 보상, 차입자 잉여금을 지급합니다."
+          "a": "계정의 헬스 팩터가 1 미만이면 모든 주소가 LPVaultSwap에서 liquidate를 호출할 수 있습니다. 하나의 트랜잭션에서 LPVaultSwap은 호출자로부터 부채 자산을 가져오고, Aave의 liquidationCall을 호출해 부채 일부를 상환하고 보너스를 포함한 vault token을 받으며, 해당 유동성을 언와인드하고, 고정 경로로 토큰을 부채 자산으로 스왑합니다. 부채 자산이 없는 호출자는 Avana의 공개 플래시 청산 헬퍼를 사용할 수 있으며, 헬퍼는 체인의 Aave V3 Pool에서 부채 자산을 플래시 차입하고 호출자의 지급액에서 대출을 상환합니다.\n\n모든 청산은 부분 청산이며 Aave의 규칙에 따라 규모가 정해집니다. 회수액은 오라클에서 도출한 하한에 도달해야 합니다. Avana의 수수료와 차입자 잉여금(있는 경우)이 먼저 지급되고, 호출자는 나머지를 받습니다: 사용되지 않은 자금, 회수된 원금, 보상이며, 직접 지급되거나 청산이 revert됩니다."
         },
         {
           "id": "are-liquidations-permissionless",
           "q": "누가 부실 포지션을 청산할 수 있습니까?",
-          "a": "Avana Labs는 승인된 키퍼를 운영합니다. 누구나 liquidatePermissionless를 호출할 수도 있으며, 이는 기본 경로 후 백업 경로 순으로 스왑 경로를 사용하고, 호출자가 설정한 한도까지 부족분을 호출자가 지불하게 합니다.\n\n누구나 settlePending을 호출해 완료되지 않은 압류가 남긴 vault token을 정산할 수도 있습니다. 수익은 Avana Umbrella로 가며 호출자는 아무것도 받지 않습니다."
+          "a": "동결되지 않은 모든 주소는 LPVaultSwap의 유일한 청산 진입점인 liquidate를 기본 경로 후 백업 경로 또는 백업 경로 전용 스왑 경로로 호출할 수 있습니다. 호출자는 부채 자산을 직접 또는 Avana의 공개 플래시 청산 헬퍼를 통해 제공하며, 회수 하한 미만의 부족분을 자신이 설정한 한도까지 지불합니다. Avana의 키퍼는 각 체인의 약정 운영자입니다: 헬스 팩터 1 미만인 모든 계정을 청산하기로 약정하지만, 등록으로 다른 호출자에게 없는 권한을 얻지는 않습니다.\n\n누구나 settlePending을 호출해 완료되지 않은 압류가 남긴 vault token을 정산할 수도 있습니다. 수익은 Avana Umbrella로 가며 호출자는 아무것도 받지 않습니다."
         },
         {
           "id": "what-happens-to-fees-during-liquidation",
           "q": "청산 중에는 어떤 수수료가 적용되나요?",
-          "a": "Avana의 수수료는 오라클 이익(오라클 가격 기준 회수 가치에서 상환된 부채와 플래시 프리미엄을 뺀 값)의 20%이며, 청산이 실제로 실현한 금액으로 제한됩니다. 청산인은 오라클 이익의 나머지를 받습니다. 오라클 가치를 넘는 회수액은 차입자에게 갑니다.\n\n수취되지 않은 LP 수수료는 절대 가져가지 않습니다. 담보로 상환에는 보너스와 Avana 수수료가 없으며 플래시 프리미엄만 지불합니다."
+          "a": "Avana의 수수료는 오라클 이익(오라클 가격 기준 압류된 담보의 가치에서 상환된 부채를 뺀 값)의 20%이며, 청산이 실제로 실현한 금액으로 제한됩니다. 청산인은 오라클 이익의 나머지를 받습니다. 오라클 가치를 넘는 회수액은 차입자에게 갑니다. 플래시 청산 헬퍼를 통해 차입하는 청산인은 플래시 프리미엄을 자신의 지급액에서 지불합니다.\n\n수취되지 않은 LP 수수료는 절대 가져가지 않습니다. 담보로 상환은 보너스와 Avana 수수료 없이 플래시 프리미엄만 지불합니다."
         },
         {
           "id": "what-if-liquidation-cannot-run",
