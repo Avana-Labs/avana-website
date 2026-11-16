@@ -21,8 +21,13 @@ export function DeveloperScrollSpyRail({
   return (
     <aside
       className="hidden w-[17rem] shrink-0 xl:block xl:sticky xl:top-32 xl:self-start xl:pr-2"
-      // Every developer page's "On this page" entries use the page summary's text size.
-      style={{ "--type-sidebar-link-size": "var(--type-sidebar-summary-size)" } as CSSProperties}
+      // Every developer page's "On this page" label, summary and entries match the left nav's text size.
+      style={
+        {
+          "--type-sidebar-link-size": "var(--type-docs-nav-size)",
+          "--type-sidebar-summary-size": "var(--type-docs-nav-size)",
+        } as CSSProperties
+      }
     >
       <DeferredScrollSpySidebar
         sections={sections}

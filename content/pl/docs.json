@@ -6031,14 +6031,14 @@
       "LPOracle podaje wartość płynności bez dyskonta. Współczynnik zabezpieczenia każdego rynku, min(token factors) × pool risk factor, określa, jaka część tej wartości zabezpiecza zadłużenie, a każdy rynek ma własne konto i współczynnik zdrowia.",
       "Likwidacja ma jawne reguły",
       "Każda likwidacja przechodzi przez LPVaultSwap ze standardowym wywołaniem likwidacji Aave i jest zawsze częściowa. LPVaultSwap pobiera aktywo dłużne od wywołującego, wycofuje płynność wyłącznie zajętych jednostek i wymienia je w jednej transakcji. Jego jedyny punkt wejścia likwidacji jest otwarty dla dowolnego adresu, a keeper Avana likwiduje każde konto poniżej współczynnika zdrowia 1.",
-      "Avana pozwala dostawcom płynności pożyczać GHO na Aave V4 pod zastaw pozycji Uniswap v3 na Ethereum i pozycji Aerodrome Slipstream na Base. Pozycje pozostają w swoich pulach i nadal zarabiają opłaty transakcyjne.",
+      "Avana pozwala dostawcom płynności pożyczać z Avana Hub na Aave V4 pod zastaw pozycji Uniswap v3 i v4 na Ethereum oraz pozycji Aerodrome Slipstream na Base. Pozycje pozostają w swoich pulach i nadal zarabiają opłaty transakcyjne.",
       "Przegląd protokołu wyjaśnia, jak łączą się zastaw, wycena, pożyczanie i likwidacja. Strony referencyjne na górze nawigacji wymieniają każdy adres kontraktu, parametr rynku i rolę.",
       "Przeczytaj przegląd protokołu",
       "Zacznij od Key Concepts",
       "Poznaj Hub i Spoke",
       "Zabezpieczenie LP pozwala, aby aktywa już ulokowane w AMM zabezpieczały pożyczkę GHO. Korzyścią jest elastyczność kapitałowa, a nie gwarantowany dodatni wynik netto. Kredytobiorcy nadal ponoszą nietrwałą stratę, ryzyko cenowe i ryzyko likwidacji.",
       "Hub i Spoke Avana to standardowe, niezmodyfikowane kontrakty Aave V4 należące do Aave DAO. Logika specyficzna dla Avana znajduje się we własnych kontraktach Avana: LPVault dla każdego protokołu AMM, Collateralization, vault tokeny, PositionProxy i ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap oraz AvanaTimelock.",
-      "Przegląd Avana: zastawianie pozycji Uniswap v3 i Aerodrome Slipstream, pożyczanie GHO z Avana Stable LP Hub oraz zasady wyceny i likwidacji dla poszczególnych rynków."
+      "Przegląd Avana: zastawianie pozycji Uniswap v3, Uniswap v4 i Aerodrome Slipstream, pożyczanie z Avana Hub na każdym łańcuchu oraz zasady wyceny i likwidacji dla każdego rynku."
     ]
   },
   "reference/access-controls": {

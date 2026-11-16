@@ -6031,14 +6031,14 @@
       "El LPOracle informa del valor de la liquidez sin descuento. El Factor de Colateral de cada mercado, min(token factors) × pool risk factor, fija qué parte de ese valor respalda deuda, y cada mercado tiene su propia cuenta y su propio factor de salud.",
       "La liquidación tiene reglas explícitas",
       "Toda liquidación pasa por LPVaultSwap con la llamada de liquidación estándar de Aave y es siempre parcial. LPVaultSwap toma el activo de deuda de quien llama, deshace solo las unidades incautadas y las cambia mediante swap en una sola transacción. Su único punto de entrada de liquidación está abierto a cualquier dirección, y el keeper de Avana liquida toda cuenta por debajo del factor de salud 1.",
-      "Avana permite a los proveedores de liquidez tomar GHO en préstamo en Aave V4 con posiciones de Uniswap v3 en Ethereum y de Aerodrome Slipstream en Base como garantía. Las posiciones se quedan en sus pools y siguen generando comisiones de trading.",
+      "Avana permite a los proveedores de liquidez pedir prestado al Avana Hub en Aave V4 contra posiciones de Uniswap v3 y v4 en Ethereum y posiciones de Aerodrome Slipstream en Base. Las posiciones permanecen en sus pools y siguen generando comisiones de trading.",
       "La Descripción del protocolo explica cómo encajan la pignoración, la valoración, el préstamo y la liquidación. Las páginas de referencia en la parte superior de la navegación enumeran cada dirección de contrato, parámetro de mercado y rol.",
       "Leer la Descripción del protocolo",
       "Empieza con Key Concepts",
       "Explorar Hubs y Spokes",
       "El colateral LP permite que activos ya desplegados en un AMM respalden un préstamo en GHO. El beneficio es la flexibilidad de capital, no un carry positivo garantizado. Los prestatarios siguen asumiendo la pérdida impermanente, el riesgo de precio y el riesgo de liquidación.",
       "Los Hub y Spoke de Avana son contratos de Aave V4 estándar y sin modificar, propiedad de la Aave DAO. La lógica específica de Avana está en los contratos propios de Avana: un LPVault por protocolo AMM, Collateralization, vault tokens, PositionProxies y el ProxyManager, el AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap y el AvanaTimelock.",
-      "Una visión general de Avana: depositar en garantía posiciones de Uniswap v3 y Aerodrome Slipstream, tomar GHO en préstamo del Avana Stable LP Hub y las reglas por mercado de valoración y liquidación."
+      "Una visión general de Avana: pignoración de posiciones de Uniswap v3, Uniswap v4 y Aerodrome Slipstream, préstamos del Avana Hub en cada cadena y las reglas de cada mercado para valoración y liquidación."
     ]
   },
   "reference/access-controls": {

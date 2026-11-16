@@ -6031,14 +6031,14 @@
       "LPOracleは流動性の価値をヘアカットなしで報告します。各マーケットの担保係数min(token factors) × pool risk factorが、その価値のうちどれだけが債務を裏付けるかを決め、各マーケットは独自のアカウントとヘルスファクターを持ちます。",
       "清算には明示的なルールがある",
       "すべての清算は、Aaveの標準の清算呼び出しを用いてLPVaultSwapを経由し、常に部分的です。LPVaultSwapは呼び出し元から債務資産を受け取り、差し押さえられた単位のみを巻き戻し、1つのトランザクションの中でそれらをスワップします。唯一の清算エントリポイントは任意のアドレスに開かれており、Avanaのキーパーはヘルスファクター1を下回るすべてのアカウントを清算します。",
-      "Avanaにより、流動性提供者は、Ethereum上のUniswap v3ポジションやBase上のAerodrome Slipstreamポジションを担保に、Aave V4でGHOを借り入れることができます。ポジションはプールに残り、取引手数料を稼ぎ続けます。",
+      "Avana では、流動性提供者が Ethereum の Uniswap v3・v4 ポジションと Base の Aerodrome Slipstream ポジションを担保に、Aave V4 上の Avana Hub から借り入れできます。ポジションはプールに残り、取引手数料を稼ぎ続けます。",
       "プロトコル概要では、担保差し入れ、評価、借入、清算がどのように連動するかを説明します。ナビゲーション上部のリファレンスページには、すべてのコントラクトアドレス、マーケットパラメータ、ロールが掲載されています。",
       "プロトコル概要を読む",
       "Key Concepts から始める",
       "HubとSpokeを見る",
       "LP担保を使うと、すでにAMMに投入している資産でGHOローンを裏付けられます。メリットは資本の柔軟性であり、プラスのキャリーが保証されるわけではありません。借り手は引き続き、インパーマネントロス、価格リスク、清算リスクを負います。",
       "AvanaのHubとSpokeは、Aave DAOが所有する、変更されていない標準のAave V4コントラクトです。Avana固有のロジックはAvana自身のコントラクトにあります：AMMプロトコルごとのLPVault、Collateralization、vault token、PositionProxyとProxyManager、AaveAdapter、RiskModule、MarketRegistry、ParameterStore、LPOracle、DebtOracle、LPVaultSwap、AvanaTimelockです。",
-      "Avanaの概要：Uniswap v3とAerodrome Slipstreamのポジションの差し入れ、Avana Stable LP HubからのGHOの借入、評価と清算に関するマーケットごとのルール。"
+      "Avana の概要：Uniswap v3、Uniswap v4、Aerodrome Slipstream ポジションの担保差し入れ、各チェーンの Avana Hub からの借入、マーケットごとの評価と清算のルール。"
     ]
   },
   "reference/access-controls": {

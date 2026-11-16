@@ -6031,14 +6031,14 @@
       "Der LPOracle meldet den Wert der Liquidität ohne Abschlag. Der Collateral Factor jedes Marktes, min(token factors) × pool risk factor, legt fest, wie viel dieses Werts Schulden deckt, und jeder Markt hat sein eigenes Konto und seinen eigenen Health Factor.",
       "Liquidation hat explizite Regeln",
       "Jede Liquidation läuft über LPVaultSwap mit dem Standard-Liquidationsaufruf von Aave und ist immer teilweise. LPVaultSwap nimmt das Schuldenasset von seinem Aufrufer entgegen, löst nur die beschlagnahmten Einheiten auf und tauscht sie in einer Transaktion. Sein einziger Liquidations-Einstiegspunkt ist für jede Adresse offen, und der Keeper von Avana liquidiert jedes Konto unter Health Factor 1.",
-      "Avana ermöglicht Liquiditätsanbietern, auf Aave V4 GHO gegen Uniswap v3-Positionen auf Ethereum und Aerodrome Slipstream-Positionen auf Base zu leihen. Die Positionen bleiben in ihren Pools und verdienen weiterhin Handelsgebühren.",
+      "Mit Avana leihen sich Liquiditätsanbieter auf Aave V4 beim Avana Hub gegen Uniswap-v3- und -v4-Positionen auf Ethereum und Aerodrome-Slipstream-Positionen auf Base. Die Positionen bleiben in ihren Pools und verdienen weiter Handelsgebühren.",
       "Die Protokollübersicht erklärt, wie Verpfändung, Bewertung, Kreditaufnahme und Liquidation zusammenspielen. Die Referenzseiten oben in der Navigation listen jede Vertragsadresse, jeden Marktparameter und jede Rolle auf.",
       "Protokollübersicht lesen",
       "Mit Key Concepts starten",
       "Hubs und Spokes erkunden",
       "Mit LP-Sicherheiten können bereits in einem AMM eingesetzte Assets einen GHO-Kredit decken. Der Vorteil liegt in finanzieller Flexibilität, nicht in einem garantierten positiven Carry. Kreditnehmer tragen weiterhin Impermanent Loss, Preisrisiko und Liquidationsrisiko.",
       "Avana Hubs und Spokes sind standardmäßige, unveränderte Aave V4-Verträge im Besitz der Aave DAO. Avana-spezifische Logik liegt in Avanas eigenen Verträgen: ein LPVault pro AMM-Protokoll, Collateralization, vault tokens, PositionProxies und der ProxyManager, der AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap und der AvanaTimelock.",
-      "Ein Überblick über Avana: Verpfändung von Uniswap v3- und Aerodrome Slipstream-Positionen, Kreditaufnahme von GHO aus dem Avana Stable LP Hub und die marktspezifischen Regeln für Bewertung und Liquidation."
+      "Ein Überblick über Avana: Verpfändung von Uniswap-v3-, Uniswap-v4- und Aerodrome-Slipstream-Positionen, Kreditaufnahme beim Avana Hub auf jeder Chain und die Regeln je Markt für Bewertung und Liquidation."
     ]
   },
   "reference/access-controls": {

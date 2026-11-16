@@ -6031,14 +6031,14 @@
       "LPOracle yana ba da rahoton ƙimar ruwan kuɗin ba tare da ragi ba. Collateral Factor na kowace kasuwa, min(token factors) × pool risk factor, yana tsayar da yawan wannan ƙimar da ke tallafa wa bashi, kuma kowace kasuwa tana da nata asusu da ma'aunin lafiya.",
       "Liquidation yana da ƙayyadaddun ƙa'idodi",
       "Kowace liquidation tana gudana ta LPVaultSwap da daidaitaccen kiran liquidation na Aave kuma koyaushe ta ɓangare ce. LPVaultSwap yana karɓar kadarar bashi daga mai kiransa, yana warware raka'o'in da aka ƙwace kaɗai kuma yana musanya su a ma'amala ɗaya. Hanyar shigarsa ɗaya ta liquidation a buɗe take ga kowane adireshi, kuma keeper na Avana yana yi wa kowane asusu da ke ƙasa da ma'aunin lafiya 1 liquidation.",
-      "Avana yana ba masu samar da ruwan kuɗi damar aron GHO a Aave V4 a kan matsayin Uniswap v3 a Ethereum da matsayin Aerodrome Slipstream a Base. Matsayin suna zama a pools ɗinsu kuma suna ci gaba da samun kuɗaɗen ciniki.",
+      "Avana tana bai wa masu samar da ruwan kuɗi damar aro daga Avana Hub a kan Aave V4 ta hanyar matsayin Uniswap v3 da v4 a Ethereum da matsayin Aerodrome Slipstream a Base. Matsayin suna nan a cikin tafkunansu kuma suna ci gaba da samun kuɗin ciniki.",
       "Bayanin Yarjejeniya ya bayyana yadda jinginar, kimantawa, aro da rushewa suke aiki tare. Shafukan bayani a saman kewayawa sun lissafa kowane adireshin kwangila, sigar kasuwa da matsayi.",
       "Karanta Bayanin Yarjejeniya",
       "Fara da Maɓalli Maɓalli",
       "Bincika Hubs da Spokes",
       "Jinginar LP tana bai wa kadarorin da aka riga aka saka a AMM damar tallafa wa bashin GHO. Amfanin shi ne sassaucin jari, ba tabbacin riba mai kyau (positive carry) ba. Masu aro har yanzu suna ɗaukar asarar wucin gadi, haɗarin farashi da haɗarin liquidation.",
       "Hubs da Spokes na Avana kwangiloli ne na Aave V4 na yau da kullum da ba a gyara ba mallakar Aave DAO. Dabarun musamman na Avana suna cikin kwangilolin Avana na kansa: LPVault ga kowace yarjejeniyar AMM, Collateralization, vault tokens, PositionProxies da ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap da AvanaTimelock.",
-      "Bayani kan Avana: yin pledge na matsayin Uniswap v3 da Aerodrome Slipstream, aron GHO daga Avana Stable LP Hub, da ƙa'idojin kowace kasuwa na ƙimantawa da liquidation."
+      "Taƙaitaccen bayani game da Avana: jinginar matsayin Uniswap v3, Uniswap v4 da Aerodrome Slipstream, aro daga Avana Hub a kowace sarka, da dokokin kimantawa da rushewa na kowace kasuwa."
     ]
   },
   "reference/access-controls": {

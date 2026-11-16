@@ -6031,14 +6031,14 @@
       "LPOracle melaporkan nilai likuiditas tanpa potongan nilai. Faktor kolateral setiap pasar, min(token factors) × pool risk factor, menentukan berapa banyak dari nilai tersebut yang mendukung utang, dan setiap pasar memiliki akun dan faktor kesehatannya sendiri.",
       "Likuidasi mempunyai aturan yang jelas",
       "Setiap likuidasi berjalan melalui LPVaultSwap dengan panggilan likuidasi standar Aave dan selalu bersifat sebagian. LPVaultSwap mengambil aset utang dari pemanggilnya, hanya melepas unit yang disita, dan menukarnya dalam satu transaksi. Satu-satunya entry point likuidasinya terbuka untuk alamat mana pun, dan keeper Avana melikuidasi setiap akun di bawah faktor kesehatan 1.",
-      "Avana memungkinkan penyedia likuiditas meminjam GHO di Aave V4 dengan jaminan posisi Uniswap v3 di Ethereum dan posisi Aerodrome Slipstream di Base. Posisi tetap berada di pool-nya dan terus menghasilkan fee trading.",
+      "Avana memungkinkan penyedia likuiditas meminjam dari Avana Hub di Aave V4 dengan jaminan posisi Uniswap v3 dan v4 di Ethereum serta posisi Aerodrome Slipstream di Base. Posisi tetap berada di pool-nya dan terus menghasilkan biaya trading.",
       "Ikhtisar Protokol menjelaskan bagaimana penjaminan, penilaian, peminjaman, dan likuidasi saling terkait. Halaman referensi di bagian atas navigasi mencantumkan setiap alamat kontrak, parameter pasar, dan peran.",
       "Baca Ikhtisar Protokol",
       "Mulailah dengan Konsep Utama",
       "Jelajahi Hub dan Spoke",
       "Kolateral LP memungkinkan aset yang sudah ditempatkan di AMM mendukung pinjaman GHO. Manfaatnya adalah fleksibilitas modal, bukan carry positif yang terjamin. Peminjam tetap menanggung impermanent loss, risiko harga, dan risiko likuidasi.",
       "Hub dan Spoke Avana adalah kontrak Aave V4 standar yang tidak dimodifikasi dan dimiliki oleh Aave DAO. Logika khusus Avana berada di kontrak milik Avana sendiri: LPVault per protokol AMM, Collateralization, vault token, PositionProxy dan ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap, dan AvanaTimelock.",
-      "Ikhtisar Avana: menjaminkan posisi Uniswap v3 dan Aerodrome Slipstream, meminjam GHO dari Avana Stable LP Hub, serta aturan per pasar untuk valuasi dan likuidasi."
+      "Ikhtisar Avana: menjaminkan posisi Uniswap v3, Uniswap v4, dan Aerodrome Slipstream, meminjam dari Avana Hub di setiap chain, serta aturan penilaian dan likuidasi per pasar."
     ]
   },
   "reference/access-controls": {

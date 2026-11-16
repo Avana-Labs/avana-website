@@ -236,7 +236,7 @@ export default function DeveloperSidebar() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const activeItemRef = useRef<HTMLAnchorElement>(null)
   const sidebarTypeScale = {
-    "--type-sidebar-link-size": "0.875rem",
+    "--type-sidebar-link-size": "var(--type-docs-nav-size)",
   } as CSSProperties
 
   const isActive = (href: string) => {

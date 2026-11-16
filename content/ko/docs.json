@@ -6031,14 +6031,14 @@
       "LPOracle은 헤어컷 없이 유동성의 가치를 보고합니다. 각 마켓의 담보 계수 min(토큰 계수) × 풀 리스크 계수가 그 가치 중 얼마가 부채를 뒷받침하는지 정하며, 각 마켓은 자체 계정과 헬스 팩터를 가집니다.",
       "청산에는 명시적 규칙이 있습니다",
       "모든 청산은 Aave의 표준 청산 호출과 함께 LPVaultSwap을 거치며 항상 부분적입니다. LPVaultSwap은 호출자로부터 부채 자산을 가져오고, 압류된 단위만 해제하고, 한 트랜잭션에서 이를 스왑합니다. 하나뿐인 청산 진입점은 모든 주소에 열려 있으며, Avana의 키퍼는 헬스 팩터 1 미만인 모든 계정을 청산합니다.",
-      "Avana는 유동성 공급자가 Ethereum의 Uniswap v3 포지션과 Base의 Aerodrome Slipstream 포지션을 담보로 Aave V4에서 GHO를 차입할 수 있게 합니다. 포지션은 풀에 남아 계속 거래 수수료를 벌어들입니다.",
+      "Avana는 유동성 공급자가 Ethereum의 Uniswap v3·v4 포지션과 Base의 Aerodrome Slipstream 포지션을 담보로 Aave V4의 Avana Hub에서 차입할 수 있게 합니다. 포지션은 풀에 그대로 남아 거래 수수료를 계속 얻습니다.",
       "프로토콜 개요는 담보 제공, 가치 평가, 차입, 청산이 어떻게 맞물리는지 설명합니다. 내비게이션 상단의 레퍼런스 페이지에는 모든 컨트랙트 주소, 마켓 파라미터, 역할이 나와 있습니다.",
       "프로토콜 개요 읽기",
       "Key Concepts부터 시작",
       "Hub와 Spoke 살펴보기",
       "LP 담보를 사용하면 이미 AMM에 투입된 자산으로 GHO 대출을 뒷받침할 수 있습니다. 이점은 자본 유연성이며, 플러스 캐리가 보장되는 것은 아닙니다. 차입자는 여전히 비영구적 손실, 가격 리스크, 청산 리스크를 부담합니다.",
       "Avana의 Hub와 Spoke는 Aave DAO가 소유한, 수정되지 않은 표준 Aave V4 컨트랙트입니다. Avana 고유 로직은 Avana 자체 컨트랙트에 있습니다: AMM 프로토콜별 LPVault, Collateralization, vault token, PositionProxy와 ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap, AvanaTimelock.",
-      "Avana 개요: Uniswap v3와 Aerodrome Slipstream 포지션의 담보 제공, Avana Stable LP Hub에서의 GHO 차입, 가치 평가와 청산에 관한 마켓별 규칙."
+      "Avana 개요: Uniswap v3, Uniswap v4, Aerodrome Slipstream 포지션 담보 제공, 각 체인의 Avana Hub에서의 차입, 마켓별 가치 평가 및 청산 규칙."
     ]
   },
   "reference/access-controls": {

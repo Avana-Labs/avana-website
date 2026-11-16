@@ -6031,14 +6031,14 @@
       "The LPOracle reports the value of the liquidity with no haircut. Each market's collateral factor, min(token factors) × pool risk factor, sets how much of that value supports debt, and each market has its own account and health factor.",
       "Liquidation has explicit rules",
       "Every liquidation runs through LPVaultSwap with Aave's standard liquidation call and is always partial. LPVaultSwap takes the debt asset from its caller, unwinds only the seized units and swaps them in one transaction. Its one liquidation entry point is open to any address, and Avana's keeper liquidates every account below health factor 1.",
-      "Avana lets liquidity providers borrow GHO on Aave V4 against Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees.",
+      "Avana lets liquidity providers borrow from the Avana Hub on Aave V4 against Uniswap v3 and v4 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees.",
       "The Protocol Overview explains how pledging, valuation, borrowing and liquidation fit together. The reference pages at the top of the navigation list every contract address, market parameter and role.",
       "Read the Protocol Overview",
       "Start with Key Concepts",
       "Explore Hubs and Spokes",
       "LP collateral lets assets already deployed in an AMM support a GHO loan. The benefit is capital flexibility, not guaranteed positive carry. Borrowers still bear impermanent loss, price risk and liquidation risk.",
       "Avana Hubs and Spokes are standard, unmodified Aave V4 contracts owned by the Aave DAO. Avana-specific logic sits in Avana's own contracts: an LPVault per AMM protocol, Collateralization, vault tokens, PositionProxies and the ProxyManager, the AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap and the AvanaTimelock.",
-      "An overview of Avana: pledging Uniswap v3 and Aerodrome Slipstream positions, borrowing GHO from the Avana Stable LP Hub, and the per-market rules for valuation and liquidation."
+      "An overview of Avana: pledging Uniswap v3, Uniswap v4 and Aerodrome Slipstream positions, borrowing from the Avana Hub on each chain, and the per-market rules for valuation and liquidation."
     ]
   },
   "reference/access-controls": {

@@ -124,6 +124,8 @@
   --type-meta-size: 0.8125rem;
   --type-sidebar-link-size: 0.9375rem;
   --type-sidebar-summary-size: 0.9375rem;
+  /* Docs navigation text: the left nav items and the right "On this page" rail. */
+  --type-docs-nav-size: 0.875rem;
   --type-display-title-size: clamp(2.25rem, 3.5vw, 3.5rem);
   --type-index-title-size: clamp(2rem, 3vw, 2.75rem);
   --type-display-lead-size: clamp(1rem, 1.7vw, 1.25rem);

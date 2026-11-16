@@ -85,7 +85,7 @@ Upgradeable contracts are UUPS implementations behind a fixed ERC-1967 proxy. `_
 | First-Loss Reserve (`AvanaFirstLossReserve`, one per debt asset on the chain's Hub) | No (immutable) | None; the Aave DAO controls it through its AccessManager | None | `REQ-FLR-008`, `07_DeployAvanaFirstLossReserves.s.sol:100-112` |
 | DAO deficit offset (`DaoDeficitOffset`, one per debt asset on the chain's Hub) | No (immutable) | None; deployed and controlled by the Aave DAO | None | `Q-410`, `08_AaveLossLayersPayload.s.sol:170-179` |
 
-> One tier-3 Hub per chain follows the 2026-11-16 decision, implemented in the local stack (`stack/one-hub-test-values`, `stack/hub-structure-only`: `script/local/lib/chain.ts:139-143`). The spec text (2.8 `REQ-CONFIG-083`, the 2.15 examples) and `DeployTypes.sol:37` still describe Stable, Correlated and Volatile LP Hubs; that text is pending a spec update.
+> Each chain has one Avana Hub, at tier 3, holding the Lend Spoke and every CDP Spoke of that chain.
 
 ### Roles
 

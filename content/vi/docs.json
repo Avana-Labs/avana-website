@@ -6031,14 +6031,14 @@
       "LPOracle báo cáo giá trị của thanh khoản không chiết khấu. Hệ số tài sản thế chấp của mỗi thị trường, min(hệ số token) × hệ số rủi ro pool, xác định phần giá trị đó có thể bảo đảm cho khoản nợ, và mỗi thị trường có tài khoản và hệ số sức khỏe riêng.",
       "Thanh lý có quy định rõ ràng",
       "Mọi lần thanh lý đều chạy qua LPVaultSwap với lệnh gọi thanh lý tiêu chuẩn của Aave và luôn là một phần. LPVaultSwap lấy tài sản nợ từ bên gọi, chỉ gỡ các đơn vị bị tịch thu và hoán đổi chúng trong một giao dịch. Điểm vào thanh lý duy nhất của nó mở cho bất kỳ địa chỉ nào, và keeper của Avana thanh lý mọi tài khoản có hệ số sức khỏe dưới 1.",
-      "Avana cho phép nhà cung cấp thanh khoản vay GHO trên Aave V4 bằng vị thế Uniswap v3 trên Ethereum và vị thế Aerodrome Slipstream trên Base. Các vị thế vẫn ở trong pool và tiếp tục kiếm phí giao dịch.",
+      "Avana cho phép nhà cung cấp thanh khoản vay từ Avana Hub trên Aave V4 bằng vị thế Uniswap v3 và v4 trên Ethereum và vị thế Aerodrome Slipstream trên Base. Các vị thế vẫn nằm trong pool và tiếp tục kiếm phí giao dịch.",
       "Tổng quan giao thức giải thích cách cầm cố, định giá, vay và thanh lý kết hợp với nhau. Các trang tham chiếu ở đầu thanh điều hướng liệt kê mọi địa chỉ hợp đồng, tham số thị trường và vai trò.",
       "Đọc Tổng quan giao thức",
       "Bắt đầu với các khái niệm chính",
       "Tìm hiểu Hub và Spoke",
       "Tài sản thế chấp LP cho phép các tài sản đã được triển khai trong một AMM bảo đảm cho một khoản vay GHO. Lợi ích là tính linh hoạt về vốn, không phải lợi nhuận chênh lệch dương được bảo đảm. Người vay vẫn chịu tổn thất tạm thời, rủi ro giá và rủi ro thanh lý.",
       "Hub và Spoke của Avana là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, do Aave DAO sở hữu. Logic riêng của Avana nằm trong các hợp đồng của chính Avana: một LPVault cho mỗi giao thức AMM, Collateralization, vault token, PositionProxy và ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap và AvanaTimelock.",
-      "Tổng quan về Avana: cầm cố vị thế Uniswap v3 và Aerodrome Slipstream, vay GHO từ Avana Stable LP Hub, và các quy tắc định giá và thanh lý theo từng thị trường."
+      "Tổng quan về Avana: cầm cố vị thế Uniswap v3, Uniswap v4 và Aerodrome Slipstream, vay từ Avana Hub trên mỗi chuỗi, và quy tắc định giá và thanh lý của từng thị trường."
     ]
   },
   "reference/access-controls": {

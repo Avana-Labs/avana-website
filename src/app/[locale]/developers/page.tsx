@@ -58,7 +58,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="welcome" className="scroll-mt-32 pb-10">
           <DeveloperDocPageHeader
             title="Welcome"
-            description="Avana lets liquidity providers borrow GHO on Aave V4 against Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees."
+            description="Avana lets liquidity providers borrow from the Avana Hub on Aave V4 against Uniswap v3 and v4 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees."
           />
           <p className="mt-6 max-w-3xl type-doc-body">
             The Protocol Overview explains how pledging, valuation, borrowing and liquidation fit together. The reference pages at the top of the navigation list every contract address, market parameter and role.
@@ -111,7 +111,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="An overview of Avana: pledging Uniswap v3 and Aerodrome Slipstream positions, borrowing GHO from the Avana Stable LP Hub, and the per-market rules for valuation and liquidation."
+        pageSummary="An overview of Avana: pledging Uniswap v3, Uniswap v4 and Aerodrome Slipstream positions, borrowing from the Avana Hub on each chain, and the per-market rules for valuation and liquidation."
         sectionColor="blue"
       />
     </div>

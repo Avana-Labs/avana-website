@@ -6031,14 +6031,14 @@
       "ה-LPOracle מדווח על שווי הנזילות ללא הפחתת ערך. מקדם הביטחונות של כל שוק, min(token factors) × pool risk factor, קובע איזה חלק משווי זה גובה חוב, ולכל שוק יש חשבון ומקדם בריאות משלו.",
       "לפירוק יש כללים מפורשים",
       "כל חיסול רץ דרך LPVaultSwap עם קריאת החיסול הסטנדרטית של Aave והוא תמיד חלקי. LPVaultSwap לוקח את נכס החוב מהקורא שלו, מפרק רק את היחידות שנתפסו ומחליף אותן בעסקה אחת. נקודת הכניסה היחידה שלו לחיסול פתוחה לכל כתובת, וה-keeper של Avana מחסל כל חשבון מתחת למקדם בריאות 1.",
-      "Avana מאפשר לספקי נזילות ללוות GHO ב-Aave V4 כנגד פוזיציות Uniswap v3 ב-Ethereum ופוזיציות Aerodrome Slipstream ב-Base. הפוזיציות נשארות במאגרים שלהן וממשיכות להרוויח עמלות מסחר.",
+      "Avana מאפשרת לספקי נזילות ללוות מ-Avana Hub ב-Aave V4 כנגד פוזיציות Uniswap v3 ו-v4 ב-Ethereum ופוזיציות Aerodrome Slipstream ב-Base. הפוזיציות נשארות במאגרים שלהן וממשיכות להרוויח עמלות מסחר.",
       "סקירת הפרוטוקול מסבירה כיצד שעבוד, הערכה, לווייה וחיסול משתלבים זה בזה. דפי העיון בראש הניווט מפרטים כל כתובת חוזה, פרמטר שוק ותפקיד.",
       "קראו את סקירת הפרוטוקול",
       "התחילו עם מושגי מפתח",
       "גלו את ה-Hubs וה-Spokes",
       "ביטחונות LP מאפשרים לנכסים שכבר מושקעים ב-AMM לגבות הלוואת GHO. התועלת היא גמישות הונית, לא תשואה חיובית מובטחת. הלווים עדיין נושאים בהפסד זמני, בסיכון מחיר ובסיכון חיסול.",
       "ה-Hubs וה-Spokes של Avana הם חוזי Aave V4 סטנדרטיים ולא משונים בבעלות ה-Aave DAO. הלוגיקה הייחודית ל-Avana נמצאת בחוזים של Avana עצמו: LPVault לכל פרוטוקול AMM,‏ Collateralization,‏ vault tokens,‏ PositionProxies וה-ProxyManager, ה-AaveAdapter,‏ RiskModule,‏ MarketRegistry,‏ ParameterStore,‏ LPOracle,‏ DebtOracle,‏ LPVaultSwap וה-AvanaTimelock.",
-      "סקירה של Avana: שעבוד פוזיציות Uniswap v3 ו-Aerodrome Slipstream, הלוואת GHO מה-Avana Stable LP Hub, והכללים לכל שוק להערכת שווי ולחיסול."
+      "סקירה של Avana: שעבוד פוזיציות Uniswap v3, Uniswap v4 ו-Aerodrome Slipstream, לווייה מ-Avana Hub בכל רשת, וכללי ההערכה והחיסול של כל שוק."
     ]
   },
   "reference/access-controls": {

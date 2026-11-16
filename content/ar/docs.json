@@ -6031,14 +6031,14 @@
       "يُبلّغ LPOracle عن قيمة السيولة دون خصم تقييمي. ويحدد عامل الضمان لكل سوق، min(token factors) × pool risk factor، مقدار تلك القيمة الذي يدعم الدين، ولكل سوق حسابه وعامل صحته الخاصان.",
       "للتصفية قواعد صريحة",
       "تمر كل تصفية عبر LPVaultSwap باستدعاء التصفية القياسي في Aave وتكون جزئية دائمًا. ويأخذ LPVaultSwap أصل الدين من مستدعيه، ولا يفكّ إلا الوحدات المصادرة، ويبادلها في معاملة واحدة. ونقطة دخول التصفية الوحيدة فيه مفتوحة لأي عنوان، ويصفّي منفّذ Avana كل حساب أقل من عامل الصحة 1.",
-      "تتيح Avana لمزودي السيولة اقتراض GHO على Aave V4 مقابل مراكز Uniswap v3 على Ethereum ومراكز Aerodrome Slipstream على Base. وتبقى المراكز في مجمعاتها وتواصل كسب رسوم التداول.",
+      "تتيح Avana لمزوّدي السيولة الاقتراض من Avana Hub على Aave V4 مقابل مراكز Uniswap v3 وv4 على Ethereum ومراكز Aerodrome Slipstream على Base. تبقى المراكز في مجمّعاتها وتستمر في كسب رسوم التداول.",
       "تشرح نظرة عامة على البروتوكول كيف تترابط عمليات الرهن والتقييم والاقتراض والتصفية. وتسرد الصفحات المرجعية في أعلى قائمة التنقل كل عنوان عقد ومعامل سوق ودور.",
       "اقرأ نظرة عامة على البروتوكول",
       "ابدأ بالمفاهيم الأساسية",
       "استكشف Hubs وSpokes",
       "يتيح ضمان LP للأصول الموظَّفة بالفعل في AMM أن تدعم قرض GHO. والفائدة هي مرونة رأس المال، لا عائد إيجابي مضمون. ولا يزال المقترضون يتحمّلون الخسارة غير الدائمة ومخاطر الأسعار ومخاطر التصفية.",
       "Hubs وSpokes في Avana هي عقود Aave V4 قياسية وغير معدّلة يملكها Aave DAO. ويقع المنطق الخاص بـAvana في عقود Avana نفسها: LPVault لكل بروتوكول AMM، وCollateralization، والـvault tokens، وPositionProxies وProxyManager، وAaveAdapter، وRiskModule، وMarketRegistry، وParameterStore، وLPOracle، وDebtOracle، وLPVaultSwap وAvanaTimelock.",
-      "نظرة عامة على Avana: رهن مراكز Uniswap v3 وAerodrome Slipstream، واقتراض GHO من Avana Stable LP Hub، وقواعد التقييم والتصفية لكل سوق."
+      "نظرة عامة على Avana: رهن مراكز Uniswap v3 وUniswap v4 وAerodrome Slipstream، والاقتراض من Avana Hub على كل سلسلة، وقواعد التقييم والتصفية لكل سوق."
     ]
   },
   "reference/access-controls": {

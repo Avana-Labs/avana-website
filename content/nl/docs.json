@@ -6031,14 +6031,14 @@
       "De LPOracle rapporteert de waarde van de liquiditeit zonder afslag. De collateral factor van elke markt, min(token factors) × pool risk factor, bepaalt hoeveel van die waarde schuld dekt, en elke markt heeft een eigen account en health factor.",
       "Liquidatie heeft expliciete regels",
       "Elke liquidatie loopt via LPVaultSwap met de standaardliquidatieaanroep van Aave en is altijd gedeeltelijk. LPVaultSwap neemt het schuldasset van zijn aanroeper, bouwt alleen de in beslag genomen eenheden af en wisselt ze om in één transactie. Zijn enige entry point voor liquidatie staat open voor elk adres, en de keeper van Avana liquideert elk account onder health factor 1.",
-      "Met Avana kunnen liquiditeitsverschaffers GHO lenen op Aave V4 tegen Uniswap v3-posities op Ethereum en Aerodrome Slipstream-posities op Base. De posities blijven in hun pools en blijven handelsfees verdienen.",
+      "Met Avana lenen liquiditeitsverschaffers bij de Avana Hub op Aave V4 tegen Uniswap v3- en v4-posities op Ethereum en Aerodrome Slipstream-posities op Base. De posities blijven in hun pools en blijven handelskosten verdienen.",
       "Het Protocoloverzicht legt uit hoe verpanden, waarderen, lenen en liquidatie samenhangen. De referentiepagina's bovenaan de navigatie vermelden elk contractadres, elke marktparameter en elke rol.",
       "Lees het Protocoloverzicht",
       "Begin met Kernconcepten",
       "Hubs en Spokes verkennen",
       "Met LP-onderpand kunnen assets die al in een AMM zijn ingezet een GHO-lening dekken. Het voordeel is kapitaalflexibiliteit, geen gegarandeerde positieve carry. Leners blijven impermanent loss, prijsrisico en liquidatierisico dragen.",
       "Avana Hubs en Spokes zijn standaard, ongewijzigde Aave V4-contracten die eigendom zijn van de Aave DAO. Avana-specifieke logica zit in de eigen contracten van Avana: een LPVault per AMM-protocol, Collateralization, vault tokens, PositionProxies en de ProxyManager, de AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap en de AvanaTimelock.",
-      "Een overzicht van Avana: het verpanden van Uniswap v3- en Aerodrome Slipstream-posities, het lenen van GHO uit de Avana Stable LP Hub, en de regels per markt voor waardering en liquidatie."
+      "Een overzicht van Avana: het verpanden van Uniswap v3-, Uniswap v4- en Aerodrome Slipstream-posities, lenen bij de Avana Hub op elke chain, en de regels per markt voor waardering en liquidatie."
     ]
   },
   "reference/access-controls": {

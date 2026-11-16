@@ -6031,14 +6031,14 @@
       "LPOracle 回報流動性的價值，不打折扣。每個市場的抵押係數 min(token factors) × pool risk factor 決定其中有多少價值可支撐債務，且每個市場都有自己的帳戶與健康因子。",
       "清算有明確規則",
       "每次清算都透過 LPVaultSwap 以 Aave 的標準清算呼叫執行，且一律是部分清算。LPVaultSwap 從其呼叫者取得債務資產，只拆解被扣押的單位，並在一筆交易中完成兌換。其唯一的清算進入點對任何地址開放，Avana 的 Keeper 會清算每個健康因子低於 1 的帳戶。",
-      "Avana 讓流動性提供者能在 Aave V4 上，以 Ethereum 上的 Uniswap v3 部位與 Base 上的 Aerodrome Slipstream 部位借入 GHO。部位仍留在其池中，並持續賺取交易手續費。",
+      "Avana 讓流動性提供者以 Ethereum 上的 Uniswap v3 與 v4 部位以及 Base 上的 Aerodrome Slipstream 部位為抵押，在 Aave V4 上向 Avana Hub 借款。部位仍留在各自的池中，並持續賺取交易手續費。",
       "協議概覽說明質押、估值、借款與清算如何協同運作。導覽頂端的參考頁面列出每個合約地址、市場參數與角色。",
       "閱讀協議概覽",
       "從 Key Concepts 開始",
       "探索 Hub 與 Spoke",
       "LP 抵押品讓已投入 AMM 的資產也能支撐 GHO 貸款。其好處在於資金運用彈性，而非保證正利差。借款人仍須承擔無常損失、價格風險與清算風險。",
       "Avana 的 Hub 與 Spoke 是由 Aave DAO 擁有、未經修改的標準 Aave V4 合約。Avana 特有的邏輯位於 Avana 自己的合約中：每個 AMM 協議一個 LPVault、Collateralization、vault token、PositionProxy 與 ProxyManager、AaveAdapter、RiskModule、MarketRegistry、ParameterStore、LPOracle、DebtOracle、LPVaultSwap 與 AvanaTimelock。",
-      "Avana 概覽：質押 Uniswap v3 與 Aerodrome Slipstream 部位、從 Avana Stable LP Hub 借入 GHO，以及各市場的估值與清算規則。"
+      "Avana 概覽：質押 Uniswap v3、Uniswap v4 與 Aerodrome Slipstream 部位，在每條鏈上向 Avana Hub 借款，以及每個市場的估值與清算規則。"
     ]
   },
   "reference/access-controls": {

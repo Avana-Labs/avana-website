@@ -6031,14 +6031,14 @@
       "LPOracle huripoti thamani ya ukwasi bila punguzo la thamani. Collateral Factor ya kila soko, min(token factors) × pool risk factor, huweka kiasi cha thamani hiyo kinachounga mkono deni, na kila soko lina akaunti yake na kipimo chake cha afya.",
       "Kuondolewa kuna sheria wazi",
       "Kila ufilisishaji hupitia LPVaultSwap kwa mwito wa kawaida wa ufilisishaji wa Aave na daima ni wa sehemu. LPVaultSwap huchukua mali ya deni kutoka kwa mwitaji wake, hufungua vizio vilivyokamatwa pekee na huvibadilisha katika muamala mmoja. Sehemu yake moja ya kuingia ya ufilisishaji iko wazi kwa anwani yoyote, na keeper wa Avana hufilisi kila akaunti iliyo chini ya kipimo cha afya cha 1.",
-      "Avana huwaruhusu watoa ukwasi kukopa GHO kwenye Aave V4 dhidi ya nafasi za Uniswap v3 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base. Nafasi hubaki kwenye mabwawa yao na huendelea kupata ada za biashara.",
+      "Avana inawawezesha watoa ukwasi kukopa kutoka Avana Hub kwenye Aave V4 kwa dhamana ya nafasi za Uniswap v3 na v4 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base. Nafasi hubaki katika mabwawa yao na huendelea kupata ada za biashara.",
       "Muhtasari wa Itifaki unaeleza jinsi kuweka dhamana, kuthamini, kukopa na ufilisi vinavyoshirikiana. Kurasa za marejeleo zilizo juu ya urambazaji zinaorodhesha kila anwani ya mkataba, kigezo cha soko na jukumu.",
       "Soma Muhtasari wa Itifaki",
       "Anza na Dhana Muhimu",
       "Chunguza Hubs na Spokes",
       "Dhamana ya LP huruhusu mali ambazo tayari zimewekwa kwenye AMM kuunga mkono mkopo wa GHO. Faida ni unyumbufu wa mtaji, si faida chanya iliyohakikishwa. Wakopaji bado wanabeba hasara isiyo ya kudumu, hatari ya bei na hatari ya ufilisishaji.",
       "Hubs na Spokes za Avana ni mikataba ya kawaida ya Aave V4 isiyobadilishwa inayomilikiwa na Aave DAO. Mantiki maalum ya Avana iko katika mikataba ya Avana yenyewe: LPVault kwa kila itifaki ya AMM, Collateralization, vault tokens, PositionProxies na ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap na AvanaTimelock.",
-      "Muhtasari wa Avana: kuweka rehani nafasi za Uniswap v3 na Aerodrome Slipstream, kukopa GHO kutoka Avana Stable LP Hub, na kanuni za kila soko za uthamini na ufilisishaji."
+      "Muhtasari wa Avana: kuweka dhamana nafasi za Uniswap v3, Uniswap v4 na Aerodrome Slipstream, kukopa kutoka Avana Hub kwenye kila mnyororo, na kanuni za kila soko za uthamini na ufilisi."
     ]
   },
   "reference/access-controls": {

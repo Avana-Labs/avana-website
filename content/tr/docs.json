@@ -6031,14 +6031,14 @@
       "LPOracle likiditenin değerini kesinti uygulamadan bildirir. Her piyasanın teminat faktörü, min(token factors) × pool risk factor, bu değerin ne kadarının borcu desteklediğini belirler ve her piyasanın kendi hesabı ve sağlık faktörü vardır.",
       "Tasfiyenin açık kuralları vardır",
       "Her likidasyon, Aave'nin standart likidasyon çağrısıyla LPVaultSwap üzerinden çalışır ve her zaman kısmidir. LPVaultSwap borç varlığını çağırandan alır, yalnızca el konulan birimleri çözer ve bunları tek bir işlemde swap eder. Tek likidasyon giriş noktası herhangi bir adrese açıktır ve Avana'nın keeper'ı sağlık faktörü 1'in altındaki her hesabı likide eder.",
-      "Avana, likidite sağlayıcıların Ethereum'daki Uniswap v3 pozisyonları ve Base'deki Aerodrome Slipstream pozisyonları karşılığında Aave V4 üzerinde GHO borç almasını sağlar. Pozisyonlar havuzlarında kalır ve işlem ücretleri kazanmaya devam eder.",
+      "Avana, likidite sağlayıcılarının Ethereum'daki Uniswap v3 ve v4 pozisyonları ile Base'deki Aerodrome Slipstream pozisyonları karşılığında Aave V4 üzerindeki Avana Hub'dan borç almasını sağlar. Pozisyonlar havuzlarında kalır ve işlem ücreti kazanmaya devam eder.",
       "Protokole Genel Bakış; teminat verme, değerleme, borçlanma ve tasfiyenin nasıl bir araya geldiğini açıklar. Gezinmenin en üstündeki referans sayfaları her sözleşme adresini, piyasa parametresini ve rolü listeler.",
       "Protokole Genel Bakış'ı okuyun",
       "Temel Kavramlar ile başlayın",
       "Hub'ları ve Spoke'ları Keşfedin",
       "LP teminatı, bir AMM'de zaten kullanılan varlıkların bir GHO kredisini desteklemesini sağlar. Fayda, garantili pozitif getiri farkı değil, sermaye esnekliğidir. Borçlular geçici kayıp, fiyat riski ve likidasyon riskini taşımaya devam eder.",
       "Avana Hub'ları ve Spoke'ları, Aave DAO'ya ait standart, değiştirilmemiş Aave V4 sözleşmeleridir. Avana'ya özgü mantık Avana'nın kendi sözleşmelerinde bulunur: AMM protokolü başına bir LPVault, Collateralization, vault token'lar, PositionProxy'ler ve ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap ve AvanaTimelock.",
-      "Avana'ya genel bakış: Uniswap v3 ve Aerodrome Slipstream pozisyonlarını rehin verme, Avana Stable LP Hub'ından GHO borç alma ve değerleme ile likidasyon için piyasa bazındaki kurallar."
+      "Avana'ya genel bakış: Uniswap v3, Uniswap v4 ve Aerodrome Slipstream pozisyonlarının teminat olarak verilmesi, her zincirdeki Avana Hub'dan borçlanma ve her piyasanın değerleme ve tasfiye kuralları."
     ]
   },
   "reference/access-controls": {
