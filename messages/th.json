@@ -147,11 +147,21 @@
         "governance": "การกำกับดูแล",
         "emergencyControls": "การควบคุมฉุกเฉิน",
         "contractList": "สัญญา",
+        "addresses": "ที่อยู่",
         "parameters": "พารามิเตอร์",
         "securityVerification": "ความปลอดภัยและการตรวจสอบ",
         "audits": "การตรวจสอบโดยผู้ตรวจ",
         "lens": "Lens",
         "protocolOverview": "ภาพรวมโปรโตคอล"
+      },
+      "reference": {
+        "network": "เครือข่าย",
+        "chainId": "Chain ID",
+        "copy": "คัดลอก",
+        "copied": "คัดลอกแล้ว",
+        "placeholder": "ตัวยึดตำแหน่ง",
+        "explorer": "เปิดตัวสำรวจบล็อก",
+        "updated": "อัปเดตล่าสุด {date}"
       }
     },
     "faqUi": {

@@ -147,11 +147,21 @@
         "governance": "Gobernanza",
         "emergencyControls": "Controles de emergencia",
         "contractList": "Contratos",
+        "addresses": "Direcciones",
         "parameters": "Parámetros",
         "securityVerification": "Seguridad y verificación",
         "audits": "Auditorías",
         "lens": "Lens",
         "protocolOverview": "Descripción del protocolo"
+      },
+      "reference": {
+        "network": "Red",
+        "chainId": "ID de cadena",
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "placeholder": "Marcador de posición",
+        "explorer": "abre el explorador de bloques",
+        "updated": "Última actualización {date}"
       }
     },
     "faqUi": {

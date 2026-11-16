@@ -147,11 +147,21 @@
         "governance": "治理",
         "emergencyControls": "緊急控制",
         "contractList": "合約",
+        "addresses": "地址",
         "parameters": "參數",
         "securityVerification": "安全與驗證",
         "audits": "稽核",
         "lens": "Lens",
         "protocolOverview": "協議概覽"
+      },
+      "reference": {
+        "network": "網路",
+        "chainId": "鏈 ID",
+        "copy": "複製",
+        "copied": "已複製",
+        "placeholder": "佔位符",
+        "explorer": "開啟區塊瀏覽器",
+        "updated": "最後更新 {date}"
       }
     },
     "faqUi": {

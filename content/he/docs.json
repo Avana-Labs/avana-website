@@ -6061,6 +6061,14 @@
       "סקירה של Avana: שעבוד פוזיציות Uniswap v3 ו-Aerodrome Slipstream, הלוואת GHO מה-Avana Stable LP Hub, והכללים לכל שוק להערכת שווי ולחיסול."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "ביקורות",

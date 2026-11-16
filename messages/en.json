@@ -160,11 +160,21 @@
         "governance": "Governance",
         "emergencyControls": "Emergency Controls",
         "contractList": "Contracts",
+        "addresses": "Addresses",
         "parameters": "Parameters",
         "securityVerification": "Security & Verification",
         "audits": "Audits",
         "lens": "Lens",
         "protocolOverview": "Protocol Overview"
+      },
+      "reference": {
+        "network": "Network",
+        "chainId": "Chain ID",
+        "copy": "Copy",
+        "copied": "Copied",
+        "placeholder": "Placeholder",
+        "explorer": "opens the block explorer",
+        "updated": "Last updated {date}"
       }
     },
     "faqUi": {

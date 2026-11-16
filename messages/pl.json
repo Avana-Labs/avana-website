@@ -147,11 +147,21 @@
         "governance": "Zarządzanie",
         "emergencyControls": "Kontrole awaryjne",
         "contractList": "Kontrakty",
+        "addresses": "Adresy",
         "parameters": "Parametry",
         "securityVerification": "Bezpieczeństwo i weryfikacja",
         "audits": "Audyty",
         "lens": "Lens",
         "protocolOverview": "Przegląd protokołu"
+      },
+      "reference": {
+        "network": "Sieć",
+        "chainId": "ID łańcucha",
+        "copy": "Kopiuj",
+        "copied": "Skopiowano",
+        "placeholder": "Symbol zastępczy",
+        "explorer": "otwiera eksplorator bloków",
+        "updated": "Ostatnia aktualizacja {date}"
       }
     },
     "faqUi": {

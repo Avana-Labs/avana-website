@@ -6061,6 +6061,14 @@
       "Uma visão geral da Avana: empenho de posições Uniswap v3 e Aerodrome Slipstream, empréstimo de GHO do Avana Stable LP Hub e as regras por mercado para avaliação e liquidação."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "Auditorias",

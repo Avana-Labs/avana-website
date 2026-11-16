@@ -6061,6 +6061,14 @@
       "Una visión general de Avana: depositar en garantía posiciones de Uniswap v3 y Aerodrome Slipstream, tomar GHO en préstamo del Avana Stable LP Hub y las reglas por mercado de valoración y liquidación."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "Auditorías",

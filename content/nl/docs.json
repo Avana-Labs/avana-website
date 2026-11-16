@@ -6061,6 +6061,14 @@
       "Een overzicht van Avana: het verpanden van Uniswap v3- en Aerodrome Slipstream-posities, het lenen van GHO uit de Avana Stable LP Hub, en de regels per markt voor waardering en liquidatie."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "Audits",

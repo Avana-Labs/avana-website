@@ -160,11 +160,21 @@
         "governance": "거버넌스",
         "emergencyControls": "긴급 제어",
         "contractList": "컨트랙트",
+        "addresses": "주소",
         "parameters": "파라미터",
         "securityVerification": "보안 및 검증",
         "audits": "감사",
         "lens": "Lens",
         "protocolOverview": "프로토콜 개요"
+      },
+      "reference": {
+        "network": "네트워크",
+        "chainId": "체인 ID",
+        "copy": "복사",
+        "copied": "복사됨",
+        "placeholder": "자리 표시자",
+        "explorer": "블록 탐색기를 엽니다",
+        "updated": "마지막 업데이트 {date}"
       }
     },
     "faqUi": {

@@ -6061,6 +6061,14 @@
       "An overview of Avana: pledging Uniswap v3 and Aerodrome Slipstream positions, borrowing GHO from the Avana Stable LP Hub, and the per-market rules for valuation and liquidation."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "Audits",

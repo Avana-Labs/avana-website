@@ -147,11 +147,21 @@
         "governance": "الحوكمة",
         "emergencyControls": "ضوابط الطوارئ",
         "contractList": "العقود",
+        "addresses": "العناوين",
         "parameters": "المعاملات",
         "securityVerification": "الأمان والتحقق",
         "audits": "عمليات التدقيق",
         "lens": "Lens",
         "protocolOverview": "نظرة عامة على البروتوكول"
+      },
+      "reference": {
+        "network": "الشبكة",
+        "chainId": "معرّف السلسلة",
+        "copy": "نسخ",
+        "copied": "تم النسخ",
+        "placeholder": "عنصر نائب",
+        "explorer": "يفتح مستكشف الكتل",
+        "updated": "آخر تحديث {date}"
       }
     },
     "faqUi": {

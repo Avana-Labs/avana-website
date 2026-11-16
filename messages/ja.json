@@ -147,11 +147,21 @@
         "governance": "ガバナンス",
         "emergencyControls": "緊急時コントロール",
         "contractList": "コントラクト",
+        "addresses": "アドレス",
         "parameters": "パラメータ",
         "securityVerification": "セキュリティと検証",
         "audits": "監査",
         "lens": "Lens",
         "protocolOverview": "プロトコル概要"
+      },
+      "reference": {
+        "network": "ネットワーク",
+        "chainId": "チェーン ID",
+        "copy": "コピー",
+        "copied": "コピーしました",
+        "placeholder": "プレースホルダー",
+        "explorer": "ブロックエクスプローラーを開きます",
+        "updated": "最終更新 {date}"
       }
     },
     "faqUi": {

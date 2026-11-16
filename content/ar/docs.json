@@ -6061,6 +6061,14 @@
       "نظرة عامة على Avana: رهن مراكز Uniswap v3 وAerodrome Slipstream، واقتراض GHO من Avana Stable LP Hub، وقواعد التقييم والتصفية لكل سوق."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "التدقيقات",

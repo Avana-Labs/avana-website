@@ -147,11 +147,21 @@
         "governance": "গভর্ন্যান্স",
         "emergencyControls": "জরুরি নিয়ন্ত্রণ",
         "contractList": "কন্ট্র্যাক্ট",
+        "addresses": "ঠিকানা",
         "parameters": "প্যারামিটার",
         "securityVerification": "নিরাপত্তা ও যাচাই",
         "audits": "অডিট",
         "lens": "Lens",
         "protocolOverview": "প্রোটোকল ওভারভিউ"
+      },
+      "reference": {
+        "network": "নেটওয়ার্ক",
+        "chainId": "চেইন আইডি",
+        "copy": "কপি",
+        "copied": "কপি হয়েছে",
+        "placeholder": "প্লেসহোল্ডার",
+        "explorer": "ব্লক এক্সপ্লোরার খোলে",
+        "updated": "সর্বশেষ হালনাগাদ {date}"
       }
     },
     "faqUi": {

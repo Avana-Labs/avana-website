@@ -6061,6 +6061,14 @@
       "Avana 개요: Uniswap v3와 Aerodrome Slipstream 포지션의 담보 제공, Avana Stable LP Hub에서의 GHO 차입, 가치 평가와 청산에 관한 마켓별 규칙."
     ]
   },
+  "reference/addresses": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/audits": {
     "meta": {
       "title": "감사",

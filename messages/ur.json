@@ -147,11 +147,21 @@
         "governance": "گورننس",
         "emergencyControls": "ہنگامی کنٹرولز",
         "contractList": "کنٹریکٹس",
+        "addresses": "پتے",
         "parameters": "پیرامیٹرز",
         "securityVerification": "سیکیورٹی اور تصدیق",
         "audits": "آڈٹس",
         "lens": "Lens",
         "protocolOverview": "پروٹوکول کا جائزہ"
+      },
+      "reference": {
+        "network": "نیٹ ورک",
+        "chainId": "چین آئی ڈی",
+        "copy": "کاپی کریں",
+        "copied": "کاپی ہو گیا",
+        "placeholder": "پلیس ہولڈر",
+        "explorer": "بلاک ایکسپلورر کھولتا ہے",
+        "updated": "آخری تازہ کاری {date}"
       }
     },
     "faqUi": {

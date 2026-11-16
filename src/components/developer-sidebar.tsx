@@ -90,6 +90,7 @@ import {
   SlidersHorizontal,
   ShieldCheck,
   ClipboardCheck,
+  MapPin,
 } from "lucide-react"
 
 // Navigation structure - exported for use in PageNavigation component
@@ -186,6 +187,7 @@ export const navigationSections = [
     titleKey: "docs.sections.reference",
     icon: Library,
     items: [
+      { href: "/developers/reference/addresses", labelKey: "docs.items.addresses", icon: MapPin },
       { href: "/developers/reference/contracts", labelKey: "docs.items.contractList", icon: FileCode },
       { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
       { href: "/developers/reference/security", labelKey: "docs.items.securityVerification", icon: ShieldCheck },

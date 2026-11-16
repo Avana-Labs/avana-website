@@ -147,11 +147,21 @@
         "governance": "治理",
         "emergencyControls": "紧急控制",
         "contractList": "合约",
+        "addresses": "地址",
         "parameters": "参数",
         "securityVerification": "安全与验证",
         "audits": "审计",
         "lens": "Lens",
         "protocolOverview": "协议概览"
+      },
+      "reference": {
+        "network": "网络",
+        "chainId": "链 ID",
+        "copy": "复制",
+        "copied": "已复制",
+        "placeholder": "占位符",
+        "explorer": "打开区块浏览器",
+        "updated": "最后更新 {date}"
       }
     },
     "faqUi": {
