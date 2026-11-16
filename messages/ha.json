@@ -147,11 +147,22 @@
         "governance": "Gudanarwa",
         "emergencyControls": "Matakan Gaggawa",
         "contractList": "Kwangiloli",
+        "addresses": "Adireshi",
         "parameters": "Sigogi",
+        "accessControls": "Ikon Shiga",
         "securityVerification": "Tsaro da Tabbatarwa",
         "audits": "Bincike",
         "lens": "Lens",
         "protocolOverview": "Bayanin Ka'idar Aiki"
+      },
+      "reference": {
+        "network": "Hanyar sadarwa",
+        "chainId": "ID na sarka",
+        "copy": "Kwafa",
+        "copied": "An kwafa",
+        "placeholder": "Mai riƙe wuri",
+        "explorer": "yana buɗe mai binciken bulo",
+        "updated": "Sabuntawa ta ƙarshe {date}"
       }
     },
     "faqUi": {

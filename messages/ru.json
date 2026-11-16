@@ -147,11 +147,22 @@
         "governance": "Управление",
         "emergencyControls": "Экстренные меры",
         "contractList": "Контракты",
+        "addresses": "Адреса",
         "parameters": "Параметры",
+        "accessControls": "Контроль доступа",
         "securityVerification": "Безопасность и верификация",
         "audits": "Аудиты",
         "lens": "Lens",
         "protocolOverview": "Обзор протокола"
+      },
+      "reference": {
+        "network": "Сеть",
+        "chainId": "ID сети",
+        "copy": "Копировать",
+        "copied": "Скопировано",
+        "placeholder": "Заглушка",
+        "explorer": "открывает обозреватель блоков",
+        "updated": "Последнее обновление {date}"
       }
     },
     "faqUi": {

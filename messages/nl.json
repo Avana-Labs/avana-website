@@ -147,11 +147,22 @@
         "governance": "Governance",
         "emergencyControls": "Noodmaatregelen",
         "contractList": "Contracten",
+        "addresses": "Adressen",
         "parameters": "Parameters",
+        "accessControls": "Toegangscontroles",
         "securityVerification": "Beveiliging & verificatie",
         "audits": "Audits",
         "lens": "Lens",
         "protocolOverview": "Protocoloverzicht"
+      },
+      "reference": {
+        "network": "Netwerk",
+        "chainId": "Chain-ID",
+        "copy": "Kopiëren",
+        "copied": "Gekopieerd",
+        "placeholder": "Tijdelijke waarde",
+        "explorer": "opent de blockverkenner",
+        "updated": "Laatst bijgewerkt {date}"
       }
     },
     "faqUi": {

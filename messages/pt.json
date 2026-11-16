@@ -147,11 +147,22 @@
         "governance": "Governança",
         "emergencyControls": "Controles de emergência",
         "contractList": "Contratos",
+        "addresses": "Endereços",
         "parameters": "Parâmetros",
+        "accessControls": "Controles de acesso",
         "securityVerification": "Segurança e verificação",
         "audits": "Auditorias",
         "lens": "Lens",
         "protocolOverview": "Visão geral do protocolo"
+      },
+      "reference": {
+        "network": "Rede",
+        "chainId": "ID da cadeia",
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "placeholder": "Espaço reservado",
+        "explorer": "abre o explorador de blocos",
+        "updated": "Última atualização {date}"
       }
     },
     "faqUi": {

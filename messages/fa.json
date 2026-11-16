@@ -147,11 +147,22 @@
         "governance": "حاکمیت",
         "emergencyControls": "کنترل‌های اضطراری",
         "contractList": "قراردادها",
+        "addresses": "آدرس‌ها",
         "parameters": "پارامترها",
+        "accessControls": "کنترل‌های دسترسی",
         "securityVerification": "امنیت و راستی‌آزمایی",
         "audits": "حسابرسی‌ها",
         "lens": "Lens",
         "protocolOverview": "نمای کلی پروتکل"
+      },
+      "reference": {
+        "network": "شبکه",
+        "chainId": "شناسه زنجیره",
+        "copy": "کپی",
+        "copied": "کپی شد",
+        "placeholder": "جای‌نگهدار",
+        "explorer": "کاوشگر بلاک را باز می‌کند",
+        "updated": "آخرین به‌روزرسانی {date}"
       }
     },
     "faqUi": {

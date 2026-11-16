@@ -147,11 +147,22 @@
         "governance": "Utawala",
         "emergencyControls": "Udhibiti wa Dharura",
         "contractList": "Mikataba",
+        "addresses": "Anwani",
         "parameters": "Vigezo",
+        "accessControls": "Udhibiti wa Ufikiaji",
         "securityVerification": "Usalama na Uthibitishaji",
         "audits": "Ukaguzi",
         "lens": "Lens",
         "protocolOverview": "Muhtasari wa Itifaki"
+      },
+      "reference": {
+        "network": "Mtandao",
+        "chainId": "Kitambulisho cha mnyororo",
+        "copy": "Nakili",
+        "copied": "Imenakiliwa",
+        "placeholder": "Kishika nafasi",
+        "explorer": "hufungua kichunguzi cha bloku",
+        "updated": "Ilisasishwa mwisho {date}"
       }
     },
     "faqUi": {

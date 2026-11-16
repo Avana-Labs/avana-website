@@ -147,11 +147,22 @@
         "governance": "ממשל",
         "emergencyControls": "בקרות חירום",
         "contractList": "חוזים",
+        "addresses": "כתובות",
         "parameters": "פרמטרים",
+        "accessControls": "בקרות גישה",
         "securityVerification": "אבטחה ואימות",
         "audits": "ביקורות",
         "lens": "Lens",
         "protocolOverview": "סקירת הפרוטוקול"
+      },
+      "reference": {
+        "network": "רשת",
+        "chainId": "מזהה שרשרת",
+        "copy": "העתקה",
+        "copied": "הועתק",
+        "placeholder": "ממלא מקום",
+        "explorer": "פותח את סייר הבלוקים",
+        "updated": "עודכן לאחרונה {date}"
       }
     },
     "faqUi": {

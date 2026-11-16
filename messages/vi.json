@@ -147,11 +147,22 @@
         "governance": "Quản trị",
         "emergencyControls": "Biện pháp khẩn cấp",
         "contractList": "Hợp đồng",
+        "addresses": "Địa chỉ",
         "parameters": "Tham số",
+        "accessControls": "Kiểm soát truy cập",
         "securityVerification": "Bảo mật và xác minh",
         "audits": "Kiểm toán",
         "lens": "Lens",
         "protocolOverview": "Tổng quan giao thức"
+      },
+      "reference": {
+        "network": "Mạng",
+        "chainId": "Chain ID",
+        "copy": "Sao chép",
+        "copied": "Đã sao chép",
+        "placeholder": "Giá trị giữ chỗ",
+        "explorer": "mở trình khám phá khối",
+        "updated": "Cập nhật lần cuối {date}"
       }
     },
     "faqUi": {

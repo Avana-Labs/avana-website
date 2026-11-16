@@ -147,11 +147,22 @@
         "governance": "गवर्नेंस",
         "emergencyControls": "आपातकालीन नियंत्रण",
         "contractList": "कॉन्ट्रैक्ट्स",
+        "addresses": "पते",
         "parameters": "पैरामीटर",
+        "accessControls": "एक्सेस नियंत्रण",
         "securityVerification": "सुरक्षा और सत्यापन",
         "audits": "ऑडिट",
         "lens": "Lens",
         "protocolOverview": "प्रोटोकॉल अवलोकन"
+      },
+      "reference": {
+        "network": "नेटवर्क",
+        "chainId": "चेन आईडी",
+        "copy": "कॉपी करें",
+        "copied": "कॉपी हो गया",
+        "placeholder": "प्लेसहोल्डर",
+        "explorer": "ब्लॉक एक्सप्लोरर खोलता है",
+        "updated": "अंतिम अपडेट {date}"
       }
     },
     "faqUi": {

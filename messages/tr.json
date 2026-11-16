@@ -147,11 +147,22 @@
         "governance": "Yönetişim",
         "emergencyControls": "Acil Durum Kontrolleri",
         "contractList": "Sözleşmeler",
+        "addresses": "Adresler",
         "parameters": "Parametreler",
+        "accessControls": "Erişim Denetimleri",
         "securityVerification": "Güvenlik ve Doğrulama",
         "audits": "Denetimler",
         "lens": "Lens",
         "protocolOverview": "Protokole Genel Bakış"
+      },
+      "reference": {
+        "network": "Ağ",
+        "chainId": "Zincir kimliği",
+        "copy": "Kopyala",
+        "copied": "Kopyalandı",
+        "placeholder": "Yer tutucu",
+        "explorer": "blok gezginini açar",
+        "updated": "Son güncelleme {date}"
       }
     },
     "faqUi": {

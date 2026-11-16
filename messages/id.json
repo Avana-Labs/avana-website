@@ -147,11 +147,22 @@
         "governance": "Tata Kelola",
         "emergencyControls": "Kontrol Darurat",
         "contractList": "Kontrak",
+        "addresses": "Alamat",
         "parameters": "Parameter",
+        "accessControls": "Kontrol Akses",
         "securityVerification": "Keamanan & Verifikasi",
         "audits": "Audit",
         "lens": "Lens",
         "protocolOverview": "Ikhtisar Protokol"
+      },
+      "reference": {
+        "network": "Jaringan",
+        "chainId": "ID rantai",
+        "copy": "Salin",
+        "copied": "Tersalin",
+        "placeholder": "Placeholder",
+        "explorer": "membuka penjelajah blok",
+        "updated": "Terakhir diperbarui {date}"
       }
     },
     "faqUi": {

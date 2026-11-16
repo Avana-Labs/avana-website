@@ -147,11 +147,22 @@
         "governance": "Управління",
         "emergencyControls": "Екстрені заходи",
         "contractList": "Контракти",
+        "addresses": "Адреси",
         "parameters": "Параметри",
+        "accessControls": "Контроль доступу",
         "securityVerification": "Безпека та верифікація",
         "audits": "Аудити",
         "lens": "Lens",
         "protocolOverview": "Огляд протоколу"
+      },
+      "reference": {
+        "network": "Мережа",
+        "chainId": "ID мережі",
+        "copy": "Копіювати",
+        "copied": "Скопійовано",
+        "placeholder": "Заповнювач",
+        "explorer": "відкриває оглядач блоків",
+        "updated": "Останнє оновлення {date}"
       }
     },
     "faqUi": {
