@@ -6061,6 +6061,14 @@
       "Una panoramica di Avana: impegno di posizioni Uniswap v3 e Aerodrome Slipstream, prestito di GHO dall'Avana Stable LP Hub e regole per mercato di valutazione e liquidazione."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

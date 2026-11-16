@@ -149,6 +149,7 @@
         "contractList": "Sözleşmeler",
         "addresses": "Adresler",
         "parameters": "Parametreler",
+        "accessControls": "Erişim Denetimleri",
         "securityVerification": "Güvenlik ve Doğrulama",
         "audits": "Denetimler",
         "lens": "Lens",

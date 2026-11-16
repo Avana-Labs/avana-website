@@ -6061,6 +6061,14 @@
       "Tổng quan về Avana: cầm cố vị thế Uniswap v3 và Aerodrome Slipstream, vay GHO từ Avana Stable LP Hub, và các quy tắc định giá và thanh lý theo từng thị trường."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

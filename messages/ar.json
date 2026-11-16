@@ -149,6 +149,7 @@
         "contractList": "العقود",
         "addresses": "العناوين",
         "parameters": "المعاملات",
+        "accessControls": "ضوابط الوصول",
         "securityVerification": "الأمان والتحقق",
         "audits": "عمليات التدقيق",
         "lens": "Lens",

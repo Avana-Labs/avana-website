@@ -6061,6 +6061,14 @@
       "Ein Überblick über Avana: Verpfändung von Uniswap v3- und Aerodrome Slipstream-Positionen, Kreditaufnahme von GHO aus dem Avana Stable LP Hub und die marktspezifischen Regeln für Bewertung und Liquidation."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

@@ -149,6 +149,7 @@
         "contractList": "合約",
         "addresses": "地址",
         "parameters": "參數",
+        "accessControls": "存取控制",
         "securityVerification": "安全與驗證",
         "audits": "稽核",
         "lens": "Lens",

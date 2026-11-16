@@ -55,6 +55,7 @@ export const developerPaths = [
   "/developers/reference/addresses",
   "/developers/reference/contracts",
   "/developers/reference/parameters",
+  "/developers/reference/access-controls",
   "/developers/reference/security",
   "/developers/reference/audits",
   "/developers/legal",

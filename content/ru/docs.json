@@ -6061,6 +6061,14 @@
       "Обзор Avana: передача в залог позиций Uniswap v3 и Aerodrome Slipstream, заимствование GHO из Avana Stable LP Hub и правила оценки и ликвидации для каждого рынка."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

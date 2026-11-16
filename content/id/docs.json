@@ -6061,6 +6061,14 @@
       "Ikhtisar Avana: menjaminkan posisi Uniswap v3 dan Aerodrome Slipstream, meminjam GHO dari Avana Stable LP Hub, serta aturan per pasar untuk valuasi dan likuidasi."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

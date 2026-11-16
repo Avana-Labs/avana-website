@@ -149,6 +149,7 @@
         "contractList": "สัญญา",
         "addresses": "ที่อยู่",
         "parameters": "พารามิเตอร์",
+        "accessControls": "การควบคุมการเข้าถึง",
         "securityVerification": "ความปลอดภัยและการตรวจสอบ",
         "audits": "การตรวจสอบโดยผู้ตรวจ",
         "lens": "Lens",

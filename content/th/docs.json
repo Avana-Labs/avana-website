@@ -6061,6 +6061,14 @@
       "ภาพรวมของ Avana: การ pledge โพซิชัน Uniswap v3 และ Aerodrome Slipstream การกู้ GHO จาก Avana Stable LP Hub และกฎการประเมินมูลค่าและการลิควิเดตของแต่ละตลาด"
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

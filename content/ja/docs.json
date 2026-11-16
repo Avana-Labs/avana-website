@@ -6061,6 +6061,14 @@
       "Avanaの概要：Uniswap v3とAerodrome Slipstreamのポジションの差し入れ、Avana Stable LP HubからのGHOの借入、評価と清算に関するマーケットごとのルール。"
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",
