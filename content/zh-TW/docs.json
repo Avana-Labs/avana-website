@@ -6061,6 +6061,14 @@
       "Avana 概覽：質押 Uniswap v3 與 Aerodrome Slipstream 部位、從 Avana Stable LP Hub 借入 GHO，以及各市場的估值與清算規則。"
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

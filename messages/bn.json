@@ -149,6 +149,7 @@
         "contractList": "কন্ট্র্যাক্ট",
         "addresses": "ঠিকানা",
         "parameters": "প্যারামিটার",
+        "accessControls": "অ্যাক্সেস নিয়ন্ত্রণ",
         "securityVerification": "নিরাপত্তা ও যাচাই",
         "audits": "অডিট",
         "lens": "Lens",

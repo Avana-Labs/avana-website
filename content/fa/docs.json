@@ -6061,6 +6061,14 @@
       "نمای کلی Avana: گروگذاری موقعیت‌های Uniswap v3 و Aerodrome Slipstream، استقراض GHO از Avana Stable LP Hub، و قواعد هر بازار برای ارزش‌گذاری و لیکوییدیشن."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

@@ -6061,6 +6061,14 @@
       "Avana का सिंहावलोकन: Uniswap v3 और Aerodrome Slipstream पोज़िशन प्लेज करना, Avana Stable LP Hub से GHO उधार लेना, और मूल्यांकन और लिक्विडेशन के प्रति-मार्केट नियम।"
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

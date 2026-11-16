@@ -149,6 +149,7 @@
         "contractList": "Contrats",
         "addresses": "Adresses",
         "parameters": "Paramètres",
+        "accessControls": "Contrôles d’accès",
         "securityVerification": "Sécurité et vérification",
         "audits": "Audits",
         "lens": "Lens",

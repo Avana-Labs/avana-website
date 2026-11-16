@@ -6061,6 +6061,14 @@
       "Avana'ya genel bakış: Uniswap v3 ve Aerodrome Slipstream pozisyonlarını rehin verme, Avana Stable LP Hub'ından GHO borç alma ve değerleme ile likidasyon için piyasa bazındaki kurallar."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

@@ -149,6 +149,7 @@
         "contractList": "合约",
         "addresses": "地址",
         "parameters": "参数",
+        "accessControls": "访问控制",
         "securityVerification": "安全与验证",
         "audits": "审计",
         "lens": "Lens",

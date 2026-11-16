@@ -6061,6 +6061,14 @@
       "Przegląd Avana: zastawianie pozycji Uniswap v3 i Aerodrome Slipstream, pożyczanie GHO z Avana Stable LP Hub oraz zasady wyceny i likwidacji dla poszczególnych rynków."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

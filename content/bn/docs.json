@@ -6061,6 +6061,14 @@
       "Avana-র একটি ওভারভিউ: Uniswap v3 ও Aerodrome Slipstream পজিশন বন্ধক রাখা, Avana Stable LP Hub থেকে GHO ধার নেওয়া, এবং মূল্যায়ন ও লিকুইডেশনের প্রতি-মার্কেট নিয়ম।"
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

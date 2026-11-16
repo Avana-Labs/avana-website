@@ -6061,6 +6061,14 @@
       "Une vue d'ensemble d'Avana : nantissement de positions Uniswap v3 et Aerodrome Slipstream, emprunt de GHO auprès de l'Avana Stable LP Hub, et règles de valorisation et de liquidation propres à chaque marché."
     ]
   },
+  "reference/access-controls": {
+    "meta": {
+      "title": "",
+      "description": ""
+    },
+    "toc": [],
+    "strings": []
+  },
   "reference/addresses": {
     "meta": {
       "title": "",

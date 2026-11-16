@@ -149,6 +149,7 @@
         "contractList": "कॉन्ट्रैक्ट्स",
         "addresses": "पते",
         "parameters": "पैरामीटर",
+        "accessControls": "एक्सेस नियंत्रण",
         "securityVerification": "सुरक्षा और सत्यापन",
         "audits": "ऑडिट",
         "lens": "Lens",

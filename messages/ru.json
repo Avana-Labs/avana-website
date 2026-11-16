@@ -149,6 +149,7 @@
         "contractList": "Контракты",
         "addresses": "Адреса",
         "parameters": "Параметры",
+        "accessControls": "Контроль доступа",
         "securityVerification": "Безопасность и верификация",
         "audits": "Аудиты",
         "lens": "Lens",

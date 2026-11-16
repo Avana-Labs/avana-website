@@ -149,6 +149,7 @@
         "contractList": "חוזים",
         "addresses": "כתובות",
         "parameters": "פרמטרים",
+        "accessControls": "בקרות גישה",
         "securityVerification": "אבטחה ואימות",
         "audits": "ביקורות",
         "lens": "Lens",
