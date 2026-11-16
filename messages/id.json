@@ -149,6 +149,7 @@
         "contractList": "Kontrak",
         "addresses": "Alamat",
         "parameters": "Parameter",
+        "accessControls": "Kontrol Akses",
         "securityVerification": "Keamanan & Verifikasi",
         "audits": "Audit",
         "lens": "Lens",

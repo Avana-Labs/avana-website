@@ -162,6 +162,7 @@
         "contractList": "컨트랙트",
         "addresses": "주소",
         "parameters": "파라미터",
+        "accessControls": "접근 제어",
         "securityVerification": "보안 및 검증",
         "audits": "감사",
         "lens": "Lens",
