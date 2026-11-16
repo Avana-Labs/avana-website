@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parameter",
+      "title": "Marktparameter",
       "description": "Jeder Avana-Parameter und jede Konstante: Bedeutung, Einheit, Grenzen, Startwert pro Chain und wer sie mit welcher Verzögerung festlegt."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parameter",
+      "Marktparameter",
       "Jeder Avana-Parameter und jede Konstante: Bedeutung, Einheit, Grenzen, Startwert pro Chain und wer sie mit welcher Verzögerung festlegt.",
       "Überblick",
       "Einheitenkonventionen",

@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parameters",
+      "title": "Market Parameters",
       "description": "Every Avana parameter and constant: meaning, unit, bounds, launch value per chain, and who sets it with which delay."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parameters",
+      "Market Parameters",
       "Every Avana parameter and constant: meaning, unit, bounds, launch value per chain, and who sets it with which delay.",
       "Overview",
       "Units Conventions",

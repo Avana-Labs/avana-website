@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Tham số",
+      "title": "Tham số thị trường",
       "description": "Mọi tham số và hằng số của Avana: ý nghĩa, đơn vị, giới hạn, giá trị khi ra mắt theo chuỗi, và ai thiết lập với độ trễ nào."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Tham số",
+      "Tham số thị trường",
       "Mọi tham số và hằng số của Avana: ý nghĩa, đơn vị, giới hạn, giá trị khi ra mắt theo chuỗi, và ai thiết lập với độ trễ nào.",
       "Tổng quan",
       "Quy ước đơn vị",

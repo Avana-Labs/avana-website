@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parameter",
+      "title": "Parameter Pasar",
       "description": "Setiap parameter dan konstanta Avana: arti, unit, batas, nilai peluncuran per chain, serta siapa yang menetapkannya dan dengan penundaan apa."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parameter",
+      "Parameter Pasar",
       "Setiap parameter dan konstanta Avana: arti, unit, batas, nilai peluncuran per chain, serta siapa yang menetapkannya dan dengan penundaan apa.",
       "Ikhtisar",
       "Konvensi Unit",

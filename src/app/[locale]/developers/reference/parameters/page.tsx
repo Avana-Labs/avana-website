@@ -10,7 +10,7 @@ import { resolveLocaleParam, type LocaleParamsProps } from "@/lib/i18n/locale-pa
 export async function generateMetadata({ params }: LocaleParamsProps): Promise<Metadata> {
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'reference/parameters', {
-    title: "Parameters",
+    title: "Market Parameters",
     description: "Every Avana parameter and constant: meaning, unit, bounds, launch value per chain, and who sets it with which delay.",
   })
 }
@@ -28,7 +28,7 @@ export default async function ReferenceParametersPage({ params }: LocaleParamsPr
   const locale = await resolveLocaleParam(params)
   const header = await withDocsI18n(locale, "reference/parameters", (
     <DeveloperDocPageHeader
-      title="Parameters"
+      title="Market Parameters"
       description="Every Avana parameter and constant: meaning, unit, bounds, launch value per chain, and who sets it with which delay."
     />
   ))

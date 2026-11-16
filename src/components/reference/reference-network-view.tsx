@@ -75,7 +75,7 @@ export function ReferenceNetworkView({
 
   return (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
-      <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
+      <div data-developer-doc-export-root className="min-w-0 w-full max-w-4xl flex-1">
         {header}
 
         {networks.length > 0 ? (
@@ -117,6 +117,8 @@ export function ReferenceNetworkView({
 
         {active ? (
           <div
+            // A new key per network remounts the panel, so nothing from the first network's markup is reused.
+            key={active.id}
             id="reference-network-panel"
             role="tabpanel"
             aria-labelledby={`reference-network-tab-${active.id}`}

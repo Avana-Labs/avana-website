@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parametreler",
+      "title": "Piyasa Parametreleri",
       "description": "Her Avana parametresi ve sabiti: anlamı, birimi, sınırları, zincir başına lansman değeri ve onu kimin hangi gecikmeyle belirlediği."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parametreler",
+      "Piyasa Parametreleri",
       "Her Avana parametresi ve sabiti: anlamı, birimi, sınırları, zincir başına lansman değeri ve onu kimin hangi gecikmeyle belirlediği.",
       "Genel Bakış",
       "Birim Kuralları",

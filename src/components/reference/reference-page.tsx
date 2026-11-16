@@ -3,12 +3,14 @@ import type { ReactNode } from "react"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
 import { ReferenceCopyButton } from "@/components/reference/reference-copy-button"
 import { ReferenceNetworkView } from "@/components/reference/reference-network-view"
+import { Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/locales"
 import { loadReferenceDocument, type ReferencePageName } from "@/lib/reference/load"
 import {
   isAddress,
   isHash,
   isPlaceholderAddress,
+  isPlaceholderHash,
   parseInline,
   type ReferenceBlock,
   type ReferenceNetwork,
@@ -33,6 +35,13 @@ function Inline({ text }: { text: string }) {
         }
         if (part.type === "link") {
           const external = /^https?:\/\//.test(part.href)
+          if (part.href.startsWith("/")) {
+            return (
+              <Link key={index} href={part.href} className="text-type-accent underline underline-offset-2">
+                {part.text}
+              </Link>
+            )
+          }
           return (
             <a
               key={index}
@@ -75,30 +84,35 @@ function AddressValue({ value, network, labels }: { value: string; network?: Ref
         short
       )}
       <ReferenceCopyButton value={value} />
-      {placeholder ? (
-        <span className="rounded border border-border bg-muted px-1.5 py-0.5 text-xs text-type-secondary">
-          {labels.placeholder}
-        </span>
-      ) : null}
+      {placeholder ? <PlaceholderTag label={labels.placeholder} /> : null}
     </span>
   )
 }
 
-function HashValue({ value }: { value: string }) {
+function PlaceholderTag({ label }: { label: string }) {
+  return (
+    <span className="rounded border border-border bg-muted px-1 text-[0.6875rem] leading-4 text-type-secondary">
+      {label}
+    </span>
+  )
+}
+
+function HashValue({ value, labels }: { value: string; labels: Labels }) {
   return (
     <span className="inline-flex items-center gap-1.5 whitespace-nowrap" title={value}>
       <span className="hidden">{value}</span>
       <span className="font-mono" data-export-skip>
-        {`${value.slice(0, 10)}…${value.slice(-6)}`}
+        {shorten(value)}
       </span>
       <ReferenceCopyButton value={value} />
+      {isPlaceholderHash(value) ? <PlaceholderTag label={labels.placeholder} /> : null}
     </span>
   )
 }
 
 function Cell({ value, network, labels }: { value: string; network?: ReferenceNetwork; labels: Labels }) {
   if (isAddress(value)) return <AddressValue value={value} network={network} labels={labels} />
-  if (isHash(value)) return <HashValue value={value} />
+  if (isHash(value)) return <HashValue value={value} labels={labels} />
   return <Inline text={value} />
 }
 
@@ -113,6 +127,18 @@ function Blocks({ blocks, network, labels }: { blocks: ReferenceBlock[]; network
             </p>
           )
         }
+        if (block.type === "details") {
+          return (
+            <details key={index} className="reference-details mb-6">
+              <summary className="cursor-pointer select-none type-doc-body text-foreground">
+                <Inline text={block.title} />
+              </summary>
+              <div className="mt-3">
+                <Blocks blocks={block.blocks} network={network} labels={labels} />
+              </div>
+            </details>
+          )
+        }
         if (block.type === "note") {
           return (
             <div key={index} className="mb-6 type-doc-panel type-doc-body">
@@ -121,22 +147,22 @@ function Blocks({ blocks, network, labels }: { blocks: ReferenceBlock[]; network
           )
         }
         return (
-          <div key={index} className="mb-6 overflow-x-auto">
-            <table className="type-doc-table">
-              <thead className="bg-gray-50">
+          <div key={index} className="reference-table-scroll mb-6">
+            <table className="type-doc-table reference-table">
+              <thead>
                 <tr>
                   {block.table.headers.map((header) => (
-                    <th key={header} className="text-left px-4 py-2 type-doc-subsection-title">
+                    <th key={header} scope="col">
                       <Inline text={header} />
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody>
                 {block.table.rows.map((row, rowIndex) => (
                   <tr key={rowIndex}>
                     {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className={cell.length > 80 ? "min-w-[16rem] px-4 py-2" : "px-4 py-2"}>
+                      <td key={cellIndex} className={cell.length > 90 ? "reference-cell-wide" : undefined}>
                         <Cell value={cell} network={network} labels={labels} />
                       </td>
                     ))}

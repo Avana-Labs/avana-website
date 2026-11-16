@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parametry",
+      "title": "Parametry rynków",
       "description": "Każdy parametr i stała Avana: znaczenie, jednostka, granice, wartość przy uruchomieniu dla każdego łańcucha oraz kto je ustawia i z jakim opóźnieniem."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parametry",
+      "Parametry rynków",
       "Każdy parametr i stała Avana: znaczenie, jednostka, granice, wartość przy uruchomieniu dla każdego łańcucha oraz kto je ustawia i z jakim opóźnieniem.",
       "Przegląd",
       "Konwencje jednostek",

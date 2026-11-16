@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parameters",
+      "title": "Marktparameters",
       "description": "Elke Avana-parameter en -constante: betekenis, eenheid, grenzen, lanceringswaarde per chain, en wie haar met welke vertraging instelt."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parameters",
+      "Marktparameters",
       "Elke Avana-parameter en -constante: betekenis, eenheid, grenzen, lanceringswaarde per chain, en wie haar met welke vertraging instelt.",
       "Overzicht",
       "Conventies voor eenheden",

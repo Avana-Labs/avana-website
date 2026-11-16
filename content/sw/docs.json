@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Vigezo",
+      "title": "Vigezo vya Masoko",
       "description": "Kila kigezo na thabiti ya Avana: maana, kizio, mipaka, thamani ya uzinduzi kwa kila mnyororo, na nani huiweka kwa ucheleweshaji gani."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Vigezo",
+      "Vigezo vya Masoko",
       "Kila kigezo na thabiti ya Avana: maana, kizio, mipaka, thamani ya uzinduzi kwa kila mnyororo, na nani huiweka kwa ucheleweshaji gani.",
       "Muhtasari",
       "Kanuni za Vizio",

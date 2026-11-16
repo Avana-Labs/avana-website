@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Paramètres",
+      "title": "Paramètres des marchés",
       "description": "Chaque paramètre et constante d'Avana : signification, unité, bornes, valeur de lancement par chaîne, et qui le définit avec quel délai."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Paramètres",
+      "Paramètres des marchés",
       "Chaque paramètre et constante d'Avana : signification, unité, bornes, valeur de lancement par chaîne, et qui le définit avec quel délai.",
       "Vue d'ensemble",
       "Conventions d'unités",

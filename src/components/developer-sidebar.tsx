@@ -105,6 +105,9 @@ export const navigationSections = [
       { href: "/developers/introduction", labelKey: "docs.items.protocolOverview", icon: Layers },
       { href: "/developers/introduction/key-concepts", labelKey: "docs.items.keyConcepts", icon: Lightbulb },
       { href: "/developers/introduction/glossary", labelKey: "docs.items.glossary", icon: BookMarked },
+      { href: "/developers/reference/addresses", labelKey: "docs.items.addresses", icon: MapPin },
+      { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
+      { href: "/developers/reference/access-controls", labelKey: "docs.items.accessControls", icon: KeyRound },
     ],
   },
   {
@@ -188,10 +191,7 @@ export const navigationSections = [
     titleKey: "docs.sections.reference",
     icon: Library,
     items: [
-      { href: "/developers/reference/addresses", labelKey: "docs.items.addresses", icon: MapPin },
       { href: "/developers/reference/contracts", labelKey: "docs.items.contractList", icon: FileCode },
-      { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
-      { href: "/developers/reference/access-controls", labelKey: "docs.items.accessControls", icon: KeyRound },
       { href: "/developers/reference/security", labelKey: "docs.items.securityVerification", icon: ShieldCheck },
       { href: "/developers/reference/audits", labelKey: "docs.items.audits", icon: ClipboardCheck },
     ],

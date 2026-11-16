@@ -352,6 +352,56 @@
   color: var(--type-color-secondary);
 }
 
+/* Reference pages: compact data tables that scroll sideways on narrow screens. */
+.reference-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reference-table {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.reference-table :is(th, td) {
+  padding: 0.375rem 0.5rem;
+}
+
+/* Beat the docs shell's body-size rule for td (see the developer-content rules below). */
+.developer-content[data-developer-doc-shell] [data-developer-doc-export-root] section .reference-table td,
+.reference-table td {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.developer-content[data-developer-doc-shell] section .reference-table th,
+.reference-table th {
+  font-size: 0.75rem;
+  color: var(--type-color-secondary);
+}
+
+.reference-table td:first-child {
+  color: #111827;
+}
+
+.reference-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.reference-table .type-doc-inline-code {
+  padding: 0 0.1875rem;
+  overflow-wrap: anywhere;
+}
+
+.reference-cell-wide {
+  min-width: 15rem;
+}
+
+.reference-details > summary {
+  padding: 0.375rem 0;
+}
+
 .type-doc-panel {
   border-radius: 0.5rem;
   border: 1px solid #e5e7eb;

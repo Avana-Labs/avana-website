@@ -1,235 +1,187 @@
 ---
-title: Parameters
-description: Risk, fee, oracle, liquidation, keeper and governance parameters of Avana's Spokes and contracts on each network.
+title: Market Parameters
+description: Each Avana market's pool and risk parameters per Spoke, and the protocol-wide Avana parameters.
 updated: 2026-11-16
 ---
 
-`Set by governance` means the value is decided in governance, not fixed by the deployment: the Aave DAO sets caps, collateral factors, liquidation bonuses, interest rate curves, credit lines and First-Loss Reserve amounts, and Avana's timelock writes Avana's own parameters. Where Avana has proposed a starting value, the description gives it. `TBD` means no value has been decided yet.
-
-Until the Sepolia deployment, the networks, addresses and values on this page are placeholders. Spec IDs such as `Q-409` refer to Avana's design decisions; file references point to the Avana contracts and deployment scripts.
+**Testnet values.** The per-market numbers below are the values the Sepolia deployment lists with. On mainnet the Aave DAO sets caps, collateral factors, liquidation bonuses, collateral risk premiums and First-Loss Reserve amounts through its proposals.
 
 ## Ethereum Sepolia
 - network: ethereum-sepolia
-- chainId: 11155111
-- explorer: https://sepolia.etherscan.io
 
-Each chain has one Hub, which holds every Spoke of the chain. Each CDP Spoke lists one collateral reserve per LP market and one debt reserve per borrowable asset. LP reserves are collateral only: they are never borrowable and their Hub draw cap is 0 (`REQ-HUB-094`, `10_AaveListingPayload.s.sol:143-150`). Debt reserves have a collateral factor of 0 and a CDP Spoke supply cap of 0, so a debt asset enters the Hub only through the Lend Spoke (`REQ-HUB-034`, `06_AaveDeploymentPayload.s.sol` `_spokeOnAssets`).
-
-### Chain settings
-
-| Parameter | Value | Bounds | Description | Source |
-| --- | --- | --- | --- | --- |
-| `CHAIN_BLOCK_TIME` | 12 s | — | Block interval of the chain. It sizes the observation buffer a pool needs for the time-weighted price check. | `REQ-AMM-V3-012`; `AvanaDeploy.sol:95-97` |
-| `twapMinObservations` | 151 | — | Observation slots a Uniswap v3 pool must hold for a 1,800 s window at 12 s blocks, so dust swaps in every block cannot shrink the buffer below the window. | `REQ-PSTORE-027`; `09_ListMarkets.s.sol:869` |
-| `sequencer.feed` | None | Must be `address(0)` | Ethereum has no sequencer, so no uptime feed is read. | `REQ-PSTORE-023`; `ParameterStoreListingLogic.sol:272-273` |
-| `sequencer.gracePeriod` | 0 s | Must be 0 | No restart grace applies on a chain without a sequencer. | `REQ-PSTORE-023`; `ParameterStoreListingLogic.sol:273` |
+Every CDP Spoke here is on the Avana Ethereum Hub; their addresses are on [Contract Addresses](/developers/reference/addresses?network=ethereum-sepolia). On every Spoke the LP reserves are collateral only, and GHO and USDC are the borrowable debt reserves.
 
 ### Uniswap v3 Stable
 
-Stablecoin pairs on Uniswap v3. Every token in a Stable-tier market must be a USD stablecoin.
+Collateral risk premium (Aave V4 `collateralRisk`): **400 bps (4%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| USDC/USDT LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| AUSD/USDC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| DAI/USDC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| DAI/USDT LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| USDT | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| GHO | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| USDC/USDT | @{markets.uni-USDC-USDT-100.pool} | 0.01% | 35% | 5% | 40% | $5,000,000 |
+| DAI/USDT | @{markets.uni-DAI-USDT-100.pool} | 0.01% | 36% | 8% | 40% | $5,000,000 |
 
 ### Uniswap v3 Blue-chip
 
-Pairs of ETH, BTC and major stablecoins on Uniswap v3.
+Collateral risk premium (Aave V4 `collateralRisk`): **2,000 bps (20%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| WETH/USDC LP (0.05%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH/USDT LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WBTC/WETH LP (0.05%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WBTC/USDT LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WBTC/USDC LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| USDT | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| WETH | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| WETH/USDC | @{markets.uni-WETH-USDC-500.pool} | 0.05% | 30% | 8% | 40% | $5,000,000 |
+| WBTC/USDC | @{markets.uni-WBTC-USDC-3000.pool} | 0.3% | 32% | 8% | 40% | $5,000,000 |
 
 ### Uniswap v3 Correlated ETH
 
-Pairs of ETH liquid staking tokens against WETH on Uniswap v3.
+Collateral risk premium (Aave V4 `collateralRisk`): **1,000 bps (10%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| wstETH/WETH LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| weETH/WETH LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| rETH/WETH LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
-
-### Uniswap v3 Correlated BTC
-
-Pairs of BTC tokens against WBTC on Uniswap v3.
-
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| cirBTC/WBTC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| kBTC/WBTC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| tBTC/WBTC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WBTC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| wstETH/WETH | @{markets.uni-wstETH-WETH-100.pool} | 0.01% | 34% | 6% | 40% | $5,000,000 |
 
 ### Uniswap v3 Gov/DeFi
 
-Governance and DeFi tokens paired with WETH on Uniswap v3.
+Collateral risk premium (Aave V4 `collateralRisk`): **3,000 bps (30%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| UNI/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| LINK/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| AAVE/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| ENA/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| ONDO/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| SKY/WETH LP (0.3%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| WETH | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| AAVE/WETH | @{markets.uni-AAVE-WETH-3000.pool} | 0.3% | 26% | 8% | 40% | $5,000,000 |
+| UNI/WETH | @{markets.uni-UNI-WETH-3000.pool} | 0.3% | 26% | 8% | 40% | $5,000,000 |
+| LINK/WETH | @{markets.uni-LINK-WETH-3000.pool} | 0.3% | 28% | 8% | 40% | $5,000,000 |
 
 ### Uniswap v4 Stable
 
-Status: Pending (Uniswap v4 integration).
+Collateral risk premium (Aave V4 `collateralRisk`): **400 bps (4%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-Stablecoin pairs in hookless Uniswap v4 pools. Hookless Uniswap v4 pools have no time-weighted price, so each market's price check also reads the same pair's Uniswap v3 reference pool (TBD).
+| Market | PoolId | v3 reference pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| USDC/USDT | @{markets.univ4-USDC-USDT-100.poolId} | @{markets.univ4-USDC-USDT-100.referencePool} | 0.01% | 36% | 8% | 40% | $5,000,000 |
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| PYUSD/USDS LP (0.0005%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDT/USDS LP (0.0005%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| RLUSD/USDS LP (0.0005%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDe/USDC LP (0.0025%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| GHO/USDC LP (0.05%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| USDT | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| GHO | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+> Hookless Uniswap v4 pools keep no price history, so each market's price check also reads the same pair's Uniswap v3 reference pool (fee 0.05%).
 
 ### Uniswap v4 Correlated BTC
 
-Status: Pending (Uniswap v4 integration).
+Collateral risk premium (Aave V4 `collateralRisk`): **1,000 bps (10%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-Pairs of BTC tokens against cbBTC in hookless Uniswap v4 pools. Hookless Uniswap v4 pools have no time-weighted price, so each market's price check also reads the same pair's Uniswap v3 reference pool (TBD).
+| Market | PoolId | v3 reference pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| cbBTC/WBTC | @{markets.univ4-cbBTC-WBTC-100.poolId} | @{markets.univ4-cbBTC-WBTC-100.referencePool} | 0.01% | 32% | 8% | 40% | $5,000,000 |
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| WBTC/cbBTC LP (0.005%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| LBTC/cbBTC LP (0.02%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| BTC.b/cbBTC LP (0.01%) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WBTC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| cbBTC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+> Hookless Uniswap v4 pools keep no price history, so each market's price check also reads the same pair's Uniswap v3 reference pool (fee 0.05%).
 
 ### Lend Spoke
 
-The Hub's supply-only Spoke, one per Hub. Any address supplies these assets to the Hub and earns the Hub supply rate; borrowers draw that liquidity through the CDP Spokes.
+Lenders supply these assets to the Hub and earn the Hub supply rate; borrowers draw them through the CDP Spokes. Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| USDC | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| USDT | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| GHO | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| DAI | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| USDS | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| WETH | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| WBTC | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| cbBTC | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| wstETH | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
+| Asset | Borrowable on CDP Spokes | First-Loss Reserve minimum | DAO deficit offset minimum |
+| --- | --- | --- | --- |
+| GHO | Yes | 100,000 GHO | 75,000 GHO |
+| USDC | Yes | 100,000 USDC | 75,000 USDC |
+| USDT | No | 50,000 USDT | 25,000 USDT |
 
-> The deployment payload sets the reserve's borrowable flag on the Lend Spoke, but its Hub draw cap is 0 on every asset, so nothing can be borrowed through it (`REQ-HUB-018`, `06_AaveDeploymentPayload.s.sol` `_spokeOnAssets`).
+### Collateral tokens
 
-## Base Sepolia
-- network: base-sepolia
-- chainId: 84532
-- explorer: https://sepolia.basescan.org
+Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `min(CF0, CF1) × poolRiskFactor`) and its exposure cap across every Spoke and market of the Hub.
 
-Each chain has one Hub, which holds every Spoke of the chain. Each CDP Spoke lists one collateral reserve per LP market and one debt reserve per borrowable asset. LP reserves are collateral only: they are never borrowable and their Hub draw cap is 0 (`REQ-HUB-094`, `10_AaveListingPayload.s.sol:143-150`). Debt reserves have a collateral factor of 0 and a CDP Spoke supply cap of 0, so a debt asset enters the Hub only through the Lend Spoke (`REQ-HUB-034`, `06_AaveDeploymentPayload.s.sol` `_spokeOnAssets`). Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
+| Token | Token collateral factor | Token cap |
+| --- | --- | --- |
+| USDC | 90% | $50,000,000 |
+| USDT | 90% | $50,000,000 |
+| DAI | 90% | $50,000,000 |
+| WETH | 85% | $50,000,000 |
+| wstETH | 85% | $50,000,000 |
+| WBTC | 80% | $50,000,000 |
+| cbBTC | 80% | $50,000,000 |
+| AAVE | 65% | $10,000,000 |
+| UNI | 65% | $10,000,000 |
+| LINK | 70% | $10,000,000 |
 
 ### Chain settings
 
-| Parameter | Value | Bounds | Description | Source |
-| --- | --- | --- | --- | --- |
-| `CHAIN_BLOCK_TIME` | 2 s | — | Block interval of the chain. It sizes the observation buffer a pool needs for the time-weighted price check. | `REQ-AMM-V3-012`; `AvanaDeploy.sol:95-97` |
-| `twapMinObservations` | 901 | — | Observation slots an Aero Slipstream pool must hold for a 1,800 s window at 2 s blocks, so dust swaps in every block cannot shrink the buffer below the window. | `REQ-PSTORE-027`; `09_ListMarkets.s.sol:869` |
-| `sequencer.feed` | TBD | A valid Chainlink uptime feed | Chainlink L2 sequencer uptime feed. While it reports the sequencer down, borrow-side prices fail closed and liquidation pauses. | `REQ-PSTORE-023`; `ParameterStoreListingLogic.sol:268-271` |
-| `sequencer.gracePeriod` | Set by governance | 600–7,200 s, and at least every market's `twapWindow` | Time after a sequencer restart during which borrowing and new pledges are refused and only accounts below `graceHealthFactor` can be liquidated, so users can reach the chain again. Avana proposes 3,600 s. | `REQ-PSTORE-034`, `Q-394`; `ParameterStoreStorage.sol:92-93` |
+| Parameter | Value | Description |
+| --- | --- | --- |
+| `CHAIN_BLOCK_TIME` | 12 s | Block interval of the chain. It sizes the observation buffer a pool needs for the time-weighted price check. |
+| `twapMinObservations` | 151 | Observation slots a pool must hold for a 1,800 s window at 12 s blocks. |
+| `sequencer.feed` | None | Ethereum has no sequencer, so no uptime feed is read. |
+
+## Base Sepolia
+- network: base-sepolia
+
+Every CDP Spoke here is on the Avana Base Hub; their addresses are on [Contract Addresses](/developers/reference/addresses?network=base-sepolia). On every Spoke the LP reserves are collateral only, and GHO and USDC are the borrowable debt reserves. Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
 
 ### Aero Slipstream Blue-chip
 
-Pairs of ETH, BTC and major stablecoins in Aero Slipstream pools.
+Collateral risk premium (Aave V4 `collateralRisk`): **2,000 bps (20%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| WETH/USDC LP (tick spacing 50) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC/cbBTC LP (tick spacing 50) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH/cbBTC LP (tick spacing 1) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH/USDT LP (tick spacing 100) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| WETH | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| WETH/USDC | @{markets.slip-WETH-USDC-cl100.pool} | 100 | 30% | 8% | 40% | $5,000,000 |
+| cbBTC/USDC | @{markets.slip-cbBTC-USDC-cl100.pool} | 100 | 32% | 8% | 40% | $5,000,000 |
+| cbBTC/WETH | @{markets.slip-cbBTC-WETH-cl100.pool} | 100 | 32% | 8% | 40% | $5,000,000 |
 
 ### Aero Slipstream Gov/DeFi
 
-Governance and DeFi tokens paired with WETH in Aero Slipstream pools.
+Collateral risk premium (Aave V4 `collateralRisk`): **3,000 bps (30%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| AERO/WETH LP (tick spacing 200) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH/MORPHO LP (tick spacing 200) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| WETH/AAVE LP (tick spacing 200) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| VIRTUAL/WETH LP (tick spacing 100) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-| WETH | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| AERO/USDC | @{markets.slip-AERO-USDC-cl200.pool} | 200 | 26% | 8% | 40% | $5,000,000 |
+| AERO/WETH | @{markets.slip-AERO-WETH-cl200.pool} | 200 | 26% | 8% | 40% | $5,000,000 |
+| LINK/WETH | @{markets.slip-LINK-WETH-cl200.pool} | 200 | 28% | 8% | 40% | $5,000,000 |
 
 ### Aero Slipstream Stocks
 
-Tokenized stocks paired with USDC in Aero Slipstream pools.
+Collateral risk premium (Aave V4 `collateralRisk`): **4,000 bps (40%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| AMZNc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| SNDKc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| GOOGLc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| NVDAc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| SPCXc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| METAc/USDC LP (tick spacing 10) | Set by governance | Set by governance | 0% | Set by governance | 0 | Yes | No | No | No |
-| USDC | 0 | — | 0% | 0 | Set by governance | No | Yes | No | No |
-
-> Liquidation fee is Aave V4's own per-reserve liquidation fee. Avana requires it to be 0 on every LP reserve, and any other value blocks new activity as configuration drift. Avana's revenue from a liquidation is its 20% fee share of the surplus (`avanaFeeShareBps`, under Fees), which LPVaultSwap takes separately.
+| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| --- | --- | --- | --- | --- | --- | --- |
+| AMZNc/USDC | @{markets.slip-AMZNc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| SNDKc/USDC | @{markets.slip-SNDKc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| GOOGLc/USDC | @{markets.slip-GOOGLc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| NVDAc/USDC | @{markets.slip-NVDAc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| SPCXc/USDC | @{markets.slip-SPCXc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| METAc/USDC | @{markets.slip-METAc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
 
 ### Lend Spoke
 
-The Hub's supply-only Spoke, one per Hub. Any address supplies these assets to the Hub and earns the Hub supply rate; borrowers draw that liquidity through the CDP Spokes.
+Lenders supply these assets to the Hub and earn the Hub supply rate; borrowers draw them through the CDP Spokes. Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
 
-| Reserve | Collateral factor | Max liquidation bonus | Liquidation fee | Supply cap | Borrow cap | Collateral | Borrowable | Frozen | Paused |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| USDC | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| WETH | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
-| cbBTC | 0 | — | 0% | Set by governance | 0 | No | No | No | No |
+| Asset | Borrowable on CDP Spokes | First-Loss Reserve minimum | DAO deficit offset minimum |
+| --- | --- | --- | --- |
+| GHO | Yes | 100,000 GHO | 75,000 GHO |
+| USDC | Yes | 100,000 USDC | 75,000 USDC |
+| USDT | No | 50,000 USDT | 25,000 USDT |
 
-> The deployment payload sets the reserve's borrowable flag on the Lend Spoke, but its Hub draw cap is 0 on every asset, so nothing can be borrowed through it (`REQ-HUB-018`, `06_AaveDeploymentPayload.s.sol` `_spokeOnAssets`).
+### Collateral tokens
+
+Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `min(CF0, CF1) × poolRiskFactor`) and its exposure cap across every Spoke and market of the Hub.
+
+| Token | Token collateral factor | Token cap |
+| --- | --- | --- |
+| USDC | 90% | $50,000,000 |
+| USDT | 90% | $50,000,000 |
+| WETH | 85% | $50,000,000 |
+| cbBTC | 80% | $50,000,000 |
+| AERO | 65% | $10,000,000 |
+| LINK | 70% | $10,000,000 |
+| AMZNc | 60% | $5,000,000 |
+| SNDKc | 60% | $5,000,000 |
+| GOOGLc | 60% | $5,000,000 |
+| NVDAc | 60% | $5,000,000 |
+| SPCXc | 60% | $5,000,000 |
+| METAc | 60% | $5,000,000 |
+
+### Chain settings
+
+| Parameter | Value | Description |
+| --- | --- | --- |
+| `CHAIN_BLOCK_TIME` | 2 s | Block interval of the chain. It sizes the observation buffer a pool needs for the time-weighted price check. |
+| `twapMinObservations` | 901 | Observation slots a pool must hold for a 1,800 s window at 2 s blocks. |
+| `sequencer.feed` | Chainlink L2 sequencer uptime feed | While it reports the sequencer down, borrow-side prices fail closed and liquidation pauses. Its address is on [Contract Addresses](/developers/reference/addresses?network=base-sepolia#external-dependencies). |
+| `sequencer.gracePeriod` | 3,600 s | Time after a sequencer restart during which borrowing and new pledges are refused (bounds 600–7,200 s). |
+
 
 ## All networks
 
-These parameters have the same rules on every network. Bounds are enforced on-chain unless the description says otherwise. The local test stack takes every governance-set value from a local test-values file (`contracts/script/local/test-values.json`); those numbers are for local testing only and are not Sepolia values.
+These parameters have the same rules on every network. Bounds are enforced on-chain unless the description says otherwise. `Set by governance` means the Aave DAO or Avana's timelock decides the value; where Avana proposes a starting value, the description gives it.
 
 ### Fees
 

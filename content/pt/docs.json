@@ -6771,7 +6771,7 @@
   },
   "reference/parameters": {
     "meta": {
-      "title": "Parâmetros",
+      "title": "Parâmetros de mercado",
       "description": "Todos os parâmetros e constantes da Avana: significado, unidade, limites, valor de lançamento por chain, e quem os define com qual atraso."
     },
     "toc": [
@@ -6789,7 +6789,7 @@
       }
     ],
     "strings": [
-      "Parâmetros",
+      "Parâmetros de mercado",
       "Todos os parâmetros e constantes da Avana: significado, unidade, limites, valor de lançamento por chain, e quem os define com qual atraso.",
       "Visão Geral",
       "Convenções de Unidades",
