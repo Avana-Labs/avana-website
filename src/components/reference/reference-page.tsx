@@ -164,7 +164,25 @@ function Sections({ sections, network, labels }: { sections: ReferenceSection[];
   )
 }
 
-export async function ReferencePage({ locale, page }: { locale: AppLocale; page: ReferencePageName }): Promise<ReactNode> {
+interface ReferencePageProps {
+  locale: AppLocale
+  page: ReferencePageName
+  /** Replaces the default page header (title and description from front matter). */
+  pageHeader?: ReactNode
+  /** Hand-written, translated sections shown before the Markdown content. */
+  lead?: ReactNode
+  leadSections?: Array<{ id: string; title: string }>
+  pageSummary?: string
+}
+
+export async function ReferencePage({
+  locale,
+  page,
+  pageHeader,
+  lead,
+  leadSections = [],
+  pageSummary,
+}: ReferencePageProps): Promise<ReactNode> {
   const document = loadReferenceDocument(page)
   const t = await getTranslations({ locale, namespace: "common.docs.reference" })
   const labels: Labels = { placeholder: t("placeholder"), explorer: t("explorer") }
@@ -174,12 +192,13 @@ export async function ReferencePage({ locale, page }: { locale: AppLocale; page:
 
   const header = (
     <>
-      <DeveloperDocPageHeader title={document.title} description={document.description} />
+      {pageHeader ?? <DeveloperDocPageHeader title={document.title} description={document.description} />}
       {document.updated ? (
         <p className="-mt-6 mb-8 type-doc-body text-type-secondary">
           {t("updated", { date: document.updated })}
         </p>
       ) : null}
+      {lead}
       <Blocks blocks={document.intro} labels={labels} />
     </>
   )
@@ -208,8 +227,9 @@ export async function ReferencePage({ locale, page }: { locale: AppLocale; page:
         </div>
       ))}
       shared={shared}
+      leadSections={leadSections}
       sharedSections={sharedGroups.flatMap((group) => group.sections.map(({ id, title }) => ({ id, title })))}
-      pageSummary={document.description}
+      pageSummary={pageSummary ?? document.description}
     />
   )
 }

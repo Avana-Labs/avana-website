@@ -18,6 +18,7 @@ interface ReferenceNetworkViewProps {
   networks: ReferenceNetworkTab[]
   panels: ReactNode[]
   shared: ReactNode
+  leadSections?: Array<{ id: string; title: string }>
   sharedSections: Array<{ id: string; title: string }>
   pageSummary: string
 }
@@ -48,6 +49,7 @@ export function ReferenceNetworkView({
   networks,
   panels,
   shared,
+  leadSections,
   sharedSections,
   pageSummary,
 }: ReferenceNetworkViewProps) {
@@ -67,8 +69,8 @@ export function ReferenceNetworkView({
   }, [])
 
   const sections = useMemo(
-    () => [...(active?.sections ?? []), ...sharedSections],
-    [active, sharedSections],
+    () => [...(leadSections ?? []), ...(active?.sections ?? []), ...sharedSections],
+    [leadSections, active, sharedSections],
   )
 
   return (
