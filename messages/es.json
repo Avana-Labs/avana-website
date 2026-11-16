@@ -107,7 +107,7 @@
         "reference": "Referencia"
       },
       "items": {
-        "overview": "Resumen",
+        "overview": "Bienvenido",
         "keyConcepts": "Conceptos clave",
         "glossary": "Glosario",
         "depositLp": "Depósito LP",
@@ -160,7 +160,6 @@
         "chainId": "ID de cadena",
         "copy": "Copiar",
         "copied": "Copiado",
-        "placeholder": "Marcador de posición",
         "explorer": "abre el explorador de bloques",
         "updated": "Última actualización {date}"
       }

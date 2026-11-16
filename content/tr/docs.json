@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Hoş geldiniz",
-      "description": "Bir borçlu, tick aralığı listelenmiş bir piyasayla tam olarak eşleşen Ethereum'daki bir Uniswap v3 pozisyonunu veya Base'deki stake edilmemiş bir Aerodrome Slipstream pozisyonunu rehin verir. AMM protokolünün LPVault'u saklamayı üstlenir, ancak likidite havuzda kalır ve borçlunun istediği zaman toplayabileceği ücretleri kazanmaya devam eder."
+      "description": "Bir LP pozisyonunu rehin vermek saklamayı LPVault'a taşır ancak likiditesini havuzda bırakır. Borçlu, önce pozisyonu çekip ücretlerinden veya aralığından vazgeçmeden GHO borç alabilir."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Hoş geldiniz"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Avana nedir?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Nasıl Çalışır"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Hoş geldiniz",
-      "Avana nedir?",
-      "Nasıl Çalışır",
       "LP teminatı neden önemli",
       "Mimari",
-      "Desteklenen bir LP pozisyonunu rehin ver",
-      "Bir borçlu, tick aralığı listelenmiş bir piyasayla tam olarak eşleşen Ethereum'daki bir Uniswap v3 pozisyonunu veya Base'deki stake edilmemiş bir Aerodrome Slipstream pozisyonunu rehin verir. AMM protokolünün LPVault'u saklamayı üstlenir, ancak likidite havuzda kalır ve borçlunun istediği zaman toplayabileceği ücretleri kazanmaya devam eder.",
-      "Onu temsil edin ve değer verin",
-      "Collateralization pozisyonun kredilendirilmiş likiditesini kaydeder. AaveAdapter tam olarak o kadar vault token birimini borçlunun o piyasa için PositionProxy'sine basar; proxy de bunları piyasanın CDP Spoke'una sağlar. LPOracle her vault token'ı Chainlink fiyatlarında adil bileşimle, kesinti uygulamadan değerler ve bunu havuzun TWAP'ı ve bağımsız ikinci bir kaynakla karşılaştırarak kontrol eder.",
-      "Avana Hub'den GHO ödünç alın",
-      "Borçlanma kapasitesi, pozisyonun değerinin piyasanın teminat faktörüyle, yani en düşük token faktörü çarpı en fazla %40'lık bir havuz risk faktörüyle çarpımıdır. Borçlu, üst sınırlı bir Aave DAO kredi hattıyla fonlanan Avana Stable LP Hub'ından GHO çeker. USDC, USDT veya WETH, Aave DAO onayladığında CDP Spoke başına borç varlığı olarak etkinleştirilebilir.",
       "Likidite havuzda kalır",
       "Bir LP pozisyonunu rehin vermek saklamayı LPVault'a taşır ancak likiditesini havuzda bırakır. Borçlu, önce pozisyonu çekip ücretlerinden veya aralığından vazgeçmeden GHO borç alabilir.",
       "Değerleme ve sınırlar ayrıdır",
       "LPOracle likiditenin değerini kesinti uygulamadan bildirir. Her piyasanın teminat faktörü, min(token factors) × pool risk factor, bu değerin ne kadarının borcu desteklediğini belirler ve her piyasanın kendi hesabı ve sağlık faktörü vardır.",
       "Tasfiyenin açık kuralları vardır",
       "Her likidasyon, Aave'nin standart likidasyon çağrısıyla LPVaultSwap üzerinden çalışır ve her zaman kısmidir. LPVaultSwap borç varlığını çağırandan alır, yalnızca el konulan birimleri çözer ve bunları tek bir işlemde swap eder. Tek likidasyon giriş noktası herhangi bir adrese açıktır ve Avana'nın keeper'ı sağlık faktörü 1'in altındaki her hesabı likide eder.",
-      "Giriş",
       "Avana, likidite sağlayıcıların Ethereum'daki Uniswap v3 pozisyonları ve Base'deki Aerodrome Slipstream pozisyonları karşılığında Aave V4 üzerinde GHO borç almasını sağlar. Pozisyonlar havuzlarında kalır ve işlem ücretleri kazanmaya devam eder.",
+      "Protokole Genel Bakış; teminat verme, değerleme, borçlanma ve tasfiyenin nasıl bir araya geldiğini açıklar. Gezinmenin en üstündeki referans sayfaları her sözleşme adresini, piyasa parametresini ve rolü listeler.",
+      "Protokole Genel Bakış'ı okuyun",
       "Temel Kavramlar ile başlayın",
       "Hub'ları ve Spoke'ları Keşfedin",
-      "Avana, AMM likidite pozisyonlarını teminat olarak Aave V4'e getirir. Bir yatıran, listelenmiş bir piyasanın pozisyonunu AMM protokolünün LPVault'una rehin verir ve ardından pozisyon havuzda kalırken Avana Stable LP Hub'ından GHO borç alır.",
-      "Başka yerlerde LP varlıkları karşılığında borç almak için bir likidite sağlayıcısı genellikle önce havuzdan çekilmek zorundadır. Çekilmek, işlem ücretlerinden ve konsantre pozisyonlar için seçilen aralıktan vazgeçmek demektir.",
-      "Avana pozisyonu havuzunda tutar. AMM protokolünün LPVault'u pozisyonu tutar ve bir vault token onu bir CDP Spoke üzerinde temsil eder. Vault token, bir temel birimin bir kredilendirilmiş likidite birimine eşit olduğu, transferi kısıtlı, yalnızca teminat amaçlı bir ERC-20'dir. Lansmanda Avana, Ethereum'da Uniswap v3 piyasalarıyla ve Base'de Aerodrome Slipstream piyasalarıyla çalışır; her piyasa tek bir kesin tick aralığına sahip tek bir stablecoin havuzudur.",
-      "Her aşama bir kullanıcı işlemini protokolün muhasebesine bağlar. Rehin saklamayı kurar. Değerleme ve teminat faktörü borçlanma kapasitesini belirler. Borç alma, bu kapasite karşılığında GHO borcu oluşturur. Aşağıdaki kılavuzlar her adımı ayrıntılı olarak açıklar.",
       "LP teminatı, bir AMM'de zaten kullanılan varlıkların bir GHO kredisini desteklemesini sağlar. Fayda, garantili pozitif getiri farkı değil, sermaye esnekliğidir. Borçlular geçici kayıp, fiyat riski ve likidasyon riskini taşımaya devam eder.",
       "Avana Hub'ları ve Spoke'ları, Aave DAO'ya ait standart, değiştirilmemiş Aave V4 sözleşmeleridir. Avana'ya özgü mantık Avana'nın kendi sözleşmelerinde bulunur: AMM protokolü başına bir LPVault, Collateralization, vault token'lar, PositionProxy'ler ve ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap ve AvanaTimelock.",
-      "Hub'lar üç kademede gelir: lansmanda Ethereum ve Base'de Stable LP, daha sonra eklenecek Correlated LP ve Volatile LP Hub'ları. Bir CDP Spoke, zincir, Hub, AMM protokolü ve risk kademesi başına bir Spoke'tur ve birden fazla piyasayı listeler: Ethereum'da \"Uniswap v3 Stable\" ve Base'de \"Aerodrome Slipstream Stable\". Her zincirde yalnızca sağlama amaçlı bir Lend Spoke Aave DAO kredi hatlarını taşır ve Hub ve borç varlığı başına bir Coverage Spoke, yani Avana Umbrella, İlk Zarar Rezervi'ni tutar. Her cüzdanın CDP Spoke ve piyasa başına bir PositionProxy'si vardır, bu nedenle her borçlu eylemi AaveAdapter'dan geçer ve her piyasanın kendi sağlık faktörü vardır.",
       "Avana'ya genel bakış: Uniswap v3 ve Aerodrome Slipstream pozisyonlarını rehin verme, Avana Stable LP Hub'ından GHO borç alma ve değerleme ile likidasyon için piyasa bazındaki kurallar."
     ]
   },

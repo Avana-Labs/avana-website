@@ -107,7 +107,7 @@
         "reference": "עיון"
       },
       "items": {
-        "overview": "סקירה",
+        "overview": "ברוכים הבאים",
         "keyConcepts": "מושגים מפתח",
         "glossary": "מילון מונחים",
         "depositLp": "זיכוי LP",
@@ -160,7 +160,6 @@
         "chainId": "מזהה שרשרת",
         "copy": "העתקה",
         "copied": "הועתק",
-        "placeholder": "ממלא מקום",
         "explorer": "פותח את סייר הבלוקים",
         "updated": "עודכן לאחרונה {date}"
       }

@@ -54,7 +54,7 @@ Keys follow the release manifest (`packages/protocol/src/manifest/types.ts` in t
 | `create3Factory`, `feeRecipient`, `sequencerFeed`, `aave.accessManager`, `aave.v3Pool`, `uniswapV4.poolManager` | the top-level value at that path |
 | `roles.<holder>`, `roles.keepers.<n>` | the role table value |
 
-Keys starting with `_` are comments. A value must be a 20-byte address or, for a Uniswap v4 PoolId, a 32-byte hash. Placeholders start with 30 zero hex digits (56 for a PoolId): the page tags them "Placeholder" and gives them no explorer link.
+Keys starting with `_` are comments. A value must be a 20-byte address or, for a Uniswap v4 PoolId, a 32-byte hash. Placeholders start with 30 zero hex digits (56 for a PoolId): the page shows them without an explorer link.
 
 ## Page format
 
@@ -67,3 +67,7 @@ Keys starting with `_` are comments. A value must be a 20-byte address or, for a
 - `@{key}` inside a network group is replaced by that key's value from the network's file. A key the file lacks stops the build.
 - Table cells allow plain text, inline `code`, `**bold**` and `[links](https://…)`. A link that starts with `/` stays in the reader's language. Escape a literal pipe as `\|`. Every row needs the header's number of cells.
 - A cell holding one 20-byte address renders truncated, with a copy button and a link to the network's explorer. A 32-byte hash (for example a Uniswap v4 PoolId) renders truncated with a copy button.
+
+## Icons
+
+The renderer adds icons from `src/lib/reference/icons.ts`: a token or pair cell (`USDC`, `WETH/USDC`) gets its token icons, a row name or section title that starts with a venue (`Uniswap v3`, `Uniswap v4`, `Aero Slipstream`) gets the venue logo, and the network selector shows each chain's logo. Token icons come from `public/Asset-Icons`; tokenized-stock icons are in `public/Stock-Icons`. A token with no icon renders as text.

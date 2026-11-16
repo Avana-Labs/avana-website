@@ -107,7 +107,7 @@
         "reference": "রেফারেন্স"
       },
       "items": {
-        "overview": "সংক্ষিপ্ত বিবরণ",
+        "overview": "স্বাগতম",
         "keyConcepts": "মূল ধারণা",
         "glossary": "শব্দকোষ",
         "depositLp": "ডিপোজিট LP",
@@ -160,7 +160,6 @@
         "chainId": "চেইন আইডি",
         "copy": "কপি",
         "copied": "কপি হয়েছে",
-        "placeholder": "প্লেসহোল্ডার",
         "explorer": "ব্লক এক্সপ্লোরার খোলে",
         "updated": "সর্বশেষ হালনাগাদ {date}"
       }

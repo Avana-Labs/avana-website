@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "환영합니다",
-      "description": "차입자는 상장된 마켓과 틱 범위가 정확히 일치하는 Ethereum의 Uniswap v3 포지션 또는 Base의 스테이킹되지 않은 Aerodrome Slipstream 포지션을 담보로 제공합니다. AMM 프로토콜의 LPVault가 보관하지만, 유동성은 풀에 남아 계속 수수료를 벌며, 차입자는 언제든 이를 수령할 수 있습니다."
+      "description": "LP 포지션을 담보로 제공하면 보관이 LPVault로 이전되지만 유동성은 풀에 남습니다. 차입자는 포지션을 먼저 출금해 수수료나 범위를 포기하지 않고도 GHO를 차입할 수 있습니다."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "환영합니다"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Avana란?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "작동 방식"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "환영합니다",
-      "Avana란?",
-      "작동 방식",
       "LP 담보가 중요한 이유",
       "아키텍처",
-      "지원되는 LP 포지션을 담보로 제공하다",
-      "차입자는 상장된 마켓과 틱 범위가 정확히 일치하는 Ethereum의 Uniswap v3 포지션 또는 Base의 스테이킹되지 않은 Aerodrome Slipstream 포지션을 담보로 제공합니다. AMM 프로토콜의 LPVault가 보관하지만, 유동성은 풀에 남아 계속 수수료를 벌며, 차입자는 언제든 이를 수령할 수 있습니다.",
-      "표현하고 가치를 부여하라",
-      "Collateralization은 포지션의 적립 유동성을 기록합니다. AaveAdapter는 해당 마켓에 대한 차입자의 PositionProxy에 정확히 그만큼의 vault token 단위를 발행하고, 프록시는 이를 마켓의 CDP Spoke에 공급합니다. LPOracle은 각 vault token을 Chainlink 가격 기준 공정 구성으로 헤어컷 없이 평가하며, 풀의 TWAP과 독립적인 두 번째 소스로 이를 검증합니다.",
-      "Avana Hub에서 GHO을 빌리다",
-      "차입 한도는 포지션 가치에 마켓의 담보 계수를 곱한 값이며, 담보 계수는 가장 낮은 토큰 계수에 최대 40%인 풀 리스크 계수를 곱한 값입니다. 차입자는 상한이 있는 Aave DAO 신용 한도로 자금이 공급되는 Avana Stable LP Hub에서 GHO를 인출합니다. Aave DAO가 승인하면 CDP Spoke별로 USDC, USDT 또는 WETH를 부채 자산으로 활성화할 수 있습니다.",
       "유동성은 풀에 유지됩니다",
       "LP 포지션을 담보로 제공하면 보관이 LPVault로 이전되지만 유동성은 풀에 남습니다. 차입자는 포지션을 먼저 출금해 수수료나 범위를 포기하지 않고도 GHO를 차입할 수 있습니다.",
       "평가와 한도는 별개입니다",
       "LPOracle은 헤어컷 없이 유동성의 가치를 보고합니다. 각 마켓의 담보 계수 min(토큰 계수) × 풀 리스크 계수가 그 가치 중 얼마가 부채를 뒷받침하는지 정하며, 각 마켓은 자체 계정과 헬스 팩터를 가집니다.",
       "청산에는 명시적 규칙이 있습니다",
       "모든 청산은 Aave의 표준 청산 호출과 함께 LPVaultSwap을 거치며 항상 부분적입니다. LPVaultSwap은 호출자로부터 부채 자산을 가져오고, 압류된 단위만 해제하고, 한 트랜잭션에서 이를 스왑합니다. 하나뿐인 청산 진입점은 모든 주소에 열려 있으며, Avana의 키퍼는 헬스 팩터 1 미만인 모든 계정을 청산합니다.",
-      "소개",
       "Avana는 유동성 공급자가 Ethereum의 Uniswap v3 포지션과 Base의 Aerodrome Slipstream 포지션을 담보로 Aave V4에서 GHO를 차입할 수 있게 합니다. 포지션은 풀에 남아 계속 거래 수수료를 벌어들입니다.",
+      "프로토콜 개요는 담보 제공, 가치 평가, 차입, 청산이 어떻게 맞물리는지 설명합니다. 내비게이션 상단의 레퍼런스 페이지에는 모든 컨트랙트 주소, 마켓 파라미터, 역할이 나와 있습니다.",
+      "프로토콜 개요 읽기",
       "Key Concepts부터 시작",
       "Hub와 Spoke 살펴보기",
-      "Avana는 AMM 유동성 포지션을 Aave V4의 담보로 가져옵니다. 예치자는 상장된 마켓의 포지션을 해당 AMM 프로토콜의 LPVault에 담보로 제공한 뒤, 포지션이 풀에 남아 있는 동안 Avana Stable LP Hub에서 GHO를 차입합니다.",
-      "다른 곳에서 LP 자산을 담보로 차입하려면 유동성 공급자는 보통 먼저 풀에서 인출해야 합니다. 인출하면 거래 수수료와, 집중 유동성 포지션의 경우 선택한 범위를 포기하게 됩니다.",
-      "Avana는 포지션을 풀에 유지합니다. AMM 프로토콜의 LPVault가 포지션을 보유하고, vault token이 CDP Spoke에서 이를 나타냅니다. vault token은 전송이 제한된 담보 전용 ERC-20으로, 기본 단위 1개가 적립 유동성 1단위와 같습니다. 출시 시 Avana는 Ethereum에서 Uniswap v3 마켓으로, Base에서 Aerodrome Slipstream 마켓으로 운영되며, 각 마켓은 하나의 정확한 틱 범위를 가진 하나의 스테이블코인 풀입니다.",
-      "각 단계는 사용자 작업을 프로토콜 회계에 연결합니다. 담보 제공으로 보관이 성립합니다. 가치 평가와 담보 계수가 차입 한도를 결정합니다. 차입은 그 한도에 대해 GHO 부채를 발생시킵니다. 다음 가이드에서 각 단계를 자세히 설명합니다.",
       "LP 담보를 사용하면 이미 AMM에 투입된 자산으로 GHO 대출을 뒷받침할 수 있습니다. 이점은 자본 유연성이며, 플러스 캐리가 보장되는 것은 아닙니다. 차입자는 여전히 비영구적 손실, 가격 리스크, 청산 리스크를 부담합니다.",
       "Avana의 Hub와 Spoke는 Aave DAO가 소유한, 수정되지 않은 표준 Aave V4 컨트랙트입니다. Avana 고유 로직은 Avana 자체 컨트랙트에 있습니다: AMM 프로토콜별 LPVault, Collateralization, vault token, PositionProxy와 ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap, AvanaTimelock.",
-      "Hub는 세 등급으로 나뉩니다: 출시 시 Ethereum과 Base의 Stable LP, 그리고 이후 추가되는 Correlated LP와 Volatile LP Hub. CDP Spoke는 체인, Hub, AMM 프로토콜, 리스크 등급마다 하나의 Spoke이며 여러 마켓을 상장합니다: Ethereum의 \"Uniswap v3 Stable\"과 Base의 \"Aerodrome Slipstream Stable\". 각 체인의 공급 전용 Lend Spoke가 Aave DAO 신용 한도를 담고, Hub와 부채 자산별 Coverage Spoke인 Avana Umbrella가 First-Loss Reserve를 보유합니다. 각 지갑은 CDP Spoke와 마켓별로 하나의 PositionProxy를 가지므로, 모든 차입자 작업은 AaveAdapter를 거치며 각 마켓은 자체 헬스 팩터를 가집니다.",
       "Avana 개요: Uniswap v3와 Aerodrome Slipstream 포지션의 담보 제공, Avana Stable LP Hub에서의 GHO 차입, 가치 평가와 청산에 관한 마켓별 규칙."
     ]
   },

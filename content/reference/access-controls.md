@@ -125,7 +125,7 @@ Delay is the wait before the holder's call takes effect. Granting or revoking an
 
 > The 1.4 and 2.15 `TIMELOCK` rows name only `returnStray` and `deployVaultToken`. The code also limits `VaultTokenFactory.registerIntegration` to the timelock (`VaultTokenFactory.sol:117-120`), and the chain-wiring operation calls it (`04_ConfigureAccess.s.sol:174-179`).
 
-> `COVERAGE_ROLE` and `RESERVE_ADMIN_ROLE` use role IDs 500 and 501 on local and test networks. The mainnet IDs are TBD: Aave governance assigns them, and the script refuses the placeholder IDs on Ethereum and Base (`08_AaveLossLayersPayload.s.sol:58-60,80-84`).
+> `COVERAGE_ROLE` and `RESERVE_ADMIN_ROLE` use role IDs 500 and 501 on local and test networks. The mainnet IDs are TBD: Aave governance assigns them, and the script refuses the test IDs on Ethereum and Base (`08_AaveLossLayersPayload.s.sol:58-60,80-84`).
 
 ### Timelock delays
 

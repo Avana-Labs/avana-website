@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Welcome",
-      "description": "A borrower pledges a Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base whose tick range exactly matches a listed market. The AMM protocol's LPVault takes custody, but the liquidity stays in the pool and keeps earning fees, which the borrower can collect at any time."
+      "description": "Pledging an LP position moves custody to the LPVault but leaves its liquidity in the pool. The borrower can borrow GHO without first withdrawing the position and giving up its fees or range."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Welcome"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "What is Avana?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "How It Works"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Welcome",
-      "What is Avana?",
-      "How It Works",
       "Why LP Collateral Matters",
       "Architecture",
-      "Pledge a supported LP position",
-      "A borrower pledges a Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base whose tick range exactly matches a listed market. The AMM protocol's LPVault takes custody, but the liquidity stays in the pool and keeps earning fees, which the borrower can collect at any time.",
-      "Represent and value it",
-      "Collateralization records the position's credited liquidity. The AaveAdapter mints exactly that many vault-token units to the borrower's PositionProxy for that market, which supplies them to the market's CDP Spoke. The LPOracle values each vault token at Chainlink prices by fair composition, with no haircut, and checks it against the pool's TWAP and an independent second source.",
-      "Borrow GHO from the Avana Hub",
-      "Borrowing capacity is the position's value multiplied by the market's collateral factor, the lowest token factor times a pool risk factor of at most 40%. The borrower draws GHO from the Avana Stable LP Hub, funded by a capped Aave DAO credit line. USDC, USDT or WETH can be enabled as debt assets per CDP Spoke once the Aave DAO approves them.",
       "Liquidity stays in the pool",
       "Pledging an LP position moves custody to the LPVault but leaves its liquidity in the pool. The borrower can borrow GHO without first withdrawing the position and giving up its fees or range.",
       "Valuation and limits are separate",
       "The LPOracle reports the value of the liquidity with no haircut. Each market's collateral factor, min(token factors) × pool risk factor, sets how much of that value supports debt, and each market has its own account and health factor.",
       "Liquidation has explicit rules",
       "Every liquidation runs through LPVaultSwap with Aave's standard liquidation call and is always partial. LPVaultSwap takes the debt asset from its caller, unwinds only the seized units and swaps them in one transaction. Its one liquidation entry point is open to any address, and Avana's keeper liquidates every account below health factor 1.",
-      "Introduction",
       "Avana lets liquidity providers borrow GHO on Aave V4 against Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees.",
+      "The Protocol Overview explains how pledging, valuation, borrowing and liquidation fit together. The reference pages at the top of the navigation list every contract address, market parameter and role.",
+      "Read the Protocol Overview",
       "Start with Key Concepts",
       "Explore Hubs and Spokes",
-      "Avana brings AMM liquidity positions to Aave V4 as collateral. A depositor pledges a position of a listed market to the LPVault of its AMM protocol and then borrows GHO from the Avana Stable LP Hub while the position stays in the pool.",
-      "To borrow against LP assets elsewhere, a liquidity provider usually has to withdraw from the pool first. Withdrawing gives up trading fees and, for concentrated positions, the chosen range.",
-      "Avana keeps the position in its pool. The LPVault of its AMM protocol holds the position, and a vault token represents it on a CDP Spoke. A vault token is a transfer-restricted, collateral-only ERC-20 in which one base unit equals one unit of credited liquidity. At launch Avana runs on Ethereum with Uniswap v3 markets and on Base with Aerodrome Slipstream markets, each market being one stablecoin pool with one exact tick range.",
-      "Each stage connects a user action to the protocol's accounting. A Pledge establishes custody. Valuation and the Collateral Factor determine borrowing capacity. A borrow creates GHO debt against that capacity. The following guides explain each step in detail.",
       "LP collateral lets assets already deployed in an AMM support a GHO loan. The benefit is capital flexibility, not guaranteed positive carry. Borrowers still bear impermanent loss, price risk and liquidation risk.",
       "Avana Hubs and Spokes are standard, unmodified Aave V4 contracts owned by the Aave DAO. Avana-specific logic sits in Avana's own contracts: an LPVault per AMM protocol, Collateralization, vault tokens, PositionProxies and the ProxyManager, the AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap and the AvanaTimelock.",
-      "Hubs come in three tiers: Stable LP at launch on Ethereum and Base, with Correlated LP and Volatile LP Hubs added later. A CDP Spoke is one Spoke per chain, Hub, AMM protocol and risk tier and lists several markets: \"Uniswap v3 Stable\" on Ethereum and \"Aerodrome Slipstream Stable\" on Base. A supply-only Lend Spoke on each chain carries the Aave DAO credit lines, and a Coverage Spoke per Hub and debt asset, the Avana Umbrella, holds the First-Loss Reserve. Each wallet has one PositionProxy per CDP Spoke and market, so every borrower action passes through the AaveAdapter and each market has its own health factor.",
       "An overview of Avana: pledging Uniswap v3 and Aerodrome Slipstream positions, borrowing GHO from the Avana Stable LP Hub, and the per-market rules for valuation and liquidation."
     ]
   },

@@ -107,7 +107,7 @@
         "reference": "Tham chiếu"
       },
       "items": {
-        "overview": "Tổng quan",
+        "overview": "Chào mừng",
         "keyConcepts": "Các khái niệm chính",
         "glossary": "Thuật ngữ",
         "depositLp": "Tiền gửi LP",
@@ -160,7 +160,6 @@
         "chainId": "Chain ID",
         "copy": "Sao chép",
         "copied": "Đã sao chép",
-        "placeholder": "Giá trị giữ chỗ",
         "explorer": "mở trình khám phá khối",
         "updated": "Cập nhật lần cuối {date}"
       }

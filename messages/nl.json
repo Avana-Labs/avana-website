@@ -107,7 +107,7 @@
         "reference": "Referentie"
       },
       "items": {
-        "overview": "Overzicht",
+        "overview": "Welkom",
         "keyConcepts": "Belangrijke concepten",
         "glossary": "Woordenlijst",
         "depositLp": "Storting LP",
@@ -160,7 +160,6 @@
         "chainId": "Chain-ID",
         "copy": "Kopiëren",
         "copied": "Gekopieerd",
-        "placeholder": "Tijdelijke waarde",
         "explorer": "opent de blockverkenner",
         "updated": "Laatst bijgewerkt {date}"
       }

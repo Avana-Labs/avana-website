@@ -107,7 +107,7 @@
         "reference": "Referenz"
       },
       "items": {
-        "overview": "Übersicht",
+        "overview": "Willkommen",
         "keyConcepts": "Schlüsselkonzepte",
         "glossary": "Glossar",
         "depositLp": "Einzahlung LP",
@@ -160,7 +160,6 @@
         "chainId": "Chain-ID",
         "copy": "Kopieren",
         "copied": "Kopiert",
-        "placeholder": "Platzhalter",
         "explorer": "öffnet den Block-Explorer",
         "updated": "Zuletzt aktualisiert {date}"
       }

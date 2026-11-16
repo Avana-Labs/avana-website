@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Bienvenue",
-      "description": "Un emprunteur nantit une position Uniswap v3 sur Ethereum ou une position Aerodrome Slipstream non stakée sur Base dont la plage de ticks correspond exactement à un marché listé. Le LPVault du protocole AMM en prend la garde, mais la liquidité reste dans le pool et continue de générer des frais, que l'emprunteur peut collecter à tout moment."
+      "description": "Nantir une position LP transfère sa garde au LPVault mais laisse sa liquidité dans le pool. L'emprunteur peut emprunter du GHO sans retirer d'abord la position ni renoncer à ses frais ou à sa plage."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Bienvenue"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Qu'est-ce qu'Avana ?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Fonctionnement"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Bienvenue",
-      "Qu'est-ce qu'Avana ?",
-      "Fonctionnement",
       "Pourquoi le collatéral LP compte",
       "L'Architecture",
-      "Mettre en gage une position LP soutenue",
-      "Un emprunteur nantit une position Uniswap v3 sur Ethereum ou une position Aerodrome Slipstream non stakée sur Base dont la plage de ticks correspond exactement à un marché listé. Le LPVault du protocole AMM en prend la garde, mais la liquidité reste dans le pool et continue de générer des frais, que l'emprunteur peut collecter à tout moment.",
-      "Représentez-le et valorisez-le",
-      "Collateralization enregistre la liquidité créditée de la position. L'AaveAdapter mint exactement autant d'unités de vault token vers le PositionProxy de l'emprunteur pour ce marché, qui les fournit au CDP Spoke du marché. Le LPOracle valorise chaque vault token aux prix Chainlink selon la composition juste, sans décote, et le compare au TWAP du pool et à une seconde source indépendante.",
-      "Emprunter GHO de Avana Hub",
-      "La capacité d'emprunt est la valeur de la position multipliée par le facteur de garantie du marché, le plus faible facteur de token multiplié par un facteur de risque du pool d'au plus 40%. L'emprunteur tire du GHO de l'Avana Stable LP Hub, financé par une ligne de crédit plafonnée de l'Aave DAO. USDC, USDT ou WETH peuvent être activés comme actifs de dette par CDP Spoke une fois approuvés par l'Aave DAO.",
       "La liquidité reste dans le pool",
       "Nantir une position LP transfère sa garde au LPVault mais laisse sa liquidité dans le pool. L'emprunteur peut emprunter du GHO sans retirer d'abord la position ni renoncer à ses frais ou à sa plage.",
       "L'évaluation et les limites sont séparées",
       "Le LPOracle rapporte la valeur de la liquidité sans décote. Le facteur de garantie de chaque marché, min(token factors) × pool risk factor, détermine quelle part de cette valeur couvre la dette, et chaque marché a son propre compte et son propre facteur de santé.",
       "La liquidation a des règles explicites",
       "Chaque liquidation passe par LPVaultSwap avec l'appel de liquidation standard d'Aave et est toujours partielle. LPVaultSwap prend l'actif de dette auprès de son appelant, ne dénoue que les unités saisies et les convertit par swap en une seule transaction. Son unique point d'entrée de liquidation est ouvert à toute adresse, et le keeper d'Avana liquide chaque compte dont le facteur de santé est inférieur à 1.",
-      "Présentation",
       "Avana permet aux fournisseurs de liquidité d'emprunter du GHO sur Aave V4 contre des positions Uniswap v3 sur Ethereum et des positions Aerodrome Slipstream sur Base. Les positions restent dans leurs pools et continuent de générer des frais de trading.",
+      "La Vue d'ensemble du protocole explique comment le nantissement, la valorisation, l'emprunt et la liquidation s'articulent. Les pages de référence en haut de la navigation listent chaque adresse de contrat, chaque paramètre de marché et chaque rôle.",
+      "Lire la Vue d'ensemble du protocole",
       "Commencer par Key Concepts",
       "Explorer les Hubs et Spokes",
-      "Avana apporte des positions de liquidité AMM à Aave V4 comme garantie. Un déposant nantit une position d'un marché listé auprès du LPVault de son protocole AMM, puis emprunte du GHO à l'Avana Stable LP Hub pendant que la position reste dans le pool.",
-      "Pour emprunter ailleurs contre des actifs LP, un fournisseur de liquidité doit généralement d'abord se retirer du pool. Ce retrait le prive des frais de trading et, pour les positions concentrées, de la plage choisie.",
-      "Avana conserve la position dans son pool. Le LPVault de son protocole AMM détient la position, et un vault token la représente sur un CDP Spoke. Un vault token est un ERC-20 à transfert restreint, utilisable uniquement comme garantie, dans lequel une unité de base équivaut à une unité de liquidité créditée. Au lancement, Avana fonctionne sur Ethereum avec des marchés Uniswap v3 et sur Base avec des marchés Aerodrome Slipstream, chaque marché étant un pool de stablecoins avec une plage de ticks exacte.",
-      "Chaque étape relie une action de l'utilisateur à la comptabilité du protocole. Un nantissement établit la garde. La valorisation et le facteur de garantie déterminent la capacité d'emprunt. Un emprunt crée une dette GHO dans la limite de cette capacité. Les guides suivants détaillent chaque étape.",
       "La garantie LP permet à des actifs déjà déployés dans un AMM de couvrir un prêt en GHO. L'avantage est la flexibilité du capital, et non un portage positif garanti. Les emprunteurs supportent toujours la perte impermanente, le risque de prix et le risque de liquidation.",
       "Les Hubs et Spokes d'Avana sont des contrats Aave V4 standard non modifiés, détenus par l'Aave DAO. La logique propre à Avana se trouve dans ses propres contrats : un LPVault par protocole AMM, Collateralization, les vault tokens, les PositionProxies et le ProxyManager, l'AaveAdapter, le RiskModule, le MarketRegistry, le ParameterStore, le LPOracle, le DebtOracle, LPVaultSwap et l'AvanaTimelock.",
-      "Les Hubs se répartissent en trois niveaux : Stable LP au lancement sur Ethereum et Base, avec des Hubs Correlated LP et Volatile LP ajoutés plus tard. Un CDP Spoke est un Spoke par chaîne, Hub, protocole AMM et niveau de risque, et liste plusieurs marchés : \"Uniswap v3 Stable\" sur Ethereum et \"Aerodrome Slipstream Stable\" sur Base. Un Lend Spoke de dépôt uniquement sur chaque chaîne porte les lignes de crédit de l'Aave DAO, et un Coverage Spoke par Hub et actif de dette, l'Avana Umbrella, détient la First-Loss Reserve. Chaque wallet a un PositionProxy par CDP Spoke et par marché, de sorte que chaque action d'emprunteur passe par l'AaveAdapter et que chaque marché a son propre facteur de santé.",
       "Une vue d'ensemble d'Avana : nantissement de positions Uniswap v3 et Aerodrome Slipstream, emprunt de GHO auprès de l'Avana Stable LP Hub, et règles de valorisation et de liquidation propres à chaque marché."
     ]
   },

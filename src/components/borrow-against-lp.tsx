@@ -68,15 +68,15 @@ export function BorrowAgainstLP({ locale }: { locale: AppLocale }) {
         .bal-coin { width: 48px; height: 48px; border-radius: 9999px; display: block; }
         .bal-coin-2 { margin-left: -13px; }
         .bal-names { display: flex; flex-direction: column; min-width: 0; gap: 2px; }
-        .bal-name { font-size: 0.9375rem; font-weight: 600; line-height: 1.2; }
+        .bal-name { font-size: 0.9375rem; font-weight: var(--fw-600); line-height: 1.2; }
         .bal-meta { font-size: 0.72rem; color: #73726c; line-height: 1.2; }
         .bal-main { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
         .bal-label { font-size: 0.72rem; color: #73726c; line-height: 1.15; }
         .bal-green { color: #16a34a; }
-        .bal-used { color: #0f1518; font-weight: 600; }
+        .bal-used { color: #0f1518; font-weight: var(--fw-600); }
         .bal-amount {
           font-size: 1.25rem;
-          font-weight: 600;
+          font-weight: var(--fw-600);
           line-height: 1;
           letter-spacing: -0.02em;
           font-variant-numeric: tabular-nums;
@@ -84,7 +84,7 @@ export function BorrowAgainstLP({ locale }: { locale: AppLocale }) {
           align-items: baseline;
           gap: 5px;
         }
-        .bal-amount small { font-size: 0.75rem; font-weight: 600; color: #73726c; }
+        .bal-amount small { font-size: 0.75rem; font-weight: var(--fw-600); color: #73726c; }
         .bal-usage-head { display: flex; align-items: center; justify-content: space-between; }
         .bal-bar {
           display: block;

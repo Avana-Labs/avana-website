@@ -107,7 +107,7 @@
         "reference": "參考"
       },
       "items": {
-        "overview": "概覽",
+        "overview": "歡迎",
         "keyConcepts": "關鍵概念",
         "glossary": "詞彙表",
         "depositLp": "存款 LP",
@@ -160,7 +160,6 @@
         "chainId": "鏈 ID",
         "copy": "複製",
         "copied": "已複製",
-        "placeholder": "佔位符",
         "explorer": "開啟區塊瀏覽器",
         "updated": "最後更新 {date}"
       }

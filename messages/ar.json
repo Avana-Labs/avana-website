@@ -107,7 +107,7 @@
         "reference": "المرجع"
       },
       "items": {
-        "overview": "نظرة عامة",
+        "overview": "مرحباً",
         "keyConcepts": "المفاهيم الرئيسية",
         "glossary": "قائمة المصطلحات",
         "depositLp": "الوديعة LP",
@@ -160,7 +160,6 @@
         "chainId": "معرّف السلسلة",
         "copy": "نسخ",
         "copied": "تم النسخ",
-        "placeholder": "عنصر نائب",
         "explorer": "يفتح مستكشف الكتل",
         "updated": "آخر تحديث {date}"
       }

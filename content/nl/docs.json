@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Welkom",
-      "description": "Een lener verpandt een Uniswap v3-positie op Ethereum of een niet-gestakete Aerodrome Slipstream-positie op Base waarvan het tickbereik exact overeenkomt met een gelistede markt. De LPVault van het AMM-protocol neemt de bewaring over, maar de liquiditeit blijft in de pool en blijft fees verdienen, die de lener op elk moment kan innen."
+      "description": "Het verpanden van een LP-positie verplaatst de bewaring naar de LPVault, maar laat de liquiditeit in de pool. De lener kan GHO lenen zonder eerst de positie op te nemen en de fees of het bereik op te geven."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Welkom"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Wat is Avana?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Hoe het werkt"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Welkom",
-      "Wat is Avana?",
-      "Hoe het werkt",
       "Waarom LP-collateral ertoe doet",
       "Architectuur",
-      "Zet een ondersteunde LP-positie in als onderpand",
-      "Een lener verpandt een Uniswap v3-positie op Ethereum of een niet-gestakete Aerodrome Slipstream-positie op Base waarvan het tickbereik exact overeenkomt met een gelistede markt. De LPVault van het AMM-protocol neemt de bewaring over, maar de liquiditeit blijft in de pool en blijft fees verdienen, die de lener op elk moment kan innen.",
-      "Vertegenwoordig en waardeer het",
-      "Collateralization registreert de gecrediteerde liquiditeit van de positie. De AaveAdapter mint precies zoveel vault-token-eenheden naar de PositionProxy van de lener voor die markt, die ze aanlevert aan de CDP Spoke van de markt. De LPOracle waardeert elk vault token tegen Chainlink-prijzen op basis van eerlijke samenstelling, zonder afslag, en controleert dit tegen de TWAP van de pool en een onafhankelijke tweede bron.",
-      "Leen GHO van de Avana Hub",
-      "Leencapaciteit is de waarde van de positie vermenigvuldigd met de collateral factor van de markt, de laagste tokenfactor maal een poolrisicofactor van ten hoogste 40%. De lener neemt GHO op uit de Avana Stable LP Hub, gefinancierd door een begrensde kredietlijn van de Aave DAO. USDC, USDT of WETH kunnen per CDP Spoke als schuldasset worden ingeschakeld zodra de Aave DAO ze goedkeurt.",
       "Liquiditeit blijft in de pool",
       "Het verpanden van een LP-positie verplaatst de bewaring naar de LPVault, maar laat de liquiditeit in de pool. De lener kan GHO lenen zonder eerst de positie op te nemen en de fees of het bereik op te geven.",
       "Taxatie en limieten zijn gescheiden",
       "De LPOracle rapporteert de waarde van de liquiditeit zonder afslag. De collateral factor van elke markt, min(token factors) × pool risk factor, bepaalt hoeveel van die waarde schuld dekt, en elke markt heeft een eigen account en health factor.",
       "Liquidatie heeft expliciete regels",
       "Elke liquidatie loopt via LPVaultSwap met de standaardliquidatieaanroep van Aave en is altijd gedeeltelijk. LPVaultSwap neemt het schuldasset van zijn aanroeper, bouwt alleen de in beslag genomen eenheden af en wisselt ze om in één transactie. Zijn enige entry point voor liquidatie staat open voor elk adres, en de keeper van Avana liquideert elk account onder health factor 1.",
-      "Introductie",
       "Met Avana kunnen liquiditeitsverschaffers GHO lenen op Aave V4 tegen Uniswap v3-posities op Ethereum en Aerodrome Slipstream-posities op Base. De posities blijven in hun pools en blijven handelsfees verdienen.",
+      "Het Protocoloverzicht legt uit hoe verpanden, waarderen, lenen en liquidatie samenhangen. De referentiepagina's bovenaan de navigatie vermelden elk contractadres, elke marktparameter en elke rol.",
+      "Lees het Protocoloverzicht",
       "Begin met Kernconcepten",
       "Hubs en Spokes verkennen",
-      "Avana brengt AMM-liquiditeitsposities als onderpand naar Aave V4. Een inlegger verpandt een positie van een gelistede markt aan de LPVault van zijn AMM-protocol en leent daarna GHO uit de Avana Stable LP Hub terwijl de positie in de pool blijft.",
-      "Om elders tegen LP-assets te lenen, moet een liquiditeitsverschaffer meestal eerst uit de pool stappen. Daarbij geeft hij handelsvergoedingen op en, bij geconcentreerde posities, het gekozen bereik.",
-      "Avana houdt de positie in haar pool. De LPVault van het AMM-protocol houdt de positie aan, en een vault token vertegenwoordigt haar op een CDP Spoke. Een vault token is een ERC-20 met overdrachtsbeperkingen die uitsluitend als onderpand dient, waarin één basiseenheid gelijk is aan één eenheid gecrediteerde liquiditeit. Bij lancering draait Avana op Ethereum met Uniswap v3-markten en op Base met Aerodrome Slipstream-markten, waarbij elke markt één stablecoinpool met één exact tickbereik is.",
-      "Elke fase verbindt een gebruikersactie met de boekhouding van het protocol. Een verpanding legt de bewaring vast. Waardering en de Collateral Factor bepalen de leencapaciteit. Een lening creëert GHO-schuld tegen die capaciteit. De volgende handleidingen lichten elke stap in detail toe.",
       "Met LP-onderpand kunnen assets die al in een AMM zijn ingezet een GHO-lening dekken. Het voordeel is kapitaalflexibiliteit, geen gegarandeerde positieve carry. Leners blijven impermanent loss, prijsrisico en liquidatierisico dragen.",
       "Avana Hubs en Spokes zijn standaard, ongewijzigde Aave V4-contracten die eigendom zijn van de Aave DAO. Avana-specifieke logica zit in de eigen contracten van Avana: een LPVault per AMM-protocol, Collateralization, vault tokens, PositionProxies en de ProxyManager, de AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap en de AvanaTimelock.",
-      "Hubs zijn er in drie niveaus: Stable LP bij lancering op Ethereum en Base, met Correlated LP- en Volatile LP-Hubs die later worden toegevoegd. Een CDP Spoke is één Spoke per chain, Hub, AMM-protocol en risiconiveau en listet meerdere markten: \"Uniswap v3 Stable\" op Ethereum en \"Aerodrome Slipstream Stable\" op Base. Een Lend Spoke voor alleen aanlevering op elke chain draagt de kredietlijnen van de Aave DAO, en een Coverage Spoke per Hub en schuldasset, de Avana Umbrella, houdt de First-Loss Reserve aan. Elke wallet heeft één PositionProxy per CDP Spoke en markt, dus elke actie van een lener loopt via de AaveAdapter en elke markt heeft een eigen health factor.",
       "Een overzicht van Avana: het verpanden van Uniswap v3- en Aerodrome Slipstream-posities, het lenen van GHO uit de Avana Stable LP Hub, en de regels per markt voor waardering en liquidatie."
     ]
   },

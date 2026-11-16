@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Selamat datang",
-      "description": "Peminjam menjaminkan posisi Uniswap v3 di Ethereum atau posisi Aerodrome Slipstream yang tidak di-stake di Base yang rentang tick-nya persis cocok dengan pasar yang terdaftar. LPVault milik protokol AMM mengambil kustodi, tetapi likuiditasnya tetap berada di pool dan terus menghasilkan fee, yang dapat dikumpulkan peminjam kapan saja."
+      "description": "Menjaminkan posisi LP memindahkan kustodi ke LPVault tetapi membiarkan likuiditasnya tetap di pool. Peminjam dapat meminjam GHO tanpa harus terlebih dahulu menarik posisi dan melepaskan fee atau rentangnya."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Selamat datang"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Apa itu Avana?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Cara Kerjanya"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Selamat datang",
-      "Apa itu Avana?",
-      "Cara Kerjanya",
       "Mengapa Agunan LP Penting",
       "Arsitektur",
-      "Menggadaikan posisi LP yang didukung",
-      "Peminjam menjaminkan posisi Uniswap v3 di Ethereum atau posisi Aerodrome Slipstream yang tidak di-stake di Base yang rentang tick-nya persis cocok dengan pasar yang terdaftar. LPVault milik protokol AMM mengambil kustodi, tetapi likuiditasnya tetap berada di pool dan terus menghasilkan fee, yang dapat dikumpulkan peminjam kapan saja.",
-      "Mewakili dan menghargainya",
-      "Collateralization mencatat likuiditas yang dikreditkan dari posisi tersebut. AaveAdapter mencetak tepat sebanyak itu unit vault token ke PositionProxy milik peminjam untuk pasar tersebut, yang memasoknya ke CDP Spoke pasar. LPOracle menilai setiap vault token pada harga Chainlink berdasarkan komposisi wajar, tanpa potongan nilai, dan memeriksanya terhadap TWAP pool dan sumber kedua yang independen.",
-      "Pinjam GHO dari Avana Hub",
-      "Kapasitas pinjaman adalah nilai posisi dikalikan dengan faktor kolateral pasar, yaitu faktor token terendah dikali faktor risiko pool paling tinggi 40%. Peminjam menarik GHO dari Avana Stable LP Hub, yang didanai oleh jalur kredit Aave DAO yang dibatasi. USDC, USDT, atau WETH dapat diaktifkan sebagai aset utang per CDP Spoke setelah Aave DAO menyetujuinya.",
       "Likuiditas tetap di pool",
       "Menjaminkan posisi LP memindahkan kustodi ke LPVault tetapi membiarkan likuiditasnya tetap di pool. Peminjam dapat meminjam GHO tanpa harus terlebih dahulu menarik posisi dan melepaskan fee atau rentangnya.",
       "Penilaian dan batasan adalah terpisah",
       "LPOracle melaporkan nilai likuiditas tanpa potongan nilai. Faktor kolateral setiap pasar, min(token factors) × pool risk factor, menentukan berapa banyak dari nilai tersebut yang mendukung utang, dan setiap pasar memiliki akun dan faktor kesehatannya sendiri.",
       "Likuidasi mempunyai aturan yang jelas",
       "Setiap likuidasi berjalan melalui LPVaultSwap dengan panggilan likuidasi standar Aave dan selalu bersifat sebagian. LPVaultSwap mengambil aset utang dari pemanggilnya, hanya melepas unit yang disita, dan menukarnya dalam satu transaksi. Satu-satunya entry point likuidasinya terbuka untuk alamat mana pun, dan keeper Avana melikuidasi setiap akun di bawah faktor kesehatan 1.",
-      "Pendahuluan",
       "Avana memungkinkan penyedia likuiditas meminjam GHO di Aave V4 dengan jaminan posisi Uniswap v3 di Ethereum dan posisi Aerodrome Slipstream di Base. Posisi tetap berada di pool-nya dan terus menghasilkan fee trading.",
+      "Ikhtisar Protokol menjelaskan bagaimana penjaminan, penilaian, peminjaman, dan likuidasi saling terkait. Halaman referensi di bagian atas navigasi mencantumkan setiap alamat kontrak, parameter pasar, dan peran.",
+      "Baca Ikhtisar Protokol",
       "Mulailah dengan Konsep Utama",
       "Jelajahi Hub dan Spoke",
-      "Avana membawa posisi likuiditas AMM ke Aave V4 sebagai kolateral. Penyetor menjaminkan posisi dari pasar yang terdaftar ke LPVault milik protokol AMM-nya, lalu meminjam GHO dari Avana Stable LP Hub sementara posisi tetap berada di pool.",
-      "Untuk meminjam dengan jaminan aset LP di tempat lain, penyedia likuiditas biasanya harus menarik dana dari pool terlebih dahulu. Penarikan berarti kehilangan fee perdagangan dan, untuk posisi terkonsentrasi, rentang yang telah dipilih.",
-      "Avana menjaga posisi tetap di pool-nya. LPVault milik protokol AMM-nya memegang posisi tersebut, dan sebuah vault token merepresentasikannya di CDP Spoke. Vault token adalah ERC-20 khusus kolateral dengan pembatasan transfer, di mana satu unit dasar setara dengan satu unit likuiditas yang dikreditkan. Saat peluncuran, Avana berjalan di Ethereum dengan pasar Uniswap v3 dan di Base dengan pasar Aerodrome Slipstream, dengan setiap pasar berupa satu pool stablecoin dengan satu rentang tick yang persis.",
-      "Setiap tahap menghubungkan tindakan pengguna dengan akuntansi protokol. Penjaminan menetapkan kustodi. Valuasi dan Collateral Factor menentukan kapasitas pinjaman. Pinjaman menciptakan utang GHO terhadap kapasitas tersebut. Panduan berikut menjelaskan setiap langkah secara rinci.",
       "Kolateral LP memungkinkan aset yang sudah ditempatkan di AMM mendukung pinjaman GHO. Manfaatnya adalah fleksibilitas modal, bukan carry positif yang terjamin. Peminjam tetap menanggung impermanent loss, risiko harga, dan risiko likuidasi.",
       "Hub dan Spoke Avana adalah kontrak Aave V4 standar yang tidak dimodifikasi dan dimiliki oleh Aave DAO. Logika khusus Avana berada di kontrak milik Avana sendiri: LPVault per protokol AMM, Collateralization, vault token, PositionProxy dan ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap, dan AvanaTimelock.",
-      "Hub terbagi dalam tiga tingkat: Stable LP saat peluncuran di Ethereum dan Base, dengan Hub Correlated LP dan Volatile LP ditambahkan kemudian. CDP Spoke adalah satu Spoke per chain, Hub, protokol AMM, dan tingkat risiko, dan mencantumkan beberapa pasar: \"Uniswap v3 Stable\" di Ethereum dan \"Aerodrome Slipstream Stable\" di Base. Lend Spoke khusus pasokan di setiap chain membawa jalur kredit Aave DAO, dan Coverage Spoke per Hub dan aset utang, yaitu Avana Umbrella, memegang First-Loss Reserve. Setiap wallet memiliki satu PositionProxy per CDP Spoke dan pasar, sehingga setiap tindakan peminjam melewati AaveAdapter dan setiap pasar memiliki faktor kesehatannya sendiri.",
       "Ikhtisar Avana: menjaminkan posisi Uniswap v3 dan Aerodrome Slipstream, meminjam GHO dari Avana Stable LP Hub, serta aturan per pasar untuk valuasi dan likuidasi."
     ]
   },

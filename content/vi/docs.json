@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Chào mừng",
-      "description": "Người vay cầm cố một vị thế Uniswap v3 trên Ethereum hoặc một vị thế Aerodrome Slipstream chưa stake trên Base có khoảng tick khớp chính xác với một thị trường đã niêm yết. LPVault của giao thức AMM nhận lưu ký, nhưng thanh khoản vẫn ở trong pool và tiếp tục kiếm phí, mà người vay có thể thu bất cứ lúc nào."
+      "description": "Cầm cố một vị thế LP chuyển quyền lưu ký sang LPVault nhưng giữ thanh khoản của nó trong pool. Người vay có thể vay GHO mà không cần rút vị thế trước và từ bỏ phí hay khoảng giá của nó."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Chào mừng"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Avana là gì?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Cách hoạt động"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Chào mừng",
-      "Avana là gì?",
-      "Cách hoạt động",
       "Vì sao tài sản thế chấp LP quan trọng",
       "Kiến trúc",
-      "Cam kết một vị trí LP được hỗ trợ",
-      "Người vay cầm cố một vị thế Uniswap v3 trên Ethereum hoặc một vị thế Aerodrome Slipstream chưa stake trên Base có khoảng tick khớp chính xác với một thị trường đã niêm yết. LPVault của giao thức AMM nhận lưu ký, nhưng thanh khoản vẫn ở trong pool và tiếp tục kiếm phí, mà người vay có thể thu bất cứ lúc nào.",
-      "Biểu thị và trân trọng nó",
-      "Collateralization ghi nhận thanh khoản được ghi có của vị thế. AaveAdapter mint đúng số đơn vị vault-token đó cho PositionProxy của người vay cho thị trường đó, proxy này cung cấp chúng cho CDP Spoke của thị trường. LPOracle định giá mỗi vault token theo giá Chainlink bằng thành phần công bằng, không chiết khấu, và kiểm tra nó với TWAP của pool và một nguồn thứ hai độc lập.",
-      "Mượn GHO từ Avana Hub",
-      "Khả năng vay bằng giá trị vị thế nhân với hệ số tài sản thế chấp của thị trường, tức hệ số token thấp nhất nhân với hệ số rủi ro pool tối đa 40%. Người vay rút GHO từ Avana Stable LP Hub, được cấp vốn bởi một hạn mức tín dụng có giới hạn của Aave DAO. USDC, USDT hoặc WETH có thể được bật làm tài sản nợ cho từng CDP Spoke khi Aave DAO phê duyệt.",
       "Thanh khoản vẫn ở mức pool",
       "Cầm cố một vị thế LP chuyển quyền lưu ký sang LPVault nhưng giữ thanh khoản của nó trong pool. Người vay có thể vay GHO mà không cần rút vị thế trước và từ bỏ phí hay khoảng giá của nó.",
       "Định giá và giới hạn là riêng biệt",
       "LPOracle báo cáo giá trị của thanh khoản không chiết khấu. Hệ số tài sản thế chấp của mỗi thị trường, min(hệ số token) × hệ số rủi ro pool, xác định phần giá trị đó có thể bảo đảm cho khoản nợ, và mỗi thị trường có tài khoản và hệ số sức khỏe riêng.",
       "Thanh lý có quy định rõ ràng",
       "Mọi lần thanh lý đều chạy qua LPVaultSwap với lệnh gọi thanh lý tiêu chuẩn của Aave và luôn là một phần. LPVaultSwap lấy tài sản nợ từ bên gọi, chỉ gỡ các đơn vị bị tịch thu và hoán đổi chúng trong một giao dịch. Điểm vào thanh lý duy nhất của nó mở cho bất kỳ địa chỉ nào, và keeper của Avana thanh lý mọi tài khoản có hệ số sức khỏe dưới 1.",
-      "Giới thiệu",
       "Avana cho phép nhà cung cấp thanh khoản vay GHO trên Aave V4 bằng vị thế Uniswap v3 trên Ethereum và vị thế Aerodrome Slipstream trên Base. Các vị thế vẫn ở trong pool và tiếp tục kiếm phí giao dịch.",
+      "Tổng quan giao thức giải thích cách cầm cố, định giá, vay và thanh lý kết hợp với nhau. Các trang tham chiếu ở đầu thanh điều hướng liệt kê mọi địa chỉ hợp đồng, tham số thị trường và vai trò.",
+      "Đọc Tổng quan giao thức",
       "Bắt đầu với các khái niệm chính",
       "Tìm hiểu Hub và Spoke",
-      "Avana đưa các vị thế thanh khoản AMM vào Aave V4 làm tài sản thế chấp. Người gửi cầm cố một vị thế của thị trường đã niêm yết vào LPVault của giao thức AMM tương ứng rồi vay GHO từ Avana Stable LP Hub trong khi vị thế vẫn ở trong pool.",
-      "Để vay bằng tài sản LP ở nơi khác, nhà cung cấp thanh khoản thường phải rút khỏi pool trước. Việc rút đồng nghĩa với từ bỏ phí giao dịch và, đối với các vị thế tập trung, khoảng giá đã chọn.",
-      "Avana giữ vị thế trong pool của nó. LPVault của giao thức AMM nắm giữ vị thế, và một vault token đại diện cho nó trên một CDP Spoke. Vault token là một ERC-20 bị hạn chế chuyển, chỉ dùng làm tài sản thế chấp, trong đó một đơn vị cơ sở bằng một đơn vị thanh khoản được ghi có. Khi ra mắt, Avana chạy trên Ethereum với các thị trường Uniswap v3 và trên Base với các thị trường Aerodrome Slipstream, mỗi thị trường là một pool stablecoin với một khoảng tick chính xác.",
-      "Mỗi giai đoạn kết nối một thao tác của người dùng với cơ chế kế toán của giao thức. Việc cầm cố (Pledge) thiết lập quyền lưu ký. Việc định giá và hệ số tài sản thế chấp quyết định khả năng vay. Một khoản vay tạo ra nợ GHO dựa trên khả năng vay đó. Các hướng dẫn sau giải thích chi tiết từng bước.",
       "Tài sản thế chấp LP cho phép các tài sản đã được triển khai trong một AMM bảo đảm cho một khoản vay GHO. Lợi ích là tính linh hoạt về vốn, không phải lợi nhuận chênh lệch dương được bảo đảm. Người vay vẫn chịu tổn thất tạm thời, rủi ro giá và rủi ro thanh lý.",
       "Hub và Spoke của Avana là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, do Aave DAO sở hữu. Logic riêng của Avana nằm trong các hợp đồng của chính Avana: một LPVault cho mỗi giao thức AMM, Collateralization, vault token, PositionProxy và ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap và AvanaTimelock.",
-      "Hub có ba cấp: Stable LP khi ra mắt trên Ethereum và Base, với Hub Correlated LP và Volatile LP được bổ sung sau. CDP Spoke là một Spoke cho mỗi chuỗi, Hub, giao thức AMM và cấp rủi ro, và niêm yết nhiều thị trường: \"Uniswap v3 Stable\" trên Ethereum và \"Aerodrome Slipstream Stable\" trên Base. Một Lend Spoke chỉ cung cấp trên mỗi chuỗi mang các hạn mức tín dụng của Aave DAO, và một Coverage Spoke cho mỗi Hub và tài sản nợ, tức Avana Umbrella, nắm giữ First-Loss Reserve. Mỗi ví có một PositionProxy cho mỗi CDP Spoke và thị trường, nên mọi hành động của người vay đều đi qua AaveAdapter và mỗi thị trường có hệ số sức khỏe riêng.",
       "Tổng quan về Avana: cầm cố vị thế Uniswap v3 và Aerodrome Slipstream, vay GHO từ Avana Stable LP Hub, và các quy tắc định giá và thanh lý theo từng thị trường."
     ]
   },

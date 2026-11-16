@@ -107,7 +107,7 @@
         "reference": "Довідник"
       },
       "items": {
-        "overview": "Огляд",
+        "overview": "Ласкаво просимо",
         "keyConcepts": "Ключові поняття",
         "glossary": "Глосарій",
         "depositLp": "Внесок LP",
@@ -160,7 +160,6 @@
         "chainId": "ID мережі",
         "copy": "Копіювати",
         "copied": "Скопійовано",
-        "placeholder": "Заповнювач",
         "explorer": "відкриває оглядач блоків",
         "updated": "Останнє оновлення {date}"
       }

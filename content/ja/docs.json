@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "ようこそ",
-      "description": "借り手は、ティックレンジが掲載済みマーケットと正確に一致する、Ethereum上のUniswap v3ポジション、またはBase上のステークされていないAerodrome Slipstreamポジションを差し入れます。AMMプロトコルのLPVaultが保管しますが、流動性はプールに残って手数料を稼ぎ続け、借り手はそれをいつでも回収できます。"
+      "description": "LPポジションを差し入れると保管はLPVaultに移りますが、その流動性はプールに残ります。借り手は、先にポジションを引き出してその手数料やレンジを手放すことなく、GHOを借り入れることができます。"
     },
     "toc": [
       {
         "id": "welcome",
         "title": "ようこそ"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Avana とは？"
-      },
-      {
-        "id": "how-it-works",
-        "title": "仕組み"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "ようこそ",
-      "Avana とは？",
-      "仕組み",
       "なぜ LP 担保が重要か",
       "アーキテクチャ",
-      "サポートされているLPポジションを誓約する",
-      "借り手は、ティックレンジが掲載済みマーケットと正確に一致する、Ethereum上のUniswap v3ポジション、またはBase上のステークされていないAerodrome Slipstreamポジションを差し入れます。AMMプロトコルのLPVaultが保管しますが、流動性はプールに残って手数料を稼ぎ続け、借り手はそれをいつでも回収できます。",
-      "それを表現し、評価する",
-      "Collateralizationはポジションの計上流動性を記録します。AaveAdapterは、ちょうどその数のvault token単位を、そのマーケットの借り手のPositionProxyにミントし、プロキシはそれをマーケットのCDP Spokeに供給します。LPOracleは各vault tokenを、Chainlink価格に基づき公正な構成でヘアカットなしに評価し、プールのTWAPと独立した第2のソースと照合します。",
-      "Avana HubからGHOを借りる",
-      "借入能力は、ポジションの価値にマーケットの担保係数を掛けたものです。担保係数は、最も低いトークン係数に最大40%のプールリスク係数を掛けたものです。借り手は、上限付きのAave DAOクレジットラインで資金供給されるAvana Stable LP HubからGHOを引き出します。USDC、USDT、WETHは、Aave DAOが承認すれば、CDP Spokeごとに債務資産として有効化できます。",
       "流動性はプールに残る",
       "LPポジションを差し入れると保管はLPVaultに移りますが、その流動性はプールに残ります。借り手は、先にポジションを引き出してその手数料やレンジを手放すことなく、GHOを借り入れることができます。",
       "評価と制限は別です",
       "LPOracleは流動性の価値をヘアカットなしで報告します。各マーケットの担保係数min(token factors) × pool risk factorが、その価値のうちどれだけが債務を裏付けるかを決め、各マーケットは独自のアカウントとヘルスファクターを持ちます。",
       "清算には明示的なルールがある",
       "すべての清算は、Aaveの標準の清算呼び出しを用いてLPVaultSwapを経由し、常に部分的です。LPVaultSwapは呼び出し元から債務資産を受け取り、差し押さえられた単位のみを巻き戻し、1つのトランザクションの中でそれらをスワップします。唯一の清算エントリポイントは任意のアドレスに開かれており、Avanaのキーパーはヘルスファクター1を下回るすべてのアカウントを清算します。",
-      "はじめに",
       "Avanaにより、流動性提供者は、Ethereum上のUniswap v3ポジションやBase上のAerodrome Slipstreamポジションを担保に、Aave V4でGHOを借り入れることができます。ポジションはプールに残り、取引手数料を稼ぎ続けます。",
+      "プロトコル概要では、担保差し入れ、評価、借入、清算がどのように連動するかを説明します。ナビゲーション上部のリファレンスページには、すべてのコントラクトアドレス、マーケットパラメータ、ロールが掲載されています。",
+      "プロトコル概要を読む",
       "Key Concepts から始める",
       "HubとSpokeを見る",
-      "Avanaは、AMMの流動性ポジションをAave V4に担保として持ち込みます。預入者は、掲載済みマーケットのポジションをそのAMMプロトコルのLPVaultに差し入れ、ポジションをプールに残したまま、Avana Stable LP HubからGHOを借り入れます。",
-      "他の場所でLP資産を担保に借り入れるには、流動性提供者は通常、まずプールから引き出す必要があります。引き出すと、取引手数料と、集中流動性ポジションの場合は選んだレンジを手放すことになります。",
-      "Avanaはポジションをプールに残します。そのAMMプロトコルのLPVaultがポジションを保有し、vault tokenがCDP Spoke上でそれを表します。vault tokenは移転が制限された担保専用のERC-20で、1基本単位が計上流動性の1単位に等しくなります。ローンチ時、AvanaはEthereumではUniswap v3のマーケットで、BaseではAerodrome Slipstreamのマーケットで稼働し、各マーケットは1つの正確なティックレンジを持つ1つのステーブルコインプールです。",
-      "各段階は、ユーザーの操作をプロトコルの会計処理に結びつけます。差し入れによって保管が確立されます。評価と担保係数によって借入可能額が決まります。借入によって、その借入可能額に対するGHO債務が生じます。以下のガイドで、各ステップを詳しく説明します。",
       "LP担保を使うと、すでにAMMに投入している資産でGHOローンを裏付けられます。メリットは資本の柔軟性であり、プラスのキャリーが保証されるわけではありません。借り手は引き続き、インパーマネントロス、価格リスク、清算リスクを負います。",
       "AvanaのHubとSpokeは、Aave DAOが所有する、変更されていない標準のAave V4コントラクトです。Avana固有のロジックはAvana自身のコントラクトにあります：AMMプロトコルごとのLPVault、Collateralization、vault token、PositionProxyとProxyManager、AaveAdapter、RiskModule、MarketRegistry、ParameterStore、LPOracle、DebtOracle、LPVaultSwap、AvanaTimelockです。",
-      "Hubには3つのティアがあります：ローンチ時にEthereumとBaseで稼働するStable LPと、後から追加されるCorrelated LPおよびVolatile LPのHubです。CDP Spokeは、チェーン、Hub、AMMプロトコル、リスクティアごとに1つのSpokeで、複数のマーケットを掲載します：Ethereumでは「Uniswap v3 Stable」、Baseでは「Aerodrome Slipstream Stable」です。各チェーンの供給専用のLend SpokeがAave DAOのクレジットラインを担い、Hubと債務資産ごとのCoverage Spoke（Avana Umbrella）がFirst-Loss Reserveを保有します。各ウォレットはCDP Spokeとマーケットごとに1つのPositionProxyを持つため、借り手のすべての操作はAaveAdapterを経由し、各マーケットは独自のヘルスファクターを持ちます。",
       "Avanaの概要：Uniswap v3とAerodrome Slipstreamのポジションの差し入れ、Avana Stable LP HubからのGHOの借入、評価と清算に関するマーケットごとのルール。"
     ]
   },

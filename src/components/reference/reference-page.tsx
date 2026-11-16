@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import type { ReactNode } from "react"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
@@ -5,19 +6,20 @@ import { ReferenceCopyButton } from "@/components/reference/reference-copy-butto
 import { ReferenceNetworkView } from "@/components/reference/reference-network-view"
 import { Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/locales"
+import { networkIcon, tokenIcons, venueIcon } from "@/lib/reference/icons"
+import { cn } from "@/lib/utils"
 import { loadReferenceDocument, type ReferencePageName } from "@/lib/reference/load"
 import {
   isAddress,
   isHash,
   isPlaceholderAddress,
-  isPlaceholderHash,
   parseInline,
   type ReferenceBlock,
   type ReferenceNetwork,
   type ReferenceSection,
 } from "@/lib/reference/markdown"
 
-type Labels = { placeholder: string; explorer: string }
+type Labels = { explorer: string }
 
 function shorten(value: string) {
   return `${value.slice(0, 6)}…${value.slice(-4)}`
@@ -59,6 +61,45 @@ function Inline({ text }: { text: string }) {
   )
 }
 
+function Icon({ src, className }: { src: string; className?: string }) {
+  return (
+    <Image
+      src={src}
+      alt=""
+      aria-hidden="true"
+      width={16}
+      height={16}
+      className={cn("h-4 w-4 shrink-0 rounded-full bg-white object-contain", className)}
+    />
+  )
+}
+
+/** Token or pair icons, overlapped like the app's pool rows. */
+function TokenIcons({ icons }: { icons: Array<{ symbol: string; src: string }> }) {
+  return (
+    <span className="inline-flex shrink-0 items-center" aria-hidden="true">
+      {icons.map((icon, index) => (
+        <Icon key={icon.symbol} src={icon.src} className={index > 0 ? "-ml-1.5 ring-2 ring-white" : undefined} />
+      ))}
+    </span>
+  )
+}
+
+/** A label with its token, pair or venue icon in front, when it has one. */
+function Labelled({ text }: { text: string }) {
+  const tokens = tokenIcons(text)
+  const venue = tokens ? undefined : venueIcon(text)
+  if (!tokens && !venue) return <Inline text={text} />
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      {tokens ? <TokenIcons icons={tokens} /> : <Icon src={venue!} />}
+      <span>
+        <Inline text={text} />
+      </span>
+    </span>
+  )
+}
+
 function AddressValue({ value, network, labels }: { value: string; network?: ReferenceNetwork; labels: Labels }) {
   const placeholder = isPlaceholderAddress(value)
   const short = (
@@ -84,20 +125,11 @@ function AddressValue({ value, network, labels }: { value: string; network?: Ref
         short
       )}
       <ReferenceCopyButton value={value} />
-      {placeholder ? <PlaceholderTag label={labels.placeholder} /> : null}
     </span>
   )
 }
 
-function PlaceholderTag({ label }: { label: string }) {
-  return (
-    <span className="rounded border border-border bg-muted px-1 text-[0.6875rem] leading-4 text-type-secondary">
-      {label}
-    </span>
-  )
-}
-
-function HashValue({ value, labels }: { value: string; labels: Labels }) {
+function HashValue({ value }: { value: string }) {
   return (
     <span className="inline-flex items-center gap-1.5 whitespace-nowrap" title={value}>
       <span className="hidden">{value}</span>
@@ -105,14 +137,25 @@ function HashValue({ value, labels }: { value: string; labels: Labels }) {
         {shorten(value)}
       </span>
       <ReferenceCopyButton value={value} />
-      {isPlaceholderHash(value) ? <PlaceholderTag label={labels.placeholder} /> : null}
     </span>
   )
 }
 
-function Cell({ value, network, labels }: { value: string; network?: ReferenceNetwork; labels: Labels }) {
+function Cell({
+  value,
+  network,
+  labels,
+  first,
+}: {
+  value: string
+  network?: ReferenceNetwork
+  labels: Labels
+  first: boolean
+}) {
   if (isAddress(value)) return <AddressValue value={value} network={network} labels={labels} />
-  if (isHash(value)) return <HashValue value={value} labels={labels} />
+  if (isHash(value)) return <HashValue value={value} />
+  // Token pairs get icons in any column; venue icons only on a row's name.
+  if (first || tokenIcons(value)) return <Labelled text={value} />
   return <Inline text={value} />
 }
 
@@ -163,7 +206,7 @@ function Blocks({ blocks, network, labels }: { blocks: ReferenceBlock[]; network
                   <tr key={rowIndex}>
                     {row.map((cell, cellIndex) => (
                       <td key={cellIndex} className={cell.length > 90 ? "reference-cell-wide" : undefined}>
-                        <Cell value={cell} network={network} labels={labels} />
+                        <Cell value={cell} network={network} labels={labels} first={cellIndex === 0} />
                       </td>
                     ))}
                   </tr>
@@ -182,7 +225,10 @@ function Sections({ sections, network, labels }: { sections: ReferenceSection[];
     <>
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="mb-10 scroll-mt-32">
-          <h2 className="mb-4 type-doc-section-title">{section.title}</h2>
+          <h2 className="mb-4 flex items-center gap-2 type-doc-section-title">
+            {venueIcon(section.title) ? <Icon src={venueIcon(section.title)!} className="h-5 w-5" /> : null}
+            {section.title}
+          </h2>
           <Blocks blocks={section.blocks} network={network} labels={labels} />
         </section>
       ))}
@@ -211,7 +257,7 @@ export async function ReferencePage({
 }: ReferencePageProps): Promise<ReactNode> {
   const document = loadReferenceDocument(page)
   const t = await getTranslations({ locale, namespace: "common.docs.reference" })
-  const labels: Labels = { placeholder: t("placeholder"), explorer: t("explorer") }
+  const labels: Labels = { explorer: t("explorer") }
 
   const networkGroups = document.groups.filter((group) => group.network)
   const sharedGroups = document.groups.filter((group) => !group.network)
@@ -244,6 +290,7 @@ export async function ReferencePage({
         id: group.network!.id,
         title: group.title,
         chainId: group.network!.chainId,
+        icon: networkIcon(group.network!.id),
         sections: group.sections.map(({ id, title }) => ({ id, title })),
       }))}
       panels={networkGroups.map((group) => (

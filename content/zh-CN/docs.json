@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "欢迎",
-      "description": "借款人质押一个 Ethereum 上的 Uniswap v3 仓位，或一个 Base 上未质押挖矿的 Aerodrome Slipstream 仓位，其 tick 区间须与某个已上架市场完全一致。AMM 协议的 LPVault 负责托管，但流动性仍留在池中继续赚取手续费，借款人可随时领取。"
+      "description": "质押 LP 仓位会将托管权转移给 LPVault，但其流动性仍留在池中。借款人无需先提取仓位、放弃其手续费或区间，即可借入 GHO。"
     },
     "toc": [
       {
         "id": "welcome",
         "title": "欢迎"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "什么是 Avana？"
-      },
-      {
-        "id": "how-it-works",
-        "title": "运作方式"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "欢迎",
-      "什么是 Avana？",
-      "运作方式",
       "为什么 LP 抵押品很重要",
       "架构",
-      "质押支持的LP头寸",
-      "借款人质押一个 Ethereum 上的 Uniswap v3 仓位，或一个 Base 上未质押挖矿的 Aerodrome Slipstream 仓位，其 tick 区间须与某个已上架市场完全一致。AMM 协议的 LPVault 负责托管，但流动性仍留在池中继续赚取手续费，借款人可随时领取。",
-      "表现并重视它",
-      "Collateralization 记录该仓位的记入流动性。AaveAdapter 向借款人在该市场的 PositionProxy 铸造恰好相同数量的 vault token 单位，由其供应给该市场的 CDP Spoke。LPOracle 按公允构成以 Chainlink 价格为每个 vault token 估值，不做折价，并与池的 TWAP 和独立的第二来源进行核对。",
-      "从 Avana Hub 借 GHO",
-      "借款额度等于仓位价值乘以该市场的抵押系数，即最低的代币系数乘以不超过 40% 的池风险系数。借款人从 Avana Stable LP Hub 提取 GHO，该 Hub 由有上限的 Aave DAO 信用额度出资。经 Aave DAO 批准后，可按 CDP Spoke 启用 USDC、USDT 或 WETH 作为债务资产。",
       "流动性留在池中",
       "质押 LP 仓位会将托管权转移给 LPVault，但其流动性仍留在池中。借款人无需先提取仓位、放弃其手续费或区间，即可借入 GHO。",
       "估值和限制是分开的",
       "LPOracle 报告流动性的价值，不做折价。每个市场的抵押系数 min(token factors) × pool risk factor 决定其中有多少价值可以支撑债务，每个市场都有自己的账户和健康因子。",
       "清算有明确规则",
       "每次清算都通过 LPVaultSwap 使用 Aave 的标准清算调用进行，且始终是部分清算。LPVaultSwap 从其调用者处获取债务资产，只解除被扣押的单位，并在一笔交易中完成兑换。其唯一的清算入口向任何地址开放，Avana 的 Keeper 会清算每个健康因子低于 1 的账户。",
-      "简介",
       "Avana 让流动性提供者可以在 Aave V4 上以 Ethereum 上的 Uniswap v3 仓位和 Base 上的 Aerodrome Slipstream 仓位为抵押借入 GHO。仓位保留在各自的池中，继续赚取交易手续费。",
+      "协议概览说明了质押、估值、借款和清算如何协同运作。导航顶部的参考页面列出了每个合约地址、市场参数和角色。",
+      "阅读协议概览",
       "从 Key Concepts 开始",
       "了解 Hub 和 Spoke",
-      "Avana 将 AMM 流动性仓位作为抵押品引入 Aave V4。存款人将已上架市场的仓位质押到其 AMM 协议的 LPVault，然后在仓位留在池中的同时从 Avana Stable LP Hub 借入 GHO。",
-      "要在其他地方以 LP 资产借款，流动性提供者通常必须先从池中撤出。撤出意味着放弃交易手续费；对于集中流动性仓位，还会放弃所选区间。",
-      "Avana 将仓位保留在其池中。其 AMM 协议的 LPVault 持有该仓位，并由一个 vault token 在 CDP Spoke 上代表它。vault token 是一种转账受限、仅用作抵押品的 ERC-20，其一个基本单位等于一个单位的记入流动性。上线时，Avana 在 Ethereum 上运行 Uniswap v3 市场，在 Base 上运行 Aerodrome Slipstream 市场，每个市场都是一个具有单一精确 tick 区间的稳定币池。",
-      "每个阶段都将一项用户操作与协议的记账关联起来。质押确立托管关系。估值和抵押系数决定借款额度。借款会在该额度内产生 GHO 债务。以下指南详细说明每个步骤。",
       "LP 抵押品让已部署在 AMM 中的资产能够支撑 GHO 贷款。其好处在于资本灵活性，而非保证正利差。借款人仍需承担无常损失、价格风险和清算风险。",
       "Avana 的 Hub 和 Spoke 是由 Aave DAO 拥有的标准、未经修改的 Aave V4 合约。Avana 特有的逻辑位于 Avana 自己的合约中：每个 AMM 协议一个 LPVault、Collateralization、vault token、PositionProxy 和 ProxyManager、AaveAdapter、RiskModule、MarketRegistry、ParameterStore、LPOracle、DebtOracle、LPVaultSwap 以及 AvanaTimelock。",
-      "Hub 分为三个层级：上线时在 Ethereum 和 Base 上推出 Stable LP，之后再加入 Correlated LP 和 Volatile LP Hub。CDP Spoke 按每条链、Hub、AMM 协议和风险层级各设一个，并上架多个市场：Ethereum 上的 \"Uniswap v3 Stable\" 和 Base 上的 \"Aerodrome Slipstream Stable\"。每条链上有一个仅供应的 Lend Spoke 承载 Aave DAO 信用额度，每个 Hub 和债务资产各有一个 Coverage Spoke，即 Avana Umbrella，持有首损准备金。每个钱包在每个 CDP Spoke 和市场各有一个 PositionProxy，因此每项借款人操作都经过 AaveAdapter，每个市场都有自己的健康因子。",
       "Avana 概述：质押 Uniswap v3 和 Aerodrome Slipstream 仓位、从 Avana Stable LP Hub 借入 GHO，以及按市场设定的估值和清算规则。"
     ]
   },

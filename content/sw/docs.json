@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Karibu",
-      "description": "Mkopaji huweka rehani nafasi ya Uniswap v3 kwenye Ethereum au nafasi ya Aerodrome Slipstream isiyo kwenye staking kwenye Base ambayo masafa yake ya tick yanalingana hasa na soko lililoorodheshwa. LPVault ya itifaki ya AMM huchukua uhifadhi, lakini ukwasi hubaki kwenye bwawa na huendelea kupata ada, ambazo mkopaji anaweza kuzikusanya wakati wowote."
+      "description": "Kuweka rehani nafasi ya LP huhamisha uhifadhi kwa LPVault lakini huacha ukwasi wake kwenye bwawa. Mkopaji anaweza kukopa GHO bila kwanza kutoa nafasi na kuacha ada zake au masafa yake."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Karibu"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Avana ni nini?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Jinsi Inavyofanya Kazi"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Karibu",
-      "Avana ni nini?",
-      "Jinsi Inavyofanya Kazi",
       "Kwa nini LP Masuala ya Dhamana",
       "Usanifu",
-      "Kadiria nafasi ya LP iliyoungwa mkono",
-      "Mkopaji huweka rehani nafasi ya Uniswap v3 kwenye Ethereum au nafasi ya Aerodrome Slipstream isiyo kwenye staking kwenye Base ambayo masafa yake ya tick yanalingana hasa na soko lililoorodheshwa. LPVault ya itifaki ya AMM huchukua uhifadhi, lakini ukwasi hubaki kwenye bwawa na huendelea kupata ada, ambazo mkopaji anaweza kuzikusanya wakati wowote.",
-      "Lete mfano wake na uithamini",
-      "Collateralization hurekodi ukwasi uliowekewa mkopo wa nafasi. AaveAdapter hutengeneza idadi hiyo hasa ya vizio vya vault token kwa PositionProxy ya mkopaji kwa soko hilo, ambayo huviweka kwenye CDP Spoke ya soko. LPOracle huthamini kila vault token kwa bei za Chainlink kwa muundo wa haki, bila punguzo la thamani, na huikagua dhidi ya TWAP ya bwawa na chanzo cha pili huru.",
-      "Kopa GHO kutoka Avana Hub",
-      "Uwezo wa kukopa ni thamani ya nafasi ikizidishwa na Collateral Factor ya soko, kipengele cha chini cha tokeni mara kipengele cha hatari cha bwawa kisichozidi 40%. Mkopaji huchukua GHO kutoka Avana Stable LP Hub, inayofadhiliwa na mstari wa mkopo wa Aave DAO wenye kikomo. USDC, USDT au WETH zinaweza kuwezeshwa kama mali za deni kwa kila CDP Spoke mara Aave DAO inapoziidhinisha.",
       "Liquidity hukaa kwenye pool",
       "Kuweka rehani nafasi ya LP huhamisha uhifadhi kwa LPVault lakini huacha ukwasi wake kwenye bwawa. Mkopaji anaweza kukopa GHO bila kwanza kutoa nafasi na kuacha ada zake au masafa yake.",
       "Tathmini na mipaka ni tofauti",
       "LPOracle huripoti thamani ya ukwasi bila punguzo la thamani. Collateral Factor ya kila soko, min(token factors) × pool risk factor, huweka kiasi cha thamani hiyo kinachounga mkono deni, na kila soko lina akaunti yake na kipimo chake cha afya.",
       "Kuondolewa kuna sheria wazi",
       "Kila ufilisishaji hupitia LPVaultSwap kwa mwito wa kawaida wa ufilisishaji wa Aave na daima ni wa sehemu. LPVaultSwap huchukua mali ya deni kutoka kwa mwitaji wake, hufungua vizio vilivyokamatwa pekee na huvibadilisha katika muamala mmoja. Sehemu yake moja ya kuingia ya ufilisishaji iko wazi kwa anwani yoyote, na keeper wa Avana hufilisi kila akaunti iliyo chini ya kipimo cha afya cha 1.",
-      "Utangulizi",
       "Avana huwaruhusu watoa ukwasi kukopa GHO kwenye Aave V4 dhidi ya nafasi za Uniswap v3 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base. Nafasi hubaki kwenye mabwawa yao na huendelea kupata ada za biashara.",
+      "Muhtasari wa Itifaki unaeleza jinsi kuweka dhamana, kuthamini, kukopa na ufilisi vinavyoshirikiana. Kurasa za marejeleo zilizo juu ya urambazaji zinaorodhesha kila anwani ya mkataba, kigezo cha soko na jukumu.",
+      "Soma Muhtasari wa Itifaki",
       "Anza na Dhana Muhimu",
       "Chunguza Hubs na Spokes",
-      "Avana huleta nafasi za ukwasi za AMM kwenye Aave V4 kama dhamana. Mwekaji huweka rehani nafasi ya soko lililoorodheshwa kwa LPVault ya itifaki yake ya AMM na kisha hukopa GHO kutoka Avana Stable LP Hub huku nafasi ikibaki kwenye bwawa.",
-      "Ili kukopa dhidi ya mali za LP mahali pengine, mtoa ukwasi kwa kawaida hulazimika kutoa kutoka kwenye bwawa kwanza. Kutoa kunamaanisha kupoteza ada za biashara na, kwa nafasi zilizokolezwa, masafa yaliyochaguliwa.",
-      "Avana huiweka nafasi kwenye bwawa lake. LPVault ya itifaki yake ya AMM inashikilia nafasi, na vault token huiwakilisha kwenye CDP Spoke. Vault token ni ERC-20 ya dhamana pekee yenye vikwazo vya uhamisho ambapo kizio kimoja cha msingi ni sawa na kizio kimoja cha ukwasi uliowekewa mkopo. Wakati wa uzinduzi Avana inaendeshwa kwenye Ethereum na masoko ya Uniswap v3 na kwenye Base na masoko ya Aerodrome Slipstream, kila soko likiwa bwawa moja la stablecoin lenye masafa moja halisi ya tick.",
-      "Kila hatua huunganisha kitendo cha mtumiaji na uhasibu wa itifaki. Rehani huanzisha uhifadhi. Uthamini na Collateral Factor huamua uwezo wa kukopa. Ukopaji hutengeneza deni la GHO dhidi ya uwezo huo. Miongozo ifuatayo inaeleza kila hatua kwa kina.",
       "Dhamana ya LP huruhusu mali ambazo tayari zimewekwa kwenye AMM kuunga mkono mkopo wa GHO. Faida ni unyumbufu wa mtaji, si faida chanya iliyohakikishwa. Wakopaji bado wanabeba hasara isiyo ya kudumu, hatari ya bei na hatari ya ufilisishaji.",
       "Hubs na Spokes za Avana ni mikataba ya kawaida ya Aave V4 isiyobadilishwa inayomilikiwa na Aave DAO. Mantiki maalum ya Avana iko katika mikataba ya Avana yenyewe: LPVault kwa kila itifaki ya AMM, Collateralization, vault tokens, PositionProxies na ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap na AvanaTimelock.",
-      "Hubs huja katika ngazi tatu: Stable LP wakati wa uzinduzi kwenye Ethereum na Base, na Hubs za Correlated LP na Volatile LP zikiongezwa baadaye. CDP Spoke ni Spoke moja kwa kila mnyororo, Hub, itifaki ya AMM na ngazi ya hatari na huorodhesha masoko kadhaa: \"Uniswap v3 Stable\" kwenye Ethereum na \"Aerodrome Slipstream Stable\" kwenye Base. Lend Spoke ya uwekaji pekee kwenye kila mnyororo hubeba mistari ya mkopo ya Aave DAO, na Coverage Spoke kwa kila Hub na mali ya deni, Avana Umbrella, inashikilia First-Loss Reserve. Kila wallet ina PositionProxy moja kwa kila CDP Spoke na soko, kwa hivyo kila kitendo cha mkopaji hupitia AaveAdapter na kila soko lina kipimo chake cha afya.",
       "Muhtasari wa Avana: kuweka rehani nafasi za Uniswap v3 na Aerodrome Slipstream, kukopa GHO kutoka Avana Stable LP Hub, na kanuni za kila soko za uthamini na ufilisishaji."
     ]
   },

@@ -107,7 +107,7 @@
         "reference": "Referensi"
       },
       "items": {
-        "overview": "Gambaran Umum",
+        "overview": "Selamat datang",
         "keyConcepts": "Konsep Kunci",
         "glossary": "Glosarium",
         "depositLp": "Setoran LP",
@@ -160,7 +160,6 @@
         "chainId": "ID rantai",
         "copy": "Salin",
         "copied": "Tersalin",
-        "placeholder": "Placeholder",
         "explorer": "membuka penjelajah blok",
         "updated": "Terakhir diperbarui {date}"
       }

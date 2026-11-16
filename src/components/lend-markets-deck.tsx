@@ -174,7 +174,7 @@ export function LendMarketsDeck() {
         }
         .lmd-name {
           font-size: 0.9375rem;
-          font-weight: 600;
+          font-weight: var(--fw-600);
           line-height: 1.2;
           color: #0f1518;
         }
@@ -185,7 +185,7 @@ export function LendMarketsDeck() {
         .lmd-figure {
           margin-left: auto;
           font-size: 0.9375rem;
-          font-weight: 600;
+          font-weight: var(--fw-600);
           color: #0f1518;
           font-variant-numeric: tabular-nums;
         }

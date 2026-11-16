@@ -107,7 +107,7 @@
         "reference": "Referans"
       },
       "items": {
-        "overview": "Genel Bakış",
+        "overview": "Hoş geldiniz",
         "keyConcepts": "Temel Kavramlar",
         "glossary": "Sözlük",
         "depositLp": "Mevduat LP",
@@ -160,7 +160,6 @@
         "chainId": "Zincir kimliği",
         "copy": "Kopyala",
         "copied": "Kopyalandı",
-        "placeholder": "Yer tutucu",
         "explorer": "blok gezginini açar",
         "updated": "Son güncelleme {date}"
       }

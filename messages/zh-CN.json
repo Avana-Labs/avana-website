@@ -107,7 +107,7 @@
         "reference": "参考"
       },
       "items": {
-        "overview": "概览",
+        "overview": "欢迎",
         "keyConcepts": "关键概念",
         "glossary": "词汇表",
         "depositLp": "存款 LP",
@@ -160,7 +160,6 @@
         "chainId": "链 ID",
         "copy": "复制",
         "copied": "已复制",
-        "placeholder": "占位符",
         "explorer": "打开区块浏览器",
         "updated": "最后更新 {date}"
       }

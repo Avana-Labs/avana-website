@@ -107,7 +107,7 @@
         "reference": "Bayanan Tunani"
       },
       "items": {
-        "overview": "Bayanin Gabaɗaya",
+        "overview": "Barka da zuwa",
         "keyConcepts": "Muhimman Ra'ayoyi",
         "glossary": "Jerin Kalma",
         "depositLp": "Ajiya LP",
@@ -160,7 +160,6 @@
         "chainId": "ID na sarka",
         "copy": "Kwafa",
         "copied": "An kwafa",
-        "placeholder": "Mai riƙe wuri",
         "explorer": "yana buɗe mai binciken bulo",
         "updated": "Sabuntawa ta ƙarshe {date}"
       }

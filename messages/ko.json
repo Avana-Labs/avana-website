@@ -120,7 +120,7 @@
         "reference": "참조"
       },
       "items": {
-        "overview": "개요",
+        "overview": "환영합니다",
         "keyConcepts": "핵심 개념",
         "glossary": "용어집",
         "depositLp": "예금 LP",
@@ -173,7 +173,6 @@
         "chainId": "체인 ID",
         "copy": "복사",
         "copied": "복사됨",
-        "placeholder": "자리 표시자",
         "explorer": "블록 탐색기를 엽니다",
         "updated": "마지막 업데이트 {date}"
       }

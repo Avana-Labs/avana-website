@@ -107,7 +107,7 @@
         "reference": "リファレンス"
       },
       "items": {
-        "overview": "概要",
+        "overview": "ようこそ",
         "keyConcepts": "重要な概念",
         "glossary": "用語集",
         "depositLp": "預金 LP",
@@ -160,7 +160,6 @@
         "chainId": "チェーン ID",
         "copy": "コピー",
         "copied": "コピーしました",
-        "placeholder": "プレースホルダー",
         "explorer": "ブロックエクスプローラーを開きます",
         "updated": "最終更新 {date}"
       }

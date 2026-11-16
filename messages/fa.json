@@ -107,7 +107,7 @@
         "reference": "مرجع"
       },
       "items": {
-        "overview": "مرور کلی",
+        "overview": "خوش آمدید",
         "keyConcepts": "مفاهیم کلیدی",
         "glossary": "واژه‌نامه",
         "depositLp": "سپرده LP",
@@ -160,7 +160,6 @@
         "chainId": "شناسه زنجیره",
         "copy": "کپی",
         "copied": "کپی شد",
-        "placeholder": "جای‌نگهدار",
         "explorer": "کاوشگر بلاک را باز می‌کند",
         "updated": "آخرین به‌روزرسانی {date}"
       }

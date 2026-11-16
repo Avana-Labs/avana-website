@@ -6005,20 +6005,12 @@
   "hub": {
     "meta": {
       "title": "Barka da zuwa",
-      "description": "Mai aro yana pledge matsayin Uniswap v3 a Ethereum ko matsayin Aerodrome Slipstream da ba a yi stake ba a Base wanda kewayon tick ɗinsa ya yi daidai da kasuwar da aka jera. LPVault na yarjejeniyar AMM yana ɗaukar tsarewa, amma ruwan kuɗin yana zama a pool kuma yana ci gaba da samun kuɗaɗe, waɗanda mai aro zai iya tattarawa a kowane lokaci."
+      "description": "Yin pledge na matsayin LP yana mayar da tsarewa zuwa LPVault amma yana barin ruwan kuɗinsa a pool. Mai aro zai iya aron GHO ba tare da fara cire matsayin da barin kuɗaɗensa ko kewayonsa ba."
     },
     "toc": [
       {
         "id": "welcome",
         "title": "Barka da zuwa"
-      },
-      {
-        "id": "what-is-avana",
-        "title": "Menene Avana?"
-      },
-      {
-        "id": "how-it-works",
-        "title": "Yadda Yake Aiki"
       },
       {
         "id": "unlocking-lp-collateral",
@@ -6031,33 +6023,21 @@
     ],
     "strings": [
       "Barka da zuwa",
-      "Menene Avana?",
-      "Yadda Yake Aiki",
       "Me yasa LP Abubuwan Haɗin Kai",
       "Tsarin gini",
-      "Yi alkawarin wurin LP da aka tallafa",
-      "Mai aro yana pledge matsayin Uniswap v3 a Ethereum ko matsayin Aerodrome Slipstream da ba a yi stake ba a Base wanda kewayon tick ɗinsa ya yi daidai da kasuwar da aka jera. LPVault na yarjejeniyar AMM yana ɗaukar tsarewa, amma ruwan kuɗin yana zama a pool kuma yana ci gaba da samun kuɗaɗe, waɗanda mai aro zai iya tattarawa a kowane lokaci.",
-      "Wakilci da daraja shi",
-      "Collateralization yana rubuta ruwan kuɗin da aka sa wa matsayin. AaveAdapter yana mint daidai wannan adadin raka'o'in vault-token zuwa PositionProxy na mai aro na wannan kasuwa, wanda ke samar da su ga CDP Spoke na kasuwar. LPOracle yana ƙimanta kowane vault token a farashin Chainlink ta tsarin haɗin adalci, ba tare da ragi ba, kuma yana bincika shi a kan TWAP na pool da tushe na biyu mai zaman kansa.",
-      "A aro GHO daga Avana Hub",
-      "Ƙarfin aro shi ne ƙimar matsayin sau Collateral Factor na kasuwar, factor mafi ƙanƙanta na token sau ma'aunin haɗarin pool na 40% a mafi yawa. Mai aro yana ɗaukar GHO daga Avana Stable LP Hub, wanda layin lamuni mai iyaka na Aave DAO ke ba shi kuɗi. Ana iya kunna USDC, USDT ko WETH a matsayin kadarorin bashi ga kowane CDP Spoke da zarar Aave DAO ya amince da su.",
       "Liquidity yana tsayawa a cikin pool",
       "Yin pledge na matsayin LP yana mayar da tsarewa zuwa LPVault amma yana barin ruwan kuɗinsa a pool. Mai aro zai iya aron GHO ba tare da fara cire matsayin da barin kuɗaɗensa ko kewayonsa ba.",
       "Kimantawa da iyakoki suna daban",
       "LPOracle yana ba da rahoton ƙimar ruwan kuɗin ba tare da ragi ba. Collateral Factor na kowace kasuwa, min(token factors) × pool risk factor, yana tsayar da yawan wannan ƙimar da ke tallafa wa bashi, kuma kowace kasuwa tana da nata asusu da ma'aunin lafiya.",
       "Liquidation yana da ƙayyadaddun ƙa'idodi",
       "Kowace liquidation tana gudana ta LPVaultSwap da daidaitaccen kiran liquidation na Aave kuma koyaushe ta ɓangare ce. LPVaultSwap yana karɓar kadarar bashi daga mai kiransa, yana warware raka'o'in da aka ƙwace kaɗai kuma yana musanya su a ma'amala ɗaya. Hanyar shigarsa ɗaya ta liquidation a buɗe take ga kowane adireshi, kuma keeper na Avana yana yi wa kowane asusu da ke ƙasa da ma'aunin lafiya 1 liquidation.",
-      "Gabatarwa",
       "Avana yana ba masu samar da ruwan kuɗi damar aron GHO a Aave V4 a kan matsayin Uniswap v3 a Ethereum da matsayin Aerodrome Slipstream a Base. Matsayin suna zama a pools ɗinsu kuma suna ci gaba da samun kuɗaɗen ciniki.",
+      "Bayanin Yarjejeniya ya bayyana yadda jinginar, kimantawa, aro da rushewa suke aiki tare. Shafukan bayani a saman kewayawa sun lissafa kowane adireshin kwangila, sigar kasuwa da matsayi.",
+      "Karanta Bayanin Yarjejeniya",
       "Fara da Maɓalli Maɓalli",
       "Bincika Hubs da Spokes",
-      "Avana yana kawo matsayin ruwan kuɗi na AMM zuwa Aave V4 a matsayin jingina. Mai ajiya yana pledge matsayin kasuwar da aka jera ga LPVault na yarjejeniyar AMM ɗinsa sannan yana aron GHO daga Avana Stable LP Hub yayin da matsayin ke zama a pool.",
-      "Don aro a kan kadarorin LP a wani wuri, mai samar da ruwan kuɗi yawanci sai ya fara cirewa daga pool. Cirewa yana sa a rasa kuɗaɗen ciniki da, ga matsayi masu tattaccen ruwan kuɗi, kewayon da aka zaɓa.",
-      "Avana yana ajiye matsayin a pool ɗinsa. LPVault na yarjejeniyar AMM ɗinsa yana riƙe da matsayin, kuma vault token yana wakiltarsa a CDP Spoke. Vault token ERC-20 ne mai takunkumin canja wuri na jingina kaɗai inda raka'ar tushe ɗaya daidai take da raka'a ɗaya ta ruwan kuɗin da aka sa. A ƙaddamarwa Avana yana gudana a Ethereum tare da kasuwannin Uniswap v3 da a Base tare da kasuwannin Aerodrome Slipstream, kowace kasuwa pool ɗaya ce ta stablecoin mai takamaiman kewayon tick ɗaya.",
-      "Kowane mataki yana haɗa wani aiki na mai amfani da lissafin protocol. Jinginarwa (Pledge) tana kafa riƙo. Ƙimantawa da Collateral Factor suna tantance ƙarfin aro. Aro yana haifar da bashin GHO a kan wannan ƙarfin aro. Jagororin da ke biye suna bayyana kowane mataki dalla-dalla.",
       "Jinginar LP tana bai wa kadarorin da aka riga aka saka a AMM damar tallafa wa bashin GHO. Amfanin shi ne sassaucin jari, ba tabbacin riba mai kyau (positive carry) ba. Masu aro har yanzu suna ɗaukar asarar wucin gadi, haɗarin farashi da haɗarin liquidation.",
       "Hubs da Spokes na Avana kwangiloli ne na Aave V4 na yau da kullum da ba a gyara ba mallakar Aave DAO. Dabarun musamman na Avana suna cikin kwangilolin Avana na kansa: LPVault ga kowace yarjejeniyar AMM, Collateralization, vault tokens, PositionProxies da ProxyManager, AaveAdapter, RiskModule, MarketRegistry, ParameterStore, LPOracle, DebtOracle, LPVaultSwap da AvanaTimelock.",
-      "Hubs suna zuwa a matakai uku: Stable LP a ƙaddamarwa a Ethereum da Base, tare da Hubs na Correlated LP da Volatile LP da za a ƙara daga baya. CDP Spoke shi ne Spoke ɗaya ga kowane chain, Hub, yarjejeniyar AMM da matakin haɗari kuma yana jera kasuwanni da yawa: \"Uniswap v3 Stable\" a Ethereum da \"Aerodrome Slipstream Stable\" a Base. Lend Spoke na samarwa kaɗai a kowane chain yana ɗauke da layukan lamuni na Aave DAO, kuma Coverage Spoke ga kowane Hub da kadarar bashi, Avana Umbrella, yana riƙe da First-Loss Reserve. Kowane wallet yana da PositionProxy ɗaya ga kowane CDP Spoke da kasuwa, don haka kowane aikin mai aro yana bi ta AaveAdapter kuma kowace kasuwa tana da nata ma'aunin lafiya.",
       "Bayani kan Avana: yin pledge na matsayin Uniswap v3 da Aerodrome Slipstream, aron GHO daga Avana Stable LP Hub, da ƙa'idojin kowace kasuwa na ƙimantawa da liquidation."
     ]
   },

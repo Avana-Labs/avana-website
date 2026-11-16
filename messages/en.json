@@ -120,7 +120,7 @@
         "reference": "Reference"
       },
       "items": {
-        "overview": "Overview",
+        "overview": "Welcome",
         "keyConcepts": "Key Concepts",
         "glossary": "Glossary",
         "depositLp": "Deposit LP",
@@ -173,7 +173,6 @@
         "chainId": "Chain ID",
         "copy": "Copy",
         "copied": "Copied",
-        "placeholder": "Placeholder",
         "explorer": "opens the block explorer",
         "updated": "Last updated {date}"
       }

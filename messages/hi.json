@@ -107,7 +107,7 @@
         "reference": "संदर्भ"
       },
       "items": {
-        "overview": "सारांश",
+        "overview": "स्वागत है",
         "keyConcepts": "मुख्य अवधारणाएँ",
         "glossary": "शब्दकोष",
         "depositLp": "जमा LP",
@@ -160,7 +160,6 @@
         "chainId": "चेन आईडी",
         "copy": "कॉपी करें",
         "copied": "कॉपी हो गया",
-        "placeholder": "प्लेसहोल्डर",
         "explorer": "ब्लॉक एक्सप्लोरर खोलता है",
         "updated": "अंतिम अपडेट {date}"
       }
