@@ -56,7 +56,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>A position is accepted only if its range equals the market&apos;s exactly. A market listed at [−10, 10] refuses a position at [−9, 10], even though they overlap.</li>
             <li>One pool listed with two ranges is two markets.</li>
-            <li>At launch: Uniswap v3 stablecoin pools on Ethereum and unstaked Aerodrome Slipstream stablecoin pools on Base, such as USDC/USDT and pools containing GHO.</li>
+            <li>Today: Uniswap v3 and Uniswap v4 pools on Ethereum and unstaked Aerodrome Slipstream pools on Base, such as stablecoin, blue-chip and correlated pools.</li>
             <li>Each market is listed through the AvanaTimelock at the normal delay of 5 days together with the Aave DAO listing payload, which sets its collateral factor, bonus curve and caps.</li>
           </ul>
         </section>
@@ -88,7 +88,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">What it does</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier. It lists several markets as non-borrowable collateral reserves and the approved debt reserves. Launch: &quot;Uniswap v3 Stable&quot; on Ethereum and &quot;Aerodrome Slipstream Stable&quot; on Base.</td></tr>
+                <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier. It lists several markets as non-borrowable collateral reserves and the approved debt reserves. Examples today: &quot;Uniswap v3 Stable&quot; on Ethereum and &quot;Aero Slipstream Blue-chip&quot; on Base.</td></tr>
                 <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One supply-only Spoke per chain through which the Aave DAO treasury supplies each credit line. No public deposits at launch.</td></tr>
                 <tr><td className="px-4 py-2">Coverage Spoke</td><td className="px-4 py-2">One supply-only Spoke per Hub and debt asset, the Avana Umbrella of that pair, holding Avana-funded First-Loss Reserve supply.</td></tr>
               </tbody>
@@ -103,17 +103,17 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
         <section id="hubs" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Hubs</h2>
           <p className="mb-4 type-doc-body">
-            An Avana Hub is a standard Aave V4 Hub owned by the Aave DAO that holds the vault tokens of its markets and the liquidity of its credit lines. There are three tiers: Stable LP, Correlated LP and Volatile LP. At launch Ethereum and Base each have one Avana Stable LP Hub. Each CDP Spoke has one home Hub for its collateral, and each Hub has its own pause state and per-Hub token and depositor caps.
+            An Avana Hub is a standard Aave V4 Hub owned by the Aave DAO that holds the vault tokens of its markets and the liquidity of its credit lines. Each chain has one Avana Hub: the Avana Ethereum Hub and the Avana Base Hub. Each CDP Spoke has one home Hub for its collateral, and each Hub has its own pause state and per-Hub token and depositor caps.
           </p>
         </section>
 
         <section id="debt-reserves" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Debt Reserves</h2>
           <p className="mb-4 type-doc-body">
-            A debt reserve is a borrowable reserve of a CDP Spoke, funded by a capped credit line. GHO is the first debt reserve on each launch Spoke. USDC, USDT or WETH can be enabled per CDP Spoke through the enable-debt-reserve operation, once the Aave DAO approves the credit line, caps, price source and swap routes. Each debt reserve records its funding Hub, its price source and its Coverage Spoke.
+            A debt reserve is a borrowable reserve of a CDP Spoke, funded by a capped credit line. Today the CDP Spokes lend GHO and USDC. Any other asset can be enabled per CDP Spoke through the enable-debt-reserve operation, once the Aave DAO approves the credit line, caps, price source and swap routes. Each debt reserve records its funding Hub, its price source and its Coverage Spoke.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Credit line: the Lend Spoke supply cap equals the line, and CDP Spoke draw caps on it sum to at most the line. Launch line: 2,000,000 GHO on Ethereum, with the final value and the Base line set in the funding ARFC.</li>
+            <li>Credit line: the Lend Spoke supply cap equals the line, and CDP Spoke draw caps on it sum to at most the line. For example, the launch GHO line on Ethereum is 2,000,000 GHO, with the final value and the Base line set in the funding ARFC.</li>
             <li>Each draw cap stays within the flash liquidity of its asset in the Aave V3 Pool and the depth of its swap routes, so every borrowed amount can be liquidated in one transaction.</li>
             <li>A cross-Hub credit line, where the funding Hub differs from the Spoke&apos;s home Hub, is specified and off at launch.</li>
           </ul>

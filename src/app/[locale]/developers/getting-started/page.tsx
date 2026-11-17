@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started', {
     title: "Getting Started - Deposit LP",
-    description: "How to pledge an exact-range Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base into Avana as collateral: eligibility, approvals, the pledge call, top-ups, re-credit, checks, events and failures.",
+    description: "How to pledge an exact-range LP position from a supported DEX into Avana as collateral, such as a Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base: eligibility, approvals, the pledge call, top-ups, re-credit, checks, events and failures.",
   })
 }
 
@@ -211,7 +211,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="eligibility" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Eligible Positions</h2>
           <p className="mb-4 type-doc-body">
-            Two AMM protocols are listed at launch, one per chain. A position is named by the market&apos;s integration ID together with a position key.
+            Each AMM protocol Avana supports has its own LPVault and position key. Two of today&apos;s protocols are shown below. A position is named by the market&apos;s integration ID together with a position key.
           </p>
           <div className="overflow-x-auto mb-4">
             <table className="type-doc-table">
@@ -477,7 +477,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Market 3 is a USDC/USDT Aerodrome Slipstream market on Base, on the Aerodrome Slipstream Stable CDP Spoke of the Base Stable LP Hub, with tick spacing 1 and range [−887,272, 887,272]. One whole vault token (10^6 units) is worth $2.00. The collateral factor is 3,120 bps (31.20%), minPledgeUsd is $10 and marketUsdCap is $5,000,000 with $1,000,000 booked. The pool has an illustrative per-pool cap of 1,000 bps. Market supply is 400,000,000,000 units and the pool&apos;s in-range liquidity is 20,000,000,000,000. The Hub state is None and the sequencer gate is Up.
+            Example values; each market&apos;s parameters are set at listing. Market 3 is a USDC/USDT Aerodrome Slipstream market on Base, on the Aerodrome Slipstream Stable CDP Spoke of the Avana Base Hub, with tick spacing 1 and range [−887,272, 887,272]. One whole vault token (10^6 units) is worth $2.00. The collateral factor is 3,120 bps (31.20%), minPledgeUsd is $10 and marketUsdCap is $5,000,000 with $1,000,000 booked. The pool has an illustrative per-pool cap of 1,000 bps. Market supply is 400,000,000,000 units and the pool&apos;s in-range liquidity is 20,000,000,000,000. The Hub state is None and the sequencer gate is Up.
           </div>
           <p className="mb-4 type-doc-body">
             Carol has no proxy in market 3. She holds an unstaked Slipstream NFT with L = 10,000,000,000 (about 10,000 USDC and 10,000 USDT).
@@ -517,7 +517,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to pledge an exact-range Uniswap v3 or Aerodrome Slipstream position into Avana as collateral, what is checked and what is minted."
+        pageSummary="How to pledge an exact-range LP position into Avana as collateral, what is checked and what is minted."
         sectionColor="emerald"
       />
     </div>

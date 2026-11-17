@@ -204,7 +204,7 @@ export default async function RepayLoansPage({ params }: LocaleParamsProps) {
             Calling the Spoke&apos;s repay directly for a proxy fails with Unauthorized, because Aave accepts repayment only from the position owner or an approved position manager, and proxies approve none.
           </p>
           <div className="doc-topic type-doc-body">
-            Example values; each market&apos;s parameters are set at listing. On Ethereum, a rescue service R repays 3,000 GHO of wallet W&apos;s market-A account while the Avana Stable LP Hub is Paused with reason MintPathSuspect, a GHO debt breaker is tripped and W is a frozen address. The call reads none of these states: 3,000 GHO are pulled from R, W&apos;s debt falls to 5,032.88 GHO, the event is Repaid with R as payer and W as borrower, and W&apos;s collateral does not move. If W&apos;s own repay-all with a cap of 8,040 GHO lands later in the same block, Aave takes only the remaining 5,032.876712 GHO and W gets 3,007.123288 GHO back.
+            Example values; each market&apos;s parameters are set at listing. On Ethereum, a rescue service R repays 3,000 GHO of wallet W&apos;s market-A account while the Avana Ethereum Hub is Paused with reason MintPathSuspect, a GHO debt breaker is tripped and W is a frozen address. The call reads none of these states: 3,000 GHO are pulled from R, W&apos;s debt falls to 5,032.88 GHO, the event is Repaid with R as payer and W as borrower, and W&apos;s collateral does not move. If W&apos;s own repay-all with a cap of 8,040 GHO lands later in the same block, Aave takes only the remaining 5,032.876712 GHO and W gets 3,007.123288 GHO back.
           </div>
         </section>
 

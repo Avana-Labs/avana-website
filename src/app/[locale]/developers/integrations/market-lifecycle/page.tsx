@@ -41,7 +41,7 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            A market is one chain, AMM protocol, pool and exact position shape. It has one vault token and one collateral reserve on one CDP Spoke. A CDP Spoke is one standard, unmodified Aave V4 Spoke per chain, Hub, AMM protocol and risk tier; at launch these are &quot;Uniswap v3 Stable&quot; on the Ethereum Stable LP Hub and &quot;Aerodrome Slipstream Stable&quot; on the Base Stable LP Hub.
+            A market is one chain, AMM protocol, pool and exact position shape. It has one vault token and one collateral reserve on one CDP Spoke. A CDP Spoke is one standard, unmodified Aave V4 Spoke per chain, Hub, AMM protocol and risk tier; examples today are &quot;Uniswap v3 Stable&quot; on the Avana Ethereum Hub and &quot;Aero Slipstream Blue-chip&quot; on the Avana Base Hub.
           </p>
           <p className="mb-4 type-doc-body">
             Every lifecycle operation runs on one chain through that chain&apos;s AvanaTimelock. Ethereum and Base each have their own timelock, governance multisig, guardian, MarketRegistry, ParameterStore and keepers. A market never moves to another CDP Spoke.
@@ -178,7 +178,7 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
         <section id="debt-reserves" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Debt Reserves</h2>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>GHO is the first debt reserve of each CDP Spoke and keeps Aave&apos;s fixed $1 price source. USDC, USDT or WETH can be added per Spoke with <code className="type-doc-inline-code">enableDebtReserve</code>, each priced by its own DebtOracle.</li>
+            <li>Each debt reserve is added per Spoke with <code className="type-doc-inline-code">enableDebtReserve</code>. GHO keeps Aave&apos;s fixed $1 price source; any other debt asset, such as USDC, is priced by its own DebtOracle.</li>
             <li>The Aave payload lists the reserve and funds its Coverage Spoke before the Avana batch executes. The CDP Spoke&apos;s draw cap on the asset rises above 0 only after the Coverage Spoke is funded and the batch has executed.</li>
             <li>Removing a debt reserve (<code className="type-doc-inline-code">removeDebtReserve</code>, normal delay) reverts while any debt is drawn on it. The Aave DAO first sets its draw cap to 0 and freezes it, so borrowers repay over time while repay and liquidation stay open.</li>
           </ul>
@@ -187,7 +187,7 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
         <section id="example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Example: Market 3</h2>
           <p className="mb-4 type-doc-body">
-            Example values; each market&apos;s parameters are set at listing. The Base Stable LP Hub has no CDP Spoke yet. Market 3 is the USDC/USDT Slipstream pool with tick spacing 1 and the exact range fixed in the listing package, with a collateral factor of 31.2%. GHO is the first debt reserve, with a GHO Coverage Spoke funded to 24,000 GHO. Base blocks are 2 seconds.
+            Example values; each market&apos;s parameters are set at listing. The Avana Base Hub has no CDP Spoke yet. Market 3 is the USDC/USDT Slipstream pool with tick spacing 1 and the exact range fixed in the listing package, with a collateral factor of 31.2%. GHO is the first debt reserve, with a GHO Coverage Spoke funded to 24,000 GHO. Base blocks are 2 seconds.
           </p>
           <ol className="list-decimal space-y-2 ps-5 type-doc-body">
             <li>Operators deploy market 3&apos;s LPOracle, which seeds a Live price of $2.00 per whole vault token, and raise the pool&apos;s observation buffer to 901.</li>

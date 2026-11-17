@@ -33,13 +33,13 @@
       "Active risk controls",
       "Health monitoring and venue-aware liquidation protect standards while your exposure keeps earning fees.",
       "Lowest-risk hub",
-      "Stable LP Hub",
+      "Stable LP Spokes",
       "Stablecoin LP markets built for tight pricing, low slippage, and minimal impermanent loss.",
       "Global Strategy hub",
-      "Correlated LP Hub",
+      "Correlated LP Spokes",
       "LP markets for assets that move together, built for tighter risk bands and cleaner borrowing power.",
       "Higher-range hub",
-      "Volatile LP Hub",
+      "Volatile LP Spokes",
       "Major DeFi asset LP markets for wider price ranges and higher risk-reward strategies.",
       "App interface",
       "Borrow against",
@@ -55,7 +55,7 @@
       "Borrow against the risk-adjusted value of the position and receive funds straight in your wallet.",
       "Manage debt before risk rises",
       "Repay, add collateral, or reduce debt before the position drifts toward the liquidation threshold.",
-      "Find the Hub for your collateral",
+      "Find the CDP Spokes for your collateral",
       "Stable, correlated, and volatile LPs belong to different markets.",
       "Borrowable",
       "Borrow with Confidence",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Protocol team",
-      "The Protocol team designs and builds Avana's lending system. It owns the smart contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control, execution environment, and upgrades across integrated AMMs and lending hubs.",
+      "Protocol owns the design and implementation of Avana's lending system, including smart contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control, execution environment, and upgrades across integrated AMMs and lending hubs.",
       "Operations team",
-      "The Operations team coordinates the day-to-day protocol layer. It handles treasury processes, incentive programs, ecosystem growth, contributor workflows, and collateral onboarding operations.",
+      "Operations coordinates the day-to-day protocol layer, including treasury processes, incentive programs, ecosystem growth, contributor workflows, and collateral onboarding operations.",
       "Market Risk team",
-      "The Market Risk team owns the quantitative side of LP collateral. It covers liquidity depth, volatility, price behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter tuning across market conditions.",
+      "Market Risk owns the quantitative side of LP collateral: liquidity depth, volatility, price behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter tuning across market conditions.",
       "Collateral Risk team",
-      "The Collateral Risk team owns the qualitative side of onboarding and monitoring. It covers asset structure, liquidity sources, governance dependencies, protocol dependencies, and broader collateral integrity across supported markets.",
+      "Collateral Risk owns the qualitative side of onboarding and monitoring, including asset structure, liquidity sources, governance dependencies, protocol dependencies, and broader collateral integrity across supported markets.",
       "The lending market for AMM liquidity.",
       "Avana about hero image",
-      "Avana is the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
-      "Major AMMs hold billions in liquidity, but LP positions are still mostly treated as passive holdings, not as productive collateral. Avana starts with Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base.",
-      "Using LP positions as collateral takes more than listing LP tokens. Avana's LP Vault holds each pledged position and represents it on Aave V4 with a vault token for its market. Borrowers draw GHO, and other debt assets as they are enabled, from the Avana Stable LP Hub through a CDP Spoke for each AMM. The Hubs and Spokes are standard Aave V4 contracts owned by the Aave DAO, which funds the Hub through a GHO credit line on the Avana Lend Spoke.",
-      "Smart contracts are only part of the work. The position must stay active in its pool. Its value must be measured as conditions change. The market must have enough liquidity to support a loan. Avana divides this work across four teams, and each team is responsible for a different part of the risk.",
-      "Each area has its own owner: technical execution, operations, market modeling, and collateral review.",
-      "We are a small team working on a large problem. If you want to join this research effort,"
+      "Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions usable as collateral across DeFi.",
+      "Major AMMs already hold billions in liquidity, yet LP positions are still treated mostly as passive positions rather than productive collateral. Avana brings that liquidity into lending markets for today's DEXs and LP types, using dual oracles and stronger risk controls.",
+      "That requires more than listing LP tokens as collateral. Avana is built around specialized Aave v4 Spokes for different DEX designs, several Aave v4 Hubs organized around lowest-risk, correlated, and higher-range LP markets, and an Aave v4 Lend Spoke that supplies the capital behind those markets.",
+      "Turning an LP position into usable collateral requires more than smart contracts. The position must stay active in its pool, its value must be measured as conditions change, and the market must have enough liquidity to support a loan. That is why Avana divides the work across four teams, each responsible for a different part of the risk.",
+      "The goal is clean separation, with technical execution, operations, market modeling, and collateral review each owned independently.",
+      "We are a small team working on a large problem. If you're interested in joining this research effort,"
     ]
   },
   "brand/page": {
@@ -635,12 +635,7 @@
       "Workflow design",
       "Multiply launch",
       "Roadmap",
-      "Borrow comes first, followed by Lend and Multiply.",
-      "Target Q3 2026",
-      "Target Q4 2026",
-      "Target Q1 2027",
-      "Released",
-      "In Progress"
+      "Borrow comes first, followed by Lend and Multiply."
     ]
   },
   "invest-apy-section": {

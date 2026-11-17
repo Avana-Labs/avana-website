@@ -33,13 +33,13 @@
       "Dhibiti hai za hatari",
       "Ufuatiliaji wa afya na likwidosheni yenye ufahamu wa eneo inalinda viwango huku kioo chako kikibakiza kinapata ada.",
       "Kituo cha hatari ya chini",
-      "Hub ya LP thabiti",
+      "Spokes za LP thabiti",
       "Soko la Stablecoin LP limeundwa kwa bei thabiti, kuteleza kidogo, na hasara ya muda mfupi isiyo kubwa.",
       "Kituo cha Mikakati ya Kidunia",
-      "Hub ya LP inayohusiana",
+      "Spokes za LP zinazohusiana",
       "Soko la LP kwa mali zinazosogea pamoja, lililojengwa kwa bendi za hatari zilizofungwa na uwezo safi wa kukopa.",
       "Kituo cha kiwango cha juu",
-      "Hub ya LP tete",
+      "Spokes za LP tete",
       "Masoko makuu ya mali za DeFi LP kwa anuwai kubwa za bei na mikakati ya hatari-zai faida ya juu.",
       "Kiolesura cha programu",
       "Kopa dhidi ya",
@@ -55,7 +55,7 @@
       "Kopa dhidi ya thamani iliyorekebishwa kwa mujibu wa hatari ya nafasi na upokee fedha moja kwa moja katika pochi yako.",
       "Dhibiti deni kabla hatari haijaongezeka",
       "Lipa, ongeza dhamana, au punguza deni kabla nafasi ifikie kizingiti cha uuzaji wa nguvu.",
-      "Tafuta Hub inayofaa dhamana yako",
+      "Tafuta CDP Spokes zinazofaa dhamana yako",
       "LP thabiti, zinazohusiana, na tete ni za masoko tofauti.",
       "Inayoweza kukopeshwa",
       "Kopa kwa Kujiamini",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Timu ya itifaki",
-      "Timu ya Protocol husanifu na kujenga mfumo wa ukopeshaji wa Avana. Inamiliki mikataba mahiri, usanifu wa dhamana ya LP, mifumo ya ufilisishaji, miundombinu ya oracle, udhibiti wa ufikiaji, mazingira ya utekelezaji, na uboreshaji katika AMM zilizounganishwa na hubs za ukopeshaji.",
+      "Protokoli inamiliki muundo na utekelezaji wa mfumo wa ukopeshaji wa Avana, ikiwa ni pamoja na mikataba smart, usanifu wa dhamana ya LP, mifumo ya ulichaji, miundombinu ya orakuli, udhibiti wa upatikanaji, mazingira ya utekelezaji, na masasisho katika AMM zilizounganishwa na vituo vya ukopeshaji.",
       "Timu ya uendeshaji",
-      "Timu ya Operations huratibu safu ya kila siku ya itifaki. Hushughulikia michakato ya hazina, programu za motisha, ukuaji wa mfumo ikolojia, mitiririko ya kazi ya wachangiaji, na shughuli za kuingiza dhamana.",
+      "Uendeshaji unaoratibu safu ya itifaki ya kila siku, ikijumuisha michakato ya hazina, programu za motisha, ukuaji wa mfumo wa ikolojia, mtiririko wa wafanyakazi wa michango, na operesheni za kuingiza dhamana.",
       "Timu ya hatari ya soko",
-      "Timu ya Market Risk inamiliki upande wa kiidadi wa dhamana ya LP. Inahusu kina cha ukwasi, tete, tabia ya bei, hatari za ukwasi uliokolezwa, mienendo ya ufilisishaji, uadilifu wa bei, na urekebishaji wa vigezo katika hali mbalimbali za soko.",
+      "Hatari ya Soko inamiliki upande wa kiasi wa dhamana ya LP: kina cha uraia, tete ya bei, tabia ya bei, mwendelezo wa uraia uliolenga, mienendo ya uuzaji wa mali, uadilifu wa bei, na kurekebisha vigezo kwa hali za soko.",
       "Timu ya hatari ya dhamana",
-      "Timu ya Collateral Risk inamiliki upande wa kiubora wa kuingiza na kufuatilia dhamana. Inahusu muundo wa mali, vyanzo vya ukwasi, utegemezi wa utawala, utegemezi wa itifaki, na uadilifu mpana wa dhamana katika masoko yanayoungwa mkono.",
+      "Collateral Risk inamiliki upande wa kimaadili wa kuandikisha na kusimamia, ikijumuisha muundo wa mali, vyanzo vya kioevu, utegemezi wa utawala, utegemezi wa itifaki, na uadilifu mpana zaidi wa dhamana katika masoko yanayounga mkono.",
       "Soko la ukopeshaji kwa ukwasi wa AMM.",
       "Avana kuhusu picha ya shujaa",
-      "Avana ni soko la mikopo kwa ukwasi wa AMM kwenye Aave V4. Dhamira yetu ni kufanya nafasi za ukwasi za AMM zitumike kama dhamana katika DeFi yote.",
-      "AMM kuu hushikilia mabilioni katika ukwasi, lakini nafasi za LP bado kwa kiasi kikubwa huchukuliwa kama umiliki tulivu, si kama dhamana yenye tija. Avana inaanza na nafasi za Uniswap v3 kwenye Ethereum na nafasi za Aerodrome Slipstream kwenye Base.",
-      "Kutumia nafasi za LP kama dhamana kunahitaji zaidi ya kuorodhesha LP tokens. LP Vault ya Avana hushikilia kila nafasi iliyowekwa rehani na kuiwakilisha kwenye Aave V4 kwa vault token ya soko lake. Wakopaji huchota GHO, na mali nyingine za deni kadiri zinavyowashwa, kutoka Avana Stable LP Hub kupitia CDP Spoke kwa kila AMM. Hubs na Spokes ni mikataba ya kawaida ya Aave V4 inayomilikiwa na Aave DAO, ambayo hufadhili Hub kupitia mstari wa mkopo wa GHO kwenye Avana Lend Spoke.",
-      "Mikataba mahiri ni sehemu tu ya kazi. Nafasi lazima ibaki hai kwenye bwawa lake. Thamani yake lazima ipimwe kadiri hali zinavyobadilika. Soko lazima liwe na ukwasi wa kutosha kuunga mkono mkopo. Avana hugawanya kazi hii kati ya timu nne, na kila timu inawajibika kwa sehemu tofauti ya hatari.",
-      "Kila eneo lina mmiliki wake: utekelezaji wa kiufundi, uendeshaji, uundaji wa mifano ya soko na mapitio ya dhamana.",
-      "Sisi ni timu ndogo inayoshughulikia tatizo kubwa. Ikiwa ungependa kujiunga na juhudi hii ya utafiti,"
+      "Avana inajenga soko la ukopeshaji kwa ukwasi wa AMM kwenye Aave V4. Dhamira yetu ni kufanya nafasi za ukwasi wa AMM zitumike kama dhamana katika DeFi.",
+      "AMM kubwa tayari zinashikilia mabilioni katika uraibu, lakini nafasi za LP bado zinachukuliwa zaidi kama nafasi za kutulia badala ya rehani yenye tija. Avana inaleta uraibu huo katika masoko ya mikopo kwa DEXs na aina za LP za leo, ikitumia orakuli mbili na udhibiti wa hatari ulio imara zaidi.",
+      "Hiyo inahitaji zaidi ya kuorodhesha tokeni za LP kama dhamana. Avana imejengwa kuzunguka Spokes maalum za Aave v4 kwa miundo tofauti ya DEX, Hubs kadhaa za Aave v4 zilizopangwa kuzunguka masoko ya LP yenye hatari ndogo, yanayohusiana, na masoko ya juu zaidi, na Lend Spoke ya Aave v4 inayotoa mtaji nyuma ya masoko hayo.",
+      "Kubadilisha nafasi ya LP kuwa dhamana inayoweza kutumika kunahitaji zaidi ya mikataba mahiri. Nafasi hiyo lazima ibaki hai kwenye pool yake, thamani yake ipimwe hali zinapobadilika, na soko liwe na ukwasi wa kutosha kuunga mkono mkopo. Ndiyo maana Avana inagawanya kazi kati ya timu nne, kila moja ikiwa na jukumu la sehemu tofauti ya hatari.",
+      "Lengo ni mgawanyo safi, huku utekelezaji wa kiufundi, operesheni, usanifu wa soko, na ukaguzi wa dhamana kila mmoja ukimilikiwa kwa uhuru.",
+      "Sisi ni timu ndogo inayofanya kazi kwenye tatizo kubwa. Ikiwa una nia ya kujiunga na jitihada hizi za utafiti,"
     ]
   },
   "brand/page": {
@@ -635,12 +635,7 @@
       "Ubunifu wa mtiririko wa kazi",
       "Uzidishaji wa uzinduzi",
       "Ramani ya barabara",
-      "Borrow itaanza kwanza, ikifuatiwa na Lend na Multiply.",
-      "Lengo Q3 2026",
-      "Lengo Robo ya 4 2026",
-      "Lengo Q1 2027",
-      "Imetolewa",
-      "Inaendelea"
+      "Borrow itaanza kwanza, ikifuatiwa na Lend na Multiply."
     ]
   },
   "invest-apy-section": {

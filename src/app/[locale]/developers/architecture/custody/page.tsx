@@ -64,7 +64,7 @@ export default async function CustodyPage({ params }: LocaleParamsProps) {
         <section id="lp-vault" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">LPVault</h2>
           <p className="mb-4 type-doc-body">
-            An LPVault is the immutable custodian of every pledged position of one AMM protocol on one chain. At launch there are two: the Uniswap v3 LPVault on Ethereum and the Aerodrome Slipstream LPVault on Base. A later AMM protocol, or a later generation of position contracts that an existing LPVault does not name, gets a new LPVault with a new integration ID. Existing LPVaults, Collateralization and the Lock are not redeployed.
+            An LPVault is the immutable custodian of every pledged position of one AMM protocol on one chain. Today there are three: the Uniswap v3 and Uniswap v4 LPVaults on Ethereum and the Aerodrome Slipstream LPVault on Base. A later AMM protocol, or a later generation of position contracts that an existing LPVault does not name, gets a new LPVault with a new integration ID. Existing LPVaults, Collateralization and the Lock are not redeployed.
           </p>
           <p className="mb-4 type-doc-body">
             An LPVault has no proxy, owner, admin role, pause or rescue function. It takes every address it calls from its constructor immutables, including the AMM protocol&apos;s position manager and factory, so forks and other factory generations are rejected. It reads no pause state, breaker, address freeze or price, so seizures, fee collection and debt-free exits reach it in every state.
@@ -120,7 +120,7 @@ export default async function CustodyPage({ params }: LocaleParamsProps) {
           </div>
           <h3 className="mt-6 mb-2 type-doc-subsection-title">Cap counters per Hub</h3>
           <p className="mb-4 type-doc-body">
-            Each pledge is charged in USD at a price of at least the market&apos;s stress floor ($1.00 per whole vault token by default). The charge is added to the market counter, to the counter of every pool token on that Hub and to the depositor&apos;s counter on that Hub. Example from the specification: with a Stable LP Hub token cap of $5,000,000 for USDC, a $3,000,000 pledge on one CDP Spoke and a $2,500,000 pledge on another both book against the same counter, so the second is refused ($5,500,000 is above $5,000,000).
+            Each pledge is charged in USD at a price of at least the market&apos;s stress floor ($1.00 per whole vault token by default). The charge is added to the market counter, to the counter of every pool token on that Hub and to the depositor&apos;s counter on that Hub. Example from the specification: with a Hub token cap of $5,000,000 for USDC, a $3,000,000 pledge on one CDP Spoke and a $2,500,000 pledge on another both book against the same counter, so the second is refused ($5,500,000 is above $5,000,000).
           </p>
           <p className="mb-4 type-doc-body">
             Every exit releases exactly the charge its units carry, from the rescue slice first and then from the regular budget. Exit counters saturate at zero and never revert, and exits never call the RiskModule, the MarketRegistry or the ParameterStore, so a policy fault can never block a withdrawal or a liquidation.

@@ -33,13 +33,13 @@
       "Kula da haɗari mai aiki",
       "Kula da lafiya da goge-gogen wurare suna kare ka'idoji yayin da fuskantar ka ke ci gaba da samun kudaden shiga.",
       "Cibiyar da ke da ƙarancin haɗari",
-      "Hub na LP mai kwanciyar hankali",
+      "Spokes na LP mai kwanciyar hankali",
       "Kasuwannin LP na Stablecoin an gina su don farashin daidaito, ƙarancin slippage, da ƙarancin asarar ɗan lokaci.",
       "Cibiyar Dabaran Duniya",
-      "Hub na LP masu alaƙa",
+      "Spokes na LP masu alaƙa",
       "Kasuwannin LP don kadarorin da ke motsawa tare, an gina su don ƙananan ƙayyadaddun haɗari da ƙarfin aron da ya fi tsabta.",
       "Cibiyar kewaye mai nisa",
-      "Hub na LP mai canzawa",
+      "Spokes na LP mai canzawa",
       "Manyan kasuwannin kadarorin DeFi na LP don faɗin farashi da dabarun haɗarin-riba mafi girma.",
       "Fuskar manhaja",
       "Ari akan",
@@ -55,7 +55,7 @@
       "A aro bisa darajar matsayi da aka daidaita da haɗari kuma ka karɓi kuɗi kai tsaye a walat ɗinka.",
       "Sarrafa bashi kafin haɗari ya tashi",
       "Biya bashin, ƙara jingina, ko rage bashi kafin matsayin ya fara matsawa zuwa iyakar warwarewa.",
-      "Nemo Hub ɗin da ya dace da jinginarka",
+      "Nemo CDP Spokes ɗin da suka dace da jinginarka",
       "LPs masu ƙarko, masu alaƙa, da masu saurin canji suna cikin kasuwanni daban-daban.",
       "Za a iya aro",
       "Ara da Tabbataccen Iko",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Ƙungiyar yarjejeniya",
-      "Ƙungiyar Protocol tana tsarawa da gina tsarin ba da rance na Avana. Ita ce ke kula da kwangiloli masu wayo, tsarin gine-ginen jinginar LP, tsarin liquidation, kayayyakin more rayuwa na oracle, ikon samun dama, yanayin aiwatarwa, da haɓakawa a duk AMMs da cibiyoyin ba da rance (lending hubs) da aka haɗa.",
+      "Protocol yana da hakkin zane da aiwatar da tsarin bayar da lamuni na Avana, ciki har da kwangiloli masu wayo, tsarin jinginar LP, tsarin rushe lamuni, tsarin ababen more rayuwa na oracle, ikon samun dama, muhalli na aiwatarwa, da sabuntawa a duk AMMs da cibiyoyin lamuni da aka haɗa.",
       "Ƙungiyar gudanarwa",
-      "Ƙungiyar Ayyuka ce ke daidaita matakin protocol na yau da kullum. Tana kula da tsarin baitulmali, shirye-shiryen ƙarfafawa, haɓakar yanayin muhalli (ecosystem), ayyukan masu ba da gudummawa, da ayyukan shigar da jingina.",
+      "Ayyuka suna tsara tsarin yau da kullum na matakin tsarin aiki, ciki har da hanyoyin asusun kudi, shirye-shiryen lada, bunkasar tsarin, hanyoyin aiki na masu bayar da gudummawa, da ayyukan shigar da kadarori.",
       "Ƙungiyar haɗarin kasuwa",
-      "Ƙungiyar Haɗarin Kasuwa ce ke kula da ɓangaren ƙididdiga (quantitative) na jinginar LP. Aikinta ya shafi zurfin ruwan kuɗi, sauyin farashi, ɗabi'ar farashi, fallasa ga tattaccen ruwan kuɗi, yanayin liquidation, ingancin ƙimanta farashi, da daidaita sigogi a yanayin kasuwa daban-daban.",
+      "Hadin gwiwar Kasuwa yana da alhakin bangaren kididdiga na jinginar LP: zurfin ruwa, canjin farashi, yadda farashin ke tafiya, hadewar ruwaya mai yawa, yanayin rushewa, gaskiyar farashin, da daidaita sigogi a fadin yanayin kasuwa.",
       "Ƙungiyar haɗarin jingina",
-      "Ƙungiyar Haɗarin Jingina (Collateral Risk) ce ke kula da ɓangaren inganci (qualitative) na shigarwa da sa ido. Aikinta ya shafi tsarin kadara, tushen ruwan kuɗi, dogaro da gudanarwa, dogaro da protocol, da cikakken ingancin jingina a duk kasuwannin da ake tallafawa.",
+      "Collateral Risk yana da alhakin bangaren kwarewa na shigarwa da sanya ido, ciki har da tsarin kadarori, hanyoyin samun kudi, dogaro da shugabanci, dogaro da tsarin aiki, da kuma ingancin gabaɗaya na jinginar a dukkan kasuwannin da ake tallafawa.",
       "Kasuwar ba da lamuni don kuɗin ruwa na AMM.",
       "Avana game da hoton jarumi",
-      "Avana kasuwar ba da rance ce don ruwan kuɗi na AMM a Aave V4. Burinmu shi ne mu sa matsayin ruwan kuɗi na AMM su zama masu amfani a matsayin jingina a duk faɗin DeFi.",
-      "Manyan AMMs suna riƙe da biliyoyi a ruwan kuɗi, amma har yanzu ana ɗaukar matsayin LP galibi a matsayin abubuwan da ake riƙewa kawai, ba a matsayin jingina mai amfani ba. Avana tana farawa da matsayin Uniswap v3 a Ethereum da matsayin Aerodrome Slipstream a Base.",
-      "Amfani da matsayin LP a matsayin jingina yana buƙatar fiye da jera LP tokens. LP Vault na Avana yana riƙe da kowane matsayi da aka yi pledge da shi kuma yana wakiltarsa a kan Aave V4 da vault token na kasuwarsa. Masu aro suna ɗaukar GHO, da sauran kadarorin bashi yayin da ake kunna su, daga Avana Stable LP Hub ta CDP Spoke ga kowane AMM. Hubs da Spokes kwangiloli ne na Aave V4 na yau da kullum mallakar Aave DAO, wanda ke ba wa Hub kuɗi ta layin bashin GHO a kan Avana Lend Spoke.",
-      "Kwangiloli masu wayo ɓangare ne kawai na aikin. Dole ne matsayin ya ci gaba da aiki a cikin pool ɗinsa. Dole ne a auna ƙimarsa yayin da yanayi ke canzawa. Dole ne kasuwar ta kasance da isasshen ruwan kuɗi don tallafa wa bashi. Avana yana raba wannan aiki tsakanin ƙungiyoyi huɗu, kuma kowace ƙungiya tana da alhakin wani ɓangare daban na haɗarin.",
-      "Kowane fanni yana da nasa mai kula: aiwatar da fasaha, ayyukan yau da kullum, ƙirar samfurin kasuwa, da bitar jingina.",
-      "Mu ƙaramar ƙungiya ce da ke aiki a kan babbar matsala. Idan kuna son shiga wannan aikin bincike,"
+      "Avana tana gina kasuwar ba da lamuni don kuɗin ruwa na AMM a kan Aave V4. Manufarmu ita ce mu sa matsayin kuɗin ruwa na AMM ya zama jingina da za a iya amfani da shi a DeFi.",
+      "Manyan AMMs sun riga sun mallaki biliyoyin kuɗi a cikin ruwa, duk da haka an ci gaba da ɗaukar matsayi na LP mafi yawa a matsayin matsayi na shiru maimakon jinginar kayayyaki masu aiki. Avana tana kawo wannan ruwa a cikin kasuwannin lamuni don DEXs na yau da nau'ikan LP, tana amfani da masu hangen nesa biyu da ƙarin kulawa kan haɗari.",
+      "Wannan yana buƙatar fiye da jera alamomin LP a matsayin jingina. Avana an gina shi ne a kusa da Aave v4 Spokes na musamman don ƙirar DEX daban-daban, da yawa Aave v4 Hubs da aka tsara a kan kasuwannin LP masu haɗarin ƙasa, masu alaƙa, da masu faɗi mafi girma, da kuma Aave v4 Lend Spoke wanda ke samar da babban kuɗi a bayan waɗannan kasuwannin.",
+      "Mayar da matsayin LP zuwa jingina mai amfani yana buƙatar fiye da kwangilolin wayo. Dole ne matsayin ya ci gaba da aiki a cikin pool ɗinsa, a auna darajarsa yayin da yanayi ke canzawa, kuma kasuwa ta sami isasshen kuɗin ruwa don tallafa wa aro. Saboda haka Avana ta raba aikin tsakanin ƙungiyoyi huɗu, kowace tana da alhakin wani ɓangare na haɗarin.",
+      "Manufar ita ce rabuwa mai tsabta, tare da aiwatarwa na fasaha, ayyuka, samfurin kasuwa, da dubawa na jingina kowannensu mallakar kansa.",
+      "Mu ƙungiya ce ƙanana dake aiki kan babban matsala. Idan kuna sha'awar shiga wannan ƙoƙarin bincike,"
     ]
   },
   "brand/page": {
@@ -635,12 +635,7 @@
       "Zane aikin aiki",
       "Fitarwa mai yawa",
       "Taswirar hanya",
-      "Borrow zai fara, sai Lend da Multiply.",
-      "Manufa Q3 2026",
-      "Manufa Q4 2026",
-      "Manufa Q1 2027",
-      "An saki",
-      "A Ciki"
+      "Borrow zai fara, sai Lend da Multiply."
     ]
   },
   "invest-apy-section": {

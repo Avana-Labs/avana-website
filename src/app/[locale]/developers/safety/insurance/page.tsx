@@ -43,7 +43,7 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
             Avana Umbrella is Avana&apos;s protocol safety module, named after Aave&apos;s Umbrella, whose design inspired it. It is the First-Loss Reserve: one Coverage Spoke per (Hub, debt asset), funded by Avana Labs in that asset and controlled by the Aave DAO. Each one covers the deficits Aave records for approved Avana CDP Spokes in its own asset, on its own Hub, and nothing else.
           </p>
           <p className="mb-4 type-doc-body">
-            At launch there are two: GHO on the Ethereum Stable LP Hub and GHO on the Base Stable LP Hub. Every further debt asset enabled on a CDP Spoke, such as USDC, USDT or WETH, gets its own Coverage Spoke, funded to its minimum before any draw cap on that asset rises above 0.
+            Today each Avana Hub has one each for GHO, USDC and USDT. Every further debt asset enabled on a CDP Spoke gets its own Coverage Spoke, funded to its minimum before any draw cap on that asset rises above 0.
           </p>
           <div className="doc-topic type-doc-body">
             The Coverage Spokes are Avana&apos;s only on-chain loss layer. Avana counts no coverage from committed fee income, from Aave&apos;s own Umbrella or from DAO layers. Collateral limits and liquidation remain the first controls against loss.
@@ -103,7 +103,7 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
             The rule is checked when a debt reserve is enabled and on every draw-cap raise Avana records. A raise that would break it reverts with <code className="type-doc-inline-code">CoverageBelowRatio</code> until more funds are added.
           </p>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; the funding ARFC sets the real ones. At an illustrative ratio of 20% (2,000 bps), a 2,000,000 GHO credit line on the Ethereum Stable LP Hub needs at least 400,000 GHO in its Umbrella. Raising one Spoke&apos;s draw cap from 1,200,000 to 1,250,000 GHO, so that the summed caps reach 2,050,000 GHO, needs at least 410,000 GHO; until Avana Labs funds 10,000 GHO more, the raise reverts.
+            Example values; the funding ARFC sets the real ones. At an illustrative ratio of 20% (2,000 bps), a 2,000,000 GHO credit line on the Avana Ethereum Hub needs at least 400,000 GHO in its Umbrella. Raising one Spoke&apos;s draw cap from 1,200,000 to 1,250,000 GHO, so that the summed caps reach 2,050,000 GHO, needs at least 410,000 GHO; until Avana Labs funds 10,000 GHO more, the raise reverts.
           </div>
           <p className="type-doc-body">
             Beyond the ratio, caps are sized so that each reserve covers two modelled losses per (Hub, debt asset): an incident term over a 48-hour window, which includes a debt-asset price rise, and a tail term for one pool token going to zero. The Lens reports the cap-based tail coverage, and monitoring warns below 150% of the minimum and pages below 100%.
@@ -128,7 +128,7 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Avana Labs funds each reserve to at least its minimum before any draw cap on its (Hub, asset) rises above 0, and tops it back up after any coverage. The funding call moves the asset straight to the Hub and credits it as the Coverage Spoke&apos;s shares; funds added give the funder no claim.</li>
             <li>Avana&apos;s committed fee share counts toward the minimum only once received in that asset through the funding call.</li>
-            <li>Pending-settlement proceeds go to the Umbrella. When anyone calls <code className="type-doc-inline-code">settlePending</code> to clear vault tokens left by a seizure that never settled, LPVaultSwap converts the released tokens into the market&apos;s settlement debt asset (GHO at launch) and funds the matching Umbrella with the amount recovered.</li>
+            <li>Pending-settlement proceeds go to the Umbrella. When anyone calls <code className="type-doc-inline-code">settlePending</code> to clear vault tokens left by a seizure that never settled, LPVaultSwap converts the released tokens into the market&apos;s settlement debt asset (for example GHO) and funds the matching Umbrella with the amount recovered.</li>
             <li>Funds leave only through deficit elimination or a DAO withdrawal: the Aave DAO requests it, and it executes after <code className="type-doc-inline-code">reserveWithdrawalDelay</code>, 14 days, fixed in the contract.</li>
             <li>Before the credit line closes, the DAO approves a withdrawal only if the balance left still meets the minimum. Unused capital returns to Avana Labs only after that (Hub, asset) credit line closes and every allowlisted CDP Spoke has zero debt and zero deficit in that asset.</li>
           </ul>
@@ -159,7 +159,7 @@ export default async function InsuranceFundsPage({ params }: LocaleParamsProps) 
         <section id="walkthrough" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Walkthrough</h2>
           <p className="mb-4 type-doc-body">
-            Example values; each market&apos;s parameters are set at listing. Market 1 is the USDC/USDT 0.01% Uniswap v3 market on the Uniswap v3 Stable CDP Spoke of the Ethereum Stable LP Hub, with a collateral factor of 28.12% and a maximum liquidation bonus of 5%. Dan&apos;s proxy holds 20,000 vault tokens at $2.00 ($40,000) and owes 10,000 GHO, a health factor of 1.1248. The GHO Umbrella holds an illustrative 400,000 GHO, its minimum. The Hub&apos;s GHO has A = 2,050,000 GHO and Sh = 2,000,000 shares, and GHO draw caps sum to 2,000,000 GHO.
+            Example values; each market&apos;s parameters are set at listing. Market 1 is the USDC/USDT 0.01% Uniswap v3 market on the Uniswap v3 Stable CDP Spoke of the Avana Ethereum Hub, with a collateral factor of 28.12% and a maximum liquidation bonus of 5%. Dan&apos;s proxy holds 20,000 vault tokens at $2.00 ($40,000) and owes 10,000 GHO, a health factor of 1.1248. The GHO Umbrella holds an illustrative 400,000 GHO, its minimum. The Hub&apos;s GHO has A = 2,050,000 GHO and Sh = 2,000,000 shares, and GHO draw caps sum to 2,000,000 GHO.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">

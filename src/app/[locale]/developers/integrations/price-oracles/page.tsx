@@ -45,7 +45,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            A market is one chain, AMM protocol, pool and exact position shape, with one vault token and one collateral reserve on its CDP Spoke. Each market has its own LPOracle proxy. Each AMM protocol has one LPOracle implementation per chain, and every market of that protocol on that chain is a proxy of it. At launch that means one implementation for Uniswap v3 on Ethereum and one for Aerodrome Slipstream on Base.
+            A market is one chain, AMM protocol, pool and exact position shape, with one vault token and one collateral reserve on its CDP Spoke. Each market has its own LPOracle proxy. Each AMM protocol has one LPOracle implementation per chain, and every market of that protocol on that chain is a proxy of it. Today that means one implementation each for Uniswap v3 and Uniswap v4 on Ethereum and one for Aerodrome Slipstream on Base.
           </p>
           <p className="mb-4 type-doc-body">The LPOracle has two layers:</p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
@@ -256,7 +256,7 @@ export default async function PriceOraclesPage({ params }: LocaleParamsProps) {
         <section id="usd-band" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">USD Band</h2>
           <p className="mb-4 type-doc-body">
-            When every token moves together, through a common-mode feed error or a correlated depeg, the pool ratio and the agreement check can look normal. The USD band catches the absolute level. It applies to markets whose tokens are all USD-pegged stables, which includes every Stable LP Hub market; other markets use 0 and the maximum value, so the test always passes.
+            When every token moves together, through a common-mode feed error or a correlated depeg, the pool ratio and the agreement check can look normal. The USD band catches the absolute level. It applies to markets whose tokens are all USD-pegged stables, which includes every stablecoin market; other markets use 0 and the maximum value, so the test always passes.
           </p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>The band is 0.90 to 1.02 at launch, tested on the geometric mean of the token prices.</li>

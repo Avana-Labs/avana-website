@@ -61,17 +61,6 @@ const roadmapPhases: {
   },
 ]
 
-function getRoadmapStatusClass() {
-  return "text-type-accent"
-}
-
-function getRoadmapStatusLabel(status: RoadmapStatus) {
-  if (status === "Released") return "Released"
-  if (status === "In Progress") return "In Progress"
-  if (status === "Q1 2027") return "Target Q1 2027"
-  return `Target ${status} 2026`
-}
-
 function getRoadmapDisplayLabel(label: string) {
   const shortLabels: Record<string, string> = {
     "Borrow pricing engine": "Pricing engine",
@@ -179,9 +168,6 @@ export default async function ProtocolRoadmapSection({ locale }: { locale: AppLo
               <div className="space-y-3">
                 {groupedMilestones.map((group) => (
                   <div key={`${phase.title}-${group.status}`} className="space-y-2">
-                    <p className={`type-meta-label ${getRoadmapStatusClass()}`}>
-                      {getRoadmapStatusLabel(group.status)}
-                    </p>
                     <div className="flex flex-wrap gap-2">
                       {group.items.map((milestone) => (
                         <div

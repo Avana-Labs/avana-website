@@ -25,7 +25,7 @@ const sections = [
   { id: "liquidation", title: "Liquidation Design" },
   { id: "coverage", title: "Avana Umbrella" },
   { id: "governance-limits", title: "Governance Limits" },
-  { id: "hub-tiers", title: "Hub Tiers" },
+  { id: "hub-tiers", title: "Hubs and Risk Tiers" },
   { id: "monitoring", title: "Monitoring and Reporting" },
   { id: "related", title: "Related Pages" },
 ]
@@ -324,7 +324,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         <section id="coverage" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Avana Umbrella</h2>
           <p className="mb-4 type-doc-body">
-            When a liquidation empties an account&apos;s collateral while debt remains, Aave records a deficit on the funding Hub in that debt asset. Each (Hub, debt asset) has its own Avana Umbrella, a Coverage Spoke funded by Avana Labs and controlled by the Aave DAO, which eliminates a recorded deficit within 72 hours. At launch there are two, GHO on each chain&apos;s Stable LP Hub. A loss larger than the reserve falls on that Hub asset&apos;s suppliers, pro rata, after the Aave DAO realizes it.
+            When a liquidation empties an account&apos;s collateral while debt remains, Aave records a deficit on the funding Hub in that debt asset. Each (Hub, debt asset) has its own Avana Umbrella, a Coverage Spoke funded by Avana Labs and controlled by the Aave DAO, which eliminates a recorded deficit within 72 hours. Today each Hub has one each for GHO, USDC and USDT. A loss larger than the reserve falls on that Hub asset&apos;s suppliers, pro rata, after the Aave DAO realizes it.
           </p>
           <p className="type-doc-body">
             The coverage rule, the deficit breaker and worked examples are on this page:{" "}
@@ -349,34 +349,29 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
         </section>
 
         <section id="hub-tiers" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Hub Tiers</h2>
+          <h2 className="mb-4 type-doc-section-title">Hubs and Risk Tiers</h2>
           <p className="mb-4 type-doc-body">
-            Stable, correlated and volatile LPs carry different risks, so liquidity is organized into three Hub tiers. Each Hub connects to its own CDP Spokes, one per (chain, Hub, AMM protocol, risk tier), and each credit line is a draw cap per (Hub, asset, Spoke).
+            Each chain has one Avana Hub. Stable, correlated and volatile LPs carry different risks, so the Hub&apos;s CDP Spokes are separated by risk tier, one per (chain, Hub, AMM protocol, risk tier), and each credit line is a draw cap per (Hub, asset, Spoke).
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50">
                 <tr>
                   <th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th>
-                  <th className="text-left px-4 py-2 type-doc-subsection-title">Pools</th>
-                  <th className="text-left px-4 py-2 type-doc-subsection-title">Availability</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th>
+                  <th className="text-left px-4 py-2 type-doc-subsection-title">CDP Spokes today</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr>
-                  <td className="px-4 py-2">Avana Stable LP Hub (low risk)</td>
-                  <td className="px-4 py-2">Established stablecoin pools built for tight pricing, low slippage and minimal impermanent loss, such as USDC/USDT and pools containing GHO</td>
-                  <td className="px-4 py-2">At launch, on Ethereum (Uniswap v3 Stable CDP Spoke) and Base (Aerodrome Slipstream Stable CDP Spoke)</td>
+                  <td className="px-4 py-2">Avana Ethereum Hub</td>
+                  <td className="px-4 py-2">Ethereum</td>
+                  <td className="px-4 py-2">Uniswap v3 and Uniswap v4 Spokes for stablecoin, blue-chip, correlated, and governance and DeFi token pools</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2">Correlated LP Hub</td>
-                  <td className="px-4 py-2">Blue-chip pools of assets that move together, with tighter risk bands</td>
-                  <td className="px-4 py-2">Added later on any chain</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-2">Volatile LP Hub (high risk)</td>
-                  <td className="px-4 py-2">Major DeFi assets and emerging markets with wider price ranges under stricter exposure limits</td>
-                  <td className="px-4 py-2">Added later on any chain</td>
+                  <td className="px-4 py-2">Avana Base Hub</td>
+                  <td className="px-4 py-2">Base</td>
+                  <td className="px-4 py-2">Aerodrome Slipstream Spokes for blue-chip, governance and DeFi token, and tokenized-stock pools</td>
                 </tr>
               </tbody>
             </table>

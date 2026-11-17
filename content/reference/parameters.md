@@ -9,67 +9,145 @@ updated: 2026-11-16
 ## Ethereum Sepolia
 - network: ethereum-sepolia
 
-Every CDP Spoke here is on the Avana Ethereum Hub; their addresses are on [Contract Addresses](/developers/reference/addresses?network=ethereum-sepolia). On every Spoke the LP reserves are collateral only, and GHO and USDC are the borrowable debt reserves.
+Every Spoke here is on the Avana Ethereum Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=ethereum-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply. Pool risk factors are pending the updated deploy values.
 
-### Uniswap v3 Stable
+### Interest rate curves
 
-Collateral risk premium (Aave V4 `collateralRisk`): **400 bps (4%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+One curve per debt asset on the Avana Ethereum Hub. LP reserves are collateral only and have no curve.
 
-| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| Hub | Reserve | Base drawn rate | Rate growth before optimal | Rate growth after optimal | Optimal usage ratio | Liquidity fee |
 | --- | --- | --- | --- | --- | --- | --- |
-| USDC/USDT | @{markets.uni-USDC-USDT-100.pool} | 0.01% | 35% | 5% | 40% | $5,000,000 |
-| DAI/USDT | @{markets.uni-DAI-USDT-100.pool} | 0.01% | 36% | 8% | 40% | $5,000,000 |
+| Avana Ethereum Hub | GHO | 0% | 4% | 60% | 90% | 0% |
+| Avana Ethereum Hub | USDC | 0% | 4% | 60% | 90% | 0% |
+| Avana Ethereum Hub | USDT | 0% | 4% | 60% | 90% | 0% |
 
-### Uniswap v3 Blue-chip
+### Credit lines
 
-Collateral risk premium (Aave V4 `collateralRisk`): **2,000 bps (20%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+The Aave DAO funds each borrowable asset by supplying it to the Hub through the Lend Spoke, up to the credit line the MarketRegistry records.
 
-| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
-| --- | --- | --- | --- | --- | --- | --- |
-| WETH/USDC | @{markets.uni-WETH-USDC-500.pool} | 0.05% | 30% | 8% | 40% | $5,000,000 |
-| WBTC/USDC | @{markets.uni-WBTC-USDC-3000.pool} | 0.3% | 32% | 8% | 40% | $5,000,000 |
+| Origin | Target Hub | Reserve | Credit line size |
+| --- | --- | --- | --- |
+| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | GHO | 50,000,000 GHO |
+| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | USDC | 50,000,000 USDC |
 
-### Uniswap v3 Correlated ETH
+### Add and draw caps
 
-Collateral risk premium (Aave V4 `collateralRisk`): **1,000 bps (10%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+Caps in whole tokens. The Lend Spoke takes supply and draws nothing; CDP Spokes draw the borrowable assets and take LP collateral. Avana's own market caps (under LP market parameters) bound LP collateral further.
 
-| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
-| --- | --- | --- | --- | --- | --- | --- |
-| wstETH/WETH | @{markets.uni-wstETH-WETH-100.pool} | 0.01% | 34% | 6% | 40% | $5,000,000 |
+| Spoke | Reserve | Add cap | Draw cap |
+| --- | --- | --- | --- |
+| Lend Spoke | GHO | Max | 0 |
+| Lend Spoke | USDC | Max | 0 |
+| Lend Spoke | USDT | Max | 0 |
+| Uniswap v3 Stable | GHO | 0 | 10,000,000 |
+| Uniswap v3 Stable | USDC | 0 | 10,000,000 |
+| Uniswap v3 Stable | USDT | 0 | 5,000,000 |
+| Uniswap v3 Stable | USDC/USDT LP | Max | 0 |
+| Uniswap v3 Stable | DAI/USDT LP | Max | 0 |
+| Uniswap v4 Stable | GHO | 0 | 10,000,000 |
+| Uniswap v4 Stable | USDC | 0 | 10,000,000 |
+| Uniswap v4 Stable | USDT | 0 | 5,000,000 |
+| Uniswap v4 Stable | USDC/USDT LP | Max | 0 |
+| Uniswap v3 Correlated ETH | GHO | 0 | 10,000,000 |
+| Uniswap v3 Correlated ETH | USDC | 0 | 10,000,000 |
+| Uniswap v3 Correlated ETH | USDT | 0 | 5,000,000 |
+| Uniswap v3 Correlated ETH | wstETH/WETH LP | Max | 0 |
+| Uniswap v4 Correlated BTC | GHO | 0 | 10,000,000 |
+| Uniswap v4 Correlated BTC | USDC | 0 | 10,000,000 |
+| Uniswap v4 Correlated BTC | USDT | 0 | 5,000,000 |
+| Uniswap v4 Correlated BTC | cbBTC/WBTC LP | Max | 0 |
+| Uniswap v3 Blue-chip | GHO | 0 | 10,000,000 |
+| Uniswap v3 Blue-chip | USDC | 0 | 10,000,000 |
+| Uniswap v3 Blue-chip | USDT | 0 | 5,000,000 |
+| Uniswap v3 Blue-chip | WETH/USDC LP | Max | 0 |
+| Uniswap v3 Blue-chip | WBTC/USDC LP | Max | 0 |
+| Uniswap v3 Gov/DeFi | GHO | 0 | 10,000,000 |
+| Uniswap v3 Gov/DeFi | USDC | 0 | 10,000,000 |
+| Uniswap v3 Gov/DeFi | USDT | 0 | 5,000,000 |
+| Uniswap v3 Gov/DeFi | AAVE/WETH LP | Max | 0 |
+| Uniswap v3 Gov/DeFi | UNI/WETH LP | Max | 0 |
+| Uniswap v3 Gov/DeFi | LINK/WETH LP | Max | 0 |
 
-### Uniswap v3 Gov/DeFi
+> `Max` is Aave V4's largest Spoke cap (`MAX_ALLOWED_SPOKE_CAP`). A debt asset that is not borrowable on a CDP Spoke keeps its draw cap but cannot be drawn.
 
-Collateral risk premium (Aave V4 `collateralRisk`): **3,000 bps (30%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+### Risk parameters
 
-| Market | Pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
-| --- | --- | --- | --- | --- | --- | --- |
-| AAVE/WETH | @{markets.uni-AAVE-WETH-3000.pool} | 0.3% | 26% | 8% | 40% | $5,000,000 |
-| UNI/WETH | @{markets.uni-UNI-WETH-3000.pool} | 0.3% | 26% | 8% | 40% | $5,000,000 |
-| LINK/WETH | @{markets.uni-LINK-WETH-3000.pool} | 0.3% | 28% | 8% | 40% | $5,000,000 |
+LP reserves are collateral only. Debt reserves are never collateral. The Lend Spoke's reserves carry the borrowable flag, but their draw cap is 0, so nothing is drawn through the Lend Spoke.
 
-### Uniswap v4 Stable
+| Spoke | Reserve | Collateral factor | Max liquidation bonus | Borrowable | Collateral risk | Liquidation fee | Risk premium threshold | receiveShares |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Lend Spoke | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Lend Spoke | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Lend Spoke | USDT | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Stable | USDC/USDT LP | 80% | 4% | No | 400 bps | 0% | Max | No |
+| Uniswap v3 Stable | DAI/USDT LP | 80% | 4% | No | 400 bps | 0% | Max | No |
+| Uniswap v3 Stable | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Stable | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Stable | USDT | 0% | — | No | — | 0% | Max | No |
+| Uniswap v4 Stable | USDC/USDT LP | 80% | 4% | No | 400 bps | 0% | Max | No |
+| Uniswap v4 Stable | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v4 Stable | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v4 Stable | USDT | 0% | — | No | — | 0% | Max | No |
+| Uniswap v3 Correlated ETH | wstETH/WETH LP | 75% | 5% | No | 600 bps | 0% | Max | No |
+| Uniswap v3 Correlated ETH | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Correlated ETH | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Correlated ETH | USDT | 0% | — | No | — | 0% | Max | No |
+| Uniswap v4 Correlated BTC | cbBTC/WBTC LP | 75% | 5% | No | 600 bps | 0% | Max | No |
+| Uniswap v4 Correlated BTC | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v4 Correlated BTC | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v4 Correlated BTC | USDT | 0% | — | No | — | 0% | Max | No |
+| Uniswap v3 Blue-chip | WETH/USDC LP | 72% | 6.5% | No | 800 bps | 0% | Max | No |
+| Uniswap v3 Blue-chip | WBTC/USDC LP | 72% | 6.5% | No | 800 bps | 0% | Max | No |
+| Uniswap v3 Blue-chip | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Blue-chip | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Blue-chip | USDT | 0% | — | No | — | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | AAVE/WETH LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | UNI/WETH LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | LINK/WETH LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Uniswap v3 Gov/DeFi | USDT | 0% | — | No | — | 0% | Max | No |
 
-Collateral risk premium (Aave V4 `collateralRisk`): **400 bps (4%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+> Collateral risk is Aave V4's `collateralRisk`: the premium borrowers pay on top of the base rate, and lenders earn, for that collateral. `Max` is Aave V4's `MAX_RISK_PREMIUM_THRESHOLD`. Avana requires a liquidation fee of 0 on every LP reserve; its revenue from a liquidation is the fee share under Fees.
 
-| Market | PoolId | v3 reference pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+### Price feeds
+
+Each Spoke has its own AaveOracle; these are the sources it reads. Each name links to its address on Contract Addresses. GHO has no feed: Aave prices it at a fixed $1. Each market's LPOracle is recorded in the MarketRegistry.
+
+| Spoke | Reserve | Oracle |
+| --- | --- | --- |
+| Lend Spoke and every CDP Spoke | GHO | Fixed $1 price (Aave) |
+| Lend Spoke and every CDP Spoke | USDC | [DebtOracle, USDC](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Lend Spoke and every CDP Spoke | USDT | [USDT / USD price feed](/developers/reference/addresses?network=ethereum-sepolia#external-dependencies) |
+| Uniswap v3 Stable | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Uniswap v4 Stable | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Uniswap v3 Correlated ETH | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Uniswap v4 Correlated BTC | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Uniswap v3 Blue-chip | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+| Uniswap v3 Gov/DeFi | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=ethereum-sepolia#avana-core) |
+
+### LP market parameters
+
+Avana's own settings for each market: the pool it accepts, how much of the pool's value counts as collateral, and how much can be pledged.
+
+| Spoke | Market | Pool | v3 reference pool | Fee tier or tick spacing | Pool risk factor | Market cap | Consistency tolerance |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| USDC/USDT | @{markets.univ4-USDC-USDT-100.poolId} | @{markets.univ4-USDC-USDT-100.referencePool} | 0.01% | 36% | 8% | 40% | $5,000,000 |
+| Uniswap v3 Stable | USDC/USDT | @{markets.uni-USDC-USDT-100.pool} | — | 0.01% | Pending | $5,000,000 | 0.5% |
+| Uniswap v3 Stable | DAI/USDT | @{markets.uni-DAI-USDT-100.pool} | — | 0.01% | Pending | $5,000,000 | 1% |
+| Uniswap v4 Stable | USDC/USDT | @{markets.univ4-USDC-USDT-100.poolId} | @{markets.univ4-USDC-USDT-100.referencePool} | 0.01% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Correlated ETH | wstETH/WETH | @{markets.uni-wstETH-WETH-100.pool} | — | 0.01% | Pending | $5,000,000 | 0.5% |
+| Uniswap v4 Correlated BTC | cbBTC/WBTC | @{markets.univ4-cbBTC-WBTC-100.poolId} | @{markets.univ4-cbBTC-WBTC-100.referencePool} | 0.01% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Blue-chip | WETH/USDC | @{markets.uni-WETH-USDC-500.pool} | — | 0.05% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Blue-chip | WBTC/USDC | @{markets.uni-WBTC-USDC-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | AAVE/WETH | @{markets.uni-AAVE-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | UNI/WETH | @{markets.uni-UNI-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | LINK/WETH | @{markets.uni-LINK-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
 
-> Hookless Uniswap v4 pools keep no price history, so each market's price check also reads the same pair's Uniswap v3 reference pool (fee 0.05%).
-
-### Uniswap v4 Correlated BTC
-
-Collateral risk premium (Aave V4 `collateralRisk`): **1,000 bps (10%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
-
-| Market | PoolId | v3 reference pool | Fee tier | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| cbBTC/WBTC | @{markets.univ4-cbBTC-WBTC-100.poolId} | @{markets.univ4-cbBTC-WBTC-100.referencePool} | 0.01% | 32% | 8% | 40% | $5,000,000 |
-
-> Hookless Uniswap v4 pools keep no price history, so each market's price check also reads the same pair's Uniswap v3 reference pool (fee 0.05%).
+> A Uniswap v4 market's Pool is its PoolId. Hookless Uniswap v4 pools keep no price history, so each also reads the same pair's Uniswap v3 reference pool (fee 0.05%) for the price check.
 
 ### Lend Spoke
 
-Lenders supply these assets to the Hub and earn the Hub supply rate; borrowers draw them through the CDP Spokes. Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
+Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
 
 | Asset | Borrowable on CDP Spokes | First-Loss Reserve minimum | DAO deficit offset minimum |
 | --- | --- | --- | --- |
@@ -88,11 +166,11 @@ Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `m
 | DAI | 90% | $50,000,000 |
 | WETH | 85% | $50,000,000 |
 | wstETH | 85% | $50,000,000 |
-| WBTC | 80% | $50,000,000 |
-| cbBTC | 80% | $50,000,000 |
-| AAVE | 65% | $10,000,000 |
-| UNI | 65% | $10,000,000 |
-| LINK | 70% | $10,000,000 |
+| WBTC | 84% | $50,000,000 |
+| cbBTC | 84% | $50,000,000 |
+| AAVE | 76% | $10,000,000 |
+| UNI | 76% | $10,000,000 |
+| LINK | 76% | $10,000,000 |
 
 ### Chain settings
 
@@ -105,44 +183,128 @@ Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `m
 ## Base Sepolia
 - network: base-sepolia
 
-Every CDP Spoke here is on the Avana Base Hub; their addresses are on [Contract Addresses](/developers/reference/addresses?network=base-sepolia). On every Spoke the LP reserves are collateral only, and GHO and USDC are the borrowable debt reserves. Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
+Every Spoke here is on the Avana Base Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=base-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply. Pool risk factors are pending the updated deploy values. Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
 
-### Aero Slipstream Blue-chip
+### Interest rate curves
 
-Collateral risk premium (Aave V4 `collateralRisk`): **2,000 bps (20%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+One curve per debt asset on the Avana Base Hub. LP reserves are collateral only and have no curve.
 
-| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| Hub | Reserve | Base drawn rate | Rate growth before optimal | Rate growth after optimal | Optimal usage ratio | Liquidity fee |
 | --- | --- | --- | --- | --- | --- | --- |
-| WETH/USDC | @{markets.slip-WETH-USDC-cl100.pool} | 100 | 30% | 8% | 40% | $5,000,000 |
-| cbBTC/USDC | @{markets.slip-cbBTC-USDC-cl100.pool} | 100 | 32% | 8% | 40% | $5,000,000 |
-| cbBTC/WETH | @{markets.slip-cbBTC-WETH-cl100.pool} | 100 | 32% | 8% | 40% | $5,000,000 |
+| Avana Base Hub | GHO | 0% | 4% | 60% | 90% | 0% |
+| Avana Base Hub | USDC | 0% | 4% | 60% | 90% | 0% |
+| Avana Base Hub | USDT | 0% | 4% | 60% | 90% | 0% |
 
-### Aero Slipstream Gov/DeFi
+### Credit lines
 
-Collateral risk premium (Aave V4 `collateralRisk`): **3,000 bps (30%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
+The Aave DAO funds each borrowable asset by supplying it to the Hub through the Lend Spoke, up to the credit line the MarketRegistry records.
 
-| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
+| Origin | Target Hub | Reserve | Credit line size |
+| --- | --- | --- | --- |
+| Aave DAO, through the Lend Spoke | Avana Base Hub | GHO | 50,000,000 GHO |
+| Aave DAO, through the Lend Spoke | Avana Base Hub | USDC | 50,000,000 USDC |
+
+### Add and draw caps
+
+Caps in whole tokens. The Lend Spoke takes supply and draws nothing; CDP Spokes draw the borrowable assets and take LP collateral. Avana's own market caps (under LP market parameters) bound LP collateral further.
+
+| Spoke | Reserve | Add cap | Draw cap |
+| --- | --- | --- | --- |
+| Lend Spoke | GHO | Max | 0 |
+| Lend Spoke | USDC | Max | 0 |
+| Lend Spoke | USDT | Max | 0 |
+| Aero Slipstream Blue-chip | GHO | 0 | 10,000,000 |
+| Aero Slipstream Blue-chip | USDC | 0 | 10,000,000 |
+| Aero Slipstream Blue-chip | USDT | 0 | 5,000,000 |
+| Aero Slipstream Blue-chip | WETH/USDC LP | Max | 0 |
+| Aero Slipstream Blue-chip | cbBTC/USDC LP | Max | 0 |
+| Aero Slipstream Blue-chip | cbBTC/WETH LP | Max | 0 |
+| Aero Slipstream Gov/DeFi | GHO | 0 | 10,000,000 |
+| Aero Slipstream Gov/DeFi | USDC | 0 | 10,000,000 |
+| Aero Slipstream Gov/DeFi | USDT | 0 | 5,000,000 |
+| Aero Slipstream Gov/DeFi | AERO/USDC LP | Max | 0 |
+| Aero Slipstream Gov/DeFi | AERO/WETH LP | Max | 0 |
+| Aero Slipstream Gov/DeFi | LINK/WETH LP | Max | 0 |
+| Aero Slipstream Stocks | GHO | 0 | 10,000,000 |
+| Aero Slipstream Stocks | USDC | 0 | 10,000,000 |
+| Aero Slipstream Stocks | USDT | 0 | 5,000,000 |
+| Aero Slipstream Stocks | AMZNc/USDC LP | Max | 0 |
+| Aero Slipstream Stocks | SNDKc/USDC LP | Max | 0 |
+| Aero Slipstream Stocks | GOOGLc/USDC LP | Max | 0 |
+| Aero Slipstream Stocks | NVDAc/USDC LP | Max | 0 |
+| Aero Slipstream Stocks | SPCXc/USDC LP | Max | 0 |
+| Aero Slipstream Stocks | METAc/USDC LP | Max | 0 |
+
+> `Max` is Aave V4's largest Spoke cap (`MAX_ALLOWED_SPOKE_CAP`). A debt asset that is not borrowable on a CDP Spoke keeps its draw cap but cannot be drawn.
+
+### Risk parameters
+
+LP reserves are collateral only. Debt reserves are never collateral. The Lend Spoke's reserves carry the borrowable flag, but their draw cap is 0, so nothing is drawn through the Lend Spoke.
+
+| Spoke | Reserve | Collateral factor | Max liquidation bonus | Borrowable | Collateral risk | Liquidation fee | Risk premium threshold | receiveShares |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Lend Spoke | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Lend Spoke | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Lend Spoke | USDT | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Blue-chip | WETH/USDC LP | 72% | 6.5% | No | 800 bps | 0% | Max | No |
+| Aero Slipstream Blue-chip | cbBTC/USDC LP | 72% | 6.5% | No | 800 bps | 0% | Max | No |
+| Aero Slipstream Blue-chip | cbBTC/WETH LP | 72% | 6.5% | No | 800 bps | 0% | Max | No |
+| Aero Slipstream Blue-chip | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Blue-chip | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Blue-chip | USDT | 0% | — | No | — | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | AERO/USDC LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | AERO/WETH LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | LINK/WETH LP | 68% | 8% | No | 1,000 bps | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Gov/DeFi | USDT | 0% | — | No | — | 0% | Max | No |
+| Aero Slipstream Stocks | AMZNc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | SNDKc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | GOOGLc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | NVDAc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | SPCXc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | METAc/USDC LP | 65% | 10% | No | 1,200 bps | 0% | Max | No |
+| Aero Slipstream Stocks | GHO | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Stocks | USDC | 0% | — | Yes | — | 0% | Max | No |
+| Aero Slipstream Stocks | USDT | 0% | — | No | — | 0% | Max | No |
+
+> Collateral risk is Aave V4's `collateralRisk`: the premium borrowers pay on top of the base rate, and lenders earn, for that collateral. `Max` is Aave V4's `MAX_RISK_PREMIUM_THRESHOLD`. Avana requires a liquidation fee of 0 on every LP reserve; its revenue from a liquidation is the fee share under Fees.
+
+### Price feeds
+
+Each Spoke has its own AaveOracle; these are the sources it reads. Each name links to its address on Contract Addresses. GHO has no feed: Aave prices it at a fixed $1. Each market's LPOracle is recorded in the MarketRegistry.
+
+| Spoke | Reserve | Oracle |
+| --- | --- | --- |
+| Lend Spoke and every CDP Spoke | GHO | Fixed $1 price (Aave) |
+| Lend Spoke and every CDP Spoke | USDC | [DebtOracle, USDC](/developers/reference/addresses?network=base-sepolia#avana-core) |
+| Lend Spoke and every CDP Spoke | USDT | [USDT / USD price feed](/developers/reference/addresses?network=base-sepolia#external-dependencies) |
+| Aero Slipstream Blue-chip | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=base-sepolia#avana-core) |
+| Aero Slipstream Gov/DeFi | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=base-sepolia#avana-core) |
+| Aero Slipstream Stocks | Each LP reserve | [The market's LPOracle](/developers/reference/addresses?network=base-sepolia#avana-core) |
+
+### LP market parameters
+
+Avana's own settings for each market: the pool it accepts, how much of the pool's value counts as collateral, and how much can be pledged.
+
+| Spoke | Market | Pool | Fee tier or tick spacing | Pool risk factor | Market cap | Consistency tolerance |
 | --- | --- | --- | --- | --- | --- | --- |
-| AERO/USDC | @{markets.slip-AERO-USDC-cl200.pool} | 200 | 26% | 8% | 40% | $5,000,000 |
-| AERO/WETH | @{markets.slip-AERO-WETH-cl200.pool} | 200 | 26% | 8% | 40% | $5,000,000 |
-| LINK/WETH | @{markets.slip-LINK-WETH-cl200.pool} | 200 | 28% | 8% | 40% | $5,000,000 |
-
-### Aero Slipstream Stocks
-
-Collateral risk premium (Aave V4 `collateralRisk`): **4,000 bps (40%)**, paid by borrowers on top of the base rate and earned by lenders. Borrowable: GHO, USDC.
-
-| Market | Pool | Tick spacing | Collateral factor | Max liquidation bonus | Pool risk factor | Market cap |
-| --- | --- | --- | --- | --- | --- | --- |
-| AMZNc/USDC | @{markets.slip-AMZNc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
-| SNDKc/USDC | @{markets.slip-SNDKc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
-| GOOGLc/USDC | @{markets.slip-GOOGLc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
-| NVDAc/USDC | @{markets.slip-NVDAc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
-| SPCXc/USDC | @{markets.slip-SPCXc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
-| METAc/USDC | @{markets.slip-METAc-USDC-cl100.pool} | 100 | 24% | 8% | 40% | $5,000,000 |
+| Aero Slipstream Blue-chip | WETH/USDC | @{markets.slip-WETH-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Blue-chip | cbBTC/USDC | @{markets.slip-cbBTC-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Blue-chip | cbBTC/WETH | @{markets.slip-cbBTC-WETH-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | AERO/USDC | @{markets.slip-AERO-USDC-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | AERO/WETH | @{markets.slip-AERO-WETH-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | LINK/WETH | @{markets.slip-LINK-WETH-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | AMZNc/USDC | @{markets.slip-AMZNc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | SNDKc/USDC | @{markets.slip-SNDKc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | GOOGLc/USDC | @{markets.slip-GOOGLc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | NVDAc/USDC | @{markets.slip-NVDAc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | SPCXc/USDC | @{markets.slip-SPCXc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Stocks | METAc/USDC | @{markets.slip-METAc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
 
 ### Lend Spoke
 
-Lenders supply these assets to the Hub and earn the Hub supply rate; borrowers draw them through the CDP Spokes. Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
+Each debt asset has a First-Loss Reserve and a DAO deficit offset on the Hub.
 
 | Asset | Borrowable on CDP Spokes | First-Loss Reserve minimum | DAO deficit offset minimum |
 | --- | --- | --- | --- |
@@ -159,15 +321,15 @@ Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `m
 | USDC | 90% | $50,000,000 |
 | USDT | 90% | $50,000,000 |
 | WETH | 85% | $50,000,000 |
-| cbBTC | 80% | $50,000,000 |
-| AERO | 65% | $10,000,000 |
-| LINK | 70% | $10,000,000 |
-| AMZNc | 60% | $5,000,000 |
-| SNDKc | 60% | $5,000,000 |
-| GOOGLc | 60% | $5,000,000 |
-| NVDAc | 60% | $5,000,000 |
-| SPCXc | 60% | $5,000,000 |
-| METAc | 60% | $5,000,000 |
+| cbBTC | 84% | $50,000,000 |
+| AERO | 76% | $10,000,000 |
+| LINK | 76% | $10,000,000 |
+| AMZNc | 73% | $5,000,000 |
+| SNDKc | 73% | $5,000,000 |
+| GOOGLc | 73% | $5,000,000 |
+| NVDAc | 73% | $5,000,000 |
+| SPCXc | 73% | $5,000,000 |
+| METAc | 73% | $5,000,000 |
 
 ### Chain settings
 

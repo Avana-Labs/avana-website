@@ -47,7 +47,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Contract</th><th className="text-left px-4 py-2 type-doc-subsection-title">How many</th><th className="text-left px-4 py-2 type-doc-subsection-title">Role</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">Up to three tiers per chain</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
+                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
                 <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One per chain, Hub, AMM protocol and risk tier</td><td className="px-4 py-2">Lists several markets as collateral reserves and the approved debt reserves</td></tr>
                 <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Supply-only Spoke through which the DAO treasury supplies each credit line</td></tr>
                 <tr><td className="px-4 py-2">Coverage Spoke (Avana Umbrella)</td><td className="px-4 py-2">One per Hub and debt asset</td><td className="px-4 py-2">Supply-only Spoke holding the First-Loss Reserve that covers recorded deficits</td></tr>
@@ -60,15 +60,14 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
         <section id="avana-hubs" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Avana Hubs</h2>
           <p className="mb-4 type-doc-body">
-            An Avana Hub holds only one vault-token asset per market of its CDP Spokes and each credit-line asset the Lend Spoke supplies to it. Liquidity is organized into three Hub tiers because stable, correlated and volatile LP positions carry different risks. A chain can host any of the three.
+            An Avana Hub holds only one vault-token asset per market of its CDP Spokes and each credit-line asset the Lend Spoke supplies to it. Each chain has one Avana Hub, a standard Aave V4 Hub at tier 3. Risk is separated by CDP Spoke instead: each Spoke groups the pools of one AMM protocol and one risk tier, such as stablecoin, blue-chip or correlated pools.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
-              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions</th><th className="text-left px-4 py-2 type-doc-subsection-title">Status</th></tr></thead>
+              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions today</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Stablecoin and blue-chip pools with tight pricing, low slippage and minimal impermanent loss</td><td className="px-4 py-2">Launch, on Ethereum and on Base</td></tr>
-                <tr><td className="px-4 py-2">Avana Correlated LP Hub</td><td className="px-4 py-2">Pools of assets that move together, with tighter risk bands</td><td className="px-4 py-2">Added later on any chain</td></tr>
-                <tr><td className="px-4 py-2">Avana Volatile LP Hub</td><td className="px-4 py-2">Major DeFi assets and governance-token pools with wider ranges, under stricter exposure limits</td><td className="px-4 py-2">Added later on any chain</td></tr>
+                <tr><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Uniswap v3 and Uniswap v4 positions in stablecoin, blue-chip and correlated pools</td></tr>
+                <tr><td className="px-4 py-2">Avana Base Hub</td><td className="px-4 py-2">Base</td><td className="px-4 py-2">Unstaked Aerodrome Slipstream positions in blue-chip, governance and DeFi token, and tokenized-stock pools</td></tr>
               </tbody>
             </table>
           </div>
@@ -80,21 +79,21 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
         <section id="cdp-spokes" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">CDP Spokes</h2>
           <p className="mb-4 type-doc-body">
-            A CDP Spoke is one standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier, with exactly one home Hub. It lists several markets. A market is one pool with one exact position range, and each market is one non-borrowable vault-token reserve of its Spoke. The Spoke also lists the debt reserves recorded for it, GHO first. Each account (one PositionProxy) holds exactly one market, so every market has its own health factor.
+            A CDP Spoke is one standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier, with exactly one home Hub. It lists several markets. A market is one pool with one exact position range, and each market is one non-borrowable vault-token reserve of its Spoke. The Spoke also lists the debt reserves recorded for it, such as GHO and USDC. Each account (one PositionProxy) holds exactly one market, so every market has its own health factor.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
-              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Launch CDP Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions</th></tr></thead>
+              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Example CDP Spokes</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Uniswap v3 Stable</td><td className="px-4 py-2">Uniswap v3 positions from the canonical position manager, exact tick range</td></tr>
-                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Aerodrome Slipstream Stable</td><td className="px-4 py-2">Unstaked Aerodrome Slipstream positions, exact tick range</td></tr>
+                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">Uniswap v3 Stable, Uniswap v4 Stable</td><td className="px-4 py-2">Uniswap v3 and Uniswap v4 positions from the canonical position managers, exact tick range</td></tr>
+                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Base Hub</td><td className="px-4 py-2">Aero Slipstream Blue-chip</td><td className="px-4 py-2">Unstaked Aerodrome Slipstream positions, exact tick range</td></tr>
               </tbody>
             </table>
           </div>
           <h3 className="mt-6 mb-2 type-doc-subsection-title">Configuration</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>One liquidation configuration per Spoke, shared by all of its markets. Avana recommends a target health factor of 1.10 and a minimum liquidation bonus of at least 2%; the Aave DAO decides both in the listing AIP. A market that needs a different target or bonus curve gets its own Spoke.</li>
-            <li>The GHO reserve is listed before any vault-token reserve, so it is reserve 0. Other debt assets (USDC, USDT or WETH) become borrowable on a Spoke only through the enable-debt-reserve operation, once the Aave DAO approves their credit line, caps, price source and swap routes.</li>
+            <li>Debt reserves are listed before any vault-token reserve; in the examples GHO is reserve 0. A debt asset becomes borrowable on a Spoke only through the enable-debt-reserve operation, once the Aave DAO approves its credit line, caps, price source and swap routes.</li>
             <li>Debt reserves are borrowable with collateral factor 0, and the Spoke has no supply cap on them, so outside supply of a debt asset cannot become collateral.</li>
             <li>The Spoke&apos;s AaveOracle reads each market&apos;s LPOracle, Aave&apos;s fixed $1 source for GHO, and a DebtOracle for any other debt asset.</li>
             <li>The per-account reserve limit is set by the Aave DAO and bounds how many debt reserves one account can hold.</li>

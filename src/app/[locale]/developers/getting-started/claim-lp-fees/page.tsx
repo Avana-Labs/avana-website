@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/claim-lp-fees', {
     title: "LP Fees",
-    description: "How the depositor of a pledged Uniswap v3 or Aerodrome Slipstream position collects its trading fees at any time through Avana, why fees are never collateral and never seized, and a worked example.",
+    description: "How the depositor of a pledged LP position collects its trading fees at any time through Avana, why fees are never collateral and never seized, and a worked example.",
   })
 }
 
@@ -129,7 +129,7 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
         <section id="rolled-in-fees" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Rolled-In Fees</h2>
           <p className="mb-4 type-doc-body">
-            Some AMM protocols compound fees into the position instead of keeping them apart. For a market on such a protocol, collectFees reverts with FeesRolledIn before any state changes. The fees stay in the position: its unit count is unchanged, each unit is worth more, the LPOracle&apos;s composition values that, and the depositor receives the fees with the units on withdrawal. Both AMM protocols listed at launch, Uniswap v3 and Aerodrome Slipstream, keep fees separate.
+            Some AMM protocols compound fees into the position instead of keeping them apart. For a market on such a protocol, collectFees reverts with FeesRolledIn before any state changes. The fees stay in the position: its unit count is unchanged, each unit is worth more, the LPOracle&apos;s composition values that, and the depositor receives the fees with the units on withdrawal. Uniswap v3 and Aerodrome Slipstream keep fees separate.
           </p>
         </section>
 
@@ -184,7 +184,7 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
             <li>Event FeesCollected(key1, Carol, [16,500,000, 15,950,000]).</li>
           </ul>
           <p className="mb-4 type-doc-body">
-            The $32.45 collected over 30 days on $20,000 is 32.45 / 20,000 × 365 / 30 ≈ 1.97% a year, and none of it was collateral. A borrow forced in through L1 during the same outage reverts with SequencerDown. The same collection succeeds while the Base Stable LP Hub is Paused with reason MintPathSuspect, while a breaker of market 3 is tripped and while Carol&apos;s address is frozen. A call from any wallet other than Carol reverts with NotDepositor.
+            The $32.45 collected over 30 days on $20,000 is 32.45 / 20,000 × 365 / 30 ≈ 1.97% a year, and none of it was collateral. A borrow forced in through L1 during the same outage reverts with SequencerDown. The same collection succeeds while the Avana Base Hub is Paused with reason MintPathSuspect, while a breaker of market 3 is tripped and while Carol&apos;s address is frozen. A call from any wallet other than Carol reverts with NotDepositor.
           </p>
           <p className="type-doc-body">
             How a position comes into custody is described in <Link href="/developers/getting-started" className="text-type-accent hover:underline">Deposit LP</Link>.

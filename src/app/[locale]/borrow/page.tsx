@@ -59,19 +59,19 @@ const openSpokeFaqItems: InlineFaqItem[] = [
 
 const lpHubMarkets = [
   {
-    title: "Stable LP Hub",
+    title: "Stable LP Spokes",
     description:
       "Stablecoin LP markets built for tight pricing, low slippage, and minimal impermanent loss.",
     variant: "stable",
   },
   {
-    title: "Correlated LP Hub",
+    title: "Correlated LP Spokes",
     description:
       "LP markets for assets that move together, built for tighter risk bands and cleaner borrowing power.",
     variant: "correlated",
   },
   {
-    title: "Volatile LP Hub",
+    title: "Volatile LP Spokes",
     description:
       "Major DeFi asset LP markets for wider price ranges and higher risk-reward strategies.",
     variant: "volatile",
@@ -177,7 +177,7 @@ export default async function BorrowPage({ params }: LocaleParamsProps) {
           <div className="mx-auto w-full">
             <div className="flex flex-col gap-6">
               <div className="max-w-none">
-                <SectionEyebrow tone="blue">Find the Hub for your collateral</SectionEyebrow>
+                <SectionEyebrow tone="blue">Find the CDP Spokes for your collateral</SectionEyebrow>
                 <SectionTitle className="mt-2 max-w-none">
                   Stable, correlated, and volatile LPs belong to different markets.
                 </SectionTitle>

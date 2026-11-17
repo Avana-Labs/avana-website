@@ -33,13 +33,13 @@
       "Aktif risk kontrolleri",
       "Sağlık izlemesi ve mekan farkındalığına sahip tasfiye, standartları korurken maruziyetiniz ücret kazanmaya devam eder.",
       "En düşük riskli merkez",
-      "Stabil LP Hub",
+      "Stabil LP Spokes",
       "Sıkı fiyatlandırma, düşük kayma ve minimum geçici kayıp için oluşturulmuş Stablecoin LP piyasaları.",
       "Küresel Strateji merkezi",
-      "Korele LP Hub",
+      "Korele LP Spokes",
       "LP daha sıkı risk bantları ve daha temiz borçlanma gücü için, birlikte hareket eden varlıklar için pazarlar.",
       "Daha yüksek menzilli merkez",
-      "Volatil LP Hub",
+      "Volatil LP Spokes",
       "Daha geniş fiyat aralıkları ve daha yüksek risk-ödül stratejileri için büyük DeFi varlık LP piyasaları.",
       "Uygulama arayüzü",
       "Teminat karşılığı borç almak",
@@ -55,7 +55,7 @@
       "Pozisyonun risk ayarlanmış değerine karşı borç alın ve fonları doğrudan cüzdanınıza alın.",
       "Risk yükselmeden borcu yönetin",
       "Pozisyon tasfiye eşiğine yaklaşmadan önce borcu ödeyin, teminat ekleyin veya borcu azaltın.",
-      "Teminatınıza uygun Hub’ı bulun",
+      "Teminatınıza uygun CDP Spokes’u bulun",
       "Sabit, korelasyonlu ve oynak LP’ler farklı piyasalara aittir.",
       "Borçlanılabilir",
       "Güvenle borçlanın",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Protokol ekibi",
-      "Protokol ekibi Avana'nın borç verme sistemini tasarlar ve geliştirir. Entegre AMM'ler ve borç verme hub'ları genelinde akıllı sözleşmelerden, LP teminat mimarisinden, likidasyon sistemlerinden, oracle altyapısından, erişim kontrolünden, yürütme ortamından ve yükseltmelerden sorumludur.",
+      "Protokol, akıllı sözleşmeler, LP teminat mimarisi, tasfiye sistemleri, oracle altyapısı, erişim kontrolü, yürütme ortamı ve entegre AMMler ve kredi merkezleri genelindeki yükseltmeler dahil olmak üzere Avana'in kredi sisteminin tasarım ve uygulanmasını sahiplenir.",
       "Operasyon ekibi",
-      "Operasyon ekibi günlük protokol katmanını koordine eder. Hazine süreçlerini, teşvik programlarını, ekosistem büyümesini, katkıcı iş akışlarını ve teminatın sisteme alınma operasyonlarını yürütür.",
+      "Operasyonlar, hazineden sorumlu süreçler, teşvik programları, ekosistem büyümesi, katkıda bulunan iş akışları ve teminat devreye alma operasyonları da dahil olmak üzere günlük protokol katmanını koordine eder.",
       "Piyasa riski ekibi",
-      "Piyasa Riski ekibi, LP teminatının niceliksel tarafından sorumludur. Farklı piyasa koşullarında likidite derinliğini, volatiliteyi, fiyat davranışını, konsantre likidite maruziyetini, likidasyon dinamiklerini, fiyatlama bütünlüğünü ve parametre ayarlamasını kapsar.",
+      "Piyasa Riski, LP teminatın nicel tarafına sahiptir: likidite derinliği, oynaklık, fiyat davranışı, yoğunlaşmış likidite maruziyeti, tasfiye dinamikleri, fiyatlama bütünlüğü ve piyasa koşulları genelinde parametre ayarlaması.",
       "Teminat riski ekibi",
-      "Teminat Riski ekibi, teminatın sisteme alınması ve izlenmesinin niteliksel tarafından sorumludur. Varlık yapısını, likidite kaynaklarını, yönetişim bağımlılıklarını, protokol bağımlılıklarını ve desteklenen piyasalar genelinde daha geniş teminat bütünlüğünü kapsar.",
+      "Collateral Risk, varlık yapısı, likidite kaynakları, yönetişim bağımlılıkları, protokol bağımlılıkları ve desteklenen piyasalar genelindeki daha geniş teminat bütünlüğü dahil olmak üzere, onboard ve izleme sürecinin niteliksel tarafına sahiptir.",
       "AMM likiditesi için borç verme piyasası.",
       "Avana Hakkında hero görseli",
-      "Avana, Aave V4 üzerindeki AMM likiditesi için borç verme piyasasıdır. Misyonumuz, AMM likidite pozisyonlarını DeFi genelinde teminat olarak kullanılabilir hale getirmektir.",
-      "Büyük AMM'ler milyarlarca likidite tutar, ancak LP pozisyonları hâlâ çoğunlukla verimli teminat olarak değil, pasif varlıklar olarak ele alınır. Avana, Ethereum'da Uniswap v3 pozisyonları ve Base'de Aerodrome Slipstream pozisyonlarıyla başlar.",
-      "LP pozisyonlarını teminat olarak kullanmak, LP token'larını listelemekten fazlasını gerektirir. Avana'nın LP Vault'u rehin verilen her pozisyonu tutar ve onu Aave V4 üzerinde kendi piyasasına ait bir vault token ile temsil eder. Borçlular GHO'yu ve etkinleştirildikçe diğer borç varlıklarını, her AMM için bir CDP Spoke üzerinden Avana Stable LP Hub'ından çeker. Hub'lar ve Spoke'lar, Hub'ı Avana Lend Spoke üzerindeki bir GHO kredi hattıyla fonlayan Aave DAO'ya ait standart Aave V4 sözleşmeleridir.",
-      "Akıllı sözleşmeler işin yalnızca bir parçasıdır. Pozisyon havuzunda aktif kalmalıdır. Değeri koşullar değiştikçe ölçülmelidir. Piyasanın bir krediyi destekleyecek kadar likiditesi olmalıdır. Avana bu işi dört ekibe böler ve her ekip riskin farklı bir bölümünden sorumludur.",
-      "Her alanın kendi sorumlusu vardır: teknik yürütme, operasyonlar, piyasa modellemesi ve teminat incelemesi.",
-      "Büyük bir sorun üzerinde çalışan küçük bir ekibiz. Bu araştırma çalışmasına katılmak isterseniz,"
+      "Avana, Aave V4 üzerinde AMM likiditesi için borç verme piyasasını inşa ediyor. Misyonumuz, AMM likidite pozisyonlarını DeFi içinde teminat olarak kullanılabilir hale getirmek.",
+      "Büyük AMMler zaten milyarlarca likiditeye sahip, ancak LP pozisyonlar hâlâ çoğunlukla üretken teminat yerine pasif pozisyonlar olarak ele alınıyor. Avana bu likiditeyi bugünün DEX'leri ve LP türleri için ödünç verme piyasalarına getiriyor, çift oracle ve daha güçlü risk kontrolleri kullanarak.",
+      "Bu, teminat olarak LP token listelemenin ötesini gerektirir. Avana, farklı DEX tasarımları için özel Aave v4 Tekerlekler etrafında inşa edilmiştir, en düşük riskli, ilişkili ve daha geniş LP piyasalar etrafında organize edilmiş birkaç Aave v4 Merkez ve bu piyasaların arkasındaki sermayeyi sağlayan bir Aave v4 Ödünç Tekerleği içerir.",
+      "Bir LP pozisyonunu kullanılabilir teminata dönüştürmek akıllı sözleşmelerden fazlasını gerektirir. Pozisyon havuzunda aktif kalmalı, koşullar değiştikçe değeri ölçülmeli ve piyasa bir krediyi destekleyecek kadar likiditeye sahip olmalıdır. Bu nedenle Avana işi dört ekibe böler ve her ekip riskin farklı bir bölümünden sorumludur.",
+      "Amaç, teknik uygulama, operasyonlar, pazar modellemesi ve teminat incelemesinin her birinin bağımsız olarak sahiplenildiği temiz bir ayrım sağlamaktır.",
+      "Biz büyük bir problem üzerinde çalışan küçük bir ekibiz. Bu araştırma çabasına katılmakla ilgileniyorsanız,"
     ]
   },
   "brand/page": {
@@ -635,12 +635,7 @@
       "İş akışı tasarımı",
       "Çoklu başlat",
       "Yol haritası",
-      "Önce Borrow, ardından Lend ve Multiply gelir.",
-      "Hedef: 2026 3. çeyrek",
-      "Hedef: 2026 4. çeyrek",
-      "Hedef: 2027 1. çeyrek",
-      "Yayınlandı",
-      "Devam ediyor"
+      "Önce Borrow, ardından Lend ve Multiply gelir."
     ]
   },
   "invest-apy-section": {

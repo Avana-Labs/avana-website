@@ -41,7 +41,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             Each chain has one Lend Spoke. It is a standard Aave V4 Spoke owned by the Aave DAO, and it only supplies: its draw cap is 0 on every Hub asset. Its reserves point to Hub and asset pairs and can list any asset. The lender of each line, the GHO Reserve and Aave DAO for GHO, supplies the line amount through it directly, and the resulting position and its interest belong to that lender.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>GHO is the first credit line and the first borrowable asset on each chain.</li>
+            <li>Today the Lend Spoke supplies GHO, USDC and USDT on each chain.</li>
             <li>Only Avana CDP Spokes have draw caps on a credit-line asset. The other Spokes registered on it (the Lend Spoke, that asset&apos;s Coverage Spoke and the asset&apos;s fee receiver) have draw cap 0.</li>
             <li>No Avana contract or role has authority over any supply cap, draw cap, interest rate or Lend Spoke position. These are Aave DAO decisions.</li>
           </ul>
@@ -59,7 +59,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             <code className="type-doc-body text-gray-900">{"Σ over CDP Spokes of drawCap(hub, asset, spoke) ≤ creditLine(hub, asset)"}</code>
           </div>
           <p className="mt-4 type-doc-body">
-            With one CDP Spoke per chain and AMM protocol at launch, each Spoke&apos;s draw cap on a debt asset is that asset&apos;s whole line on the chain.
+            With several CDP Spokes on each chain, their draw caps on a debt asset share that asset&apos;s line on the chain.
           </p>
         </section>
 
@@ -72,8 +72,8 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Launch GHO line</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">2,000,000 GHO; final value set in the funding ARFC</td></tr>
-                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Set in the funding ARFC, within the GHO flash liquidity of the Base Aave V3 Pool and the depth of the Base swap routes</td></tr>
+                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">2,000,000 GHO; final value set in the funding ARFC</td></tr>
+                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Base Hub</td><td className="px-4 py-2">Set in the funding ARFC, within the GHO flash liquidity of the Base Aave V3 Pool and the depth of the Base swap routes</td></tr>
               </tbody>
             </table>
           </div>

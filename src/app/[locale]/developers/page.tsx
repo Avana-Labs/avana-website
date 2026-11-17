@@ -21,7 +21,7 @@ const collateralHighlights: Array<{
   {
     title: "Liquidity stays in the pool",
     description:
-      "Pledging an LP position moves custody to the LPVault but leaves its liquidity in the pool. The borrower can borrow GHO without first withdrawing the position and giving up its fees or range.",
+      "Pledging an LP position moves custody to the LPVault but leaves its liquidity in the pool. The borrower can borrow against it without first withdrawing the position and giving up its fees or range.",
   },
   {
     title: "Valuation and limits are separate",
@@ -58,7 +58,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="welcome" className="scroll-mt-32 pb-10">
           <DeveloperDocPageHeader
             title="Welcome"
-            description="Avana lets liquidity providers borrow from the Avana Hub on Aave V4 against Uniswap v3 and v4 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees."
+            description="Avana lets liquidity providers use their LP positions as collateral on Aave V4 and borrow the assets the Avana Hub lists, across supported DEXes. Today that means Uniswap v3 and v4 positions on Ethereum and Aerodrome Slipstream positions on Base. The positions stay in their pools and keep earning trading fees."
           />
           <p className="mt-6 max-w-3xl type-doc-body">
             The Protocol Overview explains how pledging, valuation, borrowing and liquidation fit together. The reference pages at the top of the navigation list every contract address, market parameter and role.
@@ -91,7 +91,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
         <section id="unlocking-lp-collateral" className="mt-10 scroll-mt-32">
           <SectionHeader
             title="Why LP Collateral Matters"
-            description="LP collateral lets assets already deployed in an AMM support a GHO loan. The benefit is capital flexibility, not guaranteed positive carry. Borrowers still bear impermanent loss, price risk and liquidation risk."
+            description="LP collateral lets assets already deployed in an AMM support a loan. The benefit is capital flexibility, not guaranteed positive carry. Borrowers still bear impermanent loss, price risk and liquidation risk."
           />
 
           <p className="type-doc-body">
@@ -111,7 +111,7 @@ export default async function DevelopersPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="An overview of Avana: pledging Uniswap v3, Uniswap v4 and Aerodrome Slipstream positions, borrowing from the Avana Hub on each chain, and the per-market rules for valuation and liquidation."
+        pageSummary="An overview of Avana: pledging LP positions from supported DEXes, borrowing from the Avana Hub on each chain, and the per-market rules for valuation and liquidation."
         sectionColor="blue"
       />
     </div>

@@ -43,9 +43,9 @@ export function tokenIcon(symbol: string): string | undefined {
   return TOKEN_ICONS[symbol]
 }
 
-/** The icons of a cell that is exactly one token (`USDC`) or one pair (`WETH/USDC`); otherwise null. */
+/** The icons of a cell that is exactly one token (`USDC`) or one pair (`WETH/USDC`, `WETH/USDC LP`); otherwise null. */
 export function tokenIcons(text: string): Array<{ symbol: string; src: string }> | null {
-  const symbols = text.trim().split("/")
+  const symbols = text.trim().replace(/ LP$/, "").split("/")
   if (symbols.length > 2) return null
   const icons = symbols.map((symbol) => ({ symbol, src: TOKEN_ICONS[symbol] }))
   return icons.every((icon) => icon.src) ? (icons as Array<{ symbol: string; src: string }>) : null

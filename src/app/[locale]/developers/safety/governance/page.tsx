@@ -66,7 +66,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
               <tbody className="divide-y divide-gray-200">
                 <tr>
                   <td className="px-4 py-2">Aave DAO (governance executor)</td>
-                  <td className="px-4 py-2">Each chain&apos;s Avana Stable LP Hub and its CDP, Lend and Coverage Spokes: Spoke deployment and upgrades, the three required reserve settings, collateral factors, caps, reserve flags, bonus curve, target health factor, collateral risk, debt-asset rates, credit lines and draw caps, each Avana Umbrella&apos;s coverage ratio and minimum, and the flash-borrower role. On the AvanaTimelock it is the second proposer, a canceller, and the only account that can cancel a role change or a restoring operation. It can undo a guardian&apos;s standby price-route switch at once.</td>
+                  <td className="px-4 py-2">Each chain&apos;s Avana Hub and its CDP, Lend and Coverage Spokes: Spoke deployment and upgrades, the three required reserve settings, collateral factors, caps, reserve flags, bonus curve, target health factor, collateral risk, debt-asset rates, credit lines and draw caps, each Avana Umbrella&apos;s coverage ratio and minimum, and the flash-borrower role. On the AvanaTimelock it is the second proposer, a canceller, and the only account that can cancel a role change or a restoring operation. It can undo a guardian&apos;s standby price-route switch at once.</td>
                   <td className="px-4 py-2">Aave governance</td>
                 </tr>
                 <tr>
@@ -500,7 +500,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Deployment ARFC and Snapshot</td>
-                  <td className="px-4 py-2">Lists each CDP Spoke as a standard Aave V4 Spoke with the three required reserve settings, grants the flash-borrower role on each chain&apos;s Aave V3 Pool to Avana&apos;s public flash liquidation helper and to its flash source (used for repay with collateral), sets each Spoke&apos;s liquidation settings, registers an Avana Umbrella for GHO on each Stable LP Hub, and adds the Aave executor and Aave Protocol Guardian to each AvanaTimelock</td>
+                  <td className="px-4 py-2">Lists each CDP Spoke as a standard Aave V4 Spoke with the three required reserve settings, grants the flash-borrower role on each chain&apos;s Aave V3 Pool to Avana&apos;s public flash liquidation helper and to its flash source (used for repay with collateral), sets each Spoke&apos;s liquidation settings, registers an Avana Umbrella for GHO on each chain&apos;s Avana Hub, and adds the Aave executor and Aave Protocol Guardian to each AvanaTimelock</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2">Funding ARFC and Snapshot</td>
@@ -518,7 +518,7 @@ export default async function GovernancePage({ params }: LocaleParamsProps) {
           </p>
           <h3 className="mb-2 type-doc-subsection-title">Credit line request</h3>
           <p className="mb-4 type-doc-body">
-            The request is an initial credit line of 2,000,000 GHO on the Ethereum Stable LP Hub. The Base line is set in the funding ARFC, within the GHO flash liquidity of the Aave V3 Base Pool and the depth of the Base swap routes. Capacity scales toward 10,000,000 GHO only as live performance criteria are met, and each increase needs governance approval. Each CDP Spoke&apos;s draw cap stays within its chain&apos;s flash liquidity, swap-route depth and the Umbrella coverage bound.
+            The request is an initial credit line of 2,000,000 GHO on the Avana Ethereum Hub. The Base line is set in the funding ARFC, within the GHO flash liquidity of the Aave V3 Base Pool and the depth of the Base swap routes. Capacity scales toward 10,000,000 GHO only as live performance criteria are met, and each increase needs governance approval. Each CDP Spoke&apos;s draw cap stays within its chain&apos;s flash liquidity, swap-route depth and the Umbrella coverage bound.
           </p>
           <p className="type-doc-body">
             Avana recommends a target health factor of 1.10 and a minimum liquidation bonus of at least 2% for each CDP Spoke. The Aave DAO decides both in the listing AIP.

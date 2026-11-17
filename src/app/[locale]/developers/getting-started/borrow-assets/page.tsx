@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/borrow-assets', {
     title: "Borrow Assets",
-    description: "How to borrow GHO, or USDC, USDT or WETH where a CDP Spoke enables them, against pledged LP collateral on Avana: the borrow call, every check, recommended and maximum amounts, failures and a worked example.",
+    description: "How to borrow the assets a CDP Spoke lists, such as GHO and USDC, against pledged LP collateral on Avana: the borrow call, every check, recommended and maximum amounts, failures and a worked example.",
   })
 }
 
@@ -29,7 +29,7 @@ const sections = [
 ]
 
 const debtAssetRows = [
-  ["GHO", "18", "Aave's fixed $1 source", "First debt asset of every CDP Spoke"],
+  ["GHO", "18", "Aave's fixed $1 source", "Enabled per CDP Spoke with enableDebtReserve"],
   ["USDC", "6", "Its DebtOracle on Chainlink USDC/USD", "Enabled per CDP Spoke with enableDebtReserve"],
   ["USDT", "6", "Its DebtOracle on Chainlink USDT/USD", "Enabled per CDP Spoke with enableDebtReserve"],
   ["WETH", "18", "Its DebtOracle on Chainlink ETH/USD", "Enabled per CDP Spoke with enableDebtReserve"],
@@ -110,7 +110,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Borrow Assets"
-          description="Borrow an approved debt asset on the Aave V4 account that holds one market's collateral. GHO is the first debt asset; USDC, USDT and WETH can be enabled per CDP Spoke."
+          description="Borrow an approved debt asset on the Aave V4 account that holds one market's collateral. Any asset the CDP Spoke lists can be borrowed, such as GHO and USDC today."
         />
 
         <section id="overview" className="mb-10">
@@ -155,7 +155,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Each non-GHO debt reserve is priced by its own DebtOracle, which reads a primary, an alternate and a standby Chainlink route with the same freshness, failover and agreement rules as the collateral legs. When Expired, it serves the accepted price raised by debtStressRiseBps, so debt is never undervalued.</li>
-            <li>The draw is bounded by the Aave drawCap of the reserve&apos;s (funding Hub, asset, CDP Spoke), which is the credit line. At launch every debt reserve is funded by the Spoke&apos;s home Hub, such as the Avana Stable LP Hub.</li>
+            <li>The draw is bounded by the Aave drawCap of the reserve&apos;s (funding Hub, asset, CDP Spoke), which is the credit line. At launch every debt reserve is funded by the Spoke&apos;s home Hub, the Avana Hub of its chain.</li>
             <li>One account can owe several debt reserves. The market&apos;s collateral, and only it, backs every debt reserve of that proxy.</li>
           </ul>
         </section>
@@ -346,7 +346,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Aerodrome Slipstream on Base) from the Deposit LP example holds 10,000 whole vault tokens at $2.00: collateral $20,000, CF-weighted $6,240, no debt and borrowNonce 0. The USDC debt reserve is funded by the Base Stable LP Hub&apos;s USDC credit line and priced by the USDC DebtOracle at $0.9999 on an 86,400-second feed (fresh for 88,200 seconds) with an agreeing second source. The USDC borrow rate is 6.00%. The Hub is in state None and the sequencer gate is Up.
+            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Aerodrome Slipstream on Base) from the Deposit LP example holds 10,000 whole vault tokens at $2.00: collateral $20,000, CF-weighted $6,240, no debt and borrowNonce 0. The USDC debt reserve is funded by the Avana Base Hub&apos;s USDC credit line and priced by the USDC DebtOracle at $0.9999 on an 86,400-second feed (fresh for 88,200 seconds) with an agreeing second source. The USDC borrow rate is 6.00%. The Hub is in state None and the sequencer gate is Up.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
             <li>Her app calls previewBorrowRecommended for USDC with a deadline of now + 600: recommended 6,240 / 1.10 / 0.9999 = 5,673.29 USDC (HF 1.10); maximum, with margin (1 + 0.06 × 600 / 31,536,000) × 1.005 = 1.0050011, is 6,240 / 1.0050011 / 0.9999 = 6,209.56 USDC (HF 1.00).</li>
@@ -379,7 +379,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to borrow GHO, USDC, USDT or WETH against pledged LP collateral on Avana, and every check a borrow passes."
+        pageSummary="How to borrow the assets a CDP Spoke lists against pledged LP collateral on Avana, and every check a borrow passes."
         sectionColor="emerald"
       />
     </div>

@@ -393,6 +393,7 @@
 }
 
 .reference-table td:first-child {
+  min-width: 9rem;
   color: #111827;
 }
 

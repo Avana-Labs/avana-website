@@ -54,7 +54,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="uniswap-ethereum" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Uniswap v3 on Ethereum</h2>
           <p className="mb-4 type-doc-body">
-            Bob has a USDC/USDT Uniswap v3 position on the Uniswap v3 Stable CDP Spoke of the Ethereum Stable LP Hub and owes USDC. His health factor is below 1. Avana&apos;s keeper K1 holds no USDC for this call and flash-funds it through the public helper H.
+            Bob has a USDC/USDT Uniswap v3 position on the Uniswap v3 Stable CDP Spoke of the Avana Ethereum Hub and owes USDC. His health factor is below 1. Avana&apos;s keeper K1 holds no USDC for this call and flash-funds it through the public helper H.
           </p>
           <div className="mb-4 overflow-x-auto">
             <table className="type-doc-table">
@@ -66,7 +66,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr><td className="px-4 py-2">Vault-token price</td><td className="px-4 py-2">$2.10 per vault token (18 decimals)</td></tr>
-                <tr><td className="px-4 py-2">Debt reserve</td><td className="px-4 py-2">USDC, reserve 2, funded by the Stable LP Hub&apos;s USDC credit line, priced by the USDC DebtOracle at $1.00</td></tr>
+                <tr><td className="px-4 py-2">Debt reserve</td><td className="px-4 py-2">USDC, reserve 2, funded by the Hub&apos;s USDC credit line, priced by the USDC DebtOracle at $1.00</td></tr>
                 <tr><td className="px-4 py-2">Aave bonus</td><td className="px-4 py-2">10,500 bps (5%), liquidation fee 0</td></tr>
                 <tr><td className="px-4 py-2">Slippage allowance</td><td className="px-4 py-2">100 bps</td></tr>
                 <tr><td className="px-4 py-2">Floor rounding allowance</td><td className="px-4 py-2">1 USDC</td></tr>
@@ -166,10 +166,10 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="slipstream-base" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Slipstream on Base</h2>
           <p className="mb-4 type-doc-body">
-            Market 3 is a USDC/USDT Aerodrome Slipstream market (tick spacing 1, exact range, unstaked position) on the Aerodrome Slipstream Stable CDP Spoke of the Base Stable LP Hub, priced at $2.00 per vault token. Carol owes 20,000 USDC. Aave&apos;s bonus is 2%. The public helper&apos;s FLASH_BORROWER role on the Base Pool is still pending, so its loan carries the Base Pool&apos;s 5 bps premium, within Base&apos;s maxFlashFeeBps of 10, and the premium comes out of the keeper&apos;s share.
+            Market 3 is a USDC/USDT Aerodrome Slipstream market (tick spacing 1, exact range, unstaked position) on the Aerodrome Slipstream Stable CDP Spoke of the Avana Base Hub, priced at $2.00 per vault token. Carol owes 20,000 USDC. Aave&apos;s bonus is 2%. The public helper&apos;s FLASH_BORROWER role on the Base Pool is still pending, so its loan carries the Base Pool&apos;s 5 bps premium, within Base&apos;s maxFlashFeeBps of 10, and the premium comes out of the keeper&apos;s share.
           </p>
           <p className="mb-4 type-doc-body">
-            The example uses a USDC debt reserve to show settlement in a debt asset other than GHO. At launch GHO is the only debt reserve on each CDP Spoke.
+            The example uses a USDC debt reserve to show settlement in a debt asset other than GHO.
           </p>
           <ol className="mb-4 list-decimal space-y-2 ps-5 type-doc-body">
             <li>The Base sequencer restarts at 10:00:00. At 10:20:00 Carol&apos;s health factor is 0.9997. A keeper call reverts with SequencerGrace, because 0.9997 is not below the grace threshold of 0.95. The USDC/USD feed last published 21 hours earlier (75,600 s, within 88,200 s), so the price is fresh. An account at a health factor of 0.93 is liquidated at 10:20.</li>
@@ -207,7 +207,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="core-math" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Core Math: Fee, Reward and Surplus</h2>
           <p className="mb-4 type-doc-body">
-            Market 1 is a USDC/USDT 0.01% Uniswap v3 market with an exact range on the Uniswap v3 Stable CDP Spoke of the Ethereum Stable LP Hub. The vault token has 6 decimals and is priced at $2.00. The debt reserve is USDC at $1.00 with a 1 USDC floor rounding allowance, a 100 bps slippage allowance and Avana&apos;s 20% share. Aave&apos;s bonus is 10,200 bps with a liquidation fee of 0. The caller funds from its own balance: it sets debtToCover to 9,800 USDC and LPVaultSwap receives Kf = 9,800 USDC.
+            Market 1 is a USDC/USDT 0.01% Uniswap v3 market with an exact range on the Uniswap v3 Stable CDP Spoke of the Avana Ethereum Hub. The vault token has 6 decimals and is priced at $2.00. The debt reserve is USDC at $1.00 with a 1 USDC floor rounding allowance, a 100 bps slippage allowance and Avana&apos;s 20% share. Aave&apos;s bonus is 10,200 bps with a liquidation fee of 0. The caller funds from its own balance: it sets debtToCover to 9,800 USDC and LPVaultSwap receives Kf = 9,800 USDC.
           </p>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>Aave repays D = 9,800 USDC and seizes 9,800 × 1.02 / 2.00 = 4,998 vault tokens.</li>
@@ -294,7 +294,7 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
         <section id="gho-debt" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">GHO Debt, Call by Call</h2>
           <p className="mb-4 type-doc-body">
-            Same market 1. GHO is debt reserve 0, drawn by the CDP Spoke from the Stable LP Hub&apos;s GHO credit line at Aave&apos;s fixed $1 price, with a floor rounding allowance of 1 GHO. The vault-token reserve is reserve 1, with a Collateral Factor of 2,812 bps, a maximum bonus of 10,500, a bonus factor of 4,000, a health factor for the maximum bonus of 0.90 and a target health factor of 1.10. Alice&apos;s proxy P holds 141,232 vault tokens (282,464 USD) and owes 79,452.85 GHO. The public helper H holds FLASH_BORROWER on the Ethereum Core Pool in this example.
+            Same market 1. GHO is debt reserve 0, drawn by the CDP Spoke from the Hub&apos;s GHO credit line at Aave&apos;s fixed $1 price, with a floor rounding allowance of 1 GHO. The vault-token reserve is reserve 1, with a Collateral Factor of 2,812 bps, a maximum bonus of 10,500, a bonus factor of 4,000, a health factor for the maximum bonus of 0.90 and a target health factor of 1.10. Alice&apos;s proxy P holds 141,232 vault tokens (282,464 USD) and owes 79,452.85 GHO. The public helper H holds FLASH_BORROWER on the Ethereum Core Pool in this example.
           </p>
           <ol className="mb-4 list-decimal space-y-2 ps-5 type-doc-body">
             <li>A USDT move takes P&apos;s health factor to 282,464 × 0.2812 / 79,452.85 ≈ 0.9997. Avana&apos;s keeper K1 calls the Lens preview for P and reserve 0 with a deadline 120 s ahead: bonus 10,200, debt to target (1.10 × 79,452.85 − 79,428.88) / (1.10 − 1.02 × 0.2812) ≈ 9,800.2 GHO, so debtToCover is 9,800 GHO, and a previewed payout of 9,910.8 GHO. The Pool&apos;s idle GHO covers 9,800 GHO, so K1 flash-funds the whole amount through H.</li>
