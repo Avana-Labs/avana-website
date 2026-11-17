@@ -47,9 +47,9 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Contract</th><th className="text-left px-4 py-2 type-doc-subsection-title">How many</th><th className="text-left px-4 py-2 type-doc-subsection-title">Role</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
-                <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One per chain, Hub, AMM protocol and risk tier</td><td className="px-4 py-2">Lists several markets as collateral reserves and the approved debt reserves</td></tr>
-                <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Supply-only Spoke through which the DAO treasury supplies each credit line</td></tr>
+                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">One per chain, at tier 3</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
+                <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One per risk tier and AMM protocol on each chain: Stable, Correlated, Blue-chip, Gov/DeFi and Stocks, across Uniswap v3, Uniswap v4 and Aerodrome Slipstream</td><td className="px-4 py-2">Lists several markets as collateral reserves and the approved debt reserves</td></tr>
+                <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Supply-only Spoke through which lenders and the Aave DAO&apos;s bootstrap supply fund the Hub</td></tr>
                 <tr><td className="px-4 py-2">Coverage Spoke (Avana Umbrella)</td><td className="px-4 py-2">One per Hub and debt asset</td><td className="px-4 py-2">Supply-only Spoke holding the First-Loss Reserve that covers recorded deficits</td></tr>
                 <tr><td className="px-4 py-2">Vault-token fee receiver</td><td className="px-4 py-2">One per vault-token asset</td><td className="px-4 py-2">Aave treasury Spoke registered with zero caps</td></tr>
               </tbody>
@@ -118,7 +118,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
         <section id="lend-spoke" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Lend Spoke</h2>
           <p className="mb-4 type-doc-body">
-            Each chain has one supply-only Lend Spoke, owned by the Aave DAO. Its reserves point to Hub and asset pairs and can list any asset. The DAO treasury supplies each credit line through it, and its supply cap on each pair equals the line. Its draw cap is 0 on every asset. Public lender deposits are not offered at launch.
+            Each chain has one supply-only Lend Spoke, owned by the Aave DAO. Its reserves point to Hub and asset pairs and can list any asset. Anyone can supply a listed asset through it, beside the Aave DAO&apos;s bootstrap supply. Its supply cap, set by the DAO, bounds total supply and is separate from the credit line. Its draw cap is 0 on every asset.
           </p>
           <p className="mb-4 type-doc-body">
             Credit-line sizes, recall and growth are described in{" "}
@@ -200,7 +200,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
             <li>Monitoring alerts when the debt drawn on a reserve, including accrued interest and premium, reaches 90% of its draw cap.</li>
           </ul>
           <div className="mt-4 doc-topic type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}On Ethereum a 2,000,000 GHO line gives the Lend Spoke a supply cap of 2,000,000 and the single CDP Spoke a draw cap of 2,000,000. If that Spoke has 1,900,000 GHO drawn, 3,000 GHO of premium and a 475 GHO uncovered deficit, a 100,000 GHO borrow needs 2,003,475 and reverts. The largest borrow that passes is 96,525 GHO.
+            {"Example values; each market's parameters are set at listing."}{" "}On Ethereum a 2,000,000 GHO line allows CDP Spoke draw caps of up to 2,000,000 in total; here one CDP Spoke has a draw cap of 2,000,000. If that Spoke has 1,900,000 GHO drawn, 3,000 GHO of premium and a 475 GHO uncovered deficit, a 100,000 GHO borrow needs 2,003,475 and reverts. The largest borrow that passes is 96,525 GHO.
           </div>
         </section>
 
@@ -230,7 +230,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
                 <tr><td className="px-4 py-2">Fee collection</td><td className="px-4 py-2">Depositor calls the AaveAdapter, which calls Collateralization, which has the LPVault collect fees to the depositor.</td></tr>
                 <tr><td className="px-4 py-2">Pricing</td><td className="px-4 py-2">The Spoke reads its AaveOracle, which reads the LPOracle, the fixed GHO source or a DebtOracle. Anyone can poke the oracles.</td></tr>
                 <tr><td className="px-4 py-2">Liquidation</td><td className="px-4 py-2">Any address that is not frozen calls LPVaultSwap&apos;s liquidate, directly or through a flash liquidation helper that flash-borrows the debt asset from the Aave V3 Pool. LPVaultSwap pulls the debt asset from its caller, has Collateralization snapshot the account and calls the Spoke liquidation. The Hub sends the seized vault tokens to LPVaultSwap, the AaveAdapter burns them, Collateralization debits the records and the LPVault unwinds the units to LPVaultSwap, which swaps through the swap routes and pays out: Avana&apos;s fee, any borrower surplus, then the rest to the caller.</td></tr>
-                <tr><td className="px-4 py-2">Funding and coverage</td><td className="px-4 py-2">The DAO treasury supplies through the Lend Spoke. Avana Labs or LPVaultSwap funds a Coverage Spoke, which eliminates deficits on its Hub.</td></tr>
+                <tr><td className="px-4 py-2">Funding and coverage</td><td className="px-4 py-2">Lenders and the Aave DAO&apos;s bootstrap supply go through the Lend Spoke. Avana Labs or LPVaultSwap funds a Coverage Spoke, which eliminates deficits on its Hub.</td></tr>
                 <tr><td className="px-4 py-2">Governance</td><td className="px-4 py-2">The governance multisig or the Aave governance executor schedules on the AvanaTimelock; anyone executes once ready. Guardians call the MarketRegistry for pauses, freezes, breaker trips and standby switches.</td></tr>
               </tbody>
             </table>

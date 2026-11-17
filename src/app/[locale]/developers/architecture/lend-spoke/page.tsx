@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'architecture/lend-spoke', {
     title: "Lend Spoke",
-    description: "The supply-only Aave V4 Spoke through which the Aave DAO treasury supplies each credit line to the Avana Hubs, and how draw caps divide each line.",
+    description: "The supply-only Aave V4 Spoke through which lenders and the Aave DAO supply the Avana Hub, and how CDP Spoke draw caps divide each credit line.",
   })
 }
 
@@ -32,13 +32,13 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Lend Spoke"
-          description="A supply-only Aave V4 Spoke, owned by the Aave DAO, through which the DAO treasury supplies each credit line that Avana borrowers draw from."
+          description="A supply-only Aave V4 Spoke, owned by the Aave DAO, through which lenders and the Aave DAO supply the liquidity that Avana borrowers draw within each credit line."
         />
 
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Each chain has one Lend Spoke. It is a standard Aave V4 Spoke owned by the Aave DAO, and it only supplies: its draw cap is 0 on every Hub asset. Its reserves point to Hub and asset pairs and can list any asset. The lender of each line, the GHO Reserve and Aave DAO for GHO, supplies the line amount through it directly, and the resulting position and its interest belong to that lender.
+            Each chain has one Lend Spoke. It is a standard Aave V4 Spoke owned by the Aave DAO, and it only supplies: its draw cap is 0 on every Hub asset. Its reserves point to Hub and asset pairs and can list any asset. Anyone can supply a listed asset through it, beside the Aave DAO&apos;s bootstrap supply, and each supplier&apos;s position and its interest belong to that supplier.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Today the Lend Spoke supplies GHO, USDC and USDT on each chain.</li>
@@ -50,7 +50,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
         <section id="credit-lines" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Credit Lines</h2>
           <p className="mb-4 type-doc-body">
-            A credit line is a draw cap per Hub, asset and CDP Spoke. The Lend Spoke&apos;s supply cap on a Hub and asset equals the line, and the draw caps of every CDP Spoke that draws that pair sum to at most the line.
+            A credit line is a draw cap per Hub, asset and CDP Spoke: the draw caps of every CDP Spoke that draws that pair sum to at most the line. The Lend Spoke&apos;s supply cap, also set by the DAO, bounds total supply and is separate from the line.
           </p>
           <div className="type-doc-code-block">
             <code className="type-doc-body text-gray-900">{"LendSpoke.addCap(hub, asset) = creditLine(hub, asset)"}</code>
@@ -91,18 +91,17 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             <li>Monitoring alerts when the debt drawn on a reserve, including interest and premium, reaches 90% of its draw cap. Only borrowing of that asset fails at the cap.</li>
           </ul>
           <div className="mt-4 doc-topic type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}On Ethereum with a 2,000,000 GHO line, the Lend Spoke supply cap is 2,000,000 and the CDP Spoke &quot;Uniswap v3 Stable&quot; has a draw cap of 2,000,000. With 1,900,000 GHO drawn, 3,000 GHO of premium and a 475 GHO uncovered deficit, a 100,000 GHO borrow would bring the total to 2,003,475 and reverts. The largest borrow that passes is 96,525 GHO.
+            {"Example values; each market's parameters are set at listing."}{" "}On Ethereum with a 2,000,000 GHO line, the CDP Spoke &quot;Uniswap v3 Stable&quot; has a draw cap of 2,000,000. With 1,900,000 GHO drawn, 3,000 GHO of premium and a 475 GHO uncovered deficit, a 100,000 GHO borrow would bring the total to 2,003,475 and reverts. The largest borrow that passes is 96,525 GHO.
           </div>
         </section>
 
         <section id="funding-order" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Funding Order</h2>
           <p className="mb-4 type-doc-body">
-            Before any CDP Spoke draw cap on a Hub and asset rises above 0, two things must be true:
+            Before any CDP Spoke draw cap on a Hub and asset rises above 0:
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>The lender has filled the Lend Spoke supply cap with the full line, so no outside supply fits under the cap.</li>
-            <li>The Coverage Spoke (Avana Umbrella) of that Hub and asset is funded by Avana Labs to at least its minimum, and its balance satisfies the coverage ratio.</li>
+                        <li>The Coverage Spoke (Avana Umbrella) of that Hub and asset is funded by Avana Labs to at least its minimum, and its balance satisfies the coverage ratio.</li>
           </ul>
           <div className="mt-4 type-doc-code-block">
             <code className="type-doc-body text-gray-900">{"fundedBalance × 10⁴ ≥ coverageRatioBps × Σ drawCap"}</code>
@@ -129,7 +128,7 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
             To recall a line, the Aave DAO lowers the CDP Spoke draw caps on that Hub and asset to 0 and can change rates. The asset returns to Hub liquidity as borrowers repay or are liquidated, and the Lend Spoke can withdraw only unborrowed funds. There is no forced repayment, and repayment, withdrawal and liquidation stay open.
           </p>
           <p className="mb-4 type-doc-body">
-            Raising a line takes an Aave DAO proposal on that chain that raises the Lend Spoke supply cap and the CDP Spoke draw caps together, keeping each draw cap within flash liquidity and route depth. Avana&apos;s timelock has no authority over any of them. The ARFC sets out these phases for GHO:
+            Raising a line takes an Aave DAO proposal on that chain that raises the line and the CDP Spoke draw caps, keeping each draw cap within flash liquidity and route depth. Avana&apos;s timelock has no authority over any of them. The ARFC sets out these phases for GHO:
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
@@ -149,14 +148,14 @@ export default async function LendSpokePage({ params }: LocaleParamsProps) {
         <section id="public-deposits" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Public Deposits</h2>
           <p className="mb-4 type-doc-body">
-            Public lender deposits are not offered at launch. Because the lender fills the supply cap with the whole line before borrowing opens, no outside supply fits under it. Public lending through the Lend Spoke is supported by the design and can be enabled later through Aave governance.
+            Public lending is open from day one: anyone can supply a listed asset through the Lend Spoke, beside the Aave DAO&apos;s bootstrap supply, up to the supply cap the DAO sets.
           </p>
         </section>
       </div>
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How the Aave DAO supplies each credit line through the supply-only Lend Spoke, how CDP Spoke draw caps divide it, and how lines are funded, recalled and grown."
+        pageSummary="How lenders and the Aave DAO supply the Hub through the supply-only Lend Spoke, how CDP Spoke draw caps divide each credit line, and how lines are recalled and grown."
         sectionColor="violet"
       />
     </div>

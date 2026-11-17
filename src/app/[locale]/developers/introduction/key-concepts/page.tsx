@@ -89,7 +89,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">What it does</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
                 <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier. It lists several markets as non-borrowable collateral reserves and the approved debt reserves. Examples today: &quot;Uniswap v3 Stable&quot; on Ethereum and &quot;Aero Slipstream Blue-chip&quot; on Base.</td></tr>
-                <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One supply-only Spoke per chain through which the Aave DAO treasury supplies each credit line. No public deposits at launch.</td></tr>
+                <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One supply-only Spoke per chain through which lenders and the Aave DAO&apos;s bootstrap supply fund the Hub.</td></tr>
                 <tr><td className="px-4 py-2">Coverage Spoke</td><td className="px-4 py-2">One supply-only Spoke per Hub and debt asset, the Avana Umbrella of that pair, holding Avana-funded First-Loss Reserve supply.</td></tr>
               </tbody>
             </table>
@@ -113,7 +113,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             A debt reserve is a borrowable reserve of a CDP Spoke, funded by a capped credit line. Today the CDP Spokes lend GHO and USDC. Any other asset can be enabled per CDP Spoke through the enable-debt-reserve operation, once the Aave DAO approves the credit line, caps, price source and swap routes. Each debt reserve records its funding Hub, its price source and its Coverage Spoke.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>Credit line: the Lend Spoke supply cap equals the line, and CDP Spoke draw caps on it sum to at most the line. For example, the launch GHO line on Ethereum is 2,000,000 GHO, with the final value and the Base line set in the funding ARFC.</li>
+            <li>Credit line: CDP Spoke draw caps on it sum to at most the line; the Lend Spoke supply cap is set separately. For example, the launch GHO line on Ethereum is 2,000,000 GHO, with the final value and the Base line set in the funding ARFC.</li>
             <li>Each draw cap stays within the flash liquidity of its asset in the Aave V3 Pool and the depth of its swap routes, so every borrowed amount can be liquidated in one transaction.</li>
             <li>A cross-Hub credit line, where the funding Hub differs from the Spoke&apos;s home Hub, is specified and off at launch.</li>
           </ul>
@@ -155,7 +155,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             <code className="type-doc-body text-gray-900">{"CF_LP = floor(min CFᵢ × poolRiskFactor / 10⁴)"}</code>
           </div>
           <p className="mt-4 mb-4 type-doc-body">
-            Each token&apos;s factor comes from the Aave V4 Core Hub, except that a GHO leg uses an explicit factor set at listing. The pool risk factor is set per pool by the risk service providers and is at most 40%. With two tokens at 78% and the 40% ceiling, CF_LP is 3,120 bps (31.2%). Collateral Risk sets the borrower&apos;s rate premium: borrowing rate = base rate × (1 + risk premium). See{" "}
+            Each token&apos;s factor comes from the Aave V4 Core Hub, except that a GHO leg uses an explicit factor set at listing. The pool risk factor is set per pool by the risk service providers and is at most 90%. With two tokens at 78% and a 40% pool risk factor, CF_LP is 3,120 bps (31.2%). Collateral Risk sets the borrower&apos;s rate premium: borrowing rate = base rate × (1 + risk premium). See{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">Collateral Factors</Link>.
           </p>
         </section>

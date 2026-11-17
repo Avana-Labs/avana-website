@@ -134,7 +134,7 @@ export default async function RiskFrameworkPage({ params }: LocaleParamsProps) {
             <code className="type-doc-body text-gray-900">{"LP Collateral Factor = min(CF₁, …, CFₙ) × Pool Risk Factor"}</code>
           </div>
           <p className="mb-4 type-doc-body">
-            The pool risk factor is at most 40% and reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs. A GHO leg uses an explicit factor set at listing. The Aave DAO sets the reserve&apos;s factor at or below this value and never at 0 while accounts hold the reserve; Avana&apos;s drift check stops new borrowing if Aave&apos;s factor is set higher. Gauntlet&apos;s analysis of LP collateral recommends conservative starting factors, and final factors are calibrated per market with service providers.
+            The pool risk factor is at most 90% and reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs. A GHO leg uses an explicit factor set at listing. The Aave DAO sets the reserve&apos;s factor at or below this value and never at 0 while accounts hold the reserve; Avana&apos;s drift check stops new borrowing if Aave&apos;s factor is set higher. Gauntlet&apos;s analysis of LP collateral recommends conservative starting factors, and final factors are calibrated per market with service providers.
           </p>
           <p className="mb-2 type-doc-body">Example values; each market&apos;s parameters are set at listing. GHO, USDC and USDT are assumed to hold at $1.</p>
           <div className="overflow-x-auto">

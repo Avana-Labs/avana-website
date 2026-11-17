@@ -32,7 +32,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Collateral Factors"
-          description="Each market's collateral factor starts from the weakest of its tokens' Aave V4 Core Hub factors and is reduced by a pool risk factor of at most 40%."
+          description="Each market's collateral factor starts from the weakest of its tokens' Aave V4 Core Hub factors and is reduced by a pool risk factor of at most 90%."
         />
 
         <section id="overview" className="mb-10">
@@ -62,7 +62,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
               <tbody className="divide-y divide-gray-200">
                 <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">3,750</td><td className="px-4 py-2">2,812 (2,812.5 rounded down)</td></tr>
                 <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">4,000</td><td className="px-4 py-2">3,000</td></tr>
-                <tr><td className="px-4 py-2">Both 7,800</td><td className="px-4 py-2">4,000 (ceiling)</td><td className="px-4 py-2">3,120 (31.2%)</td></tr>
+                <tr><td className="px-4 py-2">Both 7,800</td><td className="px-4 py-2">4,000</td><td className="px-4 py-2">3,120 (31.2%)</td></tr>
               </tbody>
             </table>
           </div>
@@ -92,13 +92,13 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
         <section id="pool-risk-factor" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Pool Risk Factor</h2>
           <p className="mb-4 type-doc-body">
-            The Aave V4 risk service providers set each pool&apos;s risk factor in the market&apos;s listing payload, within 1 to 4,000 bps, so the pool risk factor is at most 40%. It reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs.
+            The Aave V4 risk service providers set each pool&apos;s risk factor in the market&apos;s listing payload, within 1 to 9,000 bps, so the pool risk factor is at most 90%. It reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs.
           </p>
           <p className="mb-4 type-doc-body">
             Avana draws on Gauntlet&apos;s analysis of LP collateral, which recommends conservative starting factors. When the borrowed asset is not one of the pool&apos;s own tokens, such as GHO borrowed against WETH/USDC, it suggests starting as low as 0.25 times the lower underlying factor. Final factors are calibrated per market with the service providers.
           </p>
           <p className="mb-4 type-doc-body">
-            At the 40% ceiling, a pool of two tokens with 78% factors has a collateral factor of 31.2%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 28.4% (31.2% divided by 1.10).
+            With a 40% pool risk factor, a pool of two tokens with 78% factors has a collateral factor of 31.2%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 28.4% (31.2% divided by 1.10).
           </p>
         </section>
 
@@ -200,7 +200,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How each market's collateral factor is computed from token factors and a pool risk factor of at most 40%, how Collateral Risk sets the borrow rate, and which caps limit borrowing."
+        pageSummary="How each market's collateral factor is computed from token factors and a pool risk factor of at most 90%, how Collateral Risk sets the borrow rate, and which caps limit borrowing."
         sectionColor="violet"
       />
     </div>

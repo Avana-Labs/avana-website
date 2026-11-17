@@ -121,7 +121,7 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
           <div className="mb-4 type-doc-code-block"><code className="type-doc-body text-gray-900">CF = ⌊min(CFᵢ) × poolRiskFactor⌋</code></div>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>Each token&apos;s factor is its Aave V4 Core Hub collateral factor, the explicit GHO leg factor, or for a token without a Core Hub factor, a value the risk service providers set.</li>
-            <li>The pool risk factor has a ceiling of 0.40.</li>
+            <li>The pool risk factor has a ceiling of 0.90.</li>
             <li>A fork check before the proposal asserts that a full liquidation never seizes more than the collateral.</li>
           </ul>
           <div className="doc-topic type-doc-body">
