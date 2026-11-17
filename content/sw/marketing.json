@@ -365,9 +365,9 @@
       "Usalama wa Nafasi",
       "Imeundwa kwa mtaji wa mkopo salama",
       "Kiwango cha juu cha mkopo",
-      "Hub ya LP thabiti",
-      "Hub ya LP inayohusiana",
-      "Hub ya LP tete",
+      "Spoke thabiti",
+      "Spoke inayohusiana",
+      "Lend Spoke",
       "Hifadhi mapato ya ada",
       "Pata mtaji wa kufanya kazi huku nafasi ya msingi ikiendelea kushirikishwa na kuendelea kupata ada za kibiashara.",
       "Epuka kutoka kwa nguvu LP",
@@ -410,7 +410,9 @@
       "Tupu",
       "Chini",
       "Dawa",
-      "Juu"
+      "Juu",
+      "Spoke ya Blue-chip",
+      "Spoke ya Gov/DeFi"
     ]
   },
   "webapp-hero": {

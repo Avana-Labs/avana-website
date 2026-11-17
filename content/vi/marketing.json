@@ -365,9 +365,9 @@
       "An toàn vị thế",
       "Được thiết kế cho đòn bẩy an toàn",
       "Hạn mức vay",
-      "Hub LP ổn định",
-      "Hub LP tương quan",
-      "Hub LP biến động",
+      "Spoke ổn định",
+      "Spoke tương quan",
+      "Lend Spoke",
       "Duy trì thu nhập từ phí",
       "Tiếp cận vốn lưu động trong khi vị thế cơ bản vẫn được triển khai và tiếp tục mang lại phí giao dịch.",
       "Tránh các lối ra LP cưỡng bức",
@@ -410,7 +410,9 @@
       "Nông",
       "Thấp",
       "Y học",
-      "Cao"
+      "Cao",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

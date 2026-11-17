@@ -365,9 +365,9 @@
       "Sicurezza delle posizioni",
       "Progettato per una leva sicura",
       "Limite di prestito",
-      "Hub LP stabile",
-      "Hub LP correlato",
-      "Hub LP volatile",
+      "Spoke stabile",
+      "Spoke correlato",
+      "Lend Spoke",
       "Preserva i ricavi da commissioni",
       "Accedi al capitale operativo mentre la posizione sottostante resta attiva e continua a generare commissioni di trading.",
       "Evita uscite forzate dalle LP",
@@ -410,7 +410,9 @@
       "Bassa",
       "Bassa",
       "Media",
-      "Alta"
+      "Alta",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

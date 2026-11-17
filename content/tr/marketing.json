@@ -365,9 +365,9 @@
       "Pozisyon Güvenliği",
       "Güvenli kaldıraç için tasarlandı",
       "Borçlanma limiti",
-      "Stabil LP Hub",
-      "Korele LP Hub",
-      "Volatil LP Hub",
+      "Stabil Spoke",
+      "Korele Spoke",
+      "Lend Spoke",
       "Ücret gelirini koru",
       "Temel pozisyon konuşlandırılmış durumda kalırken ve işlem ücretleri kazanmaya devam ederken işletme sermayesine erişin.",
       "Zorla LP çıkışlardan kaçının",
@@ -410,7 +410,9 @@
       "Sığ",
       "Düşük",
       "Orta",
-      "Yüksek"
+      "Yüksek",
+      "Blue-chip Spoke",
+      "Gov/DeFi Spoke"
     ]
   },
   "webapp-hero": {

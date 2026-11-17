@@ -365,9 +365,9 @@
       "Position Safety",
       "Designed for safe leverage",
       "Borrow cap",
-      "Stable LP Hub",
-      "Correlated LP Hub",
-      "Volatile LP Hub",
+      "Stable Spoke",
+      "Correlated Spoke",
+      "Lend Spoke",
       "Preserve fee income",
       "Access working capital while the underlying position stays deployed and continues earning trading fees.",
       "Avoid forced LP exits",
@@ -410,7 +410,9 @@
       "Shallow",
       "Low",
       "Med",
-      "High"
+      "High",
+      "Blue-chip Spoke",
+      "Gov/DeFi Spoke"
     ]
   },
   "webapp-hero": {

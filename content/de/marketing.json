@@ -365,9 +365,9 @@
       "Positionssicherheit",
       "Für sicheren Hebel entwickelt",
       "Kreditobergrenze",
-      "Stabiler LP-Hub",
-      "Korrelierter LP-Hub",
-      "Volatiler LP-Hub",
+      "Stabiler Spoke",
+      "Korrelierter Spoke",
+      "Lend Spoke",
       "Gebühreneinnahmen bewahren",
       "Erhalten Sie Betriebskapital, während die zugrunde liegende Position im Einsatz bleibt und weiterhin Handelsgebühren verdient.",
       "Erzwungene LP-Ausstiege vermeiden",
@@ -410,7 +410,9 @@
       "Gering",
       "Niedrig",
       "Mittel",
-      "Hoch"
+      "Hoch",
+      "Blue-chip-Spoke",
+      "Gov/DeFi-Spoke"
     ]
   },
   "webapp-hero": {

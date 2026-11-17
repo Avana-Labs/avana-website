@@ -365,9 +365,9 @@
       "Keamanan Posisi",
       "Dirancang untuk leverage yang aman",
       "Batas pinjaman",
-      "Hub LP Stabil",
-      "Hub LP Terkorelasi",
-      "Hub LP Volatil",
+      "Spoke Stabil",
+      "Spoke Terkorelasi",
+      "Lend Spoke",
       "Mempertahankan pendapatan biaya",
       "Akses modal kerja sementara posisi mendasar tetap digunakan dan terus menghasilkan biaya perdagangan.",
       "Hindari keluar paksa LP",
@@ -410,7 +410,9 @@
       "Dangkal",
       "Rendah",
       "Obat",
-      "Tinggi"
+      "Tinggi",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

@@ -365,9 +365,9 @@
       "Segurança das posições",
       "Concebido para alavancagem segura",
       "Limite de empréstimo",
-      "Hub LP estável",
-      "Hub LP correlacionado",
-      "Hub LP volátil",
+      "Spoke estável",
+      "Spoke correlacionado",
+      "Lend Spoke",
       "Preserve a receita de taxas",
       "Acesse capital de giro enquanto a posição subjacente permanece implantada e continua gerando taxas de trading.",
       "Evite saídas forçadas de LP",
@@ -410,7 +410,9 @@
       "Rasa",
       "Baixa",
       "Média",
-      "Alta"
+      "Alta",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

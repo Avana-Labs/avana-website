@@ -365,9 +365,9 @@
       "Sécurité des positions",
       "Conçu pour un levier sûr",
       "Plafond d’emprunt",
-      "Hub LP stable",
-      "Hub LP corrélé",
-      "Hub LP volatil",
+      "Spoke stable",
+      "Spoke corrélé",
+      "Lend Spoke",
       "Préservez vos revenus de frais",
       "Accédez à des fonds de roulement tandis que la position sous-jacente reste déployée et continue de générer des frais de trading.",
       "Évitez les sorties forcées de LP",
@@ -410,7 +410,9 @@
       "Superficielle",
       "Faible",
       "Moyen",
-      "Élevée"
+      "Élevée",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

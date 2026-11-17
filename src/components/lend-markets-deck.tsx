@@ -68,12 +68,12 @@ type Market = {
 // frxUSD and WETH were white in the source (invisible on a light surface), so
 // they use visible token-appropriate colors here. Each uses a distinct window.
 const markets: Market[] = [
-  { symbol: "USDC", name: "USD Coin", hub: "Stable LP Hub", apy: "5.41%", stroke: "#2775CA", path: windowPath(A, 0.0, 0.6, false) },
-  { symbol: "GHO", name: "GHO", hub: "Stable LP Hub", apy: "4.12%", stroke: "#28D358", path: windowPath(A, 0.38, 0.6, true) },
-  { symbol: "frxUSD", name: "Frax USD", hub: "Stable LP Hub", apy: "6.03%", stroke: "#475569", path: windowPath(B, 0.05, 0.6, false) },
-  { symbol: "USDT", name: "Tether USD", hub: "Stable LP Hub", apy: "4.87%", stroke: "#009393", path: windowPath(B, 0.4, 0.6, true) },
-  { symbol: "WETH", name: "Wrapped Ether", hub: "Correlated LP Hub", apy: "2.34%", stroke: "#627EEA", path: windowPath(A, 0.22, 0.55, false) },
-  { symbol: "WBTC", name: "Wrapped BTC", hub: "Volatile LP Hub", apy: "1.19%", stroke: "#F7931A", path: windowPath(B, 0.2, 0.55, true) },
+  { symbol: "USDC", name: "USD Coin", hub: "Lend Spoke", apy: "5.41%", stroke: "#2775CA", path: windowPath(A, 0.0, 0.6, false) },
+  { symbol: "GHO", name: "GHO", hub: "Lend Spoke", apy: "4.12%", stroke: "#28D358", path: windowPath(A, 0.38, 0.6, true) },
+  { symbol: "frxUSD", name: "Frax USD", hub: "Lend Spoke", apy: "6.03%", stroke: "#475569", path: windowPath(B, 0.05, 0.6, false) },
+  { symbol: "USDT", name: "Tether USD", hub: "Lend Spoke", apy: "4.87%", stroke: "#009393", path: windowPath(B, 0.4, 0.6, true) },
+  { symbol: "WETH", name: "Wrapped Ether", hub: "Lend Spoke", apy: "2.34%", stroke: "#627EEA", path: windowPath(A, 0.22, 0.55, false) },
+  { symbol: "WBTC", name: "Wrapped BTC", hub: "Lend Spoke", apy: "1.19%", stroke: "#F7931A", path: windowPath(B, 0.2, 0.55, true) },
 ]
 
 function MarketCard({ market }: { market: Market }) {

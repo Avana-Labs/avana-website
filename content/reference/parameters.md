@@ -27,8 +27,8 @@ The Aave DAO funds each borrowable asset by supplying it to the Hub through the 
 
 | Origin | Target Hub | Reserve | Credit line size |
 | --- | --- | --- | --- |
-| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | GHO | 50,000,000 GHO |
-| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | USDC | 50,000,000 USDC |
+| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | GHO | 100,000,000 GHO |
+| Aave DAO, through the Lend Spoke | Avana Ethereum Hub | USDC | 100,000,000 USDC |
 
 ### Add and draw caps
 
@@ -201,8 +201,8 @@ The Aave DAO funds each borrowable asset by supplying it to the Hub through the 
 
 | Origin | Target Hub | Reserve | Credit line size |
 | --- | --- | --- | --- |
-| Aave DAO, through the Lend Spoke | Avana Base Hub | GHO | 50,000,000 GHO |
-| Aave DAO, through the Lend Spoke | Avana Base Hub | USDC | 50,000,000 USDC |
+| Aave DAO, through the Lend Spoke | Avana Base Hub | GHO | 100,000,000 GHO |
+| Aave DAO, through the Lend Spoke | Avana Base Hub | USDC | 100,000,000 USDC |
 
 ### Add and draw caps
 

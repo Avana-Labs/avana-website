@@ -365,9 +365,9 @@
       "Bezpieczeństwo pozycji",
       "Zaprojektowane dla bezpiecznej dźwigni",
       "Limit pożyczki",
-      "Stabilny hub LP",
-      "Skorelowany hub LP",
-      "Zmienny hub LP",
+      "Stabilny Spoke",
+      "Skorelowany Spoke",
+      "Lend Spoke",
       "Zachować przychody z opłat",
       "Uzyskaj dostęp do kapitału obrotowego, podczas gdy podstawowa pozycja pozostaje zaangażowana i nadal generuje opłaty handlowe.",
       "Unikaj wymuszonych LP wyjść",
@@ -410,7 +410,9 @@
       "Płytki",
       "Niski",
       "w medycynie",
-      "Wysoki"
+      "Wysoki",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {

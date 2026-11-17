@@ -365,9 +365,9 @@
       "Positieveiligheid",
       "Ontworpen voor veilige hefboom",
       "Leenlimiet",
-      "Stabiele LP-hub",
-      "Gecorreleerde LP-hub",
-      "Volatiele LP-hub",
+      "Stabiele Spoke",
+      "Gecorreleerde Spoke",
+      "Lend Spoke",
       "Behoud de vergoeding inkomsten",
       "Toegang tot werkkapitaal terwijl de onderliggende positie blijft ingezet en doorgaat met het verdienen van handelskosten.",
       "Vermijd gedwongen LP uitgangen",
@@ -410,7 +410,9 @@
       "Oppervlakkig",
       "Laag",
       "in de geneeskunde",
-      "Hoog"
+      "Hoog",
+      "Blue-chip-Spoke",
+      "Gov/DeFi-Spoke"
     ]
   },
   "webapp-hero": {

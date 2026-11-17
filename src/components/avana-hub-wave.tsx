@@ -1,6 +1,6 @@
 /**
  * AvanaHubWave — a decorative, slowly-drifting wave that conveys the volatility
- * character of an Avana LP Hub instead of a wall of token icons:
+ * character of an Avana Hub instead of a wall of token icons:
  *
  *   - "stable"     → a tight, nearly-flat band (low deviation, calm)
  *   - "correlated" → two waves moving in sync, a constant gap apart (assets track)
