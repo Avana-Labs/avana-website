@@ -278,7 +278,7 @@ export default async function LiquidationFlowPage({ params }: LocaleParamsProps)
         <section id="helper" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Flash Liquidation Helper</h2>
           <p className="mb-4 type-doc-body">
-            The flash liquidation helper lets a caller that holds no debt asset liquidate. It is a periphery contract outside the audited core: public, immutable, with no owner, admin, upgrade path, setter, sweep, rescue or arbitrary-call function, and holding no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool (the Ethereum Core Pool; on Base 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5). An operator can deploy its own instance of the operator variant. LPVaultSwap treats every helper as an ordinary caller.
+            The flash liquidation helper lets a caller that holds no debt asset liquidate. It is a periphery contract outside the core contracts: public, immutable, with no owner, admin, upgrade path, setter, sweep, rescue or arbitrary-call function, and holding no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool (the Ethereum Core Pool; on Base 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5). An operator can deploy its own instance of the operator variant. LPVaultSwap treats every helper as an ordinary caller.
           </p>
           <h3 className="mb-2 type-doc-subsection-title">Interface</h3>
           <p className="mb-4 type-doc-body">

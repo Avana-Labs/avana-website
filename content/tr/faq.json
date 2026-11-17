@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Avana dağıtıldı mı?",
-          "a": "Henüz değil. Avana spesifikasyonu ve sözleşme arayüzleri tamamlandı ve dahili inceleme ile formel modellemeden geçti. Sırada sözleşme kodunun yazılması, ardından her sözleşmenin bağımsız denetimleri ve dağıtımı ve fonlamayı onaylayan Aave DAO oylamaları var.\n\nSözleşme adresleri, sözleşmeler dağıtıldıktan sonra geliştirici dokümanlarının Sözleşmeler sayfasında listelenecektir. app.avana.cc adresindeki herkese açık sandbox simüle edilmiş varlıklar kullanır."
+          "a": "Henüz değil. Avana bir iç denetimden geçiyor: dahili manuel inceleme ve yapay zekâ destekli bir denetim. Henüz harici bir denetim yapılmadı; bu adımlar tamamlandığında denetim harici denetçilere ve kamuya açılacak. Dağıtım için ayrıca dağıtımı ve fonlamasını onaylayan Aave DAO oylamaları gerekir.\n\nSözleşme adresleri, sözleşmeler dağıtıldıktan sonra geliştirici dokümanlarının Sözleşmeler sayfasında listelenecektir. app.avana.cc adresindeki herkese açık sandbox simüle edilmiş varlıklar kullanır."
         }
       ]
     },

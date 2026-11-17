@@ -190,7 +190,7 @@ export default async function DeveloperLiquidatorsPage({ params }: LocaleParamsP
         <section id="flash-helper" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Flash Liquidation Helper</h2>
           <p className="mb-4 type-doc-body">
-            The flash liquidation helper lets a caller that holds no debt asset liquidate. It is a periphery contract outside the audited core: public and immutable, with no owner, admin, upgrade path, setter, sweep or rescue function, and it holds no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool: the Ethereum Core Pool, and on Base the Pool at 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5. Anyone can use it.
+            The flash liquidation helper lets a caller that holds no debt asset liquidate. It is a periphery contract outside the core contracts: public and immutable, with no owner, admin, upgrade path, setter, sweep or rescue function, and it holds no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool: the Ethereum Core Pool, and on Base the Pool at 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5. Anyone can use it.
           </p>
           <p className="mb-4 type-doc-body">
             LPVaultSwap treats every helper as an ordinary caller. The helper is msg.sender: it funds liquidate and receives the caller payout, and no check or formula of LPVaultSwap depends on the loan.

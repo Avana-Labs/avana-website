@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Avana è già distribuito?",
-          "a": "Non ancora. La specifica e le interfacce dei contratti di Avana sono complete e sono state sottoposte a revisione interna e modellazione formale. Il passo successivo è la scrittura del codice dei contratti, seguita da audit indipendenti di ogni contratto e dai voti della Aave DAO che approvano deployment e finanziamento.\n\nGli indirizzi dei contratti saranno elencati nella pagina Contratti della documentazione per sviluppatori una volta effettuato il deployment dei contratti. La sandbox pubblica su app.avana.cc usa asset simulati."
+          "a": "Non ancora. Avana è sottoposta a un audit interno: una revisione manuale interna e un audit assistito dall'IA. Non c'è ancora stato alcun audit esterno; al termine di queste fasi, l'audit si apre agli auditor esterni e al pubblico. Il deployment richiede inoltre i voti della Aave DAO che lo approvano e ne approvano il finanziamento.\n\nGli indirizzi dei contratti saranno elencati nella pagina Contratti della documentazione per sviluppatori una volta effettuato il deployment dei contratti. La sandbox pubblica su app.avana.cc usa asset simulati."
         }
       ]
     },

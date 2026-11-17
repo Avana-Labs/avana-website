@@ -42,7 +42,7 @@ export default async function LensPage({ params }: LocaleParamsProps) {
             The Lens is an immutable, read-only periphery contract, one per chain. It gathers state from every Avana contract, the CDP Spokes, Hubs and oracles into single-call views, and returns previews that carry the margins needed to stay valid between the block they were read at and the block that includes the transaction.
           </p>
           <div className="doc-topic mb-4 type-doc-body">
-            The Lens sits outside the audited core. No core contract calls it, stores its address or depends on what it returns, and nothing it returns authorizes an action. A Lens bug can mislead a user or keeper into a transaction that reverts or pays less than shown; it cannot move value. It is reviewed and tested as periphery.
+            The Lens sits outside the core contracts. No core contract calls it, stores its address or depends on what it returns, and nothing it returns authorizes an action. A Lens bug can mislead a user or keeper into a transaction that reverts or pays less than shown; it cannot move value. It is reviewed and tested as periphery.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>A new Lens is a new deployment, made when a dependency&apos;s interface changes. Replacing it needs no governance action; the verified deployment manifest records the address consumers use.</li>

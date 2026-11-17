@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Avana đã được triển khai chưa?",
-          "a": "Chưa. Đặc tả và giao diện hợp đồng của Avana đã hoàn tất và đã qua đánh giá nội bộ và mô hình hóa hình thức. Bước tiếp theo là viết mã hợp đồng, sau đó là kiểm toán độc lập cho mọi hợp đồng và các cuộc bỏ phiếu của Aave DAO phê duyệt việc triển khai và cấp vốn.\n\nĐịa chỉ hợp đồng sẽ được liệt kê trên trang Contracts của tài liệu dành cho nhà phát triển sau khi các hợp đồng được triển khai. Sandbox công khai tại app.avana.cc sử dụng tài sản mô phỏng."
+          "a": "Chưa. Avana đang trải qua kiểm toán nội bộ: rà soát thủ công nội bộ và kiểm toán có hỗ trợ của AI. Hiện chưa có kiểm toán bên ngoài; khi các bước này hoàn tất, đợt kiểm toán sẽ mở cho các đơn vị kiểm toán bên ngoài và công chúng. Việc triển khai cũng cần các cuộc bỏ phiếu của Aave DAO phê duyệt việc triển khai và cấp vốn.\n\nĐịa chỉ hợp đồng sẽ được liệt kê trên trang Contracts của tài liệu dành cho nhà phát triển sau khi các hợp đồng được triển khai. Sandbox công khai tại app.avana.cc sử dụng tài sản mô phỏng."
         }
       ]
     },

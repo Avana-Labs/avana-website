@@ -122,9 +122,10 @@ export default async function LegalDisclaimerPage({ params }: LocaleParamsProps)
               and an example or test result in the documentation does not establish that a
               later transaction produces the same outcome. Avana&apos;s specification and contract
               interfaces are complete and have been through internal review and formal modelling.
-              The contract code is written next and has not been audited or deployed. Deployment
-              requires independent audits of every contract, remediation, and Aave governance
-              approval.
+              The contracts are going through an internal audit (an internal manual review and an
+              AI-assisted audit) and have not been externally audited or deployed. When the internal
+              audit finishes, the audit opens to external auditors and the public; deployment also
+              requires remediation and Aave governance approval.
             </p>
             <p className="type-doc-body">
               LP-backed borrowing depends on the value of the underlying position. Market

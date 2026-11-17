@@ -35,7 +35,7 @@ Avana is not a general-purpose exchange, a custodial wallet, or an investment ad
 - [Architecture](https://avana.cc/developers/architecture): Spokes, Hubs, collateral factors, health factor.
 - [Integrations](https://avana.cc/developers/integrations): AppKit, allowed pools, price oracles, router contract.
 - [Liquidation](https://avana.cc/developers/liquidation): Liquidation flow, liquidators, and examples.
-- [Safety](https://avana.cc/developers/safety): Contracts, bug bounty, and insurance.
+- [Safety](https://avana.cc/developers/safety): Contracts, bug bounty (not started yet), and insurance.
 
 ## Product
 

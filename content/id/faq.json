@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Apakah Avana sudah di-deploy?",
-          "a": "Belum. Spesifikasi dan antarmuka kontrak Avana sudah lengkap dan telah melalui tinjauan internal serta pemodelan formal. Kode kontrak ditulis berikutnya, diikuti audit independen atas setiap kontrak dan pemungutan suara Aave DAO yang menyetujui deployment dan pendanaan.\n\nAlamat kontrak akan dicantumkan di halaman Contracts pada dokumentasi pengembang setelah kontrak di-deploy. Sandbox publik di app.avana.cc menggunakan aset simulasi."
+          "a": "Belum. Avana sedang menjalani audit internal: tinjauan manual internal dan audit berbantuan AI. Belum ada audit eksternal; setelah tahap-tahap tersebut selesai, audit dibuka untuk auditor eksternal dan publik. Deployment juga memerlukan pemungutan suara Aave DAO yang menyetujuinya beserta pendanaannya.\n\nAlamat kontrak akan dicantumkan di halaman Contracts pada dokumentasi pengembang setelah kontrak di-deploy. Sandbox publik di app.avana.cc menggunakan aset simulasi."
         }
       ]
     },

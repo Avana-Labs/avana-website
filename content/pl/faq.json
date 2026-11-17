@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Czy Avana jest wdrożona?",
-          "a": "Jeszcze nie. Specyfikacja Avana i interfejsy kontraktów są gotowe i przeszły wewnętrzny przegląd oraz modelowanie formalne. Następnym krokiem jest napisanie kodu kontraktów, a potem niezależne audyty każdego kontraktu i głosowania Aave DAO zatwierdzające wdrożenie i finansowanie.\n\nAdresy kontraktów zostaną podane na stronie Kontrakty w dokumentacji dla deweloperów po wdrożeniu kontraktów. Publiczny sandbox pod adresem app.avana.cc używa symulowanych aktywów."
+          "a": "Jeszcze nie. Avana przechodzi audyt wewnętrzny: wewnętrzny przegląd ręczny i audyt wspomagany przez AI. Nie było jeszcze audytu zewnętrznego; po zakończeniu tych etapów audyt zostanie otwarty dla audytorów zewnętrznych i publiczności. Wdrożenie wymaga też głosowań Aave DAO zatwierdzających wdrożenie i jego finansowanie.\n\nAdresy kontraktów zostaną podane na stronie Kontrakty w dokumentacji dla deweloperów po wdrożeniu kontraktów. Publiczny sandbox pod adresem app.avana.cc używa symulowanych aktywów."
         }
       ]
     },
