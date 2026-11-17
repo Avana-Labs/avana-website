@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Ist Avana bereitgestellt?",
-          "a": "Noch nicht. Die Spezifikation und die Vertragsschnittstellen von Avana sind vollständig und haben eine interne Prüfung und formale Modellierung durchlaufen. Als Nächstes wird der Vertragscode geschrieben, gefolgt von unabhängigen Audits jedes Vertrags und den Abstimmungen der Aave DAO, die Deployment und Finanzierung genehmigen.\n\nVertragsadressen werden auf der Seite Contracts der Entwicklerdokumentation aufgeführt, sobald die Verträge bereitgestellt sind. Die öffentliche Sandbox unter app.avana.cc verwendet simulierte Assets."
+          "a": "Noch nicht. Avana durchläuft ein internes Audit: eine interne manuelle Prüfung und ein KI-gestütztes Audit. Ein externes Audit gab es bisher nicht; wenn diese Schritte abgeschlossen sind, wird das Audit für externe Auditoren und die Öffentlichkeit geöffnet. Für das Deployment sind außerdem die Abstimmungen der Aave DAO nötig, die es und seine Finanzierung genehmigen.\n\nVertragsadressen werden auf der Seite Contracts der Entwicklerdokumentation aufgeführt, sobald die Verträge bereitgestellt sind. Die öffentliche Sandbox unter app.avana.cc verwendet simulierte Assets."
         }
       ]
     },

@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "A Avana já está implantada?",
-          "a": "Ainda não. A especificação e as interfaces dos contratos da Avana estão concluídas e passaram por revisão interna e modelagem formal. O código dos contratos é escrito em seguida, seguido de auditorias independentes de todos os contratos e das votações da Aave DAO que aprovam a implantação e o financiamento.\n\nOs endereços dos contratos serão listados na página Contratos da documentação para desenvolvedores assim que os contratos forem implantados. O sandbox público em app.avana.cc usa ativos simulados."
+          "a": "Ainda não. A Avana está passando por uma auditoria interna: uma revisão manual interna e uma auditoria assistida por IA. Ainda não houve auditoria externa; quando essas etapas terminarem, a auditoria será aberta a auditores externos e ao público. A implantação também precisa das votações da Aave DAO que aprovam a implantação e o seu financiamento.\n\nOs endereços dos contratos serão listados na página Contratos da documentação para desenvolvedores assim que os contratos forem implantados. O sandbox público em app.avana.cc usa ativos simulados."
         }
       ]
     },

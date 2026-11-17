@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Avana est-il déployé ?",
-          "a": "Pas encore. La spécification d'Avana et les interfaces des contrats sont terminées et ont fait l'objet d'une revue interne et d'une modélisation formelle. Le code des contrats sera écrit ensuite, suivi d'audits indépendants de chaque contrat et des votes de l'Aave DAO qui approuvent le déploiement et le financement.\n\nLes adresses des contrats seront listées sur la page Contracts de la documentation développeurs une fois les contrats déployés. Le sandbox public sur app.avana.cc utilise des actifs simulés."
+          "a": "Pas encore. Avana fait l'objet d'un audit interne : une revue manuelle interne et un audit assisté par IA. Il n'y a pas encore eu d'audit externe ; lorsque ces étapes seront terminées, l'audit s'ouvrira aux auditeurs externes et au public. Le déploiement nécessite également les votes de l'Aave DAO qui l'approuvent, ainsi que son financement.\n\nLes adresses des contrats seront listées sur la page Contracts de la documentation développeurs une fois les contrats déployés. Le sandbox public sur app.avana.cc utilise des actifs simulés."
         }
       ]
     },

@@ -300,7 +300,7 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
           </div>
           <h3 className="mb-2 type-doc-subsection-title">The public flash liquidation helper</h3>
           <p className="mb-4 type-doc-body">
-            A caller that holds no debt asset uses the public flash liquidation helper. It is a periphery contract outside the audited core: immutable, with no owner, admin, upgrade path, setter, sweep or rescue function, and holding no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool: the Core Pool on Ethereum, and on Base the Pool at 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5. Anyone can use it, and no core contract calls it.
+            A caller that holds no debt asset uses the public flash liquidation helper. It is a periphery contract outside the core contracts: immutable, with no owner, admin, upgrade path, setter, sweep or rescue function, and holding no funds or allowances between transactions. One public instance per chain borrows from that chain&apos;s Aave V3 Pool: the Core Pool on Ethereum, and on Base the Pool at 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5. Anyone can use it, and no core contract calls it.
           </p>
           <ol className="mb-4 list-decimal space-y-2 ps-5 type-doc-body">
             <li>The caller calls <code className="type-doc-inline-code">flashLiquidate</code> with the liquidation parameters, a flash amount up to debtToCover, a maximum premium, a top-up bound and its own minimum net payout.</li>

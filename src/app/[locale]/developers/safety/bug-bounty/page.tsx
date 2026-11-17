@@ -142,7 +142,7 @@ export default async function BugBountyPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            This page describes the scope for responsible disclosure across Avana&apos;s own contracts, deployment operations and supporting services. Program terms, rewards, platform and start date are announced separately.
+            The Avana bug bounty has not started. It will be announced, with its terms, rewards, platform and start date. Until then, this page describes the scope for responsible disclosure across Avana&apos;s own contracts, deployment operations and supporting services.
           </p>
           <p className="mb-4 type-doc-body">
             The scope includes direct contract vulnerabilities and economic failures involving LP collateral. Manipulated prices, insufficient liquidity, or vault tokens that no longer match the liquidity in an LPVault can affect borrowing capacity or prevent liquidation from recovering debt.

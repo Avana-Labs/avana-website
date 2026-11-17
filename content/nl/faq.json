@@ -33,7 +33,7 @@
         {
           "id": "is-avana-live",
           "q": "Is Avana gedeployed?",
-          "a": "Nog niet. De specificatie en contractinterfaces van Avana zijn voltooid en hebben interne review en formele modellering doorlopen. Daarna wordt de contractcode geschreven, gevolgd door onafhankelijke audits van elk contract en de stemmingen van de Aave DAO die deployment en financiering goedkeuren.\n\nContractadressen worden vermeld op de pagina Contracten van de developer-docs zodra de contracten zijn gedeployed. De openbare sandbox op app.avana.cc gebruikt gesimuleerde assets."
+          "a": "Nog niet. Avana doorloopt een interne audit: een interne handmatige review en een AI-ondersteunde audit. Er is nog geen externe audit geweest; wanneer die stappen zijn afgerond, wordt de audit opengesteld voor externe auditors en het publiek. Deployment vereist daarnaast de stemmingen van de Aave DAO die de deployment en de financiering ervan goedkeuren.\n\nContractadressen worden vermeld op de pagina Contracten van de developer-docs zodra de contracten zijn gedeployed. De openbare sandbox op app.avana.cc gebruikt gesimuleerde assets."
         }
       ]
     },
