@@ -9,7 +9,7 @@ updated: 2026-11-16
 ## Ethereum Sepolia
 - network: ethereum-sepolia
 
-Every Spoke here is on the Avana Ethereum Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=ethereum-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply. Pool risk factors are pending the updated deploy values.
+Every Spoke here is on the Avana Ethereum Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=ethereum-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply.
 
 ### Interest rate curves
 
@@ -132,16 +132,16 @@ Avana's own settings for each market: the pool it accepts, how much of the pool'
 
 | Spoke | Market | Pool | v3 reference pool | Fee tier or tick spacing | Pool risk factor | Market cap | Consistency tolerance |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Uniswap v3 Stable | USDC/USDT | @{markets.uni-USDC-USDT-100.pool} | — | 0.01% | Pending | $5,000,000 | 0.5% |
-| Uniswap v3 Stable | DAI/USDT | @{markets.uni-DAI-USDT-100.pool} | — | 0.01% | Pending | $5,000,000 | 1% |
-| Uniswap v4 Stable | USDC/USDT | @{markets.univ4-USDC-USDT-100.poolId} | @{markets.univ4-USDC-USDT-100.referencePool} | 0.01% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Correlated ETH | wstETH/WETH | @{markets.uni-wstETH-WETH-100.pool} | — | 0.01% | Pending | $5,000,000 | 0.5% |
-| Uniswap v4 Correlated BTC | cbBTC/WBTC | @{markets.univ4-cbBTC-WBTC-100.poolId} | @{markets.univ4-cbBTC-WBTC-100.referencePool} | 0.01% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Blue-chip | WETH/USDC | @{markets.uni-WETH-USDC-500.pool} | — | 0.05% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Blue-chip | WBTC/USDC | @{markets.uni-WBTC-USDC-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Gov/DeFi | AAVE/WETH | @{markets.uni-AAVE-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Gov/DeFi | UNI/WETH | @{markets.uni-UNI-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
-| Uniswap v3 Gov/DeFi | LINK/WETH | @{markets.uni-LINK-WETH-3000.pool} | — | 0.3% | Pending | $5,000,000 | 1% |
+| Uniswap v3 Stable | USDC/USDT | @{markets.uni-USDC-USDT-100.pool} | — | 0.01% | 88.89% | $5,000,000 | 0.5% |
+| Uniswap v3 Stable | DAI/USDT | @{markets.uni-DAI-USDT-100.pool} | — | 0.01% | 88.89% | $5,000,000 | 1% |
+| Uniswap v4 Stable | USDC/USDT | @{markets.univ4-USDC-USDT-100.poolId} | @{markets.univ4-USDC-USDT-100.referencePool} | 0.01% | 88.89% | $5,000,000 | 1% |
+| Uniswap v3 Correlated ETH | wstETH/WETH | @{markets.uni-wstETH-WETH-100.pool} | — | 0.01% | 88.24% | $5,000,000 | 0.5% |
+| Uniswap v4 Correlated BTC | cbBTC/WBTC | @{markets.univ4-cbBTC-WBTC-100.poolId} | @{markets.univ4-cbBTC-WBTC-100.referencePool} | 0.01% | 89.29% | $5,000,000 | 1% |
+| Uniswap v3 Blue-chip | WETH/USDC | @{markets.uni-WETH-USDC-500.pool} | — | 0.05% | 84.71% | $5,000,000 | 1% |
+| Uniswap v3 Blue-chip | WBTC/USDC | @{markets.uni-WBTC-USDC-3000.pool} | — | 0.3% | 85.72% | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | AAVE/WETH | @{markets.uni-AAVE-WETH-3000.pool} | — | 0.3% | 89.48% | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | UNI/WETH | @{markets.uni-UNI-WETH-3000.pool} | — | 0.3% | 89.48% | $5,000,000 | 1% |
+| Uniswap v3 Gov/DeFi | LINK/WETH | @{markets.uni-LINK-WETH-3000.pool} | — | 0.3% | 89.48% | $5,000,000 | 1% |
 
 > A Uniswap v4 market's Pool is its PoolId. Hookless Uniswap v4 pools keep no price history, so each also reads the same pair's Uniswap v3 reference pool (fee 0.05%) for the price check.
 
@@ -183,7 +183,7 @@ Each pool token's collateral factor (CF0 and CF1 in the LP collateral factor, `m
 ## Base Sepolia
 - network: base-sepolia
 
-Every Spoke here is on the Avana Base Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=base-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply. Pool risk factors are pending the updated deploy values. Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
+Every Spoke here is on the Avana Base Hub; Hub and Spoke addresses are on [Contract Addresses](/developers/reference/addresses?network=base-sepolia). Spokes are listed by collateral risk, lowest first. Reserves are the debt assets the Hub lists (GHO, USDC, USDT) and one LP collateral reserve per market. `—` means the setting does not apply. Aero Slipstream pools use dynamic fees, so each market is named by its tick spacing.
 
 ### Interest rate curves
 
@@ -289,18 +289,18 @@ Avana's own settings for each market: the pool it accepts, how much of the pool'
 
 | Spoke | Market | Pool | Fee tier or tick spacing | Pool risk factor | Market cap | Consistency tolerance |
 | --- | --- | --- | --- | --- | --- | --- |
-| Aero Slipstream Blue-chip | WETH/USDC | @{markets.slip-WETH-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Blue-chip | cbBTC/USDC | @{markets.slip-cbBTC-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Blue-chip | cbBTC/WETH | @{markets.slip-cbBTC-WETH-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Gov/DeFi | AERO/USDC | @{markets.slip-AERO-USDC-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Gov/DeFi | AERO/WETH | @{markets.slip-AERO-WETH-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Gov/DeFi | LINK/WETH | @{markets.slip-LINK-WETH-cl200.pool} | Tick spacing 200 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | AMZNc/USDC | @{markets.slip-AMZNc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | SNDKc/USDC | @{markets.slip-SNDKc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | GOOGLc/USDC | @{markets.slip-GOOGLc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | NVDAc/USDC | @{markets.slip-NVDAc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | SPCXc/USDC | @{markets.slip-SPCXc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
-| Aero Slipstream Stocks | METAc/USDC | @{markets.slip-METAc-USDC-cl100.pool} | Tick spacing 100 | Pending | $5,000,000 | 1% |
+| Aero Slipstream Blue-chip | WETH/USDC | @{markets.slip-WETH-USDC-cl100.pool} | Tick spacing 100 | 84.71% | $5,000,000 | 1% |
+| Aero Slipstream Blue-chip | cbBTC/USDC | @{markets.slip-cbBTC-USDC-cl100.pool} | Tick spacing 100 | 85.72% | $5,000,000 | 1% |
+| Aero Slipstream Blue-chip | cbBTC/WETH | @{markets.slip-cbBTC-WETH-cl100.pool} | Tick spacing 100 | 85.72% | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | AERO/USDC | @{markets.slip-AERO-USDC-cl200.pool} | Tick spacing 200 | 89.48% | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | AERO/WETH | @{markets.slip-AERO-WETH-cl200.pool} | Tick spacing 200 | 89.48% | $5,000,000 | 1% |
+| Aero Slipstream Gov/DeFi | LINK/WETH | @{markets.slip-LINK-WETH-cl200.pool} | Tick spacing 200 | 89.48% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | AMZNc/USDC | @{markets.slip-AMZNc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | SNDKc/USDC | @{markets.slip-SNDKc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | GOOGLc/USDC | @{markets.slip-GOOGLc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | NVDAc/USDC | @{markets.slip-NVDAc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | SPCXc/USDC | @{markets.slip-SPCXc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
+| Aero Slipstream Stocks | METAc/USDC | @{markets.slip-METAc-USDC-cl100.pool} | Tick spacing 100 | 89.05% | $5,000,000 | 1% |
 
 ### Lend Spoke
 
@@ -370,7 +370,7 @@ These parameters have the same rules on every network. Bounds are enforced on-ch
 | `LOOSEN_CAP_STEP_BPS` | 15,000 bps (×1.5) | — | Largest rise of a USD cap in one loosening, at most once per normal delay. A cap below $1,000 can instead be raised straight to $1,000 (`USD_CAP_REOPEN_BASE`). | `Q-246`; `ParameterStoreStorage.sol:73`, `:98` |
 | `topUpSliceUsd` | Set by governance | ≤ `marketUsdCap` | Cap room reserved in each market for rescue top-ups, so a full cap never blocks a borrower adding collateral. Avana proposes 10% of the market cap. | `Q-157`, `Q-394` |
 | `stressFloorUsd` | Set by governance | > 0 | Lowest price per vault token used when charging caps. Avana proposes $1.00. | `Q-175`, `Q-394` |
-| `poolRiskFactor` | Set by governance | 1–4,000 bps | Per-pool discount in the LP collateral factor, `min(CF0, CF1) × poolRiskFactor`. The Aave DAO sets the resulting collateral factor. | `Q-186`; `ParameterStoreStorage.sol:81`, `ParameterStoreAdminRiskLogic.sol:103` |
+| `poolRiskFactor` | Set by governance | 1–9,000 bps | Per-pool discount in the LP collateral factor, `min(CF0, CF1) × poolRiskFactor`. The Aave DAO sets the resulting collateral factor. | `Q-186`; `ParameterStoreStorage.sol:81`, `ParameterStoreAdminRiskLogic.sol:103` |
 | `tokenCollateralFactorBps` | Set by governance | 1–9,999 bps | Each token's collateral factor on the Aave V4 Core Hub, recorded at listing as CF0 and CF1 of the LP collateral factor. | `Q-188`; `ParameterStoreStorage.sol:82`, `ParameterStoreAdminRiskLogic.sol:218` |
 | `poolShareMaxBps` | 10,000 bps (no limit) | 1–10,000 bps | Largest share of a pool's active liquidity Avana may hold across all its markets on a chain. Off by default; a pool's listing may set a lower cap, and a share above 25% raises a monitoring alert. | `Q-403`; `ParameterStoreAdminRiskLogic.sol:87` |
 | `marketSpeedLimits.window` | Set by governance | 3,600–604,800 s | Length of each borrow-speed and pledge-speed window. Any window takes at most one limit, so a mispriced market loses at most one limit before a guardian freeze. Avana proposes 21,600 s (6 hours). | `Q-411`, `SPEC-CAP-011`; `ParameterStoreSpeedRules.sol:18-20` |
