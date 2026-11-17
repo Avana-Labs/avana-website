@@ -102,9 +102,8 @@
         "liquidation": "विलय ढांचा",
         "integrations": "सपोर्टेड इंटिग्रेशन",
         "safety": "सुरक्षा तंत्र",
-        "legal": "कानूनी और अनुपालन",
         "copilot": "AI से पूछें",
-        "reference": "संदर्भ"
+        "securityLegal": "सुरक्षा और कानूनी"
       },
       "items": {
         "overview": "स्वागत है",
@@ -146,7 +145,6 @@
         "marketLifecycle": "मार्केट लाइफसाइकिल",
         "governance": "गवर्नेंस",
         "emergencyControls": "आपातकालीन नियंत्रण",
-        "contractList": "कॉन्ट्रैक्ट्स",
         "addresses": "कॉन्ट्रैक्ट पते",
         "parameters": "मार्केट पैरामीटर",
         "accessControls": "एक्सेस नियंत्रण",
@@ -161,7 +159,8 @@
         "copy": "कॉपी करें",
         "copied": "कॉपी हो गया",
         "explorer": "ब्लॉक एक्सप्लोरर खोलता है",
-        "updated": "अंतिम अपडेट {date}"
+        "updated": "अंतिम अपडेट {date}",
+        "testnetBadge": "टेस्टनेट"
       }
     },
     "faqUi": {

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import type { ReactNode } from "react"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
+import { NetworkBadge } from "@/components/network-badge"
 import { ReferenceCopyButton } from "@/components/reference/reference-copy-button"
 import { ReferenceNetworkView } from "@/components/reference/reference-network-view"
 import { Link } from "@/i18n/navigation"
@@ -264,7 +265,13 @@ export async function ReferencePage({
 
   const header = (
     <>
-      {pageHeader ?? <DeveloperDocPageHeader title={document.title} description={document.description} />}
+      {pageHeader ?? (
+        <DeveloperDocPageHeader
+          title={document.title}
+          description={document.description}
+          badge={<NetworkBadge label={t("testnetBadge")} />}
+        />
+      )}
       {document.updated ? (
         <p className="-mt-6 mb-8 type-doc-body text-type-secondary">
           {t("updated", { date: document.updated })}

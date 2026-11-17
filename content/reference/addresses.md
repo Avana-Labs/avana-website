@@ -8,6 +8,8 @@ Each chain has one Avana Hub on Aave V4, with a Lend Spoke and the CDP Spokes wh
 
 Market pools and risk values are on [Market Parameters](/developers/reference/parameters); roles and who can change what are on [Access Control](/developers/reference/access-controls).
 
+Every Avana chain runs the standard, unmodified Aave V4 release pinned at commit `a3ef63ea6415d25237a9775bf66e76e9993561c2`, and Avana's timelock and upgradeable contracts use OpenZeppelin Contracts and Contracts Upgradeable v5.1.0, pinned by commit. The libraries LPPriceMath, SettlementMath and AvanaRoles are compiled into the contracts that use them and have no address of their own.
+
 ## Ethereum Sepolia
 - network: ethereum-sepolia
 
@@ -41,7 +43,7 @@ One Hub with the Lend Spoke and 6 CDP Spokes listing 10 markets. Market pools an
 | --- | --- | --- |
 | Lend Spoke | Supply-only Aave V4 Spoke where lenders supply GHO, USDC and USDT for Avana borrowers to draw through the CDP Spokes. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.lendSpokes.lendEthereum} |
 
-> Each Spoke has its own AaveOracle, created with the Spoke; read its address from the Spoke's `ORACLE()`.
+> Each Spoke has its own AaveOracle, created with the Spoke; read its address from the Spoke's `ORACLE()`. Each vault-token reserve also names the Aave treasury Spoke as its fee receiver, with add and draw caps of 0, so it never holds vault tokens.
 
 ### Avana core
 
@@ -69,7 +71,7 @@ The contracts Avana deploys on this chain. For an upgradeable contract the addre
 | DebtOracle, USDC | Price source of the USDC debt reserve on every CDP Spoke's AaveOracle, with failover to an alternate and a standby route. GHO is priced at a fixed $1 and needs none. Upgradeable through the AvanaTimelock. | @{debtReserves.USDC.debtOracle} |
 | AvanaCreate3Factory | Deploys Avana contracts at addresses that depend only on the deployer and a salt, so every address is known before deployment. Immutable. | @{create3Factory} |
 
-> Each market also has its own vault token, LPOracle proxy and swap routes. Those belong to the market and are recorded in the MarketRegistry and the release manifest.
+> Each market also has its own vault token, LPOracle proxy and swap routes, with a primary and a backup route per pool token and debt asset. Those belong to the market and are recorded in the MarketRegistry and the release manifest.
 
 ### Periphery
 
@@ -129,7 +131,7 @@ Contracts Avana relies on but does not deploy. On the Sepolia networks some are 
 | UNI / USD price feed | Primary USD price feed of UNI, read by the Avana oracles that price it. | @{external.feed.UNI / USD (primary)} |
 | LINK / USD price feed | Primary USD price feed of LINK, read by the Avana oracles that price it. | @{external.feed.LINK / USD (primary)} |
 
-> Each token also has an alternate route, a standby route and an independent second price source; their addresses are in the release manifest.
+> Each token also has an alternate route, a standby route and an independent second price source; their addresses are in the release manifest. The RiskModule also reads `paused()` on USDC and `basisPointsRate()` on USDT for its issuer-action circuit breaker.
 
 ### Assets
 
@@ -174,7 +176,7 @@ One Hub with the Lend Spoke and 3 CDP Spokes listing 12 markets. Market pools an
 | --- | --- | --- |
 | Lend Spoke | Supply-only Aave V4 Spoke where lenders supply GHO, USDC and USDT for Avana borrowers to draw through the CDP Spokes. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.lendSpokes.lendBase} |
 
-> Each Spoke has its own AaveOracle, created with the Spoke; read its address from the Spoke's `ORACLE()`.
+> Each Spoke has its own AaveOracle, created with the Spoke; read its address from the Spoke's `ORACLE()`. Each vault-token reserve also names the Aave treasury Spoke as its fee receiver, with add and draw caps of 0, so it never holds vault tokens.
 
 ### Avana core
 
@@ -202,7 +204,7 @@ The contracts Avana deploys on this chain. For an upgradeable contract the addre
 | DebtOracle, USDC | Price source of the USDC debt reserve on every CDP Spoke's AaveOracle, with failover to an alternate and a standby route. GHO is priced at a fixed $1 and needs none. Upgradeable through the AvanaTimelock. | @{debtReserves.USDC.debtOracle} |
 | AvanaCreate3Factory | Deploys Avana contracts at addresses that depend only on the deployer and a salt, so every address is known before deployment. Immutable. | @{create3Factory} |
 
-> Each market also has its own vault token, LPOracle proxy and swap routes. Those belong to the market and are recorded in the MarketRegistry and the release manifest.
+> Each market also has its own vault token, LPOracle proxy and swap routes, with a primary and a backup route per pool token and debt asset. Those belong to the market and are recorded in the MarketRegistry and the release manifest.
 
 ### Periphery
 
@@ -269,7 +271,7 @@ Contracts Avana relies on but does not deploy. On the Sepolia networks some are 
 | SPCXc / USD price feed | Primary USD price feed of SPCXc, read by the Avana oracles that price it. | @{external.feed.SPCXc / USD (primary)} |
 | METAc / USD price feed | Primary USD price feed of METAc, read by the Avana oracles that price it. | @{external.feed.METAc / USD (primary)} |
 
-> Each token also has an alternate route, a standby route and an independent second price source; their addresses are in the release manifest.
+> Each token also has an alternate route, a standby route and an independent second price source; their addresses are in the release manifest. The RiskModule also reads `paused()` on USDC and `basisPointsRate()` on USDT for its issuer-action circuit breaker.
 
 ### Assets
 

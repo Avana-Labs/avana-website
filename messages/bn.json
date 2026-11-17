@@ -102,9 +102,8 @@
         "liquidation": "লিকুইডেশন ফ্রেমওয়ার্ক",
         "integrations": "সমর্থিত ইন্টিগ্রেশনস",
         "safety": "নিরাপত্তা ব্যবস্থাগুলি",
-        "legal": "আইন ও নিয়মনীতি",
         "copilot": "AI-কে জিজ্ঞাসা করুন",
-        "reference": "রেফারেন্স"
+        "securityLegal": "নিরাপত্তা ও আইনি"
       },
       "items": {
         "overview": "স্বাগতম",
@@ -146,7 +145,6 @@
         "marketLifecycle": "মার্কেট লাইফসাইকেল",
         "governance": "গভর্ন্যান্স",
         "emergencyControls": "জরুরি নিয়ন্ত্রণ",
-        "contractList": "কন্ট্র্যাক্ট",
         "addresses": "কন্ট্র্যাক্ট ঠিকানা",
         "parameters": "মার্কেট প্যারামিটার",
         "accessControls": "অ্যাক্সেস নিয়ন্ত্রণ",
@@ -161,7 +159,8 @@
         "copy": "কপি",
         "copied": "কপি হয়েছে",
         "explorer": "ব্লক এক্সপ্লোরার খোলে",
-        "updated": "সর্বশেষ হালনাগাদ {date}"
+        "updated": "সর্বশেষ হালনাগাদ {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

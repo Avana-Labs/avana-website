@@ -102,9 +102,8 @@
         "liquidation": "清算の枠組み",
         "integrations": "サポートされている統合",
         "safety": "安全装置",
-        "legal": "法務・コンプライアンス",
         "copilot": "AI に質問",
-        "reference": "リファレンス"
+        "securityLegal": "セキュリティと法務"
       },
       "items": {
         "overview": "ようこそ",
@@ -146,7 +145,6 @@
         "marketLifecycle": "マーケットのライフサイクル",
         "governance": "ガバナンス",
         "emergencyControls": "緊急時コントロール",
-        "contractList": "コントラクト",
         "addresses": "コントラクトアドレス",
         "parameters": "マーケットパラメータ",
         "accessControls": "アクセス制御",
@@ -161,7 +159,8 @@
         "copy": "コピー",
         "copied": "コピーしました",
         "explorer": "ブロックエクスプローラーを開きます",
-        "updated": "最終更新 {date}"
+        "updated": "最終更新 {date}",
+        "testnetBadge": "テストネット"
       }
     },
     "faqUi": {

@@ -102,9 +102,8 @@
         "liquidation": "Quadro di liquidazione",
         "integrations": "Integrazioni supportate",
         "safety": "Meccanismi di sicurezza",
-        "legal": "Legale e Conformità",
         "copilot": "Chiedi all'IA",
-        "reference": "Riferimento"
+        "securityLegal": "Sicurezza e note legali"
       },
       "items": {
         "overview": "Benvenuto",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Ciclo di vita del mercato",
         "governance": "Governance",
         "emergencyControls": "Controlli di emergenza",
-        "contractList": "Contratti",
         "addresses": "Indirizzi dei contratti",
         "parameters": "Parametri dei mercati",
         "accessControls": "Controllo degli accessi",
@@ -161,7 +159,8 @@
         "copy": "Copia",
         "copied": "Copiato",
         "explorer": "apre il block explorer",
-        "updated": "Ultimo aggiornamento {date}"
+        "updated": "Ultimo aggiornamento {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

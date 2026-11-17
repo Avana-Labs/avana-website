@@ -102,9 +102,8 @@
         "liquidation": "Tsarin Ƙarshewa",
         "integrations": "Haɗin da ake tallafawa",
         "safety": "Hanyoyin Tsaro",
-        "legal": "Shari'a da Bin Doka",
         "copilot": "Tambayi AI",
-        "reference": "Bayanan Tunani"
+        "securityLegal": "Tsaro da Shari'a"
       },
       "items": {
         "overview": "Barka da zuwa",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Zagayen Rayuwar Kasuwa",
         "governance": "Gudanarwa",
         "emergencyControls": "Matakan Gaggawa",
-        "contractList": "Kwangiloli",
         "addresses": "Adireshin Kwangiloli",
         "parameters": "Sigogin Kasuwa",
         "accessControls": "Ikon Shiga",
@@ -161,7 +159,8 @@
         "copy": "Kwafa",
         "copied": "An kwafa",
         "explorer": "yana buɗe mai binciken bulo",
-        "updated": "Sabuntawa ta ƙarshe {date}"
+        "updated": "Sabuntawa ta ƙarshe {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

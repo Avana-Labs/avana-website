@@ -102,9 +102,8 @@
         "liquidation": "清算框架",
         "integrations": "支持的集成",
         "safety": "安全機制",
-        "legal": "法律與合規",
         "copilot": "詢問 AI",
-        "reference": "參考"
+        "securityLegal": "安全與法律"
       },
       "items": {
         "overview": "歡迎",
@@ -146,7 +145,6 @@
         "marketLifecycle": "市場生命週期",
         "governance": "治理",
         "emergencyControls": "緊急控制",
-        "contractList": "合約",
         "addresses": "合約地址",
         "parameters": "市場參數",
         "accessControls": "存取控制",
@@ -161,7 +159,8 @@
         "copy": "複製",
         "copied": "已複製",
         "explorer": "開啟區塊瀏覽器",
-        "updated": "最後更新 {date}"
+        "updated": "最後更新 {date}",
+        "testnetBadge": "測試網"
       }
     },
     "faqUi": {

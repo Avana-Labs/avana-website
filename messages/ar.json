@@ -102,9 +102,8 @@
         "liquidation": "إطار التصفية",
         "integrations": "التكاملات المدعومة",
         "safety": "آليات السلامة",
-        "legal": "القانونية والامتثال",
         "copilot": "اسأل الذكاء الاصطناعي",
-        "reference": "المرجع"
+        "securityLegal": "الأمان والشؤون القانونية"
       },
       "items": {
         "overview": "مرحباً",
@@ -146,7 +145,6 @@
         "marketLifecycle": "دورة حياة السوق",
         "governance": "الحوكمة",
         "emergencyControls": "ضوابط الطوارئ",
-        "contractList": "العقود",
         "addresses": "عناوين العقود",
         "parameters": "معاملات الأسواق",
         "accessControls": "التحكم في الوصول",
@@ -161,7 +159,8 @@
         "copy": "نسخ",
         "copied": "تم النسخ",
         "explorer": "يفتح مستكشف الكتل",
-        "updated": "آخر تحديث {date}"
+        "updated": "آخر تحديث {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

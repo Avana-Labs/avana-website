@@ -102,9 +102,8 @@
         "liquidation": "Tasfiye Çerçevesi",
         "integrations": "Desteklenen Entegrasyonlar",
         "safety": "Güvenlik Mekanizmaları",
-        "legal": "Hukuk & Uyum",
         "copilot": "Yapay zekaya sor",
-        "reference": "Referans"
+        "securityLegal": "Güvenlik ve Hukuk"
       },
       "items": {
         "overview": "Hoş geldiniz",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Piyasa Yaşam Döngüsü",
         "governance": "Yönetişim",
         "emergencyControls": "Acil Durum Kontrolleri",
-        "contractList": "Sözleşmeler",
         "addresses": "Sözleşme Adresleri",
         "parameters": "Piyasa Parametreleri",
         "accessControls": "Erişim Denetimi",
@@ -161,7 +159,8 @@
         "copy": "Kopyala",
         "copied": "Kopyalandı",
         "explorer": "blok gezginini açar",
-        "updated": "Son güncelleme {date}"
+        "updated": "Son güncelleme {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

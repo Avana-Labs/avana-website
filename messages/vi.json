@@ -102,9 +102,8 @@
         "liquidation": "Khung pháp lý thanh lý",
         "integrations": "Các tích hợp được hỗ trợ",
         "safety": "Cơ chế an toàn",
-        "legal": "Pháp lý & Tuân thủ",
         "copilot": "Hỏi AI",
-        "reference": "Tham chiếu"
+        "securityLegal": "Bảo mật & Pháp lý"
       },
       "items": {
         "overview": "Chào mừng",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Vòng đời thị trường",
         "governance": "Quản trị",
         "emergencyControls": "Biện pháp khẩn cấp",
-        "contractList": "Hợp đồng",
         "addresses": "Địa chỉ hợp đồng",
         "parameters": "Tham số thị trường",
         "accessControls": "Kiểm soát truy cập",
@@ -161,7 +159,8 @@
         "copy": "Sao chép",
         "copied": "Đã sao chép",
         "explorer": "mở trình khám phá khối",
-        "updated": "Cập nhật lần cuối {date}"
+        "updated": "Cập nhật lần cuối {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

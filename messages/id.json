@@ -102,9 +102,8 @@
         "liquidation": "Kerangka Likuidasi",
         "integrations": "Integrasi yang Didukung",
         "safety": "Mekanisme Keamanan",
-        "legal": "Hukum & Kepatuhan",
         "copilot": "Tanya AI",
-        "reference": "Referensi"
+        "securityLegal": "Keamanan & Hukum"
       },
       "items": {
         "overview": "Selamat datang",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Siklus Hidup Pasar",
         "governance": "Tata Kelola",
         "emergencyControls": "Kontrol Darurat",
-        "contractList": "Kontrak",
         "addresses": "Alamat Kontrak",
         "parameters": "Parameter Pasar",
         "accessControls": "Kontrol Akses",
@@ -161,7 +159,8 @@
         "copy": "Salin",
         "copied": "Tersalin",
         "explorer": "membuka penjelajah blok",
-        "updated": "Terakhir diperbarui {date}"
+        "updated": "Terakhir diperbarui {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

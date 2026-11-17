@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import bundleAnalyzer from "@next/bundle-analyzer";
 import createNextIntlPlugin from "next-intl/plugin";
 import { legacyBlogRedirects } from "./src/lib/site";
+import { localeCodes } from "./src/i18n/locales";
 
 const withNextIntl = createNextIntlPlugin({
   requestConfig: "./src/i18n/request.ts",
@@ -20,6 +21,16 @@ const legacyMarketingRedirects = [
   // /credit-lines no longer exists; send the legacy webapp URL home.
   { source: "/webapp", destination: "/" },
   { source: "/credit-lines", destination: "/" },
+];
+
+// The Contracts reference page was merged into Contract Addresses. English has no locale prefix.
+const localePattern = localeCodes.join("|");
+const legacyDocsRedirects = [
+  { source: "/developers/reference/contracts", destination: "/developers/reference/addresses" },
+  {
+    source: `/:locale(${localePattern})/developers/reference/contracts`,
+    destination: "/:locale/developers/reference/addresses",
+  },
 ];
 
 /**
@@ -210,7 +221,7 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return [...legacyBlogRedirects, ...legacyMarketingRedirects].map((redirect) => ({
+    return [...legacyBlogRedirects, ...legacyMarketingRedirects, ...legacyDocsRedirects].map((redirect) => ({
       ...redirect,
       permanent: true,
     }))

@@ -116,8 +116,7 @@
         "copilot": "Ask AI",
         "integrations": "Supported Integrations",
         "safety": "Safety Mechanisms",
-        "legal": "Legal & Compliance",
-        "reference": "Reference"
+        "securityLegal": "Security & Legal"
       },
       "items": {
         "overview": "Welcome",
@@ -159,7 +158,6 @@
         "marketLifecycle": "Market Lifecycle",
         "governance": "Governance",
         "emergencyControls": "Emergency Controls",
-        "contractList": "Contracts",
         "addresses": "Contract Addresses",
         "parameters": "Market Parameters",
         "accessControls": "Access Control",
@@ -174,7 +172,8 @@
         "copy": "Copy",
         "copied": "Copied",
         "explorer": "opens the block explorer",
-        "updated": "Last updated {date}"
+        "updated": "Last updated {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

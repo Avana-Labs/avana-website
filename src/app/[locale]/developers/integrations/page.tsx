@@ -70,7 +70,7 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
           </p>
           <p className="type-doc-body">
             Per-chain contract addresses are listed on the contracts reference page:{" "}
-            <Link href="/developers/reference/contracts" className="text-type-accent hover:underline">Contracts</Link>.
+            <Link href="/developers/reference/addresses" className="text-type-accent hover:underline">Contract Addresses</Link>.
           </p>
         </section>
 

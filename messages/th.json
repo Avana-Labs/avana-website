@@ -102,9 +102,8 @@
         "liquidation": "กรอบงานการชำระบัญชี",
         "integrations": "การรวมระบบที่รองรับ",
         "safety": "กลไกความปลอดภัย",
-        "legal": "กฎหมายและการปฏิบัติตาม",
         "copilot": "ถาม AI",
-        "reference": "ข้อมูลอ้างอิง"
+        "securityLegal": "ความปลอดภัยและกฎหมาย"
       },
       "items": {
         "overview": "ยินดีต้อนรับ",
@@ -146,7 +145,6 @@
         "marketLifecycle": "วงจรชีวิตของตลาด",
         "governance": "การกำกับดูแล",
         "emergencyControls": "การควบคุมฉุกเฉิน",
-        "contractList": "สัญญา",
         "addresses": "ที่อยู่สัญญา",
         "parameters": "พารามิเตอร์ตลาด",
         "accessControls": "การควบคุมการเข้าถึง",
@@ -161,7 +159,8 @@
         "copy": "คัดลอก",
         "copied": "คัดลอกแล้ว",
         "explorer": "เปิดตัวสำรวจบล็อก",
-        "updated": "อัปเดตล่าสุด {date}"
+        "updated": "อัปเดตล่าสุด {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

@@ -102,9 +102,8 @@
         "liquidation": "Liquidationsrahmen",
         "integrations": "Unterstützte Integrationen",
         "safety": "Sicherheitsmechanismen",
-        "legal": "Recht & Compliance",
         "copilot": "KI fragen",
-        "reference": "Referenz"
+        "securityLegal": "Sicherheit & Recht"
       },
       "items": {
         "overview": "Willkommen",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Markt-Lebenszyklus",
         "governance": "Governance",
         "emergencyControls": "Notfallkontrollen",
-        "contractList": "Verträge",
         "addresses": "Vertragsadressen",
         "parameters": "Marktparameter",
         "accessControls": "Zugriffskontrolle",
@@ -161,7 +159,8 @@
         "copy": "Kopieren",
         "copied": "Kopiert",
         "explorer": "öffnet den Block-Explorer",
-        "updated": "Zuletzt aktualisiert {date}"
+        "updated": "Zuletzt aktualisiert {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

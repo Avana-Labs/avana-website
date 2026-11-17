@@ -102,9 +102,8 @@
         "liquidation": "מסגרת חיסול",
         "integrations": "אינטגרציות נתמכות",
         "safety": "מנגנוני בטיחות",
-        "legal": "משפטי וציות",
         "copilot": "שאל את הבינה המלאכותית",
-        "reference": "עיון"
+        "securityLegal": "אבטחה ומשפט"
       },
       "items": {
         "overview": "ברוכים הבאים",
@@ -146,7 +145,6 @@
         "marketLifecycle": "מחזור חיי שוק",
         "governance": "ממשל",
         "emergencyControls": "בקרות חירום",
-        "contractList": "חוזים",
         "addresses": "כתובות חוזים",
         "parameters": "פרמטרי שווקים",
         "accessControls": "בקרת גישה",
@@ -161,7 +159,8 @@
         "copy": "העתקה",
         "copied": "הועתק",
         "explorer": "פותח את סייר הבלוקים",
-        "updated": "עודכן לאחרונה {date}"
+        "updated": "עודכן לאחרונה {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

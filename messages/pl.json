@@ -102,9 +102,8 @@
         "liquidation": "Ramowy plan likwidacji",
         "integrations": "Obsługiwane integracje",
         "safety": "Mechanizmy bezpieczeństwa",
-        "legal": "Prawo i zgodność",
         "copilot": "Zapytaj AI",
-        "reference": "Dokumentacja referencyjna"
+        "securityLegal": "Bezpieczeństwo i kwestie prawne"
       },
       "items": {
         "overview": "Witamy",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Cykl życia rynku",
         "governance": "Zarządzanie",
         "emergencyControls": "Kontrole awaryjne",
-        "contractList": "Kontrakty",
         "addresses": "Adresy kontraktów",
         "parameters": "Parametry rynków",
         "accessControls": "Kontrola dostępu",
@@ -161,7 +159,8 @@
         "copy": "Kopiuj",
         "copied": "Skopiowano",
         "explorer": "otwiera eksplorator bloków",
-        "updated": "Ostatnia aktualizacja {date}"
+        "updated": "Ostatnia aktualizacja {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

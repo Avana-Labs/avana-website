@@ -102,9 +102,8 @@
         "liquidation": "清算框架",
         "integrations": "支持的集成",
         "safety": "安全机制",
-        "legal": "法律与合规",
         "copilot": "询问 AI",
-        "reference": "参考"
+        "securityLegal": "安全与法律"
       },
       "items": {
         "overview": "欢迎",
@@ -146,7 +145,6 @@
         "marketLifecycle": "市场生命周期",
         "governance": "治理",
         "emergencyControls": "紧急控制",
-        "contractList": "合约",
         "addresses": "合约地址",
         "parameters": "市场参数",
         "accessControls": "访问控制",
@@ -161,7 +159,8 @@
         "copy": "复制",
         "copied": "已复制",
         "explorer": "打开区块浏览器",
-        "updated": "最后更新 {date}"
+        "updated": "最后更新 {date}",
+        "testnetBadge": "测试网"
       }
     },
     "faqUi": {

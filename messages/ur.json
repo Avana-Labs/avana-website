@@ -102,9 +102,8 @@
         "liquidation": "لیکویڈیشن فریم ورک",
         "integrations": "معاونت یافتہ انضمام",
         "safety": "حفاظتی میکنزم",
-        "legal": "قانونی اور تعمیل",
         "copilot": "AI سے پوچھیں",
-        "reference": "حوالہ"
+        "securityLegal": "سیکیورٹی اور قانونی"
       },
       "items": {
         "overview": "خوش آمدید",
@@ -146,7 +145,6 @@
         "marketLifecycle": "مارکیٹ لائف سائیکل",
         "governance": "گورننس",
         "emergencyControls": "ہنگامی کنٹرولز",
-        "contractList": "کنٹریکٹس",
         "addresses": "کنٹریکٹ پتے",
         "parameters": "مارکیٹ پیرامیٹرز",
         "accessControls": "رسائی کنٹرول",
@@ -161,7 +159,8 @@
         "copy": "کاپی کریں",
         "copied": "کاپی ہو گیا",
         "explorer": "بلاک ایکسپلورر کھولتا ہے",
-        "updated": "آخری تازہ کاری {date}"
+        "updated": "آخری تازہ کاری {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

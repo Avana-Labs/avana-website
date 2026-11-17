@@ -102,9 +102,8 @@
         "liquidation": "چارچوب تصفیه",
         "integrations": "ادغام‌های پشتیبانی‌شده",
         "safety": "مکانیسم‌های ایمنی",
-        "legal": "حقوقی و انطباق",
         "copilot": "پرسش از هوش مصنوعی",
-        "reference": "مرجع"
+        "securityLegal": "امنیت و حقوقی"
       },
       "items": {
         "overview": "خوش آمدید",
@@ -146,7 +145,6 @@
         "marketLifecycle": "چرخه عمر بازار",
         "governance": "حاکمیت",
         "emergencyControls": "کنترل‌های اضطراری",
-        "contractList": "قراردادها",
         "addresses": "آدرس‌های قرارداد",
         "parameters": "پارامترهای بازار",
         "accessControls": "کنترل دسترسی",
@@ -161,7 +159,8 @@
         "copy": "کپی",
         "copied": "کپی شد",
         "explorer": "کاوشگر بلاک را باز می‌کند",
-        "updated": "آخرین به‌روزرسانی {date}"
+        "updated": "آخرین به‌روزرسانی {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

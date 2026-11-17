@@ -102,9 +102,8 @@
         "liquidation": "Liquidatiekader",
         "integrations": "Ondersteunde integraties",
         "safety": "Veiligheidsmechanismen",
-        "legal": "Juridisch & Compliance",
         "copilot": "Vraag AI",
-        "reference": "Referentie"
+        "securityLegal": "Beveiliging & juridisch"
       },
       "items": {
         "overview": "Welkom",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Marktlevenscyclus",
         "governance": "Governance",
         "emergencyControls": "Noodmaatregelen",
-        "contractList": "Contracten",
         "addresses": "Contractadressen",
         "parameters": "Marktparameters",
         "accessControls": "Toegangscontrole",
@@ -161,7 +159,8 @@
         "copy": "Kopiëren",
         "copied": "Gekopieerd",
         "explorer": "opent de blockverkenner",
-        "updated": "Laatst bijgewerkt {date}"
+        "updated": "Laatst bijgewerkt {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

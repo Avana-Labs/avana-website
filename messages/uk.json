@@ -102,9 +102,8 @@
         "liquidation": "Рамки ліквідації",
         "integrations": "Підтримувані інтеграції",
         "safety": "Механізми безпеки",
-        "legal": "Юридичний та комплаєнс",
         "copilot": "Запитати ШІ",
-        "reference": "Довідник"
+        "securityLegal": "Безпека та правова інформація"
       },
       "items": {
         "overview": "Ласкаво просимо",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Життєвий цикл ринку",
         "governance": "Управління",
         "emergencyControls": "Екстрені заходи",
-        "contractList": "Контракти",
         "addresses": "Адреси контрактів",
         "parameters": "Параметри ринків",
         "accessControls": "Контроль доступу",
@@ -161,7 +159,8 @@
         "copy": "Копіювати",
         "copied": "Скопійовано",
         "explorer": "відкриває оглядач блоків",
-        "updated": "Останнє оновлення {date}"
+        "updated": "Останнє оновлення {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {

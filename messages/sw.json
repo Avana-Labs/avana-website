@@ -102,9 +102,8 @@
         "liquidation": "Mfumo wa Utoaji Mali",
         "integrations": "Uingizaji wa Msaada",
         "safety": "Vifaa vya Usalama",
-        "legal": "Kisheria na Uzingatiaji",
         "copilot": "Uliza AI",
-        "reference": "Marejeleo"
+        "securityLegal": "Usalama na Sheria"
       },
       "items": {
         "overview": "Karibu",
@@ -146,7 +145,6 @@
         "marketLifecycle": "Mzunguko wa Maisha wa Soko",
         "governance": "Utawala",
         "emergencyControls": "Udhibiti wa Dharura",
-        "contractList": "Mikataba",
         "addresses": "Anwani za Mikataba",
         "parameters": "Vigezo vya Masoko",
         "accessControls": "Udhibiti wa Ufikiaji",
@@ -161,7 +159,8 @@
         "copy": "Nakili",
         "copied": "Imenakiliwa",
         "explorer": "hufungua kichunguzi cha bloku",
-        "updated": "Ilisasishwa mwisho {date}"
+        "updated": "Ilisasishwa mwisho {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
