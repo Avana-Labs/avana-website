@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Preços",
-      "description": "Preços claros para empréstimos, depósitos e estratégias garantidas por LP na Avana."
+      "description": "O que a Avana cobra: uma taxa de interface em cada ação, uma parte dos ganhos de liquidação e pontos."
     },
     "siteTitle": "Avana - Emprestar contra LP posições em Aave v4",
     "siteDescription": "Desbloqueie liquidez dos seus LP tokens. Pegue emprestado até 80% contra Uniswap, Curve e Balancer posições enquanto continua a ganhar taxas de negociação em Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Preços",
-    "subtitleLine1": "As taxas e os rendimentos dependem do mercado,",
-    "subtitleLine2": "da posição e do percurso escolhido.",
-    "interfaceRate": "Taxa de interface — 15 pb (0,15%)",
-    "includes": "Inclui:",
-    "borrow": {
-      "title": "Pedir emprestado",
-      "subtitle": "Para crédito garantido por LP",
-      "value": "Variável",
-      "unit": "juros",
-      "description": "O custo do empréstimo segue o mercado Aave v4 selecionado.",
+    "subtitleLine1": "Uma taxa do app em cada ação e uma parte dos ganhos de liquidação.",
+    "subtitleLine2": "As taxas de empréstimo e os prêmios de risco são taxas do Aave V4, definidas pela Aave DAO e pagas aos credores. A Avana não fica com nenhuma parte delas.",
+    "interfaceRate": "Taxa de interface: 10 bps (0,10%)",
+    "includes": "Detalhes:",
+    "frontEnd": {
+      "title": "Taxa de interface",
+      "subtitle": "Cobrada pelo app Avana",
+      "value": "10",
+      "unit": "bps por ação",
+      "description": "Adicionada à sua ação como uma única transferência de token no mesmo lote de transações: swaps, tomar empréstimo, pagar, empenhar e emprestar. Nenhum contrato a cobra, e ela tem limite de 25 bps.",
       "items": {
-        "one": "Taxa definida pelo mercado",
-        "two": "Acumula apenas sobre a dívida em aberto",
-        "three": "Apresentado antes da confirmação"
+        "one": "9 bps após 30 dias de adesão",
+        "two": "8 bps após 90 dias, 7 bps após 180 dias",
+        "three": "A adesão conta a partir da primeira interação da sua carteira"
       }
     },
-    "lend": {
-      "title": "Emprestar",
-      "subtitle": "Forneça capital ao Hub",
-      "value": "Mercado",
-      "unit": "APY",
-      "description": "Ganhe com a procura de empréstimos garantidos por LP através do Lend Spoke da Avana.",
+    "liquidation": {
+      "title": "Taxa de liquidação",
+      "subtitle": "Somente quando uma posição é liquidada",
+      "value": "20%",
+      "unit": "do ganho de oráculo",
+      "description": "O ganho de oráculo é o valor de oráculo do colateral apreendido menos a dívida paga. A parte da Avana é limitada pelo excedente que a liquidação realmente gera, então a dívida é sempre paga primeiro.",
       "items": {
-        "one": "O rendimento varia com a utilização",
-        "two": "Fornecimento em mercados suportados",
-        "three": "APY atual apresentado na interface"
+        "one": "O liquidante fica com o restante do ganho como recompensa",
+        "two": "O valor recuperado acima do valor de oráculo vai para o tomador, ou para a First-Loss Reserve se restar dívida",
+        "three": "Paga no ativo de dívida ao destinatário de taxas da Avana, sujeito a timelock"
       }
     },
-    "multiply": {
-      "title": "Multiplicar",
-      "subtitle": "Para exposição LP gerida",
-      "value": "Variável",
-      "unit": "taxa da estratégia",
-      "description": "Aumente a exposição LP com estratégias geridas apoiadas por posições AMM suportadas.",
+    "points": {
+      "title": "Pontos",
+      "subtitle": "Recompensas por usar a Avana",
+      "value": "1",
+      "unit": "ponto por $1 em taxas",
+      "description": "Os pontos são registrados no app Avana. Não há token e nada fica on-chain. Resgate pontos por um desconto temporário na taxa de interface.",
       "items": {
-        "one": "Use posições LP suportadas como garantia",
-        "two": "A exposição permanece ligada ao pool subjacente",
-        "three": "Os controlos de alavancagem e saída permanecem visíveis"
+        "one": "1 ponto por $1 pago em taxas de interface",
+        "two": "100 pontos a cada 30 dias de adesão",
+        "three": "Missões: primeiro depósito, empréstimo, pagamento, empenho, indicações e mais"
       }
     },
     "faq": {
       "title": "Perguntas frequentes",
       "items": {
-        "interfaceFee": {
-          "question": "O que a Avana cobra pelo uso da interface?",
-          "answer": "A taxa oficial da interface é de 15 pb (0,15%) quando aplicável. É mostrada antes da assinatura e é separada de gas, taxas de swap, juros Aave e custos de liquidação."
+        "frontEndFee": {
+          "question": "O que o app Avana cobra?",
+          "answer": "Uma taxa de interface de 10 bps sobre o valor da ação (em um empenho ou saque de colateral, sobre o valor da posição), adicionada como uma única transferência no mesmo lote de transações da ação. Ela cai para 9, 8 e 7 bps após 30, 90 e 180 dias de adesão. Nunca passa de 25 bps, o teto do ARFC de listagem da Avana, e é exibida antes de você assinar."
         },
         "borrowRate": {
-          "question": "Os juros do empréstimo são fixos?",
-          "answer": "Não. São definidos pelo mercado Aave v4 selecionado e podem mudar com a utilização e os parâmetros do mercado. A taxa atual é mostrada antes do empréstimo."
+          "question": "A Avana fica com parte dos juros?",
+          "answer": "Não. As taxas de empréstimo e os prêmios de risco são taxas do Aave V4 definidas pela Aave DAO. Os juros vão para os credores do Hub, após qualquer taxa de liquidez que a Aave DAO defina para sua tesouraria. A Avana não fica com nenhuma parte deles."
         },
-        "lendingApy": {
-          "question": "Como é determinado o APY de lending?",
-          "answer": "O rendimento depende da utilização do mercado e da procura de empréstimos garantidos por LP. O APY atual é mostrado antes do fornecimento."
+        "liquidationFee": {
+          "question": "Como funciona a taxa de liquidação?",
+          "answer": "Quando uma posição é liquidada, a Avana fica com 20% do ganho de oráculo: o valor de oráculo do colateral apreendido menos a dívida paga. A taxa é limitada pelo excedente que a liquidação realmente gera, então nunca impede uma liquidação. O liquidante fica com o restante do ganho, e qualquer valor recuperado acima do valor de oráculo vai para o tomador."
+        },
+        "points": {
+          "question": "Como funcionam os pontos?",
+          "answer": "Você ganha 1 ponto por $1 pago em taxas de interface, 100 pontos a cada 30 dias de adesão e pontos por missões como seu primeiro depósito, empréstimo, pagamento, empenho e indicações. Resgate pontos por um desconto temporário na taxa de interface. Os pontos não são um token e não são registrados on-chain."
         },
         "separateCosts": {
           "question": "Quais custos são separados das taxas da Avana?",
-          "answer": "Gas de rede, taxas de swap DEX, juros do mercado Aave e custos de execução da liquidação são separados da taxa de interface. Reveja os detalhes antes de assinar."
-        },
-        "feeChanges": {
-          "question": "As taxas e os juros podem mudar?",
-          "answer": "Sim. As taxas de mercado mudam com a utilização e os parâmetros de risco, e a política da interface pode mudar. Verifique sempre o valor atual antes de assinar."
+          "answer": "Gas de rede, taxas de swap DEX e juros do Aave são separados. O app mostra a taxa, a estimativa de gas e o total antes de você assinar."
         }
       }
     }

@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Farashi",
-      "description": "Bayyanannun kuɗaɗe na karɓar rance, bayar da rance da dabarun da LP ke zama jingina a Avana."
+      "description": "Abin da Avana ke caji: kuɗin interface a kowane mataki, kaso daga ribar liquidation, da maki."
     },
     "siteTitle": "Avana - Ara Bisa Ga Matsayi LP Akan Aave v4",
     "siteDescription": "Buɗe ruwa daga cikin LP alamomin ku. Ara har zuwa 80% akan Uniswap, Curve, da Balancer matsayi yayin da kuke ci gaba da samun kuɗin ciniki akan Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Farashi",
-    "subtitleLine1": "Ƙimomi da riba sun dogara da kasuwa,",
-    "subtitleLine2": "matsayi da hanyar da ka zaɓa.",
-    "interfaceRate": "Kudin amfani da manhaja a gaba — 15 bps (0.15%)",
-    "includes": "Ya haɗa da:",
-    "borrow": {
-      "title": "Bashi",
-      "subtitle": "Don bashi mai goyon bayan LP",
-      "value": "Mai canzawa",
-      "unit": "riba",
-      "description": "Kudin bashi yana bin kasuwar Aave v4 da aka zaɓa.",
+    "subtitleLine1": "Kudin manhaja a kowane mataki da kaso daga ribar liquidation.",
+    "subtitleLine2": "Farashin rance da ƙarin kuɗin haɗari farashin Aave V4 ne, wanda Aave DAO ke saitawa kuma ake biyan masu ba da rance. Avana ba ta karɓar kaso daga ciki.",
+    "interfaceRate": "Kudin manhaja: 10 bps (0.10%)",
+    "includes": "Cikakkun bayanai:",
+    "frontEnd": {
+      "title": "Kudin manhaja",
+      "subtitle": "Manhajar Avana ce ke karɓa",
+      "value": "10",
+      "unit": "bps a kowane mataki",
+      "description": "Ana ƙara shi a matakinka a matsayin canja wurin token guda ɗaya a cikin rukunin ma’amaloli ɗaya: swap, karɓar rance, biyan bashi, jingina da ba da rance. Babu wata kwangila da ke karɓa, kuma iyakarsa 25 bps ce.",
       "items": {
-        "one": "Ribar da kasuwa ta saita",
-        "two": "Yana taruwa ne kan bashin da bai biya ba",
-        "three": "Ana nuna shi kafin tabbatarwa"
+        "one": "9 bps bayan kwanaki 30 na zama memba",
+        "two": "8 bps bayan kwanaki 90, 7 bps bayan kwanaki 180",
+        "three": "Ana ƙidaya zama memba daga mu’amalar farko ta walat ɗinka"
       }
     },
-    "lend": {
-      "title": "Ba da bashi",
-      "subtitle": "Samar da jari ga Hub",
-      "value": "Na kasuwa",
-      "unit": "APY",
-      "description": "Sami riba daga buƙatar da LP ke tallafawa ta Lend Spoke na Avana.",
+    "liquidation": {
+      "title": "Kudin liquidation",
+      "subtitle": "Sai lokacin da aka yi liquidation na matsayi",
+      "value": "20%",
+      "unit": "na ribar oracle",
+      "description": "Ribar oracle ita ce ƙimar oracle na jinginar da aka ƙwace ban da bashin da aka biya. Kason Avana yana da iyaka da rarar da liquidation ɗin ya samu a zahiri, don haka ana fara biyan bashin koyaushe.",
       "items": {
-        "one": "Riba tana canzawa da amfani",
-        "two": "Samar da jari a kasuwannin da ake tallafawa",
-        "three": "Ana nuna APY na yanzu a manhaja"
+        "one": "Mai liquidation yana riƙe sauran ribar a matsayin ladansa",
+        "two": "Abin da aka dawo da shi sama da ƙimar oracle yana zuwa ga mai karɓar rance, ko ga First-Loss Reserve idan bashi ya rage",
+        "three": "Ana biya a kadarar bashi ga mai karɓar kuɗin Avana da ke da timelock"
       }
     },
-    "multiply": {
-      "title": "Ninka",
-      "subtitle": "Don fallasa LP da ake sarrafawa",
-      "value": "Mai canzawa",
-      "unit": "ƙimar dabaru",
-      "description": "Ƙara fallasar LP da dabarun da ake sarrafawa bisa matsayin AMM da ake tallafawa.",
+    "points": {
+      "title": "Maki",
+      "subtitle": "Lada don amfani da Avana",
+      "value": "1",
+      "unit": "maki a kan kowane $1 na kudi",
+      "description": "Ana bin diddigin maki a cikin manhajar Avana. Babu token kuma babu komai a kan chain. Yi amfani da maki don samun ragi na ɗan lokaci a kan kudin manhaja.",
       "items": {
-        "one": "Yi amfani da matsayin LP da ake tallafawa a matsayin jingina",
-        "two": "Fallasa tana nan da alaƙa da pool na asali",
-        "three": "Ikon leverage da rufe matsayi ya kasance a bayyane"
+        "one": "Maki 1 a kan kowane $1 na kudin manhaja da aka biya",
+        "two": "Maki 100 a kowane kwanaki 30 na zama memba",
+        "three": "Ayyuka: ajiya ta farko, karɓar rance, biyan bashi, jingina, gayyata da ƙari"
       }
     },
     "faq": {
       "title": "Tambayoyin da ake yawan yi",
       "items": {
-        "interfaceFee": {
-          "question": "Me Avana ke caji don amfani da manhaja?",
-          "answer": "Kudin manhajar hukuma 15 bps (0.15%) ne idan ya dace. Ana nuna shi kafin sa hannu kuma ya bambanta da gas, kudin swap, ribar Aave da kudin liquidation."
+        "frontEndFee": {
+          "question": "Me manhajar Avana ke caji?",
+          "answer": "Kudin manhaja na 10 bps na adadin matakin (don jingina ko cire jingina, na ƙimar matsayin), wanda ake ƙarawa a matsayin canja wuri guda ɗaya a cikin rukunin ma’amaloli ɗaya da matakin. Yana sauka zuwa 9, 8 da 7 bps bayan kwanaki 30, 90 da 180 na zama memba. Ba ya taɓa wuce 25 bps, iyakar da ke cikin ARFC na jera Avana, kuma ana nuna shi kafin ka sa hannu."
         },
         "borrowRate": {
-          "question": "Shin ribar bashi tabbatacciya ce?",
-          "answer": "A'a. Kasuwar Aave v4 da aka zaɓa ce ke saita ta kuma tana iya canzawa da amfani da sigogin kasuwa. Ana nuna ƙimar yanzu kafin karɓar bashi."
+          "question": "Shin Avana tana karɓar kaso daga riba?",
+          "answer": "A’a. Farashin rance da ƙarin kuɗin haɗari farashin Aave V4 ne da Aave DAO ke saitawa. Riba tana zuwa ga masu ba da rance na Hub, bayan duk wani kudin liquidity da Aave DAO ke saitawa don baitulmalinta. Avana ba ta karɓar kaso daga ciki."
         },
-        "lendingApy": {
-          "question": "Ta yaya ake ƙayyade APY na ba da bashi?",
-          "answer": "Riba ta dogara da kasuwa, amfani da buƙatar masu karɓar bashi da LP ke tallafawa. Ana nuna APY na yanzu kafin samar da jari."
+        "liquidationFee": {
+          "question": "Yaya kudin liquidation yake aiki?",
+          "answer": "Idan aka yi liquidation na matsayi, Avana tana karɓar 20% na ribar oracle: ƙimar oracle na jinginar da aka ƙwace ban da bashin da aka biya. Kudin yana da iyaka da rarar da liquidation ɗin ya samu a zahiri, don haka ba ya taɓa hana liquidation. Mai liquidation yana riƙe sauran ribar, kuma duk abin da aka dawo da shi sama da ƙimar oracle yana zuwa ga mai karɓar rance."
+        },
+        "points": {
+          "question": "Yaya maki ke aiki?",
+          "answer": "Kana samun maki 1 a kan kowane $1 na kudin manhaja da aka biya, maki 100 a kowane kwanaki 30 na zama memba, da maki don ayyuka kamar ajiyarka ta farko, karɓar rance, biyan bashi, jingina da gayyata. Yi amfani da maki don samun ragi na ɗan lokaci a kan kudin manhaja. Maki ba token ba ne kuma ba a yin rikodinsu a kan chain."
         },
         "separateCosts": {
-          "question": "Wane kuɗi ne ya bambanta da kudin Avana?",
-          "answer": "Gas na hanyar sadarwa, kudin DEX swap, ribar kasuwar Aave da kudin aiwatar da liquidation sun bambanta da kudin manhajar hukuma. Duba bayanan ciniki kafin sa hannu."
-        },
-        "feeChanges": {
-          "question": "Shin kudade da ƙimomi na iya canzawa?",
-          "answer": "Eh. Ƙimomin kasuwa suna canzawa da amfani da sigogin haɗari, kuma manufofin manhaja na iya canzawa. Koyaushe tabbatar da adadin da aka nuna kafin sa hannu."
+          "question": "Waɗanne kuɗaɗe ne suka bambanta da kudin Avana?",
+          "answer": "Gas na hanyar sadarwa, kudin DEX swap da ribar Aave sun bambanta. Manhajar tana nuna kudin, ƙiyasin gas da jimilla kafin ka sa hannu."
         }
       }
     }

@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Tarification",
-      "description": "Une tarification claire pour emprunter, prêter et utiliser des stratégies garanties par des LP sur Avana."
+      "description": "Ce que facture Avana : des frais d’interface sur chaque action, une part des gains de liquidation et des points."
     },
     "siteTitle": "Avana - Emprunter contre LP positions sur Aave v4",
     "siteDescription": "Débloquez la liquidité de vos LP jetons. Empruntez jusqu'à 80 % contre les positions Uniswap, Curve et Balancer tout en continuant à gagner des frais de trading sur Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Tarification",
-    "subtitleLine1": "Les taux et les rendements dépendent du marché,",
-    "subtitleLine2": "de la position et du parcours choisi.",
-    "interfaceRate": "Frais d’interface — 15 pb (0,15 %)",
-    "includes": "Comprend :",
-    "borrow": {
-      "title": "Emprunter",
-      "subtitle": "Pour le crédit garanti par des LP",
-      "value": "Variable",
-      "unit": "intérêts",
-      "description": "Le coût de l’emprunt suit le marché Aave v4 sélectionné.",
+    "subtitleLine1": "Des frais d’interface sur chaque action et une part des gains de liquidation.",
+    "subtitleLine2": "Les taux d’emprunt et les primes de risque sont des taux Aave V4, fixés par l’Aave DAO et versés aux prêteurs. Avana n’en perçoit aucune part.",
+    "interfaceRate": "Frais d’interface : 10 bps (0,10 %)",
+    "includes": "Détails :",
+    "frontEnd": {
+      "title": "Frais d’interface",
+      "subtitle": "Prélevés par l’application Avana",
+      "value": "10",
+      "unit": "bps par action",
+      "description": "Ajoutés à votre action sous la forme d’un seul transfert de token dans le même lot de transactions : swaps, emprunt, remboursement, nantissement et prêt. Aucun contrat ne les prélève, et ils sont plafonnés à 25 bps.",
       "items": {
-        "one": "Taux fixé par le marché",
-        "two": "S’applique uniquement à la dette restante",
-        "three": "Affiché avant confirmation"
+        "one": "9 bps après 30 jours d’adhésion",
+        "two": "8 bps après 90 jours, 7 bps après 180 jours",
+        "three": "L’adhésion compte à partir de la première interaction de votre portefeuille"
       }
     },
-    "lend": {
-      "title": "Prêter",
-      "subtitle": "Fournir du capital au Hub",
-      "value": "Marché",
-      "unit": "APY",
-      "description": "Gagnez un rendement grâce à la demande d’emprunt garantie par des LP via le Lend Spoke d’Avana.",
+    "liquidation": {
+      "title": "Frais de liquidation",
+      "subtitle": "Uniquement lorsqu’une position est liquidée",
+      "value": "20 %",
+      "unit": "du gain oracle",
+      "description": "Le gain oracle est la valeur oracle du collatéral saisi moins la dette remboursée. La part d’Avana est plafonnée par l’excédent que la liquidation réalise effectivement, de sorte que la dette est toujours remboursée en premier.",
       "items": {
-        "one": "Le rendement varie selon l’utilisation",
-        "two": "Fourniture sur les marchés pris en charge",
-        "three": "APY en direct affiché dans l’interface"
+        "one": "Le liquidateur conserve le reste du gain en récompense",
+        "two": "Le montant récupéré au-delà de la valeur oracle revient à l’emprunteur, ou à la First-Loss Reserve s’il reste de la dette",
+        "three": "Versés dans l’actif de dette au destinataire des frais d’Avana, soumis à un timelock"
       }
     },
-    "multiply": {
-      "title": "Multiplier",
-      "subtitle": "Pour une exposition LP gérée",
-      "value": "Variable",
-      "unit": "taux de stratégie",
-      "description": "Amplifiez l’exposition LP avec des stratégies gérées garanties par des positions AMM prises en charge.",
+    "points": {
+      "title": "Points",
+      "subtitle": "Des récompenses pour l’utilisation d’Avana",
+      "value": "1",
+      "unit": "point par $1 de frais",
+      "description": "Les points sont suivis dans l’application Avana. Il n’y a pas de token et rien on-chain. Échangez vos points contre une réduction temporaire des frais d’interface.",
       "items": {
-        "one": "Utiliser des positions LP prises en charge comme garantie",
-        "two": "L’exposition reste liée au pool sous-jacent",
-        "three": "Les contrôles de levier et de sortie restent visibles"
+        "one": "1 point par $1 de frais d’interface payés",
+        "two": "100 points par tranche de 30 jours d’adhésion",
+        "three": "Quêtes : premier dépôt, emprunt, remboursement, nantissement, parrainages et plus"
       }
     },
     "faq": {
       "title": "Questions fréquentes",
       "items": {
-        "interfaceFee": {
-          "question": "Quels frais Avana facture-t-il pour utiliser l’interface ?",
-          "answer": "Les frais officiels d’interface sont de 15 pb (0,15 %) lorsqu’ils s’appliquent. Ils sont affichés avant la signature et sont distincts du gas, des frais de swap, des intérêts Aave et des coûts de liquidation."
+        "frontEndFee": {
+          "question": "Que facture l’application Avana ?",
+          "answer": "Des frais d’interface de 10 bps du montant de l’action (pour un nantissement ou un retrait de collatéral, de la valeur de la position), ajoutés sous la forme d’un seul transfert dans le même lot de transactions que l’action. Ils passent à 9, 8 et 7 bps après 30, 90 et 180 jours d’adhésion. Ils ne dépassent jamais 25 bps, le plafond fixé dans l’ARFC de listing d’Avana, et sont affichés avant que vous signiez."
         },
         "borrowRate": {
-          "question": "Les intérêts d’emprunt sont-ils fixes ?",
-          "answer": "Non. Ils sont définis par le marché Aave v4 sélectionné et peuvent évoluer avec l’utilisation et les paramètres du marché. Le taux actuel est affiché avant l’emprunt."
+          "question": "Avana perçoit-il une part des intérêts ?",
+          "answer": "Non. Les taux d’emprunt et les primes de risque sont des taux Aave V4 fixés par l’Aave DAO. Les intérêts reviennent aux prêteurs du Hub, après les éventuels frais de liquidité que l’Aave DAO fixe pour sa trésorerie. Avana n’en perçoit aucune part."
         },
-        "lendingApy": {
-          "question": "Comment l’APY de prêt est-il déterminé ?",
-          "answer": "Le rendement dépend de l’utilisation du marché et de la demande d’emprunteurs garantis par des LP. L’APY en direct est affiché avant la fourniture."
+        "liquidationFee": {
+          "question": "Comment fonctionnent les frais de liquidation ?",
+          "answer": "Lorsqu’une position est liquidée, Avana prend 20 % du gain oracle : la valeur oracle du collatéral saisi moins la dette remboursée. Les frais sont plafonnés par l’excédent que la liquidation réalise effectivement, ils n’empêchent donc jamais une liquidation. Le liquidateur conserve le reste du gain, et tout montant récupéré au-delà de la valeur oracle revient à l’emprunteur."
+        },
+        "points": {
+          "question": "Comment fonctionnent les points ?",
+          "answer": "Vous gagnez 1 point par $1 de frais d’interface payés, 100 points par tranche de 30 jours d’adhésion, et des points pour des quêtes comme votre premier dépôt, emprunt, remboursement, nantissement et vos parrainages. Échangez vos points contre une réduction temporaire des frais d’interface. Les points ne sont pas un token et ne sont pas enregistrés on-chain."
         },
         "separateCosts": {
-          "question": "Quels coûts sont distincts des frais Avana ?",
-          "answer": "Le gas réseau, les frais de swap DEX, les intérêts du marché Aave et les coûts d’exécution d’une liquidation sont distincts des frais d’interface. Consultez les détails avant de signer."
-        },
-        "feeChanges": {
-          "question": "Les frais et les taux peuvent-ils changer ?",
-          "answer": "Oui. Les taux du marché évoluent avec l’utilisation et les paramètres de risque, et la politique de l’interface peut changer. Vérifiez toujours le montant affiché avant de signer."
+          "question": "Quels coûts sont distincts des frais d’Avana ?",
+          "answer": "Le gas réseau, les frais de swap DEX et les intérêts Aave sont distincts. L’application affiche les frais, l’estimation du gas et le total avant que vous signiez."
         }
       }
     }

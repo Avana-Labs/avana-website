@@ -16,41 +16,41 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
 
   const feeCards = [
     {
-      title: t("borrow.title"),
-      subtitle: t("borrow.subtitle"),
-      value: t("borrow.value"),
-      unit: t("borrow.unit"),
-      description: t("borrow.description"),
+      title: t("frontEnd.title"),
+      subtitle: t("frontEnd.subtitle"),
+      value: t("frontEnd.value"),
+      unit: t("frontEnd.unit"),
+      description: t("frontEnd.description"),
       items: [
-        t("borrow.items.one"),
-        t("borrow.items.two"),
-        t("borrow.items.three"),
+        t("frontEnd.items.one"),
+        t("frontEnd.items.two"),
+        t("frontEnd.items.three"),
       ],
       featured: true,
     },
     {
-      title: t("lend.title"),
-      subtitle: t("lend.subtitle"),
-      value: t("lend.value"),
-      unit: t("lend.unit"),
-      description: t("lend.description"),
+      title: t("liquidation.title"),
+      subtitle: t("liquidation.subtitle"),
+      value: t("liquidation.value"),
+      unit: t("liquidation.unit"),
+      description: t("liquidation.description"),
       items: [
-        t("lend.items.one"),
-        t("lend.items.two"),
-        t("lend.items.three"),
+        t("liquidation.items.one"),
+        t("liquidation.items.two"),
+        t("liquidation.items.three"),
       ],
       featured: false,
     },
     {
-      title: t("multiply.title"),
-      subtitle: t("multiply.subtitle"),
-      value: t("multiply.value"),
-      unit: t("multiply.unit"),
-      description: t("multiply.description"),
+      title: t("points.title"),
+      subtitle: t("points.subtitle"),
+      value: t("points.value"),
+      unit: t("points.unit"),
+      description: t("points.description"),
       items: [
-        t("multiply.items.one"),
-        t("multiply.items.two"),
-        t("multiply.items.three"),
+        t("points.items.one"),
+        t("points.items.two"),
+        t("points.items.three"),
       ],
       featured: false,
     },
@@ -58,24 +58,24 @@ export default async function PricingPage({ params }: LocaleParamsProps) {
 
   const pricingFaqItems = [
     {
-      question: t("faq.items.interfaceFee.question"),
-      answer: t("faq.items.interfaceFee.answer"),
+      question: t("faq.items.frontEndFee.question"),
+      answer: t("faq.items.frontEndFee.answer"),
     },
     {
       question: t("faq.items.borrowRate.question"),
       answer: t("faq.items.borrowRate.answer"),
     },
     {
-      question: t("faq.items.lendingApy.question"),
-      answer: t("faq.items.lendingApy.answer"),
+      question: t("faq.items.liquidationFee.question"),
+      answer: t("faq.items.liquidationFee.answer"),
+    },
+    {
+      question: t("faq.items.points.question"),
+      answer: t("faq.items.points.answer"),
     },
     {
       question: t("faq.items.separateCosts.question"),
       answer: t("faq.items.separateCosts.answer"),
-    },
-    {
-      question: t("faq.items.feeChanges.question"),
-      answer: t("faq.items.feeChanges.answer"),
     },
   ] as const
 

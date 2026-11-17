@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Cennik",
-      "description": "Przejrzyste opłaty za pożyczanie, udzielanie pożyczek i strategie zabezpieczone LP w Avana."
+      "description": "Opłaty Avana: opłata za interfejs przy każdej akcji, udział w zyskach z likwidacji oraz punkty."
     },
     "siteTitle": "Avana - Pożycz pod LP pozycje na Aave v4",
     "siteDescription": "Odblokuj płynność ze swoich LP tokenów. Pożycz do 80% wartości w oparciu o pozycje Uniswap, Curve i Balancer, jednocześnie nadal zarabiając opłaty transakcyjne na Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Cennik",
-    "subtitleLine1": "Stawki i zwroty zależą od rynku,",
-    "subtitleLine2": "pozycji i wybranej ścieżki.",
-    "interfaceRate": "Opłata za interfejs z góry — 15 pb (0,15%)",
-    "includes": "Obejmuje:",
-    "borrow": {
-      "title": "Pożyczanie",
-      "subtitle": "Dla kredytu zabezpieczonego LP",
-      "value": "Zmienna",
-      "unit": "odsetki",
-      "description": "Koszt pożyczki zależy od wybranego rynku Aave v4.",
+    "subtitleLine1": "Opłata aplikacji za każdą akcję i udział w zyskach z likwidacji.",
+    "subtitleLine2": "Oprocentowanie pożyczek i premie za ryzyko to stawki Aave V4, ustalane przez Aave DAO i wypłacane pożyczkodawcom. Avana nie pobiera z nich żadnej części.",
+    "interfaceRate": "Opłata za interfejs: 10 bps (0,10%)",
+    "includes": "Szczegóły:",
+    "frontEnd": {
+      "title": "Opłata za interfejs",
+      "subtitle": "Pobierana przez aplikację Avana",
+      "value": "10",
+      "unit": "bps za akcję",
+      "description": "Dodawana do Twojej akcji jako jeden transfer tokena w tej samej paczce transakcji: przy swapach, pożyczaniu, spłacie, zastawianiu i udzielaniu pożyczek. Nie pobiera jej żaden kontrakt, a jej limit wynosi 25 bps.",
       "items": {
-        "one": "Stopa ustalana przez rynek",
-        "two": "Naliczana tylko od niespłaconego długu",
-        "three": "Widoczna przed potwierdzeniem"
+        "one": "9 bps po 30 dniach członkostwa",
+        "two": "8 bps po 90 dniach, 7 bps po 180 dniach",
+        "three": "Członkostwo liczy się od pierwszej interakcji Twojego portfela"
       }
     },
-    "lend": {
-      "title": "Lending",
-      "subtitle": "Dostarczaj kapitał do Hub",
-      "value": "Rynkowa",
-      "unit": "APY",
-      "description": "Zarabiaj na popycie zabezpieczonym LP przez Lend Spoke Avana.",
+    "liquidation": {
+      "title": "Opłata likwidacyjna",
+      "subtitle": "Tylko gdy pozycja zostaje zlikwidowana",
+      "value": "20%",
+      "unit": "zysku według wyroczni",
+      "description": "Zysk według wyroczni to wartość zajętego zabezpieczenia według wyroczni minus spłacony dług. Udział Avana jest ograniczony nadwyżką, którą likwidacja faktycznie realizuje, więc dług jest zawsze spłacany w pierwszej kolejności.",
       "items": {
-        "one": "Zwrot zmienia się wraz z wykorzystaniem",
-        "two": "Wpłacaj środki na obsługiwane rynki pożyczkowe",
-        "three": "Bieżące APY jest widoczne w interfejsie"
+        "one": "Likwidator zatrzymuje resztę zysku jako nagrodę",
+        "two": "Odzyskana kwota powyżej wartości według wyroczni trafia do pożyczkobiorcy lub do First-Loss Reserve, jeśli pozostał dług",
+        "three": "Wypłacana w aktywie dłużnym do odbiorcy opłat Avana objętego timelockiem"
       }
     },
-    "multiply": {
-      "title": "Multiply",
-      "subtitle": "Dla zarządzanej ekspozycji na LP",
-      "value": "Zmienna",
-      "unit": "stopa strategii",
-      "description": "Zwiększaj ekspozycję na LP dzięki zarządzanym strategiom opartym na obsługiwanych pozycjach AMM.",
+    "points": {
+      "title": "Punkty",
+      "subtitle": "Nagrody za korzystanie z Avana",
+      "value": "1",
+      "unit": "punkt za $1 opłat",
+      "description": "Punkty są naliczane w aplikacji Avana. Nie ma tokena ani niczego on-chain. Wymieniaj punkty na tymczasową zniżkę na opłatę za interfejs.",
       "items": {
-        "one": "Używaj obsługiwanych pozycji LP jako zabezpieczenia",
-        "two": "Ekspozycja pozostaje powiązana z bazową pulą",
-        "three": "Kontrole dźwigni i zamknięcia są widoczne"
+        "one": "1 punkt za każdy $1 zapłaconych opłat za interfejs",
+        "two": "100 punktów za każde 30 dni członkostwa",
+        "three": "Zadania: pierwszy depozyt, pożyczka, spłata, zastaw, polecenia i więcej"
       }
     },
     "faq": {
       "title": "Najczęściej zadawane pytania",
       "items": {
-        "interfaceFee": {
-          "question": "Ile Avana pobiera za korzystanie z interfejsu?",
-          "answer": "Oficjalna opłata za interfejs wynosi 15 pb (0,15%), jeśli ma zastosowanie. Jest widoczna przed podpisaniem i nie obejmuje gazu, opłat za swapy, odsetek Aave ani kosztów likwidacji."
+        "frontEndFee": {
+          "question": "Ile pobiera aplikacja Avana?",
+          "answer": "Opłatę za interfejs w wysokości 10 bps kwoty akcji (przy zastawie lub wypłacie zabezpieczenia: wartości pozycji), dodawaną jako jeden transfer w tej samej paczce transakcji co akcja. Spada do 9, 8 i 7 bps po 30, 90 i 180 dniach członkostwa. Nigdy nie przekracza 25 bps, czyli limitu z ARFC dotyczącego listingu Avana, i jest pokazywana przed podpisaniem."
         },
         "borrowRate": {
-          "question": "Czy odsetki od pożyczki są stałe?",
-          "answer": "Nie. Ustala je wybrany rynek Aave v4 i mogą zmieniać się wraz z wykorzystaniem oraz parametrami rynku. Bieżąca stawka jest widoczna przed pożyczką."
+          "question": "Czy Avana pobiera część odsetek?",
+          "answer": "Nie. Oprocentowanie pożyczek i premie za ryzyko to stawki Aave V4 ustalane przez Aave DAO. Odsetki trafiają do pożyczkodawców Hub, po potrąceniu ewentualnej opłaty za płynność, którą Aave DAO ustala dla swojego skarbca. Avana nie pobiera z nich żadnej części."
         },
-        "lendingApy": {
-          "question": "Jak ustalane jest APY dla lendingu?",
-          "answer": "Zwroty zależą od rynku, wykorzystania i popytu pożyczkobiorców zabezpieczonych LP. Bieżące APY jest widoczne przed wpłatą."
+        "liquidationFee": {
+          "question": "Jak działa opłata likwidacyjna?",
+          "answer": "Gdy pozycja zostaje zlikwidowana, Avana pobiera 20% zysku według wyroczni: wartości zajętego zabezpieczenia według wyroczni minus spłacony dług. Opłata jest ograniczona nadwyżką, którą likwidacja faktycznie realizuje, więc nigdy nie blokuje likwidacji. Likwidator zatrzymuje resztę zysku, a odzyskana kwota powyżej wartości według wyroczni trafia do pożyczkobiorcy."
+        },
+        "points": {
+          "question": "Jak działają punkty?",
+          "answer": "Otrzymujesz 1 punkt za każdy $1 zapłaconych opłat za interfejs, 100 punktów za każde 30 dni członkostwa oraz punkty za zadania, takie jak pierwszy depozyt, pożyczka, spłata, zastaw i polecenia. Wymieniaj punkty na tymczasową zniżkę na opłatę za interfejs. Punkty nie są tokenem i nie są zapisywane on-chain."
         },
         "separateCosts": {
           "question": "Które koszty są niezależne od opłat Avana?",
-          "answer": "Gaz sieciowy, opłaty za swapy DEX, odsetki rynku Aave i koszty wykonania likwidacji są niezależne od oficjalnej opłaty za interfejs. Przed podpisaniem sprawdź szczegóły transakcji."
-        },
-        "feeChanges": {
-          "question": "Czy opłaty i stawki mogą się zmieniać?",
-          "answer": "Tak. Stawki rynkowe zmieniają się wraz z wykorzystaniem i parametrami ryzyka, a polityka interfejsu może ulec zmianie. Przed podpisaniem zawsze sprawdź bieżącą kwotę."
+          "answer": "Gaz sieciowy, opłaty za swapy DEX i odsetki Aave są naliczane osobno. Aplikacja pokazuje opłatę, szacowany koszt gazu i sumę przed podpisaniem."
         }
       }
     }

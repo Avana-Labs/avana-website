@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Prijzen",
-      "description": "Duidelijke tarieven voor lenen, uitlenen en strategieën met LP als onderpand op Avana."
+      "description": "Wat Avana rekent: een interfacevergoeding per actie, een deel van de liquidatiewinst en punten."
     },
     "siteTitle": "Avana - Lenen tegen LP posities op Aave v4",
     "siteDescription": "Ontgrendel liquiditeit van uw LP tokens. Leen tot 80% tegen Uniswap, Curve en Balancer posities terwijl u doorgaat met het verdienen van handelskosten op Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Prijzen",
-    "subtitleLine1": "Tarieven en rendement hangen af van de markt,",
-    "subtitleLine2": "positie en route die je gebruikt.",
-    "interfaceRate": "Voorafgaande interfacekosten — 15 bps (0,15%)",
-    "includes": "Inclusief:",
-    "borrow": {
-      "title": "Lenen",
-      "subtitle": "Voor LP-gedekt krediet",
-      "value": "Variabel",
-      "unit": "rente",
-      "description": "Leenkosten volgen de gekozen Aave v4-markt.",
+    "subtitleLine1": "Een app-vergoeding per actie en een deel van de liquidatiewinst.",
+    "subtitleLine2": "Leenrentes en risicopremies zijn Aave V4-tarieven, vastgesteld door de Aave DAO en betaald aan uitleners. Avana ontvangt daar geen deel van.",
+    "interfaceRate": "Interfacekosten: 10 bps (0,10%)",
+    "includes": "Details:",
+    "frontEnd": {
+      "title": "Interfacekosten",
+      "subtitle": "In rekening gebracht door de Avana-app",
+      "value": "10",
+      "unit": "bps per actie",
+      "description": "Toegevoegd aan je actie als één tokenoverdracht in dezelfde transactiebatch: swaps, lenen, aflossen, verpanden en uitlenen. Geen enkel contract brengt ze in rekening, en ze zijn begrensd op 25 bps.",
       "items": {
-        "one": "Door de markt bepaalde rente",
-        "two": "Loopt alleen op uitstaande schuld",
-        "three": "Wordt vóór bevestiging getoond"
+        "one": "9 bps na 30 dagen lidmaatschap",
+        "two": "8 bps na 90 dagen, 7 bps na 180 dagen",
+        "three": "Het lidmaatschap telt vanaf de eerste interactie van je wallet"
       }
     },
-    "lend": {
-      "title": "Uitlenen",
-      "subtitle": "Kapitaal in de Hub storten",
-      "value": "Markt",
-      "unit": "APY",
-      "description": "Verdien aan LP-gedekte vraag via Avana's Lend Spoke.",
+    "liquidation": {
+      "title": "Liquidatiekosten",
+      "subtitle": "Alleen wanneer een positie wordt geliquideerd",
+      "value": "20%",
+      "unit": "van de oraclewinst",
+      "description": "De oraclewinst is de oraclewaarde van het in beslag genomen onderpand min de afgeloste schuld. Het aandeel van Avana is begrensd door het overschot dat de liquidatie daadwerkelijk oplevert, dus de schuld wordt altijd eerst afgelost.",
       "items": {
-        "one": "Rendement verandert met gebruik",
-        "two": "Stort in ondersteunde leenmarkten",
-        "three": "Live APY wordt in de interface getoond"
+        "one": "De liquidator houdt de rest van de winst als beloning",
+        "two": "Opbrengst boven de oraclewaarde gaat naar de lener, of naar de First-Loss Reserve als er schuld overblijft",
+        "three": "Betaald in het schuldasset aan de fee-ontvanger van Avana, met timelock"
       }
     },
-    "multiply": {
-      "title": "Vermenigvuldigen",
-      "subtitle": "Voor beheerde LP-blootstelling",
-      "value": "Variabel",
-      "unit": "strategietarief",
-      "description": "Vergroot LP-blootstelling met beheerde strategieën op ondersteunde AMM-posities.",
+    "points": {
+      "title": "Punten",
+      "subtitle": "Beloningen voor het gebruik van Avana",
+      "value": "1",
+      "unit": "punt per $1 aan kosten",
+      "description": "Punten worden bijgehouden in de Avana-app. Er is geen token en niets staat on-chain. Wissel punten in voor tijdelijke korting op de interfacekosten.",
       "items": {
-        "one": "Gebruik ondersteunde LP-posities als onderpand",
-        "two": "Blootstelling blijft gekoppeld aan de onderliggende pool",
-        "three": "Hefboom- en sluitingsopties blijven zichtbaar"
+        "one": "1 punt per $1 betaalde interfacekosten",
+        "two": "100 punten per 30 dagen lidmaatschap",
+        "three": "Quests: eerste storting, lenen, aflossen, verpanden, doorverwijzingen en meer"
       }
     },
     "faq": {
       "title": "Veelgestelde vragen",
       "items": {
-        "interfaceFee": {
-          "question": "Wat rekent Avana voor het gebruik van de interface?",
-          "answer": "De officiële interfacekosten zijn 15 bps (0,15%) wanneer van toepassing. Ze worden vóór ondertekening getoond en staan los van gas, swapkosten, Aave-rente en liquidatiekosten."
+        "frontEndFee": {
+          "question": "Wat rekent de Avana-app?",
+          "answer": "Interfacekosten van 10 bps van het bedrag van de actie (bij verpanden of het opnemen van onderpand: van de waarde van de positie), toegevoegd als één overdracht in dezelfde transactiebatch als de actie. Ze dalen naar 9, 8 en 7 bps na 30, 90 en 180 dagen lidmaatschap. Ze liggen nooit boven 25 bps, het plafond in de listing-ARFC van Avana, en worden getoond voordat je ondertekent."
         },
         "borrowRate": {
-          "question": "Is de leenrente vast?",
-          "answer": "Nee. De gekozen Aave v4-markt bepaalt de rente. Die kan veranderen door gebruik en marktparameters. De huidige rente wordt vóór het lenen getoond."
+          "question": "Ontvangt Avana een deel van de rente?",
+          "answer": "Nee. Leenrentes en risicopremies zijn Aave V4-tarieven die de Aave DAO vaststelt. De rente gaat naar de uitleners van de Hub, na eventuele liquiditeitskosten die de Aave DAO voor haar treasury vaststelt. Avana ontvangt daar geen deel van."
         },
-        "lendingApy": {
-          "question": "Hoe wordt lending-APY bepaald?",
-          "answer": "Rendement wordt door de markt bepaald en hangt af van gebruik en LP-gedekte vraag van leners. Live APY wordt vóór storting getoond."
+        "liquidationFee": {
+          "question": "Hoe werken de liquidatiekosten?",
+          "answer": "Wanneer een positie wordt geliquideerd, ontvangt Avana 20% van de oraclewinst: de oraclewaarde van het in beslag genomen onderpand min de afgeloste schuld. De kosten zijn begrensd door het overschot dat de liquidatie daadwerkelijk oplevert, dus ze houden een liquidatie nooit tegen. De liquidator houdt de rest van de winst, en opbrengst boven de oraclewaarde gaat naar de lener."
+        },
+        "points": {
+          "question": "Hoe werken punten?",
+          "answer": "Je verdient 1 punt per $1 betaalde interfacekosten, 100 punten per 30 dagen lidmaatschap en punten voor quests zoals je eerste storting, lenen, aflossen, verpanden en doorverwijzingen. Wissel punten in voor tijdelijke korting op de interfacekosten. Punten zijn geen token en worden niet on-chain vastgelegd."
         },
         "separateCosts": {
-          "question": "Welke kosten staan los van Avana-kosten?",
-          "answer": "Netwerkgas, DEX-swapkosten, Aave-marktrente en uitvoeringskosten voor liquidatie staan los van de officiële interfacekosten. Controleer de transactiedetails vóór ondertekening."
-        },
-        "feeChanges": {
-          "question": "Kunnen kosten en tarieven veranderen?",
-          "answer": "Ja. Markttarieven bewegen mee met gebruik en risicoparameters, en het interfacebeleid kan veranderen. Controleer vóór ondertekening altijd het actuele bedrag."
+          "question": "Welke kosten staan los van de kosten van Avana?",
+          "answer": "Netwerkgas, DEX-swapkosten en Aave-rente staan daar los van. De app toont de kosten, de gasschatting en het totaal voordat je ondertekent."
         }
       }
     }

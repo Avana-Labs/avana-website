@@ -204,7 +204,7 @@
   "meta": {
     "pricing": {
       "title": "Precios",
-      "description": "Precios claros para préstamos, depósitos y estrategias respaldadas por LP en Avana."
+      "description": "Lo que cobra Avana: una comisión de interfaz por cada acción, una parte de las ganancias de liquidación y puntos."
     },
     "siteTitle": "Avana - Pedir prestado contra LP posiciones en Aave v4",
     "siteDescription": "Desbloquea liquidez de tus LP tokens. Pide prestado hasta el 80% contra Uniswap, Curve y Balancer posiciones mientras continúas ganando comisiones de trading en Aave v4.",
@@ -331,68 +331,68 @@
   },
   "pricing": {
     "title": "Precios",
-    "subtitleLine1": "Las tasas y los rendimientos dependen del mercado,",
-    "subtitleLine2": "la posición y la ruta que elijas.",
-    "interfaceRate": "Comisión de interfaz — 15 pb (0,15 %)",
-    "includes": "Incluye:",
-    "borrow": {
-      "title": "Pedir prestado",
-      "subtitle": "Para crédito respaldado por LP",
-      "value": "Variable",
-      "unit": "interés",
-      "description": "Los costes de préstamo siguen el mercado Aave v4 seleccionado.",
+    "subtitleLine1": "Una comisión de la app en cada acción y una parte de las ganancias de liquidación.",
+    "subtitleLine2": "Las tasas de préstamo y las primas de riesgo son tasas de Aave V4, fijadas por la Aave DAO y pagadas a los prestamistas. Avana no se queda con ninguna parte.",
+    "interfaceRate": "Comisión de interfaz: 10 bps (0,10 %)",
+    "includes": "Detalles:",
+    "frontEnd": {
+      "title": "Comisión de interfaz",
+      "subtitle": "La cobra la app de Avana",
+      "value": "10",
+      "unit": "bps por acción",
+      "description": "Se añade a tu acción como una sola transferencia de tokens en el mismo lote de transacciones: swaps, pedir prestado, devolver, depositar en garantía y prestar. Ningún contrato la cobra, y tiene un máximo de 25 bps.",
       "items": {
-        "one": "Tasa fijada por el mercado",
-        "two": "Se acumula solo sobre la deuda pendiente",
-        "three": "Se muestra antes de confirmar"
+        "one": "9 bps tras 30 días de membresía",
+        "two": "8 bps tras 90 días, 7 bps tras 180 días",
+        "three": "La membresía cuenta desde la primera interacción de tu billetera"
       }
     },
-    "lend": {
-      "title": "Suministrar",
-      "subtitle": "Suministra capital al Hub",
-      "value": "Mercado",
-      "unit": "APY",
-      "description": "Obtén rendimiento de la demanda de prestatarios respaldados por LP a través del Lend Spoke de Avana.",
+    "liquidation": {
+      "title": "Comisión de liquidación",
+      "subtitle": "Solo cuando se liquida una posición",
+      "value": "20 %",
+      "unit": "de la ganancia de oráculo",
+      "description": "La ganancia de oráculo es el valor de oráculo del colateral incautado menos la deuda pagada. La parte de Avana está limitada por el excedente que la liquidación realmente obtiene, por lo que la deuda siempre se paga primero.",
       "items": {
-        "one": "El rendimiento varía con la utilización",
-        "two": "Suministro en mercados compatibles",
-        "three": "APY actual mostrado en la interfaz"
+        "one": "El liquidador se queda con el resto de la ganancia como recompensa",
+        "two": "Lo recuperado por encima del valor de oráculo va al prestatario, o a la First-Loss Reserve si queda deuda",
+        "three": "Se paga en el activo de deuda al receptor de comisiones de Avana, sujeto a timelock"
       }
     },
-    "multiply": {
-      "title": "Multiplicar",
-      "subtitle": "Para exposición LP gestionada",
-      "value": "Variable",
-      "unit": "tasa de estrategia",
-      "description": "Amplifica la exposición LP con estrategias gestionadas respaldadas por posiciones AMM compatibles.",
+    "points": {
+      "title": "Puntos",
+      "subtitle": "Recompensas por usar Avana",
+      "value": "1",
+      "unit": "punto por $1 en comisiones",
+      "description": "Los puntos se registran en la app de Avana. No hay token ni nada on-chain. Canjea puntos por un descuento temporal en la comisión de interfaz.",
       "items": {
-        "one": "Usa posiciones LP compatibles como garantía",
-        "two": "La exposición sigue vinculada al pool subyacente",
-        "three": "Los controles de apalancamiento y salida permanecen visibles"
+        "one": "1 punto por cada $1 pagado en comisiones de interfaz",
+        "two": "100 puntos por cada 30 días de membresía",
+        "three": "Misiones: primer depósito, préstamo, devolución, depósito en garantía, referidos y más"
       }
     },
     "faq": {
       "title": "Preguntas frecuentes",
       "items": {
-        "interfaceFee": {
-          "question": "¿Qué cobra Avana por usar la interfaz?",
-          "answer": "La comisión oficial de la interfaz es de 15 pb (0,15 %) cuando corresponde. Se muestra antes de firmar y es independiente del gas, las comisiones de swap, los intereses de Aave y los costes de liquidación."
+        "frontEndFee": {
+          "question": "¿Qué cobra la app de Avana?",
+          "answer": "Una comisión de interfaz de 10 bps sobre el importe de la acción (en un depósito en garantía o un retiro de colateral, sobre el valor de la posición), añadida como una sola transferencia en el mismo lote de transacciones que la acción. Baja a 9, 8 y 7 bps tras 30, 90 y 180 días de membresía. Nunca supera los 25 bps, el límite fijado en el ARFC de listado de Avana, y se muestra antes de firmar."
         },
         "borrowRate": {
-          "question": "¿Los intereses del préstamo son fijos?",
-          "answer": "No. Los intereses los determina el mercado Aave v4 seleccionado y pueden cambiar con la utilización y los parámetros del mercado. La tasa actual se muestra antes de pedir prestado."
+          "question": "¿Avana se queda con parte de los intereses?",
+          "answer": "No. Las tasas de préstamo y las primas de riesgo son tasas de Aave V4 fijadas por la Aave DAO. Los intereses van a los prestamistas del Hub, después de la comisión de liquidez que la Aave DAO fije para su tesorería, si la hay. Avana no se queda con ninguna parte."
         },
-        "lendingApy": {
-          "question": "¿Cómo se determina el APY de suministro?",
-          "answer": "El rendimiento depende de la utilización y de la demanda de prestatarios respaldados por LP. El APY actual se muestra antes de suministrar."
+        "liquidationFee": {
+          "question": "¿Cómo funciona la comisión de liquidación?",
+          "answer": "Cuando se liquida una posición, Avana toma el 20 % de la ganancia de oráculo: el valor de oráculo del colateral incautado menos la deuda pagada. La comisión está limitada por el excedente que la liquidación realmente obtiene, así que nunca impide una liquidación. El liquidador se queda con el resto de la ganancia, y lo recuperado por encima del valor de oráculo va al prestatario."
+        },
+        "points": {
+          "question": "¿Cómo funcionan los puntos?",
+          "answer": "Ganas 1 punto por cada $1 pagado en comisiones de interfaz, 100 puntos por cada 30 días de membresía y puntos por misiones como tu primer depósito, préstamo, devolución, depósito en garantía y referidos. Canjea puntos por un descuento temporal en la comisión de interfaz. Los puntos no son un token y no se registran on-chain."
         },
         "separateCosts": {
           "question": "¿Qué costes son independientes de las comisiones de Avana?",
-          "answer": "El gas de red, las comisiones de swap DEX, los intereses del mercado Aave y los costes de ejecución de liquidaciones son independientes de la comisión de interfaz. Revisa los detalles antes de firmar."
-        },
-        "feeChanges": {
-          "question": "¿Pueden cambiar las comisiones y las tasas?",
-          "answer": "Sí. Las tasas del mercado cambian con la utilización y los parámetros de riesgo, y la política de interfaz puede cambiar. Verifica siempre el importe actual antes de firmar."
+          "answer": "El gas de red, las comisiones de swap DEX y los intereses de Aave son independientes. La app muestra la comisión, la estimación de gas y el total antes de firmar."
         }
       }
     }
