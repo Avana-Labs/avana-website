@@ -32,7 +32,7 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Protocol Overview"
-          description="Avana lets a liquidity provider borrow GHO, and later other approved assets, on Aave V4 against an AMM position without taking the liquidity out of the pool."
+          description="Avana lets liquidity providers use their LP positions as collateral on Aave V4 and borrow the assets the Avana Hub lists, across supported DEXes, without taking the liquidity out of the pool."
         />
 
         <section id="what-avana-does" className="mb-10">
@@ -44,7 +44,7 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
             Aave V4 accepts collateral only as ERC-20 reserves, while an AMM position is an NFT or a pool share. Avana separates custody from collateral accounting: an LPVault holds the position, Collateralization records how many units it backs, and a transfer-restricted vault token stands for those units on an unmodified Aave V4 Spoke owned by the Aave DAO. Aave then values the collateral, lends, tracks the health factor and decides when and how much to liquidate.
           </p>
           <p className="mb-4 type-doc-body">
-            GHO is the first debt asset. Any other asset becomes borrowable once the Aave DAO approves its credit line, caps, price source and swap routes.
+            The borrowable assets are the ones each chain&apos;s Avana Hub lists, such as GHO and USDC today. An asset becomes borrowable once the Aave DAO approves its credit line, caps, price source and swap routes.
           </p>
         </section>
 
@@ -59,7 +59,7 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
                 <tr><td className="px-4 py-2">Other liquidators</td><td className="px-4 py-2">Any address that is not frozen can liquidate an account below health factor 1 through the same entry point, with either swap-route mode, funding the debt asset itself or through the public flash liquidation helper. Any address can also repay any account&apos;s debt or refresh oracle and breaker state.</td><td className="px-4 py-2">Its own funds, gas and conversion outcome, bounded by its debt to cover, shortfall limit, deadline and minimum payout.</td></tr>
                 <tr><td className="px-4 py-2">Aave DAO</td><td className="px-4 py-2">Owns and configures every Avana Hub, CDP Spoke, Lend Spoke and Coverage Spoke: collateral factors, caps, rates, flags, the three required settings and which reserves are borrowable. Its executor on each chain can propose to and cancel Avana timelock operations.</td><td className="px-4 py-2">Bad debt beyond the funded First-Loss Reserve of each Hub and debt asset.</td></tr>
                 <tr><td className="px-4 py-2">Avana Labs</td><td className="px-4 py-2">Proposes markets and parameters, signs in the 4-of-7 governance multisig with external signers, funds each First-Loss Reserve and runs Avana&apos;s keeper.</td><td className="px-4 py-2">Its First-Loss Reserve capital and its keepers&apos; gas.</td></tr>
-                <tr><td className="px-4 py-2">Credit-line suppliers</td><td className="px-4 py-2">The Aave DAO treasury supplies each credit line through the Lend Spoke; for GHO the lender is the GHO Reserve and Aave DAO. All interest accrues to them.</td><td className="px-4 py-2">Losses beyond the First-Loss Reserve on their Hub asset.</td></tr>
+                <tr><td className="px-4 py-2">Lenders</td><td className="px-4 py-2">Anyone supplying through the Lend Spoke, beside the Aave DAO&apos;s bootstrap supply. Interest accrues to them after the DAO&apos;s liquidity fee.</td><td className="px-4 py-2">Losses beyond the First-Loss Reserve and the DAO Deficit Offset on their Hub asset.</td></tr>
                 <tr><td className="px-4 py-2">Guardians</td><td className="px-4 py-2">The Emergency Guardian (3-of-5 per chain) and the Aave Protocol Guardian pause or freeze Hubs, freeze addresses, trip breakers, switch to standby price routes and cancel queued operations.</td><td className="px-4 py-2">Not capital providers. They cannot upgrade, change parameters or move funds.</td></tr>
                 <tr><td className="px-4 py-2">Risk reviewers</td><td className="px-4 py-2">The Aave V4 risk service providers assess each listing and set pool risk factors, USD caps and minimum pledges in the listing payload.</td><td className="px-4 py-2">None on-chain.</td></tr>
               </tbody>
@@ -107,14 +107,14 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
         <section id="chains-hubs-amms" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Chains, Hubs and AMMs</h2>
           <p className="mb-4 type-doc-body">
-            Avana runs the same contracts on every chain, with one instance of each per-chain contract and every Hub, Spoke and market setting held as data. A chain can host any of the three Hub tiers: Stable LP, Correlated LP and Volatile LP. A CDP Spoke is one standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier, and lists several markets.
+            Avana runs the same contracts on every chain, with one instance of each per-chain contract and every Hub, Spoke and market setting held as data. Each chain has one Avana Hub, with one Lend Spoke and several CDP Spokes. A CDP Spoke is one standard Aave V4 Spoke per chain, Hub, AMM protocol and risk tier, and lists several markets.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
-              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">CDP Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">AMM protocol</th><th className="text-left px-4 py-2 type-doc-subsection-title">First debt asset</th></tr></thead>
+              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">AMM protocols today</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Uniswap v3 Stable</td><td className="px-4 py-2">Uniswap v3</td><td className="px-4 py-2">GHO</td></tr>
-                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Aerodrome Slipstream Stable</td><td className="px-4 py-2">Aerodrome Slipstream, unstaked positions only</td><td className="px-4 py-2">GHO</td></tr>
+                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">Uniswap v3 and Uniswap v4</td></tr>
+                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Base Hub</td><td className="px-4 py-2">Aerodrome Slipstream, unstaked positions only</td></tr>
               </tbody>
             </table>
           </div>
@@ -129,7 +129,7 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
         <section id="liquidity" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Where Liquidity Comes From</h2>
           <p className="mb-4 type-doc-body">
-            Every borrowable asset comes from a capped credit line approved by the Aave DAO and supplied by its treasury through each chain&apos;s supply-only Lend Spoke. The CDP Spokes&apos; draw caps sum to at most the line, and each draw cap stays within the asset&apos;s flash liquidity and swap-route depth. The launch line on Ethereum is 2,000,000 GHO, with the final value and the Base line set in the funding ARFC. Interest accrues to the lenders, and Avana charges no fee on it.
+            Every borrowable asset comes from a capped credit line approved by the Aave DAO and supplied by its treasury through each chain&apos;s supply-only Lend Spoke. The CDP Spokes&apos; draw caps sum to at most the line, and each draw cap stays within the asset&apos;s flash liquidity and swap-route depth. For example, the launch GHO line on Ethereum is 2,000,000 GHO, with the final value and the Base line set in the funding ARFC. Interest accrues to the lenders, and Avana charges no fee on it.
           </p>
           <p className="mb-4 type-doc-body">
             Beside each line, the Avana Umbrella (Coverage Spoke) of that Hub and debt asset holds an Avana-funded First-Loss Reserve. It is funded before borrowing opens and covers recorded deficits in its asset. Details are in{" "}
@@ -143,19 +143,19 @@ export default async function IntroductionPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Area</th><th className="text-left px-4 py-2 type-doc-subsection-title">At launch</th><th className="text-left px-4 py-2 type-doc-subsection-title">Supported by the core, listed later</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">AMM protocols</td><td className="px-4 py-2">Uniswap v3 on Ethereum; Aerodrome Slipstream on Base; exact tick range per market</td><td className="px-4 py-2">Uniswap v2, Curve StableSwap-NG, Balancer weighted and stable pools, Uniswap v4, each after its readiness checks</td></tr>
-                <tr><td className="px-4 py-2">Pools</td><td className="px-4 py-2">Stablecoin pools meeting the listing rules, such as USDC/USDT and pools containing GHO</td><td className="px-4 py-2">Correlated and volatile pools on the Correlated LP and Volatile LP Hubs</td></tr>
-                <tr><td className="px-4 py-2">Hubs and Spokes</td><td className="px-4 py-2">Per chain: one Avana Stable LP Hub, one CDP Spoke, one Lend Spoke, one Coverage Spoke per Hub and debt asset</td><td className="px-4 py-2">Correlated LP and Volatile LP Hubs; more CDP Spokes</td></tr>
-                <tr><td className="px-4 py-2">Borrowable assets</td><td className="px-4 py-2">GHO; others such as USDC, USDT or WETH once approved for a CDP Spoke</td><td className="px-4 py-2">Cross-Hub credit lines (specified, off at launch)</td></tr>
+                <tr><td className="px-4 py-2">AMM protocols</td><td className="px-4 py-2">Uniswap v3 and Uniswap v4 on Ethereum; Aerodrome Slipstream on Base; exact tick range per market</td><td className="px-4 py-2">Uniswap v2, Curve StableSwap-NG, Balancer weighted and stable pools, each after its readiness checks</td></tr>
+                <tr><td className="px-4 py-2">Pools</td><td className="px-4 py-2">Pools meeting the listing rules, such as stablecoin, blue-chip and correlated pools</td><td className="px-4 py-2">Further pools, each through its own listing</td></tr>
+                <tr><td className="px-4 py-2">Hubs and Spokes</td><td className="px-4 py-2">Per chain: one Avana Hub, one Lend Spoke, CDP Spokes per AMM protocol and risk tier, one Coverage Spoke per debt asset</td><td className="px-4 py-2">More CDP Spokes</td></tr>
+                <tr><td className="px-4 py-2">Borrowable assets</td><td className="px-4 py-2">The assets the Avana Hub lists, such as GHO and USDC today; any other asset once the Aave DAO approves it for a CDP Spoke</td><td className="px-4 py-2">Cross-Hub credit lines (specified, off at launch)</td></tr>
                 <tr><td className="px-4 py-2">Chains</td><td className="px-4 py-2">Ethereum and Base</td><td className="px-4 py-2">Other networks, each through its own ARFC</td></tr>
-                <tr><td className="px-4 py-2">Lending</td><td className="px-4 py-2">Aave DAO credit lines; no public deposits</td><td className="px-4 py-2">Public lending through the Lend Spoke</td></tr>
+                <tr><td className="px-4 py-2">Lending</td><td className="px-4 py-2">Public lending through the Lend Spoke, beside the Aave DAO&apos;s bootstrap supply</td><td className="px-4 py-2">None</td></tr>
                 <tr><td className="px-4 py-2">Liquidation</td><td className="px-4 py-2">One entry point open to any address, funded by the caller directly or through the public flash liquidation helper, paid in the debt asset repaid; Avana&apos;s keeper is the committed operator on each chain</td><td className="px-4 py-2">None</td></tr>
               </tbody>
             </table>
           </div>
           <h3 className="mt-6 mb-2 type-doc-subsection-title">Not included</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
-            <li>No Invest Spoke, Multiply or leveraged-LP loop, and no public lender deposits.</li>
+            <li>No Invest Spoke, Multiply or leveraged-LP loop.</li>
             <li>No borrower allowlist, no minimum debt and no daily borrow limit; exposure is limited by caps.</li>
             <li>No function that moves an account to a new proxy, no off-chain signature or permit flows, and no native ETH payouts.</li>
             <li>No conversion of liquidation proceeds through a route that settles outside the liquidation transaction.</li>

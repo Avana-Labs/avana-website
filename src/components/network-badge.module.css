@@ -1,0 +1,154 @@
+.badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  flex: 0 0 auto;
+  border: 1px solid rgb(0 117 138 / 72%);
+  border-radius: 9999px;
+  background: rgb(1 170 207 / 9%);
+  padding: 0.38rem 0.68rem;
+  color: #00758a;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.compact {
+  gap: 0.28rem;
+  padding: 0.32rem 0.56rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.035em;
+}
+
+.icon {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-block: -2px;
+  border-radius: 9999px;
+  object-fit: contain;
+}
+
+.compact .icon {
+  width: 12px;
+  height: 12px;
+}
+
+:global(.dark) .badge {
+  border-color: rgb(1 170 207 / 72%);
+  color: #67e6f7;
+}
+
+.sparkle {
+  position: absolute;
+  z-index: 1;
+  color: #00758a;
+  font-size: 0.8rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  text-shadow:
+    0 0 5px #01aacf,
+    0 0 10px rgb(1 170 207 / 65%);
+  transform: scale(0.5);
+}
+
+:global(.dark) .sparkle {
+  color: #d9fbff;
+}
+
+.compact .sparkle {
+  font-size: 0.7rem;
+}
+
+.sparkleOne {
+  top: -0.48rem;
+  left: 27%;
+}
+
+.sparkleTwo {
+  top: -0.18rem;
+  right: -0.48rem;
+}
+
+.sparkleThree {
+  right: 25%;
+  bottom: -0.5rem;
+}
+
+.badge:hover,
+.badge:focus-visible {
+  border-color: #008ca5;
+  background: rgb(1 170 207 / 13%);
+  box-shadow:
+    0 0 8px rgb(1 170 207 / 68%),
+    0 0 20px rgb(1 170 207 / 46%),
+    0 0 34px rgb(1 170 207 / 20%),
+    inset 0 0 8px rgb(1 170 207 / 14%);
+}
+
+:global(.dark) .badge:hover,
+:global(.dark) .badge:focus-visible {
+  border-color: #5ae8ff;
+  background: rgb(1 170 207 / 14%);
+}
+
+.badge:hover .sparkle,
+.badge:focus-visible .sparkle {
+  animation: sparkle 1.35s ease-in-out infinite;
+}
+
+.badge:hover .sparkleTwo,
+.badge:focus-visible .sparkleTwo {
+  animation-delay: 450ms;
+}
+
+.badge:hover .sparkleThree,
+.badge:focus-visible .sparkleThree {
+  animation-delay: 900ms;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 2px #01aacf;
+    transform: scale(0.4) rotate(-18deg);
+  }
+
+  40% {
+    opacity: 1;
+    text-shadow:
+      0 0 6px #01aacf,
+      0 0 14px #01aacf,
+      0 0 22px rgb(1 170 207 / 90%);
+    transform: scale(1.45) rotate(12deg);
+  }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 5px #01aacf;
+    transform: scale(0.65) rotate(32deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+  }
+
+  .badge:hover .sparkle,
+  .badge:focus-visible .sparkle {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

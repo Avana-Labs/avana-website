@@ -102,12 +102,11 @@
         "liquidation": "Mfumo wa Utoaji Mali",
         "integrations": "Uingizaji wa Msaada",
         "safety": "Vifaa vya Usalama",
-        "legal": "Kisheria na Uzingatiaji",
         "copilot": "Uliza AI",
-        "reference": "Marejeleo"
+        "securityLegal": "Usalama na Sheria"
       },
       "items": {
-        "overview": "Muhtasari",
+        "overview": "Karibu",
         "keyConcepts": "Dhana Muhimu",
         "glossary": "Kamusi ya Maneno",
         "depositLp": "Amana LP",
@@ -146,9 +145,8 @@
         "marketLifecycle": "Mzunguko wa Maisha wa Soko",
         "governance": "Utawala",
         "emergencyControls": "Udhibiti wa Dharura",
-        "contractList": "Mikataba",
-        "addresses": "Anwani",
-        "parameters": "Vigezo",
+        "addresses": "Anwani za Mikataba",
+        "parameters": "Vigezo vya Masoko",
         "accessControls": "Udhibiti wa Ufikiaji",
         "securityVerification": "Usalama na Uthibitishaji",
         "audits": "Ukaguzi",
@@ -160,9 +158,9 @@
         "chainId": "Kitambulisho cha mnyororo",
         "copy": "Nakili",
         "copied": "Imenakiliwa",
-        "placeholder": "Kishika nafasi",
         "explorer": "hufungua kichunguzi cha bloku",
-        "updated": "Ilisasishwa mwisho {date}"
+        "updated": "Ilisasishwa mwisho {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "Bei",
-      "description": "Ada zilizo wazi za kukopa, kukopesha na mikakati yenye dhamana ya LP kwenye Avana."
+      "description": "Kile Avana inatoza: ada ya kiolesura kwa kila kitendo, sehemu ya faida za ufilisi, na pointi."
     },
     "siteTitle": "Avana - Kopa Kinyume na Nafasi LP kwenye Aave v4",
     "siteDescription": "Fungua mtiririko wa fedha kutoka kwa tokeni zako LP. Kopa hadi 80% dhidi ya Uniswap, Curve, na Balancer nafasi huku ukiendelea kupata ada za biashara kwenye Aave v4.",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Iliyotiwa nguvu na Aave v4",
-      "title": "Avana ni soko la ukopeshaji la DeFi lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
-      "titleLine1": "Avana ni soko la ukopeshaji la DeFi",
-      "titleLine2": "lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
+      "title": "Kopa crypto, hisa na RWA kwa dhamana ya nafasi zako za ukwasi za AMM.",
+      "titleLine1": "Kopa crypto, hisa na RWA",
+      "titleLine2": "kwa dhamana ya nafasi zako za ukwasi za AMM.",
+      "titleLine1Mobile": "Kopa crypto na hisa",
+      "titleLine2Mobile": "kwa dhamana ya nafasi zako za ukwasi.",
       "subtitle": "Kopa sarafu fiche, bidhaa, FX, na rasilimali za ulimwengu halisi (RWA) kwenye mnyororo ukitumia nafasi zako za ukwasi za AMM kama dhamana ya mkopo.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "Soma Pendekezo la ARFC",
       "secondaryCta": "Fungua mtandao wa majaribio"
-    },
-    "intro": {
-      "text": "<ink>Kopa</ink> <strong>crypto, hisa, fedha za kigeni (FX) na mali za ulimwengu halisi (RWA)</strong> kwa kuweka dhamana nafasi za ukwasi kutoka <strong>Uniswap, Curve, Aerodrome, Balancer na DEX nyingine</strong>, kwa kutumia Aave V4, onchain na 24/7."
     },
     "features": {
       "eyebrow": "Vipengele Muhimu",
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "Bei",
-    "subtitleLine1": "Viwango na mapato hutegemea soko,",
-    "subtitleLine2": "nafasi na njia unayochagua.",
-    "interfaceRate": "Ada ya kiolesura mapema — 15 bps (0.15%)",
-    "includes": "Inajumuisha:",
-    "borrow": {
-      "title": "Kukopa",
-      "subtitle": "Kwa mkopo unaoungwa mkono na LP",
-      "value": "Inabadilika",
-      "unit": "riba",
-      "description": "Gharama ya kukopa hufuata soko la Aave v4 lililochaguliwa.",
+    "subtitleLine1": "Ada ya programu kwa kila kitendo na sehemu ya faida za ufilisi.",
+    "subtitleLine2": "Viwango vya kukopa na malipo ya ziada ya hatari ni viwango vya Aave V4, vinavyowekwa na Aave DAO na kulipwa kwa wakopeshaji. Avana haichukui sehemu yoyote kutoka kwavyo.",
+    "interfaceRate": "Ada ya kiolesura: 10 bps (0.10%)",
+    "includes": "Maelezo:",
+    "frontEnd": {
+      "title": "Ada ya kiolesura",
+      "subtitle": "Hutozwa na programu ya Avana",
+      "value": "10",
+      "unit": "bps kwa kila kitendo",
+      "description": "Huongezwa kwenye kitendo chako kama uhamisho mmoja wa tokeni ndani ya kundi lilelile la miamala: kubadilisha (swap), kukopa, kulipa deni, kuweka dhamana na kukopesha. Hakuna mkataba unaoitoza, na kiwango chake cha juu ni 25 bps.",
       "items": {
-        "one": "Kiwango cha riba kinachowekwa na soko",
-        "two": "Hukusanywa kwenye deni lililobaki pekee",
-        "three": "Huonyeshwa kabla ya kuthibitisha"
+        "one": "9 bps baada ya siku 30 za uanachama",
+        "two": "8 bps baada ya siku 90, 7 bps baada ya siku 180",
+        "three": "Uanachama huhesabiwa tangu mwingiliano wa kwanza wa pochi yako"
       }
     },
-    "lend": {
-      "title": "Kukopesha",
-      "subtitle": "Weka mtaji kwenye Hub",
-      "value": "Cha soko",
-      "unit": "APY",
-      "description": "Pata mapato kutokana na mahitaji yanayoungwa mkono na LP kupitia Lend Spoke ya Avana.",
+    "liquidation": {
+      "title": "Ada ya ufilisi",
+      "subtitle": "Pale tu nafasi inapofilisiwa",
+      "value": "20%",
+      "unit": "ya faida ya oracle",
+      "description": "Faida ya oracle ni thamani ya oracle ya dhamana iliyokamatwa ukiondoa deni lililolipwa. Sehemu ya Avana imewekewa kikomo na ziada ambayo ufilisi unapata kwa kweli, kwa hiyo deni hulipwa kwanza kila wakati.",
       "items": {
-        "one": "Mapato hubadilika kulingana na matumizi",
-        "two": "Weka fedha kwenye masoko yanayoungwa mkono",
-        "three": "APY ya moja kwa moja huonyeshwa kwenye kiolesura"
+        "one": "Mfilisi hubaki na faida iliyosalia kama zawadi yake",
+        "two": "Kiasi kinachopatikana juu ya thamani ya oracle huenda kwa mkopaji, au kwa First-Loss Reserve ikiwa deni limebaki",
+        "three": "Hulipwa kwa mali ya deni kwa mpokeaji wa ada wa Avana aliye na timelock"
       }
     },
-    "multiply": {
-      "title": "Kuzidisha",
-      "subtitle": "Kwa udhihirisho wa LP unaodhibitiwa",
-      "value": "Inabadilika",
-      "unit": "kiwango cha mkakati",
-      "description": "Ongeza udhihirisho wa LP kwa mikakati inayodhibitiwa inayoungwa mkono na nafasi za AMM.",
+    "points": {
+      "title": "Pointi",
+      "subtitle": "Zawadi za kutumia Avana",
+      "value": "1",
+      "unit": "pointi kwa kila $1 ya ada",
+      "description": "Pointi hufuatiliwa ndani ya programu ya Avana. Hakuna tokeni na hakuna kitu kwenye mnyororo. Tumia pointi kupata punguzo la muda kwenye ada ya kiolesura.",
       "items": {
-        "one": "Tumia nafasi za LP zinazoungwa mkono kama dhamana",
-        "two": "Udhihirisho hubaki umefungamana na pooli ya msingi",
-        "three": "Udhibiti wa leverage na kuondoka hubaki wazi"
+        "one": "Pointi 1 kwa kila $1 ya ada ya kiolesura uliyolipa",
+        "two": "Pointi 100 kwa kila siku 30 za uanachama",
+        "three": "Majukumu: amana ya kwanza, kukopa, kulipa deni, kuweka dhamana, rufaa na mengineyo"
       }
     },
     "faq": {
       "title": "Maswali yanayoulizwa mara kwa mara",
       "items": {
-        "interfaceFee": {
-          "question": "Avana inatoza nini kwa kutumia kiolesura?",
-          "answer": "Ada rasmi ya kiolesura ni 15 bps (0.15%) inapohusika. Huonyeshwa kabla ya kusaini na ni tofauti na gesi, ada za kubadilisha, riba ya Aave na gharama za kufilisi."
+        "frontEndFee": {
+          "question": "Programu ya Avana hutoza nini?",
+          "answer": "Ada ya kiolesura ya 10 bps ya kiasi cha kitendo (kwa kuweka dhamana au kutoa dhamana, ya thamani ya nafasi), inayoongezwa kama uhamisho mmoja ndani ya kundi lilelile la miamala na kitendo hicho. Hushuka hadi 9, 8 na 7 bps baada ya siku 30, 90 na 180 za uanachama. Haizidi kamwe 25 bps, kikomo kilichowekwa kwenye ARFC ya kuorodhesha Avana, na huonyeshwa kabla ya kusaini."
         },
         "borrowRate": {
-          "question": "Je, riba ya kukopa ni ya kudumu?",
-          "answer": "Hapana. Riba huwekwa na soko la Aave v4 lililochaguliwa na inaweza kubadilika kulingana na matumizi na vigezo vya soko. Kiwango cha sasa huonyeshwa kabla ya kukopa."
+          "question": "Je, Avana huchukua sehemu ya riba?",
+          "answer": "Hapana. Viwango vya kukopa na malipo ya ziada ya hatari ni viwango vya Aave V4 vinavyowekwa na Aave DAO. Riba huenda kwa wakopeshaji wa Hub, baada ya ada yoyote ya ukwasi ambayo Aave DAO inaweka kwa hazina yake. Avana haichukui sehemu yoyote ya riba hiyo."
         },
-        "lendingApy": {
-          "question": "APY ya kukopesha huamuliwaje?",
-          "answer": "Mapato huamuliwa na soko na hutegemea matumizi na mahitaji ya wakopaji yanayoungwa mkono na LP. APY ya sasa huonyeshwa kabla ya kuweka fedha."
+        "liquidationFee": {
+          "question": "Ada ya ufilisi hufanyaje kazi?",
+          "answer": "Nafasi inapofilisiwa, Avana huchukua 20% ya faida ya oracle: thamani ya oracle ya dhamana iliyokamatwa ukiondoa deni lililolipwa. Ada imewekewa kikomo na ziada ambayo ufilisi unapata kwa kweli, kwa hiyo haizuii ufilisi kamwe. Mfilisi hubaki na faida iliyosalia, na kiasi chochote kinachopatikana juu ya thamani ya oracle huenda kwa mkopaji."
+        },
+        "points": {
+          "question": "Pointi hufanyaje kazi?",
+          "answer": "Unapata pointi 1 kwa kila $1 ya ada ya kiolesura uliyolipa, pointi 100 kwa kila siku 30 za uanachama, na pointi kwa majukumu kama amana yako ya kwanza, kukopa, kulipa deni, kuweka dhamana na rufaa. Tumia pointi kupata punguzo la muda kwenye ada ya kiolesura. Pointi si tokeni na hazirekodiwi kwenye mnyororo."
         },
         "separateCosts": {
-          "question": "Ni gharama zipi ni tofauti na ada za Avana?",
-          "answer": "Gesi ya mtandao, ada za kubadilisha za DEX, riba ya soko la Aave na gharama za utekelezaji wa kufilisi ni tofauti na ada rasmi ya kiolesura. Kagua maelezo ya muamala kabla ya kusaini."
-        },
-        "feeChanges": {
-          "question": "Je, ada na viwango vinaweza kubadilika?",
-          "answer": "Ndiyo. Viwango vya soko hubadilika kulingana na matumizi na vigezo vya hatari, na sera ya kiolesura inaweza kubadilika. Thibitisha kiasi cha sasa kinachoonyeshwa kabla ya kusaini."
+          "question": "Ni gharama gani zilizo tofauti na ada za Avana?",
+          "answer": "Gesi ya mtandao, ada za kubadilisha za DEX na riba ya Aave ni tofauti. Programu huonyesha ada, makadirio ya gesi na jumla kabla ya kusaini."
         }
       }
     }

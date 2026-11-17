@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Propulsé par Aave v4",
-      "title": "Avana est le marché de prêt conçu pour les pools de liquidité AMM.",
-      "titleLine1": "Avana est le marché de prêt",
-      "titleLine2": "conçu pour les pools de liquidité AMM.",
+      "title": "Empruntez crypto, actions et RWA contre vos positions de liquidité AMM.",
+      "titleLine1": "Empruntez crypto, actions et RWA",
+      "titleLine2": "contre vos positions de liquidité AMM.",
+      "titleLine1Mobile": "Empruntez crypto et actions",
+      "titleLine2Mobile": "contre vos positions de liquidité.",
       "subtitle": "Empruntez des cryptos, des matières premières, des devises FX et des actifs du monde réel onchain en utilisant vos positions de liquidité AMM comme collatéral.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "Lire l'ARFC",
       "secondaryCta": "Ouvrir le réseau de test"
-    },
-    "intro": {
-      "text": "<ink>Empruntez</ink> des <strong>cryptomonnaies, des actions, des devises (FX) et des actifs du monde réel (RWA)</strong> en mettant en garantie des positions de liquidité sur <strong>Uniswap, Curve, Aerodrome, Balancer et d’autres DEX</strong>, avec Aave V4, onchain et 24 h/24, 7 j/7."
     },
     "features": {
       "eyebrow": "Caractéristiques principales",

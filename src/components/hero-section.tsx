@@ -24,6 +24,7 @@ import { PerformanceDiv } from "@/components/ui/performance-section"
 import { TokenLogo } from "@/components/token-logo"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
+import { getMarketingMaps } from "@/lib/content-i18n/load-content"
 import { FaqToggleIcons } from "@/components/faq-toggle-icons"
 
 const HomepageFaqSection = dynamic(() => import("@/components/homepage/HomepageFaqSection"), {
@@ -43,13 +44,15 @@ function repeatItems<T>(items: T[], count: number, offset: number) {
 /**
  * HeroSection - Homepage secondary content shell.
  */
-const hubColors: Record<HomepagePool["hub"], string> = {
-  "Stable LP Hub": "#10b981",
-  "Correlated LP Hub": "#3b82f6",
-  "Volatile LP Hub": "#f59e0b",
+const spokeColors: Record<HomepagePool["spoke"], string> = {
+  "Stable Spoke": "#10b981",
+  "Correlated Spoke": "#3b82f6",
+  "Blue-chip Spoke": "#8b5cf6",
+  "Gov/DeFi Spoke": "#f59e0b",
+  "Stocks Spoke": "#ec4899",
 }
 
-function PoolCard({ pool }: { pool: HomepagePool }) {
+function PoolCard({ pool, spokeLabel }: { pool: HomepagePool; spokeLabel: string }) {
   return (
     <div className="flex h-[58px] flex-shrink-0 items-center gap-2.5 rounded-full border border-border bg-card px-3.5 shadow-[0_2px_10px_rgba(15,23,42,0.03)]">
       <div className="relative flex items-center shrink-0">
@@ -64,8 +67,8 @@ function PoolCard({ pool }: { pool: HomepagePool }) {
           <span className="text-[0.8rem] text-type-tertiary">{pool.dex}</span>
         </div>
         <div className="mt-0.5 flex items-center gap-1.5 whitespace-nowrap">
-          <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: hubColors[pool.hub] }} />
-          <span className="text-[0.76rem] text-type-secondary">{pool.hub}</span>
+          <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: spokeColors[pool.spoke] }} />
+          <span className="text-[0.76rem] text-type-secondary">{spokeLabel}</span>
         </div>
       </div>
     </div>
@@ -185,6 +188,10 @@ const positionSafetyItems = [
 ] as const
 
 export default async function HeroSection({ locale }: { locale: AppLocale }) {
+  // Pool cards are separate components, which the phrase maps below cannot reach, so their
+  // Spoke labels are translated here and passed in.
+  const phrases = await getMarketingMaps(locale, ["hero-section"])
+  const spokeLabel = (pool: HomepagePool) => phrases[pool.spoke] ?? pool.spoke
   return withMarketingI18n(
     locale,
     [
@@ -193,11 +200,11 @@ export default async function HeroSection({ locale }: { locale: AppLocale }) {
       "homepage/HomepageFaqSection",
       "homepage/HomepageNewsroomSection",
     ],
-    HeroSectionBody(locale),
+    HeroSectionBody(locale, spokeLabel),
   )
 }
 
-function HeroSectionBody(locale: AppLocale) {
+function HeroSectionBody(locale: AppLocale, spokeLabel: (pool: HomepagePool) => string) {
   return (
     <section className="pb-0">
       <div className="site-content-shell site-section-gap">
@@ -226,10 +233,10 @@ function HeroSectionBody(locale: AppLocale) {
                     style={{ transform: `translateX(${row.offset})` }}
                   >
                     {row.items.map((pool, index) => (
-                      <PoolCard key={`row-${rowIndex}-${index}-a`} pool={pool} />
+                      <PoolCard key={`row-${rowIndex}-${index}-a`} pool={pool} spokeLabel={spokeLabel(pool)} />
                     ))}
                     {row.items.map((pool, index) => (
-                      <PoolCard key={`row-${rowIndex}-${index}-b`} pool={pool} />
+                      <PoolCard key={`row-${rowIndex}-${index}-b`} pool={pool} spokeLabel={spokeLabel(pool)} />
                     ))}
                   </div>
                 </div>
@@ -765,7 +772,7 @@ function HeroSectionBody(locale: AppLocale) {
           <div className="mt-8 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16 xl:gap-20">
             <div className="flex items-center justify-center">
               <Image
-                src="/images/Avana Coin Ring.png"
+                src="/images/Avana Coin Ring.webp"
                 alt="Avana coin illustration"
                 width={1714}
                 height={1601}

@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4 tarafından desteklenmektedir",
-      "title": "Avana, AMM likidite havuzları için geliştirilmiş borç verme ve kredi piyasasıdır.",
-      "titleLine1": "Avana, AMM likidite havuzları için",
-      "titleLine2": "geliştirilmiş borç verme ve kredi piyasasıdır.",
+      "title": "Kripto, hisse senedi ve RWA borç alın AMM likidite pozisyonlarınızı teminat göstererek.",
+      "titleLine1": "Kripto, hisse senedi ve RWA borç alın",
+      "titleLine2": "AMM likidite pozisyonlarınızı teminat göstererek.",
+      "titleLine1Mobile": "Kripto ve hisse senedi borç alın",
+      "titleLine2Mobile": "likidite pozisyonlarınızı teminat göstererek.",
       "subtitle": "AMM likidite pozisyonlarınızı teminat göstererek zincir üzerinde kripto, emtia, döviz (FX) ve gerçek dünya varlıkları (RWA) borç alın.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "ARFC Önerisini Oku",
       "secondaryCta": "Test Ağını Aç"
-    },
-    "intro": {
-      "text": "Aave V4 ile, zincir üzerinde 7/24, <strong>Uniswap, Curve, Aerodrome, Balancer ve diğer DEX</strong> platformlarındaki likidite pozisyonlarını teminat göstererek <strong>kripto varlık, hisse senedi, döviz (FX) ve gerçek dünya varlıkları (RWA)</strong> <ink>borç alın</ink>."
     },
     "features": {
       "eyebrow": "Temel Özellikler",

@@ -35,7 +35,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            AppKit connects DEXs, wallets and portfolio applications to Avana&apos;s LP-backed borrowing flow on Ethereum and Base. The partner application chooses where the entry point appears and passes the user&apos;s wallet and market context. Borrowing itself runs through the AaveAdapter and the market&apos;s CDP Spoke on Aave V4: GHO first, and USDC, USDT or WETH where a CDP Spoke has enabled them.
+            AppKit connects DEXs, wallets and portfolio applications to Avana&apos;s LP-backed borrowing flow on Ethereum and Base. The partner application chooses where the entry point appears and passes the user&apos;s wallet and market context. Borrowing itself runs through the AaveAdapter and the market&apos;s CDP Spoke on Aave V4, in any debt asset that Spoke has enabled, such as GHO or USDC.
           </p>
           <p className="type-doc-body">
             AppKit is a frontend integration. It does not change which pools are listed, how positions are valued or how they are liquidated. Users can also call the contracts directly, without AppKit or Avana&apos;s frontend.
@@ -47,7 +47,7 @@ export default async function DeveloperAppKitPage({ params }: LocaleParamsProps)
           <div className="space-y-4">
             <div className="doc-topic">
               <h3 className="mb-2 type-doc-subsection-title">Intent capture</h3>
-              <p className="type-doc-body">A partner places the borrowing entry point beside an LP position, portfolio or swap view. That view supplies the position and market context for the handoff. Only Uniswap v3 positions on Ethereum and unstaked Aerodrome Slipstream positions on Base whose tick range matches a listed market exactly can be pledged.</p>
+              <p className="type-doc-body">A partner places the borrowing entry point beside an LP position, portfolio or swap view. That view supplies the position and market context for the handoff. Only positions whose pool and tick range match a listed market exactly can be pledged, such as Uniswap v3 and Uniswap v4 positions on Ethereum or unstaked Aerodrome Slipstream positions on Base.</p>
             </div>
             <div className="doc-topic">
               <h3 className="mb-2 type-doc-subsection-title">Protocol handoff</h3>

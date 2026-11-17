@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Avana란?",
-          "a": "Avana를 사용하면 유동성 공급자가 AMM 포지션을 Aave V4의 담보로 사용할 수 있습니다. 차입자는 Ethereum의 Uniswap v3 포지션이나 Base의 Aerodrome Slipstream 포지션을 담보로 제공합니다. Avana의 LPVault가 포지션을 보관하고, 그에 대응하는 vault token이 Avana CDP Spoke에 담보로 공급됩니다. 그런 다음 차입자는 유동성을 풀에 둔 채 GHO 또는 Spoke가 대출하는 다른 부채 자산을 차입합니다.\n\nAvana는 Ethereum과 Base에서 출시되며, 각 체인에 Avana Stable LP Hub가 있습니다. Hub와 Spoke는 Aave DAO가 소유하고 설정하는 수정되지 않은 표준 Aave V4 컨트랙트입니다. Avana 자체 컨트랙트가 보관, 가치 평가, 차입자 작업, 청산을 처리합니다."
+          "a": "Avana를 사용하면 유동성 공급자가 AMM 포지션을 Aave V4의 담보로 사용할 수 있습니다. 차입자는 Ethereum의 Uniswap v3 또는 Uniswap v4 포지션이나 Base의 Aerodrome Slipstream 포지션을 담보로 제공합니다. Avana의 LPVault가 포지션을 보관하고, 그에 대응하는 vault token이 Avana CDP Spoke에 담보로 공급됩니다. 그런 다음 차입자는 유동성을 풀에 둔 채 GHO나 USDC 등 Spoke가 대출하는 부채 자산을 차입합니다.\n\nAvana는 Ethereum과 Base에서 출시되며, 각 체인에 Avana Hub가 하나씩 있습니다. Hub와 Spoke는 Aave DAO가 소유하고 설정하는 수정되지 않은 표준 Aave V4 컨트랙트입니다. Avana 자체 컨트랙트가 보관, 가치 평가, 차입자 작업, 청산을 처리합니다."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Avana는 왜 Aave V4 Hub와 Spoke를 사용하나요?",
-          "a": "Aave V4는 공유 유동성(Hub)과 마켓별 리스크 설정(Spoke)을 분리합니다. 각 체인에는 Avana Stable LP Hub가 있습니다. Aave DAO는 공급 전용 Lend Spoke를 통해 여기에 상한이 있는 GHO 신용 한도를 제공하며, Avana의 CDP Spoke만 여기에서 인출할 수 있습니다.\n\nCDP Spoke는 체인, Hub, AMM 프로토콜, 리스크 등급마다 하나씩 있습니다. 출시 시에는 Ethereum의 \"Uniswap v3 Stable\"과 Base의 \"Aerodrome Slipstream Stable\"입니다. Correlated LP Hub와 Volatile LP Hub는 이후를 위해 설계되었습니다. Avana는 Aave V4를 포크하거나 수정하지 않습니다."
+          "a": "Aave V4는 공유 유동성(Hub)과 마켓별 리스크 설정(Spoke)을 분리합니다. 각 체인에는 Avana Hub가 하나 있습니다. 대출자와 Aave DAO의 부트스트랩 공급이 공급 전용 Lend Spoke를 통해 자금을 공급하며, Avana의 CDP Spoke만 Aave DAO가 승인한 신용 한도 내에서 여기에서 인출할 수 있습니다.\n\nCDP Spoke는 체인, AMM 프로토콜, 리스크 등급마다 하나씩 있으며, 각 Spoke는 자체 리스크 파라미터를 설정합니다. Ethereum에서는 Uniswap v3 및 Uniswap v4 Spoke가 Stable, Correlated, Blue-chip, Gov/DeFi 풀을 다루고, Base에서는 Aerodrome Slipstream Spoke가 Blue-chip, Gov/DeFi, Stocks 풀을 다룹니다. Avana는 Aave V4를 포크하거나 수정하지 않습니다."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Avana이 오라클 값을 할인하나요?",
-          "a": "아니요. 오라클은 헤어컷 없이 가치를 보고합니다. 각 마켓의 담보 계수가 그 가치 중 얼마가 부채를 뒷받침할 수 있는지 정합니다: 풀 토큰 중 가장 낮은 Aave V4 담보 계수에 최대 40%의 풀 리스크 계수를 곱한 값입니다. GHO 레그는 상장 시 설정된 명시적 계수를 사용합니다.\n\nGauntlet의 LP 담보 분석은 보수적인 시작 계수를 권장하며, 차입 자산이 풀 토큰이 아닌 경우 낮은 기초 계수의 0.25배까지 낮출 것을 권장합니다. 최종 계수는 Aave의 서비스 제공자와 함께 마켓별로 보정됩니다."
+          "a": "아니요. 오라클은 헤어컷 없이 가치를 보고합니다. 각 마켓의 담보 계수가 그 가치 중 얼마가 부채를 뒷받침할 수 있는지 정합니다: 풀 토큰 중 가장 낮은 Aave V4 담보 계수에 최대 90%의 풀 리스크 계수를 곱한 값입니다. GHO 레그는 상장 시 설정된 명시적 계수를 사용합니다.\n\nGauntlet의 LP 담보 분석은 보수적인 시작 계수를 권장하며, 차입 자산이 풀 토큰이 아닌 경우 낮은 기초 계수의 0.25배까지 낮출 것을 권장합니다. 최종 계수는 Aave의 서비스 제공자와 함께 마켓별로 보정됩니다."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "대출 한도는 어떻게 계산되나요?",
-          "a": "차입 한도 = LP 포지션 가치 × LP 담보 계수이며, LP 담보 계수 = 가장 낮은 토큰 담보 계수 × 풀 리스크 계수입니다. 한도는 기존 부채, 한도, 신용 한도의 이용 가능한 유동성, 오라클 검사에도 영향을 받습니다.\n\n예시 값: 담보 계수가 31.20%인 $20,000 규모의 USDC/USDT Slipstream 포지션은 $6,240의 가중 담보를 제공합니다. Lens는 헬스 팩터 1.10까지의 차입(이 경우 5,673.29 USDC)을 권장하고, 1.00 기준 최댓값(6,209.56 USDC)을 표시합니다."
+          "a": "차입 한도 = LP 포지션 가치 × LP 담보 계수이며, LP 담보 계수 = 가장 낮은 토큰 담보 계수 × 풀 리스크 계수입니다. 한도는 기존 부채, 한도, 신용 한도의 이용 가능한 유동성, 오라클 검사에도 영향을 받습니다.\n\n예시 값: 담보 계수가 80.00%인 $20,000 규모의 USDC/USDT Uniswap v3 포지션은 $16,000의 가중 담보를 제공합니다. Lens는 헬스 팩터 1.10까지의 차입(이 경우 14,546.91 USDC)을 권장하고, 1.00 기준 최댓값(15,921.97 USDC)을 표시합니다."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "왜 대출 한도가 제 LP 값보다 낮은가요?",
-          "a": "담보 계수는 가격 변동, 비영구적 손실, 범위 변화, 청산 비용을 위한 여유를 남깁니다. 풀 리스크 계수의 상한이 40%이므로, 두 토큰이 78%이면 초기 LTV는 최대 약 28.4%입니다.\n\n각 마켓에는 자체 풀 리스크 계수가 있으므로 가치와 한도 사이의 차이는 마켓마다 다릅니다."
+          "a": "담보 계수는 가격 변동, 비영구적 손실, 범위 변화, 청산 비용을 위한 여유를 남깁니다. 풀 리스크 계수는 최대 90%입니다. USDC/USDT의 경우 토큰 계수 90%와 풀 리스크 계수 88.89%로 담보 계수는 80%가 되므로, Lens의 헬스 팩터 1.10에서 초기 LTV는 최대 약 72.7%입니다.\n\n각 마켓에는 자체 풀 리스크 계수가 있으므로 가치와 한도 사이의 차이는 마켓마다 다릅니다."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Avana 차입자가 사용하는 유동성은 누가 공급하나요?",
-          "a": "출시 시 Aave DAO 재무부가 공급 전용 Lend Spoke를 통해 각 체인의 Avana Stable LP Hub에 상한이 있는 GHO 신용 한도를 제공합니다. 출시 시에는 공개 예치가 열려 있지 않습니다.\n\n자산에 대한 각 CDP Spoke의 인출 한도는 Aave DAO가 설정하며, 인출 한도의 합계는 최대 신용 한도까지입니다."
+          "a": "대출자와 Aave DAO입니다. 일반 대출은 첫날부터 열려 있습니다: 누구나 Aave DAO의 부트스트랩 공급과 함께, 각 체인 Avana Hub의 공급 전용 Lend Spoke를 통해 상장된 자산을 공급할 수 있습니다.\n\nAave DAO는 차입 가능한 각 자산에 대해 신용 한도를 승인하며, 해당 자산에 대한 CDP Spoke 인출 한도의 합계는 최대 그 한도까지입니다."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "무엇이 대출자 자본을 보호합니까?",
-          "a": "최대 40%의 풀 리스크 계수를 적용한 마켓별 담보 계수, Hub별 마켓·토큰·예치자 한도, 오라클 상태와 차단기, Avana 키퍼와 함께 모든 주소에 열린 청산, 그리고 모든 차입을 하나의 트랜잭션으로 청산할 수 있도록 체인의 플래시 유동성 내에 머무는 인출 한도.\n\n청산 후 담보 없이 부채가 남으면, 해당 Hub와 자산의 Avana Umbrella가 72시간 안에 적자를 충당합니다. 이는 Avana Labs가 자금을 대고 Aave DAO가 통제하는 1차 손실 준비금입니다. 준비금보다 큰 적자는 해당 Hub 자산 공급자의 손실이 되며, Aave DAO가 이를 실현합니다."
+          "a": "최대 90%의 풀 리스크 계수를 적용한 마켓별 담보 계수, Hub별 마켓·토큰·예치자 한도, 오라클 상태와 차단기, Avana 키퍼와 함께 모든 주소에 열린 청산, 그리고 모든 차입을 하나의 트랜잭션으로 청산할 수 있도록 체인의 플래시 유동성 내에 머무는 인출 한도.\n\n청산 후 담보 없이 부채가 남으면, 해당 Hub와 자산의 Avana Umbrella가 72시간 안에 적자를 충당합니다. 이는 Avana Labs가 자금을 대고 Aave DAO가 통제하는 1차 손실 준비금입니다. 준비금보다 큰 적자는 해당 Hub 자산 공급자의 손실이 되며, Aave DAO가 이를 실현합니다."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "헬스 팩터란 무엇입니까?",
-          "a": "헬스 팩터 = 담보 가치 × 담보 계수 ÷ 부채 가치이며, Aave가 계정별, 즉 마켓별로 계산합니다. 1 미만이면 계정이 청산될 수 있습니다.\n\n예시 값: 4,999.50 USDC의 부채에 대해 $6,240의 가중 담보가 있으면 헬스 팩터는 1.2481입니다."
+          "a": "헬스 팩터 = 담보 가치 × 담보 계수 ÷ 부채 가치이며, Aave가 계정별, 즉 마켓별로 계산합니다. 1 미만이면 계정이 청산될 수 있습니다.\n\n예시 값: 12,998.70 USDC의 부채에 대해 $16,000의 가중 담보가 있으면 헬스 팩터는 1.2309입니다."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Avana을 통해 GHO을 빌릴 수 있나요?",
-          "a": "예. GHO는 모든 CDP Spoke의 첫 번째 부채 자산이며, Avana Stable LP Hub에 대한 Aave DAO의 상한 있는 신용 한도로 자금이 조달됩니다. GHO 부채는 $1로 고정 평가됩니다.\n\nGHO 부채에는 Hub의 GHO 금리에 리스크 프리미엄을 더한 이자가 발생합니다. 그 이자는 모두 Aave DAO에 귀속됩니다."
+          "a": "예. GHO는 모든 CDP Spoke의 부채 자산 중 하나로 $1로 고정 평가되며, Aave DAO가 승인한 신용 한도 내에서 각 체인의 Avana Hub로부터 차입됩니다.\n\nGHO 부채에는 Hub의 GHO 금리에 리스크 프리미엄을 더한 이자가 발생합니다. 이자는 Aave DAO가 정하는 유동성 수수료가 있으면 이를 제한 뒤 Hub의 GHO 공급자에게 귀속되며, Avana는 어떤 몫도 가져가지 않습니다."
         },
         {
           "id": "can-gho-be-lp-collateral",

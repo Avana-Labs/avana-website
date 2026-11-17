@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Avana ni nini?",
-          "a": "Avana huwaruhusu watoa ukwasi kutumia nafasi za AMM kama dhamana kwenye Aave V4. Mkopaji huweka rehani nafasi ya Uniswap v3 kwenye Ethereum au nafasi ya Aerodrome Slipstream kwenye Base. LPVault ya Avana hushikilia nafasi hiyo, na vault token inayolingana hutolewa (supply) kama dhamana kwenye CDP Spoke ya Avana. Kisha mkopaji hukopa GHO, au mali nyingine ya deni ambayo Spoke inakopesha, huku ukwasi ukibaki kwenye bwawa.\n\nAvana inazinduliwa kwenye Ethereum na Base, ikiwa na Avana Stable LP Hub kwenye kila mnyororo. Hubs na Spokes ni mikataba ya kawaida ya Aave V4 isiyorekebishwa inayomilikiwa na kusanidiwa na Aave DAO. Mikataba ya Avana yenyewe hushughulikia uhifadhi, uthamini, vitendo vya mkopaji na ufilisishaji."
+          "a": "Avana huwaruhusu watoa ukwasi kutumia nafasi za AMM kama dhamana kwenye Aave V4. Mkopaji huweka rehani nafasi ya Uniswap v3 au Uniswap v4 kwenye Ethereum au nafasi ya Aerodrome Slipstream kwenye Base. LPVault ya Avana hushikilia nafasi hiyo, na vault token inayolingana hutolewa (supply) kama dhamana kwenye CDP Spoke ya Avana. Kisha mkopaji hukopa mali ya deni ambayo Spoke inakopesha, kama GHO au USDC, huku ukwasi ukibaki kwenye bwawa.\n\nAvana inazinduliwa kwenye Ethereum na Base, ikiwa na Avana Hub moja kwenye kila mnyororo. Hubs na Spokes ni mikataba ya kawaida ya Aave V4 isiyorekebishwa inayomilikiwa na kusanidiwa na Aave DAO. Mikataba ya Avana yenyewe hushughulikia uhifadhi, uthamini, vitendo vya mkopaji na ufilisishaji."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Kwa nini Avana inatumia Hubs na Spokes za Aave V4?",
-          "a": "Aave V4 hutenganisha ukwasi unaoshirikiwa (Hubs) na mipangilio ya hatari ya soko mahususi (Spokes). Kila mnyororo una Avana Stable LP Hub. Aave DAO huipa mstari wa mkopo wa GHO wenye kikomo kupitia Lend Spoke ya supply pekee, na CDP Spokes za Avana pekee ndizo zinaweza kuchota kutoka humo.\n\nKuna CDP Spoke moja kwa kila mnyororo, Hub, itifaki ya AMM na daraja la hatari. Wakati wa uzinduzi hizi ni \"Uniswap v3 Stable\" kwenye Ethereum na \"Aerodrome Slipstream Stable\" kwenye Base. Correlated LP na Volatile LP Hubs zimeundwa kwa ajili ya baadaye. Avana haifanyi fork wala kurekebisha Aave V4."
+          "a": "Aave V4 hutenganisha ukwasi unaoshirikiwa (Hubs) na mipangilio ya hatari ya soko mahususi (Spokes). Kila mnyororo una Avana Hub moja. Wakopeshaji na supply ya awali ya Aave DAO huifadhili kupitia Lend Spoke ya supply pekee, na CDP Spokes za Avana pekee ndizo zinaweza kuchota kutoka humo, ndani ya mistari ya mkopo ambayo Aave DAO huidhinisha.\n\nKuna CDP Spoke moja kwa kila mnyororo, itifaki ya AMM na daraja la hatari, na kila Spoke huweka vigezo vyake vya hatari. Kwenye Ethereum, Spokes za Uniswap v3 na Uniswap v4 hushughulikia mabwawa ya Stable, Correlated, Blue-chip na Gov/DeFi; kwenye Base, Spokes za Aerodrome Slipstream hushughulikia mabwawa ya Blue-chip, Gov/DeFi na Stocks. Avana haifanyi fork wala kurekebisha Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Je, Avana inapunguza thamani ya chumba cha ndani?",
-          "a": "Hapana. Oracle huripoti thamani bila punguzo la thamani. Collateral Factor ya kila soko huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni: Collateral Factor ya chini kabisa ya Aave V4 kati ya tokeni za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa kisichozidi 40%. Sehemu ya GHO hutumia kipengele mahususi kilichowekwa wakati wa uorodheshaji.\n\nUchambuzi wa Gauntlet wa dhamana ya LP unapendekeza vipengele vya kuanzia vya kihafidhina, chini hadi 0.25× ya kipengele cha chini cha msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa. Vipengele vya mwisho hurekebishwa kwa kila soko pamoja na watoa huduma wa Aave."
+          "a": "Hapana. Oracle huripoti thamani bila punguzo la thamani. Collateral Factor ya kila soko huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni: Collateral Factor ya chini kabisa ya Aave V4 kati ya tokeni za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa kisichozidi 90%. Sehemu ya GHO hutumia kipengele mahususi kilichowekwa wakati wa uorodheshaji.\n\nUchambuzi wa Gauntlet wa dhamana ya LP unapendekeza vipengele vya kuanzia vya kihafidhina, chini hadi 0.25× ya kipengele cha chini cha msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa. Vipengele vya mwisho hurekebishwa kwa kila soko pamoja na watoa huduma wa Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Kiasi cha mikopo kinahesabiwaje?",
-          "a": "Uwezo wa kukopa = thamani ya nafasi ya LP × LP Collateral Factor, na LP Collateral Factor = Collateral Factor ya tokeni ya chini kabisa × kipengele cha hatari cha bwawa. Uwezo pia hutegemea deni lililopo, vikomo, ukwasi unaopatikana wa mstari wa mkopo na ukaguzi wa oracle.\n\nThamani za mfano: nafasi ya Slipstream ya USDC/USDT yenye thamani ya $20,000 na Collateral Factor ya 31.20% hutoa $6,240 ya dhamana iliyopimwa. Lens inapendekeza kukopa hadi kipimo cha afya cha 1.10 (5,673.29 USDC hapa) na huonyesha kiwango cha juu kwa 1.00 (6,209.56 USDC)."
+          "a": "Uwezo wa kukopa = thamani ya nafasi ya LP × LP Collateral Factor, na LP Collateral Factor = Collateral Factor ya tokeni ya chini kabisa × kipengele cha hatari cha bwawa. Uwezo pia hutegemea deni lililopo, vikomo, ukwasi unaopatikana wa mstari wa mkopo na ukaguzi wa oracle.\n\nThamani za mfano: nafasi ya Uniswap v3 ya USDC/USDT yenye thamani ya $20,000 na Collateral Factor ya 80.00% hutoa $16,000 ya dhamana iliyopimwa. Lens inapendekeza kukopa hadi kipimo cha afya cha 1.10 (14,546.91 USDC hapa) na huonyesha kiwango cha juu kwa 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Kwa nini nguvu ya kukopa ni chini ya thamani yangu ya LP?",
-          "a": "Collateral Factor huacha nafasi kwa mabadiliko ya bei, impermanent loss, mabadiliko ya masafa na gharama za ufilisishaji. Kipengele cha hatari cha bwawa kina kikomo cha 40%, kwa hivyo kwa tokeni mbili za 78% loan-to-value ya kufungua ni si zaidi ya takriban 28.4%.\n\nTofauti kati ya thamani na uwezo hutofautiana kati ya masoko kwa sababu kila soko lina kipengele chake cha hatari cha bwawa."
+          "a": "Collateral Factor huacha nafasi kwa mabadiliko ya bei, impermanent loss, mabadiliko ya masafa na gharama za ufilisishaji. Kipengele cha hatari cha bwawa ni 90% kwa kiwango cha juu. Kwa USDC/USDT, vipengele vya tokeni vya 90% na kipengele cha hatari cha bwawa cha 88.89% hutoa Collateral Factor ya 80%, kwa hivyo loan-to-value ya kufungua kwenye kipimo cha afya cha Lens cha 1.10 ni si zaidi ya takriban 72.7%.\n\nTofauti kati ya thamani na uwezo hutofautiana kati ya masoko kwa sababu kila soko lina kipengele chake cha hatari cha bwawa."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Nani hutoa ukwasi unaotumiwa na wakopaji wa Avana?",
-          "a": "Wakati wa uzinduzi, hazina ya Aave DAO hutoa mstari wa mkopo wa GHO wenye kikomo kwa Avana Stable LP Hub ya kila mnyororo kupitia Lend Spoke ya supply pekee. Amana za umma hazijafunguliwa wakati wa uzinduzi.\n\nKikomo cha kuchota cha kila CDP Spoke kwa mali huwekwa na Aave DAO, na jumla ya vikomo vya kuchota haizidi mstari wa mkopo."
+          "a": "Wakopeshaji na Aave DAO. Ukopeshaji wa umma uko wazi tangu siku ya kwanza: yeyote anaweza kuweka supply ya mali iliyoorodheshwa kupitia Lend Spoke ya supply pekee ya Avana Hub ya kila mnyororo, kando ya supply ya awali ya Aave DAO.\n\nAave DAO huidhinisha mstari wa mkopo kwa kila mali inayoweza kukopwa, na jumla ya vikomo vya kuchota vya CDP Spokes kwa mali hiyo haizidi mstari huo."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Nini kinacholinda mtaji wa mkopeshaji?",
-          "a": "Collateral Factors za kila soko zenye kipengele cha hatari cha bwawa kisichozidi 40%, vikomo vya soko, tokeni na mweka amana kwa kila Hub, hali za oracle na breakers, ufilisishaji ulio wazi kwa anwani yoyote pamoja na keeper wa Avana, na vikomo vya uchukuaji vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, akiba ya hasara ya kwanza inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa watoaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
+          "a": "Collateral Factors za kila soko zenye kipengele cha hatari cha bwawa kisichozidi 90%, vikomo vya soko, tokeni na mweka amana kwa kila Hub, hali za oracle na breakers, ufilisishaji ulio wazi kwa anwani yoyote pamoja na keeper wa Avana, na vikomo vya uchukuaji vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, akiba ya hasara ya kwanza inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa watoaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Kipimo cha afya ni nini?",
-          "a": "Kipimo cha afya = thamani ya dhamana × Collateral Factor ÷ thamani ya deni, kinachokokotolewa na Aave kwa kila akaunti, yaani kwa kila soko. Chini ya 1, akaunti inaweza kufilisiwa.\n\nThamani za mfano: $6,240 ya dhamana iliyopimwa dhidi ya deni la 4,999.50 USDC hutoa kipimo cha afya cha 1.2481."
+          "a": "Kipimo cha afya = thamani ya dhamana × Collateral Factor ÷ thamani ya deni, kinachokokotolewa na Aave kwa kila akaunti, yaani kwa kila soko. Chini ya 1, akaunti inaweza kufilisiwa.\n\nThamani za mfano: $16,000 ya dhamana iliyopimwa dhidi ya deni la 12,998.70 USDC hutoa kipimo cha afya cha 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Je, naweza kukopa GHO kupitia Avana?",
-          "a": "Ndiyo. GHO ni mali ya kwanza ya deni kwenye kila CDP Spoke, inayofadhiliwa na mstari wa mkopo wenye kikomo wa Aave DAO kwa Avana Stable LP Hub. Deni la GHO huwekewa bei isiyobadilika ya $1.\n\nDeni la GHO hulimbikiza riba kwa kiwango cha GHO cha Hub pamoja na risk premium yako. Riba hiyo yote huenda kwa Aave DAO."
+          "a": "Ndiyo. GHO ni mali ya deni kwenye kila CDP Spoke, inayowekewa bei isiyobadilika ya $1, na hukopwa kutoka Avana Hub ya kila mnyororo ndani ya mstari wa mkopo ambao Aave DAO huidhinisha.\n\nDeni la GHO hulimbikiza riba kwa kiwango cha GHO cha Hub pamoja na risk premium yako. Riba huenda kwa wanaoweka supply ya GHO kwenye Hub, baada ya ada yoyote ya ukwasi ambayo Aave DAO huweka; Avana haichukui sehemu yoyote."
         },
         {
           "id": "can-gho-be-lp-collateral",

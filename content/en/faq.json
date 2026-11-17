@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "What is Avana?",
-          "a": "Avana lets liquidity providers use AMM positions as collateral on Aave V4. A borrower pledges a Uniswap v3 position on Ethereum or an Aerodrome Slipstream position on Base. Avana's LPVault holds the position, and a matching vault token is supplied as collateral on an Avana CDP Spoke. The borrower then borrows GHO, or another debt asset the Spoke lends, while the liquidity stays in the pool.\n\nAvana launches on Ethereum and Base, with an Avana Stable LP Hub on each chain. The Hubs and Spokes are standard, unmodified Aave V4 contracts owned and configured by the Aave DAO. Avana's own contracts handle custody, valuation, borrower actions and liquidation."
+          "a": "Avana lets liquidity providers use AMM positions as collateral on Aave V4. A borrower pledges a Uniswap v3 or Uniswap v4 position on Ethereum or an Aerodrome Slipstream position on Base. Avana's LPVault holds the position, and a matching vault token is supplied as collateral on an Avana CDP Spoke. The borrower then borrows a debt asset the Spoke lends, such as GHO or USDC, while the liquidity stays in the pool.\n\nAvana launches on Ethereum and Base, with one Avana Hub on each chain. The Hubs and Spokes are standard, unmodified Aave V4 contracts owned and configured by the Aave DAO. Avana's own contracts handle custody, valuation, borrower actions and liquidation."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Why does Avana use Aave V4 Hubs and Spokes?",
-          "a": "Aave V4 separates shared liquidity (Hubs) from market-specific risk settings (Spokes). Each chain has an Avana Stable LP Hub. The Aave DAO supplies a capped GHO credit line to it through a supply-only Lend Spoke, and only Avana's CDP Spokes can draw from it.\n\nThere is one CDP Spoke per chain, Hub, AMM protocol and risk tier. At launch these are \"Uniswap v3 Stable\" on Ethereum and \"Aerodrome Slipstream Stable\" on Base. Correlated LP and Volatile LP Hubs are designed for later. Avana does not fork or modify Aave V4."
+          "a": "Aave V4 separates shared liquidity (Hubs) from market-specific risk settings (Spokes). Each chain has one Avana Hub. Lenders and the Aave DAO's bootstrap supply fund it through a supply-only Lend Spoke, and only Avana's CDP Spokes can draw from it, within credit lines the Aave DAO approves.\n\nThere is one CDP Spoke per chain, AMM protocol and risk tier, and each Spoke sets its own risk parameters. On Ethereum, Uniswap v3 and Uniswap v4 Spokes cover Stable, Correlated, Blue-chip and Gov/DeFi pools; on Base, Aerodrome Slipstream Spokes cover Blue-chip, Gov/DeFi and Stocks pools. Avana does not fork or modify Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Does Avana discount the oracle value?",
-          "a": "No. The oracle reports value with no haircut. Each market's Collateral Factor sets how much of that value can support debt: the lowest Aave V4 Collateral Factor among the pool's tokens multiplied by a pool risk factor of at most 40%. A GHO leg uses an explicit factor set at listing.\n\nGauntlet's analysis of LP collateral recommends conservative starting factors, as low as 0.25× the lower underlying factor when the borrowed asset is not one of the pool's tokens. Final factors are calibrated per market with Aave's service providers."
+          "a": "No. The oracle reports value with no haircut. Each market's Collateral Factor sets how much of that value can support debt: the lowest Aave V4 Collateral Factor among the pool's tokens multiplied by a pool risk factor of at most 90%. A GHO leg uses an explicit factor set at listing.\n\nGauntlet's analysis of LP collateral recommends conservative starting factors, as low as 0.25× the lower underlying factor when the borrowed asset is not one of the pool's tokens. Final factors are calibrated per market with Aave's service providers."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "How is borrowing capacity calculated?",
-          "a": "Borrowing capacity = LP position value × LP Collateral Factor, and LP Collateral Factor = lowest token Collateral Factor × pool risk factor. Capacity also depends on existing debt, caps, the credit line's available liquidity and oracle checks.\n\nExample values: a USDC/USDT Slipstream position worth $20,000 with a Collateral Factor of 31.20% gives $6,240 of weighted collateral. The Lens recommends borrowing up to a health factor of 1.10 (5,673.29 USDC here) and shows the maximum at 1.00 (6,209.56 USDC)."
+          "a": "Borrowing capacity = LP position value × LP Collateral Factor, and LP Collateral Factor = lowest token Collateral Factor × pool risk factor. Capacity also depends on existing debt, caps, the credit line's available liquidity and oracle checks.\n\nExample values: a USDC/USDT Uniswap v3 position worth $20,000 with a Collateral Factor of 80.00% gives $16,000 of weighted collateral. The Lens recommends borrowing up to a health factor of 1.10 (14,546.91 USDC here) and shows the maximum at 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Why is borrow power lower than my LP value?",
-          "a": "The Collateral Factor leaves room for price moves, impermanent loss, range changes and liquidation costs. The pool risk factor is capped at 40%, so with two tokens at 78% the opening loan-to-value is at most about 28.4%.\n\nThe gap between value and capacity differs between markets because each market has its own pool risk factor."
+          "a": "The Collateral Factor leaves room for price moves, impermanent loss, range changes and liquidation costs. The pool risk factor is at most 90%. For USDC/USDT, token factors of 90% and a pool risk factor of 88.89% give a Collateral Factor of 80%, so the opening loan-to-value at the Lens's health factor of 1.10 is at most about 72.7%.\n\nThe gap between value and capacity differs between markets because each market has its own pool risk factor."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Who supplies the liquidity Avana borrowers use?",
-          "a": "At launch, the Aave DAO treasury supplies a capped GHO credit line to each chain's Avana Stable LP Hub through a supply-only Lend Spoke. Public deposits are not open at launch.\n\nEach CDP Spoke's draw cap on an asset is set by the Aave DAO, and the draw caps sum to at most the credit line."
+          "a": "Lenders and the Aave DAO. Public lending is open from day one: anyone can supply a listed asset through the supply-only Lend Spoke of each chain's Avana Hub, beside the Aave DAO's bootstrap supply.\n\nThe Aave DAO approves a credit line for each borrowable asset, and the CDP Spokes' draw caps on that asset sum to at most the line."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "What protects lender capital?",
-          "a": "Per-market Collateral Factors with a pool risk factor of at most 40%, market, token and depositor caps per Hub, oracle states and breakers, liquidation open to any address alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
+          "a": "Per-market Collateral Factors with a pool risk factor of at most 90%, market, token and depositor caps per Hub, oracle states and breakers, liquidation open to any address alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "What is the health factor?",
-          "a": "Health factor = collateral value × Collateral Factor ÷ debt value, computed by Aave per account, which means per market. Below 1, the account can be liquidated.\n\nExample values: $6,240 of weighted collateral against 4,999.50 USDC of debt gives a health factor of 1.2481."
+          "a": "Health factor = collateral value × Collateral Factor ÷ debt value, computed by Aave per account, which means per market. Below 1, the account can be liquidated.\n\nExample values: $16,000 of weighted collateral against 12,998.70 USDC of debt gives a health factor of 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Can I borrow GHO through Avana?",
-          "a": "Yes. GHO is the first debt asset on every CDP Spoke, funded by the Aave DAO's capped credit line to the Avana Stable LP Hub. GHO debt is priced at a fixed $1.\n\nGHO debt accrues interest at the Hub's GHO rate plus your risk premium. All of that interest goes to the Aave DAO."
+          "a": "Yes. GHO is a debt asset on every CDP Spoke, priced at a fixed $1, and it is borrowed from each chain's Avana Hub within the credit line the Aave DAO approves.\n\nGHO debt accrues interest at the Hub's GHO rate plus your risk premium. The interest goes to the Hub's GHO suppliers, after any liquidity fee the Aave DAO sets; Avana takes no share."
         },
         {
           "id": "can-gho-be-lp-collateral",

@@ -92,7 +92,7 @@ test("desktop navigation opens by keyboard and closes on Escape", async () => {
 test("CTA animation attaches its source when it is near the viewport", async () => {
   await visit(390, async page => {
     await page.$eval("video", el => el.scrollIntoView({ block: "center" }));
-    await page.waitForFunction(() => document.querySelector("video")?.getAttribute("src") === "/Avana-Transparent.webm");
+    await page.waitForFunction(() => document.querySelector("video source")?.getAttribute("src")?.startsWith("/media/avana-cta."));
   });
 });
 
@@ -136,7 +136,7 @@ test("homepage content paints on a cold Slow 3G visit", async () => {
       firstContentfulPaintMs: performance.getEntriesByName("first-contentful-paint")[0]?.startTime ?? null,
     }));
 
-    assert.match(heading, /Avana is the lending market/);
+    assert.match(heading, /Borrow crypto, stocks and RWAs/);
     assert.ok(
       firstContentfulPaintMs !== null && firstContentfulPaintMs < 5_000,
       `Slow 3G first contentful paint exceeded 5s: ${firstContentfulPaintMs}ms`,

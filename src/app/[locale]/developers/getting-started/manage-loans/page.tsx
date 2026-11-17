@@ -47,10 +47,10 @@ const priceStateRows = [
 
 const removalSteps = [
   "Carol calls removeLiquidity(3, (I, key1), 2,000,000,000, [1,990e6, 1,990e6], now + 600, 1.20e18).",
-  "The account has debt, so the pause, freeze and RiskModule pre-withdraw checks run: sequencer Up, oracles Live, no breaker.",
+  "The account has debt, so the pause, freeze and RiskModule pre-withdraw checks run: oracles Live, no breaker.",
   "The proxy withdraws 2,000,000,000 units from the Spoke and the Adapter burns them.",
   "Collateralization debits record key1 to 8,000,000,000 units and releases $20,000 × 2 / 10 = $4,000 of charge. The LPVault removes the liquidity and pays about 2,000 USDC and 2,000 USDT to Carol, each at least 1,990.",
-  "The remaining record is worth $16,000, above the $10 minimum. Collateral is now $21,000 and CF-weighted $6,552, so HF = 6,552 / 4,999.50 = 1.3105, above 1.20.",
+  "The remaining record is worth $16,000, above the $10 minimum. Collateral is now $21,000 and CF-weighted $16,800, so HF = 16,800 / 12,998.70 = 1.2924, above 1.20.",
   "Events: RecordReduced, UnitsReleased, CollateralReduced.",
 ]
 
@@ -169,7 +169,7 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
             Units admitted through the slice or a rescue exemption are rescue units. Aave counts them as collateral, so they protect the account from liquidation, but they count as zero for new borrowing and for withdrawals that leave debt: those checks use the health factor with rescue units valued at zero.
           </p>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. An account owes 15,000 GHO against $50,000 of collateral at a 31.20% collateral factor, so its HF is 1.04. The regular budget is full. A $2,000 top-up books from the slice (the restore amount is $2,884.62), all of its units are rescue units, and HF becomes 1.0816. Under Paused with reason General, an $800 rescue top-up (restore amount $884.62) lifts HF to 1.0982, while a $1,000 pledge reverts with NotRescueTopUp.
+            Example values; each market&apos;s parameters are set at listing. An account owes 15,000 GHO against $19,500 of collateral at an 80.00% collateral factor, so its HF is 1.04. The regular budget is full. A $1,000 top-up books from the slice (the restore amount is $1,125), all of its units are rescue units, and HF becomes 1.0933. Under Paused with reason General, a $100 rescue top-up (restore amount $125) lifts HF to 1.0987, while a $200 pledge reverts with NotRescueTopUp.
           </div>
           <p className="type-doc-body">
             Every check a pledge runs is listed in <Link href="/developers/getting-started" className="text-type-accent hover:underline">Deposit LP</Link>.
@@ -212,7 +212,7 @@ export default async function ManageLoansPage({ params }: LocaleParamsProps) {
             Failures: <code className="type-doc-inline-code">PartialRemovalTooLarge</code> for units at or above the credited units, <code className="type-doc-inline-code">AmountBelowMinimum</code> when a token falls below its minimum, <code className="type-doc-inline-code">RecordBelowMinPledge</code> when the remaining record is worth less than minPledgeUsd, and <code className="type-doc-inline-code">HealthFactorTooLow</code> below the health floor.
           </p>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol holds record key1 (10,000,000,000 units, $20,000) and a top-up keyB (2,500,000,000 units, $5,000) in market 3 on Base: collateral $25,000, CF-weighted $7,800, debt 5,000 USDC valued at $4,999.50, HF 1.5602. She removes 2,000 whole tokens from key1 and keeps the NFT pledged.
+            Example values; each market&apos;s parameters are set at listing. Carol holds record key1 (10,000,000,000 units, $20,000) and a top-up keyB (2,500,000,000 units, $5,000) in market 3 on Ethereum: collateral $25,000, CF-weighted $20,000, debt 13,000 USDC valued at $12,998.70, HF 1.5386. She removes 2,000 whole tokens from key1 and keeps the NFT pledged.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             {removalSteps.map((step) => (

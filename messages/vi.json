@@ -102,12 +102,11 @@
         "liquidation": "Khung pháp lý thanh lý",
         "integrations": "Các tích hợp được hỗ trợ",
         "safety": "Cơ chế an toàn",
-        "legal": "Pháp lý & Tuân thủ",
         "copilot": "Hỏi AI",
-        "reference": "Tham chiếu"
+        "securityLegal": "Bảo mật & Pháp lý"
       },
       "items": {
-        "overview": "Tổng quan",
+        "overview": "Chào mừng",
         "keyConcepts": "Các khái niệm chính",
         "glossary": "Thuật ngữ",
         "depositLp": "Tiền gửi LP",
@@ -146,9 +145,8 @@
         "marketLifecycle": "Vòng đời thị trường",
         "governance": "Quản trị",
         "emergencyControls": "Biện pháp khẩn cấp",
-        "contractList": "Hợp đồng",
-        "addresses": "Địa chỉ",
-        "parameters": "Tham số",
+        "addresses": "Địa chỉ hợp đồng",
+        "parameters": "Tham số thị trường",
         "accessControls": "Kiểm soát truy cập",
         "securityVerification": "Bảo mật và xác minh",
         "audits": "Kiểm toán",
@@ -160,9 +158,9 @@
         "chainId": "Chain ID",
         "copy": "Sao chép",
         "copied": "Đã sao chép",
-        "placeholder": "Giá trị giữ chỗ",
         "explorer": "mở trình khám phá khối",
-        "updated": "Cập nhật lần cuối {date}"
+        "updated": "Cập nhật lần cuối {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "Định giá",
-      "description": "Biểu phí rõ ràng cho hoạt động vay, cho vay và các chiến lược được bảo đảm bằng LP trên Avana."
+      "description": "Avana thu những gì: phí giao diện cho mỗi thao tác, một phần lợi nhuận thanh lý và điểm thưởng."
     },
     "siteTitle": "Avana - Vay Dựa Trên LP Vị Trí trên Aave v4",
     "siteDescription": "Mở khóa thanh khoản từ LP token của bạn. Vay lên đến 80% dựa trên các vị trí Uniswap, Curve và Balancer trong khi vẫn tiếp tục kiếm phí giao dịch trên Aave v4.",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Được cung cấp bởi Aave v4",
-      "title": "Avana là thị trường cho vay DeFi được tối ưu hóa cho các pool thanh khoản AMM.",
-      "titleLine1": "Avana là thị trường cho vay DeFi",
-      "titleLine2": "được tối ưu hóa cho các pool thanh khoản AMM.",
+      "title": "Vay crypto, cổ phiếu và RWA thế chấp bằng vị thế thanh khoản AMM của bạn.",
+      "titleLine1": "Vay crypto, cổ phiếu và RWA",
+      "titleLine2": "thế chấp bằng vị thế thanh khoản AMM của bạn.",
+      "titleLine1Mobile": "Vay crypto và cổ phiếu",
+      "titleLine2Mobile": "thế chấp bằng vị thế thanh khoản của bạn.",
       "subtitle": "Vay crypto, hàng hóa, ngoại hối (FX) và tài sản thế giới thực (RWA) onchain bằng cách sử dụng vị thế thanh khoản AMM làm tài sản thế chấp.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "Đọc đề xuất ARFC",
       "secondaryCta": "Mở mạng thử nghiệm"
-    },
-    "intro": {
-      "text": "<ink>Vay</ink> <strong>crypto, cổ phiếu, ngoại hối (FX) và tài sản thế giới thực (RWA)</strong> bằng cách dùng các vị thế thanh khoản trên <strong>Uniswap, Curve, Aerodrome, Balancer và các DEX khác</strong> làm tài sản thế chấp; với Aave V4, onchain và 24/7."
     },
     "features": {
       "eyebrow": "Các tính năng chính",
@@ -331,69 +328,69 @@
     }
   },
   "pricing": {
-    "title": "Định giá",
-    "subtitleLine1": "Lãi suất và lợi nhuận phụ thuộc vào thị trường,",
-    "subtitleLine2": "vị thế và tuyến giao dịch bạn chọn.",
-    "interfaceRate": "Phí giao diện trả trước — 15 bps (0,15%)",
-    "includes": "Bao gồm:",
-    "borrow": {
-      "title": "Vay",
-      "subtitle": "Cho tín dụng có LP bảo chứng",
-      "value": "Biến động",
-      "unit": "lãi suất",
-      "description": "Chi phí vay theo thị trường Aave v4 bạn chọn.",
+    "title": "Biểu phí",
+    "subtitleLine1": "Phí ứng dụng cho mỗi thao tác và một phần lợi nhuận thanh lý.",
+    "subtitleLine2": "Lãi suất vay và phí bù rủi ro là mức của Aave V4, do Aave DAO đặt ra và trả cho người cho vay. Avana không nhận phần nào từ đó.",
+    "interfaceRate": "Phí giao diện: 10 bps (0,10%)",
+    "includes": "Chi tiết:",
+    "frontEnd": {
+      "title": "Phí giao diện",
+      "subtitle": "Do ứng dụng Avana thu",
+      "value": "10",
+      "unit": "bps mỗi thao tác",
+      "description": "Được thêm vào thao tác của bạn dưới dạng một lần chuyển token trong cùng lô giao dịch: swap, vay, trả nợ, cầm cố và cho vay. Không hợp đồng nào thu khoản phí này, và mức tối đa là 25 bps.",
       "items": {
-        "one": "Lãi suất do thị trường quyết định",
-        "two": "Chỉ tích lũy trên khoản nợ còn lại",
-        "three": "Hiển thị trước khi xác nhận"
+        "one": "9 bps sau 30 ngày thành viên",
+        "two": "8 bps sau 90 ngày, 7 bps sau 180 ngày",
+        "three": "Thời gian thành viên được tính từ tương tác đầu tiên của ví bạn"
       }
     },
-    "lend": {
-      "title": "Cho vay",
-      "subtitle": "Cung cấp vốn vào Hub",
-      "value": "Theo thị trường",
-      "unit": "APY",
-      "description": "Kiếm lợi nhuận từ nhu cầu có LP bảo chứng qua Lend Spoke của Avana.",
+    "liquidation": {
+      "title": "Phí thanh lý",
+      "subtitle": "Chỉ khi một vị thế bị thanh lý",
+      "value": "20%",
+      "unit": "lợi nhuận theo oracle",
+      "description": "Lợi nhuận theo oracle là giá trị oracle của tài sản đảm bảo bị tịch thu trừ đi khoản nợ đã trả. Phần của Avana bị giới hạn bởi phần thặng dư mà đợt thanh lý thực sự thu được, vì vậy khoản nợ luôn được trả trước.",
       "items": {
-        "one": "Lợi suất thay đổi theo mức sử dụng",
-        "two": "Cung cấp vốn vào các thị trường được hỗ trợ",
-        "three": "APY hiện tại hiển thị trong giao diện"
+        "one": "Người thanh lý giữ phần lợi nhuận còn lại làm phần thưởng",
+        "two": "Phần thu hồi vượt giá trị oracle thuộc về người vay, hoặc chuyển vào First-Loss Reserve nếu vẫn còn nợ",
+        "three": "Được trả bằng tài sản nợ cho bên nhận phí có timelock của Avana"
       }
     },
-    "multiply": {
-      "title": "Nhân",
-      "subtitle": "Cho mức tiếp xúc LP được quản lý",
-      "value": "Biến động",
-      "unit": "lãi suất chiến lược",
-      "description": "Tăng mức tiếp xúc LP với các chiến lược được quản lý dựa trên vị thế AMM được hỗ trợ.",
+    "points": {
+      "title": "Điểm",
+      "subtitle": "Phần thưởng khi dùng Avana",
+      "value": "1",
+      "unit": "điểm cho mỗi $1 phí",
+      "description": "Điểm được ghi nhận trong ứng dụng Avana. Không có token và không có gì on-chain. Đổi điểm để được giảm phí giao diện tạm thời.",
       "items": {
-        "one": "Dùng vị thế LP được hỗ trợ làm tài sản thế chấp",
-        "two": "Mức tiếp xúc vẫn gắn với pool cơ sở",
-        "three": "Kiểm soát đòn bẩy và đóng vị thế luôn rõ ràng"
+        "one": "1 điểm cho mỗi $1 phí giao diện đã trả",
+        "two": "100 điểm cho mỗi 30 ngày thành viên",
+        "three": "Nhiệm vụ: nạp tiền lần đầu, vay, trả nợ, cầm cố, giới thiệu và nhiều hơn nữa"
       }
     },
     "faq": {
       "title": "Câu hỏi thường gặp",
       "items": {
-        "interfaceFee": {
-          "question": "Avana tính phí gì khi sử dụng giao diện?",
-          "answer": "Phí giao diện chính thức là 15 bps (0,15%) khi áp dụng. Phí được hiển thị trước khi ký và tách biệt với gas, phí swap, lãi suất Aave và chi phí thanh lý."
+        "frontEndFee": {
+          "question": "Ứng dụng Avana thu phí gì?",
+          "answer": "Phí giao diện 10 bps trên số tiền của thao tác (với cầm cố hoặc rút tài sản đảm bảo, trên giá trị của vị thế), được thêm vào dưới dạng một lần chuyển trong cùng lô giao dịch với thao tác. Phí giảm xuống 9, 8 và 7 bps sau 30, 90 và 180 ngày thành viên. Phí không bao giờ vượt quá 25 bps, mức trần trong ARFC niêm yết của Avana, và được hiển thị trước khi bạn ký."
         },
         "borrowRate": {
-          "question": "Lãi suất vay có cố định không?",
-          "answer": "Không. Lãi suất do thị trường Aave v4 đã chọn quyết định và có thể thay đổi theo mức sử dụng và tham số thị trường. Lãi suất hiện tại hiển thị trước khi vay."
+          "question": "Avana có nhận một phần tiền lãi không?",
+          "answer": "Không. Lãi suất vay và phí bù rủi ro là mức của Aave V4 do Aave DAO đặt ra. Tiền lãi thuộc về người cho vay của Hub, sau khi trừ phí thanh khoản mà Aave DAO đặt cho ngân quỹ của mình, nếu có. Avana không nhận phần nào từ đó."
         },
-        "lendingApy": {
-          "question": "APY cho vay được xác định thế nào?",
-          "answer": "Lợi nhuận phụ thuộc vào thị trường, mức sử dụng và nhu cầu từ người vay có LP bảo chứng. APY hiện tại hiển thị trước khi cung cấp vốn."
+        "liquidationFee": {
+          "question": "Phí thanh lý hoạt động thế nào?",
+          "answer": "Khi một vị thế bị thanh lý, Avana nhận 20% lợi nhuận theo oracle: giá trị oracle của tài sản đảm bảo bị tịch thu trừ đi khoản nợ đã trả. Phí bị giới hạn bởi phần thặng dư mà đợt thanh lý thực sự thu được, nên không bao giờ cản trở việc thanh lý. Người thanh lý giữ phần lợi nhuận còn lại, và phần thu hồi vượt giá trị oracle thuộc về người vay."
+        },
+        "points": {
+          "question": "Điểm hoạt động thế nào?",
+          "answer": "Bạn nhận 1 điểm cho mỗi $1 phí giao diện đã trả, 100 điểm cho mỗi 30 ngày thành viên, và điểm từ các nhiệm vụ như nạp tiền lần đầu, vay, trả nợ, cầm cố và giới thiệu. Đổi điểm để được giảm phí giao diện tạm thời. Điểm không phải là token và không được ghi on-chain."
         },
         "separateCosts": {
-          "question": "Chi phí nào tách biệt với phí Avana?",
-          "answer": "Gas mạng, phí swap DEX, lãi suất thị trường Aave và chi phí thực hiện thanh lý tách biệt với phí giao diện chính thức. Hãy xem chi tiết giao dịch trước khi ký."
-        },
-        "feeChanges": {
-          "question": "Phí và lãi suất có thể thay đổi không?",
-          "answer": "Có. Lãi suất thị trường thay đổi theo mức sử dụng và tham số rủi ro, còn chính sách giao diện cũng có thể thay đổi. Luôn kiểm tra số tiền hiện tại trước khi ký."
+          "question": "Những chi phí nào tách biệt với phí của Avana?",
+          "answer": "Gas mạng, phí swap DEX và lãi Aave là các khoản riêng. Ứng dụng hiển thị phí, ước tính gas và tổng chi phí trước khi bạn ký."
         }
       }
     }

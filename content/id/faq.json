@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Apa itu Avana?",
-          "a": "Avana memungkinkan penyedia likuiditas menggunakan posisi AMM sebagai kolateral di Aave V4. Peminjam menjaminkan posisi Uniswap v3 di Ethereum atau posisi Aerodrome Slipstream di Base. LPVault milik Avana menyimpan posisi tersebut, dan vault token yang sesuai di-supply sebagai kolateral pada CDP Spoke Avana. Peminjam kemudian meminjam GHO, atau aset utang lain yang dipinjamkan Spoke tersebut, sementara likuiditas tetap berada di pool.\n\nAvana diluncurkan di Ethereum dan Base, dengan Avana Stable LP Hub di setiap chain. Hub dan Spoke adalah kontrak Aave V4 standar yang tidak dimodifikasi, dimiliki dan dikonfigurasi oleh Aave DAO. Kontrak Avana sendiri menangani kustodi, valuasi, tindakan peminjam, dan likuidasi."
+          "a": "Avana memungkinkan penyedia likuiditas menggunakan posisi AMM sebagai kolateral di Aave V4. Peminjam menjaminkan posisi Uniswap v3 atau Uniswap v4 di Ethereum atau posisi Aerodrome Slipstream di Base. LPVault milik Avana menyimpan posisi tersebut, dan vault token yang sesuai di-supply sebagai kolateral pada CDP Spoke Avana. Peminjam kemudian meminjam aset utang yang dipinjamkan Spoke tersebut, seperti GHO atau USDC, sementara likuiditas tetap berada di pool.\n\nAvana diluncurkan di Ethereum dan Base, dengan satu Avana Hub di setiap chain. Hub dan Spoke adalah kontrak Aave V4 standar yang tidak dimodifikasi, dimiliki dan dikonfigurasi oleh Aave DAO. Kontrak Avana sendiri menangani kustodi, valuasi, tindakan peminjam, dan likuidasi."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Mengapa Avana menggunakan Hub dan Spoke Aave V4?",
-          "a": "Aave V4 memisahkan likuiditas bersama (Hub) dari pengaturan risiko khusus pasar (Spoke). Setiap chain memiliki Avana Stable LP Hub. Aave DAO menyediakan jalur kredit GHO yang dibatasi ke Hub tersebut melalui Lend Spoke khusus supply, dan hanya CDP Spoke Avana yang dapat menarik darinya.\n\nAda satu CDP Spoke per chain, Hub, protokol AMM, dan tingkat risiko. Saat peluncuran, CDP Spoke tersebut adalah \"Uniswap v3 Stable\" di Ethereum dan \"Aerodrome Slipstream Stable\" di Base. Correlated LP Hub dan Volatile LP Hub dirancang untuk tahap selanjutnya. Avana tidak melakukan fork atau memodifikasi Aave V4."
+          "a": "Aave V4 memisahkan likuiditas bersama (Hub) dari pengaturan risiko khusus pasar (Spoke). Setiap chain memiliki satu Avana Hub. Pemberi pinjaman dan suplai awal Aave DAO mendanainya melalui Lend Spoke khusus supply, dan hanya CDP Spoke Avana yang dapat menarik darinya, dalam batas jalur kredit yang disetujui Aave DAO.\n\nAda satu CDP Spoke per chain, protokol AMM, dan tingkat risiko, dan setiap Spoke menetapkan parameter risikonya sendiri. Di Ethereum, Spoke Uniswap v3 dan Uniswap v4 mencakup pool Stable, Correlated, Blue-chip, dan Gov/DeFi; di Base, Spoke Aerodrome Slipstream mencakup pool Blue-chip, Gov/DeFi, dan Stocks. Avana tidak melakukan fork atau memodifikasi Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Apakah Avana mendiskon nilai oracle?",
-          "a": "Tidak. Oracle melaporkan nilai tanpa potongan nilai. Collateral Factor setiap pasar menentukan berapa banyak dari nilai tersebut yang dapat mendukung utang: Collateral Factor Aave V4 terendah di antara token-token pool dikalikan dengan faktor risiko pool paling tinggi 40%. Leg GHO menggunakan faktor eksplisit yang ditetapkan saat listing.\n\nAnalisis Gauntlet tentang kolateral LP merekomendasikan faktor awal yang konservatif, serendah 0.25× faktor dasar yang lebih rendah ketika aset yang dipinjam bukan salah satu token pool. Faktor final dikalibrasi per pasar bersama penyedia layanan Aave."
+          "a": "Tidak. Oracle melaporkan nilai tanpa potongan nilai. Collateral Factor setiap pasar menentukan berapa banyak dari nilai tersebut yang dapat mendukung utang: Collateral Factor Aave V4 terendah di antara token-token pool dikalikan dengan faktor risiko pool paling tinggi 90%. Leg GHO menggunakan faktor eksplisit yang ditetapkan saat listing.\n\nAnalisis Gauntlet tentang kolateral LP merekomendasikan faktor awal yang konservatif, serendah 0.25× faktor dasar yang lebih rendah ketika aset yang dipinjam bukan salah satu token pool. Faktor final dikalibrasi per pasar bersama penyedia layanan Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Bagaimana kapasitas pinjaman dihitung?",
-          "a": "Kapasitas pinjaman = nilai posisi LP × LP Collateral Factor, dan LP Collateral Factor = Collateral Factor token terendah × faktor risiko pool. Kapasitas juga bergantung pada utang yang ada, batas, likuiditas jalur kredit yang tersedia, dan pemeriksaan oracle.\n\nNilai contoh: posisi Slipstream USDC/USDT senilai $20,000 dengan Collateral Factor 31.20% memberikan kolateral tertimbang sebesar $6,240. Lens merekomendasikan pinjaman hingga faktor kesehatan 1.10 (5,673.29 USDC dalam contoh ini) dan menampilkan maksimum pada 1.00 (6,209.56 USDC)."
+          "a": "Kapasitas pinjaman = nilai posisi LP × LP Collateral Factor, dan LP Collateral Factor = Collateral Factor token terendah × faktor risiko pool. Kapasitas juga bergantung pada utang yang ada, batas, likuiditas jalur kredit yang tersedia, dan pemeriksaan oracle.\n\nNilai contoh: posisi Uniswap v3 USDC/USDT senilai $20,000 dengan Collateral Factor 80.00% memberikan kolateral tertimbang sebesar $16,000. Lens merekomendasikan pinjaman hingga faktor kesehatan 1.10 (14,546.91 USDC dalam contoh ini) dan menampilkan maksimum pada 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Mengapa daya pinjam lebih rendah daripada nilai LP saya?",
-          "a": "Collateral Factor menyisakan ruang untuk pergerakan harga, impermanent loss, perubahan rentang, dan biaya likuidasi. Faktor risiko pool dibatasi pada 40%, sehingga dengan dua token pada 78%, loan-to-value awal paling tinggi sekitar 28.4%.\n\nSelisih antara nilai dan kapasitas berbeda antarpasar karena setiap pasar memiliki faktor risiko pool-nya sendiri."
+          "a": "Collateral Factor menyisakan ruang untuk pergerakan harga, impermanent loss, perubahan rentang, dan biaya likuidasi. Faktor risiko pool paling tinggi 90%. Untuk USDC/USDT, faktor token 90% dan faktor risiko pool 88.89% menghasilkan Collateral Factor 80%, sehingga loan-to-value awal pada faktor kesehatan Lens 1.10 paling tinggi sekitar 72.7%.\n\nSelisih antara nilai dan kapasitas berbeda antarpasar karena setiap pasar memiliki faktor risiko pool-nya sendiri."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Siapa yang menyediakan likuiditas yang digunakan peminjam Avana?",
-          "a": "Saat peluncuran, treasury Aave DAO menyediakan jalur kredit GHO yang dibatasi ke Avana Stable LP Hub di setiap chain melalui Lend Spoke khusus supply. Setoran publik tidak dibuka saat peluncuran.\n\nBatas penarikan setiap CDP Spoke untuk suatu aset ditetapkan oleh Aave DAO, dan jumlah batas penarikan paling banyak sama dengan jalur kredit."
+          "a": "Pemberi pinjaman dan Aave DAO. Pemberian pinjaman publik terbuka sejak hari pertama: siapa pun dapat menyuplai aset yang tercantum melalui Lend Spoke khusus supply milik Avana Hub di setiap chain, di samping suplai awal Aave DAO.\n\nAave DAO menyetujui jalur kredit untuk setiap aset yang dapat dipinjam, dan jumlah batas penarikan CDP Spoke untuk aset tersebut paling banyak sama dengan jalur itu."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Apa yang melindungi modal pemberi pinjaman?",
-          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 40%, batas pasar, token, dan deposan per Hub, status oracle dan breaker, likuidasi yang terbuka untuk alamat mana pun di samping keeper Avana, dan draw cap yang tetap dalam batas likuiditas flash chain tersebut sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi meninggalkan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, cadangan first-loss yang didanai Avana Labs dan dikendalikan Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan menjadi kerugian bagi pemasok aset Hub tersebut, yang direalisasikan oleh Aave DAO."
+          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 90%, batas pasar, token, dan deposan per Hub, status oracle dan breaker, likuidasi yang terbuka untuk alamat mana pun di samping keeper Avana, dan draw cap yang tetap dalam batas likuiditas flash chain tersebut sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi meninggalkan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, cadangan first-loss yang didanai Avana Labs dan dikendalikan Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan menjadi kerugian bagi pemasok aset Hub tersebut, yang direalisasikan oleh Aave DAO."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Apa itu faktor kesehatan?",
-          "a": "Faktor kesehatan = nilai kolateral × Collateral Factor ÷ nilai utang, dihitung oleh Aave per akun, yang berarti per pasar. Di bawah 1, akun dapat dilikuidasi.\n\nNilai contoh: kolateral tertimbang $6,240 terhadap utang 4,999.50 USDC menghasilkan faktor kesehatan 1.2481."
+          "a": "Faktor kesehatan = nilai kolateral × Collateral Factor ÷ nilai utang, dihitung oleh Aave per akun, yang berarti per pasar. Di bawah 1, akun dapat dilikuidasi.\n\nNilai contoh: kolateral tertimbang $16,000 terhadap utang 12,998.70 USDC menghasilkan faktor kesehatan 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Bisakah saya meminjam GHO melalui Avana?",
-          "a": "Ya. GHO adalah aset utang pertama di setiap CDP Spoke, didanai oleh jalur kredit Aave DAO yang dibatasi ke Avana Stable LP Hub. Utang GHO dihargai tetap $1.\n\nUtang GHO mengakumulasi bunga pada suku bunga GHO Hub ditambah premi risiko Anda. Seluruh bunga tersebut diberikan kepada Aave DAO."
+          "a": "Ya. GHO adalah aset utang di setiap CDP Spoke, dihargai tetap $1, dan dipinjam dari Avana Hub di setiap chain dalam batas jalur kredit yang disetujui Aave DAO.\n\nUtang GHO mengakumulasi bunga pada suku bunga GHO Hub ditambah premi risiko Anda. Bunga tersebut diberikan kepada penyuplai GHO di Hub, setelah fee likuiditas yang ditetapkan Aave DAO, jika ada; Avana tidak mengambil bagian apa pun."
         },
         {
           "id": "can-gho-be-lp-collateral",

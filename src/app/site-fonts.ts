@@ -13,7 +13,8 @@ export const diatypeFont = localFont({
   src: [
     {
       path: "../../public/fonts/diatype/ABCDiatypeVariable-Site-Trial.woff2",
-      weight: "400 600",
+      // The wght axis runs 200–1000; 300 lets 1x screens use the lighter weights in globals.css.
+      weight: "300 600",
       style: "normal",
     },
   ],

@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic"
+import type { ReactNode } from "react"
 
 interface DeveloperDocPageHeaderProps {
   title: string
   description?: string
+  /** Shown right after the title, centred on its line; wraps under it on narrow screens. */
+  badge?: ReactNode
 }
 
 const DeferredLlmExportMenu = dynamic(
@@ -17,13 +20,23 @@ const DeferredLlmExportMenu = dynamic(
   },
 )
 
-export function DeveloperDocPageHeader({ title, description }: DeveloperDocPageHeaderProps) {
+export function DeveloperDocPageHeader({ title, description, badge }: DeveloperDocPageHeaderProps) {
+  const heading = (
+    <h1 className="doc-page-title min-w-0 text-foreground">
+      {title}
+    </h1>
+  )
   return (
     <div className="mb-10">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <h1 className="doc-page-title min-w-0 text-foreground">
-          {title}
-        </h1>
+        {badge ? (
+          <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-2">
+            {heading}
+            {badge}
+          </div>
+        ) : (
+          heading
+        )}
 
         <div className="relative self-start" data-export-skip>
           <DeferredLlmExportMenu />

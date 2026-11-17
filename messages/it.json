@@ -102,12 +102,11 @@
         "liquidation": "Quadro di liquidazione",
         "integrations": "Integrazioni supportate",
         "safety": "Meccanismi di sicurezza",
-        "legal": "Legale e Conformità",
         "copilot": "Chiedi all'IA",
-        "reference": "Riferimento"
+        "securityLegal": "Sicurezza e note legali"
       },
       "items": {
-        "overview": "Panoramica",
+        "overview": "Benvenuto",
         "keyConcepts": "Concetti Chiave",
         "glossary": "Glossario",
         "depositLp": "Deposito LP",
@@ -146,10 +145,9 @@
         "marketLifecycle": "Ciclo di vita del mercato",
         "governance": "Governance",
         "emergencyControls": "Controlli di emergenza",
-        "contractList": "Contratti",
-        "addresses": "Indirizzi",
-        "parameters": "Parametri",
-        "accessControls": "Controlli di accesso",
+        "addresses": "Indirizzi dei contratti",
+        "parameters": "Parametri dei mercati",
+        "accessControls": "Controllo degli accessi",
         "securityVerification": "Sicurezza e verifica",
         "audits": "Audit",
         "lens": "Lens",
@@ -160,9 +158,9 @@
         "chainId": "ID catena",
         "copy": "Copia",
         "copied": "Copiato",
-        "placeholder": "Segnaposto",
         "explorer": "apre il block explorer",
-        "updated": "Ultimo aggiornamento {date}"
+        "updated": "Ultimo aggiornamento {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "Prezzi",
-      "description": "Prezzi chiari per prestiti, depositi e strategie garantite da LP su Avana."
+      "description": "Cosa addebita Avana: una commissione d’interfaccia su ogni azione, una quota dei guadagni di liquidazione e punti."
     },
     "siteTitle": "Avana - Prendere in prestito contro LP posizioni su Aave v4",
     "siteDescription": "Sblocca liquidità dai tuoi LP token. Prendi in prestito fino all'80% contro le posizioni Uniswap, Curve e Balancer continuando a guadagnare commissioni di trading su Aave v4.",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Alimentato da Aave v4",
-      "title": "Avana è il mercato di lending progettato per i pool di liquidità AMM.",
-      "titleLine1": "Avana è il mercato di lending",
-      "titleLine2": "progettato per i pool di liquidità AMM.",
+      "title": "Prendi in prestito crypto, azioni e RWA a garanzia delle tue posizioni di liquidità AMM.",
+      "titleLine1": "Prendi in prestito crypto, azioni e RWA",
+      "titleLine2": "a garanzia delle tue posizioni di liquidità AMM.",
+      "titleLine1Mobile": "Prendi in prestito crypto e azioni",
+      "titleLine2Mobile": "a garanzia delle tue posizioni di liquidità.",
       "subtitle": "Prendi in prestito crypto, materie prime, FX e asset del mondo reale onchain utilizzando le tue posizioni di liquidità AMM come collaterale.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "Leggi l'ARFC",
       "secondaryCta": "Apri la rete di test"
-    },
-    "intro": {
-      "text": "<ink>Prendi in prestito</ink> <strong>crypto, azioni, valute estere (FX) e asset del mondo reale (RWA)</strong> usando come garanzia posizioni di liquidità su <strong>Uniswap, Curve, Aerodrome, Balancer e altri DEX</strong>, con Aave V4, onchain e 24/7."
     },
     "features": {
       "eyebrow": "Caratteristiche principali",
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "Prezzi",
-    "subtitleLine1": "Tassi e rendimenti dipendono dal mercato,",
-    "subtitleLine2": "dalla posizione e dal percorso scelto.",
-    "interfaceRate": "Commissione di interfaccia — 15 pb (0,15%)",
-    "includes": "Include:",
-    "borrow": {
-      "title": "Prendere in prestito",
-      "subtitle": "Per credito garantito da LP",
-      "value": "Variabile",
-      "unit": "interesse",
-      "description": "I costi del prestito seguono il mercato Aave v4 selezionato.",
+    "subtitleLine1": "Una commissione dell’app su ogni azione e una quota dei guadagni da liquidazione.",
+    "subtitleLine2": "I tassi di prestito e i premi di rischio sono tassi di Aave V4, fissati dall’Aave DAO e pagati ai prestatori. Avana non ne trattiene alcuna quota.",
+    "interfaceRate": "Commissione di interfaccia: 10 bps (0,10%)",
+    "includes": "Dettagli:",
+    "frontEnd": {
+      "title": "Commissione di interfaccia",
+      "subtitle": "Applicata dall’app Avana",
+      "value": "10",
+      "unit": "bps per azione",
+      "description": "Aggiunta alla tua azione come un unico trasferimento di token nello stesso batch di transazioni: swap, prendere in prestito, rimborsare, dare in pegno e prestare. Nessun contratto la applica, ed è limitata a 25 bps.",
       "items": {
-        "one": "Tasso stabilito dal mercato",
-        "two": "Matura solo sul debito residuo",
-        "three": "Mostrato prima della conferma"
+        "one": "9 bps dopo 30 giorni di iscrizione",
+        "two": "8 bps dopo 90 giorni, 7 bps dopo 180 giorni",
+        "three": "L’iscrizione decorre dalla prima interazione del tuo wallet"
       }
     },
-    "lend": {
-      "title": "Prestare",
-      "subtitle": "Fornisci capitale all’Hub",
-      "value": "Mercato",
-      "unit": "APY",
-      "description": "Guadagna dalla domanda di prestiti garantiti da LP tramite il Lend Spoke di Avana.",
+    "liquidation": {
+      "title": "Commissione di liquidazione",
+      "subtitle": "Solo quando una posizione viene liquidata",
+      "value": "20%",
+      "unit": "del guadagno oracle",
+      "description": "Il guadagno oracle è il valore oracle del collaterale sequestrato meno il debito rimborsato. La quota di Avana è limitata dal surplus effettivamente realizzato dalla liquidazione, quindi il debito viene sempre rimborsato per primo.",
       "items": {
-        "one": "Il rendimento varia con l’utilizzo",
-        "two": "Fornitura nei mercati supportati",
-        "three": "APY corrente mostrato nell’interfaccia"
+        "one": "Il liquidatore trattiene il resto del guadagno come ricompensa",
+        "two": "Quanto recuperato oltre il valore oracle va al debitore, o alla First-Loss Reserve se resta del debito",
+        "three": "Pagata nell’asset di debito al destinatario delle commissioni di Avana, soggetto a timelock"
       }
     },
-    "multiply": {
-      "title": "Moltiplicare",
-      "subtitle": "Per esposizione LP gestita",
-      "value": "Variabile",
-      "unit": "tasso della strategia",
-      "description": "Amplifica l’esposizione LP con strategie gestite garantite da posizioni AMM supportate.",
+    "points": {
+      "title": "Punti",
+      "subtitle": "Ricompense per l’uso di Avana",
+      "value": "1",
+      "unit": "punto per $1 di commissioni",
+      "description": "I punti sono registrati nell’app Avana. Non esiste alcun token e nulla è on-chain. Riscatta i punti per uno sconto temporaneo sulla commissione di interfaccia.",
       "items": {
-        "one": "Usa posizioni LP supportate come garanzia",
-        "two": "L’esposizione resta legata al pool sottostante",
-        "three": "I controlli di leva e chiusura restano visibili"
+        "one": "1 punto per $1 di commissioni di interfaccia pagate",
+        "two": "100 punti ogni 30 giorni di iscrizione",
+        "three": "Missioni: primo deposito, prestito, rimborso, pegno, referral e altro"
       }
     },
     "faq": {
       "title": "Domande frequenti",
       "items": {
-        "interfaceFee": {
-          "question": "Quanto costa usare l’interfaccia Avana?",
-          "answer": "La commissione ufficiale dell’interfaccia è di 15 pb (0,15%) quando applicabile. Viene mostrata prima della firma ed è separata da gas, commissioni di swap, interessi Aave e costi di liquidazione."
+        "frontEndFee": {
+          "question": "Quanto addebita l’app Avana?",
+          "answer": "Una commissione di interfaccia di 10 bps sull’importo dell’azione (per un pegno o un prelievo di collaterale, sul valore della posizione), aggiunta come un unico trasferimento nello stesso batch di transazioni dell’azione. Scende a 9, 8 e 7 bps dopo 30, 90 e 180 giorni di iscrizione. Non supera mai i 25 bps, il limite previsto dall’ARFC di listing di Avana, e viene mostrata prima della firma."
         },
         "borrowRate": {
-          "question": "Gli interessi sul prestito sono fissi?",
-          "answer": "No. Sono stabiliti dal mercato Aave v4 selezionato e possono cambiare con l’utilizzo e i parametri di mercato. Il tasso corrente viene mostrato prima del prestito."
+          "question": "Avana trattiene una quota degli interessi?",
+          "answer": "No. I tassi di prestito e i premi di rischio sono tassi di Aave V4 fissati dall’Aave DAO. Gli interessi vanno ai prestatori dell’Hub, al netto dell’eventuale commissione di liquidità che l’Aave DAO fissa per la propria tesoreria. Avana non ne trattiene alcuna quota."
         },
-        "lendingApy": {
-          "question": "Come viene determinato l’APY del lending?",
-          "answer": "Il rendimento dipende dall’utilizzo del mercato e dalla domanda di prestiti garantiti da LP. L’APY corrente viene mostrato prima della fornitura."
+        "liquidationFee": {
+          "question": "Come funziona la commissione di liquidazione?",
+          "answer": "Quando una posizione viene liquidata, Avana trattiene il 20% del guadagno oracle: il valore oracle del collaterale sequestrato meno il debito rimborsato. La commissione è limitata dal surplus effettivamente realizzato dalla liquidazione, quindi non blocca mai una liquidazione. Il liquidatore trattiene il resto del guadagno, e quanto recuperato oltre il valore oracle va al debitore."
+        },
+        "points": {
+          "question": "Come funzionano i punti?",
+          "answer": "Guadagni 1 punto per $1 di commissioni di interfaccia pagate, 100 punti ogni 30 giorni di iscrizione e punti per missioni come il primo deposito, prestito, rimborso, pegno e i referral. Riscatta i punti per uno sconto temporaneo sulla commissione di interfaccia. I punti non sono un token e non vengono registrati on-chain."
         },
         "separateCosts": {
-          "question": "Quali costi sono separati dalle commissioni Avana?",
-          "answer": "Gas di rete, commissioni di swap DEX, interessi del mercato Aave e costi di esecuzione della liquidazione sono separati dalla commissione di interfaccia. Controlla i dettagli prima di firmare."
-        },
-        "feeChanges": {
-          "question": "Le commissioni e i tassi possono cambiare?",
-          "answer": "Sì. I tassi di mercato cambiano con l’utilizzo e i parametri di rischio, e la politica dell’interfaccia può cambiare. Verifica sempre l’importo corrente prima di firmare."
+          "question": "Quali costi sono separati dalle commissioni di Avana?",
+          "answer": "Gas di rete, commissioni di swap DEX e interessi Aave sono separati. L’app mostra la commissione, la stima del gas e il totale prima della firma."
         }
       }
     }

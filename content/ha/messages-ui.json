@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Ana amfani da Aave v4",
-      "title": "Avana ita ce kasuwar bayar da lamuni ta DeFi wadda aka kera ta musamman don matattaran samar da kudaden AMM.",
-      "titleLine1": "Avana ita ce kasuwar bayar da lamuni ta DeFi",
-      "titleLine2": "wadda aka kera ta musamman don matattaran samar da kudaden AMM.",
+      "title": "Ku aro crypto, hannun jari da RWA ta hanyar jingina matsayin kuɗin ruwa na AMM ɗinku.",
+      "titleLine1": "Ku aro crypto, hannun jari da RWA",
+      "titleLine2": "ta hanyar jingina matsayin kuɗin ruwa na AMM ɗinku.",
+      "titleLine1Mobile": "Ku aro crypto da hannun jari",
+      "titleLine2Mobile": "ta hanyar jingina matsayin kuɗin ruwa ɗinku.",
       "subtitle": "Ranci kudaden crypto, kayayyaki, FX, da kadarorin zahiri na duniya (RWA) a kan sarka ta hanyar amfani da matsayin samar da kudaden AMM dinka a matsayin jinginar lamuni.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "Karanta Shawarar ARFC",
       "secondaryCta": "Buɗe hanyar sadarwar gwaji"
-    },
-    "intro": {
-      "text": "<ink>Ku aro</ink> <strong>crypto, hannun jari, kuɗaɗen waje (FX) da kadarorin duniya ta zahiri (RWA)</strong> ta hanyar jingina matsayin kuɗin ruwa daga <strong>Uniswap, Curve, Aerodrome, Balancer da sauran DEX</strong>, bisa Aave V4, a kan sarka, kowane lokaci."
     },
     "features": {
       "eyebrow": "Manyan Fasali",

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 import type { ReactNode } from "react"
 import { useCallback, useMemo, useSyncExternalStore } from "react"
@@ -10,6 +11,8 @@ export interface ReferenceNetworkTab {
   id: string
   title: string
   chainId: number
+  /** Chain logo under public/, shown in the network selector. */
+  icon?: string
   sections: Array<{ id: string; title: string }>
 }
 
@@ -75,7 +78,7 @@ export function ReferenceNetworkView({
 
   return (
     <div className="flex min-w-0 flex-col gap-8 xl:flex-row xl:items-start xl:gap-12">
-      <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
+      <div data-developer-doc-export-root className="min-w-0 w-full max-w-4xl flex-1">
         {header}
 
         {networks.length > 0 ? (
@@ -101,12 +104,23 @@ export function ReferenceNetworkView({
                     aria-controls="reference-network-panel"
                     onClick={() => select(network.id)}
                     className={cn(
-                      "rounded-full border px-4 py-1.5 type-doc-body transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01AACF]",
+                      "inline-flex items-center gap-2 rounded-full border py-1.5 pr-4 type-doc-body transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01AACF]",
+                      network.icon ? "pl-2" : "pl-4",
                       selected
                         ? "border-[#01AACF] bg-[#01AACF]/10 text-foreground"
                         : "border-border text-type-secondary hover:border-gray-300 hover:text-foreground",
                     )}
                   >
+                    {network.icon ? (
+                      <Image
+                        src={network.icon}
+                        alt=""
+                        aria-hidden="true"
+                        width={20}
+                        height={20}
+                        className="h-5 w-5 shrink-0 rounded-full object-contain"
+                      />
+                    ) : null}
                     {network.title}
                   </button>
                 )
@@ -117,6 +131,8 @@ export function ReferenceNetworkView({
 
         {active ? (
           <div
+            // A new key per network remounts the panel, so nothing from the first network's markup is reused.
+            key={active.id}
             id="reference-network-panel"
             role="tabpanel"
             aria-labelledby={`reference-network-tab-${active.id}`}

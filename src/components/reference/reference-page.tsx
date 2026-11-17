@@ -1,9 +1,14 @@
+import Image from "next/image"
 import { getTranslations } from "next-intl/server"
 import type { ReactNode } from "react"
 import { DeveloperDocPageHeader } from "@/components/developer-doc-page-header"
+import { NetworkBadge } from "@/components/network-badge"
 import { ReferenceCopyButton } from "@/components/reference/reference-copy-button"
 import { ReferenceNetworkView } from "@/components/reference/reference-network-view"
+import { Link } from "@/i18n/navigation"
 import type { AppLocale } from "@/i18n/locales"
+import { networkIcon, tokenIcons, venueIcon } from "@/lib/reference/icons"
+import { cn } from "@/lib/utils"
 import { loadReferenceDocument, type ReferencePageName } from "@/lib/reference/load"
 import {
   isAddress,
@@ -15,7 +20,7 @@ import {
   type ReferenceSection,
 } from "@/lib/reference/markdown"
 
-type Labels = { placeholder: string; explorer: string }
+type Labels = { explorer: string }
 
 function shorten(value: string) {
   return `${value.slice(0, 6)}…${value.slice(-4)}`
@@ -33,6 +38,13 @@ function Inline({ text }: { text: string }) {
         }
         if (part.type === "link") {
           const external = /^https?:\/\//.test(part.href)
+          if (part.href.startsWith("/")) {
+            return (
+              <Link key={index} href={part.href} className="text-type-accent underline underline-offset-2">
+                {part.text}
+              </Link>
+            )
+          }
           return (
             <a
               key={index}
@@ -47,6 +59,45 @@ function Inline({ text }: { text: string }) {
         return <span key={index}>{part.value}</span>
       })}
     </>
+  )
+}
+
+function Icon({ src, className }: { src: string; className?: string }) {
+  return (
+    <Image
+      src={src}
+      alt=""
+      aria-hidden="true"
+      width={16}
+      height={16}
+      className={cn("h-4 w-4 shrink-0 rounded-full bg-white object-contain", className)}
+    />
+  )
+}
+
+/** Token or pair icons, overlapped like the app's pool rows. */
+function TokenIcons({ icons }: { icons: Array<{ symbol: string; src: string }> }) {
+  return (
+    <span className="inline-flex shrink-0 items-center" aria-hidden="true">
+      {icons.map((icon, index) => (
+        <Icon key={icon.symbol} src={icon.src} className={index > 0 ? "-ml-1.5 ring-2 ring-white" : undefined} />
+      ))}
+    </span>
+  )
+}
+
+/** A label with its token, pair or venue icon in front, when it has one. */
+function Labelled({ text }: { text: string }) {
+  const tokens = tokenIcons(text)
+  const venue = tokens ? undefined : venueIcon(text)
+  if (!tokens && !venue) return <Inline text={text} />
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      {tokens ? <TokenIcons icons={tokens} /> : <Icon src={venue!} />}
+      <span>
+        <Inline text={text} />
+      </span>
+    </span>
   )
 }
 
@@ -75,11 +126,6 @@ function AddressValue({ value, network, labels }: { value: string; network?: Ref
         short
       )}
       <ReferenceCopyButton value={value} />
-      {placeholder ? (
-        <span className="rounded border border-border bg-muted px-1.5 py-0.5 text-xs text-type-secondary">
-          {labels.placeholder}
-        </span>
-      ) : null}
     </span>
   )
 }
@@ -89,16 +135,28 @@ function HashValue({ value }: { value: string }) {
     <span className="inline-flex items-center gap-1.5 whitespace-nowrap" title={value}>
       <span className="hidden">{value}</span>
       <span className="font-mono" data-export-skip>
-        {`${value.slice(0, 10)}…${value.slice(-6)}`}
+        {shorten(value)}
       </span>
       <ReferenceCopyButton value={value} />
     </span>
   )
 }
 
-function Cell({ value, network, labels }: { value: string; network?: ReferenceNetwork; labels: Labels }) {
+function Cell({
+  value,
+  network,
+  labels,
+  first,
+}: {
+  value: string
+  network?: ReferenceNetwork
+  labels: Labels
+  first: boolean
+}) {
   if (isAddress(value)) return <AddressValue value={value} network={network} labels={labels} />
   if (isHash(value)) return <HashValue value={value} />
+  // Token pairs get icons in any column; venue icons only on a row's name.
+  if (first || tokenIcons(value)) return <Labelled text={value} />
   return <Inline text={value} />
 }
 
@@ -113,6 +171,18 @@ function Blocks({ blocks, network, labels }: { blocks: ReferenceBlock[]; network
             </p>
           )
         }
+        if (block.type === "details") {
+          return (
+            <details key={index} className="reference-details mb-6">
+              <summary className="cursor-pointer select-none type-doc-body text-foreground">
+                <Inline text={block.title} />
+              </summary>
+              <div className="mt-3">
+                <Blocks blocks={block.blocks} network={network} labels={labels} />
+              </div>
+            </details>
+          )
+        }
         if (block.type === "note") {
           return (
             <div key={index} className="mb-6 type-doc-panel type-doc-body">
@@ -121,23 +191,23 @@ function Blocks({ blocks, network, labels }: { blocks: ReferenceBlock[]; network
           )
         }
         return (
-          <div key={index} className="mb-6 overflow-x-auto">
-            <table className="type-doc-table">
-              <thead className="bg-gray-50">
+          <div key={index} className="reference-table-scroll mb-6">
+            <table className="type-doc-table reference-table">
+              <thead>
                 <tr>
                   {block.table.headers.map((header) => (
-                    <th key={header} className="text-left px-4 py-2 type-doc-subsection-title">
+                    <th key={header} scope="col">
                       <Inline text={header} />
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody>
                 {block.table.rows.map((row, rowIndex) => (
                   <tr key={rowIndex}>
                     {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className={cell.length > 80 ? "min-w-[16rem] px-4 py-2" : "px-4 py-2"}>
-                        <Cell value={cell} network={network} labels={labels} />
+                      <td key={cellIndex} className={cell.length > 90 ? "reference-cell-wide" : undefined}>
+                        <Cell value={cell} network={network} labels={labels} first={cellIndex === 0} />
                       </td>
                     ))}
                   </tr>
@@ -156,7 +226,10 @@ function Sections({ sections, network, labels }: { sections: ReferenceSection[];
     <>
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="mb-10 scroll-mt-32">
-          <h2 className="mb-4 type-doc-section-title">{section.title}</h2>
+          <h2 className="mb-4 flex items-center gap-2 type-doc-section-title">
+            {venueIcon(section.title) ? <Icon src={venueIcon(section.title)!} className="h-5 w-5" /> : null}
+            {section.title}
+          </h2>
           <Blocks blocks={section.blocks} network={network} labels={labels} />
         </section>
       ))}
@@ -185,14 +258,20 @@ export async function ReferencePage({
 }: ReferencePageProps): Promise<ReactNode> {
   const document = loadReferenceDocument(page)
   const t = await getTranslations({ locale, namespace: "common.docs.reference" })
-  const labels: Labels = { placeholder: t("placeholder"), explorer: t("explorer") }
+  const labels: Labels = { explorer: t("explorer") }
 
   const networkGroups = document.groups.filter((group) => group.network)
   const sharedGroups = document.groups.filter((group) => !group.network)
 
   const header = (
     <>
-      {pageHeader ?? <DeveloperDocPageHeader title={document.title} description={document.description} />}
+      {pageHeader ?? (
+        <DeveloperDocPageHeader
+          title={document.title}
+          description={document.description}
+          badge={<NetworkBadge label={t("testnetBadge")} />}
+        />
+      )}
       {document.updated ? (
         <p className="-mt-6 mb-8 type-doc-body text-type-secondary">
           {t("updated", { date: document.updated })}
@@ -218,6 +297,7 @@ export async function ReferencePage({
         id: group.network!.id,
         title: group.title,
         chainId: group.network!.chainId,
+        icon: networkIcon(group.network!.id),
         sections: group.sections.map(({ id, title }) => ({ id, title })),
       }))}
       panels={networkGroups.map((group) => (

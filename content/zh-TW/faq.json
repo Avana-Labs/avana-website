@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "什麼是 Avana？",
-          "a": "Avana 讓流動性提供者能在 Aave V4 上將 AMM 部位作為抵押品。借款人質押 Ethereum 上的 Uniswap v3 部位或 Base 上的 Aerodrome Slipstream 部位。Avana 的 LPVault 持有該部位，並將對應的 vault token 作為抵押品供應至 Avana CDP Spoke。借款人接著借入 GHO 或該 Spoke 出借的其他債務資產，而流動性仍留在池中。\n\nAvana 在 Ethereum 與 Base 上線，每條鏈各有一個 Avana Stable LP Hub。Hub 與 Spoke 是由 Aave DAO 擁有並設定、標準且未經修改的 Aave V4 合約。Avana 自己的合約負責保管、估值、借款人操作與清算。"
+          "a": "Avana 讓流動性提供者能在 Aave V4 上將 AMM 部位作為抵押品。借款人質押 Ethereum 上的 Uniswap v3 或 Uniswap v4 部位或 Base 上的 Aerodrome Slipstream 部位。Avana 的 LPVault 持有該部位，並將對應的 vault token 作為抵押品供應至 Avana CDP Spoke。借款人接著借入該 Spoke 出借的債務資產，例如 GHO 或 USDC，而流動性仍留在池中。\n\nAvana 在 Ethereum 與 Base 上線，每條鏈各有一個 Avana Hub。Hub 與 Spoke 是由 Aave DAO 擁有並設定、標準且未經修改的 Aave V4 合約。Avana 自己的合約負責保管、估值、借款人操作與清算。"
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "為什麼 Avana 使用 Aave V4 的 Hub 與 Spoke？",
-          "a": "Aave V4 將共享流動性（Hub）與特定市場的風險設定（Spoke）分開。每條鏈都有一個 Avana Stable LP Hub。Aave DAO 透過僅供應的 Lend Spoke 向其提供有上限的 GHO 信用額度，且只有 Avana 的 CDP Spoke 能從中提取。\n\n每組鏈、Hub、AMM 協議與風險層級各有一個 CDP Spoke。上線時分別為 Ethereum 上的「Uniswap v3 Stable」與 Base 上的「Aerodrome Slipstream Stable」。Correlated LP 與 Volatile LP Hub 規劃於日後推出。Avana 不分叉或修改 Aave V4。"
+          "a": "Aave V4 將共享流動性（Hub）與特定市場的風險設定（Spoke）分開。每條鏈有一個 Avana Hub。出借人與 Aave DAO 的啟動供應透過僅供應的 Lend Spoke 為其注資，且只有 Avana 的 CDP Spoke 能在 Aave DAO 核准的信用額度內從中提取。\n\n每組鏈、AMM 協議與風險層級各有一個 CDP Spoke，每個 Spoke 設定自己的風險參數。在 Ethereum 上，Uniswap v3 與 Uniswap v4 Spoke 涵蓋 Stable、Correlated、Blue-chip 與 Gov/DeFi 池；在 Base 上，Aerodrome Slipstream Spoke 涵蓋 Blue-chip、Gov/DeFi 與 Stocks 池。Avana 不分叉或修改 Aave V4。"
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Avana對預言機價值有折扣嗎？",
-          "a": "不會。預言機回報的價值不打折扣。每個市場的 Collateral Factor 決定其中有多少價值可以支撐債務：池中代幣最低的 Aave V4 Collateral Factor 乘以最高 40% 的池風險係數。GHO 段使用上架時設定的明確係數。\n\nGauntlet 對 LP 抵押品的分析建議採用保守的起始係數，當借入資產並非池中代幣時，可低至較低標的係數的 0.25×。最終係數與 Aave 的服務提供者針對各市場校準。"
+          "a": "不會。預言機回報的價值不打折扣。每個市場的 Collateral Factor 決定其中有多少價值可以支撐債務：池中代幣最低的 Aave V4 Collateral Factor 乘以最高 90% 的池風險係數。GHO 段使用上架時設定的明確係數。\n\nGauntlet 對 LP 抵押品的分析建議採用保守的起始係數，當借入資產並非池中代幣時，可低至較低標的係數的 0.25×。最終係數與 Aave 的服務提供者針對各市場校準。"
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "借款容量如何計算？",
-          "a": "借款能力 = LP 部位價值 × LP Collateral Factor，而 LP Collateral Factor = 最低的代幣 Collateral Factor × 池風險係數。額度也取決於現有債務、上限、信用額度的可用流動性與預言機檢查。\n\n範例數值：一個價值 $20,000、Collateral Factor 為 31.20% 的 USDC/USDT Slipstream 部位，可提供 $6,240 的加權抵押品。Lens 建議借款至健康因子 1.10（此處為 5,673.29 USDC），並顯示 1.00 時的最大值（6,209.56 USDC）。"
+          "a": "借款能力 = LP 部位價值 × LP Collateral Factor，而 LP Collateral Factor = 最低的代幣 Collateral Factor × 池風險係數。額度也取決於現有債務、上限、信用額度的可用流動性與預言機檢查。\n\n範例數值：一個價值 $20,000、Collateral Factor 為 80.00% 的 USDC/USDT Uniswap v3 部位，可提供 $16,000 的加權抵押品。Lens 建議借款至健康因子 1.10（此處為 14,546.91 USDC），並顯示 1.00 時的最大值（15,921.97 USDC）。"
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "為什麼借款能力低於我的 LP 價值？",
-          "a": "Collateral Factor 為價格變動、無常損失、區間變化與清算成本預留空間。池風險係數上限為 40%，因此兩種代幣皆為 78% 時，開倉貸款價值比最多約為 28.4%。\n\n由於每個市場都有自己的池風險係數，價值與額度之間的差距因市場而異。"
+          "a": "Collateral Factor 為價格變動、無常損失、區間變化與清算成本預留空間。池風險係數最多為 90%。對於 USDC/USDT，90% 的代幣係數與 88.89% 的池風險係數得出 80% 的 Collateral Factor，因此在 Lens 的健康因子 1.10 下，開倉貸款價值比最多約為 72.7%。\n\n由於每個市場都有自己的池風險係數，價值與額度之間的差距因市場而異。"
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Avana 借款人使用的流動性由誰提供？",
-          "a": "上線時，Aave DAO 財庫透過僅供應的 Lend Spoke，向各鏈的 Avana Stable LP Hub 提供有上限的 GHO 信用額度。上線時不開放公開存款。\n\n每個 CDP Spoke 對某資產的提取上限由 Aave DAO 設定，且提取上限總和最多等於信用額度。"
+          "a": "出借人與 Aave DAO。公開出借從第一天起開放：任何人都可以透過各鏈 Avana Hub 的僅供應 Lend Spoke 供應已上架資產，與 Aave DAO 的啟動供應並行。\n\nAave DAO 為每種可借資產核准一條信用額度，各 CDP Spoke 在該資產上的提取上限總和最多等於該額度。"
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "什麼保護出借人資金？",
-          "a": "每個市場的抵押係數（池風險係數至多 40%）、每個 Hub 的市場、代幣與存入者上限、預言機狀態與熔斷器、除 Avana 的 Keeper 之外也對任何地址開放的清算，以及維持在該鏈閃電流動性範圍內的動用上限，使每筆借款都能在一筆交易中被清算。\n\n若清算留下沒有抵押品的債務，赤字會在 72 小時內由該 Hub 與資產的 Avana Umbrella 支付，這是由 Avana Labs 注資並由 Aave DAO 控制的第一損失準備金。超過準備金的赤字，將由 Aave DAO 認列為該 Hub 資產供應者的損失。"
+          "a": "每個市場的抵押係數（池風險係數至多 90%）、每個 Hub 的市場、代幣與存入者上限、預言機狀態與熔斷器、除 Avana 的 Keeper 之外也對任何地址開放的清算，以及維持在該鏈閃電流動性範圍內的動用上限，使每筆借款都能在一筆交易中被清算。\n\n若清算留下沒有抵押品的債務，赤字會在 72 小時內由該 Hub 與資產的 Avana Umbrella 支付，這是由 Avana Labs 注資並由 Aave DAO 控制的第一損失準備金。超過準備金的赤字，將由 Aave DAO 認列為該 Hub 資產供應者的損失。"
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "什麼是健康因子？",
-          "a": "健康因子 = 抵押品價值 × Collateral Factor ÷ 債務價值，由 Aave 針對每個帳戶計算，也就是針對每個市場計算。低於 1 時，帳戶可被清算。\n\n範例數值：$6,240 的加權抵押品對應 4,999.50 USDC 的債務，健康因子為 1.2481。"
+          "a": "健康因子 = 抵押品價值 × Collateral Factor ÷ 債務價值，由 Aave 針對每個帳戶計算，也就是針對每個市場計算。低於 1 時，帳戶可被清算。\n\n範例數值：$16,000 的加權抵押品對應 12,998.70 USDC 的債務，健康因子為 1.2309。"
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "可以在 Avana 上借 GHO 嗎？",
-          "a": "可以。GHO 是每個 CDP Spoke 上的第一種債務資產，資金來自 Aave DAO 向 Avana Stable LP Hub 提供的有上限信用額度。GHO 債務以固定的 $1 定價。\n\nGHO 債務以 Hub 的 GHO 利率加上你的風險溢價累計利息。所有利息都歸 Aave DAO 所有。"
+          "a": "可以。GHO 是每個 CDP Spoke 上的一種債務資產，以固定的 $1 定價，並在 Aave DAO 核准的信用額度內從各鏈的 Avana Hub 借出。\n\nGHO 債務以 Hub 的 GHO 利率加上你的風險溢價累計利息。利息在扣除 Aave DAO 設定的流動性費用（如有）後歸 Hub 的 GHO 供應者所有；Avana 不分取任何份額。"
         },
         {
           "id": "can-gho-be-lp-collateral",

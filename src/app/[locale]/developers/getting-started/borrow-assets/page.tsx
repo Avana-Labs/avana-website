@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/borrow-assets', {
     title: "Borrow Assets",
-    description: "How to borrow GHO, or USDC, USDT or WETH where a CDP Spoke enables them, against pledged LP collateral on Avana: the borrow call, every check, recommended and maximum amounts, failures and a worked example.",
+    description: "How to borrow the assets a CDP Spoke lists, such as GHO and USDC, against pledged LP collateral on Avana: the borrow call, every check, recommended and maximum amounts, failures and a worked example.",
   })
 }
 
@@ -29,7 +29,7 @@ const sections = [
 ]
 
 const debtAssetRows = [
-  ["GHO", "18", "Aave's fixed $1 source", "First debt asset of every CDP Spoke"],
+  ["GHO", "18", "Aave's fixed $1 source", "Enabled per CDP Spoke with enableDebtReserve"],
   ["USDC", "6", "Its DebtOracle on Chainlink USDC/USD", "Enabled per CDP Spoke with enableDebtReserve"],
   ["USDT", "6", "Its DebtOracle on Chainlink USDT/USD", "Enabled per CDP Spoke with enableDebtReserve"],
   ["WETH", "18", "Its DebtOracle on Chainlink ETH/USD", "Enabled per CDP Spoke with enableDebtReserve"],
@@ -110,7 +110,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Borrow Assets"
-          description="Borrow an approved debt asset on the Aave V4 account that holds one market's collateral. GHO is the first debt asset; USDC, USDT and WETH can be enabled per CDP Spoke."
+          description="Borrow an approved debt asset on the Aave V4 account that holds one market's collateral. Any asset the CDP Spoke lists can be borrowed, such as GHO and USDC today."
         />
 
         <section id="overview" className="mb-10">
@@ -155,7 +155,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>Each non-GHO debt reserve is priced by its own DebtOracle, which reads a primary, an alternate and a standby Chainlink route with the same freshness, failover and agreement rules as the collateral legs. When Expired, it serves the accepted price raised by debtStressRiseBps, so debt is never undervalued.</li>
-            <li>The draw is bounded by the Aave drawCap of the reserve&apos;s (funding Hub, asset, CDP Spoke), which is the credit line. At launch every debt reserve is funded by the Spoke&apos;s home Hub, such as the Avana Stable LP Hub.</li>
+            <li>The draw is bounded by the Aave drawCap of the reserve&apos;s (funding Hub, asset, CDP Spoke), which is the credit line. At launch every debt reserve is funded by the Spoke&apos;s home Hub, the Avana Hub of its chain.</li>
             <li>One account can owe several debt reserves. The market&apos;s collateral, and only it, backs every debt reserve of that proxy.</li>
           </ul>
         </section>
@@ -346,30 +346,30 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Aerodrome Slipstream on Base) from the Deposit LP example holds 10,000 whole vault tokens at $2.00: collateral $20,000, CF-weighted $6,240, no debt and borrowNonce 0. The USDC debt reserve is funded by the Base Stable LP Hub&apos;s USDC credit line and priced by the USDC DebtOracle at $0.9999 on an 86,400-second feed (fresh for 88,200 seconds) with an agreeing second source. The USDC borrow rate is 6.00%. The Hub is in state None and the sequencer gate is Up.
+            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Uniswap v3 on Ethereum) from the Deposit LP example holds 10,000 whole vault tokens at $2.00: collateral $20,000, CF-weighted $16,000, no debt and borrowNonce 0. The USDC debt reserve is funded by the Avana Ethereum Hub&apos;s USDC credit line and priced by the USDC DebtOracle at $0.9999 on an 86,400-second feed (fresh for 88,200 seconds) with an agreeing second source. The USDC borrow rate is 6.00%. The Hub is in state None.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>Her app calls previewBorrowRecommended for USDC with a deadline of now + 600: recommended 6,240 / 1.10 / 0.9999 = 5,673.29 USDC (HF 1.10); maximum, with margin (1 + 0.06 × 600 / 31,536,000) × 1.005 = 1.0050011, is 6,240 / 1.0050011 / 0.9999 = 6,209.56 USDC (HF 1.00).</li>
-            <li>She borrows 5,000 USDC: borrow(3, r_USDC, 5,000,000,000, Carol, now + 600, 1.20e18, 0).</li>
-            <li>The Adapter reads the Hub state (None), the sequencer gate (Up), the freeze list, the account and the reserve, then consumes nonce 0.</li>
+            <li>Her app calls previewBorrowRecommended for USDC with a deadline of now + 600: recommended 16,000 / 1.10 / 0.9999 = 14,546.91 USDC (HF 1.10); maximum, with margin (1 + 0.06 × 600 / 31,536,000) × 1.005 = 1.0050011, is 16,000 / 1.0050011 / 0.9999 = 15,921.97 USDC (HF 1.00).</li>
+            <li>She borrows 13,000 USDC: borrow(3, r_USDC, 13,000,000,000, Carol, now + 600, 1.20e18, 0).</li>
+            <li>The Adapter reads the Hub state (None), the freeze list, the account and the reserve, then consumes nonce 0.</li>
             <li>The RiskModule pokes market 3&apos;s LPOracle and the USDC DebtOracle: both Live, the USDC round is 30,000 seconds old (at most 88,200), no drift, an active keeper, no breaker tripped.</li>
             <li>No cap step runs: Carol&apos;s $20,000 charge has been booked since her pledge and a borrow books no charge.</li>
-            <li>The proxy borrows 5,000 USDC from the Spoke and forwards exactly 5,000 USDC to Carol.</li>
-            <li>Health check: debt value 5,000 × 0.9999 = $4,999.50, so HF = 6,240 / 4,999.50 = 1.2481, above max(1.00, 1.20).</li>
-            <li>Event Borrowed with nonce 0 and HF 1,248,124,812,481,248,124; borrowNonce becomes 1.</li>
+            <li>The proxy borrows 13,000 USDC from the Spoke and forwards exactly 13,000 USDC to Carol.</li>
+            <li>Health check: debt value 13,000 × 0.9999 = $12,998.70, so HF = 16,000 / 12,998.70 = 1.2309, above max(1.00, 1.20).</li>
+            <li>Event Borrowed with nonce 0 and HF 1,230,892,320,001,230,892; borrowNonce becomes 1.</li>
           </ul>
           <h3 className="mb-2 type-doc-subsection-title">Failing variants</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>5,700 USDC gives HF 6,240 / 5,699.43 = 1.0948 and reverts with HealthFactorTooLow against Carol&apos;s own 1.20. With minHealthFactor 0 it succeeds.</li>
+            <li>14,000 USDC gives HF 16,000 / 13,998.60 = 1.1430 and reverts with HealthFactorTooLow against Carol&apos;s own 1.20. With minHealthFactor 0 it succeeds.</li>
             <li>A USDC/USD round 88,300 seconds old reverts with DebtPriceTooOld.</li>
             <li>A Hub that is Frozen or Paused reverts with ApplicationFrozen or ApplicationPaused.</li>
             <li>A tripped market breaker reverts with BreakerTripped.</li>
-            <li>1,800 seconds after a sequencer restart the borrow reverts with SequencerGrace; with the feed reporting down it reverts with SequencerDown.</li>
+            <li>On a Base market, 1,800 seconds after a sequencer restart the borrow reverts with SequencerGrace; with the feed reporting down it reverts with SequencerDown.</li>
             <li>A 1 USDC borrow succeeds: there is no minimum debt, and Avana&apos;s own keepers liquidate small accounts at Avana&apos;s gas cost.</li>
           </ul>
           <h3 className="mb-2 type-doc-subsection-title">Rescue units and the maximum</h3>
           <p className="mb-4 type-doc-body">
-            On an Ethereum market, wallet V owes 10,000 GHO against CF-weighted collateral of $12,000 (Aave HF 1.2000). $1,000 of the collateral is rescue units, worth $312 CF-weighted, so the rescue-excluded health factor is (12,000 − 312) / 10,000 = 1.1688. Borrowing 2,000 GHO would bring Aave&apos;s HF to 1.00 but the rescue-excluded HF to 0.974, so it reverts with HealthFactorTooLow. 1,688 GHO is the largest borrow the check allows. At a 5.00% GHO rate the Lens returns a recommended 625.45 GHO and a maximum of about 1,629.84 GHO.
+            In market 3, wallet V owes 10,000 GHO against CF-weighted collateral of $12,000 (Aave HF 1.2000). $1,000 of the collateral is rescue units, worth $800 CF-weighted, so the rescue-excluded health factor is (12,000 − 800) / 10,000 = 1.1200. Borrowing 2,000 GHO would bring Aave&apos;s HF to 1.00 but the rescue-excluded HF to 0.9333, so it reverts with HealthFactorTooLow. 1,200 GHO is the largest borrow the check allows. At a 5.00% GHO rate the Lens returns a recommended 181.82 GHO and a maximum of about 1,144.27 GHO.
           </p>
           <p className="type-doc-body">
             To keep the loan healthy after borrowing, see <Link href="/developers/getting-started/manage-loans" className="text-type-accent hover:underline">Manage Loans</Link>.
@@ -379,7 +379,7 @@ export default async function BorrowAssetsPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to borrow GHO, USDC, USDT or WETH against pledged LP collateral on Avana, and every check a borrow passes."
+        pageSummary="How to borrow the assets a CDP Spoke lists against pledged LP collateral on Avana, and every check a borrow passes."
         sectionColor="emerald"
       />
     </div>

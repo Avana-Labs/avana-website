@@ -18,28 +18,28 @@ const riskTeams: {
     number: "01",
     title: "Protocol team",
     description:
-      "The Protocol team designs and builds Avana's lending system. It owns the smart contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control, execution environment, and upgrades across integrated AMMs and lending hubs.",
+      "Protocol owns the design and implementation of Avana's lending system, including smart contracts, LP collateral architecture, liquidation systems, oracle infrastructure, access control, execution environment, and upgrades across integrated AMMs and lending hubs.",
     icon: Blocks,
   },
   {
     number: "02",
     title: "Operations team",
     description:
-      "The Operations team coordinates the day-to-day protocol layer. It handles treasury processes, incentive programs, ecosystem growth, contributor workflows, and collateral onboarding operations.",
+      "Operations coordinates the day-to-day protocol layer, including treasury processes, incentive programs, ecosystem growth, contributor workflows, and collateral onboarding operations.",
     icon: Workflow,
   },
   {
     number: "03",
     title: "Market Risk team",
     description:
-      "The Market Risk team owns the quantitative side of LP collateral. It covers liquidity depth, volatility, price behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter tuning across market conditions.",
+      "Market Risk owns the quantitative side of LP collateral: liquidity depth, volatility, price behavior, concentrated liquidity exposure, liquidation dynamics, pricing integrity, and parameter tuning across market conditions.",
     icon: ChartNoAxesCombined,
   },
   {
     number: "04",
     title: "Collateral Risk team",
     description:
-      "The Collateral Risk team owns the qualitative side of onboarding and monitoring. It covers asset structure, liquidity sources, governance dependencies, protocol dependencies, and broader collateral integrity across supported markets.",
+      "Collateral Risk owns the qualitative side of onboarding and monitoring, including asset structure, liquidity sources, governance dependencies, protocol dependencies, and broader collateral integrity across supported markets.",
     icon: ShieldCheck,
   },
 ]
@@ -72,7 +72,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
 
           <div className="relative mt-10 aspect-[1630/965] w-full overflow-hidden lg:mt-14">
             <Image
-              src="/avana-pool-hero.png"
+              src="/avana-pool-hero.webp"
               alt="Avana about hero image"
               fill
               priority
@@ -83,25 +83,24 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
 
           <div className="mx-auto mt-10 max-w-3xl space-y-8 lg:mt-14">
             <SectionLead variant="body">
-              Avana is the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity positions
-              usable as collateral across DeFi.
+              Avana is building the lending market for AMM liquidity on Aave V4. Our mission is to make AMM liquidity
+              positions usable as collateral across DeFi.
             </SectionLead>
             <p className="type-body-copy">
-              Major AMMs hold billions in liquidity, but LP positions are still mostly treated as passive holdings,
-              not as productive collateral. Avana starts with Uniswap v3 positions on Ethereum and Aerodrome Slipstream
-              positions on Base.
+              Major AMMs already hold billions in liquidity, yet LP positions are still treated mostly as passive
+              positions rather than productive collateral. Avana brings that liquidity into lending markets for
+              today&apos;s DEXs and LP types, using dual oracles and stronger risk controls.
             </p>
             <p className="type-body-copy">
-              Using LP positions as collateral takes more than listing LP tokens. Avana&apos;s LP Vault holds each
-              pledged position and represents it on Aave V4 with a vault token for its market. Borrowers draw GHO,
-              and other debt assets as they are enabled, from the Avana Stable LP Hub through a CDP Spoke for each AMM.
-              The Hubs and Spokes are standard Aave V4 contracts owned by the Aave DAO, which funds the Hub through a
-              GHO credit line on the Avana Lend Spoke.
+              That requires more than listing LP tokens as collateral. Avana is built around specialized Aave v4 Spokes
+              for different DEX designs, several Aave v4 Hubs organized around lowest-risk, correlated, and higher-range
+              LP markets, and an Aave v4 Lend Spoke that supplies the capital behind those markets.
             </p>
             <p className="type-body-copy">
-              Smart contracts are only part of the work. The position must stay active in its pool. Its value must be
-              measured as conditions change. The market must have enough liquidity to support a loan. Avana divides
-              this work across four teams, and each team is responsible for a different part of the risk.
+              Turning an LP position into usable collateral requires more than smart contracts. The position must stay
+              active in its pool, its value must be measured as conditions change, and the market must have enough
+              liquidity to support a loan. That is why Avana divides the work across four teams, each responsible for
+              a different part of the risk.
             </p>
             <div className="space-y-5 pt-8">
               <div className="space-y-5">
@@ -120,8 +119,8 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
                   ))}
                 </div>
                 <p className="type-body-copy text-foreground">
-                  Each area has its own owner: technical execution, operations, market modeling, and collateral
-                  review.
+                  The goal is clean separation, with technical execution, operations, market modeling, and collateral
+                  review each owned independently.
                 </p>
               </div>
             </div>
@@ -129,12 +128,13 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
               <ProtocolRoadmapSection locale={locale} />
             </div>
             <SectionLead variant="section" className="text-foreground">
-              We are a small team working on a large problem. If you want to join this research effort,{" "}
+              We are a small team working on a large problem. If you&apos;re interested in joining this research
+              effort,{" "}
               <Link
                 href="https://twitter.com/avana_labs"
                 className="text-type-accent underline decoration-type-accent/30 underline-offset-4 transition hover:decoration-type-accent"
               >
-                get in touch.
+                we would love to hear from you.
               </Link>
             </SectionLead>
           </div>

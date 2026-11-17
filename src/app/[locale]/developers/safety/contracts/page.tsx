@@ -69,7 +69,7 @@ export default async function ContractsArchitecturePage({ params }: LocaleParams
           </p>
           <p className="type-doc-body">
             The full contract list with addresses and interfaces is on this page:{" "}
-            <Link href="/developers/reference/contracts" className="text-type-accent hover:underline">Reference: Contracts</Link>.
+            <Link href="/developers/reference/addresses" className="text-type-accent hover:underline">Contract Addresses</Link>.
           </p>
         </section>
 

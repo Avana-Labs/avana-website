@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Avana nedir?",
-          "a": "Avana, likidite sağlayıcılarının AMM pozisyonlarını Aave V4 üzerinde teminat olarak kullanmasını sağlar. Bir borçlu Ethereum'da bir Uniswap v3 pozisyonunu veya Base'de bir Aerodrome Slipstream pozisyonunu rehin verir. Avana'nın LPVault'u pozisyonu tutar ve eşleşen bir vault token bir Avana CDP Spoke üzerinde teminat olarak sağlanır. Borçlu ardından GHO veya Spoke'un ödünç verdiği başka bir borç varlığını borç alır; likidite ise havuzda kalır.\n\nAvana, her zincirde bir Avana Stable LP Hub ile Ethereum ve Base üzerinde başlar. Hub'lar ve Spoke'lar, Aave DAO'ya ait ve onun tarafından yapılandırılan standart, değiştirilmemiş Aave V4 sözleşmeleridir. Avana'nın kendi sözleşmeleri saklama, değerleme, borçlu eylemleri ve likidasyonu yürütür."
+          "a": "Avana, likidite sağlayıcılarının AMM pozisyonlarını Aave V4 üzerinde teminat olarak kullanmasını sağlar. Bir borçlu Ethereum'da bir Uniswap v3 veya Uniswap v4 pozisyonunu veya Base'de bir Aerodrome Slipstream pozisyonunu rehin verir. Avana'nın LPVault'u pozisyonu tutar ve eşleşen bir vault token bir Avana CDP Spoke üzerinde teminat olarak sağlanır. Borçlu ardından Spoke'un ödünç verdiği, GHO veya USDC gibi bir borç varlığını borç alır; likidite ise havuzda kalır.\n\nAvana, her zincirde tek bir Avana Hub ile Ethereum ve Base üzerinde başlar. Hub'lar ve Spoke'lar, Aave DAO'ya ait ve onun tarafından yapılandırılan standart, değiştirilmemiş Aave V4 sözleşmeleridir. Avana'nın kendi sözleşmeleri saklama, değerleme, borçlu eylemleri ve likidasyonu yürütür."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Avana neden Aave V4 Hub'larını ve Spoke'larını kullanıyor?",
-          "a": "Aave V4 paylaşılan likiditeyi (Hub'lar) piyasaya özgü risk ayarlarından (Spoke'lar) ayırır. Her zincirde bir Avana Stable LP Hub vardır. Aave DAO, yalnızca arz yapan bir Lend Spoke üzerinden ona üst sınırlı bir GHO kredi hattı sağlar ve ondan yalnızca Avana'nın CDP Spoke'ları çekim yapabilir.\n\nZincir, Hub, AMM protokolü ve risk katmanı başına bir CDP Spoke vardır. Lansmanda bunlar Ethereum'da \"Uniswap v3 Stable\" ve Base'de \"Aerodrome Slipstream Stable\"dır. Correlated LP ve Volatile LP Hub'ları daha sonrası için tasarlanmıştır. Avana, Aave V4'ü fork etmez veya değiştirmez."
+          "a": "Aave V4 paylaşılan likiditeyi (Hub'lar) piyasaya özgü risk ayarlarından (Spoke'lar) ayırır. Her zincirde tek bir Avana Hub vardır. Borç verenler ve Aave DAO'nun başlangıç arzı onu yalnızca arz yapan bir Lend Spoke üzerinden fonlar ve ondan yalnızca Avana'nın CDP Spoke'ları, Aave DAO'nun onayladığı kredi hatları dahilinde çekim yapabilir.\n\nZincir, AMM protokolü ve risk katmanı başına bir CDP Spoke vardır ve her Spoke kendi risk parametrelerini belirler. Ethereum'da Uniswap v3 ve Uniswap v4 Spoke'ları Stable, Correlated, Blue-chip ve Gov/DeFi havuzlarını kapsar; Base'de Aerodrome Slipstream Spoke'ları Blue-chip, Gov/DeFi ve Stocks havuzlarını kapsar. Avana, Aave V4'ü fork etmez veya değiştirmez."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Avana, kehanet değerinden indirimi düşer mi?",
-          "a": "Hayır. Oracle değeri kesinti uygulamadan bildirir. Her piyasanın Teminat Faktörü bu değerin ne kadarının borcu destekleyebileceğini belirler: havuzun token'ları arasındaki en düşük Aave V4 Teminat Faktörü ile en fazla %40 olan bir havuz risk faktörünün çarpımı. Bir GHO ayağı listelemede belirlenen açık bir faktör kullanır.\n\nGauntlet'in LP teminatı analizi, borç alınan varlık havuzun token'larından biri olmadığında düşük olan temel faktörün 0.25× katına kadar inen ihtiyatlı başlangıç faktörleri önerir. Nihai faktörler Aave'nin hizmet sağlayıcılarıyla piyasa başına kalibre edilir."
+          "a": "Hayır. Oracle değeri kesinti uygulamadan bildirir. Her piyasanın Teminat Faktörü bu değerin ne kadarının borcu destekleyebileceğini belirler: havuzun token'ları arasındaki en düşük Aave V4 Teminat Faktörü ile en fazla %90 olan bir havuz risk faktörünün çarpımı. Bir GHO ayağı listelemede belirlenen açık bir faktör kullanır.\n\nGauntlet'in LP teminatı analizi, borç alınan varlık havuzun token'larından biri olmadığında düşük olan temel faktörün 0.25× katına kadar inen ihtiyatlı başlangıç faktörleri önerir. Nihai faktörler Aave'nin hizmet sağlayıcılarıyla piyasa başına kalibre edilir."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Borçlanma kapasitesi nasıl hesaplanır?",
-          "a": "Borçlanma kapasitesi = LP pozisyon değeri × LP Teminat Faktörü ve LP Teminat Faktörü = en düşük token Teminat Faktörü × havuz risk faktörü. Kapasite ayrıca mevcut borca, üst sınırlara, kredi hattının kullanılabilir likiditesine ve oracle kontrollerine bağlıdır.\n\nÖrnek değerler: %31.20 Teminat Faktörüne sahip $20,000 değerinde bir USDC/USDT Slipstream pozisyonu $6,240 ağırlıklı teminat verir. Lens 1.10 sağlık faktörüne kadar borç almayı önerir (burada 5,673.29 USDC) ve azamiyi 1.00'da gösterir (6,209.56 USDC)."
+          "a": "Borçlanma kapasitesi = LP pozisyon değeri × LP Teminat Faktörü ve LP Teminat Faktörü = en düşük token Teminat Faktörü × havuz risk faktörü. Kapasite ayrıca mevcut borca, üst sınırlara, kredi hattının kullanılabilir likiditesine ve oracle kontrollerine bağlıdır.\n\nÖrnek değerler: %80.00 Teminat Faktörüne sahip $20,000 değerinde bir USDC/USDT Uniswap v3 pozisyonu $16,000 ağırlıklı teminat verir. Lens 1.10 sağlık faktörüne kadar borç almayı önerir (burada 14,546.91 USDC) ve azamiyi 1.00'da gösterir (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Borçlanma gücü, LP değerimden neden daha düşük?",
-          "a": "Teminat Faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Havuz risk faktörünün üst sınırı %40'tır, bu nedenle %78'de iki token ile açılış kredi-değer oranı en fazla yaklaşık %28.4'tür.\n\nDeğer ile kapasite arasındaki fark piyasalar arasında farklılık gösterir, çünkü her piyasanın kendi havuz risk faktörü vardır."
+          "a": "Teminat Faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Havuz risk faktörü en fazla %90'dır. USDC/USDT için %90 token faktörleri ve %88.89 havuz risk faktörü %80 Teminat Faktörü verir, bu nedenle Lens'in 1.10 sağlık faktöründe açılış kredi-değer oranı en fazla yaklaşık %72.7'dir.\n\nDeğer ile kapasite arasındaki fark piyasalar arasında farklılık gösterir, çünkü her piyasanın kendi havuz risk faktörü vardır."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Avana borçlularının kullandığı likiditeyi kim sağlar?",
-          "a": "Lansmanda Aave DAO hazinesi, yalnızca arz yapan bir Lend Spoke üzerinden her zincirin Avana Stable LP Hub'ına üst sınırlı bir GHO kredi hattı sağlar. Lansmanda kamuya açık yatırmalar açık değildir.\n\nHer CDP Spoke'un bir varlıktaki çekme üst sınırı Aave DAO tarafından belirlenir ve çekme üst sınırlarının toplamı en fazla kredi hattı kadardır."
+          "a": "Borç verenler ve Aave DAO. Kamuya açık borç verme ilk günden açıktır: herkes, Aave DAO'nun başlangıç arzının yanında, her zincirin Avana Hub'ının yalnızca arz yapan Lend Spoke'u üzerinden listelenmiş bir varlık sağlayabilir.\n\nAave DAO, borç alınabilen her varlık için bir kredi hattı onaylar ve CDP Spoke'ların o varlıktaki çekme üst sınırlarının toplamı en fazla bu hat kadardır."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Borç verici sermayesini ne korur?",
-          "a": "En fazla %40 havuz risk faktörüyle piyasa başına Collateral Factor'ler, Hub başına piyasa, token ve yatıran üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında herhangi bir adrese açık likidasyon ve her borcun tek bir işlemde likide edilebilmesi için zincirin flash likiditesi dahilinde kalan çekim tavanları.\n\nBir likidasyon teminatsız borç bırakırsa eksiklik, 72 saat içinde o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından karşılanır. Rezervden büyük bir eksiklik, Aave DAO tarafından gerçekleştirilen, o Hub varlığının arz sağlayıcıları için bir kayıptır."
+          "a": "En fazla %90 havuz risk faktörüyle piyasa başına Collateral Factor'ler, Hub başına piyasa, token ve yatıran üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında herhangi bir adrese açık likidasyon ve her borcun tek bir işlemde likide edilebilmesi için zincirin flash likiditesi dahilinde kalan çekim tavanları.\n\nBir likidasyon teminatsız borç bırakırsa eksiklik, 72 saat içinde o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından karşılanır. Rezervden büyük bir eksiklik, Aave DAO tarafından gerçekleştirilen, o Hub varlığının arz sağlayıcıları için bir kayıptır."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Sağlık faktörü nedir?",
-          "a": "Sağlık faktörü = teminat değeri × Teminat Faktörü ÷ borç değeri; Aave tarafından hesap başına, yani piyasa başına hesaplanır. 1'in altında hesap likide edilebilir.\n\nÖrnek değerler: 4,999.50 USDC borca karşı $6,240 ağırlıklı teminat 1.2481 sağlık faktörü verir."
+          "a": "Sağlık faktörü = teminat değeri × Teminat Faktörü ÷ borç değeri; Aave tarafından hesap başına, yani piyasa başına hesaplanır. 1'in altında hesap likide edilebilir.\n\nÖrnek değerler: 12,998.70 USDC borca karşı $16,000 ağırlıklı teminat 1.2309 sağlık faktörü verir."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Avana aracılığıyla GHO ödünç alabilir miyim?",
-          "a": "Evet. GHO her CDP Spoke'taki ilk borç varlığıdır ve Aave DAO'nun Avana Stable LP Hub'ına sağladığı üst sınırlı kredi hattıyla fonlanır. GHO borcu sabit $1 olarak fiyatlanır.\n\nGHO borcu Hub'ın GHO oranı artı risk priminizle faiz biriktirir. Bu faizin tamamı Aave DAO'ya gider."
+          "a": "Evet. GHO her CDP Spoke'taki bir borç varlığıdır, sabit $1 olarak fiyatlanır ve Aave DAO'nun onayladığı kredi hattı dahilinde her zincirin Avana Hub'ından borç alınır.\n\nGHO borcu Hub'ın GHO oranı artı risk priminizle faiz biriktirir. Faiz, Aave DAO'nun belirlediği herhangi bir likidite ücretinden sonra Hub'ın GHO arz edenlerine gider; Avana hiçbir pay almaz."
         },
         {
           "id": "can-gho-be-lp-collateral",

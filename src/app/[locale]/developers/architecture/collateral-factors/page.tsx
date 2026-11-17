@@ -32,7 +32,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
       <div data-developer-doc-export-root className="min-w-0 w-full max-w-3xl flex-1">
         <DeveloperDocPageHeader
           title="Collateral Factors"
-          description="Each market's collateral factor starts from the weakest of its tokens' Aave V4 Core Hub factors and is reduced by a pool risk factor of at most 40%."
+          description="Each market's collateral factor starts from the weakest of its tokens' Aave V4 Core Hub factors and is reduced by a pool risk factor of at most 90%."
         />
 
         <section id="overview" className="mb-10">
@@ -60,9 +60,9 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Token factors</th><th className="text-left px-4 py-2 type-doc-subsection-title">Pool risk factor</th><th className="text-left px-4 py-2 type-doc-subsection-title">CF_LP</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">3,750</td><td className="px-4 py-2">2,812 (2,812.5 rounded down)</td></tr>
-                <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">4,000</td><td className="px-4 py-2">3,000</td></tr>
-                <tr><td className="px-4 py-2">Both 7,800</td><td className="px-4 py-2">4,000 (ceiling)</td><td className="px-4 py-2">3,120 (31.2%)</td></tr>
+                <tr><td className="px-4 py-2">USDC 9,000; USDT 9,000</td><td className="px-4 py-2">8,889</td><td className="px-4 py-2">8,000 (8,000.1 rounded down)</td></tr>
+                <tr><td className="px-4 py-2">WETH 8,500; USDC 9,000</td><td className="px-4 py-2">8,471</td><td className="px-4 py-2">7,200 (7,200.35 rounded down)</td></tr>
+                <tr><td className="px-4 py-2">AAVE 7,600; WETH 8,500</td><td className="px-4 py-2">8,948</td><td className="px-4 py-2">6,800 (68%)</td></tr>
               </tbody>
             </table>
           </div>
@@ -92,13 +92,13 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
         <section id="pool-risk-factor" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Pool Risk Factor</h2>
           <p className="mb-4 type-doc-body">
-            The Aave V4 risk service providers set each pool&apos;s risk factor in the market&apos;s listing payload, within 1 to 4,000 bps, so the pool risk factor is at most 40%. It reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs.
+            The Aave V4 risk service providers set each pool&apos;s risk factor in the market&apos;s listing payload, within 1 to 9,000 bps, so the pool risk factor is at most 90%. It reflects the position&apos;s range, price sensitivity, pool depth and expected liquidation costs.
           </p>
           <p className="mb-4 type-doc-body">
             Avana draws on Gauntlet&apos;s analysis of LP collateral, which recommends conservative starting factors. When the borrowed asset is not one of the pool&apos;s own tokens, such as GHO borrowed against WETH/USDC, it suggests starting as low as 0.25 times the lower underlying factor. Final factors are calibrated per market with the service providers.
           </p>
           <p className="mb-4 type-doc-body">
-            At the 40% ceiling, a pool of two tokens with 78% factors has a collateral factor of 31.2%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 28.4% (31.2% divided by 1.10).
+            With an 89.48% pool risk factor, a pool of two tokens with 76% factors has a collateral factor of 68%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 61.8% (68% divided by 1.10).
           </p>
         </section>
 
@@ -119,17 +119,17 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <p className="mb-4 type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Aerodrome Slipstream market on the CDP Spoke &quot;Aerodrome Slipstream Stable&quot; on Base. One whole vault token (10⁶ units) is worth $2.00, CF_LP is 3,120 bps, and USDC is priced at $0.9999.
+            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Uniswap v3 market (fee tier 0.01%) on the CDP Spoke &quot;Uniswap v3 Stable&quot; on Ethereum. One whole vault token (10⁶ units) is worth $2.00, CF_LP is 8,000 bps (token factors of 9,000 and a pool risk factor of 8,889), and USDC is priced at $0.9999.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Item</th><th className="text-left px-4 py-2 type-doc-subsection-title">Value</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Carol pledges an unstaked position with liquidity 10,000,000,000</td><td className="px-4 py-2">10,000 whole vault tokens, $20,000</td></tr>
-                <tr><td className="px-4 py-2">CF-weighted collateral</td><td className="px-4 py-2">$20,000 × 31.20% = $6,240</td></tr>
-                <tr><td className="px-4 py-2">Recommended borrow shown by the Lens (health factor 1.10)</td><td className="px-4 py-2">5,673.29 USDC</td></tr>
-                <tr><td className="px-4 py-2">Protocol maximum (health factor 1.00)</td><td className="px-4 py-2">6,209.56 USDC</td></tr>
-                <tr><td className="px-4 py-2">Carol borrows 5,000 USDC (debt value $4,999.50)</td><td className="px-4 py-2">Health factor 6,240 / 4,999.50 = 1.2481</td></tr>
+                <tr><td className="px-4 py-2">Carol pledges a position with liquidity 10,000,000,000</td><td className="px-4 py-2">10,000 whole vault tokens, $20,000</td></tr>
+                <tr><td className="px-4 py-2">CF-weighted collateral</td><td className="px-4 py-2">$20,000 × 80.00% = $16,000</td></tr>
+                <tr><td className="px-4 py-2">Recommended borrow shown by the Lens (health factor 1.10)</td><td className="px-4 py-2">14,546.91 USDC</td></tr>
+                <tr><td className="px-4 py-2">Protocol maximum (health factor 1.00)</td><td className="px-4 py-2">15,921.97 USDC</td></tr>
+                <tr><td className="px-4 py-2">Carol borrows 13,000 USDC (debt value $12,998.70)</td><td className="px-4 py-2">Health factor 16,000 / 12,998.70 = 1.2309</td></tr>
               </tbody>
             </table>
           </div>
@@ -200,7 +200,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How each market's collateral factor is computed from token factors and a pool risk factor of at most 40%, how Collateral Risk sets the borrow rate, and which caps limit borrowing."
+        pageSummary="How each market's collateral factor is computed from token factors and a pool risk factor of at most 90%, how Collateral Risk sets the borrow rate, and which caps limit borrowing."
         sectionColor="violet"
       />
     </div>

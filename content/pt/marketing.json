@@ -33,13 +33,13 @@
       "Controles de risco ativos",
       "O monitoramento de saúde e a liquidação consciente do venue protegem os padrões enquanto sua exposição continua ganhando taxas.",
       "Hub de menor risco",
-      "Hub LP estável",
+      "Spokes LP estáveis",
       "Mercados LP de stablecoins feitos para pricing apertado, baixo slippage e mínima impermanent loss.",
       "Hub de estratégia global",
-      "Hub LP correlacionado",
+      "Spokes LP correlacionados",
       "Mercados LP para ativos que se movem juntos, com bandas de risco mais estreitas e poder de empréstimo mais limpo.",
       "Hub de maior range",
-      "Hub LP volátil",
+      "Spokes LP voláteis",
       "Mercados LP de grandes ativos DeFi para ranges de preço mais amplos e estratégias com maior risco-retorno.",
       "Interface do app",
       "Emprestar contra",
@@ -55,7 +55,7 @@
       "Tome emprestado contra o valor ajustado ao risco da posição e receba os fundos direto na sua wallet.",
       "Gerencie a dívida antes que o risco aumente",
       "Reembolse, adicione colateral ou reduza a dívida antes que a posição se aproxime do limiar de liquidação.",
-      "Encontre o Hub para o seu colateral",
+      "Encontre os CDP Spokes para o seu colateral",
       "LPs estáveis, correlacionados e voláteis pertencem a mercados diferentes.",
       "Tomável",
       "Empreste com confiança",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Equipe de protocolo",
-      "A equipe de Protocolo projeta e constrói o sistema de empréstimos da Avana. Ela é responsável pelos contratos inteligentes, pela arquitetura de colateral LP, pelos sistemas de liquidação, pela infraestrutura de oráculos, pelo controle de acesso, pelo ambiente de execução e pelos upgrades nos AMMs e hubs de empréstimo integrados.",
+      "Protocolo detém o design e a implementação do sistema de empréstimo da Avana, incluindo smart contracts, arquitetura de colateral LP, sistemas de liquidação, infraestrutura de oráculos, controle de acesso, ambiente de execução e upgrades em AMMs e hubs de lending integrados.",
       "Equipe de operações",
-      "A equipe de Operações coordena a camada diária do protocolo. Ela cuida dos processos de tesouraria, programas de incentivo, crescimento do ecossistema, fluxos de trabalho dos colaboradores e operações de integração de colateral.",
+      "Operações coordena a camada diária do protocolo: processos de tesouraria, programas de incentivo, crescimento do ecossistema, fluxos de contribuidores e onboarding de colateral.",
       "Equipe de risco de mercado",
-      "A equipe de Risco de Mercado é responsável pelo lado quantitativo do colateral LP. Ela abrange a profundidade de liquidez, a volatilidade, o comportamento dos preços, a exposição de liquidez concentrada, a dinâmica de liquidação, a integridade da precificação e o ajuste de parâmetros em diferentes condições de mercado.",
+      "Market Risk detém o lado quantitativo do colateral LP: profundidade de liquidez, volatilidade, comportamento de preços, exposição de liquidez concentrada, dinâmica de liquidação, integridade de preços e ajuste de parâmetros em diferentes condições de mercado.",
       "Equipe de risco de colateral",
-      "A equipe de Risco de Colateral é responsável pelo lado qualitativo da integração e do monitoramento. Ela abrange a estrutura dos ativos, as fontes de liquidez, as dependências de governança, as dependências de protocolo e a integridade mais ampla do colateral nos mercados suportados.",
+      "Collateral Risk detém o lado qualitativo do onboarding e do monitoramento: estrutura de ativos, fontes de liquidez, dependências de governança, dependências de protocolo e integridade mais ampla do colateral nos mercados suportados.",
       "O mercado de empréstimos para liquidez AMM.",
       "Imagem hero Sobre a Avana",
-      "A Avana é o mercado de empréstimos para liquidez de AMM no Aave V4. Nossa missão é tornar posições de liquidez de AMM utilizáveis como colateral em todo o DeFi.",
-      "Os principais AMMs mantêm bilhões em liquidez, mas as posições LP ainda são tratadas principalmente como participações passivas, não como colateral produtivo. A Avana começa com posições Uniswap v3 no Ethereum e posições Aerodrome Slipstream na Base.",
-      "Usar posições LP como colateral exige mais do que listar tokens LP. O LP Vault da Avana mantém cada posição empenhada e a representa no Aave V4 com um vault token para o seu mercado. Os tomadores sacam GHO, e outros ativos de dívida à medida que forem habilitados, do Avana Stable LP Hub por meio de um CDP Spoke para cada AMM. Os Hubs e Spokes são contratos padrão do Aave V4 pertencentes à Aave DAO, que financia o Hub por meio de uma linha de crédito em GHO no Avana Lend Spoke.",
-      "Os contratos inteligentes são apenas parte do trabalho. A posição precisa permanecer ativa em seu pool. Seu valor precisa ser medido conforme as condições mudam. O mercado precisa ter liquidez suficiente para sustentar um empréstimo. A Avana divide esse trabalho entre quatro equipes, e cada equipe é responsável por uma parte diferente do risco.",
-      "Cada área tem seu próprio responsável: execução técnica, operações, modelagem de mercado e revisão de colateral.",
-      "Somos uma equipe pequena trabalhando em um grande problema. Se você quiser participar deste esforço de pesquisa,"
+      "A Avana está construindo o mercado de empréstimos para liquidez AMM na Aave V4. Nossa missão é tornar as posições de liquidez AMM utilizáveis como colateral na DeFi.",
+      "Grandes AMMs já concentram bilhões em liquidez, mas posições LP ainda são tratadas sobretudo como posições passivas em vez de colateral produtivo. A Avana leva essa liquidez a mercados de empréstimo para os DEXs e tipos de LP de hoje, com duplo oráculo e controles de risco mais fortes.",
+      "Isso exige mais do que listar tokens LP como colateral. A Avana é construída em torno de Spokes Aave v4 especializados para diferentes designs de DEX, vários Hubs Aave v4 organizados em torno de mercados LP de menor risco, correlacionados e de maior range, e um Lend Spoke Aave v4 que fornece o capital por trás desses mercados.",
+      "Transformar uma posição LP em colateral utilizável exige mais do que contratos inteligentes. A posição precisa continuar ativa em seu pool, seu valor deve ser medido conforme as condições mudam e o mercado precisa ter liquidez suficiente para sustentar um empréstimo. Por isso, a Avana divide o trabalho entre quatro equipes, cada uma responsável por uma parte diferente do risco.",
+      "O objetivo é uma separação limpa, com execução técnica, operações, modelagem de mercado e revisão de colateral, cada uma detida de forma independente.",
+      "Somos uma equipe pequena trabalhando em um problema grande. Se você tem interesse em se juntar a este esforço de pesquisa,"
     ]
   },
   "brand/page": {
@@ -365,9 +365,9 @@
       "Segurança das posições",
       "Concebido para alavancagem segura",
       "Limite de empréstimo",
-      "Hub LP estável",
-      "Hub LP correlacionado",
-      "Hub LP volátil",
+      "Spoke estável",
+      "Spoke correlacionado",
+      "Lend Spoke",
       "Preserve a receita de taxas",
       "Acesse capital de giro enquanto a posição subjacente permanece implantada e continua gerando taxas de trading.",
       "Evite saídas forçadas de LP",
@@ -410,7 +410,9 @@
       "Rasa",
       "Baixa",
       "Média",
-      "Alta"
+      "Alta",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {
@@ -635,12 +637,7 @@
       "Design do fluxo",
       "Lançamento Multiply",
       "Roteiro",
-      "Borrow vem primeiro, seguido por Lend e Multiply.",
-      "Meta T3 2026",
-      "Meta T4 2026",
-      "Meta T1 2027",
-      "Lançado",
-      "Em progresso"
+      "Borrow vem primeiro, seguido por Lend e Multiply."
     ]
   },
   "invest-apy-section": {

@@ -39,7 +39,7 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana runs on Ethereum and Base. Each chain has an Avana Stable LP Hub and one CDP Spoke per AMM protocol: &quot;Uniswap v3 Stable&quot; for Uniswap v3 positions on Ethereum and &quot;Aerodrome Slipstream Stable&quot; for unstaked Aerodrome Slipstream positions on Base. The Hubs and Spokes are standard, unmodified Aave V4 contracts owned and configured by the Aave DAO; Avana&apos;s contracts handle custody, valuation, borrower actions and liquidation around them.
+            Avana runs on Ethereum and Base. Each chain has one Avana Hub, a Lend Spoke and CDP Spokes per AMM protocol and risk tier. Today the CDP Spokes take Uniswap v3 and Uniswap v4 positions on Ethereum and unstaked Aerodrome Slipstream positions on Base. The Hubs and Spokes are standard, unmodified Aave V4 contracts owned and configured by the Aave DAO; Avana&apos;s contracts handle custody, valuation, borrower actions and liquidation around them.
           </p>
           <p className="type-doc-body">
             Anyone can call the contracts directly. Avana&apos;s frontend and AppKit are optional; repay, debt-free withdrawal, fee collection and liquidation never depend on them. Each chain&apos;s contracts are separate: nothing is shared across chains, and every operation runs through that chain&apos;s own timelock.
@@ -70,7 +70,7 @@ export default async function SupportedIntegrationsPage({ params }: LocaleParams
           </p>
           <p className="type-doc-body">
             Per-chain contract addresses are listed on the contracts reference page:{" "}
-            <Link href="/developers/reference/contracts" className="text-type-accent hover:underline">Contracts</Link>.
+            <Link href="/developers/reference/addresses" className="text-type-accent hover:underline">Contract Addresses</Link>.
           </p>
         </section>
 

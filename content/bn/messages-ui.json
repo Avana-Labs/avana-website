@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "চার্জ করা হয়েছে Aave v4 দ্বারা",
-      "title": "Avana হলো একটি অন-চেন ঋণ বাজার, বিশেষভাবে AMM লিকুইডিটি পুলের জন্য নির্মিত।",
-      "titleLine1": "Avana হলো একটি অন-চেন ঋণ বাজার,",
-      "titleLine2": "বিশেষভাবে AMM লিকুইডিটি পুলের জন্য নির্মিত।",
+      "title": "ক্রিপ্টো, শেয়ার ও RWA ধার নিন আপনার AMM লিকুইডিটি পজিশন জামানত রেখে।",
+      "titleLine1": "ক্রিপ্টো, শেয়ার ও RWA ধার নিন",
+      "titleLine2": "আপনার AMM লিকুইডিটি পজিশন জামানত রেখে।",
+      "titleLine1Mobile": "ক্রিপ্টো ও শেয়ার ধার নিন",
+      "titleLine2Mobile": "আপনার লিকুইডিটি পজিশন জামানত রেখে।",
       "subtitle": "আপনার AMM লিকুইডিটি পজিশনকে জামানত হিসেবে ব্যবহার করে অন-চেন ক্রিপ্টো, পণ্য, FX এবং বাস্তব বিশ্বের সম্পদ (RWA) ঋণ নিন।",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "ARFC প্রস্তাব পড়ুন",
       "secondaryCta": "টেস্টনেট খুলুন"
-    },
-    "intro": {
-      "text": "<strong>Uniswap, Curve, Aerodrome, Balancer ও অন্যান্য DEX</strong>-এর লিকুইডিটি পজিশন জামানত রেখে <strong>ক্রিপ্টো, শেয়ার, FX ও RWA</strong> <ink>ধার নিন</ink>—Aave V4-এর মাধ্যমে, অনচেইনে, ২৪/৭।"
     },
     "features": {
       "eyebrow": "মূল বৈশিষ্ট্য",

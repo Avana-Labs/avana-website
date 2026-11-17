@@ -28,7 +28,7 @@
  * - Liquidation Framework (amber)
  * - Supported Integrations (cyan)
  * - Safety Mechanisms (rose)
- * - Legal & Compliance (slate)
+ * - Security & Legal (slate)
  * 
  * @example
  * // Used in developers layout
@@ -85,8 +85,6 @@ import {
   RefreshCw,
   Landmark,
   Siren,
-  Library,
-  FileCode,
   SlidersHorizontal,
   ShieldCheck,
   ClipboardCheck,
@@ -105,6 +103,9 @@ export const navigationSections = [
       { href: "/developers/introduction", labelKey: "docs.items.protocolOverview", icon: Layers },
       { href: "/developers/introduction/key-concepts", labelKey: "docs.items.keyConcepts", icon: Lightbulb },
       { href: "/developers/introduction/glossary", labelKey: "docs.items.glossary", icon: BookMarked },
+      { href: "/developers/reference/addresses", labelKey: "docs.items.addresses", icon: MapPin },
+      { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
+      { href: "/developers/reference/access-controls", labelKey: "docs.items.accessControls", icon: KeyRound },
     ],
   },
   {
@@ -184,23 +185,12 @@ export const navigationSections = [
     ],
   },
   {
-    id: "reference",
-    titleKey: "docs.sections.reference",
-    icon: Library,
-    items: [
-      { href: "/developers/reference/addresses", labelKey: "docs.items.addresses", icon: MapPin },
-      { href: "/developers/reference/contracts", labelKey: "docs.items.contractList", icon: FileCode },
-      { href: "/developers/reference/parameters", labelKey: "docs.items.parameters", icon: SlidersHorizontal },
-      { href: "/developers/reference/access-controls", labelKey: "docs.items.accessControls", icon: KeyRound },
-      { href: "/developers/reference/security", labelKey: "docs.items.securityVerification", icon: ShieldCheck },
-      { href: "/developers/reference/audits", labelKey: "docs.items.audits", icon: ClipboardCheck },
-    ],
-  },
-  {
-    id: "legal",
-    titleKey: "docs.sections.legal",
+    id: "security-legal",
+    titleKey: "docs.sections.securityLegal",
     icon: Scale,
     items: [
+      { href: "/developers/reference/security", labelKey: "docs.items.securityVerification", icon: ShieldCheck },
+      { href: "/developers/reference/audits", labelKey: "docs.items.audits", icon: ClipboardCheck },
       { href: "/developers/legal", labelKey: "docs.items.securityDisclosures", icon: FileWarning },
       { href: "/developers/legal/disclaimer", labelKey: "docs.items.legalDisclaimer", icon: Gavel },
     ],
@@ -224,8 +214,7 @@ const sectionColors: Record<string, typeof activeSectionStyles> = {
   copilot: activeSectionStyles,
   integrations: activeSectionStyles,
   safety: activeSectionStyles,
-  reference: activeSectionStyles,
-  legal: activeSectionStyles,
+  "security-legal": activeSectionStyles,
 }
 
 export default function DeveloperSidebar() {
@@ -236,7 +225,7 @@ export default function DeveloperSidebar() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const activeItemRef = useRef<HTMLAnchorElement>(null)
   const sidebarTypeScale = {
-    "--type-sidebar-link-size": "0.875rem",
+    "--type-sidebar-link-size": "var(--type-docs-nav-size)",
   } as CSSProperties
 
   const isActive = (href: string) => {

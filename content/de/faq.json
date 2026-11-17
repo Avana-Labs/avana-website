@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Was ist Avana?",
-          "a": "Mit Avana können Liquiditätsanbieter AMM-Positionen als Sicherheiten auf Aave V4 nutzen. Ein Kreditnehmer verpfändet eine Uniswap v3-Position auf Ethereum oder eine Aerodrome Slipstream-Position auf Base. Der LPVault von Avana hält die Position, und ein entsprechender vault token wird als Sicherheit auf einem Avana CDP Spoke bereitgestellt. Der Kreditnehmer leiht dann GHO oder ein anderes Schulden-Asset, das der Spoke verleiht, während die Liquidität im Pool bleibt.\n\nAvana startet auf Ethereum und Base, mit einem Avana Stable LP Hub auf jeder Chain. Die Hubs und Spokes sind standardmäßige, unveränderte Aave V4-Verträge im Besitz der Aave DAO, die sie auch konfiguriert. Die eigenen Verträge von Avana übernehmen Verwahrung, Bewertung, Kreditnehmeraktionen und Liquidation."
+          "a": "Mit Avana können Liquiditätsanbieter AMM-Positionen als Sicherheiten auf Aave V4 nutzen. Ein Kreditnehmer verpfändet eine Uniswap v3- oder Uniswap v4-Position auf Ethereum oder eine Aerodrome Slipstream-Position auf Base. Der LPVault von Avana hält die Position, und ein entsprechender vault token wird als Sicherheit auf einem Avana CDP Spoke bereitgestellt. Der Kreditnehmer leiht dann ein Schulden-Asset, das der Spoke verleiht, etwa GHO oder USDC, während die Liquidität im Pool bleibt.\n\nAvana startet auf Ethereum und Base, mit genau einem Avana Hub auf jeder Chain. Die Hubs und Spokes sind standardmäßige, unveränderte Aave V4-Verträge im Besitz der Aave DAO, die sie auch konfiguriert. Die eigenen Verträge von Avana übernehmen Verwahrung, Bewertung, Kreditnehmeraktionen und Liquidation."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Warum nutzt Avana Hubs und Spokes von Aave V4?",
-          "a": "Aave V4 trennt gemeinsame Liquidität (Hubs) von marktspezifischen Risikoeinstellungen (Spokes). Jede Chain hat einen Avana Stable LP Hub. Die Aave DAO stellt ihm über einen reinen Bereitstellungs-Lend Spoke eine begrenzte GHO-Kreditlinie bereit, und nur die CDP Spokes von Avana können daraus ziehen.\n\nEs gibt einen CDP Spoke pro Chain, Hub, AMM-Protokoll und Risikostufe. Beim Launch sind dies \"Uniswap v3 Stable\" auf Ethereum und \"Aerodrome Slipstream Stable\" auf Base. Correlated LP und Volatile LP Hubs sind für später vorgesehen. Avana forkt oder ändert Aave V4 nicht."
+          "a": "Aave V4 trennt gemeinsame Liquidität (Hubs) von marktspezifischen Risikoeinstellungen (Spokes). Jede Chain hat einen Avana Hub. Kreditgeber und die Bootstrap-Bereitstellung der Aave DAO finanzieren ihn über einen reinen Bereitstellungs-Lend Spoke, und nur die CDP Spokes von Avana können daraus ziehen, innerhalb der Kreditlinien, die die Aave DAO genehmigt.\n\nEs gibt einen CDP Spoke pro Chain, AMM-Protokoll und Risikostufe, und jeder Spoke legt eigene Risikoparameter fest. Auf Ethereum decken Uniswap v3 und Uniswap v4 Spokes Stable-, Correlated-, Blue-chip- und Gov/DeFi-Pools ab; auf Base decken Aerodrome Slipstream Spokes Blue-chip-, Gov/DeFi- und Stocks-Pools ab. Avana forkt oder ändert Aave V4 nicht."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Ermäßigt Avana den Orakelwert?",
-          "a": "Nein. Das Oracle meldet den Wert ohne Abschlag. Der Collateral Factor jedes Marktes legt fest, wie viel dieses Werts Schulden decken kann: der niedrigste Aave V4 Collateral Factor unter den Tokens des Pools, multipliziert mit einem Pool-Risikofaktor von höchstens 40%. Ein GHO-Teil verwendet einen beim Listing festgelegten expliziten Faktor.\n\nDie Analyse von Gauntlet zu LP-Sicherheiten empfiehlt konservative Startfaktoren, bis hinunter zu 0.25× des niedrigeren zugrunde liegenden Faktors, wenn das geliehene Asset keiner der Tokens des Pools ist. Die endgültigen Faktoren werden pro Markt mit den Dienstleistern von Aave kalibriert."
+          "a": "Nein. Das Oracle meldet den Wert ohne Abschlag. Der Collateral Factor jedes Marktes legt fest, wie viel dieses Werts Schulden decken kann: der niedrigste Aave V4 Collateral Factor unter den Tokens des Pools, multipliziert mit einem Pool-Risikofaktor von höchstens 90%. Ein GHO-Teil verwendet einen beim Listing festgelegten expliziten Faktor.\n\nDie Analyse von Gauntlet zu LP-Sicherheiten empfiehlt konservative Startfaktoren, bis hinunter zu 0.25× des niedrigeren zugrunde liegenden Faktors, wenn das geliehene Asset keiner der Tokens des Pools ist. Die endgültigen Faktoren werden pro Markt mit den Dienstleistern von Aave kalibriert."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Wie wird die Kreditaufnahmefähigkeit berechnet?",
-          "a": "Kreditkapazität = LP-Positionswert × LP Collateral Factor, und LP Collateral Factor = niedrigster Token-Collateral-Factor × Pool-Risikofaktor. Die Kapazität hängt außerdem von bestehenden Schulden, Obergrenzen, der verfügbaren Liquidität der Kreditlinie und Oracle-Prüfungen ab.\n\nBeispielwerte: Eine USDC/USDT-Slipstream-Position im Wert von $20,000 mit einem Collateral Factor von 31.20% ergibt $6,240 gewichtete Sicherheiten. Die Lens empfiehlt eine Kreditaufnahme bis zu einem Health Factor von 1.10 (hier 5,673.29 USDC) und zeigt das Maximum bei 1.00 (6,209.56 USDC)."
+          "a": "Kreditkapazität = LP-Positionswert × LP Collateral Factor, und LP Collateral Factor = niedrigster Token-Collateral-Factor × Pool-Risikofaktor. Die Kapazität hängt außerdem von bestehenden Schulden, Obergrenzen, der verfügbaren Liquidität der Kreditlinie und Oracle-Prüfungen ab.\n\nBeispielwerte: Eine USDC/USDT-Uniswap v3-Position im Wert von $20,000 mit einem Collateral Factor von 80.00% ergibt $16,000 gewichtete Sicherheiten. Die Lens empfiehlt eine Kreditaufnahme bis zu einem Health Factor von 1.10 (hier 14,546.91 USDC) und zeigt das Maximum bei 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Warum ist die Ausleihkraft niedriger als mein LP Wert?",
-          "a": "Der Collateral Factor lässt Raum für Preisbewegungen, Impermanent Loss, Bereichsänderungen und Liquidationskosten. Der Pool-Risikofaktor ist auf 40% begrenzt, sodass bei zwei Tokens mit 78% der anfängliche Loan-to-Value höchstens etwa 28.4% beträgt.\n\nDie Lücke zwischen Wert und Kapazität unterscheidet sich zwischen Märkten, weil jeder Markt seinen eigenen Pool-Risikofaktor hat."
+          "a": "Der Collateral Factor lässt Raum für Preisbewegungen, Impermanent Loss, Bereichsänderungen und Liquidationskosten. Der Pool-Risikofaktor beträgt höchstens 90%. Für USDC/USDT ergeben Token-Faktoren von 90% und ein Pool-Risikofaktor von 88.89% einen Collateral Factor von 80%, sodass der anfängliche Loan-to-Value beim Health Factor der Lens von 1.10 höchstens etwa 72.7% beträgt.\n\nDie Lücke zwischen Wert und Kapazität unterscheidet sich zwischen Märkten, weil jeder Markt seinen eigenen Pool-Risikofaktor hat."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Wer stellt die Liquidität bereit, die Avana-Kreditnehmer nutzen?",
-          "a": "Beim Launch stellt das Treasury der Aave DAO dem Avana Stable LP Hub jeder Chain über einen reinen Bereitstellungs-Lend Spoke eine begrenzte GHO-Kreditlinie bereit. Öffentliche Einzahlungen sind beim Launch nicht möglich.\n\nDie Draw-Obergrenze jedes CDP Spoke für ein Asset wird von der Aave DAO festgelegt, und die Draw-Obergrenzen summieren sich höchstens auf die Kreditlinie."
+          "a": "Kreditgeber und die Aave DAO. Die öffentliche Kreditvergabe ist ab dem ersten Tag offen: Jeder kann ein gelistetes Asset über den reinen Bereitstellungs-Lend Spoke des Avana Hub jeder Chain bereitstellen, neben der Bootstrap-Bereitstellung der Aave DAO.\n\nDie Aave DAO genehmigt für jedes ausleihbare Asset eine Kreditlinie, und die Draw-Obergrenzen der CDP Spokes für dieses Asset summieren sich höchstens auf die Linie."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Was schützt das Kapital des Kreditgebers?",
-          "a": "Collateral Factors pro Markt mit einem Pool-Risikofaktor von höchstens 40%, Markt-, Token- und Einzahler-Obergrenzen pro Hub, Oracle-Zustände und Breaker, eine Liquidation, die neben dem Keeper von Avana für jede Adresse offen ist, und Draw-Obergrenzen, die innerhalb der Flash-Liquidität der Chain bleiben, sodass jede Kreditaufnahme in einer Transaktion liquidiert werden kann.\n\nHinterlässt eine Liquidation Schulden ohne Sicherheiten, wird das Defizit innerhalb von 72 Stunden vom Avana Umbrella für diesen Hub und dieses Asset gedeckt, einer First-Loss-Reserve, die von Avana Labs finanziert und von der Aave DAO kontrolliert wird. Ein Defizit, das größer als die Reserve ist, ist ein Verlust für die Anbieter dieses Hub-Assets, realisiert durch die Aave DAO."
+          "a": "Collateral Factors pro Markt mit einem Pool-Risikofaktor von höchstens 90%, Markt-, Token- und Einzahler-Obergrenzen pro Hub, Oracle-Zustände und Breaker, eine Liquidation, die neben dem Keeper von Avana für jede Adresse offen ist, und Draw-Obergrenzen, die innerhalb der Flash-Liquidität der Chain bleiben, sodass jede Kreditaufnahme in einer Transaktion liquidiert werden kann.\n\nHinterlässt eine Liquidation Schulden ohne Sicherheiten, wird das Defizit innerhalb von 72 Stunden vom Avana Umbrella für diesen Hub und dieses Asset gedeckt, einer First-Loss-Reserve, die von Avana Labs finanziert und von der Aave DAO kontrolliert wird. Ein Defizit, das größer als die Reserve ist, ist ein Verlust für die Anbieter dieses Hub-Assets, realisiert durch die Aave DAO."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Was ist der Health Factor?",
-          "a": "Health Factor = Sicherheitenwert × Collateral Factor ÷ Schuldenwert, von Aave pro Konto und damit pro Markt berechnet. Unter 1 kann das Konto liquidiert werden.\n\nBeispielwerte: $6,240 gewichtete Sicherheiten gegenüber 4,999.50 USDC Schulden ergeben einen Health Factor von 1.2481."
+          "a": "Health Factor = Sicherheitenwert × Collateral Factor ÷ Schuldenwert, von Aave pro Konto und damit pro Markt berechnet. Unter 1 kann das Konto liquidiert werden.\n\nBeispielwerte: $16,000 gewichtete Sicherheiten gegenüber 12,998.70 USDC Schulden ergeben einen Health Factor von 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Kann ich GHO durch Avana leihen?",
-          "a": "Ja. GHO ist das erste Schulden-Asset auf jedem CDP Spoke, finanziert durch die begrenzte Kreditlinie der Aave DAO an den Avana Stable LP Hub. GHO-Schulden werden mit festen $1 bewertet.\n\nAuf GHO-Schulden laufen Zinsen zum GHO-Zinssatz des Hub plus Ihrer Risikoprämie auf. Diese Zinsen gehen vollständig an die Aave DAO."
+          "a": "Ja. GHO ist ein Schulden-Asset auf jedem CDP Spoke, mit festen $1 bewertet, und wird vom Avana Hub jeder Chain innerhalb der Kreditlinie geliehen, die die Aave DAO genehmigt.\n\nAuf GHO-Schulden laufen Zinsen zum GHO-Zinssatz des Hub plus Ihrer Risikoprämie auf. Die Zinsen gehen an die GHO-Anbieter des Hub, nach einer etwaigen Liquiditätsgebühr, die die Aave DAO festlegt; Avana erhält keinen Anteil."
         },
         {
           "id": "can-gho-be-lp-collateral",

@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started', {
     title: "Getting Started - Deposit LP",
-    description: "How to pledge an exact-range Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base into Avana as collateral: eligibility, approvals, the pledge call, top-ups, re-credit, checks, events and failures.",
+    description: "How to pledge an exact-range LP position from a supported DEX into Avana as collateral, such as a Uniswap v3 position on Ethereum or an unstaked Aerodrome Slipstream position on Base: eligibility, approvals, the pledge call, top-ups, re-credit, checks, events and failures.",
   })
 }
 
@@ -211,7 +211,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="eligibility" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Eligible Positions</h2>
           <p className="mb-4 type-doc-body">
-            Two AMM protocols are listed at launch, one per chain. A position is named by the market&apos;s integration ID together with a position key.
+            Each AMM protocol Avana supports has its own LPVault and position key. Two of today&apos;s protocols are shown below. A position is named by the market&apos;s integration ID together with a position key.
           </p>
           <div className="overflow-x-auto mb-4">
             <table className="type-doc-table">
@@ -477,37 +477,37 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Market 3 is a USDC/USDT Aerodrome Slipstream market on Base, on the Aerodrome Slipstream Stable CDP Spoke of the Base Stable LP Hub, with tick spacing 1 and range [−887,272, 887,272]. One whole vault token (10^6 units) is worth $2.00. The collateral factor is 3,120 bps (31.20%), minPledgeUsd is $10 and marketUsdCap is $5,000,000 with $1,000,000 booked. The pool has an illustrative per-pool cap of 1,000 bps. Market supply is 400,000,000,000 units and the pool&apos;s in-range liquidity is 20,000,000,000,000. The Hub state is None and the sequencer gate is Up.
+            Example values; each market&apos;s parameters are set at listing. Market 3 is a USDC/USDT Uniswap v3 market on Ethereum, on the Uniswap v3 Stable CDP Spoke of the Avana Ethereum Hub, with fee tier 0.01% (tick spacing 1) and range [−887,272, 887,272]. One whole vault token (10^6 units) is worth $2.00. The collateral factor is 8,000 bps (80.00%), minPledgeUsd is $10 and marketUsdCap is $5,000,000 with $1,000,000 booked. The pool has an illustrative per-pool cap of 1,000 bps. Market supply is 400,000,000,000 units and the pool&apos;s in-range liquidity is 20,000,000,000,000. The Hub state is None; Ethereum has no sequencer gate.
           </div>
           <p className="mb-4 type-doc-body">
-            Carol has no proxy in market 3. She holds an unstaked Slipstream NFT with L = 10,000,000,000 (about 10,000 USDC and 10,000 USDT).
+            Carol has no proxy in market 3. She holds a Uniswap v3 position NFT with L = 10,000,000,000 (about 10,000 USDC and 10,000 USDT).
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
             <li>Her app reads the Lens: the market is Live (the USDC/USD feed last published 72,000 seconds ago, fresh until 88,200), Regular headroom is $4,000,000, the minimum pledge is $10, and predictProxy returns her proxy address.</li>
-            <li>She approves the Slipstream LPVault for her NFT on the Slipstream position manager, then calls pledge on market 3 with her position and a deadline of now + 600.</li>
-            <li>The ProxyManager deploys her proxy P and the vault token registers it. The LPVault checks the key&apos;s generation byte, the pool and the exact ticks, takes the NFT and reads 10,000,000,000 units.</li>
+            <li>She approves the Uniswap v3 LPVault for her NFT on the NonfungiblePositionManager, then calls pledge on market 3 with her position and a deadline of now + 600.</li>
+            <li>The ProxyManager deploys her proxy P and the vault token registers it. The LPVault checks the pool, the fee tier and the exact ticks, takes the NFT and reads 10,000,000,000 units.</li>
             <li>The RiskModule checks: value ⌊10,000,000,000 × 200,000,000 / 10^6⌋ = $20,000 ≥ $10; the $20,000 charge fits the $4,000,000 room; pool share (400,000,000,000 + 10,000,000,000) × 10^4 = 4.1 × 10^15 ≤ 1,000 × 2 × 10^13, so Avana holds 2.05% of the pool; record 1 of 16.</li>
             <li>Collateralization books $20,000 in Regular and in the USDC, USDT and depositor counters. The Adapter mints 10,000,000,000 units to P, which supplies them and enables them as collateral.</li>
             <li>Events: ProxyDeployed, UserProxyCreated, ProxyAdded, PositionReceived, CollateralPledged, CollateralSupplied, CollateralAdded.</li>
-            <li>The account now shows collateral $20,000 and CF-weighted collateral $6,240. The Lens recommends borrowing up to $5,672.73 of debt value (HF 1.10) and shows the protocol maximum of $6,240 (HF 1.00).</li>
+            <li>The account now shows collateral $20,000 and CF-weighted collateral $16,000. The Lens recommends borrowing up to $14,545.45 of debt value (HF 1.10) and shows the protocol maximum of $16,000 (HF 1.00).</li>
           </ul>
           <h3 className="mb-2 type-doc-subsection-title">Failing variants</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
             <li>An NFT with L = 4,000,000 is worth $8 and reverts with BelowMinPledge(800,000,000, 1,000,000,000).</li>
             <li>A 17th record in the same market reverts with TooManyRecords.</li>
-            <li>A gauge-staked NFT reverts with NotPositionOwner.</li>
+            <li>An NFT that Carol does not own reverts with NotPositionOwner.</li>
             <li>An NFT on the range [−10, 10] reverts with RangeMismatch.</li>
-            <li>The same first pledge 1,800 seconds after a Base sequencer restart reverts with SequencerGrace.</li>
+            <li>On a Base market, the same first pledge 1,800 seconds after a sequencer restart reverts with SequencerGrace.</li>
           </ul>
           <p className="mb-4 type-doc-body">
             In each failing case the NFT stays with Carol.
           </p>
           <h3 className="mb-2 type-doc-subsection-title">Top-up from the slice and rescue top-up</h3>
           <p className="mb-4 type-doc-body">
-            On an Ethereum market with the same parameters, an account owes 15,000 GHO against $50,000 of collateral, so its health factor is 15,600 / 15,000 = 1.04. The market&apos;s Regular budget is full and the Hub is Frozen. A second NFT worth $2,000 is a top-up, so the Frozen gate passes. The CF-weighted value missing to reach 1.10 is (1.10 − 1.04) × 15,000 = $900, which ⌈900 / 0.3120⌉ = $2,884.61538462 of collateral restores. The whole $2,000 books from the slice, all of its units are rescue units, and the health factor becomes $52,000 × 31.20% / 15,000 = 1.0816. A $4,000 top-up in the same state reverts with SliceNotAvailable, because its slice part exceeds $2,884.62.
+            In market 3, an account owes 15,000 GHO against $19,500 of collateral, so its health factor is 15,600 / 15,000 = 1.04. The market&apos;s Regular budget is full and the Hub is Frozen. A second NFT worth $1,000 is a top-up, so the Frozen gate passes. The CF-weighted value missing to reach 1.10 is (1.10 − 1.04) × 15,000 = $900, which ⌈900 / 0.80⌉ = $1,125 of collateral restores. The whole $1,000 books from the slice, all of its units are rescue units, and the health factor becomes $20,500 × 80.00% / 15,000 = 1.0933. A $1,500 top-up in the same state reverts with SliceNotAvailable, because its slice part exceeds $1,125.
           </p>
           <p className="mb-4 type-doc-body">
-            The guardian then pauses the Hub with reason General. At HF 1.0816, ⌈276 / 0.3120⌉ = $884.62 restores 1.10. An $800 pledge is a rescue top-up and lifts the health factor to 1.0982. A $1,000 pledge in the same state, and a new-account pledge by another wallet, revert with NotRescueTopUp. Under reason MintPathSuspect every pledge reverts with ApplicationPaused.
+            The guardian then pauses the Hub with reason General. At HF 1.0933, ⌈100 / 0.80⌉ = $125 restores 1.10. A $100 pledge is a rescue top-up and lifts the health factor to 1.0987. A $200 pledge in the same state, and a new-account pledge by another wallet, revert with NotRescueTopUp. Under reason MintPathSuspect every pledge reverts with ApplicationPaused.
           </p>
           <p className="type-doc-body">
             The next step is to borrow against the new collateral. Continue to <Link href="/developers/getting-started/borrow-assets" className="text-type-accent hover:underline">Borrow Assets</Link>.
@@ -517,7 +517,7 @@ export default async function DepositLPPage({ params }: LocaleParamsProps) {
 
       <DeveloperScrollSpyRail
         sections={sections}
-        pageSummary="How to pledge an exact-range Uniswap v3 or Aerodrome Slipstream position into Avana as collateral, what is checked and what is minted."
+        pageSummary="How to pledge an exact-range LP position into Avana as collateral, what is checked and what is minted."
         sectionColor="emerald"
       />
     </div>

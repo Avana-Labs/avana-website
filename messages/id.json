@@ -102,12 +102,11 @@
         "liquidation": "Kerangka Likuidasi",
         "integrations": "Integrasi yang Didukung",
         "safety": "Mekanisme Keamanan",
-        "legal": "Hukum & Kepatuhan",
         "copilot": "Tanya AI",
-        "reference": "Referensi"
+        "securityLegal": "Keamanan & Hukum"
       },
       "items": {
-        "overview": "Gambaran Umum",
+        "overview": "Selamat datang",
         "keyConcepts": "Konsep Kunci",
         "glossary": "Glosarium",
         "depositLp": "Setoran LP",
@@ -146,9 +145,8 @@
         "marketLifecycle": "Siklus Hidup Pasar",
         "governance": "Tata Kelola",
         "emergencyControls": "Kontrol Darurat",
-        "contractList": "Kontrak",
-        "addresses": "Alamat",
-        "parameters": "Parameter",
+        "addresses": "Alamat Kontrak",
+        "parameters": "Parameter Pasar",
         "accessControls": "Kontrol Akses",
         "securityVerification": "Keamanan & Verifikasi",
         "audits": "Audit",
@@ -160,9 +158,9 @@
         "chainId": "ID rantai",
         "copy": "Salin",
         "copied": "Tersalin",
-        "placeholder": "Placeholder",
         "explorer": "membuka penjelajah blok",
-        "updated": "Terakhir diperbarui {date}"
+        "updated": "Terakhir diperbarui {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "Harga",
-      "description": "Biaya yang jelas untuk meminjam, memberi pinjaman, dan strategi dengan jaminan LP di Avana."
+      "description": "Biaya Avana: biaya antarmuka untuk setiap tindakan, bagian dari keuntungan likuidasi, dan poin."
     },
     "siteTitle": "Avana - Meminjam Melawan LP Posisi pada Aave v4",
     "siteDescription": "Buka likuiditas dari LP token Anda. Pinjam hingga 80% terhadap posisi Uniswap, Curve, dan Balancer sambil terus memperoleh biaya perdagangan pada Aave v4.",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Didukung oleh Aave v4",
-      "title": "Avana adalah pasar pinjaman DeFi yang dirancang untuk liquidity pool AMM.",
-      "titleLine1": "Avana adalah pasar pinjaman DeFi",
-      "titleLine2": "yang dirancang untuk liquidity pool AMM.",
+      "title": "Pinjam kripto, saham, dan RWA dengan jaminan posisi likuiditas AMM Anda.",
+      "titleLine1": "Pinjam kripto, saham, dan RWA",
+      "titleLine2": "dengan jaminan posisi likuiditas AMM Anda.",
+      "titleLine1Mobile": "Pinjam kripto dan saham",
+      "titleLine2Mobile": "dengan jaminan posisi likuiditas Anda.",
       "subtitle": "Pinjam kripto, komoditas, valas (FX), dan aset dunia nyata (RWA) onchain menggunakan posisi likuiditas AMM Anda sebagai agunan.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "Baca Proposal ARFC",
       "secondaryCta": "Buka Testnet"
-    },
-    "intro": {
-      "text": "<ink>Pinjam</ink> <strong>aset kripto, saham, valuta asing (FX), dan aset dunia nyata (RWA)</strong> dengan menjaminkan posisi likuiditas dari <strong>Uniswap, Curve, Aerodrome, Balancer, dan DEX lainnya</strong>, didukung Aave V4, secara onchain dan 24/7."
     },
     "features": {
       "eyebrow": "Fitur Utama",
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "Harga",
-    "subtitleLine1": "Suku bunga dan imbal hasil bergantung pada pasar,",
-    "subtitleLine2": "posisi, dan rute yang Anda pilih.",
-    "interfaceRate": "Biaya antarmuka — 15 bps (0,15%)",
-    "includes": "Termasuk:",
-    "borrow": {
-      "title": "Meminjam",
-      "subtitle": "Untuk kredit berbasis LP",
-      "value": "Variabel",
-      "unit": "bunga",
-      "description": "Biaya pinjaman mengikuti pasar Aave v4 yang dipilih.",
+    "subtitleLine1": "Biaya aplikasi untuk setiap aksi dan bagian dari keuntungan likuidasi.",
+    "subtitleLine2": "Suku bunga pinjaman dan premi risiko adalah tarif Aave V4 yang ditetapkan oleh Aave DAO dan dibayarkan kepada pemberi pinjaman. Avana tidak mengambil bagian darinya.",
+    "interfaceRate": "Biaya antarmuka: 10 bps (0,10%)",
+    "includes": "Detail:",
+    "frontEnd": {
+      "title": "Biaya antarmuka",
+      "subtitle": "Dikenakan oleh aplikasi Avana",
+      "value": "10",
+      "unit": "bps per aksi",
+      "description": "Ditambahkan ke aksi Anda sebagai satu transfer token dalam batch transaksi yang sama: swap, meminjam, membayar kembali, menjaminkan, dan meminjamkan. Tidak ada kontrak yang mengenakannya, dan batas atasnya 25 bps.",
       "items": {
-        "one": "Suku bunga ditetapkan pasar",
-        "two": "Hanya berlaku pada utang terutang",
-        "three": "Ditampilkan sebelum konfirmasi"
+        "one": "9 bps setelah 30 hari keanggotaan",
+        "two": "8 bps setelah 90 hari, 7 bps setelah 180 hari",
+        "three": "Keanggotaan dihitung sejak interaksi pertama wallet Anda"
       }
     },
-    "lend": {
-      "title": "Menyediakan dana",
-      "subtitle": "Pasok modal ke Hub",
-      "value": "Pasar",
-      "unit": "APY",
-      "description": "Dapatkan imbal hasil dari permintaan peminjam berbasis LP melalui Lend Spoke Avana.",
+    "liquidation": {
+      "title": "Biaya likuidasi",
+      "subtitle": "Hanya saat posisi dilikuidasi",
+      "value": "20%",
+      "unit": "dari keuntungan oracle",
+      "description": "Keuntungan oracle adalah nilai oracle dari jaminan yang disita dikurangi utang yang dilunasi. Bagian Avana dibatasi oleh surplus yang benar-benar dihasilkan likuidasi, sehingga utang selalu dilunasi lebih dulu.",
       "items": {
-        "one": "Imbal hasil berubah sesuai utilisasi",
-        "two": "Pasok ke pasar pinjaman yang didukung",
-        "three": "APY langsung ditampilkan di antarmuka"
+        "one": "Likuidator menyimpan sisa keuntungan sebagai imbalannya",
+        "two": "Pemulihan di atas nilai oracle diberikan kepada peminjam, atau ke First-Loss Reserve jika masih ada utang",
+        "three": "Dibayarkan dalam aset utang ke penerima biaya Avana yang dilindungi timelock"
       }
     },
-    "multiply": {
-      "title": "Menggandakan",
-      "subtitle": "Untuk eksposur LP terkelola",
-      "value": "Variabel",
-      "unit": "suku bunga strategi",
-      "description": "Tingkatkan eksposur LP dengan strategi terkelola yang dijamin posisi AMM yang didukung.",
+    "points": {
+      "title": "Poin",
+      "subtitle": "Hadiah karena menggunakan Avana",
+      "value": "1",
+      "unit": "poin per $1 biaya",
+      "description": "Poin dicatat di aplikasi Avana. Tidak ada token dan tidak ada yang on-chain. Tukarkan poin dengan diskon sementara untuk biaya antarmuka.",
       "items": {
-        "one": "Gunakan posisi LP yang didukung sebagai jaminan",
-        "two": "Eksposur tetap terkait dengan pool dasar",
-        "three": "Kontrol leverage dan penutupan tetap terlihat"
+        "one": "1 poin per $1 biaya antarmuka yang dibayar",
+        "two": "100 poin per 30 hari keanggotaan",
+        "three": "Quest: deposit pertama, meminjam, membayar kembali, menjaminkan, referral, dan lainnya"
       }
     },
     "faq": {
       "title": "Pertanyaan umum",
       "items": {
-        "interfaceFee": {
-          "question": "Berapa biaya penggunaan antarmuka Avana?",
-          "answer": "Biaya antarmuka resmi adalah 15 bps (0,15%) jika berlaku. Biaya ini ditampilkan sebelum tanda tangan dan terpisah dari gas, biaya swap, bunga Aave, dan biaya likuidasi."
+        "frontEndFee": {
+          "question": "Berapa biaya yang dikenakan aplikasi Avana?",
+          "answer": "Biaya antarmuka sebesar 10 bps dari jumlah aksi (untuk penjaminan atau penarikan jaminan, dari nilai posisi), ditambahkan sebagai satu transfer dalam batch transaksi yang sama dengan aksi tersebut. Biaya turun menjadi 9, 8, dan 7 bps setelah 30, 90, dan 180 hari keanggotaan. Biaya ini tidak pernah melebihi 25 bps, batas atas dalam ARFC listing Avana, dan ditampilkan sebelum Anda menandatangani."
         },
         "borrowRate": {
-          "question": "Apakah bunga pinjaman tetap?",
-          "answer": "Tidak. Bunga ditetapkan oleh pasar Aave v4 yang dipilih dan dapat berubah mengikuti utilisasi serta parameter pasar. Suku bunga saat ini ditampilkan sebelum meminjam."
+          "question": "Apakah Avana mengambil bagian dari bunga?",
+          "answer": "Tidak. Suku bunga pinjaman dan premi risiko adalah tarif Aave V4 yang ditetapkan oleh Aave DAO. Bunga diberikan kepada pemberi pinjaman Hub, setelah dikurangi biaya likuiditas yang ditetapkan Aave DAO untuk treasury-nya, jika ada. Avana tidak mengambil bagian darinya."
         },
-        "lendingApy": {
-          "question": "Bagaimana APY lending ditentukan?",
-          "answer": "Imbal hasil bergantung pada utilisasi pasar dan permintaan peminjam berbasis LP. APY langsung ditampilkan sebelum Anda memasok dana."
+        "liquidationFee": {
+          "question": "Bagaimana cara kerja biaya likuidasi?",
+          "answer": "Saat posisi dilikuidasi, Avana mengambil 20% dari keuntungan oracle: nilai oracle dari jaminan yang disita dikurangi utang yang dilunasi. Biaya ini dibatasi oleh surplus yang benar-benar dihasilkan likuidasi, sehingga tidak pernah menghalangi likuidasi. Likuidator menyimpan sisa keuntungan, dan pemulihan di atas nilai oracle diberikan kepada peminjam."
+        },
+        "points": {
+          "question": "Bagaimana cara kerja poin?",
+          "answer": "Anda mendapatkan 1 poin per $1 biaya antarmuka yang dibayar, 100 poin untuk setiap 30 hari keanggotaan, dan poin dari quest seperti deposit pertama, meminjam, membayar kembali, menjaminkan, dan referral. Tukarkan poin dengan diskon sementara untuk biaya antarmuka. Poin bukan token dan tidak dicatat on-chain."
         },
         "separateCosts": {
-          "question": "Biaya apa yang terpisah dari biaya Avana?",
-          "answer": "Gas jaringan, biaya swap DEX, bunga pasar Aave, dan biaya eksekusi likuidasi terpisah dari biaya antarmuka. Periksa detail transaksi sebelum menandatangani."
-        },
-        "feeChanges": {
-          "question": "Bisakah biaya dan suku bunga berubah?",
-          "answer": "Ya. Suku bunga pasar berubah mengikuti utilisasi dan parameter risiko, dan kebijakan antarmuka dapat berubah. Selalu periksa jumlah terbaru sebelum menandatangani."
+          "question": "Biaya apa saja yang terpisah dari biaya Avana?",
+          "answer": "Gas jaringan, biaya swap DEX, dan bunga Aave terpisah. Aplikasi menampilkan biaya, estimasi gas, dan total sebelum Anda menandatangani."
         }
       }
     }

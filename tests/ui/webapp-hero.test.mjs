@@ -18,59 +18,68 @@ after(async () => {
 });
 
 const heroSelector = 'picture img[alt="Avana Express homepage hero interface"]';
-const isHeroRequest = (url) => /avana-phone-hero|Avana%2520Express/.test(url);
-const assetFor = (width) => width < 640 ? "avana-phone-hero" : "Avana%2520Express";
+const isHeroRequest = (url) => /avana-phone-hero|Avana%2520Express|Avana%20Express/.test(url);
+const phoneHero = "avana-phone-hero";
 
-for (const [from, to] of [[390, 1440], [1440, 390]]) {
-  test(`homepage hero switches from ${from}px to ${to}px without showing the old image`, async () => {
-    const page = await browser.newPage();
-    let heldRequest;
-    let hold = false;
-    const requests = [];
-    try {
-      await page.setCacheEnabled(false);
-      await page.setViewport({ width: from, height: 1000 });
-      await page.setRequestInterception(true);
-      page.on("request", (request) => {
-        if (isHeroRequest(request.url())) {
-          requests.push(request.url());
-          if (hold) {
-            heldRequest = request;
-            return;
-          }
-        }
-        void request.continue();
-      });
-      await page.goto(`${base}/en`, { waitUntil: "networkidle0", timeout: 60000 });
-      assert.equal(requests.length, 1, "initial load must download only the matching hero");
-      assert.ok(requests[0].includes(assetFor(from)));
-      hold = true;
-      await page.setViewport({ width: to, height: 1000 });
-      // Leave the new image pending to reproduce a slow connection deterministically.
-      const deadline = Date.now() + 10000;
-      while (!heldRequest && Date.now() < deadline) {
-        await new Promise((resolve) => setTimeout(resolve, 25));
-      }
-      assert.ok(heldRequest, "resizing must request the new hero");
-      const pending = await page.$$eval(heroSelector, (images) => images
-        .filter((img) => img.getBoundingClientRect().width > 0)
-        .map((img) => ({ src: img.currentSrc, height: img.parentElement.parentElement.clientHeight })));
-      assert.equal(pending.length, 1);
-      assert.ok(!pending[0].src.includes(assetFor(from)), "old image must be hidden even while the new image is pending");
-      assert.ok(pending[0].height > 0, "reserve the hero space while loading");
-      hold = false;
-      await heldRequest.continue();
-      heldRequest = undefined;
-      await page.waitForFunction((selector, asset) => [...document.querySelectorAll(selector)].some(
-        (img) => img.getBoundingClientRect().width > 0 && img.currentSrc.includes(asset) && img.complete && img.naturalWidth > 0,
-      ), {}, heroSelector, assetFor(to));
-      await page.setViewport({ width: from, height: 1000 });
-      await page.waitForFunction((selector, asset) => [...document.querySelectorAll(selector)].some(
-        (img) => img.getBoundingClientRect().width > 0 && img.currentSrc.includes(asset) && img.complete && img.naturalWidth > 0,
-      ), {}, heroSelector, assetFor(from));
-    } finally {
-      if (heldRequest) await heldRequest.abort();
-      await page.close();
-    }
+async function openHome(width) {
+  const page = await browser.newPage();
+  const requests = [];
+  await page.setCacheEnabled(false);
+  await page.setViewport({ width, height: 1000 });
+  page.on("request", (request) => {
+    if (isHeroRequest(request.url())) requests.push(request.url());
   });
+  // The production desktop page never reaches full network idle, so wait for load
+  // plus a quiet second instead.
+  await page.goto(`${base}/en`, { waitUntil: "load", timeout: 60000 });
+  await page.waitForNetworkIdle({ idleTime: 1000, timeout: 10000 }).catch(() => {});
+  return { page, requests };
 }
+
+const visibleHeroes = (page) => page.$$eval(heroSelector, (images) => images
+  .filter((img) => img.getBoundingClientRect().width > 0)
+  .map((img) => img.currentSrc));
+
+const phoneHeroShown = (page) => page.waitForFunction((selector, asset) => [...document.querySelectorAll(selector)].some(
+  (img) => img.getBoundingClientRect().width > 0 && img.currentSrc.includes(asset) && img.complete && img.naturalWidth > 0,
+), { timeout: 15000 }, heroSelector, phoneHero);
+
+const lineFieldWidth = (page) => page.$eval("section canvas", (canvas) => canvas.getBoundingClientRect().width);
+
+test("phones load only the phone hero image", async () => {
+  const { page, requests } = await openHome(390);
+  try {
+    assert.equal(requests.length, 1, "a phone must download exactly one hero image");
+    assert.ok(requests[0].includes(phoneHero));
+    await phoneHeroShown(page);
+    assert.equal(await lineFieldWidth(page), 0, "the line field is hidden on phones");
+  } finally {
+    await page.close();
+  }
+});
+
+test("desktop shows the line field and downloads no hero image", async () => {
+  const { page, requests } = await openHome(1440);
+  try {
+    assert.deepEqual(requests, [], "desktop must not download a hero image");
+    assert.deepEqual(await visibleHeroes(page), []);
+    assert.ok(await lineFieldWidth(page) > 0, "the line field fills the hero on desktop");
+  } finally {
+    await page.close();
+  }
+});
+
+test("resizing between desktop and phone swaps the line field and the phone image", async () => {
+  const { page } = await openHome(1440);
+  try {
+    await page.setViewport({ width: 390, height: 1000 });
+    await phoneHeroShown(page);
+    assert.equal(await lineFieldWidth(page), 0);
+    await page.setViewport({ width: 1440, height: 1000 });
+    await page.waitForFunction((selector) => [...document.querySelectorAll(selector)]
+      .every((img) => img.getBoundingClientRect().width === 0), { timeout: 15000 }, heroSelector);
+    assert.ok(await lineFieldWidth(page) > 0);
+  } finally {
+    await page.close();
+  }
+});

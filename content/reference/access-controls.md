@@ -1,10 +1,10 @@
 ---
-title: Access controls
-description: Who can upgrade, configure, pause and cover each Avana contract, with every role, holder and timelock delay.
+title: Access Control
+description: Who can upgrade, configure, pause and cover each Avana contract: roles, role holders, timelock delays and Aave governance controls.
 updated: 2026-11-16
 ---
 
-Every chain has its own Avana Timelock, governance Safe, Emergency Guardian and Joint Configuration Safe, with the same roles and delays. No role on one chain can act on another chain. Each chain has one tier-3 Hub (Avana Ethereum Hub, Avana Base Hub) that holds all of its Spokes: one Lend Spoke and every CDP Spoke. A per-Hub pause or freeze therefore covers the whole chain, and each debt asset has one First-Loss Reserve and one DAO deficit offset on that Hub. The Aave DAO administers the Hub, the Lend Spoke and the CDP Spokes; Avana holds no role on any of them.
+Every chain has its own Avana Timelock, governance Safe, Emergency Guardian and Joint Configuration Safe, with the same roles and delays. No role on one chain can act on another chain. Each chain has one Hub (Avana Ethereum Hub, Avana Base Hub) that holds all of its Spokes: one Lend Spoke and every CDP Spoke. A per-Hub pause or freeze therefore covers the whole chain, and each debt asset has one First-Loss Reserve and one DAO deficit offset on that Hub. The Aave DAO administers the Hub, the Lend Spoke and the CDP Spokes; Avana holds no role on any of them.
 
 The Avana Timelock is the only admin of every Avana contract. It is a non-upgradeable extension of the OpenZeppelin `TimelockController` and is its own admin. On every upgradeable Avana contract it holds `DEFAULT_ADMIN_ROLE` and `APPLICATION_ADMIN`, and a grant of either role to any other account reverts `AdminRoleOnlyTimelock`. Immutable contracts check `msg.sender == TIMELOCK` instead of keeping roles. The deployer holds no role once deployment ends: the timelock is built with `admin = address(0)` and each proxy's `initialize` grants its admin roles to the timelock only.
 
@@ -12,51 +12,44 @@ Caps, collateral factors, liquidation bonuses, rate models, credit lines and Fir
 
 ## Ethereum Sepolia
 - network: ethereum-sepolia
-- chainId: 11155111
-- explorer: https://sepolia.etherscan.io
 
 ### Role holders
 
-One row per account or contract that holds an Avana role, an Aave-side role over Avana, or an address-bound permission.
+Contracts link to their address on Contract Addresses. Safes and keeper accounts are listed here.
 
-| Holder | Description | Address |
+| Holder | Roles and permissions | Address |
 | --- | --- | --- |
-| Avana Timelock | The chain's AvanaTimelock. Holds `DEFAULT_ADMIN_ROLE` on itself, `DEFAULT_ADMIN_ROLE` and `APPLICATION_ADMIN` on every upgradeable Avana contract, and is the `TIMELOCK` address of every immutable Avana contract. Not upgradeable. | 0x0000000000000000000000000000000000005001 |
-| Governance Safe | 4-of-7 Safe with Avana Labs and external signers. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `EXECUTOR_ROLE` on the Avana Timelock. No role on any other Avana contract and no immediate power. | 0x0000000000000000000000000000000000005002 |
-| Emergency Guardian | 3-of-5 Safe: three Avana Labs seats, one Aave Labs seat, one independent risk-provider seat. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry, `APPLICATION_PAUSE_GUARDIAN` on the ParameterStore, `CANCELLER_ROLE` on the Avana Timelock, `COVERAGE_ROLE` on every First-Loss Reserve, and the AvanaGasVault's `GUARDIAN` (pause, lower or remove keeper signers). No upgrade or parameter power. | 0x0000000000000000000000000000000000005003 |
-| Joint Configuration Safe | 2-of-3 Safe: one Avana Labs, one Aave Labs and one independent risk-provider signer. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry and `APPLICATION_RISK_STEWARD` on the ParameterStore. Cannot loosen, upgrade, change roles, cover a deficit or cancel. | 0x0000000000000000000000000000000000005004 |
-| Aave governance executor | The Aave DAO's governance executor. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `DAO_CANCELLER_ROLE` on the Avana Timelock; the MarketRegistry's immutable `AAVE_GOVERNANCE_EXECUTOR` (`cancelStandbySwitch`); `RESERVE_ADMIN_ROLE` on every First-Loss Reserve; admin and configurator of the chain's Hub, its Lend Spoke and every CDP Spoke. | 0x0000000000000000000000000000000000005005 |
-| Aave Protocol Guardian | Aave's existing Guardian Safe. Same Avana roles as the Emergency Guardian (both guardian roles, `CANCELLER_ROLE`, `COVERAGE_ROLE`), plus the Aave-side one-way `freezeReserve` and `pauseReserve` on CDP Spoke reserves and `freezeReserve` on Lend Spoke reserves. | 0x0000000000000000000000000000000000005006 |
-| Fee recipient | The Avana treasury, stored as the ParameterStore's `feeRecipient`. Never the deployer or the keeper. Receives the 20% liquidation fee share (`avanaFeeShareBps` = 2,000) and the app's 10 bps frontend fee. Also the AvanaGasVault's `TREASURY`, the only destination of its withdrawals. Holds no role; changed only by `setFeeRecipient` at the normal delay. | 0x0000000000000000000000000000000000005007 |
-| Liquidation keeper | Avana's own committed operator, a separate signer key held in an HSM or KMS, never the deployer or the treasury. Registered on LPVaultSwap at deployment and counted toward `keeperFloor` (1). Registration gates no call. In the deploy config the same key is the `SIGNER` of Avana's operator flash liquidation helper and the primary signer the AvanaGasVault refills. | 0x0000000000000000000000000000000000005008 |
-| Keeper funding Safe | `FUNDING_SAFE` of Avana's operator flash liquidation helper: the only payer and payout recipient of that helper. Holds no role. | 0x0000000000000000000000000000000000005009 |
-| Standby keeper | Avana's standby keeper signer, on separate infrastructure. In the deploy config it is the second signer the AvanaGasVault refills. The spec requires it to be registered as a committed operator (`REQ-ROLE-083`), but the deploy config's keeper list holds only the primary keeper, so its registration is TBD. | 0x0000000000000000000000000000000000005010 |
-
-> No deployment config exists for this network yet (the repo has only `config/anvil.json`), so every address above is a placeholder. The local stack builds its config from `config/anvil.json` and `script/local/test-values.json`, with the treasury as fee recipient and governance accounts as impersonated stand-ins (`script/local/lib/chain.ts:120-143` on `stack/hub-structure-only`). On test networks the Aave payloads run through a stand-in for Aave's payload controller (`06_AaveDeploymentPayload.s.sol:67-69`); which accounts act as the Aave governance executor and the Aave Protocol Guardian here is TBD.
+| [AvanaTimelock](/developers/reference/addresses?network=ethereum-sepolia#avana-core) | Holds `DEFAULT_ADMIN_ROLE` on itself, `DEFAULT_ADMIN_ROLE` and `APPLICATION_ADMIN` on every upgradeable Avana contract, and is the `TIMELOCK` address of every immutable Avana contract. | On Contract Addresses |
+| [Aave governance executor](/developers/reference/addresses?network=ethereum-sepolia#external-dependencies) | `PROPOSER_ROLE`, `CANCELLER_ROLE` and `DAO_CANCELLER_ROLE` on the AvanaTimelock; the MarketRegistry's immutable `AAVE_GOVERNANCE_EXECUTOR` (`cancelStandbySwitch`); `RESERVE_ADMIN_ROLE` on every First-Loss Reserve; admin and configurator of the Hub, the Lend Spoke and every CDP Spoke. | On Contract Addresses |
+| [Aave Protocol Guardian](/developers/reference/addresses?network=ethereum-sepolia#external-dependencies) | Same Avana roles as the Emergency Guardian (both guardian roles, `CANCELLER_ROLE`, `COVERAGE_ROLE`), plus Aave's one-way `freezeReserve` and `pauseReserve` on CDP Spoke reserves and `freezeReserve` on Lend Spoke reserves. | On Contract Addresses |
+| Governance Safe | 4-of-7 Safe with Avana Labs and external signers. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `EXECUTOR_ROLE` on the AvanaTimelock. No role on any other Avana contract and no immediate power. | @{roles.governanceSafe} |
+| Emergency Guardian | 3-of-5 Safe: three Avana Labs seats, one Aave Labs seat, one independent risk-provider seat. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry, `APPLICATION_PAUSE_GUARDIAN` on the ParameterStore, `CANCELLER_ROLE` on the AvanaTimelock, `COVERAGE_ROLE` on every First-Loss Reserve, and the AvanaGasVault's `GUARDIAN`. No upgrade or parameter power. | @{roles.emergencyGuardian} |
+| Joint Configuration Safe | 2-of-3 Safe: one Avana Labs, one Aave Labs and one independent risk-provider signer. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry and `APPLICATION_RISK_STEWARD` on the ParameterStore. Cannot loosen, upgrade, change roles, cover a deficit or cancel. | @{roles.jointConfigSafe} |
+| Fee recipient (treasury) | The ParameterStore's `feeRecipient` and the AvanaGasVault's `TREASURY`. Receives the 20% liquidation fee share and the app's frontend fee. Holds no role; changed only by `setFeeRecipient` at the normal delay. | @{feeRecipient} |
+| Liquidation keeper | Avana's own committed operator on LPVaultSwap, counted toward `keeperFloor`. Also the signer of the OperatorFlashLiquidator and the first signer the AvanaGasVault refills. Never the deployer or the treasury. | @{roles.keepers.0} |
+| Keeper funding Safe | `FUNDING_SAFE` of the OperatorFlashLiquidator: its only payer and payout recipient. Holds no role. | @{avana.operatorHelpers.0.fundingSafe} |
+| Standby keeper | Avana's standby keeper signer on separate infrastructure, the second signer the AvanaGasVault refills. | @{roles.keepers.1} |
 
 ## Base Sepolia
 - network: base-sepolia
-- chainId: 84532
-- explorer: https://sepolia.basescan.org
 
 ### Role holders
 
-One row per account or contract that holds an Avana role, an Aave-side role over Avana, or an address-bound permission.
+Contracts link to their address on Contract Addresses. Safes and keeper accounts are listed here.
 
-| Holder | Description | Address |
+| Holder | Roles and permissions | Address |
 | --- | --- | --- |
-| Avana Timelock | The chain's AvanaTimelock. Holds `DEFAULT_ADMIN_ROLE` on itself, `DEFAULT_ADMIN_ROLE` and `APPLICATION_ADMIN` on every upgradeable Avana contract, and is the `TIMELOCK` address of every immutable Avana contract. Not upgradeable. | 0x0000000000000000000000000000000000006001 |
-| Governance Safe | 4-of-7 Safe with Avana Labs and external signers. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `EXECUTOR_ROLE` on the Avana Timelock. No role on any other Avana contract and no immediate power. | 0x0000000000000000000000000000000000006002 |
-| Emergency Guardian | 3-of-5 Safe: three Avana Labs seats, one Aave Labs seat, one independent risk-provider seat. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry, `APPLICATION_PAUSE_GUARDIAN` on the ParameterStore, `CANCELLER_ROLE` on the Avana Timelock, `COVERAGE_ROLE` on every First-Loss Reserve, and the AvanaGasVault's `GUARDIAN` (pause, lower or remove keeper signers). No upgrade or parameter power. | 0x0000000000000000000000000000000000006003 |
-| Joint Configuration Safe | 2-of-3 Safe: one Avana Labs, one Aave Labs and one independent risk-provider signer. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry and `APPLICATION_RISK_STEWARD` on the ParameterStore. Cannot loosen, upgrade, change roles, cover a deficit or cancel. | 0x0000000000000000000000000000000000006004 |
-| Aave governance executor | The Aave DAO's Base executor, which receives Aave governance payloads over Aave's cross-chain governance. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `DAO_CANCELLER_ROLE` on the Avana Timelock; the MarketRegistry's immutable `AAVE_GOVERNANCE_EXECUTOR` (`cancelStandbySwitch`); `RESERVE_ADMIN_ROLE` on every First-Loss Reserve; admin and configurator of the chain's Hub, its Lend Spoke and every CDP Spoke. | 0x0000000000000000000000000000000000006005 |
-| Aave Protocol Guardian | Aave's existing Guardian Safe on Base. Same Avana roles as the Emergency Guardian (both guardian roles, `CANCELLER_ROLE`, `COVERAGE_ROLE`), plus the Aave-side one-way `freezeReserve` and `pauseReserve` on CDP Spoke reserves and `freezeReserve` on Lend Spoke reserves. | 0x0000000000000000000000000000000000006006 |
-| Fee recipient | The Avana treasury, stored as the ParameterStore's `feeRecipient`. Never the deployer or the keeper. Receives the 20% liquidation fee share (`avanaFeeShareBps` = 2,000) and the app's 10 bps frontend fee. Also the AvanaGasVault's `TREASURY`, the only destination of its withdrawals. Holds no role; changed only by `setFeeRecipient` at the normal delay. | 0x0000000000000000000000000000000000006007 |
-| Liquidation keeper | Avana's own committed operator, a separate signer key held in an HSM or KMS, never the deployer or the treasury. Registered on LPVaultSwap at deployment and counted toward `keeperFloor` (1). Registration gates no call. In the deploy config the same key is the `SIGNER` of Avana's operator flash liquidation helper and the primary signer the AvanaGasVault refills. | 0x0000000000000000000000000000000000006008 |
-| Keeper funding Safe | `FUNDING_SAFE` of Avana's operator flash liquidation helper: the only payer and payout recipient of that helper. Holds no role. | 0x0000000000000000000000000000000000006009 |
-| Standby keeper | Avana's standby keeper signer, on separate infrastructure. In the deploy config it is the second signer the AvanaGasVault refills. The spec requires it to be registered as a committed operator (`REQ-ROLE-083`), but the deploy config's keeper list holds only the primary keeper, so its registration is TBD. | 0x0000000000000000000000000000000000006010 |
+| [AvanaTimelock](/developers/reference/addresses?network=base-sepolia#avana-core) | Holds `DEFAULT_ADMIN_ROLE` on itself, `DEFAULT_ADMIN_ROLE` and `APPLICATION_ADMIN` on every upgradeable Avana contract, and is the `TIMELOCK` address of every immutable Avana contract. | On Contract Addresses |
+| [Aave governance executor](/developers/reference/addresses?network=base-sepolia#external-dependencies) | `PROPOSER_ROLE`, `CANCELLER_ROLE` and `DAO_CANCELLER_ROLE` on the AvanaTimelock; the MarketRegistry's immutable `AAVE_GOVERNANCE_EXECUTOR` (`cancelStandbySwitch`); `RESERVE_ADMIN_ROLE` on every First-Loss Reserve; admin and configurator of the Hub, the Lend Spoke and every CDP Spoke. | On Contract Addresses |
+| [Aave Protocol Guardian](/developers/reference/addresses?network=base-sepolia#external-dependencies) | Same Avana roles as the Emergency Guardian (both guardian roles, `CANCELLER_ROLE`, `COVERAGE_ROLE`), plus Aave's one-way `freezeReserve` and `pauseReserve` on CDP Spoke reserves and `freezeReserve` on Lend Spoke reserves. | On Contract Addresses |
+| Governance Safe | 4-of-7 Safe with Avana Labs and external signers. `PROPOSER_ROLE`, `CANCELLER_ROLE` and `EXECUTOR_ROLE` on the AvanaTimelock. No role on any other Avana contract and no immediate power. | @{roles.governanceSafe} |
+| Emergency Guardian | 3-of-5 Safe: three Avana Labs seats, one Aave Labs seat, one independent risk-provider seat. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry, `APPLICATION_PAUSE_GUARDIAN` on the ParameterStore, `CANCELLER_ROLE` on the AvanaTimelock, `COVERAGE_ROLE` on every First-Loss Reserve, and the AvanaGasVault's `GUARDIAN`. No upgrade or parameter power. | @{roles.emergencyGuardian} |
+| Joint Configuration Safe | 2-of-3 Safe: one Avana Labs, one Aave Labs and one independent risk-provider signer. `APPLICATION_PAUSE_GUARDIAN` and `APPLICATION_FREEZE_GUARDIAN` on the MarketRegistry and `APPLICATION_RISK_STEWARD` on the ParameterStore. Cannot loosen, upgrade, change roles, cover a deficit or cancel. | @{roles.jointConfigSafe} |
+| Fee recipient (treasury) | The ParameterStore's `feeRecipient` and the AvanaGasVault's `TREASURY`. Receives the 20% liquidation fee share and the app's frontend fee. Holds no role; changed only by `setFeeRecipient` at the normal delay. | @{feeRecipient} |
+| Liquidation keeper | Avana's own committed operator on LPVaultSwap, counted toward `keeperFloor`. Also the signer of the OperatorFlashLiquidator and the first signer the AvanaGasVault refills. Never the deployer or the treasury. | @{roles.keepers.0} |
+| Keeper funding Safe | `FUNDING_SAFE` of the OperatorFlashLiquidator: its only payer and payout recipient. Holds no role. | @{avana.operatorHelpers.0.fundingSafe} |
+| Standby keeper | Avana's standby keeper signer on separate infrastructure, the second signer the AvanaGasVault refills. | @{roles.keepers.1} |
 
-> No deployment config exists for this network yet (the repo has only `config/anvil.json`), so every address above is a placeholder. The local stack builds its config from `config/anvil.json` and `script/local/test-values.json`, with the treasury as fee recipient and governance accounts as impersonated stand-ins (`script/local/lib/chain.ts:120-143` on `stack/hub-structure-only`). On test networks the Aave payloads run through a stand-in for Aave's payload controller (`06_AaveDeploymentPayload.s.sol:67-69`); which accounts act as the Aave governance executor and the Aave Protocol Guardian here is TBD.
 
 ## All networks
 
@@ -92,7 +85,7 @@ Upgradeable contracts are UUPS implementations behind a fixed ERC-1967 proxy. `_
 | First-Loss Reserve (`AvanaFirstLossReserve`, one per debt asset on the chain's Hub) | No (immutable) | None; the Aave DAO controls it through its AccessManager | None | `REQ-FLR-008`, `07_DeployAvanaFirstLossReserves.s.sol:100-112` |
 | DAO deficit offset (`DaoDeficitOffset`, one per debt asset on the chain's Hub) | No (immutable) | None; deployed and controlled by the Aave DAO | None | `Q-410`, `08_AaveLossLayersPayload.s.sol:170-179` |
 
-> One tier-3 Hub per chain follows the 2026-11-16 decision, implemented in the local stack (`stack/one-hub-test-values`, `stack/hub-structure-only`: `script/local/lib/chain.ts:139-143`). The spec text (2.8 `REQ-CONFIG-083`, the 2.15 examples) and `DeployTypes.sol:37` still describe Stable, Correlated and Volatile LP Hubs; that text is pending a spec update.
+> Each chain has one Avana Hub. It holds the Lend Spoke and every CDP Spoke of that chain, from Stable to Stocks; each Spoke sets its own risk parameters.
 
 ### Roles
 
@@ -132,7 +125,7 @@ Delay is the wait before the holder's call takes effect. Granting or revoking an
 
 > The 1.4 and 2.15 `TIMELOCK` rows name only `returnStray` and `deployVaultToken`. The code also limits `VaultTokenFactory.registerIntegration` to the timelock (`VaultTokenFactory.sol:117-120`), and the chain-wiring operation calls it (`04_ConfigureAccess.s.sol:174-179`).
 
-> `COVERAGE_ROLE` and `RESERVE_ADMIN_ROLE` use role IDs 500 and 501 on local and test networks. The mainnet IDs are TBD: Aave governance assigns them, and the script refuses the placeholder IDs on Ethereum and Base (`08_AaveLossLayersPayload.s.sol:58-60,80-84`).
+> `COVERAGE_ROLE` and `RESERVE_ADMIN_ROLE` use role IDs 500 and 501 on local and test networks. The mainnet IDs are TBD: Aave governance assigns them, and the script refuses the test IDs on Ethereum and Base (`08_AaveLossLayersPayload.s.sol:58-60,80-84`).
 
 ### Timelock delays
 

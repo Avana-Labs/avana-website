@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "کی طرف سے طاقت یافتہ Aave v4",
-      "title": "Avana ایک آن چین لینڈنگ مارکیٹ ہے جو خاص طور پر AMM لیکویڈیٹی پولز کے لیے بنائی گئی ہے۔",
-      "titleLine1": "Avana ایک آن چین لینڈنگ مارکیٹ ہے",
-      "titleLine2": "جو خاص طور پر AMM لیکویڈیٹی پولز کے لیے بنائی گئی ہے۔",
+      "title": "کرپٹو، اسٹاکس اور RWA قرض لیں اپنی AMM لیکویڈیٹی پوزیشنز کو ضمانت رکھ کر۔",
+      "titleLine1": "کرپٹو، اسٹاکس اور RWA قرض لیں",
+      "titleLine2": "اپنی AMM لیکویڈیٹی پوزیشنز کو ضمانت رکھ کر۔",
+      "titleLine1Mobile": "کرپٹو اور اسٹاکس قرض لیں",
+      "titleLine2Mobile": "اپنی لیکویڈیٹی پوزیشنز کو ضمانت رکھ کر۔",
       "subtitle": "اپنی AMM لیکویڈیٹی پوزیشنز کو ضمانت (Collateral) بنا کر آن چین کرپٹو، اجناس، فاریکس (FX) اور حقیقی دنیا کے اثاثے (RWA) ادھار لیں۔",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "ARFC تجویز پڑھیں",
       "secondaryCta": "ٹیسٹ نیٹ کھولیں"
-    },
-    "intro": {
-      "text": "Aave V4 کے ذریعے، آن چین اور 24/7، <strong>Uniswap، Curve، Aerodrome، Balancer اور دیگر DEX</strong> کی لیکویڈیٹی پوزیشنز کو ضمانت رکھ کر <ink>قرض لیں</ink>: <strong>کرپٹو، حصص، غیر ملکی کرنسی (FX) اور حقیقی دنیا کے اثاثے (RWA)</strong>۔"
     },
     "features": {
       "eyebrow": "اہم خصوصیات",

@@ -7,7 +7,7 @@ interface LogoProps {
 function BrandWordmark({ src, width, height, size = "default", className }: LogoProps & { src: string; width: number; height: number; size?: "default" | "large" | "small" }) {
   const sizing = size === "large" ? "!h-6 max-w-[112px]" : size === "small" ? "!h-4 max-w-[88px]" : "!h-5 max-w-[96px]"
 
-  return <Image src={src} alt="" width={width} height={height} className={`${className} ${sizing} object-contain`} aria-hidden="true" />
+  return <Image src={src} alt="" width={width} height={height} loading="eager" className={`${className} ${sizing} object-contain`} aria-hidden="true" />
 }
 
 export const TRUSTED_LOGOS = [

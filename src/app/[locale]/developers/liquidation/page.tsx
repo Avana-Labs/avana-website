@@ -350,7 +350,7 @@ export default async function LiquidationDesignPage({ params }: LocaleParamsProp
             Pause states, breakers and drift stop actions that add risk, such as new pledges and borrowing. They stop no action that reduces risk. A liquidation that cannot run lets an unhealthy account&apos;s loss grow toward a deficit, while repayment and debt-free withdrawal stay open anyway.
           </p>
           <div className="doc-topic type-doc-body">
-            Example: the Emergency Guardian sets Paused(MintPathSuspect) on the Ethereum Stable LP Hub at 14:00 after an alert on another market. At 14:05 a keeper liquidates an account at a health factor of 0.97 exactly as it would with no pause.
+            Example: the Emergency Guardian sets Paused(MintPathSuspect) on the Avana Ethereum Hub at 14:00 after an alert on another market. At 14:05 a keeper liquidates an account at a health factor of 0.97 exactly as it would with no pause.
           </div>
         </section>
 

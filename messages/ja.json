@@ -102,12 +102,11 @@
         "liquidation": "清算の枠組み",
         "integrations": "サポートされている統合",
         "safety": "安全装置",
-        "legal": "法務・コンプライアンス",
         "copilot": "AI に質問",
-        "reference": "リファレンス"
+        "securityLegal": "セキュリティと法務"
       },
       "items": {
-        "overview": "概要",
+        "overview": "ようこそ",
         "keyConcepts": "重要な概念",
         "glossary": "用語集",
         "depositLp": "預金 LP",
@@ -146,9 +145,8 @@
         "marketLifecycle": "マーケットのライフサイクル",
         "governance": "ガバナンス",
         "emergencyControls": "緊急時コントロール",
-        "contractList": "コントラクト",
-        "addresses": "アドレス",
-        "parameters": "パラメータ",
+        "addresses": "コントラクトアドレス",
+        "parameters": "マーケットパラメータ",
         "accessControls": "アクセス制御",
         "securityVerification": "セキュリティと検証",
         "audits": "監査",
@@ -160,9 +158,9 @@
         "chainId": "チェーン ID",
         "copy": "コピー",
         "copied": "コピーしました",
-        "placeholder": "プレースホルダー",
         "explorer": "ブロックエクスプローラーを開きます",
-        "updated": "最終更新 {date}"
+        "updated": "最終更新 {date}",
+        "testnetBadge": "テストネット"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "料金",
-      "description": "Avana の借入、貸付、LP を担保とする戦略の料金をわかりやすく紹介します。"
+      "description": "Avanaの手数料: 各操作のインターフェース手数料、清算益の一部、そしてポイント。"
     },
     "siteTitle": "Avana - Aave v4でLPポジションに対して借り入れ",
     "siteDescription": "あなたのLPトークンから流動性を解放しましょう。Uniswap、Curve、Balancerのポジションに対して最大80%まで借り入れが可能で、Aave v4での取引手数料の獲得も継続できます。",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4により提供",
-      "title": "AvanaはAMM流動性プールに特化した分散型レンディング市場です。",
-      "titleLine1": "AvanaはAMM流動性プールに特化した",
-      "titleLine2": "分散型レンディング市場です。",
+      "title": "暗号資産、株式、RWAを借り入れ、AMMの流動性ポジションを担保に。",
+      "titleLine1": "暗号資産、株式、RWAを借り入れ",
+      "titleLine2": "AMMの流動性ポジションを担保に。",
+      "titleLine1Mobile": "暗号資産と株式を借り入れ",
+      "titleLine2Mobile": "流動性ポジションを担保に。",
       "subtitle": "AMM流動性ポジションを担保として活用し、暗号資産、コモディティ、為替（FX）、実世界資産（RWA）をオンチェーンで借り入れ。",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "ARFC提案を読む",
       "secondaryCta": "テストネットを開く"
-    },
-    "intro": {
-      "text": "オンチェーンで24時間365日、Aave V4を基盤に、<strong>Uniswap、Curve、Aerodrome、Balancerなどの流動性ポジション</strong>を担保として、<strong>暗号資産、株式、FX、RWA</strong>を<ink>借り入れられます</ink>。"
     },
     "features": {
       "eyebrow": "主な特徴",
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "料金",
-    "subtitleLine1": "金利と収益は市場、",
-    "subtitleLine2": "ポジション、選択したルートによって変わります。",
-    "interfaceRate": "インターフェース手数料 — 15 bps（0.15%）",
-    "includes": "含まれるもの：",
-    "borrow": {
-      "title": "借入",
-      "subtitle": "LP担保クレジット向け",
-      "value": "変動",
-      "unit": "金利",
-      "description": "借入コストは選択したAave v4市場に従います。",
+    "subtitleLine1": "各アクションにかかるアプリ手数料と、清算益の一部。",
+    "subtitleLine2": "借入金利とリスクプレミアムはAave V4の金利で、Aave DAOが設定し、貸し手に支払われます。Avanaはその一部も受け取りません。",
+    "interfaceRate": "インターフェース手数料：10 bps（0.10%）",
+    "includes": "詳細：",
+    "frontEnd": {
+      "title": "インターフェース手数料",
+      "subtitle": "Avanaアプリが徴収",
+      "value": "10",
+      "unit": "bps／アクション",
+      "description": "スワップ、借入、返済、差し入れ、貸し出しの各アクションに、同じトランザクションバッチ内の1回のトークン送金として追加されます。コントラクトが徴収するものではなく、上限は25 bpsです。",
       "items": {
-        "one": "市場が設定する金利",
-        "two": "未返済債務にのみ発生",
-        "three": "確認前に表示"
+        "one": "メンバーシップ30日後は9 bps",
+        "two": "90日後は8 bps、180日後は7 bps",
+        "three": "メンバーシップはウォレットの最初の利用時から数えます"
       }
     },
-    "lend": {
-      "title": "貸出",
-      "subtitle": "Hubに資本を供給",
-      "value": "市場",
-      "unit": "APY",
-      "description": "AvanaのLend Spokeを通じ、LP担保の借入需要から収益を得ます。",
+    "liquidation": {
+      "title": "清算手数料",
+      "subtitle": "ポジションが清算された場合のみ",
+      "value": "20%",
+      "unit": "オラクル利益に対して",
+      "description": "オラクル利益とは、差し押さえた担保のオラクル価値から返済された債務を差し引いた額です。Avanaの取り分は清算で実際に生じた余剰を上限とするため、債務は常に先に返済されます。",
       "items": {
-        "one": "利回りは利用率で変動",
-        "two": "対応する貸出市場に供給",
-        "three": "現在のAPYをインターフェースに表示"
+        "one": "残りの利益は清算者が報酬として受け取ります",
+        "two": "オラクル価値を超える回収分は借り手に、債務が残る場合はFirst-Loss Reserveに渡ります",
+        "three": "債務資産で、タイムロック付きのAvanaの手数料受取人に支払われます"
       }
     },
-    "multiply": {
-      "title": "マルチプライ",
-      "subtitle": "管理されたLPエクスポージャー向け",
-      "value": "変動",
-      "unit": "戦略レート",
-      "description": "対応するAMMポジションを担保に、管理された戦略でLPエクスポージャーを増やします。",
+    "points": {
+      "title": "ポイント",
+      "subtitle": "Avanaの利用に対する報酬",
+      "value": "1",
+      "unit": "ポイント／手数料$1あたり",
+      "description": "ポイントはAvanaアプリ内で記録されます。トークンはなく、オンチェーンには何も記録されません。ポイントを交換すると、インターフェース手数料が一時的に割引されます。",
       "items": {
-        "one": "対応するLPポジションを担保として使用",
-        "two": "エクスポージャーは原資産プールに連動",
-        "three": "レバレッジと解消のコントロールを表示"
+        "one": "支払ったインターフェース手数料$1につき1ポイント",
+        "two": "メンバーシップ30日ごとに100ポイント",
+        "three": "クエスト：初回入金、借入、返済、差し入れ、紹介など"
       }
     },
     "faq": {
       "title": "よくある質問",
       "items": {
-        "interfaceFee": {
-          "question": "Avanaのインターフェース利用料はいくらですか？",
-          "answer": "公式インターフェース手数料は、適用される場合15 bps（0.15%）です。署名前に表示され、ガス、スワップ手数料、Aave利息、清算コストとは別です。"
+        "frontEndFee": {
+          "question": "Avanaアプリの手数料はいくらですか？",
+          "answer": "アクション金額の10 bps（差し入れや担保の引き出しの場合はポジション価値の10 bps）のインターフェース手数料で、アクションと同じトランザクションバッチ内の1回の送金として追加されます。メンバーシップが30日、90日、180日を超えると、9、8、7 bpsに下がります。AvanaのリスティングARFCで定められた上限である25 bpsを超えることはなく、署名前に表示されます。"
         },
         "borrowRate": {
-          "question": "借入金利は固定ですか？",
-          "answer": "いいえ。選択したAave v4市場が金利を設定し、利用率や市場パラメータで変動します。現在の金利は借入前に表示されます。"
+          "question": "Avanaは利息の一部を受け取りますか？",
+          "answer": "いいえ。借入金利とリスクプレミアムはAave DAOが設定するAave V4の金利です。利息は、Aave DAOがトレジャリー向けに設定する流動性手数料があればそれを差し引いたうえで、Hubの貸し手に支払われます。Avanaはその一部も受け取りません。"
         },
-        "lendingApy": {
-          "question": "Lend APYはどのように決まりますか？",
-          "answer": "収益は市場利用率とLP担保借入需要によって決まります。現在のAPYは供給前に表示されます。"
+        "liquidationFee": {
+          "question": "清算手数料の仕組みは？",
+          "answer": "ポジションが清算されると、Avanaはオラクル利益の20%を受け取ります。オラクル利益とは、差し押さえた担保のオラクル価値から返済された債務を差し引いた額です。手数料は清算で実際に生じた余剰を上限とするため、清算を妨げることはありません。残りの利益は清算者が受け取り、オラクル価値を超える回収分は借り手に渡ります。"
+        },
+        "points": {
+          "question": "ポイントの仕組みは？",
+          "answer": "支払ったインターフェース手数料$1につき1ポイント、メンバーシップ30日ごとに100ポイント、さらに初回入金、借入、返済、差し入れ、紹介などのクエストでポイントを獲得できます。ポイントを交換すると、インターフェース手数料が一時的に割引されます。ポイントはトークンではなく、オンチェーンにも記録されません。"
         },
         "separateCosts": {
           "question": "Avanaの手数料とは別にかかる費用は？",
-          "answer": "ネットワークガス、DEXスワップ手数料、Aave市場の利息、清算実行コストはインターフェース手数料とは別です。署名前に取引詳細を確認してください。"
-        },
-        "feeChanges": {
-          "question": "手数料や金利は変わりますか？",
-          "answer": "はい。市場金利は利用率とリスクパラメータで変動し、インターフェース方針も変更される場合があります。署名前に表示額を確認してください。"
+          "answer": "ネットワークのガス代、DEXのスワップ手数料、Aaveの利息は別途かかります。アプリは署名前に手数料、ガス代の見積もり、合計額を表示します。"
         }
       }
     }

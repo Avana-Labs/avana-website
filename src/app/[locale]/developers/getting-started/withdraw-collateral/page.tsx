@@ -299,21 +299,21 @@ export default async function WithdrawCollateralPage({ params }: LocaleParamsPro
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Aerodrome Slipstream on Base, $2.00 per whole vault token, collateral factor 31.20%) holds two records: key1 with 10,000,000,000 units ($20,000) and a top-up keyB with 2,500,000,000 units ($5,000). Collateral is $25,000, CF-weighted $7,800, debt 5,000 USDC valued at $4,999.50, so HF = 7,800 / 4,999.50 = 1.5602. Both feeds last published 30,000 seconds ago (fresh until 88,200), the Hub is in state None and the sequencer gate is Up.
+            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 (USDC/USDT, Uniswap v3 on Ethereum, $2.00 per whole vault token, collateral factor 80.00%) holds two records: key1 with 10,000,000,000 units ($20,000) and a top-up keyB with 2,500,000,000 units ($5,000). Collateral is $25,000, CF-weighted $20,000, debt 13,000 USDC valued at $12,998.70, so HF = 20,000 / 12,998.70 = 1.5386. Both feeds last published 30,000 seconds ago (fresh until 88,200) and the Hub is in state None.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>The app reads getAccount and getPriceState: market Live, and removing keyB leaves CF-weighted $6,240 and HF 1.2481.</li>
+            <li>The app reads getAccount and getPriceState: market Live, and removing keyB leaves CF-weighted $16,000 and HF 1.2309.</li>
             <li>Carol calls withdraw(3, (I, keyB), 2,500,000,000, now + 600, 1.20e18). The units come from previewRelease.</li>
-            <li>The account has debt (borrow count 1), so the gates run: Hub not Paused, Carol not frozen, then the RiskModule pre-check finds the sequencer Up, both oracles Live and no breaker tripped.</li>
+            <li>The account has debt (borrow count 1), so the gates run: Hub not Paused, Carol not frozen, then the RiskModule pre-check finds both oracles Live and no breaker tripped.</li>
             <li>The proxy withdraws 2,500,000,000 units from the Spoke and the Adapter burns them.</li>
             <li>Collateralization closes record keyB and releases its $5,000 charge. The LPVault returns the NFT to Carol with every fee it has accrued.</li>
-            <li>Health check: HF = 6,240 / 4,999.50 = 1.2481, above max(1.00, 1.20).</li>
-            <li>Events PositionReturned, CollateralReleased and CollateralWithdrawn with HF 1,248,124,812,481,248,124. Carol now holds one record, collateral $20,000.</li>
+            <li>Health check: HF = 16,000 / 12,998.70 = 1.2309, above max(1.00, 1.20).</li>
+            <li>Events PositionReturned, CollateralReleased and CollateralWithdrawn with HF 1,230,892,320,001,230,892. Carol now holds one record, collateral $20,000.</li>
           </ul>
           <h3 className="mb-2 type-doc-subsection-title">Failing case and the debt-free route</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>Withdrawing key1 instead leaves CF-weighted $1,560 and HF 1,560 / 4,999.50 = 0.3120, so Aave reverts with HealthFactorBelowThreshold.</li>
-            <li>1,200 seconds after a sequencer restart, withdraw reverts with SequencerGrace. repayAllAndWithdraw(3, (I, keyB), 2,500,000,000, [r_USDC], [cap], now + 600) repays the USDC debt and returns the NFT at once, because a debt-free exit reads no gate.</li>
+            <li>Withdrawing key1 instead leaves CF-weighted $4,000 and HF 4,000 / 12,998.70 = 0.3077, so Aave reverts with HealthFactorBelowThreshold.</li>
+            <li>On a Base market, 1,200 seconds after a sequencer restart, withdraw reverts with SequencerGrace. repayAllAndWithdraw(3, (I, keyB), 2,500,000,000, [r_USDC], [cap], now + 600) repays the USDC debt and returns the NFT at once, because a debt-free exit reads no gate.</li>
             <li>The same withdrawal while the Hub is Paused, while Carol is frozen, or while the market&apos;s pool-share breaker is tripped reverts with ApplicationPaused, AddressIsFrozen or BreakerTripped; repayAllAndWithdraw succeeds in each of these states. Under a Frozen Hub the withdrawal with debt succeeds.</li>
           </ul>
           <p className="type-doc-body">

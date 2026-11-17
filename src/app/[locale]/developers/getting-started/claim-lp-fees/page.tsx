@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: LocaleParamsProps): Promise<M
   const locale = await resolveLocaleParam(params)
   return createDocsMetadata(locale, 'getting-started/claim-lp-fees', {
     title: "LP Fees",
-    description: "How the depositor of a pledged Uniswap v3 or Aerodrome Slipstream position collects its trading fees at any time through Avana, why fees are never collateral and never seized, and a worked example.",
+    description: "How the depositor of a pledged LP position collects its trading fees at any time through Avana, why fees are never collateral and never seized, and a worked example.",
   })
 }
 
@@ -129,7 +129,7 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
         <section id="rolled-in-fees" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Rolled-In Fees</h2>
           <p className="mb-4 type-doc-body">
-            Some AMM protocols compound fees into the position instead of keeping them apart. For a market on such a protocol, collectFees reverts with FeesRolledIn before any state changes. The fees stay in the position: its unit count is unchanged, each unit is worth more, the LPOracle&apos;s composition values that, and the depositor receives the fees with the units on withdrawal. Both AMM protocols listed at launch, Uniswap v3 and Aerodrome Slipstream, keep fees separate.
+            Some AMM protocols compound fees into the position instead of keeping them apart. For a market on such a protocol, collectFees reverts with FeesRolledIn before any state changes. The fees stay in the position: its unit count is unchanged, each unit is worth more, the LPOracle&apos;s composition values that, and the depositor receives the fees with the units on withdrawal. Uniswap v3 and Aerodrome Slipstream keep fees separate.
           </p>
         </section>
 
@@ -173,18 +173,18 @@ export default async function ClaimLPFeesPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol&apos;s first record in market 3 on Base is an unstaked Slipstream NFT with L = 10,000,000,000 (about $20,000), pledged 30 days ago. The amounts owed to it, net of the pool&apos;s unstaked-fee share, are 16.50 USDC and 15.95 USDT. Carol owes 5,024.657535 USDC on the account and its health factor is 1.2420. The Base sequencer has been down for 4 hours.
+            Example values; each market&apos;s parameters are set at listing. Carol&apos;s first record in market 3 on Ethereum is a Uniswap v3 position NFT with L = 10,000,000,000 (about $20,000), pledged 30 days ago. The fees owed to it are 16.50 USDC and 15.95 USDT. Carol owes 13,064.109590 USDC on the account and its health factor is 1.2249.
           </div>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
             <li>Carol&apos;s app simulates collectFees for the position and shows 16.50 USDC and 15.95 USDT to collect.</li>
-            <li>Carol submits collectFees(3, (I, key1), now + 600) through the L1 forced-inclusion path. When it is included, the Adapter takes the lock and checks the deadline; it reads no pause state, breaker, freeze, oracle or sequencer gate.</li>
+            <li>Carol submits collectFees(3, (I, key1), now + 600). When it is included, the Adapter takes the lock and checks the deadline; it reads no pause state, breaker, freeze, oracle or sequencer gate.</li>
             <li>Collateralization checks that the record is open, the NFT is in custody and Carol is its depositor of record.</li>
-            <li>The LPVault calls the Slipstream position manager&apos;s collect with Carol as recipient, and the pool pays 16.50 USDC and 15.95 USDT to her.</li>
-            <li>The NFT&apos;s liquidity, the record&apos;s 10,000,000,000 credited units, the vault-token supply, the cap counters, her debt and her health factor of 1.2420 are unchanged.</li>
+            <li>The LPVault calls the NonfungiblePositionManager&apos;s collect with Carol as recipient, and the pool pays 16.50 USDC and 15.95 USDT to her.</li>
+            <li>The NFT&apos;s liquidity, the record&apos;s 10,000,000,000 credited units, the vault-token supply, the cap counters, her debt and her health factor of 1.2249 are unchanged.</li>
             <li>Event FeesCollected(key1, Carol, [16,500,000, 15,950,000]).</li>
           </ul>
           <p className="mb-4 type-doc-body">
-            The $32.45 collected over 30 days on $20,000 is 32.45 / 20,000 × 365 / 30 ≈ 1.97% a year, and none of it was collateral. A borrow forced in through L1 during the same outage reverts with SequencerDown. The same collection succeeds while the Base Stable LP Hub is Paused with reason MintPathSuspect, while a breaker of market 3 is tripped and while Carol&apos;s address is frozen. A call from any wallet other than Carol reverts with NotDepositor.
+            The $32.45 collected over 30 days on $20,000 is 32.45 / 20,000 × 365 / 30 ≈ 1.97% a year, and none of it was collateral. The same collection succeeds while the Avana Ethereum Hub is Paused with reason MintPathSuspect, while a breaker of market 3 is tripped and while Carol&apos;s address is frozen. A call from any wallet other than Carol reverts with NotDepositor. On a Base market, a collection forced in through L1 succeeds while the sequencer is down, while a borrow forced in the same way reverts with SequencerDown.
           </p>
           <p className="type-doc-body">
             How a position comes into custody is described in <Link href="/developers/getting-started" className="text-type-accent hover:underline">Deposit LP</Link>.

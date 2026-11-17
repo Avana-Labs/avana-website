@@ -33,13 +33,13 @@
       "Contrôles de risque actifs",
       "La surveillance de la santé et une liquidation adaptée au lieu protègent les standards, pendant que votre exposition continue de générer des frais.",
       "Hub à moindre risque",
-      "Hub LP stable",
+      "Spokes LP stables",
       "Marchés LP de stablecoins conçus pour un pricing serré, un faible glissement et une perte impermanente minimale.",
       "Hub de stratégie globale",
-      "Hub LP corrélé",
+      "Spokes LP corrélés",
       "Marchés LP pour des actifs qui évoluent ensemble, conçus pour des bandes de risque plus étroites et un pouvoir d’emprunt plus lisible.",
       "Hub à plage élargie",
-      "Hub LP volatil",
+      "Spokes LP volatils",
       "Marchés LP sur les grands actifs DeFi, pour des plages de prix plus larges et des stratégies risque-rendement plus élevées.",
       "Interface de l’application",
       "Emprunter sur",
@@ -55,7 +55,7 @@
       "Empruntez sur la valeur ajustée au risque de la position et recevez les fonds directement dans votre portefeuille.",
       "Gérez la dette avant que le risque n’augmente",
       "Remboursez, ajoutez de la garantie ou réduisez la dette avant que la position ne se rapproche du seuil de liquidation.",
-      "Trouvez le Hub adapté à votre garantie",
+      "Trouvez les CDP Spokes adaptés à votre garantie",
       "Les LP stables, corrélés et volatils relèvent de marchés différents.",
       "Empruntable",
       "Empruntez en confiance",
@@ -190,21 +190,21 @@
   "about/page": {
     "strings": [
       "Équipe protocole",
-      "L'équipe Protocol conçoit et développe le système de prêt d'Avana. Elle est responsable des smart contracts, de l'architecture de garantie LP, des systèmes de liquidation, de l'infrastructure d'oracle, du contrôle d'accès, de l'environnement d'exécution et des mises à niveau sur l'ensemble des AMM et des hubs de prêt intégrés.",
+      "Le protocole possède la conception et la mise en œuvre du système de prêt d’Avana : smart contracts, architecture de garantie LP, systèmes de liquidation, infrastructure d’oracles, contrôle d’accès, environnement d’exécution et mises à jour sur les AMM et Hubs de prêt intégrés.",
       "Équipe opérations",
-      "L'équipe Operations coordonne la couche opérationnelle quotidienne du protocole. Elle gère les processus de trésorerie, les programmes d'incitation, la croissance de l'écosystème, les workflows des contributeurs et les opérations d'intégration des garanties.",
+      "Les opérations coordonnent la couche protocole au quotidien : trésorerie, programmes d’incitation, croissance de l’écosystème, workflows contributeurs et onboarding des garanties.",
       "Équipe risque de marché",
-      "L'équipe Market Risk est responsable de l'aspect quantitatif de la garantie LP. Elle couvre la profondeur de liquidité, la volatilité, le comportement des prix, l'exposition à la liquidité concentrée, la dynamique des liquidations, l'intégrité de la tarification et l'ajustement des paramètres selon les conditions de marché.",
+      "Le risque de marché possède le volet quantitatif de la garantie LP : profondeur de liquidité, volatilité, comportement des prix, exposition à la liquidité concentrée, dynamiques de liquidation, intégrité des prix et réglage des paramètres selon les conditions de marché.",
       "Équipe risque collatéral",
-      "L'équipe Collateral Risk est responsable de l'aspect qualitatif de l'intégration et du suivi des garanties. Elle couvre la structure des actifs, les sources de liquidité, les dépendances de gouvernance, les dépendances de protocole et, plus largement, l'intégrité des garanties sur l'ensemble des marchés pris en charge.",
+      "Le risque collatéral possède le volet qualitatif de l’onboarding et du suivi : structure des actifs, sources de liquidité, dépendances de gouvernance, dépendances de protocole et intégrité plus large des garanties sur les marchés pris en charge.",
       "Le marché du crédit pour la liquidité AMM.",
       "Image principale À propos d’Avana",
-      "Avana est le marché de prêt pour la liquidité AMM sur Aave V4. Notre mission est de rendre les positions de liquidité AMM utilisables comme garantie dans toute la DeFi.",
-      "Les principaux AMM détiennent des milliards de liquidité, mais les positions LP sont encore surtout traitées comme des avoirs passifs, et non comme une garantie productive. Avana commence avec les positions Uniswap v3 sur Ethereum et les positions Aerodrome Slipstream sur Base.",
-      "Utiliser des positions LP comme garantie ne se limite pas à lister des LP tokens. Le LP Vault d'Avana détient chaque position nantie et la représente sur Aave V4 par un vault token propre à son marché. Les emprunteurs tirent du GHO, et d'autres actifs de dette à mesure qu'ils sont activés, sur l'Avana Stable LP Hub via un CDP Spoke pour chaque AMM. Les Hubs et Spokes sont des contrats Aave V4 standard détenus par l'Aave DAO, qui finance le Hub via une ligne de crédit GHO sur l'Avana Lend Spoke.",
-      "Les smart contracts ne représentent qu'une partie du travail. La position doit rester active dans son pool. Sa valeur doit être mesurée à mesure que les conditions évoluent. Le marché doit disposer d'une liquidité suffisante pour couvrir un prêt. Avana répartit ce travail entre quatre équipes, chacune responsable d'une partie différente du risque.",
-      "Chaque domaine a son propre responsable : l'exécution technique, les opérations, la modélisation des marchés et l'examen des garanties.",
-      "Nous sommes une petite équipe qui s'attaque à un vaste problème. Si vous souhaitez rejoindre ce travail de recherche,"
+      "Avana construit le marché du crédit pour la liquidité AMM sur Aave V4. Notre mission est de rendre les positions de liquidité AMM utilisables comme garantie dans la DeFi.",
+      "Les grands AMM détiennent déjà des milliards en liquidité, pourtant les positions LP sont encore surtout traitées comme des positions passives plutôt que comme une garantie productive. Avana amène cette liquidité sur les marchés de prêt pour les DEX et types de LP d’aujourd’hui, avec des oracles doubles et des contrôles de risque renforcés.",
+      "Il faut plus que lister des jetons LP comme garantie. Avana s’articule autour de Spokes Aave v4 spécialisés selon les designs de DEX, de plusieurs Hubs Aave v4 organisés autour des marchés LP à moindre risque, corrélés et à plage élargie, et d’un Lend Spoke Aave v4 qui fournit le capital derrière ces marchés.",
+      "Transformer une position LP en garantie utilisable demande plus que des contrats intelligents. La position doit rester active dans son pool, sa valeur doit être mesurée lorsque les conditions changent et le marché doit disposer de suffisamment de liquidité pour soutenir un prêt. C’est pourquoi Avana répartit le travail entre quatre équipes, chacune responsable d’une partie différente du risque.",
+      "L’objectif est une séparation nette : exécution technique, opérations, modélisation de marché et revue des garanties, chacune portée de façon indépendante.",
+      "Nous sommes une petite équipe sur un grand problème. Si vous souhaitez rejoindre cet effort de recherche,"
     ]
   },
   "brand/page": {
@@ -365,9 +365,9 @@
       "Sécurité des positions",
       "Conçu pour un levier sûr",
       "Plafond d’emprunt",
-      "Hub LP stable",
-      "Hub LP corrélé",
-      "Hub LP volatil",
+      "Spoke stable",
+      "Spoke corrélé",
+      "Lend Spoke",
       "Préservez vos revenus de frais",
       "Accédez à des fonds de roulement tandis que la position sous-jacente reste déployée et continue de générer des frais de trading.",
       "Évitez les sorties forcées de LP",
@@ -410,7 +410,9 @@
       "Superficielle",
       "Faible",
       "Moyen",
-      "Élevée"
+      "Élevée",
+      "Spoke Blue-chip",
+      "Spoke Gov/DeFi"
     ]
   },
   "webapp-hero": {
@@ -635,12 +637,7 @@
       "Conception de flux",
       "Lancement Multiply",
       "Feuille de route",
-      "Borrow arrive en premier, suivi de Lend puis de Multiply.",
-      "Objectif T3 2026",
-      "Objectif T4 2026",
-      "Objectif T1 2027",
-      "Publié",
-      "En cours"
+      "Borrow arrive en premier, suivi de Lend puis de Multiply."
     ]
   },
   "invest-apy-section": {

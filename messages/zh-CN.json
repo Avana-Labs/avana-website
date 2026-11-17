@@ -102,12 +102,11 @@
         "liquidation": "清算框架",
         "integrations": "支持的集成",
         "safety": "安全机制",
-        "legal": "法律与合规",
         "copilot": "询问 AI",
-        "reference": "参考"
+        "securityLegal": "安全与法律"
       },
       "items": {
-        "overview": "概览",
+        "overview": "欢迎",
         "keyConcepts": "关键概念",
         "glossary": "词汇表",
         "depositLp": "存款 LP",
@@ -146,9 +145,8 @@
         "marketLifecycle": "市场生命周期",
         "governance": "治理",
         "emergencyControls": "紧急控制",
-        "contractList": "合约",
-        "addresses": "地址",
-        "parameters": "参数",
+        "addresses": "合约地址",
+        "parameters": "市场参数",
         "accessControls": "访问控制",
         "securityVerification": "安全与验证",
         "audits": "审计",
@@ -160,9 +158,9 @@
         "chainId": "链 ID",
         "copy": "复制",
         "copied": "已复制",
-        "placeholder": "占位符",
         "explorer": "打开区块浏览器",
-        "updated": "最后更新 {date}"
+        "updated": "最后更新 {date}",
+        "testnetBadge": "测试网"
       }
     },
     "faqUi": {
@@ -205,7 +203,7 @@
   "meta": {
     "pricing": {
       "title": "定价",
-      "description": "清晰了解 Avana 上借贷及 LP 抵押策略的费用。"
+      "description": "Avana 的收费：每次操作的界面费、清算收益的一部分，以及积分。"
     },
     "siteTitle": "Avana - 在 Aave v4 上借贷 LP 个头寸",
     "siteDescription": "从您的LP代币中释放流动性。对Uniswap、Curve和Balancer头寸借款最高可达80%，同时继续在Aave v4上赚取交易费用。",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "由Aave v4提供支持",
-      "title": "Avana 是专为 AMM 流动性池打造的链上借贷市场。",
-      "titleLine1": "Avana 是专为 AMM 流动性池",
-      "titleLine2": "打造的链上借贷市场。",
+      "title": "借入加密资产、股票和 RWA，以您的 AMM 流动性头寸作抵押。",
+      "titleLine1": "借入加密资产、股票和 RWA",
+      "titleLine2": "以您的 AMM 流动性头寸作抵押。",
+      "titleLine1Mobile": "借入加密资产和股票",
+      "titleLine2Mobile": "以您的流动性头寸作抵押。",
       "subtitle": "以您的 AMM 流动性头寸为抵押品，在链上借入加密资产、大宗商品、外汇及现实世界资产（RWA）。",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "阅读 ARFC 提案",
       "secondaryCta": "启动测试网"
-    },
-    "intro": {
-      "text": "依托 Aave V4，全天候 24/7 在链上运行；以 <strong>Uniswap、Curve、Aerodrome、Balancer 等 DEX</strong> 的流动性头寸为抵押，<ink>借入</ink> <strong>加密资产、股票、外汇（FX）和现实世界资产（RWA）</strong>。"
     },
     "features": {
       "eyebrow": "主要特点",
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "定价",
-    "subtitleLine1": "费率和收益取决于市场、",
-    "subtitleLine2": "仓位以及你选择的操作路径。",
-    "interfaceRate": "界面手续费 — 15 个基点（0.15%）",
-    "includes": "包含：",
-    "borrow": {
-      "title": "借款",
-      "subtitle": "用于 LP 抵押信贷",
-      "value": "浮动",
-      "unit": "利息",
-      "description": "借款成本取决于所选的 Aave v4 市场。",
+    "subtitleLine1": "每次操作收取一笔应用费用，另收取清算收益的一部分。",
+    "subtitleLine2": "借款利率和风险溢价是 Aave V4 的利率，由 Aave DAO 设定并支付给出借人。Avana 不从中抽取任何份额。",
+    "interfaceRate": "界面手续费：10 bps（0.10%）",
+    "includes": "详情：",
+    "frontEnd": {
+      "title": "界面手续费",
+      "subtitle": "由 Avana 应用收取",
+      "value": "10",
+      "unit": "bps / 每次操作",
+      "description": "以同一交易批次中的一笔代币转账形式附加到你的操作上，适用于兑换、借款、还款、质押和出借操作。没有任何合约收取此费用，上限为 25 bps。",
       "items": {
-        "one": "市场设定的利率",
-        "two": "仅对未偿还债务计息",
-        "three": "确认前显示"
+        "one": "会员满 30 天后为 9 bps",
+        "two": "满 90 天后为 8 bps，满 180 天后为 7 bps",
+        "three": "会员时长从你的钱包首次交互时开始计算"
       }
     },
-    "lend": {
-      "title": "借贷",
-      "subtitle": "向 Hub 提供资金",
-      "value": "市场",
-      "unit": "APY",
-      "description": "通过 Avana 的 Lend Spoke，从 LP 支持的借款需求中获得收益。",
+    "liquidation": {
+      "title": "清算费",
+      "subtitle": "仅在仓位被清算时收取",
+      "value": "20%",
+      "unit": "按预言机收益计",
+      "description": "预言机收益是被扣押抵押品的预言机价值减去已偿还的债务。Avana 的份额以清算实际实现的盈余为上限，因此债务总是优先得到偿还。",
       "items": {
-        "one": "收益率随利用率变化",
-        "two": "存入支持的借贷市场",
-        "three": "界面显示实时 APY"
+        "one": "清算人保留其余收益作为奖励",
+        "two": "超出预言机价值的回收部分归借款人；如仍有剩余债务，则归 First-Loss Reserve",
+        "three": "以债务资产支付给 Avana 设有时间锁的费用接收方"
       }
     },
-    "multiply": {
-      "title": "放大",
-      "subtitle": "用于管理 LP 敞口",
-      "value": "浮动",
-      "unit": "策略费率",
-      "description": "通过支持的 AMM 仓位和管理型策略放大 LP 敞口。",
+    "points": {
+      "title": "积分",
+      "subtitle": "使用 Avana 的奖励",
+      "value": "1",
+      "unit": "积分 / 每 $1 手续费",
+      "description": "积分在 Avana 应用内记录。没有代币，也不上链。可兑换积分，获得界面手续费的临时折扣。",
       "items": {
-        "one": "使用支持的 LP 仓位作为抵押",
-        "two": "敞口始终与底层池相关",
-        "three": "杠杆和退出控制保持可见"
+        "one": "每支付 $1 界面手续费获得 1 积分",
+        "two": "每 30 天会员时长获得 100 积分",
+        "three": "任务：首次存款、借款、还款、质押、邀请等"
       }
     },
     "faq": {
       "title": "常见问题",
       "items": {
-        "interfaceFee": {
-          "question": "使用 Avana 界面会收取什么费用？",
-          "answer": "适用时，官方界面手续费为 15 个基点（0.15%）。该费用会在签名之前显示，并与 Gas、兑换手续费、Aave 利息和清算成本分开。"
+        "frontEndFee": {
+          "question": "Avana 应用收取什么费用？",
+          "answer": "界面手续费为操作金额的 10 bps（质押或提取抵押品时，按仓位价值计算），以与该操作同一交易批次中的一笔转账形式附加。会员满 30、90 和 180 天后，费用分别降至 9、8 和 7 bps。费用绝不超过 25 bps，即 Avana 上架 ARFC 中规定的上限，并会在你签名前显示。"
         },
         "borrowRate": {
-          "question": "借款利息是固定的吗？",
-          "answer": "不是。借款利息由所选的 Aave v4 市场设定，会随利用率和市场参数变化。当前费率会在借款前显示。"
+          "question": "Avana 会从利息中抽成吗？",
+          "answer": "不会。借款利率和风险溢价是由 Aave DAO 设定的 Aave V4 利率。利息在扣除 Aave DAO 为其金库设定的流动性费用（如有）后，归 Hub 的出借人所有。Avana 不从中抽取任何份额。"
         },
-        "lendingApy": {
-          "question": "借贷 APY 如何确定？",
-          "answer": "收益取决于市场利用率和 LP 支持的借款需求。实时 APY 会在存入前显示。"
+        "liquidationFee": {
+          "question": "清算费如何运作？",
+          "answer": "仓位被清算时，Avana 收取预言机收益的 20%，即被扣押抵押品的预言机价值减去已偿还的债务。该费用以清算实际实现的盈余为上限，因此绝不会阻碍清算。其余收益归清算人所有，超出预言机价值的回收部分归借款人。"
+        },
+        "points": {
+          "question": "积分如何运作？",
+          "answer": "每支付 $1 界面手续费可获得 1 积分，每 30 天会员时长可获得 100 积分，完成首次存款、借款、还款、质押和邀请等任务也可获得积分。可兑换积分，获得界面手续费的临时折扣。积分不是代币，也不会记录在链上。"
         },
         "separateCosts": {
-          "question": "哪些费用不包含在 Avana 手续费中？",
-          "answer": "网络 Gas、DEX 兑换手续费、Aave 市场利息以及清算执行成本均与界面手续费分开。请在签名之前查看交易详情。"
-        },
-        "feeChanges": {
-          "question": "费用和费率会变化吗？",
-          "answer": "会。市场费率会随利用率和风险参数变化，界面政策也可能调整。签名前请确认当前路径显示的金额。"
+          "question": "哪些费用与 Avana 的收费分开？",
+          "answer": "网络 Gas、DEX 兑换手续费和 Aave 利息均单独计算。应用会在你签名前显示手续费、Gas 估算和总额。"
         }
       }
     }

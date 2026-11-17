@@ -185,13 +185,13 @@ export default async function LensPage({ params }: LocaleParamsProps) {
         <section id="example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Example Session</h2>
           <p className="mb-4 type-doc-body">
-            Example values; each market&apos;s parameters are set at listing. Carol uses market 3, a USDC/USDT Aerodrome Slipstream market on Base, with a collateral factor of 31.2% and USDC priced at $0.9999.
+            Example values; each market&apos;s parameters are set at listing. Carol uses market 3, a USDC/USDT Uniswap v3 market on Ethereum, with a collateral factor of 80% and USDC priced at $0.9999.
           </p>
           <ol className="list-decimal space-y-2 ps-5 type-doc-body">
             <li>Before pledging, the app reads the price state (Live; USDC/USD 72,000 seconds old, fresh until 88,200), the cap headroom ($4,000,000 of room, minimum pledge $10), the Hub&apos;s pause state (None) and her predicted proxy address.</li>
-            <li>After a $20,000 pledge, the account view shows $20,000 of collateral, $6,240 weighted by the collateral factor, and no debt; the records view lists one record of 10,000,000,000 units.</li>
-            <li>On the borrow screen, the recommended borrow is 5,673.29 USDC (6,240 / 1.10 / 0.9999) and the maximum is 6,209.56 USDC (6,240 / 1.0050011 / 0.9999).</li>
-            <li>On the repay screen, the repay-all quote for 5,024.657535 USDC of debt is 5,029.687935 USDC; the app sets both the approval and the spend cap to it.</li>
+            <li>After a $20,000 pledge, the account view shows $20,000 of collateral, $16,000 weighted by the collateral factor, and no debt; the records view lists one record of 10,000,000,000 units.</li>
+            <li>On the borrow screen, the recommended borrow is 14,546.91 USDC (16,000 / 1.10 / 0.9999) and the maximum is 15,921.97 USDC (16,000 / 1.0050011 / 0.9999).</li>
+            <li>On the repay screen, the repay-all quote for 13,064.109590 USDC of debt is 13,077.188628 USDC; the app sets both the approval and the spend cap to it.</li>
             <li>A keeper&apos;s liquidation preview for another account returns the gates, 1,950 USDC to cover, 975 expected seized vault tokens and ready-to-send parameters.</li>
           </ol>
         </section>

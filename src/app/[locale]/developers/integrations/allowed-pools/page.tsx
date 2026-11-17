@@ -40,10 +40,10 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
         <section id="overview" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <p className="mb-4 type-doc-body">
-            Avana launches on Ethereum and Base, each with one Avana Stable LP Hub. Uniswap v3 positions are accepted on Ethereum and Aerodrome Slipstream positions on Base. Correlated LP and Volatile LP Hubs can be added later, each with its own CDP Spokes.
+            Avana runs on Ethereum and Base, each with one Avana Hub. Today Uniswap v3 and Uniswap v4 positions are accepted on Ethereum and Aerodrome Slipstream positions on Base, on CDP Spokes grouped by AMM protocol and risk tier.
           </p>
           <p className="mb-4 type-doc-body">
-            A pool is not approved as a whole. Each market is one pool plus one exact position shape, with its own vault token, collateral reserve, price feed, caps and swap routes. The core design also supports Uniswap v2, Curve StableSwap-NG, Balancer and Uniswap v4, but none of them is listed until its integration passes the guards described below.
+            A pool is not approved as a whole. Each market is one pool plus one exact position shape, with its own vault token, collateral reserve, price feed, caps and swap routes. The core design also supports Uniswap v2, Curve StableSwap-NG and Balancer, but none of them is listed until its integration passes the guards described below.
           </p>
           <p className="type-doc-body">
             How a market is registered, activated, offboarded and closed is described on the market lifecycle page:{" "}
@@ -55,20 +55,21 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Launch Markets</h2>
           <div className="overflow-x-auto mb-4">
             <table className="type-doc-table">
-              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">CDP Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions</th></tr></thead>
+              <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Chain</th><th className="text-left px-4 py-2 type-doc-subsection-title">Hub</th><th className="text-left px-4 py-2 type-doc-subsection-title">Example CDP Spoke</th><th className="text-left px-4 py-2 type-doc-subsection-title">Positions</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Uniswap v3 Stable</td><td className="px-4 py-2">Uniswap v3 NFT positions of the canonical position manager</td></tr>
-                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Stable LP Hub</td><td className="px-4 py-2">Aerodrome Slipstream Stable</td><td className="px-4 py-2">Unstaked Aerodrome Slipstream NFT positions of an allowlisted position-manager generation</td></tr>
+                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">Uniswap v3 Stable</td><td className="px-4 py-2">Uniswap v3 NFT positions of the canonical position manager</td></tr>
+                <tr><td className="px-4 py-2">Ethereum</td><td className="px-4 py-2">Avana Ethereum Hub</td><td className="px-4 py-2">Uniswap v4 Stable</td><td className="px-4 py-2">Uniswap v4 positions in hookless pools</td></tr>
+                <tr><td className="px-4 py-2">Base</td><td className="px-4 py-2">Avana Base Hub</td><td className="px-4 py-2">Aero Slipstream Blue-chip</td><td className="px-4 py-2">Unstaked Aerodrome Slipstream NFT positions of an allowlisted position-manager generation</td></tr>
               </tbody>
             </table>
           </div>
           <p className="mb-4 type-doc-body">
-            Launch pools are stablecoin pools that meet the listing rules, including USDC/USDT and pools containing GHO. Every token of a Stable LP Hub market is an approved USD-pegged stable, so its price is capped at $1 for valuation and the USD band applies.
+            Launch pools are pools that meet the listing rules, grouped by risk tier, such as stablecoin, blue-chip and correlated pools. Every token of a stablecoin market is an approved USD-pegged stable, so its price is capped at $1 for valuation and the USD band applies.
           </p>
           <ul className="list-disc space-y-2 ps-5 type-doc-body">
             <li>GHO pools: the collateral factor of a GHO leg is an explicit value, <code className="type-doc-inline-code">ghoLegCollateralFactorBps</code>, set per token in the listing payload (between 1 and 9,999 bps), used in place of an Aave Core Hub value.</li>
             <li>GHO markets stay Live while GHO trades above $1, because valuation and the band&apos;s upper bound use the capped price.</li>
-            <li>GHO is the first debt asset of each CDP Spoke. USDC, USDT or WETH can be enabled per Spoke as further debt reserves.</li>
+            <li>Each CDP Spoke lends the debt assets enabled for it, such as GHO and USDC today.</li>
           </ul>
         </section>
 
@@ -120,11 +121,11 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
           <div className="mb-4 type-doc-code-block"><code className="type-doc-body text-gray-900">CF = ⌊min(CFᵢ) × poolRiskFactor⌋</code></div>
           <ul className="mb-4 list-disc space-y-2 ps-5 type-doc-body">
             <li>Each token&apos;s factor is its Aave V4 Core Hub collateral factor, the explicit GHO leg factor, or for a token without a Core Hub factor, a value the risk service providers set.</li>
-            <li>The pool risk factor has a ceiling of 0.40.</li>
+            <li>The pool risk factor has a ceiling of 0.90.</li>
             <li>A fork check before the proposal asserts that a full liquidation never seizes more than the collateral.</li>
           </ul>
           <div className="doc-topic type-doc-body">
-            Example: token factors of 78% and a pool risk factor of 0.40 give a collateral factor of 31.2%. That is a maximum loan-to-value of 31.2% at health factor 1.00 and a recommended 28.4% at the Lens&apos;s health factor of 1.10.
+            Example: token factors of 76% and a pool risk factor of 0.8948 give a collateral factor of 68%. That is a maximum loan-to-value of 68% at health factor 1.00 and a recommended 61.8% at the Lens&apos;s health factor of 1.10.
           </div>
         </section>
 

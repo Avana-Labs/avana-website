@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Menene Avana?",
-          "a": "Avana tana ba masu samar da ruwan kuɗi damar amfani da matsayin AMM a matsayin jingina a kan Aave V4. Mai aro yana pledge matsayin Uniswap v3 a Ethereum ko matsayin Aerodrome Slipstream a Base. LPVault na Avana yana riƙe da matsayin, kuma ana samar da vault token da ya dace a matsayin jingina a kan Avana CDP Spoke. Sannan mai aro yana aron GHO, ko wata kadarar bashi da Spoke ke bayarwa, yayin da ruwan kuɗin ke zama a cikin pool.\n\nAvana tana ƙaddamarwa a Ethereum da Base, tare da Avana Stable LP Hub a kowane chain. Hubs da Spokes kwangiloli ne na Aave V4 na yau da kullum, da ba a gyara ba, mallakar Aave DAO kuma shi ke saita su. Kwangilolin Avana kanta suna kula da tsarewa, ƙimantawa, ayyukan mai aro da liquidation."
+          "a": "Avana tana ba masu samar da ruwan kuɗi damar amfani da matsayin AMM a matsayin jingina a kan Aave V4. Mai aro yana pledge matsayin Uniswap v3 ko Uniswap v4 a Ethereum ko matsayin Aerodrome Slipstream a Base. LPVault na Avana yana riƙe da matsayin, kuma ana samar da vault token da ya dace a matsayin jingina a kan Avana CDP Spoke. Sannan mai aro yana aron kadarar bashi da Spoke ke bayarwa, kamar GHO ko USDC, yayin da ruwan kuɗin ke zama a cikin pool.\n\nAvana tana ƙaddamarwa a Ethereum da Base, tare da Avana Hub ɗaya a kowane chain. Hubs da Spokes kwangiloli ne na Aave V4 na yau da kullum, da ba a gyara ba, mallakar Aave DAO kuma shi ke saita su. Kwangilolin Avana kanta suna kula da tsarewa, ƙimantawa, ayyukan mai aro da liquidation."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Me yasa Avana ke amfani da Aave V4 Hubs da Spokes?",
-          "a": "Aave V4 yana raba ruwan kuɗi na tarayya (Hubs) da saitunan haɗari na musamman na kasuwa (Spokes). Kowane chain yana da Avana Stable LP Hub. Aave DAO yana ba shi layin bashin GHO mai iyaka ta Lend Spoke na samarwa kaɗai, kuma CDP Spokes na Avana kaɗai za su iya ɗauka daga gare shi.\n\nAkwai CDP Spoke ɗaya ga kowane chain, Hub, yarjejeniyar AMM da matakin haɗari. A lokacin ƙaddamarwa waɗannan su ne \"Uniswap v3 Stable\" a Ethereum da \"Aerodrome Slipstream Stable\" a Base. An ƙera Correlated LP da Volatile LP Hubs don nan gaba. Avana ba ta yin fork ko gyara Aave V4."
+          "a": "Aave V4 yana raba ruwan kuɗi na tarayya (Hubs) da saitunan haɗari na musamman na kasuwa (Spokes). Kowane chain yana da Avana Hub ɗaya. Masu ba da rance da bayarwar farko ta Aave DAO suna ba shi kuɗi ta Lend Spoke na samarwa kaɗai, kuma CDP Spokes na Avana kaɗai za su iya ɗauka daga gare shi, a cikin layukan bashi da Aave DAO ta amince da su.\n\nAkwai CDP Spoke ɗaya ga kowane chain, yarjejeniyar AMM da matakin haɗari, kuma kowane Spoke yana saita nasa sigogin haɗari. A Ethereum, Spokes na Uniswap v3 da Uniswap v4 suna rufe pools na Stable, Correlated, Blue-chip da Gov/DeFi; a Base, Spokes na Aerodrome Slipstream suna rufe pools na Blue-chip, Gov/DeFi da Stocks. Avana ba ta yin fork ko gyara Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Shin Avana yana rage darajar baka?",
-          "a": "A'a. Oracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral Factor na kowace kasuwa yana saita yawan wannan ƙima da zai iya tallafa wa bashi: Collateral Factor mafi ƙanƙanta na Aave V4 a cikin tokens na pool da aka ninka da ma'aunin haɗarin pool na 40% a mafi yawa. Hanyar GHO tana amfani da bayyanannen factor da aka saita a jera kasuwa.\n\nNazarin Gauntlet na jinginar LP yana ba da shawarar factors na farawa masu taka-tsantsan, har zuwa ƙasa da 0.25× na factor mafi ƙanƙanta na ƙasa lokacin da kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce. Ana daidaita factors na ƙarshe ga kowace kasuwa tare da masu ba da sabis na Aave."
+          "a": "A'a. Oracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral Factor na kowace kasuwa yana saita yawan wannan ƙima da zai iya tallafa wa bashi: Collateral Factor mafi ƙanƙanta na Aave V4 a cikin tokens na pool da aka ninka da ma'aunin haɗarin pool na 90% a mafi yawa. Hanyar GHO tana amfani da bayyanannen factor da aka saita a jera kasuwa.\n\nNazarin Gauntlet na jinginar LP yana ba da shawarar factors na farawa masu taka-tsantsan, har zuwa ƙasa da 0.25× na factor mafi ƙanƙanta na ƙasa lokacin da kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce. Ana daidaita factors na ƙarshe ga kowace kasuwa tare da masu ba da sabis na Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Yaya ake ƙididdige ƙarfin aron kudi?",
-          "a": "Ƙarfin aro = ƙimar matsayin LP × LP Collateral Factor, kuma LP Collateral Factor = Collateral Factor na token mafi ƙanƙanta × ma'aunin haɗarin pool. Ƙarfi kuma ya dogara da bashin da ake da shi, iyakoki, ruwan kuɗin da ke akwai na layin bashi da binciken oracle.\n\nƘimomin misali: matsayin USDC/USDT na Slipstream da ya kai $20,000 tare da Collateral Factor na 31.20% yana ba da jingina mai nauyi ta $6,240. Lens yana ba da shawarar aro har zuwa ma'aunin lafiya na 1.10 (5,673.29 USDC a nan) kuma yana nuna mafi yawa a 1.00 (6,209.56 USDC)."
+          "a": "Ƙarfin aro = ƙimar matsayin LP × LP Collateral Factor, kuma LP Collateral Factor = Collateral Factor na token mafi ƙanƙanta × ma'aunin haɗarin pool. Ƙarfi kuma ya dogara da bashin da ake da shi, iyakoki, ruwan kuɗin da ke akwai na layin bashi da binciken oracle.\n\nƘimomin misali: matsayin USDC/USDT na Uniswap v3 da ya kai $20,000 tare da Collateral Factor na 80.00% yana ba da jingina mai nauyi ta $16,000. Lens yana ba da shawarar aro har zuwa ma'aunin lafiya na 1.10 (14,546.91 USDC a nan) kuma yana nuna mafi yawa a 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Me ya sa ƙarfin aron ya ƙasa da ƙimar LP nawa?",
-          "a": "Collateral Factor yana barin sarari don motsin farashi, impermanent loss, canje-canjen kewayo da kuɗaɗen liquidation. An iyakance ma'aunin haɗarin pool a 40%, don haka tare da tokens biyu a 78% loan-to-value na buɗewa yana kusan 28.4% a mafi yawa.\n\nTazarar da ke tsakanin ƙima da ƙarfi ta bambanta tsakanin kasuwanni saboda kowace kasuwa tana da ma'aunin haɗarin pool nata."
+          "a": "Collateral Factor yana barin sarari don motsin farashi, impermanent loss, canje-canjen kewayo da kuɗaɗen liquidation. Ma'aunin haɗarin pool 90% ne a mafi yawa. Ga USDC/USDT, ma'aunan token na 90% da ma'aunin haɗarin pool na 88.89% suna ba da Collateral Factor na 80%, don haka loan-to-value na buɗewa a ma'aunin lafiya na Lens na 1.10 yana kusan 72.7% a mafi yawa.\n\nTazarar da ke tsakanin ƙima da ƙarfi ta bambanta tsakanin kasuwanni saboda kowace kasuwa tana da ma'aunin haɗarin pool nata."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Wa ke samar da ruwan kuɗin da masu aro na Avana ke amfani da shi?",
-          "a": "A lokacin ƙaddamarwa, baitulmalin Aave DAO yana samar da layin bashin GHO mai iyaka ga Avana Stable LP Hub na kowane chain ta Lend Spoke na samarwa kaɗai. Ajiya ta jama'a ba a buɗe take ba a lokacin ƙaddamarwa.\n\nAave DAO ne ke saita iyakar ɗauka na kowane CDP Spoke a kan kadara, kuma jimillar iyakokin ɗauka ba ta wuce layin bashi ba."
+          "a": "Masu ba da rance da Aave DAO. Ba da rance na jama'a a buɗe yake tun daga rana ta farko: kowa zai iya ba da kadarar da aka jera ta Lend Spoke na samarwa kaɗai na Avana Hub na kowane chain, tare da bayarwar farko ta Aave DAO.\n\nAave DAO tana amincewa da layin bashi ga kowace kadarar da za a iya aro, kuma jimillar iyakokin ɗauka na CDP Spokes a kan wannan kadara ba ta wuce layin ba."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Menene ke kare babban jarin mai bayar da aron kudi?",
-          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool da bai wuce 40% ba, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation a buɗe ga kowane adireshi tare da keeper na Avana, da iyakokin cirowa da ke zama cikin ruwan kuɗin flash na chain don a iya yi wa kowane aro liquidation a ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na waccan Hub da kadara yana rufe gibin, reserve na asarar farko da Avana Labs ke ɗaukar nauyinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibin da ya fi reserve girma asara ce ga masu ba da kadarar waccan Hub, wadda Aave DAO ke tabbatarwa."
+          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool da bai wuce 90% ba, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation a buɗe ga kowane adireshi tare da keeper na Avana, da iyakokin cirowa da ke zama cikin ruwan kuɗin flash na chain don a iya yi wa kowane aro liquidation a ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na waccan Hub da kadara yana rufe gibin, reserve na asarar farko da Avana Labs ke ɗaukar nauyinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibin da ya fi reserve girma asara ce ga masu ba da kadarar waccan Hub, wadda Aave DAO ke tabbatarwa."
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Mene ne ma'aunin lafiya?",
-          "a": "Ma'aunin lafiya = ƙimar jingina × Collateral Factor ÷ ƙimar bashi, wanda Aave ke lissafawa ga kowane asusu, wato ga kowace kasuwa. Ƙasa da 1, ana iya yin liquidation ga asusun.\n\nƘimomin misali: jingina mai nauyi ta $6,240 a kan bashin USDC 4,999.50 yana ba da ma'aunin lafiya na 1.2481."
+          "a": "Ma'aunin lafiya = ƙimar jingina × Collateral Factor ÷ ƙimar bashi, wanda Aave ke lissafawa ga kowane asusu, wato ga kowace kasuwa. Ƙasa da 1, ana iya yin liquidation ga asusun.\n\nƘimomin misali: jingina mai nauyi ta $16,000 a kan bashin USDC 12,998.70 yana ba da ma'aunin lafiya na 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Zan iya aro GHO ta hanyar Avana?",
-          "a": "Eh. GHO ita ce kadarar bashi ta farko a kowane CDP Spoke, wadda layin bashi mai iyaka na Aave DAO ga Avana Stable LP Hub ke ba da kuɗinta. Ana ƙimanta bashin GHO a tsayayyen $1.\n\nBashin GHO yana tara riba a ƙimar GHO ta Hub tare da risk premium ɗinka. Dukan wannan riba tana zuwa ga Aave DAO."
+          "a": "Eh. GHO kadarar bashi ce a kowane CDP Spoke, ana ƙimanta ta a tsayayyen $1, kuma ana aron ta daga Avana Hub na kowane chain a cikin layin bashi da Aave DAO ta amince da shi.\n\nBashin GHO yana tara riba a ƙimar GHO ta Hub tare da risk premium ɗinka. Ribar tana zuwa ga masu ba da GHO na Hub, bayan duk wani kuɗin ruwan kuɗi da Aave DAO ke tsayarwa; Avana ba ta karɓar wani kaso."
         },
         {
           "id": "can-gho-be-lp-collateral",

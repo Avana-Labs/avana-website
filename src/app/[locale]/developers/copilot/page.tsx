@@ -36,7 +36,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
           <h2 className="mb-4 type-doc-section-title">Overview</h2>
           <div className="doc-prose">
             <p className="type-doc-body">
-            <>Ask AI is Avana&apos;s conversational interface for questions about markets and positions. A request names the market, asset, or position to examine. Follow-up questions can clarify the inputs and assumptions. The response explains the available information. Protocol checks still determine whether a requested transaction can proceed.</>{" "}<>Avana supports borrowing GHO and other enabled debt assets against Uniswap v3 positions on Ethereum and Aerodrome Slipstream positions on Base.</>{" "}<>Wallet-specific questions depend on the selected wallet and network. Public market data describes the market. Balances and positions belong to an account on a particular network. A missing balance, price, or route leaves the associated calculation incomplete.</>
+            <>Ask AI is Avana&apos;s conversational interface for questions about markets and positions. A request names the market, asset, or position to examine. Follow-up questions can clarify the inputs and assumptions. The response explains the available information. Protocol checks still determine whether a requested transaction can proceed.</>{" "}<>Avana lets liquidity providers use their LP positions as collateral on Aave V4 and borrow the assets the Avana Hub lists, across supported DEXes.</>{" "}<>Wallet-specific questions depend on the selected wallet and network. Public market data describes the market. Balances and positions belong to an account on a particular network. A missing balance, price, or route leaves the associated calculation incomplete.</>
           </p>
           </div>
         </section>
@@ -61,9 +61,8 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
             <p className="type-doc-body">
               Aave data keeps its network, protocol version, and reserve context. It does not
               show that an asset is available in an Avana market. Avana CDP Spokes accept only
-              vault tokens for approved Uniswap v3 positions on Ethereum and Aerodrome Slipstream
-              positions on Base as collateral, and lend GHO and the debt assets enabled for each
-              Spoke. Avana still applies its own market listing, LP valuation, and
+              vault tokens for positions in listed markets as collateral, and lend the debt assets
+              enabled for each Spoke. Avana still applies its own market listing, LP valuation, and
               account checks. A capability of the upstream MCP server is not automatically an
               action in Ask AI. Available actions depend on Avana&apos;s integration and the
               supported product flows.
@@ -87,7 +86,7 @@ export default async function DocumentationPage({ params }: LocaleParamsProps) {
               Avana&apos;s own position data and calculation logic provide the product-specific
               context. A borrowing question can combine Aave market information, retrieved
               explanations of LP collateral, and calculations for the selected position&apos;s
-              GHO debt and borrowing capacity. Each input has a different role. A documentation
+              debt and borrowing capacity. Each input has a different role. A documentation
               passage explains a rule. A market response reports observed conditions. A position
               calculation applies the relevant inputs to an account or scenario.
             </p>

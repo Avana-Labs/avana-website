@@ -116,11 +116,10 @@
         "copilot": "Ask AI",
         "integrations": "Supported Integrations",
         "safety": "Safety Mechanisms",
-        "legal": "Legal & Compliance",
-        "reference": "Reference"
+        "securityLegal": "Security & Legal"
       },
       "items": {
-        "overview": "Overview",
+        "overview": "Welcome",
         "keyConcepts": "Key Concepts",
         "glossary": "Glossary",
         "depositLp": "Deposit LP",
@@ -159,10 +158,9 @@
         "marketLifecycle": "Market Lifecycle",
         "governance": "Governance",
         "emergencyControls": "Emergency Controls",
-        "contractList": "Contracts",
-        "addresses": "Addresses",
-        "parameters": "Parameters",
-        "accessControls": "Access Controls",
+        "addresses": "Contract Addresses",
+        "parameters": "Market Parameters",
+        "accessControls": "Access Control",
         "securityVerification": "Security & Verification",
         "audits": "Audits",
         "lens": "Lens",
@@ -173,9 +171,9 @@
         "chainId": "Chain ID",
         "copy": "Copy",
         "copied": "Copied",
-        "placeholder": "Placeholder",
         "explorer": "opens the block explorer",
-        "updated": "Last updated {date}"
+        "updated": "Last updated {date}",
+        "testnetBadge": "Testnet"
       }
     },
     "faqUi": {
@@ -250,7 +248,7 @@
     },
     "pricing": {
       "title": "Pricing",
-      "description": "Clear pricing for borrowing, lending, and LP-backed strategies on Avana."
+      "description": "What Avana charges: a front-end fee on each action, a share of liquidation gains, and points."
     },
     "privacy": {
       "title": "Privacy Policy",
@@ -264,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Powered by Aave v4",
-      "title": "Avana is the lending market built for AMM liquidity pools.",
-      "titleLine1": "Avana is the lending market",
-      "titleLine2": "built for AMM liquidity pools.",
+      "title": "Borrow crypto, stocks and RWAs against your AMM liquidity positions.",
+      "titleLine1": "Borrow crypto, stocks and RWAs",
+      "titleLine2": "against your AMM liquidity positions.",
+      "titleLine1Mobile": "Borrow crypto and stocks",
+      "titleLine2Mobile": "against your liquidity positions.",
       "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -279,9 +279,6 @@
       },
       "primaryCta": "Read the ARFC",
       "secondaryCta": "Launch Testnet"
-    },
-    "intro": {
-      "text": "<strong><ink>Borrow</ink> crypto, stocks, FX, and RWAs</strong> against liquidity positions from <strong>Uniswap, Curve, Aerodrome, Balancer, and more</strong>, powered by Aave V4, onchain and 24/7."
     },
     "trustedBy": {
       "caption": "Trusted by teams that ship high-quality Web3 products"
@@ -332,68 +329,68 @@
   },
   "pricing": {
     "title": "Pricing",
-    "subtitleLine1": "Rates and returns depend on the market,",
-    "subtitleLine2": "position, and route you use.",
-    "interfaceRate": "Upfront Interface fees — 15 bps (0.15%)",
-    "includes": "Includes:",
-    "borrow": {
-      "title": "Borrow",
-      "subtitle": "For LP-backed credit",
-      "value": "Variable",
-      "unit": "interest",
-      "description": "Borrowing costs follow the selected Aave v4 market.",
+    "subtitleLine1": "An app fee on each action and a share of liquidation gains.",
+    "subtitleLine2": "Borrow rates and risk premiums are Aave V4 rates, set by the Aave DAO and paid to lenders. Avana takes no share of them.",
+    "interfaceRate": "Front-end fee: 10 bps (0.10%)",
+    "includes": "Details:",
+    "frontEnd": {
+      "title": "Front-end fee",
+      "subtitle": "Charged by the Avana app",
+      "value": "10",
+      "unit": "bps per action",
+      "description": "Added to your action as one token transfer in the same transaction batch: swaps, borrow, repay, pledge and lend actions. No contract charges it, and it is capped at 25 bps.",
       "items": {
-        "one": "Market-set interest rate",
-        "two": "Accrues only on outstanding debt",
-        "three": "Shown before you confirm"
+        "one": "9 bps after 30 days of membership",
+        "two": "8 bps after 90 days, 7 bps after 180 days",
+        "three": "Membership counts from your wallet's first interaction"
       }
     },
-    "lend": {
-      "title": "Lend",
-      "subtitle": "Supply capital to the Hub",
-      "value": "Market",
-      "unit": "APY",
-      "description": "Earn from LP-backed demand through Avana's Lend Spoke.",
+    "liquidation": {
+      "title": "Liquidation fee",
+      "subtitle": "Only when a position is liquidated",
+      "value": "20%",
+      "unit": "of the oracle gain",
+      "description": "The oracle gain is the oracle value of the seized collateral minus the debt repaid. Avana's share is capped by the surplus the liquidation actually realizes, so the debt is always repaid first.",
       "items": {
-        "one": "Yield varies with utilization",
-        "two": "Supply into supported lending markets",
-        "three": "Live APY shown in the interface"
+        "one": "The liquidator keeps the rest of the gain as its reward",
+        "two": "Recovery above oracle value goes to the borrower, or to the First-Loss Reserve if debt is left",
+        "three": "Paid in the debt asset to Avana's timelocked fee recipient"
       }
     },
-    "multiply": {
-      "title": "Multiply",
-      "subtitle": "For managed LP exposure",
-      "value": "Variable",
-      "unit": "strategy rate",
-      "description": "Amplify LP exposure with managed multiply strategies backed by supported AMM positions.",
+    "points": {
+      "title": "Points",
+      "subtitle": "Rewards for using Avana",
+      "value": "1",
+      "unit": "point per $1 of fees",
+      "description": "Points are tracked in the Avana app. There is no token and nothing on chain. Redeem points for a temporary discount on the front-end fee.",
       "items": {
-        "one": "Use supported LP positions as collateral",
-        "two": "Exposure stays tied to the underlying pool",
-        "three": "Leverage and unwind controls stay visible"
+        "one": "1 point per $1 of front-end fees paid",
+        "two": "100 points per 30 days of membership",
+        "three": "Quests: first deposit, borrow, repay, pledge, referrals and more"
       }
     },
     "faq": {
       "title": "Frequently asked questions",
       "items": {
-        "interfaceFee": {
-          "question": "What does Avana charge for using the interface?",
-          "answer": "The official interface fee is 15 bps (0.15%) when applicable. It is shown before signature and is separate from gas, swap fees, Aave interest, and liquidation costs."
+        "frontEndFee": {
+          "question": "What does the Avana app charge?",
+          "answer": "A front-end fee of 10 bps of the action's amount (for a pledge or a collateral withdrawal, of the position's value), added as one transfer in the same transaction batch as the action. It drops to 9, 8 and 7 bps after 30, 90 and 180 days of membership. It is never above 25 bps, the ceiling in Avana's listing ARFC, and it is shown before you sign."
         },
         "borrowRate": {
-          "question": "Is borrowing interest fixed?",
-          "answer": "No. Borrowing interest is set by the selected Aave v4 market and can move with utilization and market parameters. The current rate is shown before you borrow."
+          "question": "Does Avana take a share of interest?",
+          "answer": "No. Borrow rates and risk premiums are Aave V4 rates set by the Aave DAO. Interest goes to the Hub's lenders, after any liquidity fee the Aave DAO sets for its treasury. Avana takes no share of it."
         },
-        "lendingApy": {
-          "question": "How is lending APY determined?",
-          "answer": "Lending returns are market-driven and depend on utilization and LP-backed borrower demand. The live APY is shown in the interface before you supply."
+        "liquidationFee": {
+          "question": "How does the liquidation fee work?",
+          "answer": "When a position is liquidated, Avana takes 20% of the oracle gain: the oracle value of the seized collateral minus the debt repaid. The fee is capped by the surplus the liquidation actually realizes, so it never stops a liquidation. The liquidator keeps the rest of the gain, and any recovery above oracle value goes to the borrower."
+        },
+        "points": {
+          "question": "How do points work?",
+          "answer": "You earn 1 point per $1 of front-end fees paid, 100 points for every 30 days of membership, and points for quests such as your first deposit, borrow, repay, pledge and referrals. Redeem points for a temporary discount on the front-end fee. Points are not a token and are not recorded on chain."
         },
         "separateCosts": {
-          "question": "Which costs are separate from Avana fees?",
-          "answer": "Network gas, DEX swap fees, Aave market interest, and any liquidation execution costs are separate from the official interface fee. Review the transaction details before signing."
-        },
-        "feeChanges": {
-          "question": "Can fees and rates change?",
-          "answer": "Yes. Market rates move with utilization and risk parameters, and interface policy can change over time. Always verify the current amount shown for your route before signing."
+          "question": "Which costs are separate from Avana's fees?",
+          "answer": "Network gas, DEX swap fees and Aave interest are separate. The app shows the fee, the gas estimate and the total before you sign."
         }
       }
     }
