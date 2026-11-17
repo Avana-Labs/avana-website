@@ -60,9 +60,9 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Token factors</th><th className="text-left px-4 py-2 type-doc-subsection-title">Pool risk factor</th><th className="text-left px-4 py-2 type-doc-subsection-title">CF_LP</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">3,750</td><td className="px-4 py-2">2,812 (2,812.5 rounded down)</td></tr>
-                <tr><td className="px-4 py-2">USDC 7,800; USDT 7,500</td><td className="px-4 py-2">4,000</td><td className="px-4 py-2">3,000</td></tr>
-                <tr><td className="px-4 py-2">Both 7,800</td><td className="px-4 py-2">4,000</td><td className="px-4 py-2">3,120 (31.2%)</td></tr>
+                <tr><td className="px-4 py-2">USDC 9,000; USDT 9,000</td><td className="px-4 py-2">8,889</td><td className="px-4 py-2">8,000 (8,000.1 rounded down)</td></tr>
+                <tr><td className="px-4 py-2">WETH 8,500; USDC 9,000</td><td className="px-4 py-2">8,471</td><td className="px-4 py-2">7,200 (7,200.35 rounded down)</td></tr>
+                <tr><td className="px-4 py-2">AAVE 7,600; WETH 8,500</td><td className="px-4 py-2">8,948</td><td className="px-4 py-2">6,800 (68%)</td></tr>
               </tbody>
             </table>
           </div>
@@ -98,7 +98,7 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
             Avana draws on Gauntlet&apos;s analysis of LP collateral, which recommends conservative starting factors. When the borrowed asset is not one of the pool&apos;s own tokens, such as GHO borrowed against WETH/USDC, it suggests starting as low as 0.25 times the lower underlying factor. Final factors are calibrated per market with the service providers.
           </p>
           <p className="mb-4 type-doc-body">
-            With a 40% pool risk factor, a pool of two tokens with 78% factors has a collateral factor of 31.2%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 28.4% (31.2% divided by 1.10).
+            With an 89.48% pool risk factor, a pool of two tokens with 76% factors has a collateral factor of 68%. Borrowing to the Lens recommendation of health factor 1.10 then gives an opening loan-to-value of about 61.8% (68% divided by 1.10).
           </p>
         </section>
 

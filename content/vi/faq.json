@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Avana có làm giảm giá trị của oracle không?",
-          "a": "Không. Oracle báo cáo giá trị mà không áp dụng chiết khấu. Hệ số tài sản thế chấp của mỗi thị trường xác định phần giá trị đó có thể bảo đảm cho khoản nợ: hệ số tài sản thế chấp Aave V4 thấp nhất trong số các token của pool nhân với hệ số rủi ro pool tối đa 40%. Một nhánh GHO dùng hệ số cụ thể được đặt khi niêm yết.\n\nPhân tích của Gauntlet về tài sản thế chấp LP khuyến nghị các hệ số khởi điểm thận trọng, có thể thấp tới 0.25× hệ số cơ sở thấp hơn khi tài sản được vay không phải là một trong các token của pool. Hệ số cuối cùng được hiệu chỉnh theo từng thị trường cùng các nhà cung cấp dịch vụ của Aave."
+          "a": "Không. Oracle báo cáo giá trị mà không áp dụng chiết khấu. Hệ số tài sản thế chấp của mỗi thị trường xác định phần giá trị đó có thể bảo đảm cho khoản nợ: hệ số tài sản thế chấp Aave V4 thấp nhất trong số các token của pool nhân với hệ số rủi ro pool tối đa 90%. Một nhánh GHO dùng hệ số cụ thể được đặt khi niêm yết.\n\nPhân tích của Gauntlet về tài sản thế chấp LP khuyến nghị các hệ số khởi điểm thận trọng, có thể thấp tới 0.25× hệ số cơ sở thấp hơn khi tài sản được vay không phải là một trong các token của pool. Hệ số cuối cùng được hiệu chỉnh theo từng thị trường cùng các nhà cung cấp dịch vụ của Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Tại sao khả năng vay lại thấp hơn giá trị LP của tôi?",
-          "a": "Hệ số tài sản thế chấp chừa chỗ cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Hệ số rủi ro pool bị giới hạn ở 40%, nên với hai token ở mức 78%, tỷ lệ cho vay trên giá trị ban đầu tối đa khoảng 28.4%.\n\nKhoảng cách giữa giá trị và khả năng vay khác nhau giữa các thị trường vì mỗi thị trường có hệ số rủi ro pool riêng."
+          "a": "Hệ số tài sản thế chấp chừa chỗ cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Hệ số rủi ro pool bị giới hạn ở 90%, nên với hai token ở mức 78%, tỷ lệ cho vay trên giá trị ban đầu tối đa khoảng 63.8%.\n\nKhoảng cách giữa giá trị và khả năng vay khác nhau giữa các thị trường vì mỗi thị trường có hệ số rủi ro pool riêng."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Điều gì bảo vệ vốn của người cho vay?",
-          "a": "Collateral Factor theo từng thị trường với hệ số rủi ro pool tối đa 40%, giới hạn trần theo thị trường, token và người gửi trên mỗi Hub, trạng thái oracle và cầu dao, việc thanh lý mở cho bất kỳ địa chỉ nào bên cạnh keeper của Avana, và giới hạn rút nằm trong thanh khoản flash của chuỗi để mọi khoản vay đều có thể được thanh lý trong một giao dịch.\n\nNếu một lần thanh lý để lại khoản nợ không có tài sản thế chấp, khoản thâm hụt được bao phủ bởi Avana Umbrella cho Hub và tài sản đó, một quỹ dự trữ chịu lỗ đầu tiên do Avana Labs cấp vốn và Aave DAO kiểm soát, trong vòng 72 giờ. Một khoản thâm hụt lớn hơn quỹ dự trữ là khoản lỗ cho những người cung cấp tài sản Hub đó, do Aave DAO ghi nhận."
+          "a": "Collateral Factor theo từng thị trường với hệ số rủi ro pool tối đa 90%, giới hạn trần theo thị trường, token và người gửi trên mỗi Hub, trạng thái oracle và cầu dao, việc thanh lý mở cho bất kỳ địa chỉ nào bên cạnh keeper của Avana, và giới hạn rút nằm trong thanh khoản flash của chuỗi để mọi khoản vay đều có thể được thanh lý trong một giao dịch.\n\nNếu một lần thanh lý để lại khoản nợ không có tài sản thế chấp, khoản thâm hụt được bao phủ bởi Avana Umbrella cho Hub và tài sản đó, một quỹ dự trữ chịu lỗ đầu tiên do Avana Labs cấp vốn và Aave DAO kiểm soát, trong vòng 72 giờ. Một khoản thâm hụt lớn hơn quỹ dự trữ là khoản lỗ cho những người cung cấp tài sản Hub đó, do Aave DAO ghi nhận."
         }
       ]
     },

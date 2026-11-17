@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Shin Avana yana rage darajar baka?",
-          "a": "A'a. Oracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral Factor na kowace kasuwa yana saita yawan wannan ƙima da zai iya tallafa wa bashi: Collateral Factor mafi ƙanƙanta na Aave V4 a cikin tokens na pool da aka ninka da ma'aunin haɗarin pool na 40% a mafi yawa. Hanyar GHO tana amfani da bayyanannen factor da aka saita a jera kasuwa.\n\nNazarin Gauntlet na jinginar LP yana ba da shawarar factors na farawa masu taka-tsantsan, har zuwa ƙasa da 0.25× na factor mafi ƙanƙanta na ƙasa lokacin da kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce. Ana daidaita factors na ƙarshe ga kowace kasuwa tare da masu ba da sabis na Aave."
+          "a": "A'a. Oracle yana ba da rahoton ƙima ba tare da ragi ba. Collateral Factor na kowace kasuwa yana saita yawan wannan ƙima da zai iya tallafa wa bashi: Collateral Factor mafi ƙanƙanta na Aave V4 a cikin tokens na pool da aka ninka da ma'aunin haɗarin pool na 90% a mafi yawa. Hanyar GHO tana amfani da bayyanannen factor da aka saita a jera kasuwa.\n\nNazarin Gauntlet na jinginar LP yana ba da shawarar factors na farawa masu taka-tsantsan, har zuwa ƙasa da 0.25× na factor mafi ƙanƙanta na ƙasa lokacin da kadarar da aka aro ba ɗaya daga cikin tokens na pool ba ce. Ana daidaita factors na ƙarshe ga kowace kasuwa tare da masu ba da sabis na Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Me ya sa ƙarfin aron ya ƙasa da ƙimar LP nawa?",
-          "a": "Collateral Factor yana barin sarari don motsin farashi, impermanent loss, canje-canjen kewayo da kuɗaɗen liquidation. An iyakance ma'aunin haɗarin pool a 40%, don haka tare da tokens biyu a 78% loan-to-value na buɗewa yana kusan 28.4% a mafi yawa.\n\nTazarar da ke tsakanin ƙima da ƙarfi ta bambanta tsakanin kasuwanni saboda kowace kasuwa tana da ma'aunin haɗarin pool nata."
+          "a": "Collateral Factor yana barin sarari don motsin farashi, impermanent loss, canje-canjen kewayo da kuɗaɗen liquidation. An iyakance ma'aunin haɗarin pool a 90%, don haka tare da tokens biyu a 78% loan-to-value na buɗewa yana kusan 63.8% a mafi yawa.\n\nTazarar da ke tsakanin ƙima da ƙarfi ta bambanta tsakanin kasuwanni saboda kowace kasuwa tana da ma'aunin haɗarin pool nata."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Menene ke kare babban jarin mai bayar da aron kudi?",
-          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool da bai wuce 40% ba, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation a buɗe ga kowane adireshi tare da keeper na Avana, da iyakokin cirowa da ke zama cikin ruwan kuɗin flash na chain don a iya yi wa kowane aro liquidation a ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na waccan Hub da kadara yana rufe gibin, reserve na asarar farko da Avana Labs ke ɗaukar nauyinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibin da ya fi reserve girma asara ce ga masu ba da kadarar waccan Hub, wadda Aave DAO ke tabbatarwa."
+          "a": "Collateral Factors na kowace kasuwa tare da ma'aunin haɗarin pool da bai wuce 90% ba, iyakokin kasuwa, token da mai ajiya ga kowane Hub, yanayin oracle da breakers, liquidation a buɗe ga kowane adireshi tare da keeper na Avana, da iyakokin cirowa da ke zama cikin ruwan kuɗin flash na chain don a iya yi wa kowane aro liquidation a ma'amala ɗaya.\n\nIdan liquidation ta bar bashi ba tare da jingina ba, Avana Umbrella na waccan Hub da kadara yana rufe gibin, reserve na asarar farko da Avana Labs ke ɗaukar nauyinsa kuma Aave DAO ke sarrafawa, cikin awanni 72. Gibin da ya fi reserve girma asara ce ga masu ba da kadarar waccan Hub, wadda Aave DAO ke tabbatarwa."
         }
       ]
     },

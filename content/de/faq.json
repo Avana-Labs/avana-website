@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Ermäßigt Avana den Orakelwert?",
-          "a": "Nein. Das Oracle meldet den Wert ohne Abschlag. Der Collateral Factor jedes Marktes legt fest, wie viel dieses Werts Schulden decken kann: der niedrigste Aave V4 Collateral Factor unter den Tokens des Pools, multipliziert mit einem Pool-Risikofaktor von höchstens 40%. Ein GHO-Teil verwendet einen beim Listing festgelegten expliziten Faktor.\n\nDie Analyse von Gauntlet zu LP-Sicherheiten empfiehlt konservative Startfaktoren, bis hinunter zu 0.25× des niedrigeren zugrunde liegenden Faktors, wenn das geliehene Asset keiner der Tokens des Pools ist. Die endgültigen Faktoren werden pro Markt mit den Dienstleistern von Aave kalibriert."
+          "a": "Nein. Das Oracle meldet den Wert ohne Abschlag. Der Collateral Factor jedes Marktes legt fest, wie viel dieses Werts Schulden decken kann: der niedrigste Aave V4 Collateral Factor unter den Tokens des Pools, multipliziert mit einem Pool-Risikofaktor von höchstens 90%. Ein GHO-Teil verwendet einen beim Listing festgelegten expliziten Faktor.\n\nDie Analyse von Gauntlet zu LP-Sicherheiten empfiehlt konservative Startfaktoren, bis hinunter zu 0.25× des niedrigeren zugrunde liegenden Faktors, wenn das geliehene Asset keiner der Tokens des Pools ist. Die endgültigen Faktoren werden pro Markt mit den Dienstleistern von Aave kalibriert."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Warum ist die Ausleihkraft niedriger als mein LP Wert?",
-          "a": "Der Collateral Factor lässt Raum für Preisbewegungen, Impermanent Loss, Bereichsänderungen und Liquidationskosten. Der Pool-Risikofaktor ist auf 40% begrenzt, sodass bei zwei Tokens mit 78% der anfängliche Loan-to-Value höchstens etwa 28.4% beträgt.\n\nDie Lücke zwischen Wert und Kapazität unterscheidet sich zwischen Märkten, weil jeder Markt seinen eigenen Pool-Risikofaktor hat."
+          "a": "Der Collateral Factor lässt Raum für Preisbewegungen, Impermanent Loss, Bereichsänderungen und Liquidationskosten. Der Pool-Risikofaktor ist auf 90% begrenzt, sodass bei zwei Tokens mit 78% der anfängliche Loan-to-Value höchstens etwa 63.8% beträgt.\n\nDie Lücke zwischen Wert und Kapazität unterscheidet sich zwischen Märkten, weil jeder Markt seinen eigenen Pool-Risikofaktor hat."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Was schützt das Kapital des Kreditgebers?",
-          "a": "Collateral Factors pro Markt mit einem Pool-Risikofaktor von höchstens 40%, Markt-, Token- und Einzahler-Obergrenzen pro Hub, Oracle-Zustände und Breaker, eine Liquidation, die neben dem Keeper von Avana für jede Adresse offen ist, und Draw-Obergrenzen, die innerhalb der Flash-Liquidität der Chain bleiben, sodass jede Kreditaufnahme in einer Transaktion liquidiert werden kann.\n\nHinterlässt eine Liquidation Schulden ohne Sicherheiten, wird das Defizit innerhalb von 72 Stunden vom Avana Umbrella für diesen Hub und dieses Asset gedeckt, einer First-Loss-Reserve, die von Avana Labs finanziert und von der Aave DAO kontrolliert wird. Ein Defizit, das größer als die Reserve ist, ist ein Verlust für die Anbieter dieses Hub-Assets, realisiert durch die Aave DAO."
+          "a": "Collateral Factors pro Markt mit einem Pool-Risikofaktor von höchstens 90%, Markt-, Token- und Einzahler-Obergrenzen pro Hub, Oracle-Zustände und Breaker, eine Liquidation, die neben dem Keeper von Avana für jede Adresse offen ist, und Draw-Obergrenzen, die innerhalb der Flash-Liquidität der Chain bleiben, sodass jede Kreditaufnahme in einer Transaktion liquidiert werden kann.\n\nHinterlässt eine Liquidation Schulden ohne Sicherheiten, wird das Defizit innerhalb von 72 Stunden vom Avana Umbrella für diesen Hub und dieses Asset gedeckt, einer First-Loss-Reserve, die von Avana Labs finanziert und von der Aave DAO kontrolliert wird. Ein Defizit, das größer als die Reserve ist, ist ein Verlust für die Anbieter dieses Hub-Assets, realisiert durch die Aave DAO."
         }
       ]
     },

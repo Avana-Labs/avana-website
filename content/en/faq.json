@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Does Avana discount the oracle value?",
-          "a": "No. The oracle reports value with no haircut. Each market's Collateral Factor sets how much of that value can support debt: the lowest Aave V4 Collateral Factor among the pool's tokens multiplied by a pool risk factor of at most 40%. A GHO leg uses an explicit factor set at listing.\n\nGauntlet's analysis of LP collateral recommends conservative starting factors, as low as 0.25× the lower underlying factor when the borrowed asset is not one of the pool's tokens. Final factors are calibrated per market with Aave's service providers."
+          "a": "No. The oracle reports value with no haircut. Each market's Collateral Factor sets how much of that value can support debt: the lowest Aave V4 Collateral Factor among the pool's tokens multiplied by a pool risk factor of at most 90%. A GHO leg uses an explicit factor set at listing.\n\nGauntlet's analysis of LP collateral recommends conservative starting factors, as low as 0.25× the lower underlying factor when the borrowed asset is not one of the pool's tokens. Final factors are calibrated per market with Aave's service providers."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Why is borrow power lower than my LP value?",
-          "a": "The Collateral Factor leaves room for price moves, impermanent loss, range changes and liquidation costs. The pool risk factor is capped at 40%, so with two tokens at 78% the opening loan-to-value is at most about 28.4%.\n\nThe gap between value and capacity differs between markets because each market has its own pool risk factor."
+          "a": "The Collateral Factor leaves room for price moves, impermanent loss, range changes and liquidation costs. The pool risk factor is capped at 90%, so with two tokens at 78% the opening loan-to-value is at most about 63.8%.\n\nThe gap between value and capacity differs between markets because each market has its own pool risk factor."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "What protects lender capital?",
-          "a": "Per-market Collateral Factors with a pool risk factor of at most 40%, market, token and depositor caps per Hub, oracle states and breakers, liquidation open to any address alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
+          "a": "Per-market Collateral Factors with a pool risk factor of at most 90%, market, token and depositor caps per Hub, oracle states and breakers, liquidation open to any address alongside Avana's keeper, and draw caps that stay within the chain's flash liquidity so every borrow can be liquidated in one transaction.\n\nIf a liquidation leaves debt without collateral, the deficit is covered by the Avana Umbrella for that Hub and asset, a first-loss reserve funded by Avana Labs and controlled by the Aave DAO, within 72 hours. A deficit larger than the reserve is a loss to that Hub asset's suppliers, realized by the Aave DAO."
         }
       ]
     },

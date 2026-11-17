@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "O Avana desconta o valor do oráculo?",
-          "a": "Não. O oráculo informa o valor sem deságio. O Fator de Colateral de cada mercado define quanto desse valor pode sustentar dívida: o menor Fator de Colateral do Aave V4 entre os tokens do pool multiplicado por um fator de risco do pool de no máximo 40%. Uma perna em GHO usa um fator explícito definido na listagem.\n\nA análise da Gauntlet sobre colateral LP recomenda fatores iniciais conservadores, de até 0.25× o menor fator subjacente quando o ativo tomado não é um dos tokens do pool. Os fatores finais são calibrados por mercado com os provedores de serviços da Aave."
+          "a": "Não. O oráculo informa o valor sem deságio. O Fator de Colateral de cada mercado define quanto desse valor pode sustentar dívida: o menor Fator de Colateral do Aave V4 entre os tokens do pool multiplicado por um fator de risco do pool de no máximo 90%. Uma perna em GHO usa um fator explícito definido na listagem.\n\nA análise da Gauntlet sobre colateral LP recomenda fatores iniciais conservadores, de até 0.25× o menor fator subjacente quando o ativo tomado não é um dos tokens do pool. Os fatores finais são calibrados por mercado com os provedores de serviços da Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Por que o poder de empréstimo é menor que o valor do meu LP?",
-          "a": "O Fator de Colateral deixa margem para movimentos de preço, perda impermanente, mudanças de faixa e custos de liquidação. O fator de risco do pool tem teto de 40%, então, com dois tokens a 78%, o loan-to-value inicial é de no máximo cerca de 28.4%.\n\nA diferença entre valor e capacidade varia entre mercados porque cada mercado tem seu próprio fator de risco do pool."
+          "a": "O Fator de Colateral deixa margem para movimentos de preço, perda impermanente, mudanças de faixa e custos de liquidação. O fator de risco do pool tem teto de 90%, então, com dois tokens a 78%, o loan-to-value inicial é de no máximo cerca de 63.8%.\n\nA diferença entre valor e capacidade varia entre mercados porque cada mercado tem seu próprio fator de risco do pool."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "O que protege o capital do fornecedor?",
-          "a": "Collateral Factors por mercado com um fator de risco do pool de no máximo 40%, limites de mercado, token e depositante por Hub, estados de oráculo e breakers, liquidação aberta a qualquer endereço junto com o keeper da Avana, e limites de saque que ficam dentro da liquidez de flash da chain para que todo empréstimo possa ser liquidado em uma única transação.\n\nSe uma liquidação deixar dívida sem colateral, o déficit é coberto pelo Avana Umbrella desse Hub e ativo, uma reserva de primeira perda financiada pela Avana Labs e controlada pela Aave DAO, em até 72 horas. Um déficit maior que a reserva é uma perda para os fornecedores desse ativo do Hub, realizada pela Aave DAO."
+          "a": "Collateral Factors por mercado com um fator de risco do pool de no máximo 90%, limites de mercado, token e depositante por Hub, estados de oráculo e breakers, liquidação aberta a qualquer endereço junto com o keeper da Avana, e limites de saque que ficam dentro da liquidez de flash da chain para que todo empréstimo possa ser liquidado em uma única transação.\n\nSe uma liquidação deixar dívida sem colateral, o déficit é coberto pelo Avana Umbrella desse Hub e ativo, uma reserva de primeira perda financiada pela Avana Labs e controlada pela Aave DAO, em até 72 horas. Um déficit maior que a reserva é uma perda para os fornecedores desse ativo do Hub, realizada pela Aave DAO."
         }
       ]
     },

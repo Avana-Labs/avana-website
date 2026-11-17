@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Apakah Avana mendiskon nilai oracle?",
-          "a": "Tidak. Oracle melaporkan nilai tanpa potongan nilai. Collateral Factor setiap pasar menentukan berapa banyak dari nilai tersebut yang dapat mendukung utang: Collateral Factor Aave V4 terendah di antara token-token pool dikalikan dengan faktor risiko pool paling tinggi 40%. Leg GHO menggunakan faktor eksplisit yang ditetapkan saat listing.\n\nAnalisis Gauntlet tentang kolateral LP merekomendasikan faktor awal yang konservatif, serendah 0.25× faktor dasar yang lebih rendah ketika aset yang dipinjam bukan salah satu token pool. Faktor final dikalibrasi per pasar bersama penyedia layanan Aave."
+          "a": "Tidak. Oracle melaporkan nilai tanpa potongan nilai. Collateral Factor setiap pasar menentukan berapa banyak dari nilai tersebut yang dapat mendukung utang: Collateral Factor Aave V4 terendah di antara token-token pool dikalikan dengan faktor risiko pool paling tinggi 90%. Leg GHO menggunakan faktor eksplisit yang ditetapkan saat listing.\n\nAnalisis Gauntlet tentang kolateral LP merekomendasikan faktor awal yang konservatif, serendah 0.25× faktor dasar yang lebih rendah ketika aset yang dipinjam bukan salah satu token pool. Faktor final dikalibrasi per pasar bersama penyedia layanan Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Mengapa daya pinjam lebih rendah daripada nilai LP saya?",
-          "a": "Collateral Factor menyisakan ruang untuk pergerakan harga, impermanent loss, perubahan rentang, dan biaya likuidasi. Faktor risiko pool dibatasi pada 40%, sehingga dengan dua token pada 78%, loan-to-value awal paling tinggi sekitar 28.4%.\n\nSelisih antara nilai dan kapasitas berbeda antarpasar karena setiap pasar memiliki faktor risiko pool-nya sendiri."
+          "a": "Collateral Factor menyisakan ruang untuk pergerakan harga, impermanent loss, perubahan rentang, dan biaya likuidasi. Faktor risiko pool dibatasi pada 90%, sehingga dengan dua token pada 78%, loan-to-value awal paling tinggi sekitar 63.8%.\n\nSelisih antara nilai dan kapasitas berbeda antarpasar karena setiap pasar memiliki faktor risiko pool-nya sendiri."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Apa yang melindungi modal pemberi pinjaman?",
-          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 40%, batas pasar, token, dan deposan per Hub, status oracle dan breaker, likuidasi yang terbuka untuk alamat mana pun di samping keeper Avana, dan draw cap yang tetap dalam batas likuiditas flash chain tersebut sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi meninggalkan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, cadangan first-loss yang didanai Avana Labs dan dikendalikan Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan menjadi kerugian bagi pemasok aset Hub tersebut, yang direalisasikan oleh Aave DAO."
+          "a": "Collateral Factor per pasar dengan faktor risiko pool paling tinggi 90%, batas pasar, token, dan deposan per Hub, status oracle dan breaker, likuidasi yang terbuka untuk alamat mana pun di samping keeper Avana, dan draw cap yang tetap dalam batas likuiditas flash chain tersebut sehingga setiap pinjaman dapat dilikuidasi dalam satu transaksi.\n\nJika likuidasi meninggalkan utang tanpa kolateral, defisit ditutup oleh Avana Umbrella untuk Hub dan aset tersebut, cadangan first-loss yang didanai Avana Labs dan dikendalikan Aave DAO, dalam 72 jam. Defisit yang lebih besar dari cadangan menjadi kerugian bagi pemasok aset Hub tersebut, yang direalisasikan oleh Aave DAO."
         }
       ]
     },

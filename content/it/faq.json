@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Il Avana sconta il valore dell'oracolo?",
-          "a": "No. L'oracle riporta il valore senza haircut. Il Collateral Factor di ciascun mercato stabilisce quanta parte di quel valore può sostenere debito: il Collateral Factor di Aave V4 più basso tra i token del pool moltiplicato per un fattore di rischio del pool al massimo del 40%. Un tratto in GHO usa un fattore esplicito stabilito al listing.\n\nL'analisi di Gauntlet sul collaterale LP raccomanda fattori iniziali prudenti, anche di soli 0.25× il fattore sottostante più basso quando l'asset preso in prestito non è uno dei token del pool. I fattori finali sono calibrati per mercato con i fornitori di servizi di Aave."
+          "a": "No. L'oracle riporta il valore senza haircut. Il Collateral Factor di ciascun mercato stabilisce quanta parte di quel valore può sostenere debito: il Collateral Factor di Aave V4 più basso tra i token del pool moltiplicato per un fattore di rischio del pool al massimo del 90%. Un tratto in GHO usa un fattore esplicito stabilito al listing.\n\nL'analisi di Gauntlet sul collaterale LP raccomanda fattori iniziali prudenti, anche di soli 0.25× il fattore sottostante più basso quando l'asset preso in prestito non è uno dei token del pool. I fattori finali sono calibrati per mercato con i fornitori di servizi di Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Perché il potere di prestito è inferiore al valore del mio LP?",
-          "a": "Il Collateral Factor lascia spazio per movimenti di prezzo, impermanent loss, cambi di range e costi di liquidazione. Il fattore di rischio del pool è limitato al 40%, quindi con due token al 78% il loan-to-value iniziale è al massimo di circa il 28.4%.\n\nIl divario tra valore e capacità differisce tra i mercati perché ogni mercato ha il proprio fattore di rischio del pool."
+          "a": "Il Collateral Factor lascia spazio per movimenti di prezzo, impermanent loss, cambi di range e costi di liquidazione. Il fattore di rischio del pool è limitato al 90%, quindi con due token al 78% il loan-to-value iniziale è al massimo di circa il 63.8%.\n\nIl divario tra valore e capacità differisce tra i mercati perché ogni mercato ha il proprio fattore di rischio del pool."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Cosa protegge il capitale del prestatore?",
-          "a": "Collateral Factor per mercato con un fattore di rischio del pool al massimo del 40%, limiti per mercato, token e depositante per Hub, stati degli oracle e breaker, liquidazione aperta a qualsiasi indirizzo oltre al keeper di Avana, e limiti di prelievo che restano entro la liquidità flash della chain così ogni prestito può essere liquidato in un'unica transazione.\n\nSe una liquidazione lascia debito senza collaterale, il deficit viene coperto entro 72 ore dall'Avana Umbrella per quell'Hub e quell'asset, una riserva first-loss finanziata da Avana Labs e controllata dall'Aave DAO. Un deficit superiore alla riserva è una perdita per i fornitori di quell'asset dell'Hub, realizzata dall'Aave DAO."
+          "a": "Collateral Factor per mercato con un fattore di rischio del pool al massimo del 90%, limiti per mercato, token e depositante per Hub, stati degli oracle e breaker, liquidazione aperta a qualsiasi indirizzo oltre al keeper di Avana, e limiti di prelievo che restano entro la liquidità flash della chain così ogni prestito può essere liquidato in un'unica transazione.\n\nSe una liquidazione lascia debito senza collaterale, il deficit viene coperto entro 72 ore dall'Avana Umbrella per quell'Hub e quell'asset, una riserva first-loss finanziata da Avana Labs e controllata dall'Aave DAO. Un deficit superiore alla riserva è una perdita per i fornitori di quell'asset dell'Hub, realizzata dall'Aave DAO."
         }
       ]
     },

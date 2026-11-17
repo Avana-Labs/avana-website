@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "¿Avana descuenta el valor del oráculo?",
-          "a": "No. El oráculo informa del valor sin descuento. El Factor de Colateral de cada mercado fija qué parte de ese valor puede respaldar deuda: el menor Factor de Colateral de Aave V4 entre los tokens del pool multiplicado por un factor de riesgo del pool de como máximo el 40%. Un tramo de GHO usa un factor explícito fijado en el listado.\n\nEl análisis de Gauntlet sobre el colateral LP recomienda factores iniciales conservadores, de hasta 0.25× el menor factor subyacente cuando el activo prestado no es uno de los tokens del pool. Los factores finales se calibran por mercado con los proveedores de servicios de Aave."
+          "a": "No. El oráculo informa del valor sin descuento. El Factor de Colateral de cada mercado fija qué parte de ese valor puede respaldar deuda: el menor Factor de Colateral de Aave V4 entre los tokens del pool multiplicado por un factor de riesgo del pool de como máximo el 90%. Un tramo de GHO usa un factor explícito fijado en el listado.\n\nEl análisis de Gauntlet sobre el colateral LP recomienda factores iniciales conservadores, de hasta 0.25× el menor factor subyacente cuando el activo prestado no es uno de los tokens del pool. Los factores finales se calibran por mercado con los proveedores de servicios de Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "¿Por qué el poder de préstamo es menor que el valor de mi LP?",
-          "a": "El Factor de Colateral deja margen para movimientos de precio, pérdida impermanente, cambios de rango y costes de liquidación. El factor de riesgo del pool tiene un máximo del 40%, así que con dos tokens al 78% la relación préstamo-valor inicial es como máximo de alrededor del 28.4%.\n\nLa diferencia entre el valor y la capacidad varía entre mercados porque cada mercado tiene su propio factor de riesgo del pool."
+          "a": "El Factor de Colateral deja margen para movimientos de precio, pérdida impermanente, cambios de rango y costes de liquidación. El factor de riesgo del pool tiene un máximo del 90%, así que con dos tokens al 78% la relación préstamo-valor inicial es como máximo de alrededor del 63.8%.\n\nLa diferencia entre el valor y la capacidad varía entre mercados porque cada mercado tiene su propio factor de riesgo del pool."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "¿Qué protege el capital del prestamista?",
-          "a": "Collateral Factors por mercado con un factor de riesgo del pool de como máximo el 40%, límites de mercado, de token y de depositante por Hub, estados del oráculo y breakers, liquidación abierta a cualquier dirección junto al keeper de Avana, y límites de disposición que se mantienen dentro de la liquidez flash de la cadena para que todo préstamo pueda liquidarse en una sola transacción.\n\nSi una liquidación deja deuda sin colateral, el déficit lo cubre en un plazo de 72 horas el Avana Umbrella de ese Hub y activo, una reserva de primera pérdida financiada por Avana Labs y controlada por la Aave DAO. Un déficit mayor que la reserva es una pérdida para los proveedores de ese activo del Hub, realizada por la Aave DAO."
+          "a": "Collateral Factors por mercado con un factor de riesgo del pool de como máximo el 90%, límites de mercado, de token y de depositante por Hub, estados del oráculo y breakers, liquidación abierta a cualquier dirección junto al keeper de Avana, y límites de disposición que se mantienen dentro de la liquidez flash de la cadena para que todo préstamo pueda liquidarse en una sola transacción.\n\nSi una liquidación deja deuda sin colateral, el déficit lo cubre en un plazo de 72 horas el Avana Umbrella de ese Hub y activo, una reserva de primera pérdida financiada por Avana Labs y controlada por la Aave DAO. Un déficit mayor que la reserva es una pérdida para los proveedores de ese activo del Hub, realizada por la Aave DAO."
         }
       ]
     },

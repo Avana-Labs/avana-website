@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Avana, kehanet değerinden indirimi düşer mi?",
-          "a": "Hayır. Oracle değeri kesinti uygulamadan bildirir. Her piyasanın Teminat Faktörü bu değerin ne kadarının borcu destekleyebileceğini belirler: havuzun token'ları arasındaki en düşük Aave V4 Teminat Faktörü ile en fazla %40 olan bir havuz risk faktörünün çarpımı. Bir GHO ayağı listelemede belirlenen açık bir faktör kullanır.\n\nGauntlet'in LP teminatı analizi, borç alınan varlık havuzun token'larından biri olmadığında düşük olan temel faktörün 0.25× katına kadar inen ihtiyatlı başlangıç faktörleri önerir. Nihai faktörler Aave'nin hizmet sağlayıcılarıyla piyasa başına kalibre edilir."
+          "a": "Hayır. Oracle değeri kesinti uygulamadan bildirir. Her piyasanın Teminat Faktörü bu değerin ne kadarının borcu destekleyebileceğini belirler: havuzun token'ları arasındaki en düşük Aave V4 Teminat Faktörü ile en fazla %90 olan bir havuz risk faktörünün çarpımı. Bir GHO ayağı listelemede belirlenen açık bir faktör kullanır.\n\nGauntlet'in LP teminatı analizi, borç alınan varlık havuzun token'larından biri olmadığında düşük olan temel faktörün 0.25× katına kadar inen ihtiyatlı başlangıç faktörleri önerir. Nihai faktörler Aave'nin hizmet sağlayıcılarıyla piyasa başına kalibre edilir."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Borçlanma gücü, LP değerimden neden daha düşük?",
-          "a": "Teminat Faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Havuz risk faktörünün üst sınırı %40'tır, bu nedenle %78'de iki token ile açılış kredi-değer oranı en fazla yaklaşık %28.4'tür.\n\nDeğer ile kapasite arasındaki fark piyasalar arasında farklılık gösterir, çünkü her piyasanın kendi havuz risk faktörü vardır."
+          "a": "Teminat Faktörü fiyat hareketleri, geçici kayıp, aralık değişiklikleri ve likidasyon maliyetleri için pay bırakır. Havuz risk faktörünün üst sınırı %90'dır, bu nedenle %78'de iki token ile açılış kredi-değer oranı en fazla yaklaşık %63.8'dir.\n\nDeğer ile kapasite arasındaki fark piyasalar arasında farklılık gösterir, çünkü her piyasanın kendi havuz risk faktörü vardır."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Borç verici sermayesini ne korur?",
-          "a": "En fazla %40 havuz risk faktörüyle piyasa başına Collateral Factor'ler, Hub başına piyasa, token ve yatıran üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında herhangi bir adrese açık likidasyon ve her borcun tek bir işlemde likide edilebilmesi için zincirin flash likiditesi dahilinde kalan çekim tavanları.\n\nBir likidasyon teminatsız borç bırakırsa eksiklik, 72 saat içinde o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından karşılanır. Rezervden büyük bir eksiklik, Aave DAO tarafından gerçekleştirilen, o Hub varlığının arz sağlayıcıları için bir kayıptır."
+          "a": "En fazla %90 havuz risk faktörüyle piyasa başına Collateral Factor'ler, Hub başına piyasa, token ve yatıran üst sınırları, oracle durumları ve devre kesiciler, Avana'nın keeper'ının yanında herhangi bir adrese açık likidasyon ve her borcun tek bir işlemde likide edilebilmesi için zincirin flash likiditesi dahilinde kalan çekim tavanları.\n\nBir likidasyon teminatsız borç bırakırsa eksiklik, 72 saat içinde o Hub ve varlık için Avana Labs tarafından fonlanan ve Aave DAO tarafından kontrol edilen bir ilk kayıp rezervi olan Avana Umbrella tarafından karşılanır. Rezervden büyük bir eksiklik, Aave DAO tarafından gerçekleştirilen, o Hub varlığının arz sağlayıcıları için bir kayıptır."
         }
       ]
     },

@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Je, Avana inapunguza thamani ya chumba cha ndani?",
-          "a": "Hapana. Oracle huripoti thamani bila punguzo la thamani. Collateral Factor ya kila soko huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni: Collateral Factor ya chini kabisa ya Aave V4 kati ya tokeni za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa kisichozidi 40%. Sehemu ya GHO hutumia kipengele mahususi kilichowekwa wakati wa uorodheshaji.\n\nUchambuzi wa Gauntlet wa dhamana ya LP unapendekeza vipengele vya kuanzia vya kihafidhina, chini hadi 0.25× ya kipengele cha chini cha msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa. Vipengele vya mwisho hurekebishwa kwa kila soko pamoja na watoa huduma wa Aave."
+          "a": "Hapana. Oracle huripoti thamani bila punguzo la thamani. Collateral Factor ya kila soko huweka kiasi cha thamani hiyo kinachoweza kuunga mkono deni: Collateral Factor ya chini kabisa ya Aave V4 kati ya tokeni za bwawa ikizidishwa kwa kipengele cha hatari cha bwawa kisichozidi 90%. Sehemu ya GHO hutumia kipengele mahususi kilichowekwa wakati wa uorodheshaji.\n\nUchambuzi wa Gauntlet wa dhamana ya LP unapendekeza vipengele vya kuanzia vya kihafidhina, chini hadi 0.25× ya kipengele cha chini cha msingi pale mali inayokopwa si mojawapo ya tokeni za bwawa. Vipengele vya mwisho hurekebishwa kwa kila soko pamoja na watoa huduma wa Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Kwa nini nguvu ya kukopa ni chini ya thamani yangu ya LP?",
-          "a": "Collateral Factor huacha nafasi kwa mabadiliko ya bei, impermanent loss, mabadiliko ya masafa na gharama za ufilisishaji. Kipengele cha hatari cha bwawa kina kikomo cha 40%, kwa hivyo kwa tokeni mbili za 78% loan-to-value ya kufungua ni si zaidi ya takriban 28.4%.\n\nTofauti kati ya thamani na uwezo hutofautiana kati ya masoko kwa sababu kila soko lina kipengele chake cha hatari cha bwawa."
+          "a": "Collateral Factor huacha nafasi kwa mabadiliko ya bei, impermanent loss, mabadiliko ya masafa na gharama za ufilisishaji. Kipengele cha hatari cha bwawa kina kikomo cha 90%, kwa hivyo kwa tokeni mbili za 78% loan-to-value ya kufungua ni si zaidi ya takriban 63.8%.\n\nTofauti kati ya thamani na uwezo hutofautiana kati ya masoko kwa sababu kila soko lina kipengele chake cha hatari cha bwawa."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Nini kinacholinda mtaji wa mkopeshaji?",
-          "a": "Collateral Factors za kila soko zenye kipengele cha hatari cha bwawa kisichozidi 40%, vikomo vya soko, tokeni na mweka amana kwa kila Hub, hali za oracle na breakers, ufilisishaji ulio wazi kwa anwani yoyote pamoja na keeper wa Avana, na vikomo vya uchukuaji vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, akiba ya hasara ya kwanza inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa watoaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
+          "a": "Collateral Factors za kila soko zenye kipengele cha hatari cha bwawa kisichozidi 90%, vikomo vya soko, tokeni na mweka amana kwa kila Hub, hali za oracle na breakers, ufilisishaji ulio wazi kwa anwani yoyote pamoja na keeper wa Avana, na vikomo vya uchukuaji vinavyobaki ndani ya ukwasi wa flash wa mnyororo ili kila mkopo uweze kufilisiwa katika muamala mmoja.\n\nIkiwa ufilisishaji unaacha deni bila dhamana, upungufu hufidiwa na Avana Umbrella ya Hub na mali hiyo, akiba ya hasara ya kwanza inayofadhiliwa na Avana Labs na kudhibitiwa na Aave DAO, ndani ya saa 72. Upungufu mkubwa kuliko akiba ni hasara kwa watoaji wa mali hiyo ya Hub, inayotambuliwa na Aave DAO."
         }
       ]
     },

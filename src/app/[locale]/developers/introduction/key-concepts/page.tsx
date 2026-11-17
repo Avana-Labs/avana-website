@@ -155,7 +155,7 @@ export default async function KeyConceptsPage({ params }: LocaleParamsProps) {
             <code className="type-doc-body text-gray-900">{"CF_LP = floor(min CFᵢ × poolRiskFactor / 10⁴)"}</code>
           </div>
           <p className="mt-4 mb-4 type-doc-body">
-            Each token&apos;s factor comes from the Aave V4 Core Hub, except that a GHO leg uses an explicit factor set at listing. The pool risk factor is set per pool by the risk service providers and is at most 90%. With two tokens at 78% and a 40% pool risk factor, CF_LP is 3,120 bps (31.2%). Collateral Risk sets the borrower&apos;s rate premium: borrowing rate = base rate × (1 + risk premium). See{" "}
+            Each token&apos;s factor comes from the Aave V4 Core Hub, except that a GHO leg uses an explicit factor set at listing. The pool risk factor is set per pool by the risk service providers and is at most 90%. With two tokens at 76% and an 89.48% pool risk factor, CF_LP is 6,800 bps (68%). Collateral Risk sets the borrower&apos;s rate premium: borrowing rate = base rate × (1 + risk premium). See{" "}
             <Link href="/developers/architecture/collateral-factors" className="text-type-accent hover:underline">Collateral Factors</Link>.
           </p>
         </section>

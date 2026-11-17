@@ -124,7 +124,7 @@
         {
           "id": "what-is-recoverable-value",
           "q": "Kwijtigt Avana de orakelwaarde?",
-          "a": "Nee. De oracle rapporteert de waarde zonder afslag. De Collateral Factor van elke markt bepaalt hoeveel van die waarde schuld kan dekken: de laagste Aave V4 Collateral Factor onder de tokens van de pool vermenigvuldigd met een poolrisicofactor van maximaal 40%. Een GHO-leg gebruikt een expliciete factor die bij listing wordt vastgesteld.\n\nDe analyse van Gauntlet van LP-onderpand adviseert conservatieve startfactoren, tot slechts 0.25× de laagste onderliggende factor wanneer het geleende asset geen van de tokens van de pool is. Definitieve factoren worden per markt gekalibreerd met de serviceproviders van Aave."
+          "a": "Nee. De oracle rapporteert de waarde zonder afslag. De Collateral Factor van elke markt bepaalt hoeveel van die waarde schuld kan dekken: de laagste Aave V4 Collateral Factor onder de tokens van de pool vermenigvuldigd met een poolrisicofactor van maximaal 90%. Een GHO-leg gebruikt een expliciete factor die bij listing wordt vastgesteld.\n\nDe analyse van Gauntlet van LP-onderpand adviseert conservatieve startfactoren, tot slechts 0.25× de laagste onderliggende factor wanneer het geleende asset geen van de tokens van de pool is. Definitieve factoren worden per markt gekalibreerd met de serviceproviders van Aave."
         },
         {
           "id": "why-are-concentrated-liquidity-positions-treated-carefully",
@@ -156,7 +156,7 @@
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Waarom is het leenvermogen lager dan mijn LP-waarde?",
-          "a": "De Collateral Factor laat ruimte voor prijsbewegingen, impermanent loss, bereikwijzigingen en liquidatiekosten. De poolrisicofactor is begrensd op 40%, dus met twee tokens op 78% is de initiële loan-to-value maximaal ongeveer 28.4%.\n\nHet verschil tussen waarde en capaciteit verschilt per markt, omdat elke markt een eigen poolrisicofactor heeft."
+          "a": "De Collateral Factor laat ruimte voor prijsbewegingen, impermanent loss, bereikwijzigingen en liquidatiekosten. De poolrisicofactor is begrensd op 90%, dus met twee tokens op 78% is de initiële loan-to-value maximaal ongeveer 63.8%.\n\nHet verschil tussen waarde en capaciteit verschilt per markt, omdat elke markt een eigen poolrisicofactor heeft."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -198,7 +198,7 @@
         {
           "id": "what-protects-lender-capital",
           "q": "Wat beschermt het kapitaal van de kredietverstrekker?",
-          "a": "Collateral Factors per markt met een poolrisicofactor van maximaal 40%, plafonds voor markt, token en depositor per Hub, oraclestatussen en breakers, liquidatie open voor elk adres naast de keeper van Avana, en opnameplafonds die binnen de flashliquiditeit van de chain blijven zodat elke lening in één transactie kan worden geliquideerd.\n\nAls een liquidatie schuld zonder onderpand achterlaat, wordt het tekort binnen 72 uur gedekt door de Avana Umbrella voor die Hub en dat asset, een first-loss-reserve die door Avana Labs wordt gefinancierd en door de Aave DAO wordt beheerd. Een tekort dat groter is dan de reserve, is een verlies voor de leveranciers van dat Hub-asset, gerealiseerd door de Aave DAO."
+          "a": "Collateral Factors per markt met een poolrisicofactor van maximaal 90%, plafonds voor markt, token en depositor per Hub, oraclestatussen en breakers, liquidatie open voor elk adres naast de keeper van Avana, en opnameplafonds die binnen de flashliquiditeit van de chain blijven zodat elke lening in één transactie kan worden geliquideerd.\n\nAls een liquidatie schuld zonder onderpand achterlaat, wordt het tekort binnen 72 uur gedekt door de Avana Umbrella voor die Hub en dat asset, een first-loss-reserve die door Avana Labs wordt gefinancierd en door de Aave DAO wordt beheerd. Een tekort dat groter is dan de reserve, is een verlies voor de leveranciers van dat Hub-asset, gerealiseerd door de Aave DAO."
         }
       ]
     },

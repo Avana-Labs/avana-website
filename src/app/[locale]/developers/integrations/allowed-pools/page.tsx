@@ -125,7 +125,7 @@ export default async function AllowedPoolsPage({ params }: LocaleParamsProps) {
             <li>A fork check before the proposal asserts that a full liquidation never seizes more than the collateral.</li>
           </ul>
           <div className="doc-topic type-doc-body">
-            Example: token factors of 78% and a pool risk factor of 0.40 give a collateral factor of 31.2%. That is a maximum loan-to-value of 31.2% at health factor 1.00 and a recommended 28.4% at the Lens&apos;s health factor of 1.10.
+            Example: token factors of 76% and a pool risk factor of 0.8948 give a collateral factor of 68%. That is a maximum loan-to-value of 68% at health factor 1.00 and a recommended 61.8% at the Lens&apos;s health factor of 1.10.
           </div>
         </section>
 
