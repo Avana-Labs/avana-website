@@ -163,6 +163,13 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
+        // Media files carry a content hash in their name, so they can be cached for a year.
+        source: '/media/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
         // Agent-readable site guide
         source: '/llms.txt',
         headers: [

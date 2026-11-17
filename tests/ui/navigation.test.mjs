@@ -92,7 +92,7 @@ test("desktop navigation opens by keyboard and closes on Escape", async () => {
 test("CTA animation attaches its source when it is near the viewport", async () => {
   await visit(390, async page => {
     await page.$eval("video", el => el.scrollIntoView({ block: "center" }));
-    await page.waitForFunction(() => document.querySelector("video")?.getAttribute("src") === "/Avana-Transparent.webm");
+    await page.waitForFunction(() => document.querySelector("video source")?.getAttribute("src")?.startsWith("/media/avana-cta."));
   });
 });
 
