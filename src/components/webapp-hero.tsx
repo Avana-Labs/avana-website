@@ -3,12 +3,15 @@ import { preload } from "react-dom"
 import type { AppLocale } from "@/i18n/locales"
 import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 import { brandAssetPath } from "@/lib/brand-assets"
+import mobileHeroAvifImage from "../../public/images/avana-phone-hero.avif"
+import mobileHeroImage from "../../public/images/avana-phone-hero.webp"
 
 const emptyHero = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
 // Already 1086px wide; serving them directly skips the optimizer's per-deploy cold resize.
+// Static imports give hashed /_next/static/media URLs, which are cached as immutable.
 // The AVIF is about half the WebP's size; browsers without AVIF fall back to the WebP.
-const mobileHeroAvif = "/images/avana-phone-hero.avif"
-const mobileHero = "/images/avana-phone-hero.webp"
+const mobileHeroAvif = mobileHeroAvifImage.src
+const mobileHero = mobileHeroImage.src
 const mobileMedia = "(width < 640px)"
 const desktopMedia = "(width >= 640px)"
 
