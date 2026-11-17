@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 
 // Hashed names, so the files can be cached for a year (see next.config.ts).
-const WEBM = "/media/avana-cta.9bb7b181.webm"
-const ANIMATED_WEBP = "/media/avana-cta.c176b72c.webp"
-const POSTER = "/media/avana-cta-poster.0a7efd94.webp"
+const WEBM = "/media/avana-cta.4af545c9.webm"
+const ANIMATED_WEBP = "/media/avana-cta.3aca2b96.webp"
+const POSTER = "/media/avana-cta-poster.9fa10edf.webp"
 
 const BOX = { width: "28rem", maxWidth: "100%", aspectRatio: "16 / 9" } as const
 
@@ -58,7 +58,7 @@ export function CtaVideo() {
     <div ref={ref} className="mx-auto mb-4" style={BOX} aria-hidden="true">
       {mode === "image" ? (
         // eslint-disable-next-line @next/next/no-img-element -- an animated WebP must not go through the optimizer
-        <img src={active ? ANIMATED_WEBP : POSTER} alt="" width={720} height={405} className="h-full w-full" decoding="async" />
+        <img src={active ? ANIMATED_WEBP : POSTER} alt="" width={960} height={540} className="h-full w-full" decoding="async" />
       ) : (
         <video
           ref={videoRef}
