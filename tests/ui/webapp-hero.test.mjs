@@ -29,7 +29,10 @@ async function openHome(width) {
   page.on("request", (request) => {
     if (isHeroRequest(request.url())) requests.push(request.url());
   });
-  await page.goto(`${base}/en`, { waitUntil: "networkidle0", timeout: 60000 });
+  // The production desktop page never reaches full network idle, so wait for load
+  // plus a quiet second instead.
+  await page.goto(`${base}/en`, { waitUntil: "load", timeout: 60000 });
+  await page.waitForNetworkIdle({ idleTime: 1000, timeout: 10000 }).catch(() => {});
   return { page, requests };
 }
 
