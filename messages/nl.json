@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Aangedreven door Aave v4",
-      "title": "Avana is de leenmarkt, gebouwd voor AMM-liquiditeitspools.",
-      "titleLine1": "Avana is de leenmarkt,",
-      "titleLine2": "gebouwd voor AMM-liquiditeitspools.",
+      "title": "Leen crypto, aandelen en RWA's tegen je AMM-liquiditeitsposities.",
+      "titleLine1": "Leen crypto, aandelen en RWA's",
+      "titleLine2": "tegen je AMM-liquiditeitsposities.",
+      "titleLine1Mobile": "Leen crypto en aandelen",
+      "titleLine2Mobile": "tegen je liquiditeitsposities.",
       "subtitle": "Leen onchain crypto, grondstoffen, FX en real-world assets (RWA) met je AMM-liquiditeitsposities als onderpand.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Lees het ARFC",
       "secondaryCta": "Testnet openen"
-    },
-    "intro": {
-      "text": "<ink>Leen</ink> <strong>crypto, aandelen, FX en real-world assets (RWA)</strong> met liquiditeitsposities van <strong>Uniswap, Curve, Aerodrome, Balancer en andere DEXs</strong> als onderpand, via Aave V4, onchain en 24/7."
     },
     "features": {
       "eyebrow": "Belangrijkste kenmerken",

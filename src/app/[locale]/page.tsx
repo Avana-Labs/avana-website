@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server"
 import { ArrowRight } from "lucide-react"
 import HeroSection from "@/components/hero-section"
 import WebappHero from "@/components/webapp-hero"
+import LineFieldCanvas from "@/components/line-field-canvas"
 import { TrustedBySection } from "@/components/trusted-by-section"
 import { AvanaProductsSection } from "@/components/avana-products-section"
 import { TryAvanaCtaSection } from "@/components/try-avana-cta-section"
@@ -68,16 +69,21 @@ export default async function Home({ params }: LocaleParamsProps) {
 
   return (
     <LocalizedMarketing locale={locale} keys={["page","avana-products-section","hero-section","homepage/HomepageFaqSection","homepage/HomepageNewsroomSection","webapp-hero"]}>
-      <section className="bg-background">
-        <div className="site-content-shell pt-14 md:pt-24 lg:pt-28">
-          <div className="max-w-[40rem]">
-            <h1 className="text-[1.875rem] leading-[1.25] tracking-[-0.0125em] text-foreground">
-              {t("hero.titleLine1")}
+      <section className="relative isolate overflow-hidden bg-background">
+        <LineFieldCanvas className="pointer-events-none absolute inset-0 -z-10 hidden h-full w-full sm:block" />
+        {/* Phones keep the left-aligned layout with the app image; sm and up center the
+            headline over the line field. */}
+        <div className="site-content-shell pt-14 sm:flex sm:min-h-[38rem] sm:flex-col sm:items-center sm:pb-[19rem] sm:text-center md:min-h-[44rem] md:pt-32 lg:min-h-[48rem] lg:pt-44">
+          <div className="max-w-[40rem] sm:flex sm:max-w-none sm:flex-col sm:items-center">
+            <h1 className="text-[1.875rem] leading-[1.25] tracking-[-0.0125em] text-foreground max-sm:text-balance sm:text-[2.375rem] sm:leading-[1.1] sm:tracking-[-0.03em] sm:[font-variation-settings:'wght'_350] md:text-[2.75rem] lg:text-[3rem]">
+              <span className="sm:hidden">{t("hero.titleLine1Mobile")}</span>
+              <span className="hidden text-type-accent sm:inline">{t("hero.titleLine1")}</span>
               <br />
-              <span className="text-type-secondary">{t("hero.titleLine2")}</span>
+              <span className="text-type-secondary sm:hidden">{t("hero.titleLine2Mobile")}</span>
+              <span className="hidden text-type-secondary sm:inline">{t("hero.titleLine2")}</span>
             </h1>
 
-            <div className="mt-[1.4rem] flex flex-wrap items-center gap-x-2.5 gap-y-2">
+            <div className="mt-[1.4rem] flex flex-wrap items-center gap-x-2.5 gap-y-2 sm:mt-7 sm:justify-center">
               <Link
                 href="https://governance.aave.com/"
                 target="_blank"
@@ -100,23 +106,12 @@ export default async function Home({ params }: LocaleParamsProps) {
           </div>
         </div>
 
-        <div className="site-content-shell mt-6 md:mt-7 lg:mt-8">
-          <WebappHero locale={locale} />
+        <div className="site-content-shell mt-6 sm:hidden">
+          <WebappHero locale={locale} mobileOnly />
         </div>
       </section>
 
       <TrustedBySection caption={t("trustedBy.caption")} />
-
-      <section className="bg-background pb-0">
-        <div className="site-content-shell site-section-gap">
-          <p className="max-w-[48rem] text-[1.5rem] leading-[1.4] tracking-[-0.015em] text-foreground md:text-[1.75rem] lg:max-w-[60rem] lg:text-[2.25rem] lg:leading-[1.35] lg:tracking-[-0.0125em]">
-            {t.rich("intro.text", {
-              ink: (chunks) => <span className="text-[#0F1518]">{chunks}</span>,
-              strong: (chunks) => <strong className="font-semibold text-type-accent">{chunks}</strong>,
-            })}
-          </p>
-        </div>
-      </section>
 
       <AvanaProductsSection locale={locale} />
 

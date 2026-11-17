@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Работает на Aave v4",
-      "title": "Avana — кредитный рынок, созданный для пулов ликвидности AMM.",
-      "titleLine1": "Avana — кредитный рынок,",
-      "titleLine2": "созданный для пулов ликвидности AMM.",
+      "title": "Берите в долг криптовалюту, акции и RWA под залог ваших позиций ликвидности в AMM.",
+      "titleLine1": "Берите в долг криптовалюту, акции и RWA",
+      "titleLine2": "под залог ваших позиций ликвидности в AMM.",
+      "titleLine1Mobile": "Берите в долг криптовалюту и акции",
+      "titleLine2Mobile": "под залог ваших позиций ликвидности.",
       "subtitle": "Занимайте криптовалюту, биржевые товары, валюту (FX) и реальные активы (RWA) ончейн под залог своих позиций ликвидности AMM.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Читать ARFC",
       "secondaryCta": "Открыть тестовую сеть"
-    },
-    "intro": {
-      "text": "<ink>Берите в долг</ink> <strong>криптовалюту, акции, валюту (FX) и активы реального мира (RWA)</strong> под залог позиций ликвидности в <strong>Uniswap, Curve, Aerodrome, Balancer и других DEX</strong> — на базе Aave V4, ончейн и 24/7."
     },
     "features": {
       "eyebrow": "Основные характеристики",

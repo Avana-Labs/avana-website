@@ -15,7 +15,15 @@ const mobileHero = mobileHeroImage.src
 const mobileMedia = "(width < 640px)"
 const desktopMedia = "(width >= 640px)"
 
-export default async function WebappHero({ locale }: { locale: AppLocale }) {
+// mobileOnly renders just the phone image (the homepage shows the line field from sm up),
+// so wider screens neither preload nor download the desktop screenshot.
+export default async function WebappHero({
+  locale,
+  mobileOnly = false,
+}: {
+  locale: AppLocale
+  mobileOnly?: boolean
+}) {
   const { props: desktop } = getImageProps({
     src: brandAssetPath("/images/Avana Express Light.webp"),
     alt: "Avana Express homepage hero interface",
@@ -31,7 +39,7 @@ export default async function WebappHero({ locale }: { locale: AppLocale }) {
   // Only the AVIF is preloaded: browsers skip a preload whose type they can't decode,
   // so no browser downloads both mobile files.
   preload(mobileHeroAvif, { as: "image", type: "image/avif", fetchPriority: "high", media: mobileMedia })
-  preload(desktop.src, {
+  if (!mobileOnly) preload(desktop.src, {
     as: "image",
     imageSrcSet: desktop.srcSet,
     imageSizes: desktop.sizes,
@@ -55,7 +63,7 @@ export default async function WebappHero({ locale }: { locale: AppLocale }) {
           className="object-contain object-center"
         />
       </picture>
-      <picture className="hidden sm:block">
+      {!mobileOnly && <picture className="hidden sm:block">
         <source media={desktopMedia} srcSet={desktop.srcSet} sizes={desktop.sizes} />
         <img
           {...desktop}
@@ -64,7 +72,7 @@ export default async function WebappHero({ locale }: { locale: AppLocale }) {
           alt={desktop.alt}
           className="object-cover object-center"
         />
-      </picture>
+      </picture>}
     </div>
   ))
 }

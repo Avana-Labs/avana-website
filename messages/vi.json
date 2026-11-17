@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Được cung cấp bởi Aave v4",
-      "title": "Avana là thị trường cho vay DeFi được tối ưu hóa cho các pool thanh khoản AMM.",
-      "titleLine1": "Avana là thị trường cho vay DeFi",
-      "titleLine2": "được tối ưu hóa cho các pool thanh khoản AMM.",
+      "title": "Vay crypto, cổ phiếu và RWA thế chấp bằng vị thế thanh khoản AMM của bạn.",
+      "titleLine1": "Vay crypto, cổ phiếu và RWA",
+      "titleLine2": "thế chấp bằng vị thế thanh khoản AMM của bạn.",
+      "titleLine1Mobile": "Vay crypto và cổ phiếu",
+      "titleLine2Mobile": "thế chấp bằng vị thế thanh khoản của bạn.",
       "subtitle": "Vay crypto, hàng hóa, ngoại hối (FX) và tài sản thế giới thực (RWA) onchain bằng cách sử dụng vị thế thanh khoản AMM làm tài sản thế chấp.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Đọc đề xuất ARFC",
       "secondaryCta": "Mở mạng thử nghiệm"
-    },
-    "intro": {
-      "text": "<ink>Vay</ink> <strong>crypto, cổ phiếu, ngoại hối (FX) và tài sản thế giới thực (RWA)</strong> bằng cách dùng các vị thế thanh khoản trên <strong>Uniswap, Curve, Aerodrome, Balancer và các DEX khác</strong> làm tài sản thế chấp; với Aave V4, onchain và 24/7."
     },
     "features": {
       "eyebrow": "Các tính năng chính",

@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Powered by Aave v4",
-      "title": "Avana is the lending market built for AMM liquidity pools.",
-      "titleLine1": "Avana is the lending market",
-      "titleLine2": "built for AMM liquidity pools.",
+      "title": "Borrow crypto, stocks and RWAs against your AMM liquidity positions.",
+      "titleLine1": "Borrow crypto, stocks and RWAs",
+      "titleLine2": "against your AMM liquidity positions.",
+      "titleLine1Mobile": "Borrow crypto and stocks",
+      "titleLine2Mobile": "against your liquidity positions.",
       "subtitle": "Borrow crypto, commodities, FX, and real world assets onchain using your AMM liquidity positions as collateral.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Read the ARFC",
       "secondaryCta": "Launch Testnet"
-    },
-    "intro": {
-      "text": "<strong><ink>Borrow</ink> crypto, stocks, FX, and RWAs</strong> against liquidity positions from <strong>Uniswap, Curve, Aerodrome, Balancer, and more</strong>, powered by Aave V4, onchain and 24/7."
     },
     "trustedBy": {
       "caption": "Trusted by teams that ship high-quality Web3 products"

@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Angetrieben von Aave v4",
-      "title": "Avana ist der Lending-Markt, speziell entwickelt für AMM-Liquiditätspools.",
-      "titleLine1": "Avana ist der Lending-Markt,",
-      "titleLine2": "speziell entwickelt für AMM-Liquiditätspools.",
+      "title": "Leihen Sie Krypto, Aktien und RWAs gegen Ihre AMM-Liquiditätspositionen.",
+      "titleLine1": "Leihen Sie Krypto, Aktien und RWAs",
+      "titleLine2": "gegen Ihre AMM-Liquiditätspositionen.",
+      "titleLine1Mobile": "Leihen Sie Krypto und Aktien",
+      "titleLine2Mobile": "gegen Ihre Liquiditätspositionen.",
       "subtitle": "Leihen Sie Krypto, Rohstoffe, Devisen und Real-World-Assets onchain – mit Ihren AMM-Liquiditätspositionen als Kollateral.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "ARFC lesen",
       "secondaryCta": "Testnet öffnen"
-    },
-    "intro": {
-      "text": "<strong><ink>Leihen Sie</ink> sich Krypto, Aktien, Devisen (FX) und Real-World-Assets (RWA)</strong> gegen Liquiditätspositionen von <strong>Uniswap, Curve, Aerodrome, Balancer und weiteren DEXs</strong> – mit Aave V4, onchain und rund um die Uhr."
     },
     "features": {
       "eyebrow": "Hauptmerkmale",

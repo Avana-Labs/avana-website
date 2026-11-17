@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Працює на Aave v4",
-      "title": "Avana — це кредитний ринок, створений для пулів ліквідності AMM.",
-      "titleLine1": "Avana — це кредитний ринок,",
-      "titleLine2": "створений для пулів ліквідності AMM.",
+      "title": "Позичайте криптоактиви, акції та RWA під заставу ваших позицій ліквідності в AMM.",
+      "titleLine1": "Позичайте криптоактиви, акції та RWA",
+      "titleLine2": "під заставу ваших позицій ліквідності в AMM.",
+      "titleLine1Mobile": "Позичайте криптоактиви та акції",
+      "titleLine2Mobile": "під заставу ваших позицій ліквідності.",
       "subtitle": "Позичайте криптовалюту, сировинні активи, валюту (FX) та активи реального світу (RWA) ончейн під заставу позицій ліквідності AMM.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "Читати ARFC",
       "secondaryCta": "Відкрити тестову мережу"
-    },
-    "intro": {
-      "text": "<ink>Позичайте</ink> <strong>криптоактиви, акції, валюту (FX) та активи реального світу (RWA)</strong> під заставу позицій ліквідності в <strong>Uniswap, Curve, Aerodrome, Balancer та інших DEX</strong> — за підтримки Aave V4, ончейн і 24/7."
     },
     "features": {
       "eyebrow": "Ключові особливості",

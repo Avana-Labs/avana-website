@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Didukung oleh Aave v4",
-      "title": "Avana adalah pasar pinjaman DeFi yang dirancang untuk liquidity pool AMM.",
-      "titleLine1": "Avana adalah pasar pinjaman DeFi",
-      "titleLine2": "yang dirancang untuk liquidity pool AMM.",
+      "title": "Pinjam kripto, saham, dan RWA dengan jaminan posisi likuiditas AMM Anda.",
+      "titleLine1": "Pinjam kripto, saham, dan RWA",
+      "titleLine2": "dengan jaminan posisi likuiditas AMM Anda.",
+      "titleLine1Mobile": "Pinjam kripto dan saham",
+      "titleLine2Mobile": "dengan jaminan posisi likuiditas Anda.",
       "subtitle": "Pinjam kripto, komoditas, valas (FX), dan aset dunia nyata (RWA) onchain menggunakan posisi likuiditas AMM Anda sebagai agunan.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Baca Proposal ARFC",
       "secondaryCta": "Buka Testnet"
-    },
-    "intro": {
-      "text": "<ink>Pinjam</ink> <strong>aset kripto, saham, valuta asing (FX), dan aset dunia nyata (RWA)</strong> dengan menjaminkan posisi likuiditas dari <strong>Uniswap, Curve, Aerodrome, Balancer, dan DEX lainnya</strong>, didukung Aave V4, secara onchain dan 24/7."
     },
     "features": {
       "eyebrow": "Fitur Utama",

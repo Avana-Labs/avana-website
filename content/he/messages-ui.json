@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "מופעל על ידי Aave v4",
-      "title": "Avana היא זירת הלוואות מבוזרת, שפותחה במיוחד עבור מאגרי נזילות AMM.",
-      "titleLine1": "Avana היא זירת הלוואות מבוזרת,",
-      "titleLine2": "שפותחה במיוחד עבור מאגרי נזילות AMM.",
+      "title": "לוו קריפטו, מניות ו־RWA כנגד עמדות הנזילות שלך ב־AMM.",
+      "titleLine1": "לוו קריפטו, מניות ו־RWA",
+      "titleLine2": "כנגד עמדות הנזילות שלך ב־AMM.",
+      "titleLine1Mobile": "לוו קריפטו ומניות",
+      "titleLine2Mobile": "כנגד עמדות הנזילות שלך.",
       "subtitle": "לוו קריפטו, סחורות, מט\"ח (FX) ונכסי עולם אמיתי (RWA) ישירות על גבי הבלוקצ'יין, תוך שימוש בפוזיציות נזילות AMM כבטוחה.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "קראו את הצעת ה-ARFC",
       "secondaryCta": "פתיחת רשת הבדיקה"
-    },
-    "intro": {
-      "text": "<ink>לוו</ink> <strong>קריפטו, מניות, מט״ח ונכסים מהעולם האמיתי (RWA)</strong> כנגד עמדות נזילות ב־<strong>Uniswap, Curve, Aerodrome, Balancer ועוד</strong>, באמצעות Aave V4, על גבי הבלוקצ׳יין, 24/7."
     },
     "features": {
       "eyebrow": "תכונות מפתח",

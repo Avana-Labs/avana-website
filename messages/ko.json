@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4로 구동됨",
-      "title": "Avana는 AMM 유동성 풀을 위해 설계된 온체인 렌딩 마켓입니다.",
-      "titleLine1": "Avana는 AMM 유동성 풀을 위해 설계된",
-      "titleLine2": "온체인 렌딩 마켓입니다.",
+      "title": "암호화폐, 주식, RWA를 빌리세요 AMM 유동성 포지션을 담보로.",
+      "titleLine1": "암호화폐, 주식, RWA를 빌리세요",
+      "titleLine2": "AMM 유동성 포지션을 담보로.",
+      "titleLine1Mobile": "암호화폐와 주식을 빌리세요",
+      "titleLine2Mobile": "유동성 포지션을 담보로.",
       "subtitle": "AMM 유동성 포지션을 담보로 활용하여 온체인에서 암호화폐, 원자재, 외환(FX) 및 실물자산(RWA)을 대출받으세요.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "ARFC 제안서 읽기",
       "secondaryCta": "테스트넷 열기"
-    },
-    "intro": {
-      "text": "Aave V4를 기반으로 온체인에서 24시간 내내, <strong>Uniswap, Curve, Aerodrome, Balancer 등 DEX</strong>의 유동성 포지션을 담보로 <strong>암호화폐, 주식, FX, RWA</strong>를 <ink>빌리세요</ink>."
     },
     "features": {
       "eyebrow": "주요 특징",

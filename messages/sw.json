@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Iliyotiwa nguvu na Aave v4",
-      "title": "Avana ni soko la ukopeshaji la DeFi lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
-      "titleLine1": "Avana ni soko la ukopeshaji la DeFi",
-      "titleLine2": "lililoundwa mahususi kwa ajili ya mabwawa ya ukwasi ya AMM.",
+      "title": "Kopa crypto, hisa na RWA kwa dhamana ya nafasi zako za ukwasi za AMM.",
+      "titleLine1": "Kopa crypto, hisa na RWA",
+      "titleLine2": "kwa dhamana ya nafasi zako za ukwasi za AMM.",
+      "titleLine1Mobile": "Kopa crypto na hisa",
+      "titleLine2Mobile": "kwa dhamana ya nafasi zako za ukwasi.",
       "subtitle": "Kopa sarafu fiche, bidhaa, FX, na rasilimali za ulimwengu halisi (RWA) kwenye mnyororo ukitumia nafasi zako za ukwasi za AMM kama dhamana ya mkopo.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Soma Pendekezo la ARFC",
       "secondaryCta": "Fungua mtandao wa majaribio"
-    },
-    "intro": {
-      "text": "<ink>Kopa</ink> <strong>crypto, hisa, fedha za kigeni (FX) na mali za ulimwengu halisi (RWA)</strong> kwa kuweka dhamana nafasi za ukwasi kutoka <strong>Uniswap, Curve, Aerodrome, Balancer na DEX nyingine</strong>, kwa kutumia Aave V4, onchain na 24/7."
     },
     "features": {
       "eyebrow": "Vipengele Muhimu",

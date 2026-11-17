@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Aave v4により提供",
-      "title": "AvanaはAMM流動性プールに特化した分散型レンディング市場です。",
-      "titleLine1": "AvanaはAMM流動性プールに特化した",
-      "titleLine2": "分散型レンディング市場です。",
+      "title": "暗号資産、株式、RWAを借り入れ、AMMの流動性ポジションを担保に。",
+      "titleLine1": "暗号資産、株式、RWAを借り入れ",
+      "titleLine2": "AMMの流動性ポジションを担保に。",
+      "titleLine1Mobile": "暗号資産と株式を借り入れ",
+      "titleLine2Mobile": "流動性ポジションを担保に。",
       "subtitle": "AMM流動性ポジションを担保として活用し、暗号資産、コモディティ、為替（FX）、実世界資産（RWA）をオンチェーンで借り入れ。",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "ARFC提案を読む",
       "secondaryCta": "テストネットを開く"
-    },
-    "intro": {
-      "text": "オンチェーンで24時間365日、Aave V4を基盤に、<strong>Uniswap、Curve、Aerodrome、Balancerなどの流動性ポジション</strong>を担保として、<strong>暗号資産、株式、FX、RWA</strong>を<ink>借り入れられます</ink>。"
     },
     "features": {
       "eyebrow": "主な特徴",

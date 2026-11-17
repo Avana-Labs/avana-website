@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "Desenvolvido por Aave v4",
-      "title": "A Avana é o mercado de crédito criado para pools de liquidez AMM.",
-      "titleLine1": "A Avana é o mercado de crédito",
-      "titleLine2": "criado para pools de liquidez AMM.",
+      "title": "Peça emprestado cripto, ações e RWAs com suas posições de liquidez AMM como garantia.",
+      "titleLine1": "Peça emprestado cripto, ações e RWAs",
+      "titleLine2": "com suas posições de liquidez AMM como garantia.",
+      "titleLine1Mobile": "Peça emprestado cripto e ações",
+      "titleLine2Mobile": "com suas posições de liquidez como garantia.",
       "subtitle": "Pegue emprestado cripto, commodities, FX e ativos do mundo real onchain usando suas posições de liquidez AMM como colateral.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "Ler o ARFC",
       "secondaryCta": "Abrir a rede de testes"
-    },
-    "intro": {
-      "text": "<ink>Peça emprestado</ink> <strong>criptoativos, ações, moedas estrangeiras (FX) e ativos do mundo real (RWA)</strong> usando como garantia posições de liquidez da <strong>Uniswap, Curve, Aerodrome, Balancer e outras DEXs</strong>, com Aave V4, onchain e 24/7."
     },
     "features": {
       "eyebrow": "Principais Recursos",

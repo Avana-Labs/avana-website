@@ -248,9 +248,11 @@
   "home": {
     "hero": {
       "eyebrow": "ขับเคลื่อนโดย Aave v4",
-      "title": "Avana คือตลาดการกู้ยืมแบบ Onchain ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
-      "titleLine1": "Avana คือตลาดการกู้ยืมแบบ Onchain",
-      "titleLine2": "ที่สร้างขึ้นเฉพาะสำหรับ Liquidity Pool ของ AMM",
+      "title": "กู้ยืมคริปโท หุ้น และ RWA โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
+      "titleLine1": "กู้ยืมคริปโท หุ้น และ RWA",
+      "titleLine2": "โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
+      "titleLine1Mobile": "กู้ยืมคริปโทและหุ้น",
+      "titleLine2Mobile": "โดยใช้สถานะสภาพคล่องของคุณเป็นหลักประกัน",
       "subtitle": "กู้ยืมคริปโต, สินค้าโภคภัณฑ์, FX และสินทรัพย์ในโลกจริง (RWA) บนเชน โดยใช้สถานะสภาพคล่อง AMM ของคุณเป็นหลักประกัน",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -263,9 +265,6 @@
       },
       "primaryCta": "อ่านข้อเสนอ ARFC",
       "secondaryCta": "เปิดเครือข่ายทดสอบ"
-    },
-    "intro": {
-      "text": "<ink>กู้ยืม</ink><strong>คริปโท หุ้น เงินตราต่างประเทศ (FX) และสินทรัพย์ในโลกจริง (RWA)</strong> โดยใช้สถานะสภาพคล่องจาก <strong>Uniswap, Curve, Aerodrome, Balancer และ DEX อื่น ๆ</strong> เป็นหลักประกัน ผ่าน Aave V4 บนเชนตลอด 24/7"
     },
     "features": {
       "eyebrow": "คุณสมบัติหลัก",

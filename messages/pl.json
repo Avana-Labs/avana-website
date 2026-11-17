@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "Zasilany przez Aave v4",
-      "title": "Avana to rynek pożyczkowy, stworzony dla pul płynności AMM.",
-      "titleLine1": "Avana to rynek pożyczkowy,",
-      "titleLine2": "stworzony dla pul płynności AMM.",
+      "title": "Pożyczaj krypto, akcje i RWA pod zastaw swoich pozycji płynnościowych AMM.",
+      "titleLine1": "Pożyczaj krypto, akcje i RWA",
+      "titleLine2": "pod zastaw swoich pozycji płynnościowych AMM.",
+      "titleLine1Mobile": "Pożyczaj krypto i akcje",
+      "titleLine2Mobile": "pod zastaw swoich pozycji płynnościowych.",
       "subtitle": "Pożyczaj krypto, towary, waluty FX i aktywa świata rzeczywistego (RWA) onchain, używając pozycji płynności AMM jako zabezpieczenia.",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "Przeczytaj ARFC",
       "secondaryCta": "Otwórz sieć testową"
-    },
-    "intro": {
-      "text": "<ink>Pożyczaj</ink> <strong>krypto, akcje, waluty (FX) i aktywa ze świata rzeczywistego (RWA)</strong> pod zastaw pozycji płynnościowych z <strong>Uniswap, Curve, Aerodrome, Balancer i innych DEX-ów</strong> — z Aave V4, onchain i 24/7."
     },
     "features": {
       "eyebrow": "Kluczowe funkcje",

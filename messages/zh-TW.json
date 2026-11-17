@@ -262,9 +262,11 @@
   "home": {
     "hero": {
       "eyebrow": "由Aave v4提供支持",
-      "title": "Avana 是專為 AMM 流動性池打造的鏈上借貸市場。",
-      "titleLine1": "Avana 是專為 AMM 流動性池",
-      "titleLine2": "打造的鏈上借貸市場。",
+      "title": "借入加密資產、股票和 RWA，以您的 AMM 流動性部位作抵押。",
+      "titleLine1": "借入加密資產、股票和 RWA",
+      "titleLine2": "以您的 AMM 流動性部位作抵押。",
+      "titleLine1Mobile": "借入加密資產和股票",
+      "titleLine2Mobile": "以您的流動性部位作抵押。",
       "subtitle": "以您的 AMM 流動性部位為抵押品，在鏈上借入加密資產、大宗商品、外匯及現實世界資產（RWA）。",
       "subtitleMobileLines": {
         "0": "Borrow crypto, commodities, FX, and real world assets",
@@ -277,9 +279,6 @@
       },
       "primaryCta": "閱讀 ARFC 提案",
       "secondaryCta": "啟動測試網"
-    },
-    "intro": {
-      "text": "由 Aave V4 提供支援，全天候 24/7 在鏈上運作；以 <strong>Uniswap、Curve、Aerodrome、Balancer 等 DEX</strong> 的流動性部位為抵押，<ink>借入</ink> <strong>加密資產、股票、外匯（FX）和現實世界資產（RWA）</strong>。"
     },
     "features": {
       "eyebrow": "主要特點",
