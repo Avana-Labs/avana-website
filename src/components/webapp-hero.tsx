@@ -5,14 +5,16 @@ import { withMarketingI18n } from "@/lib/content-i18n/with-marketing-i18n"
 import { brandAssetPath } from "@/lib/brand-assets"
 
 const emptyHero = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-// Already a 1086px WebP; serving it directly skips the optimizer's per-deploy cold resize.
+// Already 1086px wide; serving them directly skips the optimizer's per-deploy cold resize.
+// The AVIF is about half the WebP's size; browsers without AVIF fall back to the WebP.
+const mobileHeroAvif = "/images/avana-phone-hero.avif"
 const mobileHero = "/images/avana-phone-hero.webp"
 const mobileMedia = "(width < 640px)"
 const desktopMedia = "(width >= 640px)"
 
 export default async function WebappHero({ locale }: { locale: AppLocale }) {
   const { props: desktop } = getImageProps({
-    src: brandAssetPath("/images/Avana Express Light.png"),
+    src: brandAssetPath("/images/Avana Express Light.webp"),
     alt: "Avana Express homepage hero interface",
     fill: true,
     loading: "eager",
@@ -23,7 +25,9 @@ export default async function WebappHero({ locale }: { locale: AppLocale }) {
 
   // <picture> sources aren't preloaded by Next; media-gated preloads start the
   // matching hero from <head> without fetching the other viewport's image.
-  preload(mobileHero, { as: "image", type: "image/webp", fetchPriority: "high", media: mobileMedia })
+  // Only the AVIF is preloaded: browsers skip a preload whose type they can't decode,
+  // so no browser downloads both mobile files.
+  preload(mobileHeroAvif, { as: "image", type: "image/avif", fetchPriority: "high", media: mobileMedia })
   preload(desktop.src, {
     as: "image",
     imageSrcSet: desktop.srcSet,
@@ -37,6 +41,7 @@ export default async function WebappHero({ locale }: { locale: AppLocale }) {
       {/* Separate slots prevent a previous viewport's image lingering during decode.
           Media-gated sources keep the hidden slot from downloading an image. */}
       <picture className="sm:hidden">
+        <source media={mobileMedia} srcSet={mobileHeroAvif} type="image/avif" />
         <source media={mobileMedia} srcSet={mobileHero} type="image/webp" />
         <img
           {...desktop}

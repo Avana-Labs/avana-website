@@ -72,7 +72,7 @@ export default async function AboutPage({ params }: LocaleParamsProps) {
 
           <div className="relative mt-10 aspect-[1630/965] w-full overflow-hidden lg:mt-14">
             <Image
-              src="/avana-pool-hero.png"
+              src="/avana-pool-hero.webp"
               alt="Avana about hero image"
               fill
               priority

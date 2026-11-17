@@ -125,6 +125,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [58, 62, 75, 85],
+    // Optimized images are cached for a year instead of revalidating on every view.
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "https",
