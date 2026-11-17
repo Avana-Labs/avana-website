@@ -163,7 +163,7 @@ export default async function RepayLoansPage({ params }: LocaleParamsProps) {
             Avana takes no fee on interest and the repay call charges no fee. Avana Labs charges an app fee in its own app, outside the contracts; calling the contracts directly does not pay it.
           </p>
           <div className="doc-topic type-doc-body">
-            Example values: 5,000 USDC borrowed at 6.00% is ⌈5,000,000,000 × (1 + 0.06 × 30 / 365)⌉ = 5,024,657,535 base units (5,024.657535 USDC) after 30 days. 8,000 GHO at 5.00% is 8,032.876712 GHO after 30 days.
+            Example values: 13,000 USDC borrowed at 6.00% is ⌈13,000,000,000 × (1 + 0.06 × 30 / 365)⌉ = 13,064,109,590 base units (13,064.109590 USDC) after 30 days. 8,000 GHO at 5.00% is 8,032.876712 GHO after 30 days.
           </div>
         </section>
 
@@ -252,24 +252,24 @@ export default async function RepayLoansPage({ params }: LocaleParamsProps) {
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Examples</h2>
           <div className="doc-topic type-doc-body mb-4">
-            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 on Base, 30 days after she borrowed 5,000 USDC at 6.00%: live debt 5,024,657,535 base units, HF 6,240 / (5,024.657535 × 0.9999) = 1.2420.
+            Example values; each market&apos;s parameters are set at listing. Carol&apos;s account in market 3 on Ethereum, 30 days after she borrowed 13,000 USDC at 6.00%: live debt ⌈13,000,000,000 × (1 + 0.06 × 30 / 365)⌉ = 13,064,109,590 base units, HF 16,000 / (13,064.109590 × 0.9999) = 1.2249.
           </div>
           <h3 className="mb-2 type-doc-subsection-title">Repay all</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>The app calls quoteRepayAll(Carol, 3, r_USDC, now + 600): ⌈5,024,657,535 × (1 + 0.06 × 600 / 31,536,000) × 1.001⌉ = 5,029,687,935.</li>
-            <li>Carol approves the AaveAdapter for exactly 5,029,687,935 USDC base units and calls repay(Carol, 3, r_USDC, 5,029,687,935, true, now + 600). No pause state, breaker, freeze, price or sequencer gate is read.</li>
-            <li>The call is included 4 seconds (2 Base blocks) later, when the live debt is 5,024,657,573.</li>
-            <li>The Adapter pulls 5,029,687,935 into Carol&apos;s proxy; Aave takes 5,024,657,573; 5,030,362 is returned to Carol in the same call.</li>
-            <li>The account has no debt left, so Collateralization marks it debt-free. Event Repaid(Carol, Carol, 3, r_USDC, 5,024,657,573, 0, true). Carol&apos;s allowance to the Adapter is 0.</li>
+            <li>The app calls quoteRepayAll(Carol, 3, r_USDC, now + 600): ⌈13,064,109,590 × (1 + 0.06 × 600 / 31,536,000) × 1.001⌉ = 13,077,188,628.</li>
+            <li>Carol approves the AaveAdapter for exactly 13,077,188,628 USDC base units and calls repay(Carol, 3, r_USDC, 13,077,188,628, true, now + 600). No pause state, breaker, freeze, price or sequencer gate is read.</li>
+            <li>The call is included 12 seconds (1 block) later, when the live debt is 13,064,109,889.</li>
+            <li>The Adapter pulls 13,077,188,628 into Carol&apos;s proxy; Aave takes 13,064,109,889; 13,078,739 is returned to Carol in the same call.</li>
+            <li>The account has no debt left, so Collateralization marks it debt-free. Event Repaid(Carol, Carol, 3, r_USDC, 13,064,109,889, 0, true). Carol&apos;s allowance to the Adapter is 0.</li>
             <li>Carol&apos;s $20,000 charge stays booked until she withdraws; her NFTs can now leave through a debt-free withdrawal.</li>
           </ul>
           <h3 className="mb-2 type-doc-subsection-title">Variants</h3>
           <ul className="list-disc space-y-2 ps-5 type-doc-body mb-4">
-            <li>A partial repay of 2,000 USDC leaves 3,024,657,535; any remainder is accepted because there is no minimum debt.</li>
-            <li>A repay-all with a cap of 5,020,000,000 reverts with RepayExceedsMax(5,024,657,535, 5,020,000,000) before any transfer.</li>
+            <li>A partial repay of 2,000 USDC leaves 11,064,109,590; any remainder is accepted because there is no minimum debt.</li>
+            <li>A repay-all with a cap of 13,060,000,000 reverts with RepayExceedsMax(13,064,109,590, 13,060,000,000) before any transfer.</li>
             <li>A repay-all that leaves debt in the reserve reverts with DebtRemaining.</li>
-            <li>While the Base sequencer is down, Carol can force the same repay in from L1 and it succeeds.</li>
-            <li>On Ethereum, the same quote included 24 seconds (2 blocks) later finds a debt of 5,024,657,765 and refunds 5,030,170.</li>
+            <li>On a Base market, the same repay forced in from L1 succeeds while the sequencer is down.</li>
+            <li>The same quote included 24 seconds (2 blocks) later finds a debt of 13,064,110,187 and refunds 13,078,441.</li>
             <li>A repay after a liquidation already cleared the debt returns 0 with no transfer, approval or event.</li>
           </ul>
           <p className="type-doc-body">

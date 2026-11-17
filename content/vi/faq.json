@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Avana là gì?",
-          "a": "Avana cho phép nhà cung cấp thanh khoản sử dụng các vị thế AMM làm tài sản thế chấp trên Aave V4. Người vay cầm cố một vị thế Uniswap v3 trên Ethereum hoặc một vị thế Aerodrome Slipstream trên Base. LPVault của Avana nắm giữ vị thế, và một vault token tương ứng được cung cấp làm tài sản thế chấp trên một Avana CDP Spoke. Sau đó, người vay vay GHO, hoặc một tài sản nợ khác mà Spoke cho vay, trong khi thanh khoản vẫn nằm trong pool.\n\nAvana ra mắt trên Ethereum và Base, với một Avana Stable LP Hub trên mỗi chuỗi. Các Hub và Spoke là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, thuộc sở hữu và được cấu hình bởi Aave DAO. Các hợp đồng của chính Avana xử lý lưu ký, định giá, các hành động của người vay và thanh lý."
+          "a": "Avana cho phép nhà cung cấp thanh khoản sử dụng các vị thế AMM làm tài sản thế chấp trên Aave V4. Người vay cầm cố một vị thế Uniswap v3 hoặc Uniswap v4 trên Ethereum hoặc một vị thế Aerodrome Slipstream trên Base. LPVault của Avana nắm giữ vị thế, và một vault token tương ứng được cung cấp làm tài sản thế chấp trên một Avana CDP Spoke. Sau đó, người vay vay một tài sản nợ mà Spoke cho vay, chẳng hạn GHO hoặc USDC, trong khi thanh khoản vẫn nằm trong pool.\n\nAvana ra mắt trên Ethereum và Base, với một Avana Hub duy nhất trên mỗi chuỗi. Các Hub và Spoke là các hợp đồng Aave V4 tiêu chuẩn, không chỉnh sửa, thuộc sở hữu và được cấu hình bởi Aave DAO. Các hợp đồng của chính Avana xử lý lưu ký, định giá, các hành động của người vay và thanh lý."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Tại sao Avana sử dụng Hub và Spoke của Aave V4?",
-          "a": "Aave V4 tách thanh khoản dùng chung (Hub) khỏi các thiết lập rủi ro riêng của từng thị trường (Spoke). Mỗi chuỗi có một Avana Stable LP Hub. Aave DAO cung cấp cho nó một hạn mức tín dụng GHO có giới hạn qua một Lend Spoke chỉ cung cấp, và chỉ các CDP Spoke của Avana mới có thể rút từ đó.\n\nCó một CDP Spoke cho mỗi chuỗi, Hub, giao thức AMM và tầng rủi ro. Khi ra mắt, đó là \"Uniswap v3 Stable\" trên Ethereum và \"Aerodrome Slipstream Stable\" trên Base. Correlated LP Hub và Volatile LP Hub được thiết kế cho giai đoạn sau. Avana không fork hay chỉnh sửa Aave V4."
+          "a": "Aave V4 tách thanh khoản dùng chung (Hub) khỏi các thiết lập rủi ro riêng của từng thị trường (Spoke). Mỗi chuỗi có một Avana Hub. Người cho vay và nguồn cung khởi động của Aave DAO cấp vốn cho nó qua một Lend Spoke chỉ cung cấp, và chỉ các CDP Spoke của Avana mới có thể rút từ đó, trong phạm vi các hạn mức tín dụng mà Aave DAO phê duyệt.\n\nCó một CDP Spoke cho mỗi chuỗi, giao thức AMM và tầng rủi ro, và mỗi Spoke tự đặt các tham số rủi ro của mình. Trên Ethereum, các Spoke Uniswap v3 và Uniswap v4 bao gồm các pool Stable, Correlated, Blue-chip và Gov/DeFi; trên Base, các Spoke Aerodrome Slipstream bao gồm các pool Blue-chip, Gov/DeFi và Stocks. Avana không fork hay chỉnh sửa Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Khả năng vay được tính toán như thế nào?",
-          "a": "Khả năng vay = giá trị vị thế LP × hệ số tài sản thế chấp LP, và hệ số tài sản thế chấp LP = hệ số tài sản thế chấp thấp nhất của token × hệ số rủi ro pool. Khả năng vay cũng phụ thuộc vào khoản nợ hiện có, các giới hạn, thanh khoản khả dụng của hạn mức tín dụng và các phép kiểm tra oracle.\n\nGiá trị ví dụ: một vị thế Slipstream USDC/USDT trị giá $20,000 với hệ số tài sản thế chấp 31.20% cho ra $6,240 tài sản thế chấp có trọng số. Lens khuyến nghị vay đến hệ số sức khỏe 1.10 (5,673.29 USDC trong trường hợp này) và hiển thị mức tối đa ở 1.00 (6,209.56 USDC)."
+          "a": "Khả năng vay = giá trị vị thế LP × hệ số tài sản thế chấp LP, và hệ số tài sản thế chấp LP = hệ số tài sản thế chấp thấp nhất của token × hệ số rủi ro pool. Khả năng vay cũng phụ thuộc vào khoản nợ hiện có, các giới hạn, thanh khoản khả dụng của hạn mức tín dụng và các phép kiểm tra oracle.\n\nGiá trị ví dụ: một vị thế Uniswap v3 USDC/USDT trị giá $20,000 với hệ số tài sản thế chấp 80.00% cho ra $16,000 tài sản thế chấp có trọng số. Lens khuyến nghị vay đến hệ số sức khỏe 1.10 (14,546.91 USDC trong trường hợp này) và hiển thị mức tối đa ở 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Tại sao khả năng vay lại thấp hơn giá trị LP của tôi?",
-          "a": "Hệ số tài sản thế chấp chừa chỗ cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Hệ số rủi ro pool bị giới hạn ở 90%, nên với hai token ở mức 78%, tỷ lệ cho vay trên giá trị ban đầu tối đa khoảng 63.8%.\n\nKhoảng cách giữa giá trị và khả năng vay khác nhau giữa các thị trường vì mỗi thị trường có hệ số rủi ro pool riêng."
+          "a": "Hệ số tài sản thế chấp chừa chỗ cho biến động giá, tổn thất tạm thời, thay đổi khoảng giá và chi phí thanh lý. Hệ số rủi ro pool tối đa là 90%. Với USDC/USDT, hệ số token 90% và hệ số rủi ro pool 88.89% cho ra hệ số tài sản thế chấp 80%, nên tỷ lệ cho vay trên giá trị ban đầu ở hệ số sức khỏe 1.10 của Lens tối đa khoảng 72.7%.\n\nKhoảng cách giữa giá trị và khả năng vay khác nhau giữa các thị trường vì mỗi thị trường có hệ số rủi ro pool riêng."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Ai cung cấp thanh khoản mà người vay Avana sử dụng?",
-          "a": "Khi ra mắt, ngân quỹ Aave DAO cung cấp một hạn mức tín dụng GHO có giới hạn cho Avana Stable LP Hub của mỗi chuỗi qua một Lend Spoke chỉ cung cấp. Tiền gửi công khai chưa mở khi ra mắt.\n\nGiới hạn rút của mỗi CDP Spoke đối với một tài sản do Aave DAO thiết lập, và tổng các giới hạn rút tối đa bằng hạn mức tín dụng."
+          "a": "Bên cho vay và Aave DAO. Cho vay công khai mở ngay từ ngày đầu: bất kỳ ai cũng có thể cung cấp một tài sản được niêm yết qua Lend Spoke chỉ cung cấp của Avana Hub trên mỗi chuỗi, bên cạnh nguồn cung khởi động của Aave DAO.\n\nAave DAO phê duyệt một hạn mức tín dụng cho mỗi tài sản có thể vay, và tổng các giới hạn rút của các CDP Spoke đối với tài sản đó tối đa bằng hạn mức này."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Hệ số sức khỏe là gì?",
-          "a": "Hệ số sức khỏe = giá trị tài sản thế chấp × hệ số tài sản thế chấp ÷ giá trị khoản nợ, do Aave tính cho từng tài khoản, tức là theo từng thị trường. Dưới 1, tài khoản có thể bị thanh lý.\n\nGiá trị ví dụ: $6,240 tài sản thế chấp có trọng số so với 4,999.50 USDC nợ cho ra hệ số sức khỏe 1.2481."
+          "a": "Hệ số sức khỏe = giá trị tài sản thế chấp × hệ số tài sản thế chấp ÷ giá trị khoản nợ, do Aave tính cho từng tài khoản, tức là theo từng thị trường. Dưới 1, tài khoản có thể bị thanh lý.\n\nGiá trị ví dụ: $16,000 tài sản thế chấp có trọng số so với 12,998.70 USDC nợ cho ra hệ số sức khỏe 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Tôi có thể mượn GHO qua Avana không?",
-          "a": "Có. GHO là tài sản nợ đầu tiên trên mọi CDP Spoke, được cấp vốn bởi hạn mức tín dụng có giới hạn của Aave DAO cho Avana Stable LP Hub. Nợ GHO được định giá cố định $1.\n\nNợ GHO tích lũy lãi theo lãi suất GHO của Hub cộng phần bù rủi ro của bạn. Toàn bộ khoản lãi đó thuộc về Aave DAO."
+          "a": "Có. GHO là một tài sản nợ trên mọi CDP Spoke, được định giá cố định $1, và được vay từ Avana Hub của mỗi chuỗi trong phạm vi hạn mức tín dụng mà Aave DAO phê duyệt.\n\nNợ GHO tích lũy lãi theo lãi suất GHO của Hub cộng phần bù rủi ro của bạn. Khoản lãi thuộc về các bên cung cấp GHO cho Hub, sau phí thanh khoản (nếu có) do Aave DAO đặt; Avana không nhận phần nào."
         },
         {
           "id": "can-gho-be-lp-collateral",

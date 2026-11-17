@@ -398,6 +398,54 @@
   min-width: 9rem;
 }
 
+/* Scroll hint for wide docs tables: a thin visible scrollbar, and a fade on each edge that has
+   more table beyond it. DocTableScrollHints sets data-scroll-left / data-scroll-right only while
+   the table overflows, so tables that fit are unchanged. The bottom strip stays unmasked so the
+   scrollbar is never faded. */
+div:has(> table.type-doc-table) {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+div:has(> table.type-doc-table)::-webkit-scrollbar {
+  height: 6px;
+}
+
+div:has(> table.type-doc-table)::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: #cbd5e1;
+}
+
+div:has(> table.type-doc-table)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+div:has(> table.type-doc-table):is([data-scroll-left], [data-scroll-right]) {
+  --doc-table-fade: 3rem;
+  --doc-table-fade-left: 0px;
+  --doc-table-fade-right: 0px;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, #000 var(--doc-table-fade-left), #000 calc(100% - var(--doc-table-fade-right)), transparent),
+    linear-gradient(#000, #000);
+  mask-image:
+    linear-gradient(to right, transparent, #000 var(--doc-table-fade-left), #000 calc(100% - var(--doc-table-fade-right)), transparent),
+    linear-gradient(#000, #000);
+  -webkit-mask-size: 100% calc(100% - 8px), 100% 8px;
+  mask-size: 100% calc(100% - 8px), 100% 8px;
+  -webkit-mask-position: top, bottom;
+  mask-position: top, bottom;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+div:has(> table.type-doc-table)[data-scroll-left] {
+  --doc-table-fade-left: var(--doc-table-fade);
+}
+
+div:has(> table.type-doc-table)[data-scroll-right] {
+  --doc-table-fade-right: var(--doc-table-fade);
+}
+
 /* Reference pages: the scroll wrapper and the widest prose cells. */
 .reference-table-scroll {
   max-width: 100%;

@@ -85,37 +85,37 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
         <section id="worked-numbers" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Numbers</h2>
           <p className="mb-4 type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Aerodrome Slipstream market on Base. One whole vault token is worth $2.00, CF_LP is 3,120 bps, USDC is priced at $0.9999, and there is no hard floor.
+            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Uniswap v3 market on Ethereum. One whole vault token is worth $2.00, CF_LP is 8,000 bps, USDC is priced at $0.9999, and there is no hard floor.
           </p>
           <h3 className="mb-2 type-doc-subsection-title">Borrow</h3>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Step</th><th className="text-left px-4 py-2 type-doc-subsection-title">Result</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Carol pledges $20,000 of collateral</td><td className="px-4 py-2">CF-weighted collateral $6,240</td></tr>
-                <tr><td className="px-4 py-2">Lens borrow preview</td><td className="px-4 py-2">Recommended 5,673.29 USDC (HF 1.10); maximum 6,209.56 USDC (HF 1.00)</td></tr>
-                <tr><td className="px-4 py-2">Carol borrows 5,000 USDC with a minimum health factor of 1.20</td><td className="px-4 py-2">6,240 / 4,999.50 = 1.2481; accepted</td></tr>
-                <tr><td className="px-4 py-2">A borrow of 5,700 USDC instead</td><td className="px-4 py-2">HF 1.0948, below her 1.20; reverts with HealthFactorTooLow</td></tr>
+                <tr><td className="px-4 py-2">Carol pledges $20,000 of collateral</td><td className="px-4 py-2">CF-weighted collateral $16,000</td></tr>
+                <tr><td className="px-4 py-2">Lens borrow preview</td><td className="px-4 py-2">Recommended 14,546.91 USDC (HF 1.10); maximum 15,921.97 USDC (HF 1.00)</td></tr>
+                <tr><td className="px-4 py-2">Carol borrows 13,000 USDC with a minimum health factor of 1.20</td><td className="px-4 py-2">16,000 / 12,998.70 = 1.2309; accepted</td></tr>
+                <tr><td className="px-4 py-2">A borrow of 14,000 USDC instead</td><td className="px-4 py-2">HF 1.1430, below her 1.20; reverts with HealthFactorTooLow</td></tr>
               </tbody>
             </table>
           </div>
           <h3 className="mt-6 mb-2 type-doc-subsection-title">Withdraw</h3>
           <p className="mb-4 type-doc-body">
-            Carol adds a second position of $5,000. Her account holds $25,000 of collateral, $7,800 CF-weighted, against 5,000 USDC of debt, a health factor of 1.5602.
+            Carol adds a second position of $5,000. Her account holds $25,000 of collateral, $20,000 CF-weighted, against 13,000 USDC of debt, a health factor of 1.5386.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Action</th><th className="text-left px-4 py-2 type-doc-subsection-title">Result</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Withdraw the $5,000 position with a minimum of 1.20</td><td className="px-4 py-2">HF 1.2481; the position and its fees return to Carol</td></tr>
-                <tr><td className="px-4 py-2">Withdraw the $20,000 position instead</td><td className="px-4 py-2">HF would be 0.3120; Aave reverts with HealthFactorBelowThreshold</td></tr>
+                <tr><td className="px-4 py-2">Withdraw the $5,000 position with a minimum of 1.20</td><td className="px-4 py-2">HF 1.2309; the position and its fees return to Carol</td></tr>
+                <tr><td className="px-4 py-2">Withdraw the $20,000 position instead</td><td className="px-4 py-2">HF would be 0.3077; Aave reverts with HealthFactorBelowThreshold</td></tr>
                 <tr><td className="px-4 py-2">Repay all and withdraw in one call</td><td className="px-4 py-2">Debt-free exit; reads no pause state, breaker, freeze, price or sequencer gate</td></tr>
               </tbody>
             </table>
           </div>
           <h3 className="mt-6 mb-2 type-doc-subsection-title">Partial removal</h3>
           <p className="mb-4 type-doc-body">
-            From the same two-position account (HF 1.5602), Carol removes 2,000 whole tokens (about 2,000 USDC and 2,000 USDT) from her first position and keeps it pledged. The record falls to 8,000,000,000 units, collateral falls to $21,000 and CF-weighted collateral to $6,552, so the health factor is 6,552 / 4,999.50 = 1.3105, above her 1.20 minimum. The remaining record must still be worth at least the $10 minimum pledge.
+            From the same two-position account (HF 1.5386), Carol removes 2,000 whole tokens (about 2,000 USDC and 2,000 USDT) from her first position and keeps it pledged. The record falls to 8,000,000,000 units, collateral falls to $21,000 and CF-weighted collateral to $16,800, so the health factor is 16,800 / 12,998.70 = 1.2924, above her 1.20 minimum. The remaining record must still be worth at least the $10 minimum pledge.
           </p>
         </section>
 
@@ -131,7 +131,7 @@ export default async function HealthFactorPage({ params }: LocaleParamsProps) {
             <li>The units it adds are rescue units. Aave counts them in full for health and liquidation, but Avana values them at zero when it checks a new borrow, a withdrawal with debt or a partial removal with debt, so they never support new debt.</li>
           </ul>
           <p className="mt-4 type-doc-body">
-            Example: an account at health factor 1.2000 with $10,000 of debt holds $1,000 of rescue units at a 3,120 bps collateral factor. Excluding them removes $312 of CF-weighted collateral, so the health factor Avana checks for new debt is 1.1688.
+            Example: an account at health factor 1.2000 with $10,000 of debt holds $1,000 of rescue units at an 8,000 bps collateral factor. Excluding them removes $800 of CF-weighted collateral, so the health factor Avana checks for new debt is 1.1200.
           </p>
         </section>
 

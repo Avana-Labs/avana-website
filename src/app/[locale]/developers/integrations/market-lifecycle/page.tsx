@@ -187,19 +187,19 @@ export default async function MarketLifecyclePage({ params }: LocaleParamsProps)
         <section id="example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Example: Market 3</h2>
           <p className="mb-4 type-doc-body">
-            Example values; each market&apos;s parameters are set at listing. The Avana Base Hub has no CDP Spoke yet. Market 3 is the USDC/USDT Slipstream pool with tick spacing 1 and the exact range fixed in the listing package, with a collateral factor of 31.2%. GHO is the first debt reserve, with a GHO Coverage Spoke funded to 24,000 GHO. Base blocks are 2 seconds.
+            Example values; each market&apos;s parameters are set at listing. The Avana Ethereum Hub has no CDP Spoke yet. Market 3 is the USDC/USDT Uniswap v3 pool with fee tier 0.01% and the exact range fixed in the listing package, with a collateral factor of 80%. GHO is the first debt reserve, with a GHO Coverage Spoke funded to 24,000 GHO. Ethereum blocks are 12 seconds.
           </p>
           <ol className="list-decimal space-y-2 ps-5 type-doc-body">
-            <li>Operators deploy market 3&apos;s LPOracle, which seeds a Live price of $2.00 per whole vault token, and raise the pool&apos;s observation buffer to 901.</li>
+            <li>Operators deploy market 3&apos;s LPOracle, which seeds a Live price of $2.00 per whole vault token, and raise the pool&apos;s observation buffer to 151.</li>
             <li>Day 0: the governance multisig schedules one batch at the normal delay of 432,000 seconds with the Spoke registration, liquidation expectations (1.10 and 200 bps), the GHO debt reserve, the vault-token deployment, the market listing and its parameters with a $10 minimum pledge. The calldata is public for the review.</li>
-            <li>During the delay, the Aave DAO&apos;s Base executor runs the listing payload: the &quot;Aerodrome Slipstream Stable&quot; Spoke, the GHO debt reserve, the vault-token reserve and the funded GHO Coverage Spoke.</li>
+            <li>During the delay, the Aave DAO&apos;s Ethereum executor runs the listing payload: the &quot;Uniswap v3 Stable&quot; Spoke, the GHO debt reserve, the vault-token reserve and the funded GHO Coverage Spoke.</li>
             <li>Day 5: anyone executes the batch. The coverage check passes for a 120,000 GHO draw cap at a 20% coverage ratio against 24,000 GHO. The vault token deploys with 6 decimals and market 3 is Registered; a pledge still reverts.</li>
             <li>Operators poke the LPOracle (Live) and run the live-configuration check; keepers watch market 3 in observe-only mode.</li>
             <li>The multisig schedules <code className="type-doc-inline-code">activateMarket(3)</code> at the short delay of 43,200 seconds; anyone executes it on day 5.5 and every match check passes.</li>
-            <li>Carol pledges a $20,000 Slipstream position: record 1 of 16.</li>
-            <li>A second debt reserve, USDC, is enabled at the normal delay with a USDC Coverage Spoke funded to 50,000 USDC. A 250,000 USDC draw cap passes; 300,000 would revert. Carol borrows 5,000 USDC; her health factor is 20,000 × 0.312 / 5,000 = 1.248.</li>
+            <li>Carol pledges a $20,000 Uniswap v3 position: record 1 of 16.</li>
+            <li>A second debt reserve, USDC, is enabled at the normal delay with a USDC Coverage Spoke funded to 50,000 USDC. A 250,000 USDC draw cap passes; 300,000 would revert. Carol borrows 13,000 USDC; her health factor is 20,000 × 0.80 / 13,000 = 1.2308.</li>
             <li>Offboarding: the multisig schedules <code className="type-doc-inline-code">setMarketOffboarding(3)</code> at the short delay and the Aave Protocol Guardian freezes the reserve. New pledges and borrows revert with <code className="type-doc-inline-code">MarketOffboarding</code>; the app shows the notice end, 432,000 seconds later.</li>
-            <li>Wind-down: after the notice, anyone steps the ramp once a day from 31.2% toward 15.6%. On day 11 the threshold is 25.48% and Carol&apos;s health factor 1.0192; on day 12 it would be 24.96% and 0.9984. She repays her 5,000 USDC on day 11 and withdraws her position debt-free.</li>
+            <li>Wind-down: after the notice, anyone steps the ramp once a day from 80% toward 40%. On day 11 the threshold is 80% − ⌊40% × 11 / 30⌋ = 65.34% and Carol&apos;s health factor 1.0052; on day 12 it would be 64.00% and 0.9846. She repays her 13,000 USDC on day 11 and withdraws her position debt-free.</li>
             <li>Closure: while any account owes debt, <code className="type-doc-inline-code">closeMarket(3)</code> reverts. Once every account has repaid or been liquidated, anyone calls it. Debt-free positions left in market 3 stay withdrawable with no price read.</li>
             <li>Relisting: market 3 never returns to Active. If the pool must come back, a new CDP Spoke is registered and the same pool and range are listed on it through the full five-day review, giving a new vault token and market ID. Carol pledges again into a new proxy.</li>
           </ol>

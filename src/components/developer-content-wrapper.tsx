@@ -1,6 +1,7 @@
 import type React from "react"
 import dynamic from "next/dynamic"
 import { DocSectionReveal } from "./doc-section-reveal"
+import { DocTableScrollHints } from "./doc-table-scroll-hints"
 
 const DeferredPageNavigation = dynamic(
   () => import("./page-navigation").then((module) => module.PageNavigation),
@@ -14,6 +15,7 @@ export function DeveloperContentWrapper({ children }: { children: React.ReactNod
     <div className="developer-content pb-20 lg:pb-24" data-developer-doc-shell>
       {children}
       <DocSectionReveal />
+      <DocTableScrollHints />
       <div data-export-skip>
         <DeferredPageNavigation />
       </div>

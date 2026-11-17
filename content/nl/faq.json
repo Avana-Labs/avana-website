@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Wat is Avana?",
-          "a": "Met Avana kunnen liquiditeitsverschaffers AMM-posities als onderpand gebruiken op Aave V4. Een lener verpandt een Uniswap v3-positie op Ethereum of een Aerodrome Slipstream-positie op Base. De LPVault van Avana houdt de positie aan, en een bijbehorend vault token wordt als onderpand geleverd op een Avana CDP Spoke. Daarna leent de lener GHO, of een ander schuldasset dat de Spoke uitleent, terwijl de liquiditeit in de pool blijft.\n\nAvana wordt gelanceerd op Ethereum en Base, met een Avana Stable LP Hub op elke chain. De Hubs en Spokes zijn standaard, ongewijzigde Aave V4-contracten die eigendom zijn van en geconfigureerd worden door de Aave DAO. De eigen contracten van Avana verzorgen bewaring, waardering, leneracties en liquidatie."
+          "a": "Met Avana kunnen liquiditeitsverschaffers AMM-posities als onderpand gebruiken op Aave V4. Een lener verpandt een Uniswap v3- of Uniswap v4-positie op Ethereum of een Aerodrome Slipstream-positie op Base. De LPVault van Avana houdt de positie aan, en een bijbehorend vault token wordt als onderpand geleverd op een Avana CDP Spoke. Daarna leent de lener een schuldasset dat de Spoke uitleent, zoals GHO of USDC, terwijl de liquiditeit in de pool blijft.\n\nAvana wordt gelanceerd op Ethereum en Base, met één Avana Hub op elke chain. De Hubs en Spokes zijn standaard, ongewijzigde Aave V4-contracten die eigendom zijn van en geconfigureerd worden door de Aave DAO. De eigen contracten van Avana verzorgen bewaring, waardering, leneracties en liquidatie."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Waarom gebruikt Avana Aave V4 Hubs en Spokes?",
-          "a": "Aave V4 scheidt gedeelde liquiditeit (Hubs) van marktspecifieke risico-instellingen (Spokes). Elke chain heeft een Avana Stable LP Hub. De Aave DAO levert er een begrensde GHO-kredietlijn aan via een supply-only Lend Spoke, en alleen de CDP Spokes van Avana kunnen daaruit opnemen.\n\nEr is één CDP Spoke per chain, Hub, AMM-protocol en risiconiveau. Bij lancering zijn dat \"Uniswap v3 Stable\" op Ethereum en \"Aerodrome Slipstream Stable\" op Base. Correlated LP en Volatile LP Hubs zijn ontworpen voor later. Avana forkt of wijzigt Aave V4 niet."
+          "a": "Aave V4 scheidt gedeelde liquiditeit (Hubs) van marktspecifieke risico-instellingen (Spokes). Elke chain heeft één Avana Hub. Lenders en de opstart-supply van de Aave DAO financieren die via een supply-only Lend Spoke, en alleen de CDP Spokes van Avana kunnen daaruit opnemen, binnen kredietlijnen die de Aave DAO goedkeurt.\n\nEr is één CDP Spoke per chain, AMM-protocol en risiconiveau, en elke Spoke stelt zijn eigen risicoparameters in. Op Ethereum dekken Uniswap v3- en Uniswap v4-Spokes Stable-, Correlated-, Blue-chip- en Gov/DeFi-pools; op Base dekken Aerodrome Slipstream-Spokes Blue-chip-, Gov/DeFi- en Stocks-pools. Avana forkt of wijzigt Aave V4 niet."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Hoe wordt de leencapaciteit berekend?",
-          "a": "Leencapaciteit = waarde van de LP-positie × LP Collateral Factor, en LP Collateral Factor = laagste Collateral Factor van de tokens × poolrisicofactor. De capaciteit hangt ook af van bestaande schuld, caps, de beschikbare liquiditeit van de kredietlijn en oraclecontroles.\n\nVoorbeeldwaarden: een USDC/USDT Slipstream-positie van $20,000 met een Collateral Factor van 31.20% geeft $6,240 gewogen onderpand. De Lens adviseert te lenen tot een health factor van 1.10 (hier 5,673.29 USDC) en toont het maximum bij 1.00 (6,209.56 USDC)."
+          "a": "Leencapaciteit = waarde van de LP-positie × LP Collateral Factor, en LP Collateral Factor = laagste Collateral Factor van de tokens × poolrisicofactor. De capaciteit hangt ook af van bestaande schuld, caps, de beschikbare liquiditeit van de kredietlijn en oraclecontroles.\n\nVoorbeeldwaarden: een USDC/USDT Uniswap v3-positie van $20,000 met een Collateral Factor van 80.00% geeft $16,000 gewogen onderpand. De Lens adviseert te lenen tot een health factor van 1.10 (hier 14,546.91 USDC) en toont het maximum bij 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Waarom is het leenvermogen lager dan mijn LP-waarde?",
-          "a": "De Collateral Factor laat ruimte voor prijsbewegingen, impermanent loss, bereikwijzigingen en liquidatiekosten. De poolrisicofactor is begrensd op 90%, dus met twee tokens op 78% is de initiële loan-to-value maximaal ongeveer 63.8%.\n\nHet verschil tussen waarde en capaciteit verschilt per markt, omdat elke markt een eigen poolrisicofactor heeft."
+          "a": "De Collateral Factor laat ruimte voor prijsbewegingen, impermanent loss, bereikwijzigingen en liquidatiekosten. De poolrisicofactor is maximaal 90%. Voor USDC/USDT geven tokenfactoren van 90% en een poolrisicofactor van 88.89% een Collateral Factor van 80%, dus de initiële loan-to-value bij de health factor van 1.10 van de Lens is maximaal ongeveer 72.7%.\n\nHet verschil tussen waarde en capaciteit verschilt per markt, omdat elke markt een eigen poolrisicofactor heeft."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Wie levert de liquiditeit die leners van Avana gebruiken?",
-          "a": "Bij lancering levert de treasury van de Aave DAO een begrensde GHO-kredietlijn aan de Avana Stable LP Hub van elke chain via een supply-only Lend Spoke. Openbare stortingen zijn bij lancering niet open.\n\nDe opnamecap van elke CDP Spoke op een asset wordt vastgesteld door de Aave DAO, en de opnamecaps tellen op tot maximaal de kredietlijn."
+          "a": "Uitleners en de Aave DAO. Openbaar uitlenen is vanaf dag één open: iedereen kan een gelist asset leveren via de supply-only Lend Spoke van de Avana Hub van elke chain, naast de opstart-supply van de Aave DAO.\n\nDe Aave DAO keurt een kredietlijn goed voor elk leenbaar asset, en de opnamecaps van de CDP Spokes op dat asset tellen op tot maximaal de lijn."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Wat is de health factor?",
-          "a": "Health factor = onderpandwaarde × Collateral Factor ÷ schuldwaarde, door Aave berekend per account, en dus per markt. Onder 1 kan het account worden geliquideerd.\n\nVoorbeeldwaarden: $6,240 gewogen onderpand tegenover 4,999.50 USDC schuld geeft een health factor van 1.2481."
+          "a": "Health factor = onderpandwaarde × Collateral Factor ÷ schuldwaarde, door Aave berekend per account, en dus per markt. Onder 1 kan het account worden geliquideerd.\n\nVoorbeeldwaarden: $16,000 gewogen onderpand tegenover 12,998.70 USDC schuld geeft een health factor van 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Kan ik GHO lenen via Avana?",
-          "a": "Ja. GHO is het eerste schuldasset op elke CDP Spoke, gefinancierd door de begrensde kredietlijn van de Aave DAO aan de Avana Stable LP Hub. GHO-schuld wordt geprijsd op een vaste $1.\n\nOp GHO-schuld loopt rente op tegen het GHO-tarief van de Hub plus uw risicopremie. Al die rente gaat naar de Aave DAO."
+          "a": "Ja. GHO is een schuldasset op elke CDP Spoke, geprijsd op een vaste $1, en wordt geleend van de Avana Hub van elke chain binnen de kredietlijn die de Aave DAO goedkeurt.\n\nOp GHO-schuld loopt rente op tegen het GHO-tarief van de Hub plus uw risicopremie. De rente gaat naar de GHO-leveranciers van de Hub, na een eventuele liquiditeitsfee die de Aave DAO vaststelt; Avana neemt geen deel."
         },
         {
           "id": "can-gho-be-lp-collateral",

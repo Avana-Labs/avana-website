@@ -47,7 +47,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Contract</th><th className="text-left px-4 py-2 type-doc-subsection-title">How many</th><th className="text-left px-4 py-2 type-doc-subsection-title">Role</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">One per chain, at tier 3</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
+                <tr><td className="px-4 py-2">Avana Hub</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Holds the vault tokens of its markets and the debt-asset liquidity of its credit lines</td></tr>
                 <tr><td className="px-4 py-2">CDP Spoke</td><td className="px-4 py-2">One per risk tier and AMM protocol on each chain: Stable, Correlated, Blue-chip, Gov/DeFi and Stocks, across Uniswap v3, Uniswap v4 and Aerodrome Slipstream</td><td className="px-4 py-2">Lists several markets as collateral reserves and the approved debt reserves</td></tr>
                 <tr><td className="px-4 py-2">Lend Spoke</td><td className="px-4 py-2">One per chain</td><td className="px-4 py-2">Supply-only Spoke through which lenders and the Aave DAO&apos;s bootstrap supply fund the Hub</td></tr>
                 <tr><td className="px-4 py-2">Coverage Spoke (Avana Umbrella)</td><td className="px-4 py-2">One per Hub and debt asset</td><td className="px-4 py-2">Supply-only Spoke holding the First-Loss Reserve that covers recorded deficits</td></tr>
@@ -60,7 +60,7 @@ export default async function HubsAndSpokesPage({ params }: LocaleParamsProps) {
         <section id="avana-hubs" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Avana Hubs</h2>
           <p className="mb-4 type-doc-body">
-            An Avana Hub holds only one vault-token asset per market of its CDP Spokes and each credit-line asset the Lend Spoke supplies to it. Each chain has one Avana Hub, a standard Aave V4 Hub at tier 3. Risk is separated by CDP Spoke instead: each Spoke groups the pools of one AMM protocol and one risk tier, such as stablecoin, blue-chip or correlated pools.
+            An Avana Hub holds only one vault-token asset per market of its CDP Spokes and each credit-line asset the Lend Spoke supplies to it. Each chain has one Avana Hub, a standard Aave V4 Hub that holds every Spoke of that chain. Risk is separated by CDP Spoke instead: each Spoke groups the pools of one AMM protocol and one risk tier, such as stablecoin, blue-chip or correlated pools, and sets its own risk parameters.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">

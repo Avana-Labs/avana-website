@@ -119,17 +119,17 @@ export default async function CollateralFactorsPage({ params }: LocaleParamsProp
         <section id="worked-example" className="mb-10">
           <h2 className="mb-4 type-doc-section-title">Worked Example</h2>
           <p className="mb-4 type-doc-body">
-            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Aerodrome Slipstream market on the CDP Spoke &quot;Aerodrome Slipstream Stable&quot; on Base. One whole vault token (10⁶ units) is worth $2.00, CF_LP is 3,120 bps, and USDC is priced at $0.9999.
+            {"Example values; each market's parameters are set at listing."}{" "}Market 3 is a USDC/USDT Uniswap v3 market (fee tier 0.01%) on the CDP Spoke &quot;Uniswap v3 Stable&quot; on Ethereum. One whole vault token (10⁶ units) is worth $2.00, CF_LP is 8,000 bps (token factors of 9,000 and a pool risk factor of 8,889), and USDC is priced at $0.9999.
           </p>
           <div className="overflow-x-auto">
             <table className="type-doc-table">
               <thead className="bg-gray-50"><tr><th className="text-left px-4 py-2 type-doc-subsection-title">Item</th><th className="text-left px-4 py-2 type-doc-subsection-title">Value</th></tr></thead>
               <tbody className="divide-y divide-gray-200">
-                <tr><td className="px-4 py-2">Carol pledges an unstaked position with liquidity 10,000,000,000</td><td className="px-4 py-2">10,000 whole vault tokens, $20,000</td></tr>
-                <tr><td className="px-4 py-2">CF-weighted collateral</td><td className="px-4 py-2">$20,000 × 31.20% = $6,240</td></tr>
-                <tr><td className="px-4 py-2">Recommended borrow shown by the Lens (health factor 1.10)</td><td className="px-4 py-2">5,673.29 USDC</td></tr>
-                <tr><td className="px-4 py-2">Protocol maximum (health factor 1.00)</td><td className="px-4 py-2">6,209.56 USDC</td></tr>
-                <tr><td className="px-4 py-2">Carol borrows 5,000 USDC (debt value $4,999.50)</td><td className="px-4 py-2">Health factor 6,240 / 4,999.50 = 1.2481</td></tr>
+                <tr><td className="px-4 py-2">Carol pledges a position with liquidity 10,000,000,000</td><td className="px-4 py-2">10,000 whole vault tokens, $20,000</td></tr>
+                <tr><td className="px-4 py-2">CF-weighted collateral</td><td className="px-4 py-2">$20,000 × 80.00% = $16,000</td></tr>
+                <tr><td className="px-4 py-2">Recommended borrow shown by the Lens (health factor 1.10)</td><td className="px-4 py-2">14,546.91 USDC</td></tr>
+                <tr><td className="px-4 py-2">Protocol maximum (health factor 1.00)</td><td className="px-4 py-2">15,921.97 USDC</td></tr>
+                <tr><td className="px-4 py-2">Carol borrows 13,000 USDC (debt value $12,998.70)</td><td className="px-4 py-2">Health factor 16,000 / 12,998.70 = 1.2309</td></tr>
               </tbody>
             </table>
           </div>

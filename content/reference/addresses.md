@@ -19,7 +19,7 @@ One Hub with the Lend Spoke and 6 CDP Spokes listing 10 markets. Market pools an
 
 | Name | Description | Address |
 | --- | --- | --- |
-| Avana Ethereum Hub | Standard Aave V4 Hub at tier 3, the only Avana Hub on this chain. It holds the lent assets and the vault-token collateral of every Spoke below. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.hubs.ethereum} |
+| Avana Ethereum Hub | Standard Aave V4 Hub, the only Avana Hub on this chain. It holds the lent assets and the vault-token collateral of every Spoke below, and each Spoke sets its own risk parameters. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.hubs.ethereum} |
 
 ### Uniswap v3 Spokes
 
@@ -160,7 +160,7 @@ One Hub with the Lend Spoke and 3 CDP Spokes listing 12 markets. Market pools an
 
 | Name | Description | Address |
 | --- | --- | --- |
-| Avana Base Hub | Standard Aave V4 Hub at tier 3, the only Avana Hub on this chain. It holds the lent assets and the vault-token collateral of every Spoke below. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.hubs.base} |
+| Avana Base Hub | Standard Aave V4 Hub, the only Avana Hub on this chain. It holds the lent assets and the vault-token collateral of every Spoke below, and each Spoke sets its own risk parameters. Upgradeable by the Aave DAO, which owns its proxy. | @{aave.hubs.base} |
 
 ### Aero Slipstream Spokes
 

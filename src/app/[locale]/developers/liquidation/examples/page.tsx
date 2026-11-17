@@ -18,7 +18,7 @@ const sections = [
   { id: "overview", title: "Overview" },
   { id: "uniswap-ethereum", title: "Uniswap v3 on Ethereum" },
   { id: "payout-variants", title: "Surplus and PayoutTooLow Variants" },
-  { id: "slipstream-base", title: "Slipstream on Base" },
+  { id: "usdc-debt-ethereum", title: "USDC Debt on Ethereum" },
   { id: "core-math", title: "Core Math: Fee, Reward and Surplus" },
   { id: "dust-gap", title: "Dust Liquidation Loss" },
   { id: "gho-debt", title: "GHO Debt, Call by Call" },
@@ -163,19 +163,19 @@ export default async function LiquidationExamplesPage({ params }: LocaleParamsPr
           </p>
         </section>
 
-        <section id="slipstream-base" className="mb-10">
-          <h2 className="mb-4 type-doc-section-title">Slipstream on Base</h2>
+        <section id="usdc-debt-ethereum" className="mb-10">
+          <h2 className="mb-4 type-doc-section-title">USDC Debt on Ethereum</h2>
           <p className="mb-4 type-doc-body">
-            Market 3 is a USDC/USDT Aerodrome Slipstream market (tick spacing 1, exact range, unstaked position) on the Aerodrome Slipstream Stable CDP Spoke of the Avana Base Hub, priced at $2.00 per vault token. Carol owes 20,000 USDC. Aave&apos;s bonus is 2%. The public helper&apos;s FLASH_BORROWER role on the Base Pool is still pending, so its loan carries the Base Pool&apos;s 5 bps premium, within Base&apos;s maxFlashFeeBps of 10, and the premium comes out of the keeper&apos;s share.
+            Market 3 is a USDC/USDT Uniswap v3 market (fee tier 0.01%, exact range) on the Uniswap v3 Stable CDP Spoke of the Avana Ethereum Hub, priced at $2.00 per vault token. Carol owes 20,000 USDC. Aave&apos;s bonus is 2%. The public helper&apos;s FLASH_BORROWER role on the Aave V3 Pool is still pending, so its loan carries the Pool&apos;s 5 bps premium, within the maxFlashFeeBps of 10, and the premium comes out of the keeper&apos;s share.
           </p>
           <p className="mb-4 type-doc-body">
             The example uses a USDC debt reserve to show settlement in a debt asset other than GHO.
           </p>
           <ol className="mb-4 list-decimal space-y-2 ps-5 type-doc-body">
-            <li>The Base sequencer restarts at 10:00:00. At 10:20:00 Carol&apos;s health factor is 0.9997. A keeper call reverts with SequencerGrace, because 0.9997 is not below the grace threshold of 0.95. The USDC/USD feed last published 21 hours earlier (75,600 s, within 88,200 s), so the price is fresh. An account at a health factor of 0.93 is liquidated at 10:20.</li>
-            <li>At 11:00:02, the first 2 s Base block after the 3,600 s grace window, keeper K2 calls the public helper with params of debtToCover 2,000 USDC, PrimaryThenBackup, a deadline 120 s (60 Base blocks) ahead, minPayout 2,025 USDC and maxShortfall 0, a flash amount of 2,000 USDC and maxPremium 1 USDC.</li>
-            <li>The Base Pool&apos;s idle USDC is well above 2,000 USDC. The loan arrives with a premium of 1 USDC, within maxPremium, and 1,000,000 × 10,000 = 10,000,000,000 is at most 10 × 2,000,000,000. The helper calls liquidate, and LPVaultSwap pulls Kf = 2,000 USDC from it.</li>
-            <li>Aave repays D = 2,000 USDC and seizes c = 2,000 × 1.02 / 2.00 = 1,020 vault tokens. The Slipstream LP Vault checks the pool lock through Slipstream&apos;s own slot layout, then unwinds about 1,020 USDC and 1,020 USDT.</li>
+            <li>At 10:20:00 Carol&apos;s health factor is 0.9997. The USDC/USD feed last published 21 hours earlier (75,600 s, within 88,200 s), so the price is fresh. Ethereum has no sequencer, so no grace window applies.</li>
+            <li>At 10:20:12, in the next 12 s block, keeper K2 calls the public helper with params of debtToCover 2,000 USDC, PrimaryThenBackup, a deadline 120 s (10 blocks) ahead, minPayout 2,025 USDC and maxShortfall 0, a flash amount of 2,000 USDC and maxPremium 1 USDC.</li>
+            <li>The Pool&apos;s idle USDC is well above 2,000 USDC. The loan arrives with a premium of 1 USDC, within maxPremium, and 1,000,000 × 10,000 = 10,000,000,000 is at most 10 × 2,000,000,000. The helper calls liquidate, and LPVaultSwap pulls Kf = 2,000 USDC from it.</li>
+            <li>Aave repays D = 2,000 USDC and seizes c = 2,000 × 1.02 / 2.00 = 1,020 vault tokens. The Uniswap v3 LPVault checks the pool&apos;s reentrancy lock, then unwinds about 1,020 USDC and 1,020 USDT.</li>
             <li>Floor: s = min(100, ⌊10,000 × 200 / 10,200⌋) = 100 and V = 2,040 USDC. The floor is 2,019.6 − 0.000002 − 1 = 2,018.599998 USDC. The USDT route returns 1,018.50 USDC, so R = 2,038.50 USDC.</li>
           </ol>
           <div className="mb-4 overflow-x-auto">

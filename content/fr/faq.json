@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Qu'est-ce qu'Avana ?",
-          "a": "Avana permet aux fournisseurs de liquidité d'utiliser des positions AMM comme garantie sur Aave V4. Un emprunteur nantit une position Uniswap v3 sur Ethereum ou une position Aerodrome Slipstream sur Base. Le LPVault d'Avana détient la position, et un vault token correspondant est déposé comme garantie sur un CDP Spoke Avana. L'emprunteur emprunte ensuite du GHO, ou un autre actif de dette que le Spoke prête, pendant que la liquidité reste dans le pool.\n\nAvana est lancé sur Ethereum et Base, avec un Avana Stable LP Hub sur chaque chaîne. Les Hubs et Spokes sont des contrats Aave V4 standard et non modifiés, détenus et configurés par l'Aave DAO. Les propres contrats d'Avana gèrent la conservation, la valorisation, les actions des emprunteurs et la liquidation."
+          "a": "Avana permet aux fournisseurs de liquidité d'utiliser des positions AMM comme garantie sur Aave V4. Un emprunteur nantit une position Uniswap v3 ou Uniswap v4 sur Ethereum ou une position Aerodrome Slipstream sur Base. Le LPVault d'Avana détient la position, et un vault token correspondant est déposé comme garantie sur un CDP Spoke Avana. L'emprunteur emprunte ensuite un actif de dette que le Spoke prête, comme le GHO ou l'USDC, pendant que la liquidité reste dans le pool.\n\nAvana est lancé sur Ethereum et Base, avec un seul Avana Hub sur chaque chaîne. Les Hubs et Spokes sont des contrats Aave V4 standard et non modifiés, détenus et configurés par l'Aave DAO. Les propres contrats d'Avana gèrent la conservation, la valorisation, les actions des emprunteurs et la liquidation."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Pourquoi Avana utilise-t-il les Hubs et Spokes d'Aave V4 ?",
-          "a": "Aave V4 sépare la liquidité partagée (Hubs) des paramètres de risque propres à chaque marché (Spokes). Chaque chaîne dispose d'un Avana Stable LP Hub. L'Aave DAO lui fournit une ligne de crédit GHO plafonnée via un Lend Spoke de dépôt uniquement, et seuls les CDP Spokes d'Avana peuvent y tirer.\n\nIl y a un CDP Spoke par chaîne, Hub, protocole AMM et niveau de risque. Au lancement, il s'agit de \"Uniswap v3 Stable\" sur Ethereum et de \"Aerodrome Slipstream Stable\" sur Base. Des Correlated LP Hubs et Volatile LP Hubs sont prévus pour plus tard. Avana ne forke ni ne modifie Aave V4."
+          "a": "Aave V4 sépare la liquidité partagée (Hubs) des paramètres de risque propres à chaque marché (Spokes). Chaque chaîne dispose d'un seul Avana Hub. Les prêteurs et la fourniture d'amorçage de l'Aave DAO le financent via un Lend Spoke de dépôt uniquement, et seuls les CDP Spokes d'Avana peuvent y tirer, dans la limite des lignes de crédit que l'Aave DAO approuve.\n\nIl y a un CDP Spoke par chaîne, protocole AMM et niveau de risque, et chaque Spoke fixe ses propres paramètres de risque. Sur Ethereum, des Spokes Uniswap v3 et Uniswap v4 couvrent les pools Stable, Correlated, Blue-chip et Gov/DeFi ; sur Base, des Spokes Aerodrome Slipstream couvrent les pools Blue-chip, Gov/DeFi et Stocks. Avana ne forke ni ne modifie Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Comment la capacité d’emprunt est-elle calculée ?",
-          "a": "Capacité d'emprunt = valeur de la position LP × LP Collateral Factor, et LP Collateral Factor = plus faible Collateral Factor des tokens × facteur de risque du pool. La capacité dépend aussi de la dette existante, des plafonds, de la liquidité disponible de la ligne de crédit et des contrôles d'oracle.\n\nValeurs d'exemple : une position Slipstream USDC/USDT d'une valeur de $20,000 avec un Collateral Factor de 31.20% donne $6,240 de garantie pondérée. Le Lens recommande d'emprunter jusqu'à un facteur de santé de 1.10 (ici 5,673.29 USDC) et affiche le maximum à 1.00 (6,209.56 USDC)."
+          "a": "Capacité d'emprunt = valeur de la position LP × LP Collateral Factor, et LP Collateral Factor = plus faible Collateral Factor des tokens × facteur de risque du pool. La capacité dépend aussi de la dette existante, des plafonds, de la liquidité disponible de la ligne de crédit et des contrôles d'oracle.\n\nValeurs d'exemple : une position Uniswap v3 USDC/USDT d'une valeur de $20,000 avec un Collateral Factor de 80.00% donne $16,000 de garantie pondérée. Le Lens recommande d'emprunter jusqu'à un facteur de santé de 1.10 (ici 14,546.91 USDC) et affiche le maximum à 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Pourquoi le pouvoir d’emprunt est-il inférieur à ma valeur LP ?",
-          "a": "Le Collateral Factor laisse une marge pour les mouvements de prix, la perte impermanente, les changements de plage et les coûts de liquidation. Le facteur de risque du pool est plafonné à 90%, de sorte qu'avec deux tokens à 78%, le loan-to-value d'ouverture est d'au plus environ 63.8%.\n\nL'écart entre valeur et capacité diffère d'un marché à l'autre, car chaque marché a son propre facteur de risque du pool."
+          "a": "Le Collateral Factor laisse une marge pour les mouvements de prix, la perte impermanente, les changements de plage et les coûts de liquidation. Le facteur de risque du pool est d'au plus 90%. Pour USDC/USDT, des facteurs de token de 90% et un facteur de risque du pool de 88.89% donnent un Collateral Factor de 80%, de sorte que le loan-to-value d'ouverture au facteur de santé de 1.10 du Lens est d'au plus environ 72.7%.\n\nL'écart entre valeur et capacité diffère d'un marché à l'autre, car chaque marché a son propre facteur de risque du pool."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Qui fournit la liquidité utilisée par les emprunteurs d'Avana ?",
-          "a": "Au lancement, la trésorerie de l'Aave DAO fournit une ligne de crédit GHO plafonnée à l'Avana Stable LP Hub de chaque chaîne via un Lend Spoke de dépôt uniquement. Les dépôts publics ne sont pas ouverts au lancement.\n\nLe plafond de tirage de chaque CDP Spoke sur un actif est fixé par l'Aave DAO, et la somme des plafonds de tirage ne dépasse pas la ligne de crédit."
+          "a": "Les prêteurs et l'Aave DAO. Le prêt public est ouvert dès le premier jour : n'importe qui peut fournir un actif listé via le Lend Spoke de dépôt uniquement de l'Avana Hub de chaque chaîne, à côté de la fourniture d'amorçage de l'Aave DAO.\n\nL'Aave DAO approuve une ligne de crédit pour chaque actif empruntable, et la somme des plafonds de tirage des CDP Spokes sur cet actif ne dépasse pas la ligne."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Qu'est-ce que le facteur de santé ?",
-          "a": "Facteur de santé = valeur de la garantie × Collateral Factor ÷ valeur de la dette, calculé par Aave pour chaque compte, c'est-à-dire pour chaque marché. En dessous de 1, le compte peut être liquidé.\n\nValeurs d'exemple : $6,240 de garantie pondérée face à 4,999.50 USDC de dette donnent un facteur de santé de 1.2481."
+          "a": "Facteur de santé = valeur de la garantie × Collateral Factor ÷ valeur de la dette, calculé par Aave pour chaque compte, c'est-à-dire pour chaque marché. En dessous de 1, le compte peut être liquidé.\n\nValeurs d'exemple : $16,000 de garantie pondérée face à 12,998.70 USDC de dette donnent un facteur de santé de 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Puis-je emprunter du GHO sur Avana ?",
-          "a": "Oui. Le GHO est le premier actif de dette sur chaque CDP Spoke, financé par la ligne de crédit plafonnée de l'Aave DAO vers l'Avana Stable LP Hub. La dette GHO est valorisée à un prix fixe de $1.\n\nLa dette GHO porte intérêt au taux GHO du Hub plus votre prime de risque. La totalité de ces intérêts revient à l'Aave DAO."
+          "a": "Oui. Le GHO est un actif de dette sur chaque CDP Spoke, valorisé à un prix fixe de $1, et il est emprunté auprès de l'Avana Hub de chaque chaîne dans la limite de la ligne de crédit que l'Aave DAO approuve.\n\nLa dette GHO porte intérêt au taux GHO du Hub plus votre prime de risque. Les intérêts reviennent aux fournisseurs de GHO du Hub, après les éventuels frais de liquidité fixés par l'Aave DAO ; Avana n'en prend aucune part."
         },
         {
           "id": "can-gho-be-lp-collateral",

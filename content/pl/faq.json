@@ -8,7 +8,7 @@
         {
           "id": "what-is-avana",
           "q": "Czym jest Avana?",
-          "a": "Avana umożliwia dostawcom płynności wykorzystanie pozycji AMM jako zabezpieczenia w Aave V4. Kredytobiorca zastawia pozycję Uniswap v3 na Ethereum lub pozycję Aerodrome Slipstream na Base. LPVault Avana przechowuje pozycję, a odpowiadający jej vault token jest dostarczany jako zabezpieczenie w CDP Spoke Avana. Następnie kredytobiorca pożycza GHO lub inne aktywo dłużne, które pożycza dany Spoke, a płynność pozostaje w puli.\n\nAvana startuje na Ethereum i Base, z Avana Stable LP Hub w każdym łańcuchu. Hub i Spoke to standardowe, niezmodyfikowane kontrakty Aave V4, których właścicielem jest Aave DAO i które ono konfiguruje. Własne kontrakty Avana obsługują przechowywanie, wycenę, działania kredytobiorców i likwidację."
+          "a": "Avana umożliwia dostawcom płynności wykorzystanie pozycji AMM jako zabezpieczenia w Aave V4. Kredytobiorca zastawia pozycję Uniswap v3 lub Uniswap v4 na Ethereum lub pozycję Aerodrome Slipstream na Base. LPVault Avana przechowuje pozycję, a odpowiadający jej vault token jest dostarczany jako zabezpieczenie w CDP Spoke Avana. Następnie kredytobiorca pożycza aktywo dłużne, które pożycza dany Spoke, np. GHO lub USDC, a płynność pozostaje w puli.\n\nAvana startuje na Ethereum i Base, z jednym Avana Hub w każdym łańcuchu. Hub i Spoke to standardowe, niezmodyfikowane kontrakty Aave V4, których właścicielem jest Aave DAO i które ono konfiguruje. Własne kontrakty Avana obsługują przechowywanie, wycenę, działania kredytobiorców i likwidację."
         },
         {
           "id": "what-problem-does-avana-solve",
@@ -50,7 +50,7 @@
         {
           "id": "why-aave-v4-hub-and-spoke",
           "q": "Dlaczego Avana korzysta z Hub i Spoke Aave V4?",
-          "a": "Aave V4 oddziela współdzieloną płynność (Hub) od ustawień ryzyka specyficznych dla rynku (Spoke). Każdy łańcuch ma Avana Stable LP Hub. Aave DAO dostarcza do niego ograniczoną linię kredytową GHO przez Lend Spoke służący wyłącznie do podaży, a pobierać z niej mogą tylko CDP Spokes Avana.\n\nNa każdy łańcuch, Hub, protokół AMM i poziom ryzyka przypada jeden CDP Spoke. Przy uruchomieniu są to \"Uniswap v3 Stable\" na Ethereum i \"Aerodrome Slipstream Stable\" na Base. Correlated LP Hub i Volatile LP Hub są zaprojektowane na później. Avana nie forkuje ani nie modyfikuje Aave V4."
+          "a": "Aave V4 oddziela współdzieloną płynność (Hub) od ustawień ryzyka specyficznych dla rynku (Spoke). Każdy łańcuch ma jeden Avana Hub. Finansują go pożyczkodawcy oraz początkowa płynność Aave DAO przez Lend Spoke służący wyłącznie do podaży, a pobierać z niego mogą tylko CDP Spokes Avana, w ramach linii kredytowych zatwierdzonych przez Aave DAO.\n\nNa każdy łańcuch, protokół AMM i poziom ryzyka przypada jeden CDP Spoke, a każdy Spoke ustala własne parametry ryzyka. Na Ethereum Spokes Uniswap v3 i Uniswap v4 obejmują pule Stable, Correlated, Blue-chip i Gov/DeFi; na Base Spokes Aerodrome Slipstream obejmują pule Blue-chip, Gov/DeFi i Stocks. Avana nie forkuje ani nie modyfikuje Aave V4."
         },
         {
           "id": "what-is-a-borrow-spoke",
@@ -151,12 +151,12 @@
         {
           "id": "how-is-borrowing-capacity-calculated",
           "q": "Jak oblicza się zdolność kredytową?",
-          "a": "Zdolność pożyczkowa = wartość pozycji LP × LP Collateral Factor, a LP Collateral Factor = najniższy współczynnik zabezpieczenia tokenów × współczynnik ryzyka puli. Zdolność zależy również od istniejącego zadłużenia, limitów, dostępnej płynności linii kredytowej i kontroli wyroczni.\n\nPrzykładowe wartości: pozycja USDC/USDT Slipstream o wartości $20,000 ze współczynnikiem zabezpieczenia 31.20% daje $6,240 ważonego zabezpieczenia. Lens zaleca pożyczanie do współczynnika zdrowia 1.10 (tutaj 5,673.29 USDC) i pokazuje maksimum przy 1.00 (6,209.56 USDC)."
+          "a": "Zdolność pożyczkowa = wartość pozycji LP × LP Collateral Factor, a LP Collateral Factor = najniższy współczynnik zabezpieczenia tokenów × współczynnik ryzyka puli. Zdolność zależy również od istniejącego zadłużenia, limitów, dostępnej płynności linii kredytowej i kontroli wyroczni.\n\nPrzykładowe wartości: pozycja USDC/USDT Uniswap v3 o wartości $20,000 ze współczynnikiem zabezpieczenia 80.00% daje $16,000 ważonego zabezpieczenia. Lens zaleca pożyczanie do współczynnika zdrowia 1.10 (tutaj 14,546.91 USDC) i pokazuje maksimum przy 1.00 (15,921.97 USDC)."
         },
         {
           "id": "why-is-borrow-power-lower-than-lp-value",
           "q": "Dlaczego moc pożyczkowa jest niższa niż moja wartość LP?",
-          "a": "Współczynnik zabezpieczenia pozostawia margines na ruchy cen, stratę nietrwałą, zmiany zakresu i koszty likwidacji. Współczynnik ryzyka puli jest ograniczony do 90%, więc przy dwóch tokenach z 78% początkowy wskaźnik loan-to-value wynosi najwyżej około 63.8%.\n\nRóżnica między wartością a zdolnością jest inna na każdym rynku, ponieważ każdy rynek ma własny współczynnik ryzyka puli."
+          "a": "Współczynnik zabezpieczenia pozostawia margines na ruchy cen, stratę nietrwałą, zmiany zakresu i koszty likwidacji. Współczynnik ryzyka puli wynosi najwyżej 90%. Dla USDC/USDT współczynniki tokenów 90% i współczynnik ryzyka puli 88.89% dają współczynnik zabezpieczenia 80%, więc początkowy wskaźnik loan-to-value przy współczynniku zdrowia Lens 1.10 wynosi najwyżej około 72.7%.\n\nRóżnica między wartością a zdolnością jest inna na każdym rynku, ponieważ każdy rynek ma własny współczynnik ryzyka puli."
         },
         {
           "id": "what-assets-can-i-borrow",
@@ -183,7 +183,7 @@
         {
           "id": "how-do-lenders-use-avana",
           "q": "Kto dostarcza płynność, z której korzystają kredytobiorcy Avana?",
-          "a": "Przy uruchomieniu skarbiec Aave DAO dostarcza ograniczoną linię kredytową GHO do Avana Stable LP Hub każdego łańcucha przez Lend Spoke służący wyłącznie do podaży. Publiczne depozyty nie są otwarte przy uruchomieniu.\n\nLimit pobrania każdego CDP Spoke dla danego aktywa ustala Aave DAO, a limity pobrania sumują się najwyżej do wartości linii kredytowej."
+          "a": "Pożyczkodawcy i Aave DAO. Publiczne udzielanie pożyczek jest otwarte od pierwszego dnia: każdy może dostarczyć dopuszczone aktywo przez służący wyłącznie do podaży Lend Spoke Avana Hub w każdym łańcuchu, obok początkowej płynności Aave DAO.\n\nAave DAO zatwierdza linię kredytową dla każdego aktywa, które można pożyczyć, a limity pobrania CDP Spoke dla tego aktywa sumują się najwyżej do wartości tej linii."
         },
         {
           "id": "where-does-supplier-yield-come-from",
@@ -210,7 +210,7 @@
         {
           "id": "what-is-health-factor",
           "q": "Czym jest współczynnik zdrowia (health factor)?",
-          "a": "Współczynnik zdrowia = wartość zabezpieczenia × współczynnik zabezpieczenia ÷ wartość zadłużenia, obliczany przez Aave dla każdego konta, czyli dla każdego rynku. Poniżej 1 konto może zostać zlikwidowane.\n\nPrzykładowe wartości: $6,240 ważonego zabezpieczenia przy zadłużeniu 4,999.50 USDC daje współczynnik zdrowia 1.2481."
+          "a": "Współczynnik zdrowia = wartość zabezpieczenia × współczynnik zabezpieczenia ÷ wartość zadłużenia, obliczany przez Aave dla każdego konta, czyli dla każdego rynku. Poniżej 1 konto może zostać zlikwidowane.\n\nPrzykładowe wartości: $16,000 ważonego zabezpieczenia przy zadłużeniu 12,998.70 USDC daje współczynnik zdrowia 1.2309."
         },
         {
           "id": "what-affects-health-factor",
@@ -274,7 +274,7 @@
         {
           "id": "can-i-borrow-gho",
           "q": "Czy mogę pożyczyć GHO przez Avana?",
-          "a": "Tak. GHO jest pierwszym aktywem dłużnym w każdym CDP Spoke, finansowanym z ograniczonej linii kredytowej Aave DAO dla Avana Stable LP Hub. Zadłużenie w GHO jest wyceniane na stałe $1.\n\nZadłużenie w GHO nalicza odsetki według stopy GHO w Hub plus twoja premia za ryzyko. Całe te odsetki trafiają do Aave DAO."
+          "a": "Tak. GHO jest aktywem dłużnym w każdym CDP Spoke, wycenianym na stałe $1, i jest pożyczane z Avana Hub każdego łańcucha w ramach linii kredytowej zatwierdzonej przez Aave DAO.\n\nZadłużenie w GHO nalicza odsetki według stopy GHO w Hub plus twoja premia za ryzyko. Odsetki trafiają do dostawców GHO w Hub, po potrąceniu ewentualnej opłaty od płynności ustalonej przez Aave DAO; Avana nie bierze żadnego udziału."
         },
         {
           "id": "can-gho-be-lp-collateral",
